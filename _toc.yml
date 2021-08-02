@@ -2,8 +2,60 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
+
 root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: mymarkdownfile
+
+parts:
+  - caption: Getting ready
+    chapters:
+      - file: book/getting_ready/windows_users
+      - file: book/getting_ready/mac_users
+      - file: book/getting_ready/linux_users
+
+  - caption: Using the terminal
+    chapters:
+      - file: book/using_the_terminal/basics
+      - file: book/using_the_terminal/advanced
+
+  - caption: Using git and GitHub
+    chapters:
+      - file: book/using_git/introduction_to_git
+      - file: book/using_git/create_a_github_repo
+      - file: book/using_git/example_workflow
+      - file: book/using_git/ways_to_undo_a_mistake
+      - file: book/using_git/repo_structure
+      - file: book/using_git/add_a_README
+
+  - caption: Introduction to C++
+    chapters:
+      - file: book/introduction_to_cpp/hello_world
+      - file: book/introduction_to_cpp/online_resources
+
+  - caption: Writing reports
+    chapters:
+      - file: book/writing_reports/introduction_to_latex
+      - file: book/writing_reports/report_template
+
+  - caption: Projects
+    chapters:
+      - file: book/projects/project1
+
+
+
+# # Example
+#
+# format: jb-book
+# root: index
+# parts:
+#   - caption: Name of Part 1
+#     chapters:
+#     - file: path/to/part1/chapter1
+#     - file: path/to/part1/chapter2
+#       sections:
+#       - file: path/to/part1/chapter2/section1
+#   - caption: Name of Part 2
+#     chapters:
+#     - file: path/to/part2/chapter1
+#     - file: path/to/part2/chapter2
+#       sections:
+#       - file: path/to/part2/chapter2/section1

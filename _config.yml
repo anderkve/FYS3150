@@ -1,9 +1,9 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: My sample book
-author: The Jupyter Book Community
-logo: logo.png
+title: FYS3150/FYS4150 course material
+author: the FYS3150 teaching team
+# logo: logo.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -21,7 +21,9 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/executablebooks/jupyter-book  # Online location of your book
+  # url: https://github.com/executablebooks/jupyter-book  # Online location of your book
+  # url: https://anderkve.github.io/FYS3150  # Online location of your book
+  url: https://github.com/anderkve/FYS3150
   path_to_book: docs  # Optional path to your book, relative to the repository root
   branch: master  # Which branch of the repository should be used when creating links (optional)
 
