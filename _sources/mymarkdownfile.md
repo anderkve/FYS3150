@@ -1,4 +1,4 @@
-# Testing, testing
+# Here's my sample title
 
 This is some sample text.
 

@@ -1,16 +1,5 @@
-# Welcome to your Jupyter Book
+# Welcome
 
-This is a small sample book to give you a feel for how book content is
-structured.
+On this page we will gradually build up all the material for the course **FYS3150/FYS4150 -- Computational Physics**, fall 2021, at the University of Oslo (UiO). See the table of contents on the left.
 
-:::{note}
-Here is a note!
-:::
-
-And here is a code block:
-
-```
-e = mc^2
-```
-
-Check out the content pages bundled with this sample book to see more.
+The official UiO webpage for the course is [here](https://www.uio.no/studier/emner/matnat/fys/FYS3150/h21/index.html). 
