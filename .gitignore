@@ -1,0 +1,11 @@
+# Backup files
+*~
+*.bak*
+\#*#
+
+# Log files
+*.log
+
+# Build output
+_build/*
+
