@@ -10,11 +10,11 @@ The classic first example of a C++ program is the "Hello World" program:
 // Our main program
 int main()
 {
-    // Print a message to screen
-    std::cout << "Hello, World!";
+  // Print a message to screen
+  std::cout << "Hello, World!";
 
-    // Return 0 when done
-    return 0;
+  // Return 0 when done
+  return 0;
 }
 ```
 
@@ -43,3 +43,4 @@ Our "Hello World" program illustrates some C++ basics:
  
 - The `return` keyword ends a function. Since the `main` function has return-type `int`, we return an integer: `return 0;` Returning 0 from the main function indicates that the program completed successfully.
 
+So far, so good -- now on to the next topic!

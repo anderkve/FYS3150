@@ -51,7 +51,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Online C++ resources" href="online_resources.html" />
+    <link rel="next" title="Variables and functions" href="variables_and_functions.html" />
     <link rel="prev" title="Add a README" href="../using_git/add_a_README.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -172,6 +172,21 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Hello World
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="variables_and_functions.html">
+   Variables and functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="source_files_and_header_files.html">
+   Source files and header files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="compiling_and_linking.html">
+   Compiling and linking
   </a>
  </li>
  <li class="toctree-l1">
@@ -308,11 +323,11 @@
 <span class="c1">// Our main program</span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="c1">// Print a message to screen</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello, World!&quot;</span><span class="p">;</span>
+  <span class="c1">// Print a message to screen</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello, World!&quot;</span><span class="p">;</span>
 
-    <span class="c1">// Return 0 when done</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="c1">// Return 0 when done</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -335,6 +350,7 @@
 <li><p>Here <code class="docutils literal notranslate"><span class="pre">std::</span></code> indicates that <code class="docutils literal notranslate"><span class="pre">cout</span></code> lives in the standard C++ library. Technically, <code class="docutils literal notranslate"><span class="pre">std</span></code> is the <strong>namespace</strong> (more on that later). This is analogous to how the Python code <code class="docutils literal notranslate"><span class="pre">math.sqrt(2)</span></code> says that <code class="docutils literal notranslate"><span class="pre">sqrt</span></code> lives in the <code class="docutils literal notranslate"><span class="pre">math</span></code> package.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">return</span></code> keyword ends a function. Since the <code class="docutils literal notranslate"><span class="pre">main</span></code> function has return-type <code class="docutils literal notranslate"><span class="pre">int</span></code>, we return an integer: <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">0;</span></code> Returning 0 from the main function indicates that the program completed successfully.</p></li>
 </ul>
+<p>So far, so good – now on to the next topic!</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -363,7 +379,7 @@
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="../using_git/add_a_README.html" title="previous page">Add a README</a>
-    <a class='right-next' id="next-link" href="online_resources.html" title="next page">Online C++ resources</a>
+    <a class='right-next' id="next-link" href="variables_and_functions.html" title="next page">Variables and functions</a>
 
         </div>
         
