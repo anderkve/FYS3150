@@ -36,6 +36,10 @@ parts:
       - file: book/introduction_to_cpp/debugging
       - file: book/introduction_to_cpp/online_resources
 
+  - caption: Using make
+    chapters:
+      - file: book/using_make/intro
+
   - caption: Writing reports
     chapters:
       - file: book/writing_reports/introduction_to_latex
