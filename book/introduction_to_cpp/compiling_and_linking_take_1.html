@@ -387,6 +387,19 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compiling-and-linking-in-one-go">
+   Compiling and linking in one go
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -397,7 +410,52 @@
                 
   <div class="section" id="compiling-and-linking-take-1">
 <h1>Compiling and linking, take 1<a class="headerlink" href="#compiling-and-linking-take-1" title="Permalink to this headline">¶</a></h1>
-<p>Add a page on simple compiling and linking.</p>
+<p>Say we have saved our <a class="reference internal" href="hello_world.html#sec-hello-world"><span class="std std-ref">Hello World</span></a> program to a file <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code>. Before we can run it, we need to <strong>build</strong> it — that is, convert our human-readable C++ code into executable machine code. The build process consists of two steps:</p>
+<ol class="simple">
+<li><p><strong>Compilation</strong>: Translating each <strong>source file</strong> (<code class="docutils literal notranslate"><span class="pre">.cpp</span></code> file) into a corresponding <strong>object file</strong> (<code class="docutils literal notranslate"><span class="pre">.o</span></code> file) with machine code.</p></li>
+<li><p><strong>Linking</strong>: Combine multiple object files into a single <strong>executable</strong>, i.e. a program we can run.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Informally, the entire process of compiling + linking is often referred to simply as <strong>“compiling the code”</strong>. But we should not forget that the technical term “compilation” actually only refers to the first step. To avoid confusion, it is often useful to  say <strong>“building the code”</strong> when referring to the entire process, as we do here.</p>
+</div>
+<p>We will use the common C++ compiler <code class="docutils literal notranslate"><span class="pre">g++</span></code> for building our code.</p>
+<p><strong>Compilation</strong>: To compile <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code>, we run the following terminal command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="o">++</span> <span class="o">-</span><span class="n">c</span> <span class="n">main</span><span class="o">.</span><span class="n">cpp</span>
+</pre></div>
+</div>
+<p>Here the option <code class="docutils literal notranslate"><span class="pre">-c</span></code> means “just compile, don’t link”. This produces an object file <code class="docutils literal notranslate"><span class="pre">main.o</span></code>.</p>
+<p><strong>Linking</strong>: To do the linking step we pass this object file (<code class="docutils literal notranslate"><span class="pre">main.o</span></code>) as input to <code class="docutils literal notranslate"><span class="pre">g++</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="o">++</span> <span class="n">main</span><span class="o">.</span><span class="n">o</span> <span class="o">-</span><span class="n">o</span> <span class="n">main</span><span class="o">.</span><span class="n">exe</span>
+</pre></div>
+</div>
+<p>Here the option <code class="docutils literal notranslate"><span class="pre">-o</span> <span class="pre">main.exe</span></code> just means that we give the resulting program the name <code class="docutils literal notranslate"><span class="pre">main.exe</span></code>. (We could have picked any file name, and we didn’t have to use the <code class="docutils literal notranslate"><span class="pre">.exe</span></code> suffix.)</p>
+<p>To run our fantastic program, we do</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">main</span><span class="o">.</span><span class="n">exe</span>
+</pre></div>
+</div>
+<p>which should produce the familiar output</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Hello, World!
+</pre></div>
+</div>
+<p>Hooray, we have compiled, linked and run our first C++ program!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this simple example it may not seem like we’re doing much “linking” at all — there’s only one object file, right? Well, not really: Under the hood, our object file <code class="docutils literal notranslate"><span class="pre">main.o</span></code> is linked to object files from the standard C++ library.</p>
+</div>
+<div class="section" id="compiling-and-linking-in-one-go">
+<h2>Compiling and linking in one go<a class="headerlink" href="#compiling-and-linking-in-one-go" title="Permalink to this headline">¶</a></h2>
+<p>We can do compilation + linking with a single command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="o">++</span> <span class="n">main</span><span class="o">.</span><span class="n">cpp</span> <span class="o">-</span><span class="n">o</span> <span class="n">main</span><span class="o">.</span><span class="n">exe</span>
+</pre></div>
+</div>
+<p>The compiler will then (1) compile <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code> into <code class="docutils literal notranslate"><span class="pre">main.o</span></code>, (2) link <code class="docutils literal notranslate"><span class="pre">main.o</span></code> to create <code class="docutils literal notranslate"><span class="pre">main.exe</span></code>, and (3) delete <code class="docutils literal notranslate"><span class="pre">main.o</span></code>. Such shorthand commands are often useful. But it will pay off in the long run to remember that there really are two different things going on here. To quote <a class="reference external" href="https://www.cprogramming.com/compilingandlinking.html">this nice article</a> by Alex Allain:</p>
+<blockquote>
+<div><p>Knowing the difference between the compilation phase and the link phase can make it easier to hunt for bugs. Compiler errors are usually syntactic in nature — a missing semicolon, an extra parenthesis. Linking errors usually have to do with missing or multiple definitions. If you get an error that a function or variable is defined multiple times from the linker, that’s a good indication that the error is that two of your source code files have the same function or variable.</p>
+</div></blockquote>
+<p>We will see this more clearly when we start creating larger projects with many files.</p>
+<p>But now, let’s get back to writing code. Next topic: variables.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

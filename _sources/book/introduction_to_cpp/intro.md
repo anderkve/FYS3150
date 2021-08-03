@@ -1,6 +1,6 @@
 # Intro
 
-In these pages we will introduce the aspects of C++ that we'll encounter in this course. Our approach will be "learning by doing" -- we'll mostly look at short, commented examples that you can (should!) try for yourself. 
+In this part we will introduce the aspects of C++ that we'll encounter in this course. Our approach will be _learning by doing_ --- we'll mostly look at short, commented examples that you can (should!) try for yourself. 
 
 Beyond this course page, there are approximately one gazillion online resources for learning C++. We encourage you to explore at least some of them!
 
