@@ -6,20 +6,18 @@ A typical C++ code consists of
 
 Header files can be _included_ in source files, using the `#include` command. Say we have two files, `my_header.hpp` and `main.cpp`:
 
+**`my_header.hpp`:**
 ```cpp
-// File: my_header.hpp
-
 #include <iostream>
 
 void print_message()
 {
-  std::cout << "Hello, World!";
+  std::cout << "Hello, World!\n";
 }
 ```
 
+**`main.cpp`:**
 ```cpp
-// File: main.cpp
-
 #include "my_header.hpp"
 
 int main()
@@ -30,14 +28,14 @@ int main()
 }
 ```
 
-The line `#include "my_header.hpp"` simply tells the compiler to **insert the content of `my_header.hpp` here**. So the code that ends up being executed is completely equivalent to this single source file:
+The line `#include "my_header.hpp"` in `main.cpp` simply tells the compiler to **insert the content of `my_header.hpp` here**. So the code that ends up being executed is completely equivalent to this single source file:
 
 ```cpp
 #include <iostream>
 
 void print_message()
 {
-  std::cout << "Hello, World!";
+  std::cout << "Hello, World!\n";
 }
 
 int main()
@@ -49,6 +47,8 @@ int main()
 ```
 
 (And this code is of course equivalent to the code you would get if you replaced `#include <iostream>` with the full content of `iostream.hpp` from the standard C++ library. But let's not do that...)
+
+
 
 ```{note}
 When including our own header files, we use the syntax `#include "someheader.hpp"`, rather than `#include <someheader>`.
