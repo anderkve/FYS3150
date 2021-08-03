@@ -32,6 +32,8 @@ parts:
       - file: book/introduction_to_cpp/variables_and_functions
       - file: book/introduction_to_cpp/source_files_and_header_files
       - file: book/introduction_to_cpp/compiling_and_linking
+      - file: book/introduction_to_cpp/common_errors
+      - file: book/introduction_to_cpp/debugging
       - file: book/introduction_to_cpp/online_resources
 
   - caption: Writing reports
