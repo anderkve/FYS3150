@@ -348,19 +348,17 @@
 <li><p><strong>header files</strong>, with names ending with <code class="docutils literal notranslate"><span class="pre">.hpp</span></code></p></li>
 </ul>
 <p>Header files can be <em>included</em> in source files, using the <code class="docutils literal notranslate"><span class="pre">#include</span></code> command. Say we have two files, <code class="docutils literal notranslate"><span class="pre">my_header.hpp</span></code> and <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code>:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// File: my_header.hpp</span>
-
-<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<p><strong><code class="docutils literal notranslate"><span class="pre">my_header.hpp</span></code>:</strong></p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
 <span class="kt">void</span> <span class="nf">print_message</span><span class="p">()</span>
 <span class="p">{</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello, World!&quot;</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello, World!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// File: main.cpp</span>
-
-<span class="cp">#include</span> <span class="cpf">&quot;my_header.hpp&quot;</span><span class="cp"></span>
+<p><strong><code class="docutils literal notranslate"><span class="pre">main.cpp</span></code>:</strong></p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;my_header.hpp&quot;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
@@ -370,12 +368,12 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The line <code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&quot;my_header.hpp&quot;</span></code> simply tells the compiler to <strong>insert the content of <code class="docutils literal notranslate"><span class="pre">my_header.hpp</span></code> here</strong>. So the code that ends up being executed is completely equivalent to this single source file:</p>
+<p>The line <code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&quot;my_header.hpp&quot;</span></code> in <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code> simply tells the compiler to <strong>insert the content of <code class="docutils literal notranslate"><span class="pre">my_header.hpp</span></code> here</strong>. So the code that ends up being executed is completely equivalent to this single source file:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
 <span class="kt">void</span> <span class="nf">print_message</span><span class="p">()</span>
 <span class="p">{</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello, World!&quot;</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello, World!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>

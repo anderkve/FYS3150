@@ -347,22 +347,21 @@
 
 <span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
-<span class="c1">// Our main program</span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
   <span class="c1">// Print a message to screen</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello, World!&quot;</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello, World!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
 
   <span class="c1">// Return 0 when done</span>
   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>If you want to execute it right away, try pasting the code into the online editor at <a class="reference external" href="http://cpp.sh/">cpp.sh</a> and hit the <strong>Run</strong> button. As you probably have guessed, this program simply prints <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World!</span></code> to screen. (On <a class="reference external" href="http://cpp.sh/">cpp.sh</a> you get the output in the <strong>execution</strong> window below the editor.)</p>
+<p>If you want to execute it right away, try pasting the code into the online editor+compiler at <a class="reference external" href="http://cpp.sh/">cpp.sh</a> and hit the <strong>Run</strong> button. As you probably have guessed, this program simply prints <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World!</span></code> to screen. (On <a class="reference external" href="http://cpp.sh/">cpp.sh</a> you get the output in the <strong>execution</strong> window below the editor.)</p>
 <p>Our “Hello World” program illustrates some C++ basics:</p>
 <ul>
 <li><p>Comments start with <code class="docutils literal notranslate"><span class="pre">//</span></code></p></li>
-<li><p>The line <code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&lt;iostream&gt;</span></code> includes standard C++ functionality for input/output. (More about that later.) This enables us to use <code class="docutils literal notranslate"><span class="pre">std::cout</span></code> and <code class="docutils literal notranslate"><span class="pre">std::endl</span></code> in our code. The <code class="docutils literal notranslate"><span class="pre">#include</span></code> lines in C++ are a bit like like the <code class="docutils literal notranslate"><span class="pre">import</span></code> lines in Python.</p></li>
+<li><p>The line <code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&lt;iostream&gt;</span></code> includes standard C++ functionality for input/output. (More about that later.) This enables us to use <code class="docutils literal notranslate"><span class="pre">std::cout</span></code> in our code. The <code class="docutils literal notranslate"><span class="pre">#include</span></code> lines in C++ are a bit like like the <code class="docutils literal notranslate"><span class="pre">import</span></code> lines in Python.</p></li>
 <li><p>A valid C++ program must have a function called <code class="docutils literal notranslate"><span class="pre">main</span></code> with return-type <code class="docutils literal notranslate"><span class="pre">int</span></code> (integer):</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
