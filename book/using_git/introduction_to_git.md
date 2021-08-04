@@ -3,7 +3,7 @@
 Here we'll add some info on how to get started using git for version control.
 
 
-## Setting up Git on your computer
+## Setting up git on your computer
 
 You need to tell Git which user you are. Write the following commands in your terminal.
 
