@@ -19,11 +19,11 @@ Here's a step-by-step instruction.
 
 - Go to [github.com](Github.com) and log in. The page should look something like this:
 
-![homepage](./github_homepage.png)
+![homepage](./imgs/github_homepage.png)
 
 - Click on the green button named *New*. You should be redirected to a page that looks like this:
 
-![create_repo](./create_repo.png)
+![create_repo](./imgs/create_repo.png)
 
 - Fill out your desired repository name, for instance *fys3150*
   - Keep the repository *public*.
@@ -31,7 +31,7 @@ Here's a step-by-step instruction.
   - Click *create repository*.
   - You'll be automatically redirected to the home page of your repository, see the image below.
 
-![clone_repo](./clone_repo.png)
+![clone_repo](./imgs/clone_repo.png)
 
 - Clone your repository to your computer.  
   - Click on the green button named *code*.
@@ -55,15 +55,15 @@ Disclaimer: Note that this is not a secure option, as the token will be saved in
 
 - Go to [github.com](www.github.com). Click on your profile in the upper right corner, then on *settings*.
 
-![go_to_settings](./go_to_settings.png)
+![go_to_settings](./imgs/go_to_settings.png)
 
 - Click on *developer settings*.
 
-![go_to_developer_settings](./go_to_developer_settings.png)
+![go_to_developer_settings](./imgs/go_to_developer_settings.png)
 
 - Click on *Personal access tokens* and then click on *Generate new token*.
 
-![generate_new_token](./generate_new_token.png)
+![generate_new_token](./imgs/generate_new_token.png)
 
 - Your page should look somethings like what follows.
     - Fill out note with a name for the token, for instance *main_token*.
@@ -71,7 +71,7 @@ Disclaimer: Note that this is not a secure option, as the token will be saved in
     - Toggle every box under *select scopes*. Most of them are unecessary, but we just want full access.
     - Click *Generate token* at the bottom of the screen.
 
-![token_page](./token_page.png)
+![token_page](./imgs/token_page.png)
 
 - You'll be redirected to the page with tokens now. *Make sure you copy it!*
 
