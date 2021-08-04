@@ -12,23 +12,23 @@ Informally, the entire process of compiling + linking is often referred to simpl
 We will use the common C++ compiler `g++` for building our code.
 
 **Compilation**: To compile `main.cpp`, we run the following terminal command:
-```
+```sh
 g++ -c main.cpp
 ```
 Here the option `-c` means "just compile, don't link". This produces an object file `main.o`. 
 
 **Linking**: To do the linking step we pass this object file (`main.o`) as input to `g++`:
-```
+```sh
 g++ main.o -o main.exe
 ```
 Here the option `-o main.exe` just means that we give the resulting program the name `main.exe`. (We could have picked any file name, and we didn't have to use the `.exe` suffix.) 
 
 To run our fantastic program, we do 
-```
+```sh
 ./main.exe
 ```
 which should produce the familiar output
-```
+```sh
 Hello, World!
 ```
 
@@ -42,7 +42,7 @@ In this simple example it may not seem like we're doing much "linking" at all --
 ## Compiling and linking in one go
 
 We can do compilation + linking with a single command:
-```
+```sh
 g++ main.cpp -o main.exe
 ```
 The compiler will then (1) compile `main.cpp` into `main.o`, (2) link `main.o` to create `main.exe`, and (3) delete `main.o`. Such shorthand commands are often useful. But it will pay off in the long run to remember that there really are two different things going on here. To quote [this nice article](https://www.cprogramming.com/compilingandlinking.html) by Alex Allain:
