@@ -34,7 +34,7 @@ Here's a step-by-step instruction.
   - Click on the green button named *code*.
   - Copy the link.
   - Run in your terminal:
-    ```terminal
+    ```sh
     git clone the_repository_link_you_copied
     ```
 
