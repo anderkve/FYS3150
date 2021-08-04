@@ -421,21 +421,21 @@
 </div>
 <p>We will use the common C++ compiler <code class="docutils literal notranslate"><span class="pre">g++</span></code> for building our code.</p>
 <p><strong>Compilation</strong>: To compile <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code>, we run the following terminal command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="o">++</span> <span class="o">-</span><span class="n">c</span> <span class="n">main</span><span class="o">.</span><span class="n">cpp</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>g++ -c main.cpp
 </pre></div>
 </div>
 <p>Here the option <code class="docutils literal notranslate"><span class="pre">-c</span></code> means “just compile, don’t link”. This produces an object file <code class="docutils literal notranslate"><span class="pre">main.o</span></code>.</p>
 <p><strong>Linking</strong>: To do the linking step we pass this object file (<code class="docutils literal notranslate"><span class="pre">main.o</span></code>) as input to <code class="docutils literal notranslate"><span class="pre">g++</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="o">++</span> <span class="n">main</span><span class="o">.</span><span class="n">o</span> <span class="o">-</span><span class="n">o</span> <span class="n">main</span><span class="o">.</span><span class="n">exe</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>g++ main.o -o main.exe
 </pre></div>
 </div>
 <p>Here the option <code class="docutils literal notranslate"><span class="pre">-o</span> <span class="pre">main.exe</span></code> just means that we give the resulting program the name <code class="docutils literal notranslate"><span class="pre">main.exe</span></code>. (We could have picked any file name, and we didn’t have to use the <code class="docutils literal notranslate"><span class="pre">.exe</span></code> suffix.)</p>
 <p>To run our fantastic program, we do</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">main</span><span class="o">.</span><span class="n">exe</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./main.exe
 </pre></div>
 </div>
 <p>which should produce the familiar output</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Hello, World!
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>Hello, World!
 </pre></div>
 </div>
 <p>Hooray, we have compiled, linked and run our first C++ program!</p>
@@ -446,7 +446,7 @@
 <div class="section" id="compiling-and-linking-in-one-go">
 <h2>Compiling and linking in one go<a class="headerlink" href="#compiling-and-linking-in-one-go" title="Permalink to this headline">¶</a></h2>
 <p>We can do compilation + linking with a single command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="o">++</span> <span class="n">main</span><span class="o">.</span><span class="n">cpp</span> <span class="o">-</span><span class="n">o</span> <span class="n">main</span><span class="o">.</span><span class="n">exe</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>g++ main.cpp -o main.exe
 </pre></div>
 </div>
 <p>The compiler will then (1) compile <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code> into <code class="docutils literal notranslate"><span class="pre">main.o</span></code>, (2) link <code class="docutils literal notranslate"><span class="pre">main.o</span></code> to create <code class="docutils literal notranslate"><span class="pre">main.exe</span></code>, and (3) delete <code class="docutils literal notranslate"><span class="pre">main.o</span></code>. Such shorthand commands are often useful. But it will pay off in the long run to remember that there really are two different things going on here. To quote <a class="reference external" href="https://www.cprogramming.com/compilingandlinking.html">this nice article</a> by Alex Allain:</p>

@@ -28,7 +28,7 @@ int main()
 }
 ```
 
-The line `#include "my_header.hpp"` in `main.cpp` simply tells the compiler to **insert the content of `my_header.hpp` here**. So the code that ends up being executed is completely equivalent to this single source file:
+The line `#include "my_header.hpp"` in `main.cpp` simply tells the compiler to **insert the content of `my_header.hpp` here before compiling**. So the code that ends up being compiled is completely equivalent to this single `.cpp` file:
 
 ```cpp
 #include <iostream>

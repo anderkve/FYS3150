@@ -423,7 +423,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The line <code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&quot;my_header.hpp&quot;</span></code> in <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code> simply tells the compiler to <strong>insert the content of <code class="docutils literal notranslate"><span class="pre">my_header.hpp</span></code> here</strong>. So the code that ends up being executed is completely equivalent to this single source file:</p>
+<p>The line <code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&quot;my_header.hpp&quot;</span></code> in <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code> simply tells the compiler to <strong>insert the content of <code class="docutils literal notranslate"><span class="pre">my_header.hpp</span></code> here before compiling</strong>. So the code that ends up being compiled is completely equivalent to this single <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> file:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
 <span class="kt">void</span> <span class="nf">print_message</span><span class="p">()</span>

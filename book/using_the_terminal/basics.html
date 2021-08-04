@@ -387,6 +387,19 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-commands">
+   Basic commands
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -397,7 +410,42 @@
                 
   <div class="section" id="basics">
 <h1>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h1>
-<p>Here we’ll add a basic introduction to working in the terminal.</p>
+<p>Here we’ll add a basic introduction to working in the sh.</p>
+<div class="section" id="basic-commands">
+<h2>Basic commands<a class="headerlink" href="#basic-commands" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Create a file called <em>filename</em> using the <em>touch</em> command</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>touch filename
+</pre></div>
+</div>
+</li>
+<li><p>Create a directory using the <em>mkdir</em> command</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir directory_name
+</pre></div>
+</div>
+</li>
+<li><p>Move a file called <em>filename</em> into a subdirectory called <em>subdir</em> using the <em>mv</em> command</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mv filename subdir
+</pre></div>
+</div>
+</li>
+<li><p>Delete a file called <em>filename</em> using the <em>rm</em> command</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rm filename
+</pre></div>
+</div>
+</li>
+<li><p>Copy a file called <em>filename</em> into a file <em>filename_copy</em> using the <em>cp</em> command</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>cp filename filename_copy
+</pre></div>
+</div>
+</li>
+<li><p>Delete a directory called <em>dir</em> and its content using <em>rm</em> and the recursive flag <em>-r</em></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rm -r dir
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
