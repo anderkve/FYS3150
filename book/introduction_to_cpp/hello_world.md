@@ -19,7 +19,7 @@ int main()
 ```
 
 If you want to execute it right away, try pasting the code into the online editor+compiler at [cpp.sh](http://cpp.sh/) and hit the "Run" button. As you probably have guessed, this program simply prints
-```
+```sh
 Hello, World!
 ```
 to screen. (On [cpp.sh](http://cpp.sh/) you get the output in the "execution" window below the editor.)
