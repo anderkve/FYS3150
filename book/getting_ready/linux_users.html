@@ -387,6 +387,24 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installation-of-necessary-software-for-c-and-git">
+   Installation of necessary software for C++ and Git
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#writing-latex-locally-on-your-computer">
+   Writing LaTeX locally on your computer
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -397,7 +415,26 @@
                 
   <div class="section" id="linux-users">
 <h1>Linux users<a class="headerlink" href="#linux-users" title="Permalink to this headline">¶</a></h1>
-<p>Here we’ll add info to help Linux users get their system set up for this course.</p>
+<p>We recommend that you use Ubuntu as your chosen Linux distribution. On this page you find</p>
+<div class="section" id="installation-of-necessary-software-for-c-and-git">
+<h2>Installation of necessary software for C++ and Git<a class="headerlink" href="#installation-of-necessary-software-for-c-and-git" title="Permalink to this headline">¶</a></h2>
+<p>As preparation for the course, you need to install some software. If you’re using Ubuntu, just copy and run the following command in
+your terminal. This should cover all software you need during the course.</p>
+<div class="highlight-terminal notranslate"><div class="highlight"><pre><span></span>sudo apt install make git python3-pip gcc g++ cmake libopenblas-dev liblapack-dev libarpack2-dev libsuperlu-dev libarmadillo-dev libomp-dev
+</pre></div>
+</div>
+</div>
+<div class="section" id="writing-latex-locally-on-your-computer">
+<h2>Writing LaTeX locally on your computer<a class="headerlink" href="#writing-latex-locally-on-your-computer" title="Permalink to this headline">¶</a></h2>
+<p>If you wish to write LaTeX locally on you computer, you need to install software necessary to compile .tex files. Running the following command installs all dependencies for you.</p>
+<div class="highlight-terminal notranslate"><div class="highlight"><pre><span></span>sudo apt install texlive-full
+</pre></div>
+</div>
+<p>As for an IDE for LaTeX, you can for instance use TexStudio (but there’s many options and this is just one of many that’s simple to use). Install using</p>
+<div class="highlight-terminal notranslate"><div class="highlight"><pre><span></span>sudo apt install texstudio
+</pre></div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
