@@ -20,6 +20,7 @@ parts:
   - caption: Using git and GitHub
     chapters:
       - file: book/using_git/introduction_to_git
+      - file: book/using_git/Setting_up_git_and_Github_repo
       - file: book/using_git/create_a_github_repo
       - file: book/using_git/example_workflow
       - file: book/using_git/ways_to_undo_a_mistake
