@@ -4,10 +4,10 @@
 
 You need to tell Git which user you are. Write the following commands in your terminal.
 
-```terminal
-$ git config --global user.name "Your Name Comes Here"
+```sh
+git config --global user.name "Your Name Comes Here"
 
-$ git config --global user.email you@yourdomain.example.com
+git config --global user.email you@yourdomain.example.com
 ```
 
 ## Create a Github repository for the course
@@ -75,13 +75,13 @@ Disclaimer: Note that this is not a secure option, as the token will be saved in
 
 - In your Github repository (locally on your computer), run.
 
-  ```terminal
+  ```sh
   git config --global credential.helper store
   ```
 
 - Then run
 
-  ```terminal
+  ```sh
   git pull
   ```
 
