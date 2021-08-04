@@ -17,15 +17,15 @@ $ git config --global user.email you@yourdomain.example.com
 
 Here's a step-by-step instruction.
 
-1. Go to [github.com](Github.com) and log in. The page should look something like this:
+- Go to [github.com](Github.com) and log in. The page should look something like this:
 
 ![homepage](./github_homepage.png)
 
-2. Click on the green button named *New*. You should be redirected to a page that looks like this:
+- Click on the green button named *New*. You should be redirected to a page that looks like this:
 
 ![create_repo](./create_repo.png)
 
-3. Fill out your desired repository name, for instance *fys3150*
+- Fill out your desired repository name, for instance *fys3150*
   - Keep the repository *public*.
   - Toggle *add a README file*.
   - Click *create repository*.
@@ -33,7 +33,7 @@ Here's a step-by-step instruction.
 
 ![clone_repo](./clone_repo.png)
 
-4. Clone your repository to your computer.  
+- Clone your repository to your computer.  
   - Click on the green button named *code*.
   - Copy the link.
   - Run in your terminal:
@@ -53,19 +53,19 @@ A Github token is a replacement of passwords to give you as a user access to per
 Disclaimer: Note that this is not a secure option, as the token will be saved in clear text. But it's nevertheless the simplest option.
 
 
-1. Go to [github.com](www.github.com). Click on your profile in the upper right corner, then on *settings*.
+- Go to [github.com](www.github.com). Click on your profile in the upper right corner, then on *settings*.
 
 ![go_to_settings](./go_to_settings.png)
 
-2. Click on *developer settings*.
+- Click on *developer settings*.
 
 ![go_to_developer_settings](./go_to_developer_settings.png)
 
-3. Click on *Personal access tokens* and then click on *Generate new token*.
+- Click on *Personal access tokens* and then click on *Generate new token*.
 
 ![generate_new_token](./generate_new_token.png)
 
-4. Your page should look somethings like what follows.
+- Your page should look somethings like what follows.
     - Fill out note with a name for the token, for instance *main_token*.
     - Change expiration date to *no expiration* (you can choose a finite expiration if security bothers you. But this is a school project, not a multibillion dollar code project.)
     - Toggle every box under *select scopes*. Most of them are unecessary, but we just want full access.
@@ -73,23 +73,23 @@ Disclaimer: Note that this is not a secure option, as the token will be saved in
 
 ![token_page](./token_page.png)
 
-5. You'll be redirected to the page with tokens now. *Make sure you copy it!*
+- You'll be redirected to the page with tokens now. *Make sure you copy it!*
 
 
-6. In your Github repository (locally on your computer), run.
+- In your Github repository (locally on your computer), run.
 
   ```terminal
   git config --global credential.helper store
   ```
 
-7. Then run
+- Then run
 
   ```terminal
   git pull
   ```
 
-8. Type in your username (you'll be prompted to do so.)
+- Type in your username (you'll be prompted to do so.)
 
-9. Paste in the token you copied instead of your password.
+- Paste in the token you copied instead of your password.
 
 And you're done!
