@@ -2,7 +2,7 @@
 
 Here we'll add info to help Mac users get their system set up for this course.
 
-Installation of software for c++ can be a little bit of a hazzle on macOS. This page will walk you through the process, step-by-step.
+Installation of software for C++ can be a little bit of a hazzle on macOS. This page will walk you through the process, step-by-step.
 
 ## Installation of basic software
 
@@ -12,12 +12,9 @@ Installation of software for c++ can be a little bit of a hazzle on macOS. This 
 
 
 3. Now, run the following command in your terminal
-
-  ```sh
+    ```sh
     brew install gcc cmake
-  ```
-
-  This includes some additional tools that are ve
+    ```
 
 4. Now we need to do some simple sorcery.
   - Go to [Armadillo](http://arma.sourceforge.net) and hit the *download* button.
