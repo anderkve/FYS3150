@@ -138,6 +138,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="setting_up_git_and_a_GitHub_repo.html">
+   Setting up git and Github repo
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="create_a_github_repo.html">
    Create a GitHub repo
   </a>
@@ -426,7 +431,7 @@
 <p>Once a new file is created/added, git needs to track it. In the example below, we’ve created a file <em><a class="reference external" href="http://test.py">test.py</a></em>.</p>
 <ul>
 <li><p>First we check the <em>status</em> by running</p>
-<div class="highlight-terminal notranslate"><div class="highlight"><pre><span></span>git status
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git status
 </pre></div>
 </div>
 <p><img alt="untracked_file" src="../../_images/untracked_file.png" /></p>
@@ -439,13 +444,13 @@
 <ul class="simple">
 <li><p>More generally, we can add multiple files by</p></li>
 </ul>
-<div class="highlight-terminal notranslate"><div class="highlight"><pre><span></span>git add filename_1 filename_2 ... filename_N
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git add filename_1 filename_2 ... filename_N
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Or the lazier approach if you just want to add everything</p></li>
 </ul>
-<div class="highlight-terminal notranslate"><div class="highlight"><pre><span></span>git add --all
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git add --all
 </pre></div>
 </div>
 </div>
@@ -454,7 +459,7 @@
 <p>Once you’ve added your changes, you should <em>commit</em> these and <em>push</em> them to your branch.</p>
 <ul>
 <li><p>The general command for commits is</p>
-<div class="highlight-terminal notranslate"><div class="highlight"><pre><span></span>git commit -m &quot;short informative message about the changes you commit&quot;
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git commit -m <span class="s2">&quot;short informative message about the changes you commit&quot;</span>
 </pre></div>
 </div>
 </li>
@@ -462,7 +467,7 @@
 <p><img alt="commit" src="../../_images/commit_file.png" /></p>
 </li>
 <li><p>The next step is to <em>push</em> the changes up to the cloud storage of your repository. Generically, do this by</p>
-<div class="highlight-terminal notranslate"><div class="highlight"><pre><span></span>git push origin branch_name
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git push origin branch_name
 </pre></div>
 </div>
 </li>

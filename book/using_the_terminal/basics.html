@@ -398,6 +398,11 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-and-manipulating-files-and-directories">
+   Creating and manipulating files and directories
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#basic-commands">
    Basic commands
   </a>
@@ -416,9 +421,45 @@
   <div class="section" id="basics">
 <h1>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h1>
 <p>Here we’ll add a basic introduction to working in the sh.</p>
+<p>The <em>terminal</em> (or <em>shell</em> or <em>command line</em>) provides a powerful tool for manipulating files and directories. It’s an asset that any developer should know how to utilize.</p>
+<div class="section" id="creating-and-manipulating-files-and-directories">
+<h2>Creating and manipulating files and directories<a class="headerlink" href="#creating-and-manipulating-files-and-directories" title="Permalink to this headline">¶</a></h2>
+<p>First of all, we’ll create a temporary directory <em>tmp</em> that we’ll work in (just to avoid an accident).</p>
+<p>Once you’ve opened the terminal, we’ll make sure we’re in the home directory of our user by running.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span>
+</pre></div>
+</div>
+<p>Now, to make sure this is the case, we can check our current directory by</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">pwd</span>
+</pre></div>
+</div>
+<p>which should output</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>home/your_username
+</pre></div>
+</div>
+<p>Now we’ll make a directory using <em>mkdir</em></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir tmp
+</pre></div>
+</div>
+<p>We can check that our directory was indeed created by running the <em>ls</em> command which lists all files and directories in your current directory:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ls
+</pre></div>
+</div>
+</div>
 <div class="section" id="basic-commands">
 <h2>Basic commands<a class="headerlink" href="#basic-commands" title="Permalink to this headline">¶</a></h2>
 <ul>
+<li><p>Check your current directory using <em>pwd</em>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">pwd</span>
+</pre></div>
+</div>
+<p>which should simply output the current directory you’re in.</p>
+</li>
+<li><p>To list all files in a directory, type</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ls
+</pre></div>
+</div>
+</li>
 <li><p>Create a file called <em>filename</em> using the <em>touch</em> command</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>touch filename
 </pre></div>

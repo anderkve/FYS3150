@@ -9,7 +9,7 @@ Once a new file is created/added, git needs to track it. In the example below, w
 
 - First we check the *status* by running
 
-  ```terminal
+  ```sh
   git status
   ```
   ![untracked_file](./imgs/untracked_file.png)
@@ -22,13 +22,13 @@ Now, any git will record any changes we make in the file.
 
 - More generally, we can add multiple files by
 
-```terminal
+```sh
 git add filename_1 filename_2 ... filename_N
 ```
 
 - Or the lazier approach if you just want to add everything
 
-```terminal
+```sh
 git add --all
 ```
 
@@ -38,7 +38,7 @@ Once you've added your changes, you should *commit* these and *push* them to you
 
 - The general command for commits is
 
-  ```terminal
+  ```sh
   git commit -m "short informative message about the changes you commit"
   ```
 
@@ -48,7 +48,7 @@ Once you've added your changes, you should *commit* these and *push* them to you
 
 - The next step is to *push* the changes up to the cloud storage of your repository. Generically, do this by
 
-  ```terminal
+  ```sh
   git push origin branch_name
   ```
 

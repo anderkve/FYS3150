@@ -5,9 +5,9 @@
 You need to tell Git which user you are. Write the following commands in your terminal.
 
 ```sh
-git config --global user.name "Your Name Comes Here"
+git config --global user.name your_user_name_spelled_out
 
-git config --global user.email you@yourdomain.example.com
+git config --global user.email you@yourdomain.com
 ```
 
 ## Create a Github repository for the course
@@ -34,7 +34,7 @@ Here's a step-by-step instruction.
   - Click on the green button named *code*.
   - Copy the link.
   - Run in your terminal:
-    ```terminal
+    ```sh
     git clone the_repository_link_you_copied
     ```
 
