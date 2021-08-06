@@ -1,3 +1,8 @@
 # Windows users
 
-Here we'll add info to help Windows users get their system set up for this course.
+## Setting up Windows Subsystem for Linux (WSL)
+
+
+There's an excellent guide on how to install WSL [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
+
+Once you've completed the installation of WSL and Ubuntu, follow the guide for [Linux users](linux_users.md). 
