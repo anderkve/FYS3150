@@ -392,6 +392,24 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#makefiles">
+   Makefiles
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-more-advanced-usage-of-make">
+   Some more advanced usage of make
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -402,7 +420,88 @@
                 
   <div class="section" id="intro">
 <h1>Intro<a class="headerlink" href="#intro" title="Permalink to this headline">¶</a></h1>
-<p>Add intro page on using make</p>
+<p>Make is, for our purposes, a programming language that facilitates compilation and execution of C++ programs.</p>
+<div class="section" id="makefiles">
+<h2>Makefiles<a class="headerlink" href="#makefiles" title="Permalink to this headline">¶</a></h2>
+<p>A <em>Makefile</em> is both the type and the name of the file that <em>Make</em> executes.</p>
+<p>Makefiles can be quite complicated, but in this introduction we’ll confine ourselves to simply writing a simple makefile. A makefile should either be named <em>makefile</em> or <em>Makefile</em>.</p>
+<p>Let’s go ahead and create a makefile that we’ll use to compile a some a short C++ program. First, run</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>touch makefile
+</pre></div>
+</div>
+<p>We can divide the makefile into several simple instructions. Let’s define an instruction <em>compile</em>:</p>
+<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nf">compile</span><span class="o">:</span>
+  g++ -c main.cpp
+</pre></div>
+</div>
+<p>Add another instruction for linking:</p>
+<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nf">link</span><span class="o">:</span>
+  g++ -o main.out main.o
+</pre></div>
+</div>
+<p>And finally an instruction for executing the program</p>
+<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nf">run</span><span class="o">:</span>
+  ./main.out
+</pre></div>
+</div>
+<p>It’s convenient to define an instruction that combines all three at once:</p>
+<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nf">all</span><span class="o">:</span> <span class="n">compile</span> <span class="n">link</span> <span class="n">run</span>
+</pre></div>
+</div>
+<p>The instruction <em>all</em> executes <em>compile</em>, <em>link</em> and <em>run</em> in the order they appear. The complete makefile will look as follows.</p>
+<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nf">all</span><span class="o">:</span> <span class="n">compile</span> <span class="n">link</span> <span class="n">run</span>
+
+<span class="nf">compile</span><span class="o">:</span>
+  g++ -c main.cpp
+
+<span class="nf">link</span><span class="o">:</span>
+  g++ -o main.out main.o
+
+<span class="nf">run</span><span class="o">:</span>
+  ./main.out
+</pre></div>
+</div>
+<p>If you simply copy this and run it, you might get an error. Make is really specific about indentation length, so just fix the indentation if it doesn’t run. Here’s a short C++ program you can copy and try it out with:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="kt">double</span> <span class="nf">f</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="k">const</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">I</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="mf">1.</span><span class="o">/</span><span class="n">n</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="kt">double</span> <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">h</span><span class="p">;</span>
+        <span class="n">I</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">I</span> <span class="o">*=</span> <span class="n">h</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Integral = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">I</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">double</span> <span class="nf">f</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">){</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="some-more-advanced-usage-of-make">
+<h2>Some more advanced usage of make<a class="headerlink" href="#some-more-advanced-usage-of-make" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><strong>Wildcard</strong>. If you have a large number of .cpp that needs to be compiled, you can use the wildcard function of make to compile all files that ends with .cpp. It looks as follows</p></li>
+</ol>
+<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nf">compile</span><span class="o">:</span>
+  g++ -c <span class="k">$(</span>wildcard *.cpp<span class="k">)</span>
+
+<span class="nf">link</span><span class="o">:</span>
+  g++ -o main.out <span class="k">$(</span>wildcard *.o<span class="k">)</span>
+</pre></div>
+</div>
+<p>The <em>compile</em> instruction compiles all files ending with .cpp while <em>link</em> links all files ending with .o to main.out.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
