@@ -57,7 +57,23 @@ run:
   ./main.out
 ```
 
-If you simply copy this and run it, you might get an error. Make is really specific about indentation length, so just fix the indentation if it doesn't run. Here's a short C++ program you can copy and try it out with:
+## How to use Make
+
+To run a specific instruction, run
+
+```sh
+make instruction
+```
+
+In the example makefile above, we could run
+
+```sh
+make all
+```
+which would perform all three instructions *compile*, *link* and *run*. You can naturally also just execute any of them manually.
+
+You can try it out with the C++ program below. Copy it into a file name *main.cpp*.
+
 
 ```c++
 #include <iostream>

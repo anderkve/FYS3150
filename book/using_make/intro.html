@@ -403,6 +403,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-use-make">
+   How to use Make
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#some-more-advanced-usage-of-make">
    Some more advanced usage of make
   </a>
@@ -461,7 +466,19 @@
   ./main.out
 </pre></div>
 </div>
-<p>If you simply copy this and run it, you might get an error. Make is really specific about indentation length, so just fix the indentation if it doesn’t run. Here’s a short C++ program you can copy and try it out with:</p>
+</div>
+<div class="section" id="how-to-use-make">
+<h2>How to use Make<a class="headerlink" href="#how-to-use-make" title="Permalink to this headline">¶</a></h2>
+<p>To run a specific instruction, run</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>make instruction
+</pre></div>
+</div>
+<p>In the example makefile above, we could run</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>make all
+</pre></div>
+</div>
+<p>which would perform all three instructions <em>compile</em>, <em>link</em> and <em>run</em>. You can naturally also just execute any of them manually.</p>
+<p>You can try it out with the C++ program below. Copy it into a file name <em>main.cpp</em>.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
 <span class="kt">double</span> <span class="nf">f</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">);</span>
