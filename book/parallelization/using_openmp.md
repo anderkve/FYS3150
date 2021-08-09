@@ -93,7 +93,7 @@ Generically, this looks like
 
 (may also be added to for loops).
 
-#### The private clause
+### The private clause
 Sometimes, a variable that is initially global (and shared), is desired to be made a private variable. For a parallel region (applies to for loops as well), we simply tack on a clause called *private()* as follows:
 
 ```c++
@@ -103,7 +103,7 @@ Sometimes, a variable that is initially global (and shared), is desired to be ma
 }
 ```
 
-#### The reduction clause
+### The reduction clause
 
 Often times, we want to combine the results from each thread into a some final global result. A couple examples:
 - Sum up the contribution from each thread (+).
@@ -127,7 +127,7 @@ There are several operations *op*.
 
 An exhaustive list can be found the OpenMP documentation.
 
-#### Specify number of threads by a clause
+### Specify number of threads by a clause
 
 We can specify a desired number *N* of threads by
 
