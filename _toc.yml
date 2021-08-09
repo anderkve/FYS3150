@@ -49,6 +49,11 @@ parts:
       - file: book/introduction_to_cpp/debugging
       - file: book/introduction_to_cpp/online_resources
 
+  - caption: Parallelization
+    chapters:
+      - file: book/parallelization/introduction_to_openmp
+      - file: book/parallelization/using_openmp
+
   - caption: Using make
     chapters:
       - file: book/using_make/intro
