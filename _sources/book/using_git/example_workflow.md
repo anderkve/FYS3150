@@ -5,7 +5,7 @@ Here we'll add info on an example workflow for git
 
 ## Tracking new files
 
-Once a new file is created/added, git needs to track it. In the example below, we've created a file *test.py*.
+Once a new file is created/added, git needs to track it (or rather its content  ). In the example below, we've created a file *test.py*.
 
 - First we check the *status* by running
 
@@ -57,4 +57,71 @@ Once you've added your changes, you should *commit* these and *push* them to you
   ![push](./imgs/push.png)
 
 
+## Creating branches
+
+It's usually wise to work on a different branch than the main branch when developing new code. This is to protect the work that you've already developed.
+
+To create a new branch, let's call it *experimental*, simply run
+
+```sh
+git branch experimental
+```
+
+To check the available branches, run
+
+```sh
+git branch
+```
+
+which should output
+
+```sh
+*main
+experimental
+```
+
+The star indicates the branch you're currently working in. To switch branch to experimental, run
+
+```sh
+git switch experimental
+```
+
 ## Merging branches
+
+Once you've developed some new code that works, it's time to bring it into the main branch to become part of the main project. This happens in three steps:
+
+1. Add and commit the changes.
+2. Change to the main branch
+3. Merge the branches
+
+Once the process is completed, the content of the branches will be identical.
+
+If you've created any new files, we must add them for git to track their content:
+
+```sh
+git add --all
+```
+
+Otherwise, we can simply run
+
+```sh
+git commit -a -m "commit message"
+```
+
+the *-a* flag adds any content changes to files that already existed. (So it does not work for new files that isn't tracked yet).
+
+Now, we switch to the main branch
+
+```sh
+git switch main
+```
+
+Finally, we can merge with the experimental branch with the following
+
+```sh
+git merge experimental
+```
+
+If there's no conflicts, then this can simply be commited and pushed to the cloud as usual.
+
+## Dealing with conflicts

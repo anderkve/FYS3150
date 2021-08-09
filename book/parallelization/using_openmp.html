@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Example workflow &#8212; FYS3150/FYS4150 course material</title>
+    <title>Using OpenMP &#8212; FYS3150/FYS4150 course material</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,8 +51,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Ways to undo a mistake" href="ways_to_undo_a_mistake.html" />
-    <link rel="prev" title="Create a GitHub repo" href="create_a_github_repo.html" />
+    <link rel="next" title="Intro" href="../using_make/intro.html" />
+    <link rel="prev" title="Introduction to OpenMP" href="introduction_to_openmp.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -131,39 +131,39 @@
   Using git and GitHub
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="introduction_to_git.html">
+  <a class="reference internal" href="../using_git/introduction_to_git.html">
    Introduction to git
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="setting_up_git_and_a_GitHub_repo.html">
+  <a class="reference internal" href="../using_git/setting_up_git_and_a_GitHub_repo.html">
    Setting up git and Github repo
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="create_a_github_repo.html">
+  <a class="reference internal" href="../using_git/create_a_github_repo.html">
    Create a GitHub repo
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/example_workflow.html">
    Example workflow
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ways_to_undo_a_mistake.html">
+  <a class="reference internal" href="../using_git/ways_to_undo_a_mistake.html">
    Ways to undo a mistake
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="repo_structure.html">
+  <a class="reference internal" href="../using_git/repo_structure.html">
    Repo structure
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="add_a_README.html">
+  <a class="reference internal" href="../using_git/add_a_README.html">
    Add a README
   </a>
  </li>
@@ -272,6 +272,23 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
+  Parallelization
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="introduction_to_openmp.html">
+   Introduction to OpenMP
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Using OpenMP
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
   Using make
  </span>
 </p>
@@ -351,7 +368,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/book/using_git/example_workflow.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/book/parallelization/using_openmp.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -371,7 +388,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Fbook/using_git/example_workflow.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Fbook/parallelization/using_openmp.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -398,29 +415,41 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tracking-new-files">
-   Tracking new files
+  <a class="reference internal nav-link" href="#compiler-directives">
+   Compiler directives
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#commit-and-push-changes-to-the-cloud">
-   Commit and push changes to the cloud
+  <a class="reference internal nav-link" href="#parallel-region">
+   Parallel region
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-branches">
-   Creating branches
+  <a class="reference internal nav-link" href="#parallelizing-a-for-loop">
+   Parallelizing a for-loop.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#merging-branches">
-   Merging branches
+  <a class="reference internal nav-link" href="#clauses">
+   Clauses
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dealing-with-conflicts">
-   Dealing with conflicts
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-private-clause">
+     The private clause
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-reduction-clause">
+     The reduction clause
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#specify-number-of-threads-by-a-clause">
+     Specify number of threads by a clause
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -433,110 +462,147 @@
         
               <div>
                 
-  <div class="section" id="example-workflow">
-<h1>Example workflow<a class="headerlink" href="#example-workflow" title="Permalink to this headline">¶</a></h1>
-<p>Here we’ll add info on an example workflow for git</p>
-<div class="section" id="tracking-new-files">
-<h2>Tracking new files<a class="headerlink" href="#tracking-new-files" title="Permalink to this headline">¶</a></h2>
-<p>Once a new file is created/added, git needs to track it (or rather its content  ). In the example below, we’ve created a file <em><a class="reference external" href="http://test.py">test.py</a></em>.</p>
-<ul>
-<li><p>First we check the <em>status</em> by running</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git status
+  <div class="section" id="using-openmp">
+<h1>Using OpenMP<a class="headerlink" href="#using-openmp" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="compiler-directives">
+<h2>Compiler directives<a class="headerlink" href="#compiler-directives" title="Permalink to this headline">¶</a></h2>
+<p>OpenMP is very user-friendly in the sense that
+a code written to run series can easily be parallelized
+simply by adding <em>compiler directives</em>. We’ll go through a couple useful ones here.</p>
+</div>
+<div class="section" id="parallel-region">
+<h2>Parallel region<a class="headerlink" href="#parallel-region" title="Permalink to this headline">¶</a></h2>
+<p>A flexible , one can create a <em>parallel region</em>, which looks like this</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma omp parallel</span>
+<span class="p">{</span>
+  <span class="c1">//Some code to parallelize here.</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p><img alt="untracked_file" src="../../_images/untracked_file.png" /></p>
-</li>
-<li><p>git outputs that the file is untracked. We <em>add</em> the file so git can track it by</p>
-<p><img alt="tracked_file" src="../../_images/add_file.png" /></p>
-</li>
-</ul>
-<p>Now, any git will record any changes we make in the file.</p>
+<p>Note:</p>
 <ul class="simple">
-<li><p>More generally, we can add multiple files by</p></li>
+<li><p>It’s important that the brackets {} are placed <em>below</em> the compiler directive and not directly after. Otherwise a compiler error will occur.</p></li>
+<li><p>Any variable declared inside a parallel region is automatically <em>private</em>. Each thread can thus use this variable regardless of what the other threads do with it.</p></li>
 </ul>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git add filename_1 filename_2 ... filename_N
+</div>
+<div class="section" id="parallelizing-a-for-loop">
+<h2>Parallelizing a for-loop.<a class="headerlink" href="#parallelizing-a-for-loop" title="Permalink to this headline">¶</a></h2>
+<p>A straight forward way to do this is to create a parallel reigion and parallelize the code as follows.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma omp parallel</span>
+<span class="p">{</span>
+  <span class="cp">#pragma omp for</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="c1">//some code that is parallelized with respect to i</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
+<p>But parallelization of for-loops is done so often that the two compiler directives</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma omp parallel</span>
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma omp for</span>
+</pre></div>
+</div>
+<p>is fused to a simpler compiler directive given by</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma omp parallel for</span>
+</pre></div>
+</div>
+<p>Thus the same for-loop can more compactly be parallelized by</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma omp parallel for</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+  <span class="c1">//some code that is parallelized with respect to i</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The compiler directive here is</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma omp parallel for</span>
+</pre></div>
+</div>
+<p>The variable <em>i</em> in the loop is distributed among the threads so that each thread operates with a subset of the loop. The distribution is decided by the compiler. But it may look like this:</p>
 <ul class="simple">
-<li><p>Or the lazier approach if you just want to add everything</p></li>
+<li><p>Assume there are <em>p</em> threads. Then thread 0 gets the <em>n/p</em> first values of <em>i</em>, thread 1 gets the next <em>n/p</em> values and so on.</p></li>
+<li><p>Sometimes the compiler divides the for loop cyclically, so thread 0 gets <em>i = 0, p, 2p, …</em> while thread 1 gets <em>i = 1, p+1, 2p+1, …</em> and so on.</p></li>
 </ul>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git add --all
+<p>The compiler directive only parallelize the <em>first</em> following for-loop. For instance</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma omp parallel for</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">){</span>
+    <span class="c1">//some code</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>is only parallelized with respect to <em>i</em>, not the inner loop that runs over <em>j</em>.</p>
+</div>
+<div class="section" id="clauses">
+<h2>Clauses<a class="headerlink" href="#clauses" title="Permalink to this headline">¶</a></h2>
+<p>Clauses can be added compiler directives. They vary depending on what the compiler directive is, and the code documentation for OpenMP can give a far more complete list.
+Nevertheless, we provide a few important ones, perhaps the only ones you’ll use.</p>
+<p>Generically, this looks like</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma omp parallel clause1 clause2 clause3 ... clauseN</span>
+<span class="p">{</span>
+  <span class="c1">//code block</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>(may also be added to for loops).</p>
+<div class="section" id="the-private-clause">
+<h3>The private clause<a class="headerlink" href="#the-private-clause" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes, a variable that is initially global (and shared), is desired to be made a private variable. For a parallel region (applies to for loops as well), we simply tack on a clause called <em>private()</em> as follows:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma omp parallel private(variable1, variable2, ..., variableN)</span>
+<span class="p">{</span>
+  <span class="c1">//code block</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="commit-and-push-changes-to-the-cloud">
-<h2>Commit and push changes to the cloud<a class="headerlink" href="#commit-and-push-changes-to-the-cloud" title="Permalink to this headline">¶</a></h2>
-<p>Once you’ve added your changes, you should <em>commit</em> these and <em>push</em> them to your branch.</p>
-<ul>
-<li><p>The general command for commits is</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git commit -m <span class="s2">&quot;short informative message about the changes you commit&quot;</span>
-</pre></div>
-</div>
-</li>
-<li><p>In the case of our example, this looks like</p>
-<p><img alt="commit" src="../../_images/commit_file.png" /></p>
-</li>
-<li><p>The next step is to <em>push</em> the changes up to the cloud storage of your repository. Generically, do this by</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git push origin branch_name
-</pre></div>
-</div>
-</li>
-<li><p>In our toy example, we’re on the branch called <em>main</em>. Thus</p>
-<p><img alt="push" src="../../_images/push.png" /></p>
-</li>
+<div class="section" id="the-reduction-clause">
+<h3>The reduction clause<a class="headerlink" href="#the-reduction-clause" title="Permalink to this headline">¶</a></h3>
+<p>Often times, we want to combine the results from each thread into a some final global result. A couple examples:</p>
+<ul class="simple">
+<li><p>Sum up the contribution from each thread (+).</p></li>
+<li><p>Find the maximum/minimum value from the threads (max/min).</p></li>
 </ul>
-</div>
-<div class="section" id="creating-branches">
-<h2>Creating branches<a class="headerlink" href="#creating-branches" title="Permalink to this headline">¶</a></h2>
-<p>It’s usually wise to work on a different branch than the main branch when developing new code. This is to protect the work that you’ve already developed.</p>
-<p>To create a new branch, let’s call it <em>experimental</em>, simply run</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git branch experimental
+<p>The reduction clause facilitates this by:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma omp parallel reduction(op:result_variable)</span>
+<span class="p">{</span>
+  <span class="c1">//code block</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>To check the available branches, run</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git branch
+<p>There are several operations <em>op</em>.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>op</p></th>
+<th class="text-align:left head"><p>symbol</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>Sum</p></td>
+<td class="text-align:left"><p>+</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Maximum or minimum</p></td>
+<td class="text-align:left"><p>max or min</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Multiply</p></td>
+<td class="text-align:left"><p>*</p></td>
+</tr>
+</tbody>
+</table>
+<p>An exhaustive list can be found the OpenMP documentation.</p>
+</div>
+<div class="section" id="specify-number-of-threads-by-a-clause">
+<h3>Specify number of threads by a clause<a class="headerlink" href="#specify-number-of-threads-by-a-clause" title="Permalink to this headline">¶</a></h3>
+<p>We can specify a desired number <em>N</em> of threads by</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma omp parallel num_threads(N)</span>
+<span class="p">{</span>
+  <span class="c1">//code block</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>which should output</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>*main
-experimental
-</pre></div>
 </div>
-<p>The star indicates the branch you’re currently working in. To switch branch to experimental, run</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git switch experimental
-</pre></div>
-</div>
-</div>
-<div class="section" id="merging-branches">
-<h2>Merging branches<a class="headerlink" href="#merging-branches" title="Permalink to this headline">¶</a></h2>
-<p>Once you’ve developed some new code that works, it’s time to bring it into the main branch to become part of the main project. This happens in three steps:</p>
-<ol class="simple">
-<li><p>Add and commit the changes.</p></li>
-<li><p>Change to the main branch</p></li>
-<li><p>Merge the branches</p></li>
-</ol>
-<p>Once the process is completed, the content of the branches will be identical.</p>
-<p>If you’ve created any new files, we must add them for git to track their content:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git add --all
-</pre></div>
-</div>
-<p>Otherwise, we can simply run</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git commit -a -m <span class="s2">&quot;commit message&quot;</span>
-</pre></div>
-</div>
-<p>the <em>-a</em> flag adds any content changes to files that already existed. (So it does not work for new files that isn’t tracked yet).</p>
-<p>Now, we switch to the main branch</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git switch main
-</pre></div>
-</div>
-<p>Finally, we can merge with the experimental branch with the following</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git merge experimental
-</pre></div>
-</div>
-<p>If there’s no conflicts, then this can simply be commited and pushed to the cloud as usual.</p>
-</div>
-<div class="section" id="dealing-with-conflicts">
-<h2>Dealing with conflicts<a class="headerlink" href="#dealing-with-conflicts" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -553,7 +619,7 @@ experimental
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./book/using_git"
+            path: "./book/parallelization"
         },
         predefinedOutput: true
     }
@@ -565,8 +631,8 @@ experimental
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="create_a_github_repo.html" title="previous page">Create a GitHub repo</a>
-    <a class='right-next' id="next-link" href="ways_to_undo_a_mistake.html" title="next page">Ways to undo a mistake</a>
+    <a class='left-prev' id="prev-link" href="introduction_to_openmp.html" title="previous page">Introduction to OpenMP</a>
+    <a class='right-next' id="next-link" href="../using_make/intro.html" title="next page">Intro</a>
 
         </div>
         
