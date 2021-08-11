@@ -13,11 +13,16 @@
 
 On this page you'll learn the basics of working from the **terminal** (a.k.a. the **shell**, a.k.a. the **command line**). Working by typing commands instead of the usual point-and-click may feel a bit clumsy and old-fashioned at first. But if you stick with it, you'll soon realize why the terminal is a standard tool for code developers, computational scientists and anyone else doing fancy stuff with computers.
 
-**Preparation**: For the examples below it will be useful to have a test directory `example_basic` that contains some dummy files and subdirectories. To create this, start by opening your terminal application, copy-paste the following command into the terminal (use **ctrl-shift-v** or right-click in the terminal window to paste) and hit 'enter'. 
+**Preparation**: For the examples below it will be useful to have a test directory `example_basic` that contains some dummy files and subdirectories. To create this, start by opening your terminal application, copy the command below, paste it into the terminal (right-click, or press **ctrl-shift-v** (Linux) or **cmd-c** (MacOS)), and hit 'enter'. 
 ```sh
 mkdir example_basic && cd example_basic && mkdir dirA && mkdir dirA/dirB && touch file1.txt dirA/file2.txt dirA/dirB/file3.txt
 ```
 When you've worked through the examples below you'll understand what this long command actually did.
+
+
+```{note}
+Don't miss the [keyboard shortcuts](sec:keyboard_shortcuts) listed at the bottom of this page --- they will make your life in the terminal much easier.
+```
 
 
 ## Navigation 
@@ -73,20 +78,51 @@ mv file1_copy.txt file1_renamed.txt  # Rename file1_copy.txt to file1_renamed.tx
 mv dirA_copy dirA_renamed            # Rename the directory dirA_copy to dirA_renamed
 ```
 
+## Deleting files and directories
 
+The basic command for deleting stuff is `rm`.
+
+```{note}
+*With great power comes great responsibility!* If you delete or overwrite a file/directory by mistake, it is very difficult to restore it. (Unless it's a file that is tracked by `git` --- then it's very easy to restore it. You'll learn about that in the git section.) So it can be wise to take a second look before executing a `rm` or `mv` command. 
+```
+
+
+*More to come...*
+
+
+(sec:keyboard_shortcuts)=
 ## Keyboard shortcuts
 
-There are a bunch of useful keyboard shortcuts you can use when typing commands
+Here are some useful keyboard shortcuts for working in the terminal:
 
-- Press **up** and **down** to cycle through the previous commands you've run
+- **Abort a running command:** 
+  - *Linux and MacOS:* Use **ctrl-c** to abort a command. You can test this by running the silly command `sleep 10` (does nothing for ten seconds) and abort it with **ctrl-c** before it finishes.
 
-- When typing some long file/directory name, press **tab** to auto-complete it. If there are multiple possible matches, press **tab** twice to see the alternatives
+- **Repeat previous commands:** 
+  - *Linux and MacOS:* Use **up** and **down** to cycle through previous commands.
 
-- When editing some long command, use **ctrl-right** and **ctrl-left** to move the cursor word by word
+- **Auto-complete file/directory names:** 
+  - *Linux and MacOS:* Use **tab** to auto-complete long file/directory names. If there are multiple possible matches, press **tab** twice to see the alternatives.
 
-- Use **ctrl-shift-c** and **ctrl-shift-v** to copy/paste text
+- **Move cursor word by word:** 
+  - *Linux:* Use **ctrl-right** and **ctrl-left**
+  - *MacOS:* Use **alt-right** and **alt-left**
 
-- To search for a command you've run before, press **ctrl-r** and start typing the command. You can press **ctrl-r** again to cycle through alternatives
+- **Jump to the beginning of the line:**
+  - *Linux and MacOS:* Use **ctrl-a**
+
+- **Delete everything after the cursor:**
+  - *Linux and MacOS:* Use **ctrl-k**. Thus, a quick way to clear the command line is to press **ctrl-a** and then **ctrl-k**. (Or you can press **ctrl-c**.)
+
+- **Copy/paste:**
+  - *Linux:* Use **ctrl-shift-c** and **ctrl-shift-v**
+  - *MacOS:* Use **cmd-c** and **cmd-v**
+
+- **Search previous commands:** 
+  - *Linux and MacOS:* Press **ctrl-r** and start typing a command. You can press **ctrl-r** again to cycle through alternative matches. Once you found it, press an arrow key to start editing the command.
+
+- **Clear the terminal screen:**
+  - *Linux and MacOS:* Press **ctrl-l**. You can also do this by running the command `clear`.
 
 <!--
 

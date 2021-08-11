@@ -2,7 +2,7 @@
 
 When you get the hang of it, you can use the terminal to perform a range of tasks very efficiently. On this page we collect a series of examples of slightly more advanced terminal usage. 
 
-**Preparation**: For many of the examples it will be useful to have a test directory with a number dummy text files. Here is set of commands that will create a directory called `example_advanced`, enter it, populate it with ten empty files (`file_1.txt`, ..., `file_10.txt`), and finally write three lines of text to each file:
+**Preparation**: For many of the examples it will be useful to have a test directory with a number of dummy text files. Here is set of commands that will create a directory called `example_advanced`, enter it, populate it with ten empty files (`file_1.txt`, ..., `file_10.txt`), and finally write three lines of text to each file:
 
 ```sh
 mkdir example_advanced
