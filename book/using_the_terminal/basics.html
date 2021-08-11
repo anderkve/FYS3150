@@ -272,6 +272,23 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
+  Parallelization
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../parallelization/introduction_to_openmp.html">
+   Introduction to OpenMP
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../parallelization/using_openmp.html">
+   Using OpenMP
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
   Using make
  </span>
 </p>
@@ -398,13 +415,38 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-and-manipulating-files-and-directories">
-   Creating and manipulating files and directories
+  <a class="reference internal nav-link" href="#navigation">
+   Navigation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#basic-commands">
-   Basic commands
+  <a class="reference internal nav-link" href="#copying-moving-and-renaming-files-and-directories">
+   Copying, moving and renaming files and directories
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deleting-files-and-directories">
+   Deleting files and directories
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-wildcards">
+   Using wildcards
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#viewing-files">
+   Viewing files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#download-files">
+   Download files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#keyboard-shortcuts">
+   Keyboard shortcuts
   </a>
  </li>
 </ul>
@@ -420,78 +462,209 @@
                 
   <div class="section" id="basics">
 <h1>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h1>
-<p>Here we’ll add a basic introduction to working in the sh.</p>
-<p>The <em>terminal</em> (or <em>shell</em> or <em>command line</em>) provides a powerful tool for manipulating files and directories. It’s an asset that any developer should know how to utilize.</p>
-<div class="section" id="creating-and-manipulating-files-and-directories">
-<h2>Creating and manipulating files and directories<a class="headerlink" href="#creating-and-manipulating-files-and-directories" title="Permalink to this headline">¶</a></h2>
-<p>First of all, we’ll create a temporary directory <em>tmp</em> that we’ll work in (just to avoid an accident).</p>
-<p>Once you’ve opened the terminal, we’ll make sure we’re in the home directory of our user by running.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span>
+<p><em>or: How I Learned to Stop Worrying and Love the Terminal</em></p>
+<p>On this page you’ll learn the basics of working from the <strong>terminal</strong> (a.k.a. the <strong>shell</strong>, a.k.a. the <strong>command line</strong>). Typing commands instead of the usual point-and-click may feel a bit clumsy and old-fashioned at first. But if you stick with it, you’ll soon realize why the terminal is a standard tool for code developers, computational scientists and anyone else doing fancy stuff with computers.</p>
+<p><strong>Preparation:</strong> For the examples below it will be useful to have a test directory <code class="docutils literal notranslate"><span class="pre">example_basic</span></code> that contains some dummy files and subdirectories. To create this, start your terminal application, copy the command below, paste it into the terminal (right-click, or press <strong>ctrl-shift-v</strong> (Linux) or <strong>cmd-c</strong> (MacOS)), and hit ‘enter’.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir example_basic <span class="o">&amp;&amp;</span> <span class="nb">cd</span> example_basic <span class="o">&amp;&amp;</span> mkdir emptydir dirA dirA/dirB <span class="o">&amp;&amp;</span> touch file1.txt dirA/file2.txt dirA/dirB/file3.txt
 </pre></div>
 </div>
-<p>Now, to make sure this is the case, we can check our current directory by</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">pwd</span>
+<p>When you’ve worked through the examples below you’ll understand what this long command actually did.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Don’t miss the <a class="reference internal" href="#sec-keyboard-shortcuts"><span class="std std-ref">keyboard shortcuts</span></a> listed at the bottom of this page — they will make your life in the terminal much easier.</p>
+</div>
+<div class="section" id="navigation">
+<h2>Navigation<a class="headerlink" href="#navigation" title="Permalink to this headline">¶</a></h2>
+<p>The basic commands for finding your way around the system are <code class="docutils literal notranslate"><span class="pre">pwd</span></code>, <code class="docutils literal notranslate"><span class="pre">ls</span></code> and <code class="docutils literal notranslate"><span class="pre">cd</span></code>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the directory you&#39;re currently in (the &#39;working directory&#39;)</span>
+<span class="nb">pwd</span>
+
+<span class="c1"># List directory content</span>
+ls           <span class="c1"># List content of the current directory</span>
+ls dirA      <span class="c1"># List content of the directory &#39;dirA&#39; </span>
+ls -l        <span class="c1"># A more detailed content list, with time stamps, file sizes, etc.</span>
+ls -lh       <span class="c1"># Same as above, but with file sizes given in &#39;human readable&#39; units</span>
+
+<span class="c1"># Change directory</span>
+<span class="nb">cd</span> dirA                 <span class="c1"># Move into directory &#39;dirA&#39;</span>
+<span class="nb">cd</span> ..                   <span class="c1"># Move back up one directory</span>
+<span class="nb">cd</span> dirA/dirB            <span class="c1"># Move into directory &#39;dirA/dirB&#39;</span>
+<span class="nb">cd</span> ../../               <span class="c1"># Move up two directories</span>
+<span class="nb">cd</span>                      <span class="c1"># Move directly to the home directory (typically /home/yourusername/)</span>
+<span class="nb">cd</span> ~                    <span class="c1"># (Same as above)</span>
+<span class="nb">cd</span> /home/yourusername/example_basic/  <span class="c1"># Move to a directory using its full (&#39;absolute&#39;) path</span>
 </pre></div>
 </div>
-<p>which should output</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>home/your_username
+</div>
+<div class="section" id="copying-moving-and-renaming-files-and-directories">
+<h2>Copying, moving and renaming files and directories<a class="headerlink" href="#copying-moving-and-renaming-files-and-directories" title="Permalink to this headline">¶</a></h2>
+<p>The basic command for copying is <code class="docutils literal notranslate"><span class="pre">cp</span></code>, and the command for moving and renaming is <code class="docutils literal notranslate"><span class="pre">mv</span></code>.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># NOTES: </span>
+<span class="c1">#</span>
+<span class="c1"># - Make sure you start from the &#39;example_basic&#39; directory.</span>
+<span class="c1">#</span>
+<span class="c1"># - If you get confused, use the &#39;pwd&#39; and &#39;ls&#39; commands to</span>
+<span class="c1">#   see where you are and what files/directories are present.</span>
+
+<span class="c1"># Copy files</span>
+cp file1.txt file1_copy.txt          <span class="c1"># Make a copy of file1.txt in the current directory</span>
+cp file1.txt dirA/file1_copy.txt     <span class="c1"># Make a second copy and place it in dirA</span>
+
+<span class="c1"># Copy directories</span>
+cp -r dirA dirA_copy                 <span class="c1"># Note the -r (&#39;recursive&#39;) flag for copying directories</span>
+
+<span class="c1"># Move files</span>
+mv file1.txt dirA/                   <span class="c1"># Move file1.txt into the directory dirA</span>
+
+<span class="c1"># Rename files and directories</span>
+mv file1_copy.txt file1_renamed.txt  <span class="c1"># Rename file1_copy.txt to file1_renamed.txt</span>
+mv dirA_copy dirA_renamed            <span class="c1"># Rename the directory dirA_copy to dirA_renamed</span>
 </pre></div>
 </div>
-<p>Now we’ll make a directory using <em>mkdir</em></p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir tmp
+</div>
+<div class="section" id="deleting-files-and-directories">
+<h2>Deleting files and directories<a class="headerlink" href="#deleting-files-and-directories" title="Permalink to this headline">¶</a></h2>
+<p>The basic command for deleting stuff is <code class="docutils literal notranslate"><span class="pre">rm</span></code>. To remove an empty directory you can use <code class="docutils literal notranslate"><span class="pre">rmdir</span></code>.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rm file1_renamed.txt    <span class="c1"># Delete the file file1_renamed.txt</span>
+rm -r dirA_renamed      <span class="c1"># Delete the directory dirA_renamed with all content (note the -r flag)</span>
+rmdir emptydir          <span class="c1"># Delete the empty directory emptydir</span>
 </pre></div>
 </div>
-<p>We can check that our directory was indeed created by running the <em>ls</em> command which lists all files and directories in your current directory:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ls
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>With great power comes great responsibility!</em> If you delete or overwrite a file/directory by mistake, it is basically gone. (Unless it’s a file that is tracked by <code class="docutils literal notranslate"><span class="pre">git</span></code> — then it’s very easy to restore it. You’ll learn about that in the git section.) So it can be wise to take a second look before executing a <code class="docutils literal notranslate"><span class="pre">rm</span></code> or <code class="docutils literal notranslate"><span class="pre">mv</span></code> command. For instance, you <em>never ever</em> want to do the mistake of accidentally running the command <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-r</span> <span class="pre">/</span></code>, which would delete everything your user has access to. Another dangerous example is <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-r</span> <span class="pre">*</span></code>, which would delete everything in the current directory and all subdirectories — so you want to make very sure you’re standing in the correct directory… (See below for an explanation of the wildcard <code class="docutils literal notranslate"><span class="pre">*</span></code>.)</p>
+</div>
+</div>
+<div class="section" id="using-wildcards">
+<h2>Using wildcards<a class="headerlink" href="#using-wildcards" title="Permalink to this headline">¶</a></h2>
+<p>The wildcards <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">?</span></code> and <code class="docutils literal notranslate"><span class="pre">[]</span></code> allow you to perform commands on groups of files/directories. Wildcards can be used with all terminal commands. Here are some examples using the <code class="docutils literal notranslate"><span class="pre">ls</span></code>, <code class="docutils literal notranslate"><span class="pre">rm</span></code> and <code class="docutils literal notranslate"><span class="pre">mv</span></code> commands:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ls file*             <span class="c1"># List files with names beginning with &quot;file&quot;</span>
+ls *.txt             <span class="c1"># List files with names ending with &quot;.txt&quot;</span>
+ls <span class="k">fi</span>*.txt           <span class="c1"># List files with names beginning with &quot;fi&quot; and ending with &quot;.txt&quot;</span>
+ls file?.txt         <span class="c1"># List files that match &quot;file?.txt&quot; where &quot;?&quot; can be any single character</span>
+ls file<span class="o">[</span><span class="m">123</span><span class="o">]</span>.txt     <span class="c1"># List files named &quot;file1.txt&quot;, &quot;file2.txt&quot; or &quot;file3.txt&quot;</span>
+
+rm dirA/*_copy.txt   <span class="c1"># Delete files in directory dirA with names ending with &quot;_copy.txt&quot;</span>
+rm dirA/*            <span class="c1"># Delete all files in dirA</span>
+
+mv *.txt dirA/       <span class="c1"># Move files ending with &quot;.txt&quot; into the dirA directory</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="basic-commands">
-<h2>Basic commands<a class="headerlink" href="#basic-commands" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="viewing-files">
+<h2>Viewing files<a class="headerlink" href="#viewing-files" title="Permalink to this headline">¶</a></h2>
+<p>There are several commands for inspecting the content of files directly from the terminal. Below we demonstrate the commands <code class="docutils literal notranslate"><span class="pre">cat</span></code>, <code class="docutils literal notranslate"><span class="pre">head</span></code>, <code class="docutils literal notranslate"><span class="pre">tail</span></code> and <code class="docutils literal notranslate"><span class="pre">less</span></code>. (For a more in-depth explanation, see <a class="reference external" href="https://i.redd.it/jlaxkglh1iw41.png">here</a>.)</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>cat file1.txt        <span class="c1"># Print the full content of file1.txt to the terminal screen</span>
+head -3 file1.txt    <span class="c1"># Print the first 3 lines of file1.txt.</span>
+tail -2 file1.txt    <span class="c1"># Print the last 2 lines of file1.txt.</span>
+less file1.txt       <span class="c1"># View file1.txt interactively. Press &#39;q&#39; to return to the terminal.</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Viewing files like this only works for text-based (i.e. human readable) files. For files in some binary format, e.g. a compiled C++ program, you won’t get sensible output from commands like <code class="docutils literal notranslate"><span class="pre">cat</span></code> and <code class="docutils literal notranslate"><span class="pre">less</span></code>. (Try it at see.)```</p>
+</div>
+</div>
+<div class="section" id="download-files">
+<h2>Download files<a class="headerlink" href="#download-files" title="Permalink to this headline">¶</a></h2>
+<p>If you have the URL you can download a file directly from the terminal with the <code class="docutils literal notranslate"><span class="pre">wget</span></code> command. Let’s demonstrate it by downloading the markdown (<code class="docutils literal notranslate"><span class="pre">.md</span></code>) file that this page is built from:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>wget https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/basics.md
+less basics.md   <span class="c1"># Take a look at the downloaded file</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="keyboard-shortcuts">
+<span id="sec-keyboard-shortcuts"></span><h2>Keyboard shortcuts<a class="headerlink" href="#keyboard-shortcuts" title="Permalink to this headline">¶</a></h2>
+<p>Here are some useful keyboard shortcuts for working in the terminal:</p>
+<ul class="simple">
+<li><p><strong>Abort a running command:</strong></p>
 <ul>
-<li><p>Check your current directory using <em>pwd</em>:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">pwd</span>
-</pre></div>
-</div>
-<p>which should simply output the current directory you’re in.</p>
+<li><p><em>Linux and MacOS:</em> Use <strong>ctrl-c</strong> to abort a command. You can test this by running the silly command <code class="docutils literal notranslate"><span class="pre">sleep</span> <span class="pre">10</span></code> (does nothing for ten seconds) and abort it with <strong>ctrl-c</strong> before it finishes.</p></li>
+</ul>
 </li>
-<li><p>To list all files in a directory, type</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ls
-</pre></div>
-</div>
+<li><p><strong>Repeat previous commands:</strong></p>
+<ul>
+<li><p><em>Linux and MacOS:</em> Use <strong>up</strong> and <strong>down</strong> to cycle through previous commands.</p></li>
+</ul>
 </li>
-<li><p>Create a file called <em>filename</em> using the <em>touch</em> command</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>touch filename
-</pre></div>
-</div>
+<li><p><strong>Auto-complete file/directory names:</strong></p>
+<ul>
+<li><p><em>Linux and MacOS:</em> Use <strong>tab</strong> to auto-complete long file/directory names. If there are multiple possible matches, press <strong>tab</strong> twice to see the alternatives.</p></li>
+</ul>
 </li>
-<li><p>Create a directory using the <em>mkdir</em> command</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir directory_name
-</pre></div>
-</div>
+<li><p><strong>Move cursor word by word:</strong></p>
+<ul>
+<li><p><em>Linux:</em> Use <strong>ctrl-right</strong> and <strong>ctrl-left</strong></p></li>
+<li><p><em>MacOS:</em> Use <strong>alt-right</strong> and <strong>alt-left</strong></p></li>
+</ul>
 </li>
-<li><p>Move a file called <em>filename</em> into a subdirectory called <em>subdir</em> using the <em>mv</em> command</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mv filename subdir
-</pre></div>
-</div>
+<li><p><strong>Jump to the beginning/end of the line:</strong></p>
+<ul>
+<li><p><em>Linux and MacOS:</em> Use <strong>ctrl-a</strong> and <strong>ctrl-e</strong></p></li>
+</ul>
 </li>
-<li><p>Delete a file called <em>filename</em> using the <em>rm</em> command</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rm filename
-</pre></div>
-</div>
+<li><p><strong>Delete everything after the cursor:</strong></p>
+<ul>
+<li><p><em>Linux and MacOS:</em> Use <strong>ctrl-k</strong>. Thus, a quick way to clear the command line is to press <strong>ctrl-a</strong> and then <strong>ctrl-k</strong>. (Or you can press <strong>ctrl-c</strong>.)</p></li>
+</ul>
 </li>
-<li><p>Copy a file called <em>filename</em> into a file <em>filename_copy</em> using the <em>cp</em> command</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>cp filename filename_copy
-</pre></div>
-</div>
+<li><p><strong>Copy/paste:</strong></p>
+<ul>
+<li><p><em>Linux:</em> Use <strong>ctrl-shift-c</strong> and <strong>ctrl-shift-v</strong></p></li>
+<li><p><em>MacOS:</em> Use <strong>cmd-c</strong> and <strong>cmd-v</strong></p></li>
+</ul>
 </li>
-<li><p>Delete a directory called <em>dir</em> and its content using <em>rm</em> and the recursive flag <em>-r</em></p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rm -r dir
-</pre></div>
-</div>
+<li><p><strong>Search previous commands:</strong></p>
+<ul>
+<li><p><em>Linux and MacOS:</em> Press <strong>ctrl-r</strong> and start typing a command. You can press <strong>ctrl-r</strong> again to cycle through alternative matches. Once you found it, press <strong>ctrl-j</strong> or an arrow key to start editing the command.</p></li>
+</ul>
+</li>
+<li><p><strong>Clear the terminal screen:</strong></p>
+<ul>
+<li><p><em>Linux and MacOS:</em> Press <strong>ctrl-l</strong>. You can also do this by running the command <code class="docutils literal notranslate"><span class="pre">clear</span></code>.</p></li>
+</ul>
 </li>
 </ul>
-</div>
+<!--
+
+- [DONE] pwd
+- [DONE] cd
+- [DONE] ls
+- [DONE] mv
+- [DONE] rm
+- [DONE] rmdir
+- [DONE] cat
+- [DONE] less
+- [DONE] head
+- [DONE] tail
+
+
+- running a script or program
+
+- echo "tull"
+
+- pass output to file ">"
+
+- append to file ">>"
+
+- find
+
+- grep
+
+- chmod
+
+- man
+
+- wget
+
+- history
+
+- tar and zip
+
+- history
+
+
+--></div>
 </div>
 
     <script type="text/x-thebe-config">
