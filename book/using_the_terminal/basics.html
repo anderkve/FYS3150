@@ -501,10 +501,10 @@ ls -lh       <span class="c1"># Same as above, but with file sizes given in &#39
 <p>The basic command for copying is <code class="docutils literal notranslate"><span class="pre">cp</span></code>, and the command for moving and renaming is <code class="docutils literal notranslate"><span class="pre">mv</span></code>.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># NOTES: </span>
 <span class="c1">#</span>
-<span class="c1"># - Make sure you start from the &#39;example_basic&#39; directory.</span>
+<span class="c1"># - Make sure you start from the &#39;example_basic&#39; directory</span>
 <span class="c1">#</span>
 <span class="c1"># - If you get confused, use the &#39;pwd&#39; and &#39;ls&#39; commands to</span>
-<span class="c1">#   see where you are and what files/directories are present.</span>
+<span class="c1">#   see where you are and what files/directories are present</span>
 
 <span class="c1"># Copy files</span>
 cp file1.txt file1_copy.txt          <span class="c1"># Make a copy of file1.txt in the current directory</span>
@@ -555,14 +555,14 @@ mv *.txt dirA/       <span class="c1"># Move files ending with &quot;.txt&quot; 
 <h2>Viewing files<a class="headerlink" href="#viewing-files" title="Permalink to this headline">¶</a></h2>
 <p>There are several commands for inspecting the content of files directly from the terminal. Below we demonstrate the commands <code class="docutils literal notranslate"><span class="pre">cat</span></code>, <code class="docutils literal notranslate"><span class="pre">head</span></code>, <code class="docutils literal notranslate"><span class="pre">tail</span></code> and <code class="docutils literal notranslate"><span class="pre">less</span></code>. (For a more in-depth explanation, see <a class="reference external" href="https://i.redd.it/jlaxkglh1iw41.png">here</a>.)</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>cat file1.txt        <span class="c1"># Print the full content of file1.txt to the terminal screen</span>
-head -3 file1.txt    <span class="c1"># Print the first 3 lines of file1.txt.</span>
-tail -2 file1.txt    <span class="c1"># Print the last 2 lines of file1.txt.</span>
-less file1.txt       <span class="c1"># View file1.txt interactively. Press &#39;q&#39; to return to the terminal.</span>
+head -3 file1.txt    <span class="c1"># Print the first 3 lines of file1.txt</span>
+tail -2 file1.txt    <span class="c1"># Print the last 2 lines of file1.txt</span>
+less file1.txt       <span class="c1"># View file1.txt interactively. Press &#39;q&#39; to return to the terminal</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Viewing files like this only works for text-based (i.e. human readable) files. For files in some binary format, e.g. a compiled C++ program, you won’t get sensible output from commands like <code class="docutils literal notranslate"><span class="pre">cat</span></code> and <code class="docutils literal notranslate"><span class="pre">less</span></code>. (Try it at see.)```</p>
+<p>Viewing files like this only works for text-based (i.e. human readable) files. For files in some binary format, e.g. a compiled C++ program, you won’t get sensible output from commands like <code class="docutils literal notranslate"><span class="pre">cat</span></code> and <code class="docutils literal notranslate"><span class="pre">less</span></code>. (Try it and see.)</p>
 </div>
 </div>
 <div class="section" id="download-files">

@@ -49,10 +49,10 @@ The basic command for copying is `cp`, and the command for moving and renaming i
 ```sh
 # NOTES: 
 #
-# - Make sure you start from the 'example_basic' directory.
+# - Make sure you start from the 'example_basic' directory
 #
 # - If you get confused, use the 'pwd' and 'ls' commands to
-#   see where you are and what files/directories are present.
+#   see where you are and what files/directories are present
 
 # Copy files
 cp file1.txt file1_copy.txt          # Make a copy of file1.txt in the current directory
@@ -108,13 +108,13 @@ There are several commands for inspecting the content of files directly from the
 
 ```sh
 cat file1.txt        # Print the full content of file1.txt to the terminal screen
-head -3 file1.txt    # Print the first 3 lines of file1.txt.
-tail -2 file1.txt    # Print the last 2 lines of file1.txt.
-less file1.txt       # View file1.txt interactively. Press 'q' to return to the terminal.
+head -3 file1.txt    # Print the first 3 lines of file1.txt
+tail -2 file1.txt    # Print the last 2 lines of file1.txt
+less file1.txt       # View file1.txt interactively. Press 'q' to return to the terminal
 ```
 
 ```{note}
-Viewing files like this only works for text-based (i.e. human readable) files. For files in some binary format, e.g. a compiled C++ program, you won't get sensible output from commands like `cat` and `less`. (Try it at see.)```
+Viewing files like this only works for text-based (i.e. human readable) files. For files in some binary format, e.g. a compiled C++ program, you won't get sensible output from commands like `cat` and `less`. (Try it and see.)
 ```
 
 ## Download files
