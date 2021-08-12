@@ -43,7 +43,10 @@ Now you've cloned the repository to your computer! This will be a directory you 
 
 
 ## Adding a Github token
-*Only for Linux and Windows users. This is done automatically on macOS. In any case, if you're requested to write your password more than once on macOS, follow the steps in this guide.*
+
+```{note}
+Only for Linux and Windows users. This is done automatically on macOS. In any case, if you're requested to write your password more than once on macOS, follow the steps in this guide.
+```
 
 A Github token is a replacement of passwords to give you as a user access to perform action on your Github repositories from your computer.
 

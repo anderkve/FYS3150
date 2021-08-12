@@ -515,6 +515,8 @@ simply by adding <strong>compiler directives</strong>. We’ll go through a coup
 <ul class="simple">
 <li><p>It’s important that the brackets {} are placed <em>below</em> the compiler directive and not directly after. Otherwise a compiler error will occur.</p></li>
 <li><p>Any variable declared inside a parallel region is automatically <strong>private</strong>. Each thread can thus use this variable regardless of what the other threads do with it.</p></li>
+<li><p>Once you create a parallel region, your computer will <strong>fork</strong> or <strong>spawn</strong> a set of threads. These can now perform computations in parallel.</p></li>
+<li><p>Once the region ends, it will <strong>merge</strong> the threads, leaving you with a single thread again.</p></li>
 </ul>
 </div>
 <div class="section" id="parallelizing-a-for-loop">
@@ -751,7 +753,7 @@ Nevertheless, we provide a few important ones, perhaps the only ones you’ll ne
 </pre></div>
 </div>
 <p>In an ideal world, the speed up is <em>p</em>.</p>
-<p>It’s natural to wonder <em>how many threads will give the optimal speedup?</em> Modern processors use computing units called <strong>cores</strong>. Many of these support <strong>hyper-threading</strong>, which means that each core yield two threads. A rule-of-thumb is to use the maximum number of thread supported (i.e twice the number of cores, if the cpu supports hyper-threading). However, it’s wise to perform a performance analysis for you specific program, measure the speedup as a function of number of threads and decide based on the results you obtain.</p>
+<p>It’s natural to wonder <em>how many threads will give the optimal speedup?</em> Modern processors use computing units called <strong>cores</strong>. Many of these support <strong>hyper-threading</strong>, which typically means that each core yield two threads. A rule-of-thumb is to use the maximum number of threads supported (i.e twice the number of cores, if the cpu supports hyper-threading). However, it’s wise to perform a performance analysis for you specific program, measure the speedup as a function of number of threads and decide based on the results you obtain.</p>
 </div>
 </div>
 </div>
