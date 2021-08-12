@@ -13,9 +13,9 @@ Installation of software for C++ can be a little bit of a hazzle on macOS. This 
 
 3. Now, run the following command in your terminal
     ```sh
-    brew install armadillo libomp
+    brew install armadillo libomp git-gui
     ```
-    
+
 
 ## Additional useful command line tools
 
