@@ -14,7 +14,7 @@ git config --global user.email you@yourdomain.com
 
 Here's a step-by-step instruction.
 
-- Go to [github.com](Github.com) and log in. The page should look something like this:
+- Go to [github.com](github.com) and log in. The page should look something like this:
 
 ![homepage](./imgs/github_homepage.png)
 
@@ -50,7 +50,7 @@ A Github token is a replacement of passwords to give you as a user access to per
 Disclaimer: Note that this is not a secure option, as the token will be saved in clear text. But it's nevertheless the simplest option.
 
 
-- Go to [github.com](www.github.com). Click on your profile in the upper right corner, then on *settings*.
+- Go to [github.com](github.com). Click on your profile in the upper right corner, then on *settings*.
 
 ![go_to_settings](./imgs/go_to_settings.png)
 
