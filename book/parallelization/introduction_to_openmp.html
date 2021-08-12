@@ -420,8 +420,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#compiling-c-code-with-openmp">
-   Compiling C++ code with OpenMP
+  <a class="reference internal nav-link" href="#building-c-code-with-openmp">
+   Building C++ code with OpenMP
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -475,57 +475,71 @@ It has an abundance of built in functionality,
 which can be used to parallelize code with very few changes
 to the existing code project.</p>
 </div>
-<div class="section" id="compiling-c-code-with-openmp">
-<h2>Compiling C++ code with OpenMP<a class="headerlink" href="#compiling-c-code-with-openmp" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="building-c-code-with-openmp">
+<h2>Building C++ code with OpenMP<a class="headerlink" href="#building-c-code-with-openmp" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="linux-users">
 <h3>Linux users<a class="headerlink" href="#linux-users" title="Permalink to this headline">¶</a></h3>
 <p>For linux users, compilation with OpenMP is easily facilitated
-by the compiler flag <em>-fopenmp</em>. Thus compilation can be as easy as</p>
+by the compiler flag <code class="docutils literal notranslate"><span class="pre">-fopenmp</span></code>. Thus compilation can be as easy as</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>g++ -c *.cpp -fopenmp
 </pre></div>
 </div>
-<p>The star tells the shell to search for <em>any</em> file that ends with <em>.cpp</em>; just a convenient way shorthand.</p>
+<p>The star tells the shell to search for <em>any</em> file that ends with <code class="docutils literal notranslate"><span class="pre">.cpp</span></code>; just a convenient shorthand.</p>
+<p>Linking is done by adding <code class="docutils literal notranslate"><span class="pre">-lomp</span></code>:.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>g++ -o main.out *.o -lomp
+</pre></div>
+</div>
 </div>
 <div class="section" id="macos-users">
 <h3>macOS users<a class="headerlink" href="#macos-users" title="Permalink to this headline">¶</a></h3>
-<p>For macOS users, compilation is a little bit different from Linux. In addition to the <em>-fopenmp</em> flag, we also need to use <em>-Xpreprocessor</em>. This is done as follows.</p>
+<p>For macOS users, compilation is a little bit different from Linux. Here we must add <code class="docutils literal notranslate"><span class="pre">-Xpreprocessor</span> <span class="pre">-fopenmp</span></code> (in this specific order!):</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>g++ -c *.cpp -Xpreprocessor -fopenmp
 </pre></div>
 </div>
 <p>Note: this assumes you use the Apple clang compiler (which you should be using if you followed the setup process described <a class="reference internal" href="../getting_ready/mac_users.html"><span class="doc std std-doc">here</span></a>).</p>
+<p>Linking is done by adding <code class="docutils literal notranslate"><span class="pre">-lomp</span></code>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>g++ -o main.out *.o -lomp
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="shared-memory-programming">
 <h2>Shared memory programming<a class="headerlink" href="#shared-memory-programming" title="Permalink to this headline">¶</a></h2>
-<p>OpenMP assumes that the underlying memory is <em>shared</em>
-among all processes, or <em>threads</em> as they are called.
+<p>OpenMP assumes that the underlying memory is <strong>shared</strong>
+among all processes, or <strong>threads</strong> as they are called.
 This means that all threads share variables, allocated memory for pointers and so on by default. We must specify
 if some variable is to be specific to a particular thread.
-The terminology OpenMP uses for this is a <em>private</em> variable.</p>
+The terminology OpenMP uses for this is a <strong>private</strong> variable.</p>
 <p>There are two very important concepts to understand
 when you parallelize with OpenMP.</p>
 <div class="section" id="false-sharing">
 <h3>False sharing<a class="headerlink" href="#false-sharing" title="Permalink to this headline">¶</a></h3>
-<p><em>This is a technical concept, and you might be better suited to return to this at a later point</em>.</p>
-<p>If more than one thread uses a memory block stored in the <em>cache</em> (a type of fast memory used by your cpu), any change to it will require all the threads that uses it to make the exact same update to their version of the memory block. This is imposed by what is known by the <em>cache-coherence policy</em>. The punchline is that this leads to performance degradation. This process is called false sharing.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a technical concept, and you might be better suited to return to this at a later point.</p>
+</div>
+<p>If more than one thread uses a memory block stored in the <strong>cache</strong> (a type of fast memory used by your cpu), any change to it will require all the threads that uses it to make the exact same update to their version of the memory block. This is imposed by what is known by the <strong>cache-coherence policy</strong>. The punchline is that this leads to performance degradation. This process is called false sharing.</p>
 <ul class="simple">
 <li><p>Example: say you’re working with a pointer of length n. One thread updates the first element and another thread updates the second element. Then the computer must send this update back and forth between the threads so that the copy of their pointer is identical at all times. This means that computing time must be divided to send information between the threads which slows down execution of the code.</p></li>
 </ul>
 </div>
 <div class="section" id="race-condition">
 <h3>Race condition<a class="headerlink" href="#race-condition" title="Permalink to this headline">¶</a></h3>
-<p><em>This is a technical concept, and you might be better suited to return to this at a later point</em>.</p>
-<p>Suppose two threads are to increment a variable <em>v</em> that is initially set to zero, i.e <em>v = 0</em>. The ideal result is that the final value should be <em>v = 2</em>. This will happen if the following sequence of events occur:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a technical concept, and you might be better suited to return to this at a later point.</p>
+</div>
+<p>Suppose two threads are to increment a variable <em>v</em> that is initially set to zero, i.e <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">0</span></code>. The ideal result is that the final value should be <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">2</span></code>. This will happen if the following sequence of events occur:</p>
 <ol class="simple">
-<li><p>Thread 1 reads the value of <em>v</em> from memory.</p></li>
-<li><p>Thread 1 adds 1 to <em>v</em> and writes it back to memory.</p></li>
+<li><p>Thread 1 reads the value of <code class="docutils literal notranslate"><span class="pre">v</span></code> from memory.</p></li>
+<li><p>Thread 1 adds 1 to <code class="docutils literal notranslate"><span class="pre">v</span></code> and writes it back to memory.</p></li>
 <li><p>Only after this, thread 2 performs the exact same action.</p></li>
 </ol>
 <p>The following scenario describes when it goes wrong:</p>
 <ol class="simple">
-<li><p>Thread 1 reads the value of <em>v</em> from memory.</p></li>
-<li><p>Thread 2 reads the value of <em>v</em> from memory <strong>before</strong> thread 1 adds 1 and writes it back to memory.</p></li>
-<li><p>Both thread 1 and 2 now adds 1 to <em>v</em> and writes it back to memory. But the value both of the read was <em>v = 0</em>, so the final value written to memory will be <em>v = 1</em>.</p></li>
+<li><p>Thread 1 reads the value of <code class="docutils literal notranslate"><span class="pre">v</span></code> from memory.</p></li>
+<li><p>Thread 2 reads the value of <code class="docutils literal notranslate"><span class="pre">v</span></code> from memory <em>before</em> thread 1 adds 1 and writes it back to memory.</p></li>
+<li><p>Both thread 1 and 2 now adds 1 to <code class="docutils literal notranslate"><span class="pre">v</span></code> and writes it back to memory. But the value both of them read was <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">0</span></code>, so the final value written to memory will be <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">1</span></code>.</p></li>
 </ol>
 <p>We can of course create more scenarios in which this happens, but the main idea to take from this is:
 when two threads operate on the same memory address, they must do so sequentially. Sometimes, absurd results from your program can boil down to this process, so it’s important to be aware of it for debugging purposes.</p>

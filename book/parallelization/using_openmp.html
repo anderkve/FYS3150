@@ -430,6 +430,28 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#build-a-code-that-can-run-in-serial-and-in-parallel">
+   Build a code that can run in serial and in parallel
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#synchronization-atomic-and-critical-sections">
+   Synchronization (atomic and critical sections)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-atomic-section">
+     The atomic section
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-critical-section">
+     The critical section
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#clauses">
    Clauses
   </a>
@@ -447,6 +469,16 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#specify-number-of-threads-by-a-clause">
      Specify number of threads by a clause
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-computing-the-sum-of-the-100-first-integers">
+     Example: computing the sum of the 100 first integers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#speedup">
+     Speedup
     </a>
    </li>
   </ul>
@@ -468,11 +500,11 @@
 <h2>Compiler directives<a class="headerlink" href="#compiler-directives" title="Permalink to this headline">¶</a></h2>
 <p>OpenMP is very user-friendly in the sense that
 a code written to run series can easily be parallelized
-simply by adding <em>compiler directives</em>. We’ll go through a couple useful ones here.</p>
+simply by adding <strong>compiler directives</strong>. We’ll go through a couple useful ones here.</p>
 </div>
 <div class="section" id="parallel-region">
 <h2>Parallel region<a class="headerlink" href="#parallel-region" title="Permalink to this headline">¶</a></h2>
-<p>A flexible , one can create a <em>parallel region</em>, which looks like this</p>
+<p>A flexible , one can create a <strong>parallel region</strong>, which looks like this</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma omp parallel</span>
 <span class="p">{</span>
   <span class="c1">//Some code to parallelize here.</span>
@@ -482,12 +514,12 @@ simply by adding <em>compiler directives</em>. We’ll go through a couple usefu
 <p>Note:</p>
 <ul class="simple">
 <li><p>It’s important that the brackets {} are placed <em>below</em> the compiler directive and not directly after. Otherwise a compiler error will occur.</p></li>
-<li><p>Any variable declared inside a parallel region is automatically <em>private</em>. Each thread can thus use this variable regardless of what the other threads do with it.</p></li>
+<li><p>Any variable declared inside a parallel region is automatically <strong>private</strong>. Each thread can thus use this variable regardless of what the other threads do with it.</p></li>
 </ul>
 </div>
 <div class="section" id="parallelizing-a-for-loop">
 <h2>Parallelizing a for-loop.<a class="headerlink" href="#parallelizing-a-for-loop" title="Permalink to this headline">¶</a></h2>
-<p>A straight forward way to do this is to create a parallel reigion and parallelize the code as follows.</p>
+<p>A straight forward way to do this is to create a parallel region and parallelize the code as follows.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma omp parallel</span>
 <span class="p">{</span>
   <span class="cp">#pragma omp for</span>
@@ -520,10 +552,10 @@ simply by adding <em>compiler directives</em>. We’ll go through a couple usefu
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma omp parallel for</span>
 </pre></div>
 </div>
-<p>The variable <em>i</em> in the loop is distributed among the threads so that each thread operates with a subset of the loop. The distribution is decided by the compiler. But it may look like this:</p>
+<p>The variable <code class="docutils literal notranslate"><span class="pre">i</span></code> in the loop is distributed among the threads so that each thread operates with a subset of the loop. The distribution is decided by the compiler. But it may look like this:</p>
 <ul class="simple">
-<li><p>Assume there are <em>p</em> threads. Then thread 0 gets the <em>n/p</em> first values of <em>i</em>, thread 1 gets the next <em>n/p</em> values and so on.</p></li>
-<li><p>Sometimes the compiler divides the for loop cyclically, so thread 0 gets <em>i = 0, p, 2p, …</em> while thread 1 gets <em>i = 1, p+1, 2p+1, …</em> and so on.</p></li>
+<li><p>Assume there are <code class="docutils literal notranslate"><span class="pre">p</span></code> threads. Then thread 0 gets the <code class="docutils literal notranslate"><span class="pre">n/p</span></code> first values of <code class="docutils literal notranslate"><span class="pre">i</span></code>, thread 1 gets the next <code class="docutils literal notranslate"><span class="pre">n/p</span></code> values and so on.</p></li>
+<li><p>Sometimes the compiler divides the for loop cyclically, so thread 0 gets <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">p,</span> <span class="pre">2p,</span> <span class="pre">...</span></code> while thread 1 gets <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">p+1,</span> <span class="pre">2p+1,</span> <span class="pre">...</span></code> and so on.</p></li>
 </ul>
 <p>The compiler directive only parallelize the <em>first</em> following for-loop. For instance</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma omp parallel for</span>
@@ -534,13 +566,60 @@ simply by adding <em>compiler directives</em>. We’ll go through a couple usefu
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>is only parallelized with respect to <em>i</em>, not the inner loop that runs over <em>j</em>.</p>
+<p>is only parallelized with respect to <code class="docutils literal notranslate"><span class="pre">i</span></code>, not the inner loop that runs over <code class="docutils literal notranslate"><span class="pre">j</span></code>.</p>
+</div>
+<div class="section" id="build-a-code-that-can-run-in-serial-and-in-parallel">
+<h2>Build a code that can run in serial and in parallel<a class="headerlink" href="#build-a-code-that-can-run-in-serial-and-in-parallel" title="Permalink to this headline">¶</a></h2>
+<p>It’s often convenient to specify a compiler directive that tells the compiler to compile a specific part of the code depending on whether we pass <code class="docutils literal notranslate"><span class="pre">-fopenmp</span></code> as a compiler flag or not. If we do not pass it during compilation, it will compile the code in serial. If we do pass it, it will compile it to run in parallel. The generic structure of this looks as follows:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifdef _OPENMP</span>
+<span class="p">{</span>
+  <span class="c1">//parallel code</span>
+<span class="p">}</span>
+<span class="cp">#else</span>
+<span class="p">{</span>
+  <span class="c1">//Serial code</span>
+<span class="p">}</span>
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="synchronization-atomic-and-critical-sections">
+<h2>Synchronization (atomic and critical sections)<a class="headerlink" href="#synchronization-atomic-and-critical-sections" title="Permalink to this headline">¶</a></h2>
+<p>To avoid the problems that race conditions can bring, it’s sometimes convenient to create sections where we force synchronization such that only one thread is executing a code block at a time. There are two alternatives:</p>
+<ol class="simple">
+<li><p>An <code class="docutils literal notranslate"><span class="pre">atomic</span></code> section which supports incremental operations.</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">critical</span></code> section which is slightly slower, but is more flexible in the sense that it supports an arbitrary set of operations.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In examples where we simply want to combine the results from each thread, there exists functionality known as clauses that perform this efficiently. But it’s important to know how to perform synchronization when built-in functionality doesn’t do exactly what you need it do.</p>
+</div>
+<div class="section" id="the-atomic-section">
+<h3>The atomic section<a class="headerlink" href="#the-atomic-section" title="Permalink to this headline">¶</a></h3>
+<p>This is used if we simply want to combine the contribution from each thread to a global variable by addition, multiplication and division <strong>in place</strong>. For example with addition in place, this looks as:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma omp atomic</span>
+  <span class="n">global_variable</span> <span class="o">+=</span> <span class="n">local_thread_variable</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-critical-section">
+<h3>The critical section<a class="headerlink" href="#the-critical-section" title="Permalink to this headline">¶</a></h3>
+<p>Here we can perform multiple operations but with a slightly larger performance penalty. We could for instance find the maximum value of the local thread variables and assign it to the global variable as follows:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma omp critical</span>
+<span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">local_thread_variable</span> <span class="o">&gt;</span> <span class="n">global_variable</span><span class="p">){</span>
+    <span class="n">global_variable</span> <span class="o">=</span> <span class="n">local_thread_variable</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="clauses">
 <h2>Clauses<a class="headerlink" href="#clauses" title="Permalink to this headline">¶</a></h2>
-<p>Clauses can be added compiler directives. They vary depending on what the compiler directive is, and the code documentation for OpenMP can give a far more complete list.
-Nevertheless, we provide a few important ones, perhaps the only ones you’ll use.</p>
-<p>Generically, this looks like</p>
+<p>Clauses can be added to OpenMP’s compiler directives. They vary depending on what the compiler directive is, and the code documentation for OpenMP can give a far more complete list.
+Nevertheless, we provide a few important ones, perhaps the only ones you’ll need.</p>
+<p>Generically, it looks like</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma omp parallel clause1 clause2 clause3 ... clauseN</span>
 <span class="p">{</span>
   <span class="c1">//code block</span>
@@ -550,7 +629,7 @@ Nevertheless, we provide a few important ones, perhaps the only ones you’ll us
 <p>(may also be added to for loops).</p>
 <div class="section" id="the-private-clause">
 <h3>The private clause<a class="headerlink" href="#the-private-clause" title="Permalink to this headline">¶</a></h3>
-<p>Sometimes, a variable that is initially global (and shared), is desired to be made a private variable. For a parallel region (applies to for loops as well), we simply tack on a clause called <em>private()</em> as follows:</p>
+<p>Sometimes, a variable that is initially global (and shared), is desired to be made a private variable. For a parallel region (applies to for loops as well), we simply tack on a clause called <code class="docutils literal notranslate"><span class="pre">private()</span></code> as follows:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma omp parallel private(variable1, variable2, ..., variableN)</span>
 <span class="p">{</span>
   <span class="c1">//code block</span>
@@ -595,13 +674,84 @@ Nevertheless, we provide a few important ones, perhaps the only ones you’ll us
 </div>
 <div class="section" id="specify-number-of-threads-by-a-clause">
 <h3>Specify number of threads by a clause<a class="headerlink" href="#specify-number-of-threads-by-a-clause" title="Permalink to this headline">¶</a></h3>
-<p>We can specify a desired number <em>N</em> of threads by</p>
+<p>We can specify a desired number <code class="docutils literal notranslate"><span class="pre">N</span></code> of threads by</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma omp parallel num_threads(N)</span>
 <span class="p">{</span>
   <span class="c1">//code block</span>
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>This does not guarantee that the operating system actually gives us that many threads.</p>
+</div>
+<div class="section" id="example-computing-the-sum-of-the-100-first-integers">
+<h3>Example: computing the sum of the 100 first integers<a class="headerlink" href="#example-computing-the-sum-of-the-100-first-integers" title="Permalink to this headline">¶</a></h3>
+<p>We’ve looked at a lot of general theory. Let’s put some of it to use in an example. We’ll compute the sum of the 100 first integers. The answer is 5050.</p>
+<p>The first step should be to do this with a serial code so we’re sure the computations are done correctly. A short program is all we need:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="n">i</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;sum of first &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; integers = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>which should output</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sum of first <span class="m">100</span> <span class="nv">integers</span> <span class="o">=</span> <span class="m">5050</span>
+</pre></div>
+</div>
+<p>Now, parallelizing the code is straight forward. We want to parallelize the for-loop and add a <code class="docutils literal notranslate"><span class="pre">reduction</span></code> clause for <code class="docutils literal notranslate"><span class="pre">s</span></code> with <code class="docutils literal notranslate"><span class="pre">op</span></code> set to <code class="docutils literal notranslate"><span class="pre">+</span></code>:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma omp parallel for reduction(+:s)</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="n">i</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<p>which should yield the same output as before. We can structure the code so that it runs the serial code if <code class="docutils literal notranslate"><span class="pre">-fopenmp</span></code> is not passed during compilation, and the parallelized version if we pass it. This is done by</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+<span class="cp">#ifdef _OPENMP</span>
+<span class="p">{</span>
+    <span class="cp">#pragma omp parallel for reduction(+:s)</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="n">i</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="cp">#else</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="n">i</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="cp">#endif</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;sum of first &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; integers = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Now we can run the code both in serial and parallel depending on how we build it.</p>
+<hr class="docutils" />
+<p>We could’ve performed the reduction part of the parallelized for-loop by tacking on an <code class="docutils literal notranslate"><span class="pre">atomic</span></code> section at the end as follows:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="cp">#pragma omp parallel</span>
+<span class="p">{</span>
+  <span class="kt">double</span> <span class="n">s_local</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="cp">#pragma omp for</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+      <span class="n">s_local</span> <span class="o">+=</span> <span class="n">i</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="cp">#pragma omp atomic</span>
+      <span class="n">s</span> <span class="o">+=</span> <span class="n">s_local</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>but you should use the reduction clause when it’s supported. It’s typically slightly more efficient and yields cleaner code. But at least now you’ve seen how you can use a synchronization section in practice.</p>
+</div>
+<div class="section" id="speedup">
+<h3>Speedup<a class="headerlink" href="#speedup" title="Permalink to this headline">¶</a></h3>
+<p>Speedup is defined as the time a single thread uses divided by the time <em>p</em> threads uses, i.e</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">speed</span> <span class="o">=</span> time_by_one_thread/time_by_p_threads
+</pre></div>
+</div>
+<p>In an ideal world, the speed up is <em>p</em>.</p>
+<p>It’s natural to wonder <em>how many threads will give the optimal speedup?</em> Modern processors use computing units called <strong>cores</strong>. Many of these support <strong>hyper-threading</strong>, which means that each core yield two threads. A rule-of-thumb is to use the maximum number of thread supported (i.e twice the number of cores, if the cpu supports hyper-threading). However, it’s wise to perform a performance analysis for you specific program, measure the speedup as a function of number of threads and decide based on the results you obtain.</p>
 </div>
 </div>
 </div>
