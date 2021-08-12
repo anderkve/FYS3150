@@ -20,6 +20,8 @@ A flexible , one can create a **parallel region**, which looks like this
 Note:
 - It's important that the brackets {} are placed *below* the compiler directive and not directly after. Otherwise a compiler error will occur.
 - Any variable declared inside a parallel region is automatically **private**. Each thread can thus use this variable regardless of what the other threads do with it.
+- Once you create a parallel region, your computer will **fork** or **spawn** a set of threads. These can now perform computations in parallel.
+- Once the region ends, it will **merge** the threads, leaving you with a single thread again.
 
 
 ## Parallelizing a for-loop.
@@ -271,4 +273,4 @@ speed = time_by_one_thread/time_by_p_threads
 ```
 In an ideal world, the speed up is *p*.
 
-It's natural to wonder *how many threads will give the optimal speedup?* Modern processors use computing units called **cores**. Many of these support **hyper-threading**, which means that each core yield two threads. A rule-of-thumb is to use the maximum number of thread supported (i.e twice the number of cores, if the cpu supports hyper-threading). However, it's wise to perform a performance analysis for you specific program, measure the speedup as a function of number of threads and decide based on the results you obtain.
+It's natural to wonder *how many threads will give the optimal speedup?* Modern processors use computing units called **cores**. Many of these support **hyper-threading**, which typically means that each core yield two threads. A rule-of-thumb is to use the maximum number of threads supported (i.e twice the number of cores, if the cpu supports hyper-threading). However, it's wise to perform a performance analysis for you specific program, measure the speedup as a function of number of threads and decide based on the results you obtain.
