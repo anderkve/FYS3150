@@ -14,7 +14,7 @@ git config --global user.email you@yourdomain.com
 
 Here's a step-by-step instruction.
 
-- Go to [github.com](Github.com) and log in. The page should look something like this:
+- Go to [github.com](www.github.com) and log in. The page should look something like this:
 
 ![homepage](./imgs/github_homepage.png)
 
