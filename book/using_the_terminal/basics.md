@@ -123,8 +123,10 @@ If you have the URL you can download a file directly from the terminal with the 
 
 ```sh
 wget https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/basics.md
+
 less basics.md   # Take a look at the downloaded file
 ```
+
 
 
 
@@ -174,6 +176,7 @@ Here are some useful keyboard shortcuts for working in the terminal:
 - [DONE] less
 - [DONE] head
 - [DONE] tail
+- [DONE] wget
 
 
 - running a script or program
@@ -192,7 +195,6 @@ Here are some useful keyboard shortcuts for working in the terminal:
 
 - man
 
-- wget
 
 - history
 
