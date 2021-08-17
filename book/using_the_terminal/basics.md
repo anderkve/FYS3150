@@ -4,14 +4,14 @@
 
 On this page you'll learn the basics of working from the **terminal** (a.k.a. the **shell**, a.k.a. the **command line**). Typing commands instead of the usual point-and-click may feel a bit clumsy and old-fashioned at first. But if you stick with it, you'll soon realize why the terminal is a standard tool for code developers, computational scientists and anyone else doing fancy stuff with computers.
 
-For the examples below we will often need some dummy directories and files. To prepare these files and directories we'll provide one-line *preparation commands* that you can simply copy and paste into the terminal. To paste in the terminal, right-click or press **ctrl-shift-v** (Linux) or **cmd-c** (MacOS)). To execute a command, simply hit 'enter'. 
+For the examples below we will often need some dummy directories and files. To prepare these files and directories we'll provide one-line *preparation commands* that you can simply copy and paste into the terminal. To paste in the terminal, right-click or press **ctrl-shift-v** (Linux) or **cmd-c** (MacOS). To execute a command, simply hit 'enter'. 
 
-Don't worry if you don't yet understand everything going on in these preparation commands --- you'll learn all of it soon. Similarly, after each example we provide a single-line command that deletes the dummy files we've just created.
+Don't worry if you don't yet understand everything going on in these preparation commands --- you'll learn all of it soon. After each example we also provide a single-line command that deletes the dummy files we've just created.
 
-We'll start by creating a directory `compphys_examples/terminal_examples` in our home directory and move into it. This directory will be the starting point for all the examples below.
+We'll start by creating a directory `compphys_terminal_examples` in our home directory and go to that directory. This directory will be starting point for the examples below.
 
 ```sh
-mkdir $HOME/compphys_examples && mkdir $HOME/compphys_examples/terminal_examples && cd $HOME/compphys_examples/terminal_examples && echo "" && echo "current directory: $(pwd)" && echo ""
+mkdir $HOME/compphys_examples && mkdir $HOME/compphys_terminal_examples && cd $HOME/compphys_terminal_examples && echo "" && echo "current directory: $(pwd)" && echo ""
 ```
 
 ```{note}
@@ -23,7 +23,7 @@ Don't miss the [keyboard shortcuts](sec:keyboard_shortcuts) listed at the bottom
 
 **Preparation command:**
 ```sh
-cd $HOME/compphys_examples/terminal_examples && mkdir navigate && cd navigate && mkdir emptydir dirA dirA/dirB && touch file1.txt dirA/file2.txt dirA/dirB/file3.txt && echo "" && echo "current directory: $(pwd)" && echo ""
+cd $HOME/compphys_terminal_examples && mkdir navigate && cd navigate && mkdir emptydir dirA dirA/dirB && touch file1.txt dirA/file2.txt dirA/dirB/file3.txt && echo "" && echo "current directory: $(pwd)" && echo ""
 ```
 
 The basic commands for finding your way around the system are `pwd`, `ls` and `cd`:
@@ -46,11 +46,11 @@ cd ../../               # Move up two directories
 cd                      # Move directly to the home directory (typically /home/yourusername/)
 cd ~                    # Same as above
 cd $HOME                # Same as above 
-cd /home/yourusername/compphys_examples/terminal_examples  # Move to a directory using its full ('absolute') path
+cd /home/yourusername/compphys_terminal_examples  # Move to a directory using its full ('absolute') path
 ```
 **Remove example files:**
 ```sh
-cd $HOME/compphys_examples/terminal_examples && rm -r navigate
+cd $HOME/compphys_terminal_examples && rm -r navigate
 ```
 
 
@@ -58,7 +58,7 @@ cd $HOME/compphys_examples/terminal_examples && rm -r navigate
 
 **Preparation command:**
 ```sh
-cd $HOME/compphys_examples/terminal_examples && mkdir copy_move_rename && cd copy_move_rename && mkdir emptydir dirA dirA/dirB && touch file1.txt dirA/file2.txt dirA/dirB/file3.txt && echo "" && echo "current directory: $(pwd)" && echo ""
+cd $HOME/compphys_terminal_examples && mkdir copy_move_rename && cd copy_move_rename && mkdir emptydir dirA dirA/dirB && touch file1.txt dirA/file2.txt dirA/dirB/file3.txt && echo "" && echo "current directory: $(pwd)" && echo ""
 ```
 
 The basic command for copying is `cp`, and the command for moving and renaming is `mv`. 
@@ -83,7 +83,7 @@ mv dirA_copy dirA_renamed            # Rename the directory dirA_copy to dirA_re
 ```
 **Remove example files:**
 ```sh
-cd $HOME/compphys_examples/terminal_examples && rm -r copy_move_rename
+cd $HOME/compphys_terminal_examples && rm -r copy_move_rename
 ```
 
 
@@ -91,7 +91,7 @@ cd $HOME/compphys_examples/terminal_examples && rm -r copy_move_rename
 
 **Preparation command:**
 ```sh
-cd $HOME/compphys_examples/terminal_examples && mkdir delete && cd delete && mkdir emptydir dirA dirA/dirB && touch file1.txt dirA/file2.txt dirA/dirB/file3.txt && echo "" && echo "current directory: $(pwd)" && echo ""
+cd $HOME/compphys_terminal_examples && mkdir delete && cd delete && mkdir emptydir dirA dirA/dirB && touch file1.txt dirA/file2.txt dirA/dirB/file3.txt && echo "" && echo "current directory: $(pwd)" && echo ""
 ```
 
 The basic command for deleting stuff is `rm` (for *remove*). To remove an empty directory you can use `rmdir`.
@@ -105,7 +105,7 @@ rmdir emptydir                          # Delete the empty directory emptydir
 
 **Remove example files:**
 ```sh
-cd $HOME/compphys_examples/terminal_examples && rm -r delete
+cd $HOME/compphys_terminal_examples && rm -r delete
 ```
 
 ```{note}
@@ -117,7 +117,7 @@ cd $HOME/compphys_examples/terminal_examples && rm -r delete
 
 **Preparation command:**
 ```sh
-cd $HOME/compphys_examples/terminal_examples && mkdir wildcards && cd wildcards && mkdir dirA && touch file1.txt file2.txt file3.txt file11.txt file12.txt file13.txt dirA/file.txt dirA/bare.skrot dirA/tull.ball && echo "" && echo "current directory: $(pwd)" && echo ""
+cd $HOME/compphys_terminal_examples && mkdir wildcards && cd wildcards && mkdir dirA && touch file1.txt file2.txt file3.txt file11.txt file12.txt file13.txt dirA/file.txt dirA/bare.skrot dirA/tull.ball && echo "" && echo "current directory: $(pwd)" && echo ""
 ```
 
 The wildcards `*`, `?` and `[]` allow you to perform commands on groups of files/directories. Wildcards can be used with all terminal commands. Here are some examples using the `ls`, `rm` and `mv` commands:
@@ -137,7 +137,7 @@ mv *.txt dirA/       # Move files ending with ".txt" into the dirA directory
 
 **Remove example files:**
 ```sh
-cd $HOME/compphys_examples/terminal_examples && rm -r wildcards
+cd $HOME/compphys_terminal_examples && rm -r wildcards
 ```
 
 
@@ -145,7 +145,7 @@ cd $HOME/compphys_examples/terminal_examples && rm -r wildcards
 
 **Preparation command:**
 ```sh
-cd $HOME/compphys_examples/terminal_examples && mkdir view_files && cd view_files && echo "Line number 1" > file1.txt && echo "Line number 2" >> file1.txt && echo "Line number 3" >> file1.txt && echo "Line number 4" >> file1.txt && echo "Line number 5" >> file1.txt && echo "" && echo "current directory: $(pwd)" && echo ""
+cd $HOME/compphys_terminal_examples && mkdir view_files && cd view_files && echo "Line number 1" > file1.txt && echo "Line number 2" >> file1.txt && echo "Line number 3" >> file1.txt && echo "Line number 4" >> file1.txt && echo "Line number 5" >> file1.txt && echo "" && echo "current directory: $(pwd)" && echo ""
 ```
 
 There are several commands for inspecting the content of files directly from the terminal. Below we demonstrate the commands `cat`, `head`, `tail` and `less`. (For a more in-depth explanation, see [here](https://i.redd.it/jlaxkglh1iw41.png).)
@@ -159,7 +159,7 @@ less file1.txt       # View file1.txt interactively. Press 'q' to return to the 
 
 **Remove example files:**
 ```sh
-cd $HOME/compphys_examples/terminal_examples && rm -r view_files
+cd $HOME/compphys_terminal_examples && rm -r view_files
 ```
 
 ```{note}
@@ -167,11 +167,83 @@ Viewing files like this only works for text-based (i.e. human readable) files. F
 ```
 
 
+## Run programs and scripts
+
+**Preparation command:**
+```sh
+cd $HOME/compphys_terminal_examples && mkdir run_programs run_programs/dirA && cd run_programs && echo "echo \"This program does nothing\" " > some_script.sh  && echo "echo \"This program also does nothing\" " > dirA/some_other_script.sh  && chmod u+x some_script.sh dirA/some_other_script.sh && echo "" &&  echo "current directory: $(pwd)" && echo ""
+```
+
+To run an **executable** (a compiled C++ program, a shell script, etc.) we simply specify the path to the executable file and hit 'enter'. When the file lives in the current directory, we specify the directory with './':
+
+```sh
+./some_script.sh             # Run some_script.sh that lives in the current directory
+dirA/some_other_script.sh    # Run some_other_script.sh that lives in the directory dirA
+./dirA/some_other_script.sh  # Same as above
+$HOME/compphys_terminal_examples/run_programs/some_script.sh   # Run a script using its full (absolute) path
+```
+
+**Remove example files:**
+```sh
+cd $HOME/compphys_terminal_examples && rm -r run_programs
+```
+
+
+## Write terminal output to file
+
+**Preparation command:**
+```sh
+cd $HOME/compphys_terminal_examples && mkdir write_to_file && cd write_to_file && echo "echo \"0.1423e+2  0.7123e+1  0.9423e+0  -0.8720e+1\" " > some_script.sh && chmod u+x some_script.sh && echo "" &&  echo "current directory: $(pwd)" && echo ""
+```
+
+The output from a command can be written to a file by using the `>` operator. This will *overwrite* any existing content in the output file. To *append* to an existing file, use the `>>` operator:
+
+```sh
+./some_script.sh                # Run some_script.sh. This just prints some dummy data to screen
+
+./some_script.sh > mydata.dat   # Run some_script.sh and save the output in the file mydata.dat
+cat mydata.dat                  # Check the content of mydata.dat
+
+./some_script.sh > mydata.dat   # Run some_script.sh again. This *overwrites* the previous mydata.dat
+./some_script.sh >> mydata.dat  # Run some_script.sh again, but *append* to the end of mydata.dat.
+cat mydata.dat                  # mydata.dat should now contain two lines
+```
+
+**Remove example files:**
+```sh
+cd $HOME/compphys_terminal_examples && rm -r write_to_file
+```
+
+
+## Search for files and directories
+
+**Preparation command:**
+```sh
+cd $HOME/compphys_terminal_examples && mkdir search && cd search && mkdir dirA dirA/dirB && touch a_file_with_dir_in_the_name.txt file1.txt dirA/file2.txt dirA/dirB/file3.txt && echo "" && echo "current directory: $(pwd)" && echo ""
+```
+
+We can search for files and directories using the `find` command:
+
+```sh
+find . -name "*.txt"          # From the current directory ("."), search for any anything ending with ".txt"
+find . -name "*dir*"          # From the current directory, search for anything with "dir" in the name
+find . -type f -name "*dir*"  # Same as above, but only search for files
+find . -type d -name "*dir*"  # Same as above, but only search for directories
+find $HOME/compphys_terminal_examples -type d -name "*dir*"  # Use an absolute path to specify the starting point
+```
+
+**Remove example files:**
+```sh
+cd $HOME/compphys_terminal_examples && rm -r search
+```
+
+
+
 ## Download files
 
 **Preparation command:**
 ```sh
-cd $HOME/compphys_examples/terminal_examples && mkdir download_files && cd download_files && echo "" && echo "current directory: $(pwd)" && echo ""
+cd $HOME/compphys_terminal_examples && mkdir download_files && cd download_files && echo "" && echo "current directory: $(pwd)" && echo ""
 ```
 
 If you have the URL you can download a file directly from the terminal with the `wget` command. Let's demonstrate it by downloading the markdown (`.md`) file that this page is built from:
@@ -184,11 +256,8 @@ less basics.md   # Take a look at the downloaded file
 
 **Remove example files:**
 ```sh
-cd $HOME/compphys_examples/terminal_examples && rm -r download_files
+cd $HOME/compphys_terminal_examples && rm -r download_files
 ```
-
-
-<!-- Here! --> 
 
 
 
@@ -240,16 +309,10 @@ Here are some useful keyboard shortcuts for working in the terminal:
 - [DONE] head
 - [DONE] tail
 - [DONE] wget
-
-- running a script or program
-
-- [DONE] echo "tull"
-
-- pass output to file ">"
-
-- append to file ">>"
-
-- find
+- [DONE] running a script or program
+- [DONE] pass output to file ">"
+- [DONE] append to file ">>"
+- [DONE] find
 
 - grep
 
