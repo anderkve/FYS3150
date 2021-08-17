@@ -45,6 +45,8 @@ echo "command one" && I-made-a-typo-here && echo "command three"
 
 <!--
 
+ls -l *.txt | wc -l
+
 ctrl-shift-c
 ctrl-shift-v
 
