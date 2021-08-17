@@ -1,5 +1,6 @@
 # Using OpenMP
 
+For future reference, you can download OpenMP reference cards that contain tables with OpenMPs functionality. They help you quickly access syntax and built-in functionality if you forget. [OpenMP reference cards](https://www.openmp.org/resources/refguides/)
 
 ## Compiler directives
 
