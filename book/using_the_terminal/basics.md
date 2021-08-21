@@ -1,10 +1,9 @@
 # Basics 
 *or: How I Learned to Stop Worrying and Love the Terminal*
 
-
 On this page you'll learn the basics of working from the **terminal** (a.k.a. the **shell**, a.k.a. the **command line**). Typing commands instead of the usual point-and-click may feel a bit clumsy and old-fashioned at first. But if you stick with it, you'll soon realize why the terminal is a standard tool for code developers, computational scientists and anyone else doing fancy stuff with computers.
 
-For the examples below we will often need some dummy directories and files. To prepare these files and directories we'll provide one-line *preparation commands* that you can simply copy and paste into the terminal. To paste in the terminal, right-click or press **ctrl-shift-v** (Linux) or **cmd-c** (MacOS). To execute a command, simply hit 'enter'. 
+For the examples below we will often need some dummy directories and files. To create/download these files and directories we'll provide one-line *preparation commands* that you can simply copy and paste into the terminal. To paste in the terminal, right-click or press **ctrl-shift-v** (Linux) or **cmd-c** (MacOS). To execute a command, simply hit 'enter'. 
 
 Don't worry if you don't yet understand everything going on in these preparation commands --- you'll learn all of it soon. After each example we also provide a single-line command that deletes the dummy files we've just created.
 
@@ -267,6 +266,21 @@ cat mydata.dat                  # Check the content of mydata.dat
 cat mydata.dat                  # mydata.dat should now contain two lines
 ```
 
+It is often useful to *both* see the terminal output directly on screen *and* save it to a file. This can be achieved by combining the original command with the `tee` command, using the **pipe** operator `|`. You will learn more about this in the [piping](sec:piping) section below, but for now here's a useful example:
+
+```sh
+# Run some_script.sh. The output will be displayed 
+# on screen *and* saved to some_script_output.txt. 
+# The funny-looking "2>&1" ensures that any potential 
+# error messages (technically: output to STDERR) will 
+# also be saved to file.
+./some_script.sh 2>&1 | tee some_script_output.txt
+
+# Print the content of some_script_output.txt
+cat some_script_output.txt
+```
+
+
 **Remove example files:**
 ```sh
 cd $HOME/compphys_examples && rm -r write_to_file
@@ -343,7 +357,7 @@ Grepping is often combined with **piping**, which is the next topic below.
 ```sh
 cd $HOME/compphys_examples && rm -r search_file_content
 ```
-
+(sec:piping)=
 ## Piping
 
 **Preparation command:**
