@@ -422,5 +422,5 @@ All the single-line preparation commands we've used throughout this page are bas
 
 ----
 
-*Congratulations!* If you've worked your way through the above commands you're well on your way to become a terminal ninja. And of course, don't forget to learn some useful [keyboard shortcuts](sec:keyboard_shortcuts).
+*Congratulations!* If you have worked your way through the above commands you are well on your way to become a true terminal ninja.
 
