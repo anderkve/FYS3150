@@ -440,6 +440,21 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#run-programs-and-scripts">
+   Run programs and scripts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#write-terminal-output-to-file">
+   Write terminal output to file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#search-for-files-and-directories">
+   Search for files and directories
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#download-files">
    Download files
   </a>
@@ -464,17 +479,22 @@
 <h1>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h1>
 <p><em>or: How I Learned to Stop Worrying and Love the Terminal</em></p>
 <p>On this page you’ll learn the basics of working from the <strong>terminal</strong> (a.k.a. the <strong>shell</strong>, a.k.a. the <strong>command line</strong>). Typing commands instead of the usual point-and-click may feel a bit clumsy and old-fashioned at first. But if you stick with it, you’ll soon realize why the terminal is a standard tool for code developers, computational scientists and anyone else doing fancy stuff with computers.</p>
-<p><strong>Preparation:</strong> For the examples below it will be useful to have a test directory <code class="docutils literal notranslate"><span class="pre">example_basic</span></code> that contains some dummy files and subdirectories. To create this, start your terminal application, copy the command below, paste it into the terminal (right-click, or press <strong>ctrl-shift-v</strong> (Linux) or <strong>cmd-c</strong> (MacOS)), and hit ‘enter’.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir example_basic <span class="o">&amp;&amp;</span> <span class="nb">cd</span> example_basic <span class="o">&amp;&amp;</span> mkdir emptydir dirA dirA/dirB <span class="o">&amp;&amp;</span> touch file1.txt dirA/file2.txt dirA/dirB/file3.txt
+<p>For the examples below we will often need some dummy directories and files. To prepare these files and directories we’ll provide one-line <em>preparation commands</em> that you can simply copy and paste into the terminal. To paste in the terminal, right-click or press <strong>ctrl-shift-v</strong> (Linux) or <strong>cmd-c</strong> (MacOS). To execute a command, simply hit ‘enter’.</p>
+<p>Don’t worry if you don’t yet understand everything going on in these preparation commands — you’ll learn all of it soon. After each example we also provide a single-line command that deletes the dummy files we’ve just created.</p>
+<p>We’ll start by creating a directory <code class="docutils literal notranslate"><span class="pre">compphys_examples</span></code> in our home directory and go to that directory. This directory will be starting point for the examples below.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> mkdir <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> <span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;current directory: </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
 </pre></div>
 </div>
-<p>When you’ve worked through the examples below you’ll understand what this long command actually did.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Don’t miss the <a class="reference internal" href="#sec-keyboard-shortcuts"><span class="std std-ref">keyboard shortcuts</span></a> listed at the bottom of this page — they will make your life in the terminal much easier.</p>
 </div>
 <div class="section" id="navigation">
 <h2>Navigation<a class="headerlink" href="#navigation" title="Permalink to this headline">¶</a></h2>
+<p><strong>Preparation command:</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> mkdir navigate <span class="o">&amp;&amp;</span> <span class="nb">cd</span> navigate <span class="o">&amp;&amp;</span> mkdir emptydir dirA dirA/dirB <span class="o">&amp;&amp;</span> touch file1.txt dirA/file2.txt dirA/dirB/file3.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;current directory: </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
 <p>The basic commands for finding your way around the system are <code class="docutils literal notranslate"><span class="pre">pwd</span></code>, <code class="docutils literal notranslate"><span class="pre">ls</span></code> and <code class="docutils literal notranslate"><span class="pre">cd</span></code>:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the directory you&#39;re currently in (the &#39;working directory&#39;)</span>
 <span class="nb">pwd</span>
@@ -491,20 +511,25 @@ ls -lh       <span class="c1"># Same as above, but with file sizes given in &#39
 <span class="nb">cd</span> dirA/dirB            <span class="c1"># Move into directory &#39;dirA/dirB&#39;</span>
 <span class="nb">cd</span> ../../               <span class="c1"># Move up two directories</span>
 <span class="nb">cd</span>                      <span class="c1"># Move directly to the home directory (typically /home/yourusername/)</span>
-<span class="nb">cd</span> ~                    <span class="c1"># (Same as above)</span>
-<span class="nb">cd</span> /home/yourusername/example_basic/  <span class="c1"># Move to a directory using its full (&#39;absolute&#39;) path</span>
+<span class="nb">cd</span> ~                    <span class="c1"># Same as above</span>
+<span class="nb">cd</span> <span class="nv">$HOME</span>                <span class="c1"># Same as above </span>
+<span class="nb">cd</span> /home/yourusername/compphys_examples  <span class="c1"># Move to a directory using its full (&#39;absolute&#39;) path</span>
+</pre></div>
+</div>
+<p><strong>Remove example files:</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> rm -r navigate
 </pre></div>
 </div>
 </div>
 <div class="section" id="copying-moving-and-renaming-files-and-directories">
 <h2>Copying, moving and renaming files and directories<a class="headerlink" href="#copying-moving-and-renaming-files-and-directories" title="Permalink to this headline">¶</a></h2>
+<p><strong>Preparation command:</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> mkdir copy_move_rename <span class="o">&amp;&amp;</span> <span class="nb">cd</span> copy_move_rename <span class="o">&amp;&amp;</span> mkdir emptydir dirA dirA/dirB <span class="o">&amp;&amp;</span> touch file1.txt dirA/file2.txt dirA/dirB/file3.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;current directory: </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
 <p>The basic command for copying is <code class="docutils literal notranslate"><span class="pre">cp</span></code>, and the command for moving and renaming is <code class="docutils literal notranslate"><span class="pre">mv</span></code>.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># NOTES: </span>
-<span class="c1">#</span>
-<span class="c1"># - Make sure you start from the &#39;example_basic&#39; directory</span>
-<span class="c1">#</span>
-<span class="c1"># - If you get confused, use the &#39;pwd&#39; and &#39;ls&#39; commands to</span>
-<span class="c1">#   see where you are and what files/directories are present</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># If you get confused, use the &#39;pwd&#39; and &#39;ls&#39; commands to</span>
+<span class="c1"># see where you are and what files/directories are present</span>
 
 <span class="c1"># Copy files</span>
 cp file1.txt file1_copy.txt          <span class="c1"># Make a copy of file1.txt in the current directory</span>
@@ -521,38 +546,63 @@ mv file1_copy.txt file1_renamed.txt  <span class="c1"># Rename file1_copy.txt to
 mv dirA_copy dirA_renamed            <span class="c1"># Rename the directory dirA_copy to dirA_renamed</span>
 </pre></div>
 </div>
+<p><strong>Remove example files:</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> rm -r copy_move_rename
+</pre></div>
+</div>
 </div>
 <div class="section" id="deleting-files-and-directories">
 <h2>Deleting files and directories<a class="headerlink" href="#deleting-files-and-directories" title="Permalink to this headline">¶</a></h2>
-<p>The basic command for deleting stuff is <code class="docutils literal notranslate"><span class="pre">rm</span></code>. To remove an empty directory you can use <code class="docutils literal notranslate"><span class="pre">rmdir</span></code>.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rm file1_renamed.txt    <span class="c1"># Delete the file file1_renamed.txt</span>
-rm -r dirA_renamed      <span class="c1"># Delete the directory dirA_renamed with all content (note the -r flag)</span>
-rmdir emptydir          <span class="c1"># Delete the empty directory emptydir</span>
+<p><strong>Preparation command:</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> mkdir delete <span class="o">&amp;&amp;</span> <span class="nb">cd</span> delete <span class="o">&amp;&amp;</span> mkdir emptydir dirA dirA/dirB <span class="o">&amp;&amp;</span> touch file1.txt dirA/file2.txt dirA/dirB/file3.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;current directory: </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<p>The basic command for deleting stuff is <code class="docutils literal notranslate"><span class="pre">rm</span></code> (for <em>remove</em>). To remove an empty directory you can use <code class="docutils literal notranslate"><span class="pre">rmdir</span></code>.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rm file1.txt                            <span class="c1"># Delete the file file1.txt</span>
+rm dirA/file2.txt dirA/dirB/file3.txt   <span class="c1"># Delete the two files dirA/file2.txt and dirA/dirB/file3.txt</span>
+rm -r dirA                              <span class="c1"># Delete the entire directory dirA with all content (note the -r flag)</span>
+rmdir emptydir                          <span class="c1"># Delete the empty directory emptydir</span>
+</pre></div>
+</div>
+<p><strong>Remove example files:</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> rm -r delete
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><em>With great power comes great responsibility!</em> If you delete or overwrite a file/directory by mistake, it is basically gone. (Unless it’s a file that is tracked by <code class="docutils literal notranslate"><span class="pre">git</span></code> — then it’s very easy to restore it. You’ll learn about that in the git section.) So it can be wise to take a second look before executing a <code class="docutils literal notranslate"><span class="pre">rm</span></code> or <code class="docutils literal notranslate"><span class="pre">mv</span></code> command. For instance, you <em>never ever</em> want to do the mistake of accidentally running the command <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-r</span> <span class="pre">/</span></code>, which would delete everything your user has access to. Another dangerous example is <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-r</span> <span class="pre">*</span></code>, which would delete everything in the current directory and all subdirectories — so you want to make very sure you’re standing in the correct directory… (See below for an explanation of the wildcard <code class="docutils literal notranslate"><span class="pre">*</span></code>.)</p>
+<p><em>With great power comes great responsibility!</em> If you delete or overwrite a file/directory by mistake, it is basically gone. (Unless it’s a file that is tracked by <code class="docutils literal notranslate"><span class="pre">git</span></code> — then it’s very easy to restore it. You’ll learn about that in the git section.) So it can be wise to take a second look before executing a <code class="docutils literal notranslate"><span class="pre">rm</span></code> or <code class="docutils literal notranslate"><span class="pre">mv</span></code> command. For instance, you <em>never ever</em> want to do the mistake of accidentally running the command <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-r</span> <span class="pre">/</span></code>, which would delete <em>everything</em> your user has access to. Another dangerous example is <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-r</span> <span class="pre">*</span></code>, which would delete everything in the current directory and all subdirectories — so you want to make very sure you’re in the correct directory… (See below for an explanation of the wildcard <code class="docutils literal notranslate"><span class="pre">*</span></code>.)</p>
 </div>
 </div>
 <div class="section" id="using-wildcards">
 <h2>Using wildcards<a class="headerlink" href="#using-wildcards" title="Permalink to this headline">¶</a></h2>
+<p><strong>Preparation command:</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> mkdir wildcards <span class="o">&amp;&amp;</span> <span class="nb">cd</span> wildcards <span class="o">&amp;&amp;</span> mkdir dirA <span class="o">&amp;&amp;</span> touch file1.txt file2.txt file3.txt file11.txt file12.txt file13.txt dirA/file.txt dirA/bare.skrot dirA/tull.ball <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;current directory: </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
 <p>The wildcards <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">?</span></code> and <code class="docutils literal notranslate"><span class="pre">[]</span></code> allow you to perform commands on groups of files/directories. Wildcards can be used with all terminal commands. Here are some examples using the <code class="docutils literal notranslate"><span class="pre">ls</span></code>, <code class="docutils literal notranslate"><span class="pre">rm</span></code> and <code class="docutils literal notranslate"><span class="pre">mv</span></code> commands:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ls file*             <span class="c1"># List files with names beginning with &quot;file&quot;</span>
 ls *.txt             <span class="c1"># List files with names ending with &quot;.txt&quot;</span>
-ls <span class="k">fi</span>*.txt           <span class="c1"># List files with names beginning with &quot;fi&quot; and ending with &quot;.txt&quot;</span>
+ls f*.txt            <span class="c1"># List files with names beginning with &quot;f&quot; and ending with &quot;.txt&quot;</span>
 ls file?.txt         <span class="c1"># List files that match &quot;file?.txt&quot; where &quot;?&quot; can be any single character</span>
 ls file<span class="o">[</span><span class="m">123</span><span class="o">]</span>.txt     <span class="c1"># List files named &quot;file1.txt&quot;, &quot;file2.txt&quot; or &quot;file3.txt&quot;</span>
 
-rm dirA/*_copy.txt   <span class="c1"># Delete files in directory dirA with names ending with &quot;_copy.txt&quot;</span>
+rm dirA/*.txt        <span class="c1"># Delete files in directory dirA with names ending with &quot;_copy.txt&quot;</span>
 rm dirA/*            <span class="c1"># Delete all files in dirA</span>
 
 mv *.txt dirA/       <span class="c1"># Move files ending with &quot;.txt&quot; into the dirA directory</span>
 </pre></div>
 </div>
+<p><strong>Remove example files:</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> rm -r wildcards
+</pre></div>
+</div>
 </div>
 <div class="section" id="viewing-files">
 <h2>Viewing files<a class="headerlink" href="#viewing-files" title="Permalink to this headline">¶</a></h2>
+<p><strong>Preparation command:</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> mkdir view_files <span class="o">&amp;&amp;</span> <span class="nb">cd</span> view_files <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Line number 1&quot;</span> &gt; file1.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Line number 2&quot;</span> &gt;&gt; file1.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Line number 3&quot;</span> &gt;&gt; file1.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Line number 4&quot;</span> &gt;&gt; file1.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Line number 5&quot;</span> &gt;&gt; file1.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;current directory: </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
 <p>There are several commands for inspecting the content of files directly from the terminal. Below we demonstrate the commands <code class="docutils literal notranslate"><span class="pre">cat</span></code>, <code class="docutils literal notranslate"><span class="pre">head</span></code>, <code class="docutils literal notranslate"><span class="pre">tail</span></code> and <code class="docutils literal notranslate"><span class="pre">less</span></code>. (For a more in-depth explanation, see <a class="reference external" href="https://i.redd.it/jlaxkglh1iw41.png">here</a>.)</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>cat file1.txt        <span class="c1"># Print the full content of file1.txt to the terminal screen</span>
 head -3 file1.txt    <span class="c1"># Print the first 3 lines of file1.txt</span>
@@ -560,17 +610,104 @@ tail -2 file1.txt    <span class="c1"># Print the last 2 lines of file1.txt</spa
 less file1.txt       <span class="c1"># View file1.txt interactively. Press &#39;q&#39; to return to the terminal</span>
 </pre></div>
 </div>
+<p><strong>Remove example files:</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> rm -r view_files
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Viewing files like this only works for text-based (i.e. human readable) files. For files in some binary format, e.g. a compiled C++ program, you won’t get sensible output from commands like <code class="docutils literal notranslate"><span class="pre">cat</span></code> and <code class="docutils literal notranslate"><span class="pre">less</span></code>. (Try it and see.)</p>
 </div>
 </div>
+<div class="section" id="run-programs-and-scripts">
+<h2>Run programs and scripts<a class="headerlink" href="#run-programs-and-scripts" title="Permalink to this headline">¶</a></h2>
+<p><strong>Preparation command:</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> mkdir run_programs run_programs/dirA <span class="o">&amp;&amp;</span> <span class="nb">cd</span> run_programs <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;echo \&quot;This program does nothing\&quot; &quot;</span> &gt; some_script.sh  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;echo \&quot;This program also does nothing\&quot; &quot;</span> &gt; dirA/some_other_script.sh  <span class="o">&amp;&amp;</span> chmod u+x some_script.sh dirA/some_other_script.sh <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span> <span class="o">&amp;&amp;</span>  <span class="nb">echo</span> <span class="s2">&quot;current directory: </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<p>To run an <strong>executable</strong> (a compiled C++ program, a shell script, etc.) we simply specify the path to the executable file and hit ‘enter’. When the file lives in the current directory, we specify the directory with ‘./’:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./some_script.sh             <span class="c1"># Run some_script.sh that lives in the current directory</span>
+dirA/some_other_script.sh    <span class="c1"># Run some_other_script.sh that lives in the directory dirA</span>
+./dirA/some_other_script.sh  <span class="c1"># Same as above</span>
+<span class="nv">$HOME</span>/compphys_examples/run_programs/some_script.sh   <span class="c1"># Run a script using its full (absolute) path</span>
+</pre></div>
+</div>
+<p>If you write your own script, the file will not automatically be executable. You first have to change the <strong>file mode</strong> using the <code class="docutils literal notranslate"><span class="pre">chmod</span></code> command. Let’s quickly demonstrate this using the <code class="docutils literal notranslate"><span class="pre">some_script.sh</span></code> script:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>chmod a-x some_script.sh   <span class="c1"># Remove the execution (&#39;x&#39;) mode for *all* users (&#39;a&#39;)</span>
+./some_script.sh           <span class="c1"># This will now fail with a &quot;permission denied&quot; error</span>
+chmod u+x some_script.sh   <span class="c1"># Add the execution mode only for the *owner* (&#39;u&#39;), which is you</span>
+./some_script.sh           <span class="c1"># This will now work again</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">cmhod</span></code> command is the general command for used to set who has permission to read, write and/or execute files. You can see which permissions are set for a given file by listing it with the <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span></code> command and read the string of <code class="docutils literal notranslate"><span class="pre">r</span></code>, <code class="docutils literal notranslate"><span class="pre">w</span></code>, and <code class="docutils literal notranslate"><span class="pre">x</span></code> characters at the beginning of the output. If e.g. the command</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ls -l some_script.sh
+</pre></div>
+</div>
+<p>outputs</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">rwxrw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">youruser</span> <span class="n">youruser</span> <span class="mi">34</span> <span class="n">aug</span><span class="o">.</span>  <span class="mi">20</span> <span class="mi">17</span><span class="p">:</span><span class="mi">00</span> <span class="n">some_script</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>the first three characters (<code class="docutils literal notranslate"><span class="pre">rwx</span></code>) after the <code class="docutils literal notranslate"><span class="pre">-</span></code> say that the <strong>owner</strong> has read, write and execute permissions, the next three characters (<code class="docutils literal notranslate"><span class="pre">rw-</span></code>) show that users in the same <strong>group</strong> as the owner have read and write permissions, and the final three characters (<code class="docutils literal notranslate"><span class="pre">r--</span></code>) say that <strong>others</strong> only have read permission.</p>
+<p><strong>Remove example files:</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> rm -r run_programs
+</pre></div>
+</div>
+</div>
+<div class="section" id="write-terminal-output-to-file">
+<h2>Write terminal output to file<a class="headerlink" href="#write-terminal-output-to-file" title="Permalink to this headline">¶</a></h2>
+<p><strong>Preparation command:</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> mkdir write_to_file <span class="o">&amp;&amp;</span> <span class="nb">cd</span> write_to_file <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;echo \&quot;0.1423e+2  0.7123e+1  0.9423e+0  -0.8720e+1\&quot; &quot;</span> &gt; some_script.sh <span class="o">&amp;&amp;</span> chmod u+x some_script.sh <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span> <span class="o">&amp;&amp;</span>  <span class="nb">echo</span> <span class="s2">&quot;current directory: </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<p>The output from a command can be written to a file by using the <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> operator. This will <em>overwrite</em> any existing content in the output file. To <em>append</em> to an existing file, use the <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> operator:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./some_script.sh                <span class="c1"># Run some_script.sh. This just prints some dummy data to screen</span>
+
+./some_script.sh &gt; mydata.dat   <span class="c1"># Run some_script.sh and save the output in the file mydata.dat</span>
+cat mydata.dat                  <span class="c1"># Check the content of mydata.dat</span>
+
+./some_script.sh &gt; mydata.dat   <span class="c1"># Run some_script.sh again. This *overwrites* the previous mydata.dat</span>
+./some_script.sh &gt;&gt; mydata.dat  <span class="c1"># Run some_script.sh again, but *append* to the end of mydata.dat.</span>
+cat mydata.dat                  <span class="c1"># mydata.dat should now contain two lines</span>
+</pre></div>
+</div>
+<p><strong>Remove example files:</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> rm -r write_to_file
+</pre></div>
+</div>
+</div>
+<div class="section" id="search-for-files-and-directories">
+<h2>Search for files and directories<a class="headerlink" href="#search-for-files-and-directories" title="Permalink to this headline">¶</a></h2>
+<p><strong>Preparation command:</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> mkdir search <span class="o">&amp;&amp;</span> <span class="nb">cd</span> search <span class="o">&amp;&amp;</span> mkdir dirA dirA/dirB <span class="o">&amp;&amp;</span> touch a_file_with_dir_in_the_name.txt file1.txt dirA/file2.txt dirA/dirB/file3.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;current directory: </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<p>We can search for files and directories using the <code class="docutils literal notranslate"><span class="pre">find</span></code> command:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>find . -name <span class="s2">&quot;*.txt&quot;</span>          <span class="c1"># From the current directory (&quot;.&quot;), search for any anything ending with &quot;.txt&quot;</span>
+find . -name <span class="s2">&quot;*dir*&quot;</span>          <span class="c1"># From the current directory, search for anything with &quot;dir&quot; in the name</span>
+find . -type f -name <span class="s2">&quot;*dir*&quot;</span>  <span class="c1"># Same as above, but only search for files</span>
+find . -type d -name <span class="s2">&quot;*dir*&quot;</span>  <span class="c1"># Same as above, but only search for directories</span>
+find <span class="nv">$HOME</span>/compphys_examples -type d -name <span class="s2">&quot;*dir*&quot;</span>  <span class="c1"># Use an absolute path to specify the starting point</span>
+</pre></div>
+</div>
+<p><strong>Remove example files:</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> rm -r search
+</pre></div>
+</div>
+</div>
 <div class="section" id="download-files">
 <h2>Download files<a class="headerlink" href="#download-files" title="Permalink to this headline">¶</a></h2>
+<p><strong>Preparation command:</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> mkdir download_files <span class="o">&amp;&amp;</span> <span class="nb">cd</span> download_files <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;current directory: </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
 <p>If you have the URL you can download a file directly from the terminal with the <code class="docutils literal notranslate"><span class="pre">wget</span></code> command. Let’s demonstrate it by downloading the markdown (<code class="docutils literal notranslate"><span class="pre">.md</span></code>) file that this page is built from:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>wget https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/basics.md
 
 less basics.md   <span class="c1"># Take a look at the downloaded file</span>
+</pre></div>
+</div>
+<p><strong>Remove example files:</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> rm -r download_files
 </pre></div>
 </div>
 </div>
@@ -639,17 +776,10 @@ less basics.md   <span class="c1"># Take a look at the downloaded file</span>
 - [DONE] head
 - [DONE] tail
 - [DONE] wget
-
-
-- running a script or program
-
-- echo "tull"
-
-- pass output to file ">"
-
-- append to file ">>"
-
-- find
+- [DONE] running a script or program
+- [DONE] pass output to file ">"
+- [DONE] append to file ">>"
+- [DONE] find
 
 - grep
 
