@@ -125,6 +125,11 @@
    Advanced
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="keyboard_shortcuts.html">
+   Keyboard shortcuts
+  </a>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -455,13 +460,13 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#download-files">
-   Download files
+  <a class="reference internal nav-link" href="#search-for-file-content">
+   Search for file content
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#keyboard-shortcuts">
-   Keyboard shortcuts
+  <a class="reference internal nav-link" href="#download-files">
+   Download files
   </a>
  </li>
 </ul>
@@ -487,7 +492,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Don’t miss the <a class="reference internal" href="#sec-keyboard-shortcuts"><span class="std std-ref">keyboard shortcuts</span></a> listed at the bottom of this page — they will make your life in the terminal much easier.</p>
+<p>Don’t miss the <a class="reference internal" href="keyboard_shortcuts.html#sec-keyboard-shortcuts"><span class="std std-ref">keyboard shortcuts</span></a> — they will make your life in the terminal much easier.</p>
 </div>
 <div class="section" id="navigation">
 <h2>Navigation<a class="headerlink" href="#navigation" title="Permalink to this headline">¶</a></h2>
@@ -586,7 +591,7 @@ ls f*.txt            <span class="c1"># List files with names beginning with &qu
 ls file?.txt         <span class="c1"># List files that match &quot;file?.txt&quot; where &quot;?&quot; can be any single character</span>
 ls file<span class="o">[</span><span class="m">123</span><span class="o">]</span>.txt     <span class="c1"># List files named &quot;file1.txt&quot;, &quot;file2.txt&quot; or &quot;file3.txt&quot;</span>
 
-rm dirA/*.txt        <span class="c1"># Delete files in directory dirA with names ending with &quot;_copy.txt&quot;</span>
+rm dirA/*.txt        <span class="c1"># Delete files in directory dirA with names ending with &quot;.txt&quot;</span>
 rm dirA/*            <span class="c1"># Delete all files in dirA</span>
 
 mv *.txt dirA/       <span class="c1"># Move files ending with &quot;.txt&quot; into the dirA directory</span>
@@ -625,7 +630,7 @@ less file1.txt       <span class="c1"># View file1.txt interactively. Press &#39
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> mkdir run_programs run_programs/dirA <span class="o">&amp;&amp;</span> <span class="nb">cd</span> run_programs <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;echo \&quot;This program does nothing\&quot; &quot;</span> &gt; some_script.sh  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;echo \&quot;This program also does nothing\&quot; &quot;</span> &gt; dirA/some_other_script.sh  <span class="o">&amp;&amp;</span> chmod u+x some_script.sh dirA/some_other_script.sh <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span> <span class="o">&amp;&amp;</span>  <span class="nb">echo</span> <span class="s2">&quot;current directory: </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
 </pre></div>
 </div>
-<p>To run an <strong>executable</strong> (a compiled C++ program, a shell script, etc.) we simply specify the path to the executable file and hit ‘enter’. When the file lives in the current directory, we specify the directory with ‘./’:</p>
+<p>To run an <strong>executable</strong> (a compiled C++ program, a shell script, etc.) we simply specify the path to the executable file and hit ‘enter’. When the file lives in the current directory, we specify the directory with <code class="docutils literal notranslate"><span class="pre">./</span></code>:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./some_script.sh             <span class="c1"># Run some_script.sh that lives in the current directory</span>
 dirA/some_other_script.sh    <span class="c1"># Run some_other_script.sh that lives in the directory dirA</span>
 ./dirA/some_other_script.sh  <span class="c1"># Same as above</span>
@@ -694,6 +699,21 @@ find <span class="nv">$HOME</span>/compphys_examples -type d -name <span class="
 </pre></div>
 </div>
 </div>
+<div class="section" id="search-for-file-content">
+<h2>Search for file content<a class="headerlink" href="#search-for-file-content" title="Permalink to this headline">¶</a></h2>
+<p><strong>Preparation command:</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> mkdir search_file_content <span class="o">&amp;&amp;</span> <span class="nb">cd</span> search_file_content <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Line number 1&quot;</span> &gt; file1.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Line number 2&quot;</span> &gt;&gt; file1.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Line number 3&quot;</span> &gt;&gt; file1.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Line number 4&quot;</span> &gt;&gt; file1.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Line number 5&quot;</span> &gt;&gt; file1.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;current directory: </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<p>The standard tool for searching trough text content is the <code class="docutils literal notranslate"><span class="pre">grep</span></code> command. Using <code class="docutils literal notranslate"><span class="pre">grep</span></code> to search is sometimes referred to simply as “grepping”. Let’s first download (this) dummy output from (this) dummy program to illustrate some basic <code class="docutils literal notranslate"><span class="pre">grep</span></code> functionality:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>wget ...
+</pre></div>
+</div>
+<p><strong>Remove example files:</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> rm -r search_file_content
+</pre></div>
+</div>
+</div>
 <div class="section" id="download-files">
 <h2>Download files<a class="headerlink" href="#download-files" title="Permalink to this headline">¶</a></h2>
 <p><strong>Preparation command:</strong></p>
@@ -710,59 +730,6 @@ less basics.md   <span class="c1"># Take a look at the downloaded file</span>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> rm -r download_files
 </pre></div>
 </div>
-</div>
-<div class="section" id="keyboard-shortcuts">
-<span id="sec-keyboard-shortcuts"></span><h2>Keyboard shortcuts<a class="headerlink" href="#keyboard-shortcuts" title="Permalink to this headline">¶</a></h2>
-<p>Here are some useful keyboard shortcuts for working in the terminal:</p>
-<ul class="simple">
-<li><p><strong>Abort a running command:</strong></p>
-<ul>
-<li><p><em>Linux and MacOS:</em> Use <strong>ctrl-c</strong> to abort a command. You can test this by running the silly command <code class="docutils literal notranslate"><span class="pre">sleep</span> <span class="pre">10</span></code> (does nothing for ten seconds) and abort it with <strong>ctrl-c</strong> before it finishes.</p></li>
-</ul>
-</li>
-<li><p><strong>Repeat previous commands:</strong></p>
-<ul>
-<li><p><em>Linux and MacOS:</em> Use <strong>up</strong> and <strong>down</strong> to cycle through previous commands.</p></li>
-</ul>
-</li>
-<li><p><strong>Auto-complete file/directory names:</strong></p>
-<ul>
-<li><p><em>Linux and MacOS:</em> Use <strong>tab</strong> to auto-complete long file/directory names. If there are multiple possible matches, press <strong>tab</strong> twice to see the alternatives.</p></li>
-</ul>
-</li>
-<li><p><strong>Move cursor word by word:</strong></p>
-<ul>
-<li><p><em>Linux:</em> Use <strong>ctrl-right</strong> and <strong>ctrl-left</strong></p></li>
-<li><p><em>MacOS:</em> Use <strong>alt-right</strong> and <strong>alt-left</strong></p></li>
-</ul>
-</li>
-<li><p><strong>Jump to the beginning/end of the line:</strong></p>
-<ul>
-<li><p><em>Linux and MacOS:</em> Use <strong>ctrl-a</strong> and <strong>ctrl-e</strong></p></li>
-</ul>
-</li>
-<li><p><strong>Delete everything after the cursor:</strong></p>
-<ul>
-<li><p><em>Linux and MacOS:</em> Use <strong>ctrl-k</strong>. Thus, a quick way to clear the command line is to press <strong>ctrl-a</strong> and then <strong>ctrl-k</strong>. (Or you can press <strong>ctrl-c</strong>.)</p></li>
-</ul>
-</li>
-<li><p><strong>Copy/paste:</strong></p>
-<ul>
-<li><p><em>Linux:</em> Use <strong>ctrl-shift-c</strong> and <strong>ctrl-shift-v</strong></p></li>
-<li><p><em>MacOS:</em> Use <strong>cmd-c</strong> and <strong>cmd-v</strong></p></li>
-</ul>
-</li>
-<li><p><strong>Search previous commands:</strong></p>
-<ul>
-<li><p><em>Linux and MacOS:</em> Press <strong>ctrl-r</strong> and start typing a command. You can press <strong>ctrl-r</strong> again to cycle through alternative matches. Once you found it, press <strong>ctrl-j</strong> or an arrow key to start editing the command.</p></li>
-</ul>
-</li>
-<li><p><strong>Clear the terminal screen:</strong></p>
-<ul>
-<li><p><em>Linux and MacOS:</em> Press <strong>ctrl-l</strong>. You can also do this by running the command <code class="docutils literal notranslate"><span class="pre">clear</span></code>.</p></li>
-</ul>
-</li>
-</ul>
 <!--
 
 - [DONE] pwd
@@ -780,19 +747,15 @@ less basics.md   <span class="c1"># Take a look at the downloaded file</span>
 - [DONE] pass output to file ">"
 - [DONE] append to file ">>"
 - [DONE] find
+- [DONE] chmod
 
 - grep
 
-- chmod
-
 - man
-
 
 - history
 
 - tar and zip
-
-- history
 
 
 --></div>

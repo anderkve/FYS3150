@@ -15,7 +15,7 @@ mkdir $HOME/compphys_examples && mkdir $HOME/compphys_examples && cd $HOME/compp
 ```
 
 ```{note}
-Don't miss the [keyboard shortcuts](sec:keyboard_shortcuts) listed at the bottom of this page --- they will make your life in the terminal much easier.
+Don't miss the [keyboard shortcuts](sec:keyboard_shortcuts) --- they will make your life in the terminal much easier.
 ```
 
 
@@ -129,7 +129,7 @@ ls f*.txt            # List files with names beginning with "f" and ending with 
 ls file?.txt         # List files that match "file?.txt" where "?" can be any single character
 ls file[123].txt     # List files named "file1.txt", "file2.txt" or "file3.txt"
 
-rm dirA/*.txt        # Delete files in directory dirA with names ending with "_copy.txt"
+rm dirA/*.txt        # Delete files in directory dirA with names ending with ".txt"
 rm dirA/*            # Delete all files in dirA
 
 mv *.txt dirA/       # Move files ending with ".txt" into the dirA directory
@@ -174,7 +174,7 @@ Viewing files like this only works for text-based (i.e. human readable) files. F
 cd $HOME/compphys_examples && mkdir run_programs run_programs/dirA && cd run_programs && echo "echo \"This program does nothing\" " > some_script.sh  && echo "echo \"This program also does nothing\" " > dirA/some_other_script.sh  && chmod u+x some_script.sh dirA/some_other_script.sh && echo "" &&  echo "current directory: $(pwd)" && echo ""
 ```
 
-To run an **executable** (a compiled C++ program, a shell script, etc.) we simply specify the path to the executable file and hit 'enter'. When the file lives in the current directory, we specify the directory with './':
+To run an **executable** (a compiled C++ program, a shell script, etc.) we simply specify the path to the executable file and hit 'enter'. When the file lives in the current directory, we specify the directory with `./`:
 
 ```sh
 ./some_script.sh             # Run some_script.sh that lives in the current directory
@@ -262,6 +262,28 @@ cd $HOME/compphys_examples && rm -r search
 ```
 
 
+## Search for file content
+
+**Preparation command:**
+```sh
+cd $HOME/compphys_examples && mkdir search_file_content && cd search_file_content && echo "Line number 1" > file1.txt && echo "Line number 2" >> file1.txt && echo "Line number 3" >> file1.txt && echo "Line number 4" >> file1.txt && echo "Line number 5" >> file1.txt && echo "" && echo "current directory: $(pwd)" && echo ""
+```
+
+The standard tool for searching trough text content is the `grep` command. Using `grep` to search is sometimes referred to simply as "grepping". Let's first download (this) dummy output from (this) dummy program to illustrate some basic `grep` functionality:
+
+```sh
+wget ...
+```
+
+
+
+
+**Remove example files:**
+```sh
+cd $HOME/compphys_examples && rm -r search_file_content
+```
+
+
 
 ## Download files
 
@@ -284,42 +306,6 @@ cd $HOME/compphys_examples && rm -r download_files
 ```
 
 
-
-
-(sec:keyboard_shortcuts)=
-## Keyboard shortcuts
-
-Here are some useful keyboard shortcuts for working in the terminal:
-
-- **Abort a running command:** 
-  - *Linux and MacOS:* Use **ctrl-c** to abort a command. You can test this by running the silly command `sleep 10` (does nothing for ten seconds) and abort it with **ctrl-c** before it finishes.
-
-- **Repeat previous commands:** 
-  - *Linux and MacOS:* Use **up** and **down** to cycle through previous commands.
-
-- **Auto-complete file/directory names:** 
-  - *Linux and MacOS:* Use **tab** to auto-complete long file/directory names. If there are multiple possible matches, press **tab** twice to see the alternatives.
-
-- **Move cursor word by word:** 
-  - *Linux:* Use **ctrl-right** and **ctrl-left**
-  - *MacOS:* Use **alt-right** and **alt-left**
-
-- **Jump to the beginning/end of the line:**
-  - *Linux and MacOS:* Use **ctrl-a** and **ctrl-e**
-
-- **Delete everything after the cursor:**
-  - *Linux and MacOS:* Use **ctrl-k**. Thus, a quick way to clear the command line is to press **ctrl-a** and then **ctrl-k**. (Or you can press **ctrl-c**.)
-
-- **Copy/paste:**
-  - *Linux:* Use **ctrl-shift-c** and **ctrl-shift-v**
-  - *MacOS:* Use **cmd-c** and **cmd-v**
-
-- **Search previous commands:** 
-  - *Linux and MacOS:* Press **ctrl-r** and start typing a command. You can press **ctrl-r** again to cycle through alternative matches. Once you found it, press **ctrl-j** or an arrow key to start editing the command.
-
-- **Clear the terminal screen:**
-  - *Linux and MacOS:* Press **ctrl-l**. You can also do this by running the command `clear`.
-
 <!--
 
 - [DONE] pwd
@@ -337,19 +323,15 @@ Here are some useful keyboard shortcuts for working in the terminal:
 - [DONE] pass output to file ">"
 - [DONE] append to file ">>"
 - [DONE] find
+- [DONE] chmod
 
 - grep
 
-- chmod
-
 - man
-
 
 - history
 
 - tar and zip
-
-- history
 
 
 -->
