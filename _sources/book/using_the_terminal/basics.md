@@ -4,14 +4,14 @@
 
 On this page you'll learn the basics of working from the **terminal** (a.k.a. the **shell**, a.k.a. the **command line**). Typing commands instead of the usual point-and-click may feel a bit clumsy and old-fashioned at first. But if you stick with it, you'll soon realize why the terminal is a standard tool for code developers, computational scientists and anyone else doing fancy stuff with computers.
 
-For the examples below we will often need some dummy directories and files. To prepare these files and directories we'll provide one-line *preparation commands* that you can simply copy and paste into the terminal. To paste in the terminal, right-click or press **ctrl-shift-v** (Linux) or **cmd-c** (MacOS). To execute a command, simply hit 'enter'. 
+For the examples below we will often need some dummy directories and files. To create/download these files and directories we'll provide one-line *preparation commands* that you can simply copy and paste into the terminal. To paste in the terminal, right-click or press **ctrl-shift-v** (Linux) or **cmd-c** (MacOS). To execute a command, simply hit 'enter'. 
 
 Don't worry if you don't yet understand everything going on in these preparation commands --- you'll learn all of it soon. After each example we also provide a single-line command that deletes the dummy files we've just created.
 
 We'll start by creating a directory `compphys_examples` in our home directory and go to that directory. This directory will be starting point for the examples below.
 
 ```sh
-mkdir $HOME/compphys_examples && mkdir $HOME/compphys_examples && cd $HOME/compphys_examples && echo "" && echo "current directory: $(pwd)" && echo ""
+mkdir $HOME/compphys_examples && mkdir $HOME/compphys_examples ; cd $HOME/compphys_examples && echo "" && echo "current directory: $(pwd)" && echo ""
 ```
 
 ```{note}
@@ -51,6 +51,15 @@ cd /home/yourusername/compphys_examples  # Move to a directory using its full ('
 **Remove example files:**
 ```sh
 cd $HOME/compphys_examples && rm -r navigate
+```
+
+## Get help
+
+Before going further it's useful to know how to get help. All the standard terminal commands come with a `--help` option. This will typically show you a summary of how to use the command and the different options that exist. For a more complete documentation, use the *manual* command `man`. Here are two examples using the `pwd` command:
+
+```sh
+pwd --help   # Print the help screen for the pwd command
+man pwd      # Display the manual for the pwd command. Exit by pressing 'q'.
 ```
 
 
@@ -148,13 +157,20 @@ cd $HOME/compphys_examples && rm -r wildcards
 cd $HOME/compphys_examples && mkdir view_files && cd view_files && echo "Line number 1" > file1.txt && echo "Line number 2" >> file1.txt && echo "Line number 3" >> file1.txt && echo "Line number 4" >> file1.txt && echo "Line number 5" >> file1.txt && echo "" && echo "current directory: $(pwd)" && echo ""
 ```
 
-There are several commands for inspecting the content of files directly from the terminal. Below we demonstrate the commands `cat`, `head`, `tail` and `less`. (For a more in-depth explanation, see [here](https://i.redd.it/jlaxkglh1iw41.png).)
+There are several commands for inspecting the content of files directly from the terminal. Below we demonstrate the commands `cat`, `head`, `tail` and `less`. (For a more in-depth explanation, see [here](https://i.redd.it/jlaxkglh1iw41.png).) We also demonstrate the `wc` command, used to count the number of words or lines in a file.
 
 ```sh
 cat file1.txt        # Print the full content of file1.txt to the terminal screen
 head -3 file1.txt    # Print the first 3 lines of file1.txt
 tail -2 file1.txt    # Print the last 2 lines of file1.txt
 less file1.txt       # View file1.txt interactively. Press 'q' to return to the terminal
+
+wc file1.txt         # Count the number of words in file1.txt
+wc -l file1.txt      # Count the number of lines in file1.txt
+```
+
+```{note}
+Viewing files like this only works for text-based (i.e. human readable) files. For files in some binary format, e.g. a compiled C++ program, you won't get sensible output from commands like `cat` and `less`. (Try it and see.)
 ```
 
 **Remove example files:**
@@ -162,9 +178,6 @@ less file1.txt       # View file1.txt interactively. Press 'q' to return to the 
 cd $HOME/compphys_examples && rm -r view_files
 ```
 
-```{note}
-Viewing files like this only works for text-based (i.e. human readable) files. For files in some binary format, e.g. a compiled C++ program, you won't get sensible output from commands like `cat` and `less`. (Try it and see.)
-```
 
 
 ## Download files
@@ -254,6 +267,21 @@ cat mydata.dat                  # Check the content of mydata.dat
 cat mydata.dat                  # mydata.dat should now contain two lines
 ```
 
+It is often useful to *both* see the terminal output directly on screen *and* save it to a file. This can be achieved by combining the original command with the `tee` command, using the **pipe** operator `|`. You will learn more about this in the [piping](sec:piping) section below, but for now here's a useful example:
+
+```sh
+# Run some_script.sh. The output will be displayed 
+# on screen *and* saved to some_script_output.txt. 
+# The funny-looking "2>&1" ensures that any potential 
+# error messages (technically: output to STDERR) will 
+# also be saved to file.
+./some_script.sh 2>&1 | tee some_script_output.txt
+
+# Print the content of some_script_output.txt
+cat some_script_output.txt
+```
+
+
 **Remove example files:**
 ```sh
 cd $HOME/compphys_examples && rm -r write_to_file
@@ -283,45 +311,116 @@ cd $HOME/compphys_examples && rm -r search
 ```
 
 
-## Search through file content
+## Search file content
 
 **Preparation command:**
 ```sh
-cd $HOME/compphys_examples && mkdir search_file_content && cd search_file_content && echo "Line number 1" > file1.txt && echo "Line number 2" >> file1.txt && echo "Line number 3" >> file1.txt && echo "Line number 4" >> file1.txt && echo "Line number 5" >> file1.txt && echo "" && echo "current directory: $(pwd)" && echo ""
+cd $HOME/compphys_examples && mkdir search_file_content && cd search_file_content && wget https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/extra_material/output.txt && wget https://github.com/anderkve/FYS3150/raw/master/book/using_the_terminal/extra_material/cpp_project.tar && tar -xf cpp_project.tar && echo "" && echo "current directory: $(pwd)" && echo ""
 ```
 
 The standard tool for searching trough text content is the `grep` command. Using `grep` to search is sometimes referred to simply as "grepping". 
-To illustrate this, let's download [this](https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/extra_material/output.txt) program output from [this](https://github.com/anderkve/FYS3150/blob/master/book/using_the_terminal/extra_material/random_program.py) dummy program and use `grep` to search through it:
+The preparation command above has downloaded [this](https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/extra_material/output.txt) program output from [this](https://github.com/anderkve/FYS3150/blob/master/book/using_the_terminal/extra_material/random_program.py) to a file `output.txt`. Let's use `grep` to search through it:
 
 ```sh
-wget https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/extra_material/output.txt  # Dowload the dummy program output
+  # Dowload the dummy program output
 grep "Iteration" output.txt      # Search for and print all lines containing the word "Iteration"
 grep -i "error" output.txt       # Use "-i" to ignore differences between upper/lower case letters
-grep -ni "error" output.txt      # Same as above, but include the line number
+grep -n -i "error" output.txt    # Same as above, but include the line number
 grep "e+00" output.txt           # Find all lines with numbers of power 10^0
 grep -c "e+00" output.txt        # Same as above, but just count the number of lines
 grep -v "Error" output.txt       # Matches all lines that *don't* contain the word "Error"
-grep -cv "Error" output.txt      # Count the number of such lines
+grep -c -v "Error" output.txt    # Count the number of such lines
 ```
 
 Some symbols have special meanings, e.g. a dot can be used as wildcard to match *any* single character. If we want to actually search for such a special symbol, we have to "escape it" with a backslash first:
 
 ```sh
-grep "1." output.txt            # This will give a lot of matches...
-grep "1\." output.txt           # This will match all numbers starting with "1."
-grep "\-1\." output.txt         # This will match all numbers starting with "-1."
+grep "1." output.txt      # This will give a lot of matches...
+grep "1\." output.txt     # This will match all numbers containing "1."
 ```
 
 The search strings for `grep` are so-called **regular expressions**, a technical topic that you can read more about [here](https://en.wikipedia.org/wiki/Regular_expression). 
 
+One of the most common use-cases for `grep` is to search through all files in a project to figure out where some variable or function is being used. Using the `-r` (recursive) option together with `-n` will quickly point you to the relevant file(s) and line numbers:
+
+```sh
+grep -r -n "energy" cpp_project/*     # Search for "energy" in all files in the "cpp_project" directory
+grep -r -n "init" cpp_project/*       # Search for "init" in all files in the "cpp_project" directory
+grep -r -n -C 1 "init" cpp_project/*  # Same as above, but also show one line of context ("-C 1") above/below the search matches.
+
+```
+
+This can be a useful technique when debugging your code, or when you need to find your way through code written by others.
+
+Grepping is often combined with **piping**, which is the next topic below.
 
 **Remove example files:**
 ```sh
 cd $HOME/compphys_examples && rm -r search_file_content
 ```
+(sec:piping)=
+## Piping
+
+**Preparation command:**
+```sh
+cd $HOME/compphys_examples && mkdir piping && cd piping && mkdir dirA && touch file1.txt file2.txt file3.txt file11.txt file12.txt file13.txt bare.skrot tull.ball && wget https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/extra_material/output.txt && echo "" && echo "current directory: $(pwd)" && echo ""
+```
+
+**Piping** means taking the output of one command and passing it directly as input to a second command. This is done using the pipe operator `|`. Here are some examples:
+
+```sh
+# Count the number of .txt files in the directory:
+# First list all .txt files one by one (ls -l *.txt) 
+# and then count the number of lines in the list (wc -l)
+ls -l *.txt | wc -l
+
+# List everything in the directory *except* .txt files:
+# First list everything in the current directory (ls -l)
+# and then remove all lines with ".txt" (grep -v "\.txt")
+ls -l | grep -v "\.txt"
+
+# In our previous dummy program output (output.txt), 
+# look for errors between iteration 10 and 19:
+grep "Iteration 1.:" output.txt | grep "Error" 
+
+# We can also string together multiple pipes. 
+# This example will count how many times our dummy 
+# program returned a negative number of power 10^1:
+grep "e+01" output.txt | grep "-" | wc -l 
+```
+
+**Remove example files:**
+```sh
+cd $HOME/compphys_examples && rm -r piping
+```
+
+## Command history
+
+The `history` command displays all commands you've executed recently. Combining it with `grep` and piping can be a useful to look for an old command:
+
+```sh
+history                    # Display the command history
+history | grep "grep"      # List previous grep commands
+```
+
+The [keyboard shortcuts](sec:keyboard_shortcuts) page shows other useful ways to search through previous commands.
 
 
+## Multiple commands in sequence
 
+You can run multiple commands in one go by using a semicolon (`;`) to separate the commands. Let's demonstrate this with the `echo` command, which simply prints a string to screen:
+
+```sh
+echo "command one" ; echo "command two" ; echo "command three"
+```
+
+If you only want to run the next command *if* the previous command completed successfully, you can use `&&` as separator. So in this next example the third command will *not* be executed, because the second command fails:
+
+```sh
+echo "command one" && I-made-a-typo-here && echo "command three"
+```
+
+All the single-line preparation commands we've used throughout this page are based on using `;` and `&&` to pack multiple commands into one line.
 
 
 <!--
@@ -336,20 +435,22 @@ cd $HOME/compphys_examples && rm -r search_file_content
 - [DONE] less
 - [DONE] head
 - [DONE] tail
+- [DONE] wc
 - [DONE] wget
 - [DONE] running a script or program
 - [DONE] pass output to file ">"
 - [DONE] append to file ">>"
 - [DONE] find
 - [DONE] chmod
+- [DONE] grep
+- [DONE] man
+- [DONE] piping
+- [ÐONE] history
 
-- grep
+- Multiple commands
 
-- man
+- looping
 
-- history
-
-- tar and zip
 
 
 -->

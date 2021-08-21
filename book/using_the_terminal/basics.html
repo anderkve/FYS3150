@@ -425,6 +425,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-help">
+   Get help
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#copying-moving-and-renaming-files-and-directories">
    Copying, moving and renaming files and directories
   </a>
@@ -465,8 +470,23 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#search-through-file-content">
-   Search through file content
+  <a class="reference internal nav-link" href="#search-file-content">
+   Search file content
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#piping">
+   Piping
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#command-history">
+   Command history
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiple-commands-in-sequence">
+   Multiple commands in sequence
   </a>
  </li>
 </ul>
@@ -484,10 +504,10 @@
 <h1>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h1>
 <p><em>or: How I Learned to Stop Worrying and Love the Terminal</em></p>
 <p>On this page you’ll learn the basics of working from the <strong>terminal</strong> (a.k.a. the <strong>shell</strong>, a.k.a. the <strong>command line</strong>). Typing commands instead of the usual point-and-click may feel a bit clumsy and old-fashioned at first. But if you stick with it, you’ll soon realize why the terminal is a standard tool for code developers, computational scientists and anyone else doing fancy stuff with computers.</p>
-<p>For the examples below we will often need some dummy directories and files. To prepare these files and directories we’ll provide one-line <em>preparation commands</em> that you can simply copy and paste into the terminal. To paste in the terminal, right-click or press <strong>ctrl-shift-v</strong> (Linux) or <strong>cmd-c</strong> (MacOS). To execute a command, simply hit ‘enter’.</p>
+<p>For the examples below we will often need some dummy directories and files. To create/download these files and directories we’ll provide one-line <em>preparation commands</em> that you can simply copy and paste into the terminal. To paste in the terminal, right-click or press <strong>ctrl-shift-v</strong> (Linux) or <strong>cmd-c</strong> (MacOS). To execute a command, simply hit ‘enter’.</p>
 <p>Don’t worry if you don’t yet understand everything going on in these preparation commands — you’ll learn all of it soon. After each example we also provide a single-line command that deletes the dummy files we’ve just created.</p>
 <p>We’ll start by creating a directory <code class="docutils literal notranslate"><span class="pre">compphys_examples</span></code> in our home directory and go to that directory. This directory will be starting point for the examples below.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> mkdir <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> <span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;current directory: </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> mkdir <span class="nv">$HOME</span>/compphys_examples <span class="p">;</span> <span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;current directory: </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -523,6 +543,14 @@ ls -lh       <span class="c1"># Same as above, but with file sizes given in &#39
 </div>
 <p><strong>Remove example files:</strong></p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> rm -r navigate
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-help">
+<h2>Get help<a class="headerlink" href="#get-help" title="Permalink to this headline">¶</a></h2>
+<p>Before going further it’s useful to know how to get help. All the standard terminal commands come with a <code class="docutils literal notranslate"><span class="pre">--help</span></code> option. This will typically show you a summary of how to use the command and the different options that exist. For a more complete documentation, use the <em>manual</em> command <code class="docutils literal notranslate"><span class="pre">man</span></code>. Here are two examples using the <code class="docutils literal notranslate"><span class="pre">pwd</span></code> command:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">pwd</span> --help   <span class="c1"># Print the help screen for the pwd command</span>
+man <span class="nb">pwd</span>      <span class="c1"># Display the manual for the pwd command. Exit by pressing &#39;q&#39;.</span>
 </pre></div>
 </div>
 </div>
@@ -608,20 +636,23 @@ mv *.txt dirA/       <span class="c1"># Move files ending with &quot;.txt&quot; 
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> mkdir view_files <span class="o">&amp;&amp;</span> <span class="nb">cd</span> view_files <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Line number 1&quot;</span> &gt; file1.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Line number 2&quot;</span> &gt;&gt; file1.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Line number 3&quot;</span> &gt;&gt; file1.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Line number 4&quot;</span> &gt;&gt; file1.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Line number 5&quot;</span> &gt;&gt; file1.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;current directory: </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
 </pre></div>
 </div>
-<p>There are several commands for inspecting the content of files directly from the terminal. Below we demonstrate the commands <code class="docutils literal notranslate"><span class="pre">cat</span></code>, <code class="docutils literal notranslate"><span class="pre">head</span></code>, <code class="docutils literal notranslate"><span class="pre">tail</span></code> and <code class="docutils literal notranslate"><span class="pre">less</span></code>. (For a more in-depth explanation, see <a class="reference external" href="https://i.redd.it/jlaxkglh1iw41.png">here</a>.)</p>
+<p>There are several commands for inspecting the content of files directly from the terminal. Below we demonstrate the commands <code class="docutils literal notranslate"><span class="pre">cat</span></code>, <code class="docutils literal notranslate"><span class="pre">head</span></code>, <code class="docutils literal notranslate"><span class="pre">tail</span></code> and <code class="docutils literal notranslate"><span class="pre">less</span></code>. (For a more in-depth explanation, see <a class="reference external" href="https://i.redd.it/jlaxkglh1iw41.png">here</a>.) We also demonstrate the <code class="docutils literal notranslate"><span class="pre">wc</span></code> command, used to count the number of words or lines in a file.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>cat file1.txt        <span class="c1"># Print the full content of file1.txt to the terminal screen</span>
 head -3 file1.txt    <span class="c1"># Print the first 3 lines of file1.txt</span>
 tail -2 file1.txt    <span class="c1"># Print the last 2 lines of file1.txt</span>
 less file1.txt       <span class="c1"># View file1.txt interactively. Press &#39;q&#39; to return to the terminal</span>
-</pre></div>
-</div>
-<p><strong>Remove example files:</strong></p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> rm -r view_files
+
+wc file1.txt         <span class="c1"># Count the number of words in file1.txt</span>
+wc -l file1.txt      <span class="c1"># Count the number of lines in file1.txt</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Viewing files like this only works for text-based (i.e. human readable) files. For files in some binary format, e.g. a compiled C++ program, you won’t get sensible output from commands like <code class="docutils literal notranslate"><span class="pre">cat</span></code> and <code class="docutils literal notranslate"><span class="pre">less</span></code>. (Try it and see.)</p>
+</div>
+<p><strong>Remove example files:</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> rm -r view_files
+</pre></div>
 </div>
 </div>
 <div class="section" id="download-files">
@@ -692,6 +723,18 @@ cat mydata.dat                  <span class="c1"># Check the content of mydata.d
 cat mydata.dat                  <span class="c1"># mydata.dat should now contain two lines</span>
 </pre></div>
 </div>
+<p>It is often useful to <em>both</em> see the terminal output directly on screen <em>and</em> save it to a file. This can be achieved by combining the original command with the <code class="docutils literal notranslate"><span class="pre">tee</span></code> command, using the <strong>pipe</strong> operator <code class="docutils literal notranslate"><span class="pre">|</span></code>. You will learn more about this in the <a class="reference internal" href="#sec-piping"><span class="std std-ref">piping</span></a> section below, but for now here’s a useful example:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run some_script.sh. The output will be displayed </span>
+<span class="c1"># on screen *and* saved to some_script_output.txt. </span>
+<span class="c1"># The funny-looking &quot;2&gt;&amp;1&quot; ensures that any potential </span>
+<span class="c1"># error messages (technically: output to STDERR) will </span>
+<span class="c1"># also be saved to file.</span>
+./some_script.sh <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> tee some_script_output.txt
+
+<span class="c1"># Print the content of some_script_output.txt</span>
+cat some_script_output.txt
+</pre></div>
+</div>
 <p><strong>Remove example files:</strong></p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> rm -r write_to_file
 </pre></div>
@@ -716,35 +759,95 @@ find <span class="nv">$HOME</span>/compphys_examples -type d -name <span class="
 </pre></div>
 </div>
 </div>
-<div class="section" id="search-through-file-content">
-<h2>Search through file content<a class="headerlink" href="#search-through-file-content" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="search-file-content">
+<h2>Search file content<a class="headerlink" href="#search-file-content" title="Permalink to this headline">¶</a></h2>
 <p><strong>Preparation command:</strong></p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> mkdir search_file_content <span class="o">&amp;&amp;</span> <span class="nb">cd</span> search_file_content <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Line number 1&quot;</span> &gt; file1.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Line number 2&quot;</span> &gt;&gt; file1.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Line number 3&quot;</span> &gt;&gt; file1.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Line number 4&quot;</span> &gt;&gt; file1.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Line number 5&quot;</span> &gt;&gt; file1.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;current directory: </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> mkdir search_file_content <span class="o">&amp;&amp;</span> <span class="nb">cd</span> search_file_content <span class="o">&amp;&amp;</span> wget https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/extra_material/output.txt <span class="o">&amp;&amp;</span> wget https://github.com/anderkve/FYS3150/raw/master/book/using_the_terminal/extra_material/cpp_project.tar <span class="o">&amp;&amp;</span> tar -xf cpp_project.tar <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;current directory: </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
 </pre></div>
 </div>
 <p>The standard tool for searching trough text content is the <code class="docutils literal notranslate"><span class="pre">grep</span></code> command. Using <code class="docutils literal notranslate"><span class="pre">grep</span></code> to search is sometimes referred to simply as “grepping”.
-To illustrate this, let’s download <a class="reference external" href="https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/extra_material/output.txt">this</a> program output from <a class="reference external" href="https://github.com/anderkve/FYS3150/blob/master/book/using_the_terminal/extra_material/random_program.py">this</a> dummy program and use <code class="docutils literal notranslate"><span class="pre">grep</span></code> to search through it:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>wget https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/extra_material/output.txt  <span class="c1"># Dowload the dummy program output</span>
+The preparation command above has downloaded <a class="reference external" href="https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/extra_material/output.txt">this</a> program output from <a class="reference external" href="https://github.com/anderkve/FYS3150/blob/master/book/using_the_terminal/extra_material/random_program.py">this</a> to a file <code class="docutils literal notranslate"><span class="pre">output.txt</span></code>. Let’s use <code class="docutils literal notranslate"><span class="pre">grep</span></code> to search through it:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># Dowload the dummy program output</span>
 grep <span class="s2">&quot;Iteration&quot;</span> output.txt      <span class="c1"># Search for and print all lines containing the word &quot;Iteration&quot;</span>
 grep -i <span class="s2">&quot;error&quot;</span> output.txt       <span class="c1"># Use &quot;-i&quot; to ignore differences between upper/lower case letters</span>
-grep -ni <span class="s2">&quot;error&quot;</span> output.txt      <span class="c1"># Same as above, but include the line number</span>
+grep -n -i <span class="s2">&quot;error&quot;</span> output.txt    <span class="c1"># Same as above, but include the line number</span>
 grep <span class="s2">&quot;e+00&quot;</span> output.txt           <span class="c1"># Find all lines with numbers of power 10^0</span>
 grep -c <span class="s2">&quot;e+00&quot;</span> output.txt        <span class="c1"># Same as above, but just count the number of lines</span>
 grep -v <span class="s2">&quot;Error&quot;</span> output.txt       <span class="c1"># Matches all lines that *don&#39;t* contain the word &quot;Error&quot;</span>
-grep -cv <span class="s2">&quot;Error&quot;</span> output.txt      <span class="c1"># Count the number of such lines</span>
+grep -c -v <span class="s2">&quot;Error&quot;</span> output.txt    <span class="c1"># Count the number of such lines</span>
 </pre></div>
 </div>
 <p>Some symbols have special meanings, e.g. a dot can be used as wildcard to match <em>any</em> single character. If we want to actually search for such a special symbol, we have to “escape it” with a backslash first:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>grep <span class="s2">&quot;1.&quot;</span> output.txt            <span class="c1"># This will give a lot of matches...</span>
-grep <span class="s2">&quot;1\.&quot;</span> output.txt           <span class="c1"># This will match all numbers starting with &quot;1.&quot;</span>
-grep <span class="s2">&quot;\-1\.&quot;</span> output.txt         <span class="c1"># This will match all numbers starting with &quot;-1.&quot;</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>grep <span class="s2">&quot;1.&quot;</span> output.txt      <span class="c1"># This will give a lot of matches...</span>
+grep <span class="s2">&quot;1\.&quot;</span> output.txt     <span class="c1"># This will match all numbers containing &quot;1.&quot;</span>
 </pre></div>
 </div>
 <p>The search strings for <code class="docutils literal notranslate"><span class="pre">grep</span></code> are so-called <strong>regular expressions</strong>, a technical topic that you can read more about <a class="reference external" href="https://en.wikipedia.org/wiki/Regular_expression">here</a>.</p>
+<p>One of the most common use-cases for <code class="docutils literal notranslate"><span class="pre">grep</span></code> is to search through all files in a project to figure out where some variable or function is being used. Using the <code class="docutils literal notranslate"><span class="pre">-r</span></code> (recursive) option together with <code class="docutils literal notranslate"><span class="pre">-n</span></code> will quickly point you to the relevant file(s) and line numbers:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>grep -r -n <span class="s2">&quot;energy&quot;</span> cpp_project/*     <span class="c1"># Search for &quot;energy&quot; in all files in the &quot;cpp_project&quot; directory</span>
+grep -r -n <span class="s2">&quot;init&quot;</span> cpp_project/*       <span class="c1"># Search for &quot;init&quot; in all files in the &quot;cpp_project&quot; directory</span>
+grep -r -n -C <span class="m">1</span> <span class="s2">&quot;init&quot;</span> cpp_project/*  <span class="c1"># Same as above, but also show one line of context (&quot;-C 1&quot;) above/below the search matches.</span>
+</pre></div>
+</div>
+<p>This can be a useful technique when debugging your code, or when you need to find your way through code written by others.</p>
+<p>Grepping is often combined with <strong>piping</strong>, which is the next topic below.</p>
 <p><strong>Remove example files:</strong></p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> rm -r search_file_content
 </pre></div>
 </div>
+</div>
+<div class="section" id="piping">
+<span id="sec-piping"></span><h2>Piping<a class="headerlink" href="#piping" title="Permalink to this headline">¶</a></h2>
+<p><strong>Preparation command:</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> mkdir piping <span class="o">&amp;&amp;</span> <span class="nb">cd</span> piping <span class="o">&amp;&amp;</span> mkdir dirA <span class="o">&amp;&amp;</span> touch file1.txt file2.txt file3.txt file11.txt file12.txt file13.txt bare.skrot tull.ball <span class="o">&amp;&amp;</span> wget https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/extra_material/output.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;current directory: </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<p><strong>Piping</strong> means taking the output of one command and passing it directly as input to a second command. This is done using the pipe operator <code class="docutils literal notranslate"><span class="pre">|</span></code>. Here are some examples:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Count the number of .txt files in the directory:</span>
+<span class="c1"># First list all .txt files one by one (ls -l *.txt) </span>
+<span class="c1"># and then count the number of lines in the list (wc -l)</span>
+ls -l *.txt <span class="p">|</span> wc -l
+
+<span class="c1"># List everything in the directory *except* .txt files:</span>
+<span class="c1"># First list everything in the current directory (ls -l)</span>
+<span class="c1"># and then remove all lines with &quot;.txt&quot; (grep -v &quot;\.txt&quot;)</span>
+ls -l <span class="p">|</span> grep -v <span class="s2">&quot;\.txt&quot;</span>
+
+<span class="c1"># In our previous dummy program output (output.txt), </span>
+<span class="c1"># look for errors between iteration 10 and 19:</span>
+grep <span class="s2">&quot;Iteration 1.:&quot;</span> output.txt <span class="p">|</span> grep <span class="s2">&quot;Error&quot;</span> 
+
+<span class="c1"># We can also string together multiple pipes. </span>
+<span class="c1"># This example will count how many times our dummy </span>
+<span class="c1"># program returned a negative number of power 10^1:</span>
+grep <span class="s2">&quot;e+01&quot;</span> output.txt <span class="p">|</span> grep <span class="s2">&quot;-&quot;</span> <span class="p">|</span> wc -l 
+</pre></div>
+</div>
+<p><strong>Remove example files:</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> rm -r piping
+</pre></div>
+</div>
+</div>
+<div class="section" id="command-history">
+<h2>Command history<a class="headerlink" href="#command-history" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">history</span></code> command displays all commands you’ve executed recently. Combining it with <code class="docutils literal notranslate"><span class="pre">grep</span></code> and piping can be a useful to look for an old command:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">history</span>                    <span class="c1"># Display the command history</span>
+<span class="nb">history</span> <span class="p">|</span> grep <span class="s2">&quot;grep&quot;</span>      <span class="c1"># List previous grep commands</span>
+</pre></div>
+</div>
+<p>The <a class="reference internal" href="keyboard_shortcuts.html#sec-keyboard-shortcuts"><span class="std std-ref">keyboard shortcuts</span></a> page shows other useful ways to search through previous commands.</p>
+</div>
+<div class="section" id="multiple-commands-in-sequence">
+<h2>Multiple commands in sequence<a class="headerlink" href="#multiple-commands-in-sequence" title="Permalink to this headline">¶</a></h2>
+<p>You can run multiple commands in one go by using a semicolon (<code class="docutils literal notranslate"><span class="pre">;</span></code>) to separate the commands. Let’s demonstrate this with the <code class="docutils literal notranslate"><span class="pre">echo</span></code> command, which simply prints a string to screen:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;command one&quot;</span> <span class="p">;</span> <span class="nb">echo</span> <span class="s2">&quot;command two&quot;</span> <span class="p">;</span> <span class="nb">echo</span> <span class="s2">&quot;command three&quot;</span>
+</pre></div>
+</div>
+<p>If you only want to run the next command <em>if</em> the previous command completed successfully, you can use <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> as separator. So in this next example the third command will <em>not</em> be executed, because the second command fails:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;command one&quot;</span> <span class="o">&amp;&amp;</span> I-made-a-typo-here <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;command three&quot;</span>
+</pre></div>
+</div>
+<p>All the single-line preparation commands we’ve used throughout this page are based on using <code class="docutils literal notranslate"><span class="pre">;</span></code> and <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> to pack multiple commands into one line.</p>
 <!--
 
 - [DONE] pwd
@@ -757,20 +860,22 @@ grep <span class="s2">&quot;\-1\.&quot;</span> output.txt         <span class="c
 - [DONE] less
 - [DONE] head
 - [DONE] tail
+- [DONE] wc
 - [DONE] wget
 - [DONE] running a script or program
 - [DONE] pass output to file ">"
 - [DONE] append to file ">>"
 - [DONE] find
 - [DONE] chmod
+- [DONE] grep
+- [DONE] man
+- [DONE] piping
+- [ÐONE] history
 
-- grep
+- Multiple commands
 
-- man
+- looping
 
-- history
-
-- tar and zip
 
 
 --></div>
