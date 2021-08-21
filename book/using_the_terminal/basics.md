@@ -291,14 +291,14 @@ cd $HOME/compphys_examples && rm -r search
 
 **Preparation command:**
 ```sh
-cd $HOME/compphys_examples && mkdir search_file_content && cd search_file_content && echo "Line number 1" > file1.txt && echo "Line number 2" >> file1.txt && echo "Line number 3" >> file1.txt && echo "Line number 4" >> file1.txt && echo "Line number 5" >> file1.txt && echo "" && echo "current directory: $(pwd)" && echo ""
+cd $HOME/compphys_examples && mkdir search_file_content && cd search_file_content && wget https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/extra_material/output.txt && wget https://github.com/anderkve/FYS3150/raw/master/book/using_the_terminal/extra_material/cpp_project.tar && tar -xf cpp_project.tar && echo "" && echo "current directory: $(pwd)" && echo ""
 ```
 
 The standard tool for searching trough text content is the `grep` command. Using `grep` to search is sometimes referred to simply as "grepping". 
-To illustrate this, let's download [this](https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/extra_material/output.txt) program output from [this](https://github.com/anderkve/FYS3150/blob/master/book/using_the_terminal/extra_material/random_program.py) dummy program and use `grep` to search through it:
+The preparation command above has downloaded [this](https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/extra_material/output.txt) program output from [this](https://github.com/anderkve/FYS3150/blob/master/book/using_the_terminal/extra_material/random_program.py) to a file `output.txt`. Let's use `grep` to search through it:
 
 ```sh
-wget https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/extra_material/output.txt  # Dowload the dummy program output
+  # Dowload the dummy program output
 grep "Iteration" output.txt      # Search for and print all lines containing the word "Iteration"
 grep -i "error" output.txt       # Use "-i" to ignore differences between upper/lower case letters
 grep -ni "error" output.txt      # Same as above, but include the line number
@@ -318,15 +318,14 @@ grep "\-1\." output.txt         # This will match all numbers starting with "-1.
 
 The search strings for `grep` are so-called **regular expressions**, a technical topic that you can read more about [here](https://en.wikipedia.org/wiki/Regular_expression). 
 
-
-One of the most common use-cases for `grep` is to quickly search through all the source files of a program to figure out exactly where some variable or function is being used. Using the `-r` (recursive) option together with `-n` will quickly point you to the relevant file(s) and line numbers. To illustrate this, let's download a dummy C++ project with multiple files:
+One of the most common use-cases for `grep` is to quickly search through all the files of proect to figure out exactly where some variable or function is being used. Using the `-r` (recursive) option together with `-n` will quickly point you to the relevant file(s) and line numbers:
 
 ```sh
-wget https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/extra_material/output.txt
+grep -rn "init" cpp_project/*    # Search for "init" in all files in the "cpp_project" directory
+grep -rn "energy" cpp_project/*  # Search for "energy" in all files in the "cpp_project" directory
 ```
 
-
-
+This can be a useful technique when debugging problems in your code, or if you quickly need to find your way through some complicated code that others have written.
 
 **Remove example files:**
 ```sh
