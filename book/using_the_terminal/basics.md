@@ -156,7 +156,7 @@ cd $HOME/compphys_examples && rm -r wildcards
 cd $HOME/compphys_examples && mkdir view_files && cd view_files && echo "Line number 1" > file1.txt && echo "Line number 2" >> file1.txt && echo "Line number 3" >> file1.txt && echo "Line number 4" >> file1.txt && echo "Line number 5" >> file1.txt && echo "" && echo "current directory: $(pwd)" && echo ""
 ```
 
-There are several commands for inspecting the content of files directly from the terminal. Below we demonstrate the commands `cat`, `head`, `tail` and `less`. (For a more in-depth explanation, see [here](https://i.redd.it/jlaxkglh1iw41.png).) We also demonstrate the `wc` command, used to count the number of words or lines in a file.
+There are several commands for inspecting the content of files directly from the terminal. Below we demonstrate the commands `cat`, `head`, `tail` and `less`. (For a more in-depth explanation, see [here](https://i.redd.it/jlaxkglh1iw41.png).) We also demonstrate how to use the `wc` command to count the number of words or lines in a file.
 
 ```sh
 cat file1.txt        # Print the full content of file1.txt to the terminal screen
@@ -164,7 +164,7 @@ head -3 file1.txt    # Print the first 3 lines of file1.txt
 tail -2 file1.txt    # Print the last 2 lines of file1.txt
 less file1.txt       # View file1.txt interactively. Press 'q' to return to the terminal
 
-wc file1.txt         # Count the number of words in file1.txt
+wc -w file1.txt      # Count the number of words in file1.txt
 wc -l file1.txt      # Count the number of lines in file1.txt
 ```
 
@@ -226,7 +226,7 @@ chmod u+x some_script.sh   # Add the execution mode only for the *owner* ('u'), 
 ./some_script.sh           # This will now work again
 ```
 
-The `cmhod` command is the general command for used to set who has permission to read, write and/or execute files. You can see which permissions are set for a given file by listing it with the `ls -l` command and read the string of `r`, `w`, and `x` characters at the beginning of the output. If e.g. the command 
+More generally, the `chmod` command is used to set who should have has permission to read from, write to and/or execute a file. You can see which permissions are set for a file by listing it with the `ls -l` command and read the string of `r`, `w`, and `x` characters at the beginning of the output. If e.g. the command 
 
 ```sh
 ls -l some_script.sh
@@ -237,7 +237,7 @@ outputs
 -rwxrw-r-- 1 youruser youruser 34 aug.  20 17:00 some_script.sh
 ```
 
-the first three characters (`rwx`) after the `-` say that the **owner** has read, write and execute permissions, the next three characters (`rw-`) show that users in the same **group** as the owner have read and write permissions, and the final three characters (`r--`) say that **others** only have read permission.
+the first three characters (`rwx`) after the first dash (`-`) say that the **owner** has read, write and execute permissions, the next three characters (`rw-`) show that users in the same **group** as the owner have read and write permissions, and the final three characters (`r--`) say that **others** only have read permission.
 
 
 **Remove example files:**
@@ -256,14 +256,14 @@ cd $HOME/compphys_examples && mkdir write_to_file && cd write_to_file && echo "e
 The output from a command can be written to a file by using the `>` operator. This will *overwrite* any existing content in the output file. To *append* to an existing file, use the `>>` operator:
 
 ```sh
-./some_script.sh                # Run some_script.sh. This just prints some dummy data to screen
+./some_script.sh   # Run some_script.sh. This just prints some dummy data to screen
 
-./some_script.sh > mydata.dat   # Run some_script.sh and save the output in the file mydata.dat
-cat mydata.dat                  # Check the content of mydata.dat
+./some_script.sh > myoutput.txt   # Run some_script.sh and save the output in the file myoutput.txt
+cat myoutput.txt                  # Check the content of myoutput.txt
 
-./some_script.sh > mydata.dat   # Run some_script.sh again. This *overwrites* the previous mydata.dat
-./some_script.sh >> mydata.dat  # Run some_script.sh again, but *append* to the end of mydata.dat.
-cat mydata.dat                  # mydata.dat should now contain two lines
+./some_script.sh > myoutput.txt   # Run some_script.sh again. This *overwrites* the previous myoutput.txt
+./some_script.sh >> myoutput.txt  # Run some_script.sh again, but *append* to the end of myoutput.txt.
+cat myoutput.txt                  # myoutput.txt should now contain two lines
 ```
 
 It is often useful to *both* see the terminal output directly on screen *and* save it to a file. This can be achieved by combining the original command with the `tee` command, using the **pipe** operator `|`. You will learn more about this in the [piping](sec:piping) section below, but for now here's a useful example:
@@ -321,7 +321,6 @@ The standard tool for searching trough text content is the `grep` command. Using
 The preparation command above has downloaded [this](https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/extra_material/output.txt) program output from [this](https://github.com/anderkve/FYS3150/blob/master/book/using_the_terminal/extra_material/random_program.py) to a file `output.txt`. Let's use `grep` to search through it:
 
 ```sh
-  # Dowload the dummy program output
 grep "Iteration" output.txt      # Search for and print all lines containing the word "Iteration"
 grep -i "error" output.txt       # Use "-i" to ignore differences between upper/lower case letters
 grep -n -i "error" output.txt    # Same as above, but include the line number
@@ -420,6 +419,10 @@ echo "command one" && I-made-a-typo-here && echo "command three"
 ```
 
 All the single-line preparation commands we've used throughout this page are based on using `;` and `&&` to pack multiple commands into one line.
+
+----
+
+*Congratulations!* If you've worked your way through the above commands you're well on your way to become a terminal ninja.
 
 
 <!--
