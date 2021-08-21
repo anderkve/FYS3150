@@ -11,7 +11,7 @@ Don't worry if you don't yet understand everything going on in these preparation
 We'll start by creating a directory `compphys_examples` in our home directory and go to that directory. This directory will be starting point for the examples below.
 
 ```sh
-mkdir $HOME/compphys_examples && mkdir $HOME/compphys_examples && cd $HOME/compphys_examples && echo "" && echo "current directory: $(pwd)" && echo ""
+mkdir $HOME/compphys_examples && mkdir $HOME/compphys_examples ; cd $HOME/compphys_examples && echo "" && echo "current directory: $(pwd)" && echo ""
 ```
 
 ```{note}
@@ -148,13 +148,20 @@ cd $HOME/compphys_examples && rm -r wildcards
 cd $HOME/compphys_examples && mkdir view_files && cd view_files && echo "Line number 1" > file1.txt && echo "Line number 2" >> file1.txt && echo "Line number 3" >> file1.txt && echo "Line number 4" >> file1.txt && echo "Line number 5" >> file1.txt && echo "" && echo "current directory: $(pwd)" && echo ""
 ```
 
-There are several commands for inspecting the content of files directly from the terminal. Below we demonstrate the commands `cat`, `head`, `tail` and `less`. (For a more in-depth explanation, see [here](https://i.redd.it/jlaxkglh1iw41.png).)
+There are several commands for inspecting the content of files directly from the terminal. Below we demonstrate the commands `cat`, `head`, `tail` and `less`. (For a more in-depth explanation, see [here](https://i.redd.it/jlaxkglh1iw41.png).) We also demonstrate the `wc` command, used to count the number of words or lines in a file.
 
 ```sh
 cat file1.txt        # Print the full content of file1.txt to the terminal screen
 head -3 file1.txt    # Print the first 3 lines of file1.txt
 tail -2 file1.txt    # Print the last 2 lines of file1.txt
 less file1.txt       # View file1.txt interactively. Press 'q' to return to the terminal
+
+wc file1.txt         # Count the number of words in file1.txt
+wc -l file1.txt      # Count the number of lines in file1.txt
+```
+
+```{note}
+Viewing files like this only works for text-based (i.e. human readable) files. For files in some binary format, e.g. a compiled C++ program, you won't get sensible output from commands like `cat` and `less`. (Try it and see.)
 ```
 
 **Remove example files:**
@@ -162,9 +169,6 @@ less file1.txt       # View file1.txt interactively. Press 'q' to return to the 
 cd $HOME/compphys_examples && rm -r view_files
 ```
 
-```{note}
-Viewing files like this only works for text-based (i.e. human readable) files. For files in some binary format, e.g. a compiled C++ program, you won't get sensible output from commands like `cat` and `less`. (Try it and see.)
-```
 
 
 ## Download files
@@ -283,7 +287,7 @@ cd $HOME/compphys_examples && rm -r search
 ```
 
 
-## Search through file content
+## Search file content
 
 **Preparation command:**
 ```sh
@@ -315,6 +319,15 @@ grep "\-1\." output.txt         # This will match all numbers starting with "-1.
 The search strings for `grep` are so-called **regular expressions**, a technical topic that you can read more about [here](https://en.wikipedia.org/wiki/Regular_expression). 
 
 
+One of the most common use-cases for `grep` is to quickly search through all the source files of a program to figure out exactly where some variable or function is being used. Using the `-r` (recursive) option together with `-n` will quickly point you to the relevant file(s) and line numbers. To illustrate this, let's download a dummy C++ project with multiple files:
+
+```sh
+wget https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/extra_material/output.txt
+```
+
+
+
+
 **Remove example files:**
 ```sh
 cd $HOME/compphys_examples && rm -r search_file_content
@@ -336,12 +349,14 @@ cd $HOME/compphys_examples && rm -r search_file_content
 - [DONE] less
 - [DONE] head
 - [DONE] tail
+- [DONE] wc
 - [DONE] wget
 - [DONE] running a script or program
 - [DONE] pass output to file ">"
 - [DONE] append to file ">>"
 - [DONE] find
 - [DONE] chmod
+
 
 - grep
 
@@ -350,6 +365,11 @@ cd $HOME/compphys_examples && rm -r search_file_content
 - history
 
 - tar and zip
+
+- piping
+
+- looping
+
 
 
 -->
