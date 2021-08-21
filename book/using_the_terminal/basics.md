@@ -262,20 +262,26 @@ cd $HOME/compphys_examples && rm -r search
 ```
 
 
-## Search for file content
+## Search through file content
 
 **Preparation command:**
 ```sh
 cd $HOME/compphys_examples && mkdir search_file_content && cd search_file_content && echo "Line number 1" > file1.txt && echo "Line number 2" >> file1.txt && echo "Line number 3" >> file1.txt && echo "Line number 4" >> file1.txt && echo "Line number 5" >> file1.txt && echo "" && echo "current directory: $(pwd)" && echo ""
 ```
 
-The standard tool for searching trough text content is the `grep` command. Using `grep` to search is sometimes referred to simply as "grepping". Let's first download (this) dummy output from (this) dummy program to illustrate some basic `grep` functionality:
+The standard tool for searching trough text content is the `grep` command. Using `grep` to search is sometimes referred to simply as "grepping". 
+To illustrate this, let's download (this)[https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/extra_material/output.txt] program output from (this)[https://github.com/anderkve/FYS3150/blob/master/book/using_the_terminal/extra_material/random_program.py] dummy program and use `grep` to search through it:
 
 ```sh
-wget ...
+wget https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/extra_material/output.txt  # Dowload the dummy program output
+grep "Iteration" output.txt      # Search for and print all lines containing the word "Iteration"
+grep -n "Iteration" output.txt   # Same as above, but include the line number
+grep -ni "iteration" output.txt  # Same as above, but ignore differences  upper/lower case
+grep "e+00" output.txt           # Find all numbers of power 10^0
+
 ```
 
-
+The search strings for `grep` are based on so-called **regular expressions**, a technical topic that you can read more about (here)[https://en.wikipedia.org/wiki/Regular_expression]. 
 
 
 **Remove example files:**
