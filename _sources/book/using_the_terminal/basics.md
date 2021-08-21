@@ -167,6 +167,27 @@ Viewing files like this only works for text-based (i.e. human readable) files. F
 ```
 
 
+## Download files
+
+**Preparation command:**
+```sh
+cd $HOME/compphys_examples && mkdir download_files && cd download_files && echo "" && echo "current directory: $(pwd)" && echo ""
+```
+
+If you have the URL you can download a file directly from the terminal with the `wget` command. Let's demonstrate it by downloading the markdown (`.md`) file that this page is built from:
+
+```sh
+wget https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/basics.md
+
+less basics.md   # Take a look at the downloaded file
+```
+
+**Remove example files:**
+```sh
+cd $HOME/compphys_examples && rm -r download_files
+```
+
+
 ## Run programs and scripts
 
 **Preparation command:**
@@ -262,20 +283,36 @@ cd $HOME/compphys_examples && rm -r search
 ```
 
 
-## Search for file content
+## Search through file content
 
 **Preparation command:**
 ```sh
 cd $HOME/compphys_examples && mkdir search_file_content && cd search_file_content && echo "Line number 1" > file1.txt && echo "Line number 2" >> file1.txt && echo "Line number 3" >> file1.txt && echo "Line number 4" >> file1.txt && echo "Line number 5" >> file1.txt && echo "" && echo "current directory: $(pwd)" && echo ""
 ```
 
-The standard tool for searching trough text content is the `grep` command. Using `grep` to search is sometimes referred to simply as "grepping". Let's first download (this) dummy output from (this) dummy program to illustrate some basic `grep` functionality:
+The standard tool for searching trough text content is the `grep` command. Using `grep` to search is sometimes referred to simply as "grepping". 
+To illustrate this, let's download [this](https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/extra_material/output.txt) program output from [this](https://github.com/anderkve/FYS3150/blob/master/book/using_the_terminal/extra_material/random_program.py) dummy program and use `grep` to search through it:
 
 ```sh
-wget ...
+wget https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/extra_material/output.txt  # Dowload the dummy program output
+grep "Iteration" output.txt      # Search for and print all lines containing the word "Iteration"
+grep -i "error" output.txt       # Use "-i" to ignore differences between upper/lower case letters
+grep -ni "error" output.txt      # Same as above, but include the line number
+grep "e+00" output.txt           # Find all lines with numbers of power 10^0
+grep -c "e+00" output.txt        # Same as above, but just count the number of lines
+grep -v "Error" output.txt       # Matches all lines that *don't* contain the word "Error"
+grep -cv "Error" output.txt      # Count the number of such lines
 ```
 
+Some symbols have special meanings, e.g. a dot can be used as wildcard to match *any* single character. If we want to actually search for such a special symbol, we have to "escape it" with a backslash first:
 
+```sh
+grep "1." output.txt            # This will give a lot of matches...
+grep "1\." output.txt           # This will match all numbers starting with "1."
+grep "\-1\." output.txt         # This will match all numbers starting with "-1."
+```
+
+The search strings for `grep` are so-called **regular expressions**, a technical topic that you can read more about [here](https://en.wikipedia.org/wiki/Regular_expression). 
 
 
 **Remove example files:**
@@ -285,25 +322,6 @@ cd $HOME/compphys_examples && rm -r search_file_content
 
 
 
-## Download files
-
-**Preparation command:**
-```sh
-cd $HOME/compphys_examples && mkdir download_files && cd download_files && echo "" && echo "current directory: $(pwd)" && echo ""
-```
-
-If you have the URL you can download a file directly from the terminal with the `wget` command. Let's demonstrate it by downloading the markdown (`.md`) file that this page is built from:
-
-```sh
-wget https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/basics.md
-
-less basics.md   # Take a look at the downloaded file
-```
-
-**Remove example files:**
-```sh
-cd $HOME/compphys_examples && rm -r download_files
-```
 
 
 <!--

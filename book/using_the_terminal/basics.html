@@ -445,6 +445,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#download-files">
+   Download files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#run-programs-and-scripts">
    Run programs and scripts
   </a>
@@ -460,13 +465,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#search-for-file-content">
-   Search for file content
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#download-files">
-   Download files
+  <a class="reference internal nav-link" href="#search-through-file-content">
+   Search through file content
   </a>
  </li>
 </ul>
@@ -624,6 +624,23 @@ less file1.txt       <span class="c1"># View file1.txt interactively. Press &#39
 <p>Viewing files like this only works for text-based (i.e. human readable) files. For files in some binary format, e.g. a compiled C++ program, you won’t get sensible output from commands like <code class="docutils literal notranslate"><span class="pre">cat</span></code> and <code class="docutils literal notranslate"><span class="pre">less</span></code>. (Try it and see.)</p>
 </div>
 </div>
+<div class="section" id="download-files">
+<h2>Download files<a class="headerlink" href="#download-files" title="Permalink to this headline">¶</a></h2>
+<p><strong>Preparation command:</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> mkdir download_files <span class="o">&amp;&amp;</span> <span class="nb">cd</span> download_files <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;current directory: </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<p>If you have the URL you can download a file directly from the terminal with the <code class="docutils literal notranslate"><span class="pre">wget</span></code> command. Let’s demonstrate it by downloading the markdown (<code class="docutils literal notranslate"><span class="pre">.md</span></code>) file that this page is built from:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>wget https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/basics.md
+
+less basics.md   <span class="c1"># Take a look at the downloaded file</span>
+</pre></div>
+</div>
+<p><strong>Remove example files:</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> rm -r download_files
+</pre></div>
+</div>
+</div>
 <div class="section" id="run-programs-and-scripts">
 <h2>Run programs and scripts<a class="headerlink" href="#run-programs-and-scripts" title="Permalink to this headline">¶</a></h2>
 <p><strong>Preparation command:</strong></p>
@@ -699,35 +716,33 @@ find <span class="nv">$HOME</span>/compphys_examples -type d -name <span class="
 </pre></div>
 </div>
 </div>
-<div class="section" id="search-for-file-content">
-<h2>Search for file content<a class="headerlink" href="#search-for-file-content" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="search-through-file-content">
+<h2>Search through file content<a class="headerlink" href="#search-through-file-content" title="Permalink to this headline">¶</a></h2>
 <p><strong>Preparation command:</strong></p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> mkdir search_file_content <span class="o">&amp;&amp;</span> <span class="nb">cd</span> search_file_content <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Line number 1&quot;</span> &gt; file1.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Line number 2&quot;</span> &gt;&gt; file1.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Line number 3&quot;</span> &gt;&gt; file1.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Line number 4&quot;</span> &gt;&gt; file1.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Line number 5&quot;</span> &gt;&gt; file1.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;current directory: </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
 </pre></div>
 </div>
-<p>The standard tool for searching trough text content is the <code class="docutils literal notranslate"><span class="pre">grep</span></code> command. Using <code class="docutils literal notranslate"><span class="pre">grep</span></code> to search is sometimes referred to simply as “grepping”. Let’s first download (this) dummy output from (this) dummy program to illustrate some basic <code class="docutils literal notranslate"><span class="pre">grep</span></code> functionality:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>wget ...
+<p>The standard tool for searching trough text content is the <code class="docutils literal notranslate"><span class="pre">grep</span></code> command. Using <code class="docutils literal notranslate"><span class="pre">grep</span></code> to search is sometimes referred to simply as “grepping”.
+To illustrate this, let’s download <a class="reference external" href="https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/extra_material/output.txt">this</a> program output from <a class="reference external" href="https://github.com/anderkve/FYS3150/blob/master/book/using_the_terminal/extra_material/random_program.py">this</a> dummy program and use <code class="docutils literal notranslate"><span class="pre">grep</span></code> to search through it:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>wget https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/extra_material/output.txt  <span class="c1"># Dowload the dummy program output</span>
+grep <span class="s2">&quot;Iteration&quot;</span> output.txt      <span class="c1"># Search for and print all lines containing the word &quot;Iteration&quot;</span>
+grep -i <span class="s2">&quot;error&quot;</span> output.txt       <span class="c1"># Use &quot;-i&quot; to ignore differences between upper/lower case letters</span>
+grep -ni <span class="s2">&quot;error&quot;</span> output.txt      <span class="c1"># Same as above, but include the line number</span>
+grep <span class="s2">&quot;e+00&quot;</span> output.txt           <span class="c1"># Find all lines with numbers of power 10^0</span>
+grep -c <span class="s2">&quot;e+00&quot;</span> output.txt        <span class="c1"># Same as above, but just count the number of lines</span>
+grep -v <span class="s2">&quot;Error&quot;</span> output.txt       <span class="c1"># Matches all lines that *don&#39;t* contain the word &quot;Error&quot;</span>
+grep -cv <span class="s2">&quot;Error&quot;</span> output.txt      <span class="c1"># Count the number of such lines</span>
 </pre></div>
 </div>
+<p>Some symbols have special meanings, e.g. a dot can be used as wildcard to match <em>any</em> single character. If we want to actually search for such a special symbol, we have to “escape it” with a backslash first:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>grep <span class="s2">&quot;1.&quot;</span> output.txt            <span class="c1"># This will give a lot of matches...</span>
+grep <span class="s2">&quot;1\.&quot;</span> output.txt           <span class="c1"># This will match all numbers starting with &quot;1.&quot;</span>
+grep <span class="s2">&quot;\-1\.&quot;</span> output.txt         <span class="c1"># This will match all numbers starting with &quot;-1.&quot;</span>
+</pre></div>
+</div>
+<p>The search strings for <code class="docutils literal notranslate"><span class="pre">grep</span></code> are so-called <strong>regular expressions</strong>, a technical topic that you can read more about <a class="reference external" href="https://en.wikipedia.org/wiki/Regular_expression">here</a>.</p>
 <p><strong>Remove example files:</strong></p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> rm -r search_file_content
-</pre></div>
-</div>
-</div>
-<div class="section" id="download-files">
-<h2>Download files<a class="headerlink" href="#download-files" title="Permalink to this headline">¶</a></h2>
-<p><strong>Preparation command:</strong></p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> mkdir download_files <span class="o">&amp;&amp;</span> <span class="nb">cd</span> download_files <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;current directory: </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
-</pre></div>
-</div>
-<p>If you have the URL you can download a file directly from the terminal with the <code class="docutils literal notranslate"><span class="pre">wget</span></code> command. Let’s demonstrate it by downloading the markdown (<code class="docutils literal notranslate"><span class="pre">.md</span></code>) file that this page is built from:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>wget https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/basics.md
-
-less basics.md   <span class="c1"># Take a look at the downloaded file</span>
-</pre></div>
-</div>
-<p><strong>Remove example files:</strong></p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> rm -r download_files
 </pre></div>
 </div>
 <!--
