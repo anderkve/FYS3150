@@ -631,13 +631,13 @@ mv *.txt dirA/       <span class="c1"># Move files ending with &quot;.txt&quot; 
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> mkdir view_files <span class="o">&amp;&amp;</span> <span class="nb">cd</span> view_files <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Line number 1&quot;</span> &gt; file1.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Line number 2&quot;</span> &gt;&gt; file1.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Line number 3&quot;</span> &gt;&gt; file1.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Line number 4&quot;</span> &gt;&gt; file1.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Line number 5&quot;</span> &gt;&gt; file1.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;current directory: </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
 </pre></div>
 </div>
-<p>There are several commands for inspecting the content of files directly from the terminal. Below we demonstrate the commands <code class="docutils literal notranslate"><span class="pre">cat</span></code>, <code class="docutils literal notranslate"><span class="pre">head</span></code>, <code class="docutils literal notranslate"><span class="pre">tail</span></code> and <code class="docutils literal notranslate"><span class="pre">less</span></code>. (For a more in-depth explanation, see <a class="reference external" href="https://i.redd.it/jlaxkglh1iw41.png">here</a>.) We also demonstrate the <code class="docutils literal notranslate"><span class="pre">wc</span></code> command, used to count the number of words or lines in a file.</p>
+<p>There are several commands for inspecting the content of files directly from the terminal. Below we demonstrate the commands <code class="docutils literal notranslate"><span class="pre">cat</span></code>, <code class="docutils literal notranslate"><span class="pre">head</span></code>, <code class="docutils literal notranslate"><span class="pre">tail</span></code> and <code class="docutils literal notranslate"><span class="pre">less</span></code>. (For a more in-depth explanation, see <a class="reference external" href="https://i.redd.it/jlaxkglh1iw41.png">here</a>.) We also demonstrate how to use the <code class="docutils literal notranslate"><span class="pre">wc</span></code> command to count the number of words or lines in a file.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>cat file1.txt        <span class="c1"># Print the full content of file1.txt to the terminal screen</span>
 head -3 file1.txt    <span class="c1"># Print the first 3 lines of file1.txt</span>
 tail -2 file1.txt    <span class="c1"># Print the last 2 lines of file1.txt</span>
 less file1.txt       <span class="c1"># View file1.txt interactively. Press &#39;q&#39; to return to the terminal</span>
 
-wc file1.txt         <span class="c1"># Count the number of words in file1.txt</span>
+wc -w file1.txt      <span class="c1"># Count the number of words in file1.txt</span>
 wc -l file1.txt      <span class="c1"># Count the number of lines in file1.txt</span>
 </pre></div>
 </div>
@@ -687,7 +687,7 @@ chmod u+x some_script.sh   <span class="c1"># Add the execution mode only for th
 ./some_script.sh           <span class="c1"># This will now work again</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">cmhod</span></code> command is the general command for used to set who has permission to read, write and/or execute files. You can see which permissions are set for a given file by listing it with the <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span></code> command and read the string of <code class="docutils literal notranslate"><span class="pre">r</span></code>, <code class="docutils literal notranslate"><span class="pre">w</span></code>, and <code class="docutils literal notranslate"><span class="pre">x</span></code> characters at the beginning of the output. If e.g. the command</p>
+<p>More generally, the <code class="docutils literal notranslate"><span class="pre">chmod</span></code> command is used to set who should have has permission to read from, write to and/or execute a file. You can see which permissions are set for a file by listing it with the <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span></code> command and read the string of <code class="docutils literal notranslate"><span class="pre">r</span></code>, <code class="docutils literal notranslate"><span class="pre">w</span></code>, and <code class="docutils literal notranslate"><span class="pre">x</span></code> characters at the beginning of the output. If e.g. the command</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ls -l some_script.sh
 </pre></div>
 </div>
@@ -695,7 +695,7 @@ chmod u+x some_script.sh   <span class="c1"># Add the execution mode only for th
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">rwxrw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">youruser</span> <span class="n">youruser</span> <span class="mi">34</span> <span class="n">aug</span><span class="o">.</span>  <span class="mi">20</span> <span class="mi">17</span><span class="p">:</span><span class="mi">00</span> <span class="n">some_script</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
 </div>
-<p>the first three characters (<code class="docutils literal notranslate"><span class="pre">rwx</span></code>) after the <code class="docutils literal notranslate"><span class="pre">-</span></code> say that the <strong>owner</strong> has read, write and execute permissions, the next three characters (<code class="docutils literal notranslate"><span class="pre">rw-</span></code>) show that users in the same <strong>group</strong> as the owner have read and write permissions, and the final three characters (<code class="docutils literal notranslate"><span class="pre">r--</span></code>) say that <strong>others</strong> only have read permission.</p>
+<p>the first three characters (<code class="docutils literal notranslate"><span class="pre">rwx</span></code>) after the first dash (<code class="docutils literal notranslate"><span class="pre">-</span></code>) say that the <strong>owner</strong> has read, write and execute permissions, the next three characters (<code class="docutils literal notranslate"><span class="pre">rw-</span></code>) show that users in the same <strong>group</strong> as the owner have read and write permissions, and the final three characters (<code class="docutils literal notranslate"><span class="pre">r--</span></code>) say that <strong>others</strong> only have read permission.</p>
 <p><strong>Remove example files:</strong></p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> rm -r run_programs
 </pre></div>
@@ -708,14 +708,14 @@ chmod u+x some_script.sh   <span class="c1"># Add the execution mode only for th
 </pre></div>
 </div>
 <p>The output from a command can be written to a file by using the <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> operator. This will <em>overwrite</em> any existing content in the output file. To <em>append</em> to an existing file, use the <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> operator:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./some_script.sh                <span class="c1"># Run some_script.sh. This just prints some dummy data to screen</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./some_script.sh   <span class="c1"># Run some_script.sh. This just prints some dummy data to screen</span>
 
-./some_script.sh &gt; mydata.dat   <span class="c1"># Run some_script.sh and save the output in the file mydata.dat</span>
-cat mydata.dat                  <span class="c1"># Check the content of mydata.dat</span>
+./some_script.sh &gt; myoutput.txt   <span class="c1"># Run some_script.sh and save the output in the file myoutput.txt</span>
+cat myoutput.txt                  <span class="c1"># Check the content of myoutput.txt</span>
 
-./some_script.sh &gt; mydata.dat   <span class="c1"># Run some_script.sh again. This *overwrites* the previous mydata.dat</span>
-./some_script.sh &gt;&gt; mydata.dat  <span class="c1"># Run some_script.sh again, but *append* to the end of mydata.dat.</span>
-cat mydata.dat                  <span class="c1"># mydata.dat should now contain two lines</span>
+./some_script.sh &gt; myoutput.txt   <span class="c1"># Run some_script.sh again. This *overwrites* the previous myoutput.txt</span>
+./some_script.sh &gt;&gt; myoutput.txt  <span class="c1"># Run some_script.sh again, but *append* to the end of myoutput.txt.</span>
+cat myoutput.txt                  <span class="c1"># myoutput.txt should now contain two lines</span>
 </pre></div>
 </div>
 <p>It is often useful to <em>both</em> see the terminal output directly on screen <em>and</em> save it to a file. This can be achieved by combining the original command with the <code class="docutils literal notranslate"><span class="pre">tee</span></code> command, using the <strong>pipe</strong> operator <code class="docutils literal notranslate"><span class="pre">|</span></code>. You will learn more about this in the <a class="reference internal" href="#sec-piping"><span class="std std-ref">piping</span></a> section below, but for now here’s a useful example:</p>
@@ -762,8 +762,7 @@ find <span class="nv">$HOME</span>/compphys_examples -type d -name <span class="
 </div>
 <p>The standard tool for searching trough text content is the <code class="docutils literal notranslate"><span class="pre">grep</span></code> command. Using <code class="docutils literal notranslate"><span class="pre">grep</span></code> to search is sometimes referred to simply as “grepping”.
 The preparation command above has downloaded <a class="reference external" href="https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/extra_material/output.txt">this</a> program output from <a class="reference external" href="https://github.com/anderkve/FYS3150/blob/master/book/using_the_terminal/extra_material/random_program.py">this</a> to a file <code class="docutils literal notranslate"><span class="pre">output.txt</span></code>. Let’s use <code class="docutils literal notranslate"><span class="pre">grep</span></code> to search through it:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># Dowload the dummy program output</span>
-grep <span class="s2">&quot;Iteration&quot;</span> output.txt      <span class="c1"># Search for and print all lines containing the word &quot;Iteration&quot;</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>grep <span class="s2">&quot;Iteration&quot;</span> output.txt      <span class="c1"># Search for and print all lines containing the word &quot;Iteration&quot;</span>
 grep -i <span class="s2">&quot;error&quot;</span> output.txt       <span class="c1"># Use &quot;-i&quot; to ignore differences between upper/lower case letters</span>
 grep -n -i <span class="s2">&quot;error&quot;</span> output.txt    <span class="c1"># Same as above, but include the line number</span>
 grep <span class="s2">&quot;e+00&quot;</span> output.txt           <span class="c1"># Find all lines with numbers of power 10^0</span>
@@ -843,6 +842,8 @@ grep <span class="s2">&quot;e+01&quot;</span> output.txt <span class="p">|</span
 </pre></div>
 </div>
 <p>All the single-line preparation commands we’ve used throughout this page are based on using <code class="docutils literal notranslate"><span class="pre">;</span></code> and <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> to pack multiple commands into one line.</p>
+<hr class="docutils" />
+<p><em>Congratulations!</em> If you’ve worked your way through the above commands you’re well on your way to become a terminal ninja.</p>
 <!--
 
 - [DONE] pwd
