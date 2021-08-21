@@ -1,13 +1,13 @@
 # Basics 
 *or: How I Learned to Stop Worrying and Love the Terminal*
 
-On this page you'll learn the basics of working from the **terminal** (a.k.a. the **shell**, a.k.a. the **command line**). Typing commands instead of the usual point-and-click may feel a bit clumsy and old-fashioned at first. But if you stick with it, you'll soon realize why the terminal is a standard tool for code developers, computational scientists and anyone else doing fancy stuff with computers.
+On this page you will learn some basics (and some not-so-basics) of working from the **terminal**, a.k.a. the **shell**, a.k.a. the **command line**, a.k.a. the **console**. Typing commands instead of the usual point-and-click may feel a bit clumsy and old-fashioned at first. But if you stick with it, you'll soon realize why the terminal is a standard tool for code developers, computational scientists and anyone else doing fancy stuff with computers.
 
 For the examples below we will often need some dummy directories and files. To create/download these files and directories we'll provide one-line *preparation commands* that you can simply copy and paste into the terminal. To paste in the terminal, right-click or press **ctrl-shift-v** (Linux) or **cmd-c** (MacOS). To execute a command, simply hit 'enter'. 
 
-Don't worry if you don't yet understand everything going on in these preparation commands --- you'll learn all of it soon. After each example we also provide a single-line command that deletes the dummy files we've just created.
+Don't worry if you don't yet understand what's going on in these preparation commands --- you'll learn all of it soon. After each example we also provide a single-line command that deletes the dummy files we've just created.
 
-We'll start by creating a directory `compphys_examples` in our home directory and go to that directory. This directory will be starting point for the examples below.
+We will start by creating a directory `compphys_examples` in our home directory and go to that directory. This directory will be starting point for the examples below.
 
 ```sh
 mkdir $HOME/compphys_examples && mkdir $HOME/compphys_examples ; cd $HOME/compphys_examples && echo "" && echo "current directory: $(pwd)" && echo ""
@@ -117,7 +117,7 @@ cd $HOME/compphys_examples && rm -r delete
 ```
 
 ```{note}
-*With great power comes great responsibility!* If you delete or overwrite a file/directory by mistake, it is basically gone. (Unless it's a file that is tracked by `git` --- then it's very easy to restore it. You'll learn about that in the git section.) So it can be wise to take a second look before executing a `rm` or `mv` command. For instance, you *never ever* want to do the mistake of accidentally running the command `rm -r /`, which would delete *everything* your user has access to. Another dangerous example is `rm -r *`, which would delete everything in the current directory and all subdirectories --- so you want to make very sure you're in the correct directory... (See below for an explanation of the wildcard `*`.) 
+*With great power comes great responsibility!* If you delete or overwrite a file/directory by mistake, it is basically gone. (Unless it's a file that is tracked by `git` --- then it's very easy to restore it. You will learn about that in the git section.) So it can be wise to take a second look before executing a `rm` or `mv` command. For instance, you *never ever* want to do the mistake of accidentally running the command `rm -r /`, which would delete *everything* your user has access to. Another dangerous example is `rm -r *`, which would delete everything in the current directory and all subdirectories --- so you want to make very sure you're in the correct directory... (See below for an explanation of the wildcard `*`.) 
 ```
 
 
@@ -422,37 +422,5 @@ All the single-line preparation commands we've used throughout this page are bas
 
 ----
 
-*Congratulations!* If you've worked your way through the above commands you're well on your way to become a terminal ninja.
+*Congratulations!* If you've worked your way through the above commands you're well on your way to become a terminal ninja. And of course, don't forget to learn some useful [keyboard shortcuts](sec:keyboard_shortcuts).
 
-
-<!--
-
-- [DONE] pwd
-- [DONE] cd
-- [DONE] ls
-- [DONE] mv
-- [DONE] rm
-- [DONE] rmdir
-- [DONE] cat
-- [DONE] less
-- [DONE] head
-- [DONE] tail
-- [DONE] wc
-- [DONE] wget
-- [DONE] running a script or program
-- [DONE] pass output to file ">"
-- [DONE] append to file ">>"
-- [DONE] find
-- [DONE] chmod
-- [DONE] grep
-- [DONE] man
-- [DONE] piping
-- [ÐONE] history
-
-- Multiple commands
-
-- looping
-
-
-
--->
