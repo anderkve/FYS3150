@@ -53,6 +53,15 @@ cd /home/yourusername/compphys_examples  # Move to a directory using its full ('
 cd $HOME/compphys_examples && rm -r navigate
 ```
 
+## Get help
+
+Before going further it's useful to know how to get help. All the standard terminal commands come with a `--help` option. This will typically show you a summary of how to use the command and the different options that exist. For a more complete documentation, use the *manual* command `man`. Here are two examples using the `pwd` command:
+
+```sh
+pwd --help   # Print the help screen for the pwd command
+man pwd      # Display the manual for the pwd command. Exit by pressing 'q'.
+```
+
 
 ## Copying, moving and renaming files and directories
 
@@ -301,39 +310,102 @@ The preparation command above has downloaded [this](https://raw.githubuserconten
   # Dowload the dummy program output
 grep "Iteration" output.txt      # Search for and print all lines containing the word "Iteration"
 grep -i "error" output.txt       # Use "-i" to ignore differences between upper/lower case letters
-grep -ni "error" output.txt      # Same as above, but include the line number
+grep -n -i "error" output.txt    # Same as above, but include the line number
 grep "e+00" output.txt           # Find all lines with numbers of power 10^0
 grep -c "e+00" output.txt        # Same as above, but just count the number of lines
 grep -v "Error" output.txt       # Matches all lines that *don't* contain the word "Error"
-grep -cv "Error" output.txt      # Count the number of such lines
+grep -c -v "Error" output.txt    # Count the number of such lines
 ```
 
 Some symbols have special meanings, e.g. a dot can be used as wildcard to match *any* single character. If we want to actually search for such a special symbol, we have to "escape it" with a backslash first:
 
 ```sh
-grep "1." output.txt            # This will give a lot of matches...
-grep "1\." output.txt           # This will match all numbers starting with "1."
-grep "\-1\." output.txt         # This will match all numbers starting with "-1."
+grep "1." output.txt      # This will give a lot of matches...
+grep "1\." output.txt     # This will match all numbers containing "1."
 ```
 
 The search strings for `grep` are so-called **regular expressions**, a technical topic that you can read more about [here](https://en.wikipedia.org/wiki/Regular_expression). 
 
-One of the most common use-cases for `grep` is to quickly search through all the files of proect to figure out exactly where some variable or function is being used. Using the `-r` (recursive) option together with `-n` will quickly point you to the relevant file(s) and line numbers:
+One of the most common use-cases for `grep` is to search through all files in a project to figure out where some variable or function is being used. Using the `-r` (recursive) option together with `-n` will quickly point you to the relevant file(s) and line numbers:
 
 ```sh
-grep -rn "init" cpp_project/*    # Search for "init" in all files in the "cpp_project" directory
-grep -rn "energy" cpp_project/*  # Search for "energy" in all files in the "cpp_project" directory
+grep -r -n "energy" cpp_project/*     # Search for "energy" in all files in the "cpp_project" directory
+grep -r -n "init" cpp_project/*       # Search for "init" in all files in the "cpp_project" directory
+grep -r -n -C 1 "init" cpp_project/*  # Same as above, but also show one line of context ("-C 1") above/below the search matches.
+
 ```
 
-This can be a useful technique when debugging problems in your code, or if you quickly need to find your way through some complicated code that others have written.
+This can be a useful technique when debugging your code, or when you need to find your way through code written by others.
+
+Grepping is often combined with **piping**, which is the next topic below.
 
 **Remove example files:**
 ```sh
 cd $HOME/compphys_examples && rm -r search_file_content
 ```
 
+## Piping
+
+**Preparation command:**
+```sh
+cd $HOME/compphys_examples && mkdir piping && cd piping && mkdir dirA && touch file1.txt file2.txt file3.txt file11.txt file12.txt file13.txt bare.skrot tull.ball && wget https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/extra_material/output.txt && echo "" && echo "current directory: $(pwd)" && echo ""
+```
+
+**Piping** means taking the output of one command and passing it directly as input to a second command. This is done using the pipe operator `|`. Here are some examples:
+
+```sh
+# Count the number of .txt files in the directory:
+# First list all .txt files one by one (ls -l *.txt) 
+# and then count the number of lines in the list (wc -l)
+ls -l *.txt | wc -l
+
+# List everything in the directory *except* .txt files:
+# First list everything in the current directory (ls -l)
+# and then remove all lines with ".txt" (grep -v "\.txt")
+ls -l | grep -v "\.txt"
+
+# In our previous dummy program output (output.txt), 
+# look for errors between iteration 10 and 19:
+grep "Iteration 1.:" output.txt | grep "Error" 
+
+# We can also string together multiple pipes. 
+# This example will count how many times our dummy 
+# program returned a negative number of power 10^1:
+grep "e+01" output.txt | grep "-" | wc -l 
+```
+
+**Remove example files:**
+```sh
+cd $HOME/compphys_examples && rm -r piping
+```
+
+## Command history
+
+The `history` command displays all commands you've executed recently. Combining it with `grep` and piping can be a useful to look for an old command:
+
+```sh
+history                    # Display the command history
+history | grep "grep"      # List previous grep commands
+```
+
+The [keyboard shortcuts](sec:keyboard_shortcuts) page shows other useful ways to search through previous commands.
 
 
+## Multiple commands in sequence
+
+You can run multiple commands in one go by using a semicolon (`;`) to separate the commands. Let's demonstrate this with the `echo` command, which simply prints a string to screen:
+
+```sh
+echo "command one" ; echo "command two" ; echo "command three"
+```
+
+If you only want to run the next command *if* the previous command completed successfully, you can use `&&` as separator. So in this next example the third command will *not* be executed, because the second command fails:
+
+```sh
+echo "command one" && I-made-a-typo-here && echo "command three"
+```
+
+All the single-line preparation commands we've used throughout this page are based on using `;` and `&&` to pack multiple commands into one line.
 
 
 <!--
@@ -355,17 +427,12 @@ cd $HOME/compphys_examples && rm -r search_file_content
 - [DONE] append to file ">>"
 - [DONE] find
 - [DONE] chmod
+- [DONE] grep
+- [DONE] man
+- [DONE] piping
+- [ÐONE] history
 
-
-- grep
-
-- man
-
-- history
-
-- tar and zip
-
-- piping
+- Multiple commands
 
 - looping
 
