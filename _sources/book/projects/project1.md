@@ -34,7 +34,7 @@
 ## Introduction 
 The overall topic of this project is numerical solution of the one-dimensional Poisson equation. This is a second-order differential equation that shows up in several areas of physics, e.g. electrostatics. In future projects we will pay close attention to scaling of dimensionfull physics equations, but for this first project we start directly from the differential equation *after* scaling to dimensionless variables.
 
-The one-dimensional Poisson equation is given by
+The one-dimensional Poisson equation can be written as
 
 $$ 
 -\frac{d^2 u}{dx^2} = f(x).
@@ -178,7 +178,7 @@ What do you expect would happen if you attempted to run code for the case $n = 1
 
 ## Code snippets
 
-Here's a C++ code example that uses `<chrono>` from the C++ standard library to measure the time used by a part of a program:
+Here's a code example that uses `<chrono>` from the C++ standard library to measure the time used by a part of a program:
 
 ```cpp
 #include <chrono>
