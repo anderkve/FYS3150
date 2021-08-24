@@ -394,7 +394,7 @@ cd $HOME/compphys_examples && rm -r piping
 
 ## Command history
 
-The `history` command displays all commands you've executed recently. Combining it with `grep` and piping can be a useful to look for an old command:
+The `history` command displays all commands you've executed recently. Combining it with `grep` and piping can be useful to look for an old command:
 
 ```sh
 history                    # Display the command history
