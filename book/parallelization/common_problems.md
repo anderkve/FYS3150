@@ -21,7 +21,7 @@ If more than one thread uses a memory block stored in the **cache** (a type of f
 
 ![coherence](imgs/Coherent.gif)
 
-#### Example 1: adding to the same global variable
+#### Example 1: Avoid using a global array with a single cache line
 
 
 
