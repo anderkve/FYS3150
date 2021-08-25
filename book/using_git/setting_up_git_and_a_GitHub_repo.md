@@ -14,7 +14,7 @@ git config --global user.email you@yourdomain.com
 
 Here's a step-by-step instruction.
 
-- Go to [github.com](github.com) and log in. The page should look something like this:
+- Go to [github.com](https://github.com/) and log in. The page should look something like this:
 
 ![homepage](./imgs/github_homepage.png)
 
@@ -44,16 +44,13 @@ Now you've cloned the repository to your computer! This will be a directory you 
 
 ## Adding a Github token
 
-```{note}
-Only for Linux and Windows users. This is done automatically on macOS. In any case, if you're requested to write your password more than once on macOS, follow the steps in this guide.
-```
 
 A Github token is a replacement of passwords to give you as a user access to perform action on your Github repositories from your computer.
 
 Disclaimer: Note that this is not a secure option, as the token will be saved in clear text. But it's nevertheless the simplest option.
 
 
-- Go to [github.com](github.com). Click on your profile in the upper right corner, then on *settings*.
+- Go to [github.com](https://github.com/). Click on your profile in the upper right corner, then on *settings*.
 
 ![go_to_settings](./imgs/go_to_settings.png)
 
@@ -73,8 +70,10 @@ Disclaimer: Note that this is not a secure option, as the token will be saved in
 
 ![token_page](./imgs/token_page.png)
 
-- You'll be redirected to the page with tokens now. *Make sure you copy it!*
+- You'll be redirected to the page with your token now. *Make sure you copy it!*
 
+
+### On Linux
 
 - In your Github repository (locally on your computer), run.
 
@@ -93,3 +92,9 @@ Disclaimer: Note that this is not a secure option, as the token will be saved in
 - Paste in the token you copied instead of your password.
 
 And you're done!
+
+### On macOS
+
+1. Open the **Keychain Access** app.
+2. Search for Github.com and double click on the one marked with "internet password".
+3. Click on "show password" and replace the password with your generated token.

@@ -9,3 +9,4 @@
 # Build output
 _build/*
 
+*.DS_Store

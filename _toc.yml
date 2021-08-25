@@ -21,11 +21,8 @@ parts:
     chapters:
       - file: book/using_git/introduction_to_git
       - file: book/using_git/setting_up_git_and_a_GitHub_repo
-      - file: book/using_git/create_a_github_repo
-      - file: book/using_git/example_workflow
-      - file: book/using_git/ways_to_undo_a_mistake
-      - file: book/using_git/repo_structure
       - file: book/using_git/add_a_README
+      - file: book/using_git/using_git
 
   - caption: Introduction to C++
     chapters:
@@ -49,12 +46,16 @@ parts:
       - file: book/introduction_to_cpp/debugging
       - file: book/introduction_to_cpp/online_resources
 
+  - caption: Optimization
+    chapters:
+      - file: book/optimization/memory_is_the_bottleneck
+
   - caption: Parallelization
     chapters:
       - file: book/parallelization/introduction_to_openmp
       - file: book/parallelization/using_openmp
 
-  - caption: Using make
+  - caption: Using Make
     chapters:
       - file: book/using_make/intro
 
