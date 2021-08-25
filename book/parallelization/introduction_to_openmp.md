@@ -10,6 +10,16 @@ It has an abundance of built in functionality,
 which can be used to parallelize code with very few changes
 to the existing code project.
 
+## Forking and joining threads
+
+OpenMP assumes an underlying **shared-memory** architecture. This means that when a code runs in parallel, all **threads** access the same memory. Once a **parallel region** is executed, the **primary** thread that **forks** a set of **sub-threads**. Tasks are then divided among these and execute the code block **concurrently**, meaning at the same time. Once execution of the parallel region is completed, the sub-threads are **joined** and only the primary thread remains. The following image illustrates this process
+
+![fork_join](imgs/Fork_join.svg)
+
+```{note}
+Sometimes, you'll see the term "master" thread used for the primary thread and "slave" threads used for sub-threads. This was recently changed due to negative connotations to slavery.
+```
+
 ## Building C++ code with OpenMP
 
 ### Linux users

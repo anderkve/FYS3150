@@ -44,9 +44,6 @@ Now you've cloned the repository to your computer! This will be a directory you 
 
 ## Adding a Github token
 
-```{note}
-Only for Linux and Windows users. This is done automatically on macOS. In any case, if you're requested to write your password more than once on macOS, follow the steps in this guide.
-```
 
 A Github token is a replacement of passwords to give you as a user access to perform action on your Github repositories from your computer.
 
@@ -76,6 +73,8 @@ Disclaimer: Note that this is not a secure option, as the token will be saved in
 - You'll be redirected to the page with tokens now. *Make sure you copy it!*
 
 
+### On Linux
+
 - In your Github repository (locally on your computer), run.
 
   ```sh
@@ -93,3 +92,9 @@ Disclaimer: Note that this is not a secure option, as the token will be saved in
 - Paste in the token you copied instead of your password.
 
 And you're done!
+
+### On macOS
+
+1. Open the **Keychain Access** app.
+2. Search for Github.com and double click on the one marked with "internet password".
+3. Click on "show password" and replace the password with your generated token.
