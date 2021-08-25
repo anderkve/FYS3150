@@ -40,7 +40,7 @@ When memory is allocated in **column-major** order, each column `j` in a matrix 
 We should traverse the columns to reduce the stride in memory when the underlying memory has column-major order.
 
 ```{note}
-Armadillo, the linear algebra package for C++, allocated memory in column-major order! If you use this, you must be careful about how you stride through matrices.
+Armadillo, the linear algebra package for C++, allocates memory in column-major order! If you use this, you must be careful about how you stride through matrices.
 ```
 
 ### Illustrative example

@@ -47,8 +47,9 @@ parts:
       - file: book/introduction_to_cpp/online_resources
 
   - caption: Optimization
-    chapter:
-      - file: book/optimzation/memory_is_the_bottleneck
+    chapters:
+      - file: book/optimization/memory_is_the_bottleneck
+
   - caption: Parallelization
     chapters:
       - file: book/parallelization/introduction_to_openmp

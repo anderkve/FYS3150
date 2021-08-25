@@ -70,7 +70,7 @@ Disclaimer: Note that this is not a secure option, as the token will be saved in
 
 ![token_page](./imgs/token_page.png)
 
-- You'll be redirected to the page with tokens now. *Make sure you copy it!*
+- You'll be redirected to the page with your token now. *Make sure you copy it!*
 
 
 ### On Linux
