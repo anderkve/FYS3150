@@ -17,5 +17,5 @@ A LaTeX document is compiled from a `.tex` file which stores the source code. Ty
 
 We've prepared a template for you to use in the two first projects. We have both the source code found in a `.tex` and a rendered file in `.pdf` format.
 
-- The [.tex file](./tex_mal/oppgave_mal.tex)
-- The [.pdf file](./tex_mal/oppgave_mal.pdf)
+- The [tex file](https://github.com/anderkve/FYS3150/blob/master/book/writing_reports/tex_mal/oppgave_mal.tex)
+- The [pdf file](https://github.com/anderkve/FYS3150/blob/master/book/writing_reports/tex_mal/oppgave_mal.pdf)
