@@ -52,7 +52,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Using OpenMP" href="using_openmp.html" />
-    <link rel="prev" title="Online C++ resources" href="../introduction_to_cpp/online_resources.html" />
+    <link rel="prev" title="Memory traffic is the bottleneck" href="../optimization/memory_is_the_bottleneck.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -143,28 +143,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/create_a_github_repo.html">
-   Create a GitHub repo
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/example_workflow.html">
-   Example workflow
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/ways_to_undo_a_mistake.html">
-   Ways to undo a mistake
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/repo_structure.html">
-   Repo structure
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../using_git/add_a_README.html">
    Add a README
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/using_git.html">
+   Using git
   </a>
  </li>
 </ul>
@@ -272,6 +257,18 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
+  Optimization
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../optimization/memory_is_the_bottleneck.html">
+   Memory traffic is the bottleneck
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
   Parallelization
  </span>
 </p>
@@ -289,7 +286,7 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Using make
+  Using Make
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -420,6 +417,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#forking-and-joining-threads">
+   Forking and joining threads
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#building-c-code-with-openmp">
    Building C++ code with OpenMP
   </a>
@@ -474,6 +476,15 @@ allows for easy parallelization of C, C++ and Fortran code.
 It has an abundance of built in functionality,
 which can be used to parallelize code with very few changes
 to the existing code project.</p>
+</div>
+<div class="section" id="forking-and-joining-threads">
+<h2>Forking and joining threads<a class="headerlink" href="#forking-and-joining-threads" title="Permalink to this headline">¶</a></h2>
+<p>OpenMP assumes an underlying <strong>shared-memory</strong> architecture. This means that when a code runs in parallel, all <strong>threads</strong> access the same memory. Once a <strong>parallel region</strong> is executed, the <strong>primary</strong> thread that <strong>forks</strong> a set of <strong>sub-threads</strong>. Tasks are then divided among these and execute the code block <strong>concurrently</strong>, meaning at the same time. Once execution of the parallel region is completed, the sub-threads are <strong>joined</strong> and only the primary thread remains. The following image illustrates this process</p>
+<p><img alt="fork_join" src="../../_images/Fork_join.svg" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Sometimes, you’ll see the term “master” thread used for the primary thread and “slave” threads used for sub-threads. This was recently changed due to negative connotations to slavery.</p>
+</div>
 </div>
 <div class="section" id="building-c-code-with-openmp">
 <h2>Building C++ code with OpenMP<a class="headerlink" href="#building-c-code-with-openmp" title="Permalink to this headline">¶</a></h2>
@@ -572,7 +583,7 @@ when two threads operate on the same memory address, they must do so sequentiall
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../introduction_to_cpp/online_resources.html" title="previous page">Online C++ resources</a>
+    <a class='left-prev' id="prev-link" href="../optimization/memory_is_the_bottleneck.html" title="previous page">Memory traffic is the bottleneck</a>
     <a class='right-next' id="next-link" href="using_openmp.html" title="next page">Using OpenMP</a>
 
         </div>

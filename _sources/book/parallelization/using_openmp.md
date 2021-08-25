@@ -1,5 +1,6 @@
 # Using OpenMP
 
+For future reference, you can download OpenMP reference cards that contain tables with OpenMPs functionality. They help you quickly access syntax and built-in functionality if you forget. [OpenMP reference cards](https://www.openmp.org/resources/refguides/)
 
 ## Compiler directives
 
@@ -264,13 +265,3 @@ double s = 0;
 ```
 
 but you should use the reduction clause when it's supported. It's typically slightly more efficient and yields cleaner code. But at least now you've seen how you can use a synchronization section in practice.
-
-### Speedup
-Speedup is defined as the time a single thread uses divided by the time *p* threads uses, i.e
-
-```sh
-speed = time_by_one_thread/time_by_p_threads
-```
-In an ideal world, the speed up is *p*.
-
-It's natural to wonder *how many threads will give the optimal speedup?* Modern processors use computing units called **cores**. Many of these support **hyper-threading**, which typically means that each core yield two threads. A rule-of-thumb is to use the maximum number of threads supported (i.e twice the number of cores, if the cpu supports hyper-threading). However, it's wise to perform a performance analysis for you specific program, measure the speedup as a function of number of threads and decide based on the results you obtain.

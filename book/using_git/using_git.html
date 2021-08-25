@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Setting up git and Github repo &#8212; FYS3150/FYS4150 course material</title>
+    <title>Using git &#8212; FYS3150/FYS4150 course material</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,8 +51,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Add a README" href="add_a_README.html" />
-    <link rel="prev" title="Introduction to git" href="introduction_to_git.html" />
+    <link rel="next" title="Intro" href="../introduction_to_cpp/intro.html" />
+    <link rel="prev" title="Add a README" href="add_a_README.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -137,8 +137,8 @@
    Introduction to git
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="setting_up_git_and_a_GitHub_repo.html">
    Setting up git and Github repo
   </a>
  </li>
@@ -147,8 +147,8 @@
    Add a README
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="using_git.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Using git
   </a>
  </li>
@@ -365,7 +365,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/book/using_git/setting_up_git_and_a_GitHub_repo.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/book/using_git/using_git.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -385,7 +385,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Fbook/using_git/setting_up_git_and_a_GitHub_repo.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Fbook/using_git/using_git.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -412,28 +412,48 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setting-up-git-on-your-computer">
-   Setting up git on your computer
+  <a class="reference internal nav-link" href="#synopsis">
+   Synopsis
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-github-repository-for-the-course">
-   Create a Github repository for the course
+  <a class="reference internal nav-link" href="#importing-a-new-project">
+   Importing a new project
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adding-a-github-token">
-   Adding a Github token
+  <a class="reference internal nav-link" href="#making-changes">
+   Making changes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#git-tracks-content-not-files">
+   Git tracks content, not files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#viewing-project-history">
+   Viewing project history
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#managing-branches">
+   Managing branches
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-git-for-collaboration-using-github">
+   Using git for collaboration; Using GitHub
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#on-linux">
-     On Linux
+    <a class="reference internal nav-link" href="#pull-any-changes-from-the-remote">
+     Pull any changes from the remote
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#on-macos">
-     On macOS
+    <a class="reference internal nav-link" href="#push-your-changes-to-the-remote">
+     Push your changes to the remote
     </a>
    </li>
   </ul>
@@ -449,109 +469,218 @@
         
               <div>
                 
-  <div class="section" id="setting-up-git-and-github-repo">
-<h1>Setting up git and Github repo<a class="headerlink" href="#setting-up-git-and-github-repo" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="setting-up-git-on-your-computer">
-<h2>Setting up git on your computer<a class="headerlink" href="#setting-up-git-on-your-computer" title="Permalink to this headline">¶</a></h2>
-<p>You need to tell Git which user you are. Write the following commands in your terminal.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git config --global user.name your_user_name_spelled_out
+  <div class="section" id="using-git">
+<h1>Using git<a class="headerlink" href="#using-git" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<p>This tutorial explains how to import a new project into Git, make
+changes to it, and share changes with other developers. It’s a slightly modified and extended version of the manual entry of <em>gittutorial</em>. At any point, you can look this up in your terminal should you forget it by running</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>man gittutorial
+</pre></div>
+</div>
+</div>
+<div class="section" id="importing-a-new-project">
+<h2>Importing a new project<a class="headerlink" href="#importing-a-new-project" title="Permalink to this headline">¶</a></h2>
+<p>Assume you have a tarball project.tar.gz with your initial work. You
+can place it under Git revision control as follows.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>tar xzf project.tar.gz
+<span class="nb">cd</span> project
+git init
+</pre></div>
+</div>
+<p>Git will reply</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>Initialized empty Git repository <span class="k">in</span> .git/
+</pre></div>
+</div>
+<p>You’ve now initialized the working directory–you may notice a new
+directory created, named “.git”.</p>
+<p>Next, tell Git to take a snapshot of the contents of all files under
+the current directory (note the <code class="docutils literal notranslate"><span class="pre">.</span></code>, it means “the current directory”), with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git add .
+</pre></div>
+</div>
+<p>This snapshot is now stored in a temporary staging area which Git calls
+the “index”. You can permanently store the contents of the index in the
+repository with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git commit
+</pre></div>
+</div>
+<p>This will prompt you for a commit message. You’ve now stored the first
+version of your project in Git.</p>
+</div>
+<div class="section" id="making-changes">
+<h2>Making changes<a class="headerlink" href="#making-changes" title="Permalink to this headline">¶</a></h2>
+<p>Modify some files, then add their updated contents to the index:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git add file1 file2 file3
+</pre></div>
+</div>
+<p>You are now ready to commit. You can see what is about to be committed
+using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> with the –cached option:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git diff --cached
+</pre></div>
+</div>
+<p>(Without –cached, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> will show you any changes that you’ve made
+but not yet added to the index.) You can also get a brief summary of
+the situation with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git status
+On branch master
+Changes to be committed:
+Your branch is up to date with <span class="s1">&#39;origin/master&#39;</span>.
+  <span class="o">(</span>use <span class="s2">&quot;git restore --staged &lt;file&gt;...&quot;</span> to unstage<span class="o">)</span>
 
-git config --global user.email you@yourdomain.com
+        modified:   file1
+        modified:   file2
+        modified:   file3
+</pre></div>
+</div>
+<p>If you need to make any further adjustments, do so now, and then add
+any newly modified content to the index. Finally, commit your changes
+with:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git commit
+</pre></div>
+</div>
+<p>This will again prompt you for a message describing the change, and
+then record a new version of the project.</p>
+<p>Alternatively, instead of running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> beforehand, you can use</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git commit -a
+</pre></div>
+</div>
+<p>which will automatically notice any modified (but not new) files, add
+them to the index, and commit, all in one step.</p>
+<p>A note on commit messages: Though not required, it’s a good idea to
+begin the commit message with a single short (less than 50 character)
+line summarizing the change, followed by a blank line and then a more
+thorough description. The text up to the first blank line in a commit
+message is treated as the commit title, and that title is used
+throughout Git.</p>
+</div>
+<div class="section" id="git-tracks-content-not-files">
+<h2>Git tracks content, not files<a class="headerlink" href="#git-tracks-content-not-files" title="Permalink to this headline">¶</a></h2>
+<p>Many revision control systems provide an aadddd command that tells the
+system to start tracking changes to a new file. Git’s aadddd command does
+something simpler and more powerful: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> is used both for new and
+newly modified files, and in both cases it takes a snapshot of the
+given files and stages that content in the index, ready for inclusion
+in the next commit.</p>
+</div>
+<div class="section" id="viewing-project-history">
+<h2>Viewing project history<a class="headerlink" href="#viewing-project-history" title="Permalink to this headline">¶</a></h2>
+<p>At any point you can view the history of your changes using</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git log
+</pre></div>
+</div>
+<p>If you also want to see complete diffs at each step, use</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git log -p
+</pre></div>
+</div>
+<p>Often the overview of the change is useful to get a feel of each step</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git log --stat --summary
 </pre></div>
 </div>
 </div>
-<div class="section" id="create-a-github-repository-for-the-course">
-<h2>Create a Github repository for the course<a class="headerlink" href="#create-a-github-repository-for-the-course" title="Permalink to this headline">¶</a></h2>
-<p>Here’s a step-by-step instruction.</p>
-<ul class="simple">
-<li><p>Go to <a class="reference external" href="https://github.com/">github.com</a> and log in. The page should look something like this:</p></li>
-</ul>
-<p><img alt="homepage" src="../../_images/github_homepage.png" /></p>
-<ul class="simple">
-<li><p>Click on the green button named <em>New</em>. You should be redirected to a page that looks like this:</p></li>
-</ul>
-<p><img alt="create_repo" src="../../_images/create_repo.png" /></p>
-<ul class="simple">
-<li><p>Fill out your desired repository name, for instance <em>fys3150</em></p>
-<ul>
-<li><p>Keep the repository <em>public</em>.</p></li>
-<li><p>Toggle <em>add a README file</em>.</p></li>
-<li><p>Click <em>create repository</em>.</p></li>
-<li><p>You’ll be automatically redirected to the home page of your repository, see the image below.</p></li>
-</ul>
-</li>
-</ul>
-<p><img alt="clone_repo" src="../../_images/clone_repo.png" /></p>
-<ul>
-<li><p>Clone your repository to your computer.</p>
-<ul>
-<li><p>Click on the green button named <em>code</em>.</p></li>
-<li><p>Copy the link.</p></li>
-<li><p>Run in your terminal:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone the_repository_link_you_copied
+<div class="section" id="managing-branches">
+<h2>Managing branches<a class="headerlink" href="#managing-branches" title="Permalink to this headline">¶</a></h2>
+<p>A single Git repository can maintain multiple branches of development.
+To create a new branch named “experimental”, use</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git branch experimental
 </pre></div>
 </div>
-</li>
-</ul>
-</li>
-</ul>
-<p>Now you’ve cloned the repository to your computer! This will be a directory you can now find locally on your computer.</p>
-</div>
-<div class="section" id="adding-a-github-token">
-<h2>Adding a Github token<a class="headerlink" href="#adding-a-github-token" title="Permalink to this headline">¶</a></h2>
-<p>A Github token is a replacement of passwords to give you as a user access to perform action on your Github repositories from your computer.</p>
-<p>Disclaimer: Note that this is not a secure option, as the token will be saved in clear text. But it’s nevertheless the simplest option.</p>
-<ul class="simple">
-<li><p>Go to <a class="reference external" href="https://github.com/">github.com</a>. Click on your profile in the upper right corner, then on <em>settings</em>.</p></li>
-</ul>
-<p><img alt="go_to_settings" src="../../_images/go_to_settings.png" /></p>
-<ul class="simple">
-<li><p>Click on <em>developer settings</em>.</p></li>
-</ul>
-<p><img alt="go_to_developer_settings" src="../../_images/go_to_developer_settings.png" /></p>
-<ul class="simple">
-<li><p>Click on <em>Personal access tokens</em> and then click on <em>Generate new token</em>.</p></li>
-</ul>
-<p><img alt="generate_new_token" src="../../_images/generate_new_token.png" /></p>
-<ul class="simple">
-<li><p>Your page should look somethings like what follows.</p>
-<ul>
-<li><p>Fill out note with a name for the token, for instance <em>main_token</em>.</p></li>
-<li><p>Change expiration date to <em>no expiration</em> (you can choose a finite expiration if security bothers you. But this is a school project, not a multibillion dollar code project.)</p></li>
-<li><p>Toggle every box under <em>select scopes</em>. Most of them are unecessary, but we just want full access.</p></li>
-<li><p>Click <em>Generate token</em> at the bottom of the screen.</p></li>
-</ul>
-</li>
-</ul>
-<p><img alt="token_page" src="../../_images/token_page.png" /></p>
-<ul class="simple">
-<li><p>You’ll be redirected to the page with your token now. <em>Make sure you copy it!</em></p></li>
-</ul>
-<div class="section" id="on-linux">
-<h3>On Linux<a class="headerlink" href="#on-linux" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p>In your Github repository (locally on your computer), run.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git config --global credential.helper store
+<p>If you now run</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git branch
 </pre></div>
 </div>
-</li>
-<li><p>Then run</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git pull
+<p>you’ll get a list of all existing branches:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>  experimental
+* master
 </pre></div>
 </div>
-</li>
-<li><p>Type in your username (you’ll be prompted to do so.)</p></li>
-<li><p>Paste in the token you copied instead of your password.</p></li>
-</ul>
-<p>And you’re done!</p>
+<p>The “experimental” branch is the one you just created, and the “master”
+branch is a default branch that was created for you automatically. The
+asterisk marks the branch you are currently on; type</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git switch experimental
+</pre></div>
 </div>
-<div class="section" id="on-macos">
-<h3>On macOS<a class="headerlink" href="#on-macos" title="Permalink to this headline">¶</a></h3>
-<ol class="simple">
-<li><p>Open the <strong>Keychain Access</strong> app.</p></li>
-<li><p>Search for <a class="reference external" href="http://Github.com">Github.com</a> and double click on the one marked with “internet password”.</p></li>
-<li><p>Click on “show password” and replace the password with your generated token.</p></li>
-</ol>
+<p>to switch to the experimental branch. Now edit a file, commit the
+change, and switch back to the master branch:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>edit file<span class="o">)</span>
+git commit -a
+git switch master
+</pre></div>
+</div>
+<p>Check that the change you made is no longer visible, since it was made
+on the experimental branch and you’re back on the master branch.</p>
+<p>You can make a different change on the master branch:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>edit file<span class="o">)</span>
+git commit -a
+</pre></div>
+</div>
+<p>at this point the two branches have diverged, with different changes
+made in each. To merge the changes made in experimental into master,
+run</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git merge experimental
+</pre></div>
+</div>
+<p>If the changes don’t conflict, you’re done. If there are conflicts,
+markers will be left in the problematic files showing the conflict;</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git diff
+</pre></div>
+</div>
+<p>will show this. Once you’ve edited the files to resolve the conflicts,</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git commit -a
+</pre></div>
+</div>
+<p>will commit the result of the merge. Finally,</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>gitk
+</pre></div>
+</div>
+<p>will show a nice graphical representation of the resulting history.</p>
+<p>At this point you could delete the experimental branch with</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git branch -d experimental
+</pre></div>
+</div>
+<p>This command ensures that the changes in the experimental branch are
+already in the current branch.</p>
+<p>If you develop on a branch crazy-idea, then regret it, you can always
+delete the branch with</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git branch -D crazy-idea
+</pre></div>
+</div>
+<p>Branches are cheap and easy, so this is a good way to try something
+out.</p>
+</div>
+<div class="section" id="using-git-for-collaboration-using-github">
+<h2>Using git for collaboration; Using GitHub<a class="headerlink" href="#using-git-for-collaboration-using-github" title="Permalink to this headline">¶</a></h2>
+<p>So far we’ve only discussed git locally on your computer, but not how we collaborate with other developers. This is where GitHub comes into the picture.</p>
+<p>It’s customary to work on different branches to protect the content of the main branch. Just like in the example above where we worked on a branch called “experimental”, you can create your own branch when you work on a project with other people.</p>
+<div class="section" id="pull-any-changes-from-the-remote">
+<h3>Pull any changes from the remote<a class="headerlink" href="#pull-any-changes-from-the-remote" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>remote</strong> repo is the term used for the cloud based copy of your local git repo. To <strong>pull</strong> down any changes done by the other developers on a branch, run</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git pull origin branchname
+</pre></div>
+</div>
+<p>in particular, to pull from the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, run</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git pull origin main
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For old repositories created before October 1, 2020, the main branch was called master. Therefore, if you work on projects created before this, you might see the main branch called “master” instead.</p>
+</div>
+</div>
+<div class="section" id="push-your-changes-to-the-remote">
+<h3>Push your changes to the remote<a class="headerlink" href="#push-your-changes-to-the-remote" title="Permalink to this headline">¶</a></h3>
+<p>When you’ve performed local changes to a branch, you can push it to the remote using</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git push origin branchname
+</pre></div>
+</div>
+<p>again, for the main branch, this is done by</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git push origin main
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It’s a good idea to always pull from the origin before you try to merge branches locally, commit or push to the origin. Always sync up with the remote version of the repo first!</p>
+</div>
 </div>
 </div>
 </div>
@@ -581,8 +710,8 @@ git config --global user.email you@yourdomain.com
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="introduction_to_git.html" title="previous page">Introduction to git</a>
-    <a class='right-next' id="next-link" href="add_a_README.html" title="next page">Add a README</a>
+    <a class='left-prev' id="prev-link" href="add_a_README.html" title="previous page">Add a README</a>
+    <a class='right-next' id="next-link" href="../introduction_to_cpp/intro.html" title="next page">Intro</a>
 
         </div>
         

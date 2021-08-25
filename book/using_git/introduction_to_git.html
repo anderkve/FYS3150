@@ -143,28 +143,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="create_a_github_repo.html">
-   Create a GitHub repo
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="example_workflow.html">
-   Example workflow
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ways_to_undo_a_mistake.html">
-   Ways to undo a mistake
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="repo_structure.html">
-   Repo structure
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="add_a_README.html">
    Add a README
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="using_git.html">
+   Using git
   </a>
  </li>
 </ul>
@@ -272,6 +257,18 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
+  Optimization
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../optimization/memory_is_the_bottleneck.html">
+   Memory traffic is the bottleneck
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
   Parallelization
  </span>
 </p>
@@ -289,7 +286,7 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Using make
+  Using Make
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -424,53 +421,6 @@
    What is GitHub?
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#synopsis">
-   Synopsis
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#importing-a-new-project">
-   Importing a new project
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#making-changes">
-   Making changes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#git-tracks-content-not-files">
-   Git tracks content, not files
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#viewing-project-history">
-   Viewing project history
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#managing-branches">
-   Managing branches
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-git-for-collaboration-using-github">
-   Using git for collaboration; Using GitHub
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pull-any-changes-from-the-remote">
-     Pull any changes from the remote
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#push-your-changes-to-the-remote">
-     Push your changes to the remote
-    </a>
-   </li>
-  </ul>
- </li>
 </ul>
 
             </nav>
@@ -486,224 +436,12 @@
 <h1>Introduction to git<a class="headerlink" href="#introduction-to-git" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="what-is-git">
 <h2>What is git?<a class="headerlink" href="#what-is-git" title="Permalink to this headline">¶</a></h2>
-<p><em>git</em> is a version control software, or as the developers themselves call it, a <em>stupid content tracker</em>. What it <em>does</em> is track changes in a system of files to make collaboration among developers on a code project easy. It provides a rich set of tools to ensure that several programmers can work on the same project in a non-linear way. Several programmers can even work on the exact same file.</p>
+<p><strong>git</strong> is a version control software, or as the developers themselves call it, a <strong>stupid content tracker</strong>. What it <em>does</em> is track changes in a system of files to make collaboration among developers on a code project easy. It provides a rich set of tools to ensure that several programmers can work on the same project in a non-linear way. Several programmers can even work on the exact same file.</p>
 </div>
 <div class="section" id="what-is-github">
 <h2>What is GitHub?<a class="headerlink" href="#what-is-github" title="Permalink to this headline">¶</a></h2>
 <p>GitHub is a service that provides hosting and storage for software development and version control using git as its underlying version control software. It also offers services that goes beyond the functionality of git.</p>
-<p>For our purposes, they host <em>repositories</em>, or <em>repos</em> for short, that essentially are copies of specific local computer directories at certain timestamps. We use git to manage these and store copies on a server hosted by GitHub.</p>
-</div>
-<div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<p>This tutorial explains how to import a new project into Git, make
-changes to it, and share changes with other developers. It’s a slightly modified and extended version of the manual entry of <em>gittutorial</em>. At any point, you can look this up in your terminal should you forget it by running</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>man gittutorial
-</pre></div>
-</div>
-</div>
-<div class="section" id="importing-a-new-project">
-<h2>Importing a new project<a class="headerlink" href="#importing-a-new-project" title="Permalink to this headline">¶</a></h2>
-<p>Assume you have a tarball project.tar.gz with your initial work. You
-can place it under Git revision control as follows.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>tar xzf project.tar.gz
-<span class="nb">cd</span> project
-git init
-</pre></div>
-</div>
-<p>Git will reply</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>Initialized empty Git repository <span class="k">in</span> .git/
-</pre></div>
-</div>
-<p>You’ve now initialized the working directory–you may notice a new
-directory created, named “.git”.</p>
-<p>Next, tell Git to take a snapshot of the contents of all files under
-the current directory (note the <code class="docutils literal notranslate"><span class="pre">.</span></code>, it means “the current directory”), with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git add .
-</pre></div>
-</div>
-<p>This snapshot is now stored in a temporary staging area which Git calls
-the “index”. You can permanently store the contents of the index in the
-repository with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git commit
-</pre></div>
-</div>
-<p>This will prompt you for a commit message. You’ve now stored the first
-version of your project in Git.</p>
-</div>
-<div class="section" id="making-changes">
-<h2>Making changes<a class="headerlink" href="#making-changes" title="Permalink to this headline">¶</a></h2>
-<p>Modify some files, then add their updated contents to the index:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git add file1 file2 file3
-</pre></div>
-</div>
-<p>You are now ready to commit. You can see what is about to be committed
-using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> with the –cached option:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git diff --cached
-</pre></div>
-</div>
-<p>(Without –cached, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> will show you any changes that you’ve made
-but not yet added to the index.) You can also get a brief summary of
-the situation with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git status
-On branch master
-Changes to be committed:
-Your branch is up to date with <span class="s1">&#39;origin/master&#39;</span>.
-  <span class="o">(</span>use <span class="s2">&quot;git restore --staged &lt;file&gt;...&quot;</span> to unstage<span class="o">)</span>
-
-        modified:   file1
-        modified:   file2
-        modified:   file3
-</pre></div>
-</div>
-<p>If you need to make any further adjustments, do so now, and then add
-any newly modified content to the index. Finally, commit your changes
-with:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git commit
-</pre></div>
-</div>
-<p>This will again prompt you for a message describing the change, and
-then record a new version of the project.</p>
-<p>Alternatively, instead of running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> beforehand, you can use</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git commit -a
-</pre></div>
-</div>
-<p>which will automatically notice any modified (but not new) files, add
-them to the index, and commit, all in one step.</p>
-<p>A note on commit messages: Though not required, it’s a good idea to
-begin the commit message with a single short (less than 50 character)
-line summarizing the change, followed by a blank line and then a more
-thorough description. The text up to the first blank line in a commit
-message is treated as the commit title, and that title is used
-throughout Git.</p>
-</div>
-<div class="section" id="git-tracks-content-not-files">
-<h2>Git tracks content, not files<a class="headerlink" href="#git-tracks-content-not-files" title="Permalink to this headline">¶</a></h2>
-<p>Many revision control systems provide an aadddd command that tells the
-system to start tracking changes to a new file. Git’s aadddd command does
-something simpler and more powerful: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> is used both for new and
-newly modified files, and in both cases it takes a snapshot of the
-given files and stages that content in the index, ready for inclusion
-in the next commit.</p>
-</div>
-<div class="section" id="viewing-project-history">
-<h2>Viewing project history<a class="headerlink" href="#viewing-project-history" title="Permalink to this headline">¶</a></h2>
-<p>At any point you can view the history of your changes using</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git log
-</pre></div>
-</div>
-<p>If you also want to see complete diffs at each step, use</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git log -p
-</pre></div>
-</div>
-<p>Often the overview of the change is useful to get a feel of each step</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git log --stat --summary
-</pre></div>
-</div>
-</div>
-<div class="section" id="managing-branches">
-<h2>Managing branches<a class="headerlink" href="#managing-branches" title="Permalink to this headline">¶</a></h2>
-<p>A single Git repository can maintain multiple branches of development.
-To create a new branch named “experimental”, use</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git branch experimental
-</pre></div>
-</div>
-<p>If you now run</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git branch
-</pre></div>
-</div>
-<p>you’ll get a list of all existing branches:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>  experimental
-* master
-</pre></div>
-</div>
-<p>The “experimental” branch is the one you just created, and the “master”
-branch is a default branch that was created for you automatically. The
-asterisk marks the branch you are currently on; type</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git switch experimental
-</pre></div>
-</div>
-<p>to switch to the experimental branch. Now edit a file, commit the
-change, and switch back to the master branch:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>edit file<span class="o">)</span>
-git commit -a
-git switch master
-</pre></div>
-</div>
-<p>Check that the change you made is no longer visible, since it was made
-on the experimental branch and you’re back on the master branch.</p>
-<p>You can make a different change on the master branch:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>edit file<span class="o">)</span>
-git commit -a
-</pre></div>
-</div>
-<p>at this point the two branches have diverged, with different changes
-made in each. To merge the changes made in experimental into master,
-run</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git merge experimental
-</pre></div>
-</div>
-<p>If the changes don’t conflict, you’re done. If there are conflicts,
-markers will be left in the problematic files showing the conflict;</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git diff
-</pre></div>
-</div>
-<p>will show this. Once you’ve edited the files to resolve the conflicts,</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git commit -a
-</pre></div>
-</div>
-<p>will commit the result of the merge. Finally,</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>gitk
-</pre></div>
-</div>
-<p>will show a nice graphical representation of the resulting history.</p>
-<p>At this point you could delete the experimental branch with</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git branch -d experimental
-</pre></div>
-</div>
-<p>This command ensures that the changes in the experimental branch are
-already in the current branch.</p>
-<p>If you develop on a branch crazy-idea, then regret it, you can always
-delete the branch with</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git branch -D crazy-idea
-</pre></div>
-</div>
-<p>Branches are cheap and easy, so this is a good way to try something
-out.</p>
-</div>
-<div class="section" id="using-git-for-collaboration-using-github">
-<h2>Using git for collaboration; Using GitHub<a class="headerlink" href="#using-git-for-collaboration-using-github" title="Permalink to this headline">¶</a></h2>
-<p>So far we’ve only discussed git locally on your computer, but not how we collaborate with other developers. This is where GitHub comes into the picture.</p>
-<p>It’s customary to work on different branches to protect the content of the main branch. Just like in the example above where we worked on a branch called “experimental”, you can create your own branch when you work on a project with other people.</p>
-<div class="section" id="pull-any-changes-from-the-remote">
-<h3>Pull any changes from the remote<a class="headerlink" href="#pull-any-changes-from-the-remote" title="Permalink to this headline">¶</a></h3>
-<p>The <strong>remote</strong> repo is the term used for the cloud based copy of your local git repo. To <strong>pull</strong> down any changes done by the other developers on a branch, run</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git pull origin branchname
-</pre></div>
-</div>
-<p>in particular, to pull from the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, run</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git pull origin main
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>For old repositories created before October 1, 2020, the main branch was called master. Therefore, if you work on projects created before this, you might see the main branch called “master” instead.</p>
-</div>
-</div>
-<div class="section" id="push-your-changes-to-the-remote">
-<h3>Push your changes to the remote<a class="headerlink" href="#push-your-changes-to-the-remote" title="Permalink to this headline">¶</a></h3>
-<p>When you’ve performed local changes to a branch, you can push it to the remote using</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git push origin branchname
-</pre></div>
-</div>
-<p>again, for the main branch, this is done by</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git push origin main
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>It’s a good idea to always pull from the origin before you try to merge branches locally, commit or push to the origin. Always sync up with the remote version of the repo first!</p>
-</div>
-</div>
+<p>For our purposes, they host <strong>repositories</strong>, or <strong>repos</strong> for short, that essentially are copies of specific local computer directories at certain timestamps. We use git to manage these and store copies on a server hosted by GitHub.</p>
 </div>
 </div>
 

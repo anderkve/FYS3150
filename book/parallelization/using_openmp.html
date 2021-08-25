@@ -143,28 +143,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/create_a_github_repo.html">
-   Create a GitHub repo
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/example_workflow.html">
-   Example workflow
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/ways_to_undo_a_mistake.html">
-   Ways to undo a mistake
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/repo_structure.html">
-   Repo structure
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../using_git/add_a_README.html">
    Add a README
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/using_git.html">
+   Using git
   </a>
  </li>
 </ul>
@@ -272,6 +257,18 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
+  Optimization
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../optimization/memory_is_the_bottleneck.html">
+   Memory traffic is the bottleneck
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
   Parallelization
  </span>
 </p>
@@ -289,7 +286,7 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Using make
+  Using Make
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -476,11 +473,6 @@
      Example: computing the sum of the 100 first integers
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#speedup">
-     Speedup
-    </a>
-   </li>
   </ul>
  </li>
 </ul>
@@ -496,6 +488,7 @@
                 
   <div class="section" id="using-openmp">
 <h1>Using OpenMP<a class="headerlink" href="#using-openmp" title="Permalink to this headline">¶</a></h1>
+<p>For future reference, you can download OpenMP reference cards that contain tables with OpenMPs functionality. They help you quickly access syntax and built-in functionality if you forget. <a class="reference external" href="https://www.openmp.org/resources/refguides/">OpenMP reference cards</a></p>
 <div class="section" id="compiler-directives">
 <h2>Compiler directives<a class="headerlink" href="#compiler-directives" title="Permalink to this headline">¶</a></h2>
 <p>OpenMP is very user-friendly in the sense that
@@ -745,15 +738,6 @@ Nevertheless, we provide a few important ones, perhaps the only ones you’ll ne
 </pre></div>
 </div>
 <p>but you should use the reduction clause when it’s supported. It’s typically slightly more efficient and yields cleaner code. But at least now you’ve seen how you can use a synchronization section in practice.</p>
-</div>
-<div class="section" id="speedup">
-<h3>Speedup<a class="headerlink" href="#speedup" title="Permalink to this headline">¶</a></h3>
-<p>Speedup is defined as the time a single thread uses divided by the time <em>p</em> threads uses, i.e</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">speed</span> <span class="o">=</span> time_by_one_thread/time_by_p_threads
-</pre></div>
-</div>
-<p>In an ideal world, the speed up is <em>p</em>.</p>
-<p>It’s natural to wonder <em>how many threads will give the optimal speedup?</em> Modern processors use computing units called <strong>cores</strong>. Many of these support <strong>hyper-threading</strong>, which typically means that each core yield two threads. A rule-of-thumb is to use the maximum number of threads supported (i.e twice the number of cores, if the cpu supports hyper-threading). However, it’s wise to perform a performance analysis for you specific program, measure the speedup as a function of number of threads and decide based on the results you obtain.</p>
 </div>
 </div>
 </div>
