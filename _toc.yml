@@ -33,17 +33,17 @@ parts:
       - file: book/introduction_to_cpp/functions_take_1
       - file: book/introduction_to_cpp/if_else
       - file: book/introduction_to_cpp/loops
-      - file: book/introduction_to_cpp/containers
+      #- file: book/introduction_to_cpp/containers
       - file: book/introduction_to_cpp/pointers
-      - file: book/introduction_to_cpp/references
-      - file: book/introduction_to_cpp/functions_take_2
+      #- file: book/introduction_to_cpp/references
+      #- file: book/introduction_to_cpp/functions_take_2
       - file: book/introduction_to_cpp/source_files_and_header_files
-      - file: book/introduction_to_cpp/declaration_vs_definition
-      - file: book/introduction_to_cpp/input_and_output
-      - file: book/introduction_to_cpp/compiling_and_linking_take_2
-      - file: book/introduction_to_cpp/classes
-      - file: book/introduction_to_cpp/common_errors
-      - file: book/introduction_to_cpp/debugging
+      #- file: book/introduction_to_cpp/declaration_vs_definition
+      #- file: book/introduction_to_cpp/input_and_output
+      #- file: book/introduction_to_cpp/compiling_and_linking_take_2
+      #- file: book/introduction_to_cpp/classes
+      #- file: book/introduction_to_cpp/common_errors
+      #- file: book/introduction_to_cpp/debugging
       - file: book/introduction_to_cpp/online_resources
 
   - caption: Optimization
