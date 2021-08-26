@@ -41,7 +41,7 @@ parts:
       #- file: book/introduction_to_cpp/declaration_vs_definition
       #- file: book/introduction_to_cpp/input_and_output
       #- file: book/introduction_to_cpp/compiling_and_linking_take_2
-      #- file: book/introduction_to_cpp/classes
+      - file: book/introduction_to_cpp/classes
       #- file: book/introduction_to_cpp/common_errors
       #- file: book/introduction_to_cpp/debugging
       - file: book/introduction_to_cpp/online_resources
