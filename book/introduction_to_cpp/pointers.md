@@ -11,13 +11,13 @@ type* pointer_name;
 ```
 
 ```{note}
-It's perfectly legitimate two write the following also:
+It's perfectly legitimate to write the following also:
 type *ptr;
 ```
 
 ## Assigning an address to a pointer
 
-Say we have a variable `my_variable` and we want to create a pointer `my_pointer` to its address. Generically, we can do this by
+Say we have a variable named `my_variable` and we want to create a pointer named `pointer_to_my_variable` to its address. Generically, we can do this by
 
 ```c++
 type1 my_variable = some_value;
