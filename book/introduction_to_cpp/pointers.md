@@ -11,7 +11,7 @@ type* pointer_name;
 ```
 
 ```{note}
-It's perfectly legitimate two write the following also:
+It's perfectly legitimate to write the following also:
 type *ptr;
 ```
 
