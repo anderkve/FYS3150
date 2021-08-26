@@ -13,7 +13,7 @@ man gittutorial
 
 ## Cloning a new project
 
-We recommend you create a repository online on [Github](www.github.com) and clone the HTTPS link down to your computer. It's simply done by
+We recommend you create a repository online on [Github](https://github.com/) and clone the HTTPS link down to your computer. It's simply done by
 
 ```sh
 git clone https_link
