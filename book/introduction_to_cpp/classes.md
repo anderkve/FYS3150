@@ -133,7 +133,7 @@ int main(int argc, char const *argv[]) {
 
 ## Inheritance: superclasses and derived classes.
 
-A **superclass** or a **base class** is a class that provides the foundation for other classes. It in itself does not inhert or **derive** anything from another class.
+A **superclass** or **base class** is a class that provides the foundation for other classes.
 
 A **derived class** is a class that in general inherits member variables, constructors and methods from a superclass.
 
@@ -157,7 +157,7 @@ public:
 
 ### Syntax of derived class: source file
 
-The syntax of the source file is pretty much identical to the source file of any class. We'll instead show an example on how to actually use something you inherit from the superclass.
+The syntax of the source file is pretty much identical to the source file of any class. We'll instead provide an example that showcases how to actually use something you inherit from the superclass.
 
 
 ## Practical example: Quadratic polynomial
@@ -209,8 +209,12 @@ double Quadratic::compute_val(double x){
 Again, we can write a short program to use the `Quadratic` class:
 
 ```c++
-    double x = 2; //Point to evaluate the polynomials in
-    double c0 = 1, c1 = 1, c2 = 1;
-    Quadratic my_quad = Quadratic(c0, c1, c2); //Call constructor and create Quadratic object my_quad.
-    double y = my_quad.compute_val(x); //Compute y = c0 + c1*x + c2*x*x.
+#include "quadratic.hpp"
+int main(int argc, char const *argv[]) {
+  double x = 2; //Point to evaluate the polynomials in
+  double c0 = 1, c1 = 1, c2 = 1;
+  Quadratic my_quad = Quadratic(c0, c1, c2); //Call constructor and create Quadratic object my_quad.
+  double y = my_quad.compute_val(x); //Compute y = c0 + c1*x + c2*x*x.
+  return 0;
+}
 ```
