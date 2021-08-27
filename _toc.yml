@@ -33,6 +33,7 @@ parts:
       - file: book/introduction_to_cpp/functions_take_1
       - file: book/introduction_to_cpp/if_else
       - file: book/introduction_to_cpp/loops
+      - file: book/introduction_to_cpp/intro_to_armadillo
       #- file: book/introduction_to_cpp/containers
       - file: book/introduction_to_cpp/pointers
       #- file: book/introduction_to_cpp/references
