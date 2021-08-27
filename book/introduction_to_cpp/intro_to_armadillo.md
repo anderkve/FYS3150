@@ -1,6 +1,8 @@
 # Introduction to Armadillo
 
-Armadillo is an efficient linear algebra library for C++ users. Its aim is to provide a library that balances speed and ease of use. We recommend this library for numerical computations.
+Armadillo is an efficient linear algebra library for C++ users. Its aim is to provide a library that balances speed and ease of use. We recommend this library for numerical computations as a replacement for dynamic allocation of arrays.
+
+We'll cover the very basics here to get you started with the library. However, their webpage provide an excellent, detailed [code documentation](http://arma.sourceforge.net/docs.html) with examples of usage that you can search through.
 
 ## Building code with Armadillo
 
@@ -16,6 +18,31 @@ For Linux users, nothing special is typically required.
 
 To link to Armadillo, we must add the compiler flag `-larmadillo` during linking.
 
+## Vectors
+
+Armadillo provides a useful vector class `arma::vec` that can be used to replace arrays in numerical computations. Assume `n` is a positive integer.
+
+### Declaring and filling vectors
+
+```c++
+arma::vec x = arma::vec(n); //Initialize vector but don't fill.
+arma::vec y = arma::vec(n).fill(2.); //Declare and fill with 2's.
+arma::vec z = arma::vec(n).randu(); //Declare and will with random uniform values.
+```
+
+### Accessing and assigning elements in a vector
+
+We can access an element `i` from a vector `x` by
+
+```c++
+double x_i = x(i); //Extract element i of x and assign it to x_i.
+```
+
+We can assign a new value to element `i` in the vector `x` using
+
+```c++
+x(i) = some_new_value;
+```
 
 ## Matrices
 Assume that `n` and `m` are positive integers.
