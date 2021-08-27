@@ -1,8 +1,8 @@
 # Classes
 
 We'll think of a **class** as a user-defined object that contains:
-1. Variables
-2. **Class methods** or functions that belong to the class.
+1. **Member variables**, i.e variables that belongs to the class.
+2. **Class methods**, i.e functions that belong to the class.
 
 They provide a flexible way to package code that facilitates creation of readable and easy-to-use C++ programs.
 
@@ -19,7 +19,7 @@ Don't worry, we'll explain how shortly.
 
 ### The #define Guard
 
-To prevent multiple inclusion when we're dealing with many header and source files, we create a so-called **#define guard** in each header file. The generic structure of a #define guard looks like this:
+To prevent multiple inclusions when we're dealing with many header and source files, we create a so-called **#define guard** in each header file. The generic structure of a #define guard looks like this:
 
 ```c++
 #ifndef CLASS_NAME_HPP

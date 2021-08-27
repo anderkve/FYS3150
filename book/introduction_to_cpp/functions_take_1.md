@@ -23,7 +23,7 @@ If you declare a function after the main() function in C++, you will get an erro
 ## Separation of declaration and definition
 
 As noted, we can't declare a function after the `main()` function of a C++ program. We can however separate the two. What this means is
-- Declare the function *before* `main()`.
+- Declare the function *before* `main()`. This is called **forward declaration** if a definition isn't provided simultaneously.
 - Provide a definition of the function *after* `main()`.
 
 In other words:

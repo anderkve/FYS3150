@@ -12,7 +12,7 @@ type* pointer_name;
 
 ```{note}
 It's perfectly legitimate to write the following also:
-type *ptr;
+type *pointer_name;
 ```
 
 ## Assigning an address to a pointer
