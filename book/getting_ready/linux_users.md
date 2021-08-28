@@ -1,6 +1,7 @@
 # Linux users
 
-We recommend that you use Ubuntu as your chosen Linux distribution. On this page you find
+We recommend that you use Ubuntu as your chosen Linux distribution, unless you are already familiar with some other distribution.
+
 
 ## Installation of necessary software for C++ and Git
 
