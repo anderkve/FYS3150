@@ -175,6 +175,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="source_files_and_header_files.html">
+   Source files and header files
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="variables.html">
    Variables
   </a>
@@ -195,8 +200,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="containers.html">
-   Containers
+  <a class="reference internal" href="intro_to_armadillo.html">
+   Introduction to Armadillo
   </a>
  </li>
  <li class="toctree-l1">
@@ -205,48 +210,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="references.html">
-   References
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="functions_take_2.html">
-   Functions, take 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="source_files_and_header_files.html">
-   Source files and header files
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="declaration_vs_definition.html">
-   Declaration vs definition
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="input_and_output.html">
-   Input and output
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="compiling_and_linking_take_2.html">
-   Compiling and linking, take 2
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="classes.html">
    Classes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="common_errors.html">
-   Common errors
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="debugging.html">
-   Debugging
   </a>
  </li>
  <li class="toctree-l1">
@@ -401,6 +366,34 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-function">
+   Creating a function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#separation-of-declaration-and-definition">
+   Separation of declaration and definition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-1-single-argument">
+   Example 1: single argument
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-2-multiple-arguments">
+   Example 2: multiple arguments
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -411,7 +404,83 @@
                 
   <div class="section" id="functions-take-1">
 <h1>Functions, take 1<a class="headerlink" href="#functions-take-1" title="Permalink to this headline">¶</a></h1>
-<p>Add a first page on functions.</p>
+<p>A <strong>function</strong> in C++ is a code block which is execute only when the function is called. A function takes <strong>arguments</strong>, performs some action and usually returns and <strong>output</strong>.</p>
+<div class="section" id="creating-a-function">
+<h2>Creating a function<a class="headerlink" href="#creating-a-function" title="Permalink to this headline">¶</a></h2>
+<p>Creating a function in C++ consists of two steps:</p>
+<ol class="simple">
+<li><p><strong>Declaration</strong>. Specifies the function’s name, return type and parameters.</p></li>
+<li><p><strong>Definition</strong>. The code block of the function, or its <strong>body</strong>.</p></li>
+</ol>
+<p>Generically:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">type</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">type1</span> <span class="n">input1</span><span class="p">,</span> <span class="p">...,</span> <span class="n">typeN</span> <span class="n">inputN</span><span class="p">){</span> <span class="c1">//declaration</span>
+    <span class="c1">//Code block or body (i.e definition)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you declare a function after the main() function in C++, you will get an error. You must therefore declare the function before the main() function in your C++ program.</p>
+</div>
+</div>
+<div class="section" id="separation-of-declaration-and-definition">
+<h2>Separation of declaration and definition<a class="headerlink" href="#separation-of-declaration-and-definition" title="Permalink to this headline">¶</a></h2>
+<p>As noted, we can’t declare a function after the <code class="docutils literal notranslate"><span class="pre">main()</span></code> function of a C++ program. We can however separate the two. What this means is</p>
+<ul class="simple">
+<li><p>Declare the function <em>before</em> <code class="docutils literal notranslate"><span class="pre">main()</span></code>. This is called <strong>forward declaration</strong> if a definition isn’t provided simultaneously.</p></li>
+<li><p>Provide a definition of the function <em>after</em> <code class="docutils literal notranslate"><span class="pre">main()</span></code>.</p></li>
+</ul>
+<p>In other words:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">type</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">type1</span> <span class="n">input1</span><span class="p">,</span> <span class="p">...,</span> <span class="n">typeN</span> <span class="n">inputN</span><span class="p">);</span> <span class="c1">//Declaration</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="k">const</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+    <span class="cm">/* code of the main function */</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">type</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">type1</span> <span class="n">input1</span><span class="p">,</span> <span class="p">...,</span> <span class="n">typeN</span> <span class="n">inputN</span><span class="p">){</span>
+    <span class="c1">//Code block or body (i.e definition)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-1-single-argument">
+<h2>Example 1: single argument<a class="headerlink" href="#example-1-single-argument" title="Permalink to this headline">¶</a></h2>
+<p>Say we want to implements the function <code class="docutils literal notranslate"><span class="pre">f(x)</span> <span class="pre">=</span> <span class="pre">x*x</span></code> in C++ and call it once in a <code class="docutils literal notranslate"><span class="pre">main()</span></code> program. A short program for this looks like</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="nf">f</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">);</span> <span class="c1">//Declaration</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="k">const</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">res</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">);</span> <span class="c1">//Should return 2*2 = 4.</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">double</span> <span class="nf">f</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">){</span>
+    <span class="c1">//Provide definition of function here:</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-2-multiple-arguments">
+<h2>Example 2: multiple arguments<a class="headerlink" href="#example-2-multiple-arguments" title="Permalink to this headline">¶</a></h2>
+<p>Let’s do the same with a function of multiple arguments. Assume we’re to implement <code class="docutils literal notranslate"><span class="pre">f(x,y)</span> <span class="pre">=</span> <span class="pre">x*x</span> <span class="pre">+</span> <span class="pre">y</span></code> and call it once. This can be done as follows.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="nf">f</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y</span><span class="p">);</span> <span class="c1">//Definition</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="k">const</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">res</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="kt">double</span> <span class="nf">f</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y</span><span class="p">){</span>
+    <span class="c1">//Definition:</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

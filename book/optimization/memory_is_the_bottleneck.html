@@ -175,6 +175,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/source_files_and_header_files.html">
+   Source files and header files
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../introduction_to_cpp/variables.html">
    Variables
   </a>
@@ -195,8 +200,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/containers.html">
-   Containers
+  <a class="reference internal" href="../introduction_to_cpp/intro_to_armadillo.html">
+   Introduction to Armadillo
   </a>
  </li>
  <li class="toctree-l1">
@@ -205,48 +210,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/references.html">
-   References
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/functions_take_2.html">
-   Functions, take 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/source_files_and_header_files.html">
-   Source files and header files
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/declaration_vs_definition.html">
-   Declaration vs definition
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/input_and_output.html">
-   Input and output
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/compiling_and_linking_take_2.html">
-   Compiling and linking, take 2
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../introduction_to_cpp/classes.html">
    Classes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/common_errors.html">
-   Common errors
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/debugging.html">
-   Debugging
   </a>
  </li>
  <li class="toctree-l1">
@@ -508,7 +473,7 @@ We should traverse the columns to reduce the stride in memory when the underlyin
 </div>
 <div class="section" id="illustrative-example">
 <h3>Illustrative example<a class="headerlink" href="#illustrative-example" title="Permalink to this headline">¶</a></h3>
-<p>We’ll do an example with Armadillo because it simplifies allocation of matrices significantly. We recall that Armadillo allocates memory in column-major order. Therefore we should make sure traverse the matrix through its columns (stride-1)!</p>
+<p>We’ll do an example with Armadillo because it simplifies allocation of matrices significantly. We recall that Armadillo allocates memory in column-major order. Therefore we should make sure to traverse the matrix through its columns (stride-1)!</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">;</span>
 <span class="n">mat</span> <span class="n">A</span> <span class="o">=</span> <span class="n">mat</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">);</span>
 <span class="kt">clock_t</span> <span class="n">start</span> <span class="o">=</span> <span class="n">clock</span><span class="p">();</span>
@@ -538,7 +503,7 @@ We should traverse the columns to reduce the stride in memory when the underlyin
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">timeused</span> <span class="o">=</span> <span class="m">0</span>.96181 seconds
 </pre></div>
 </div>
-<p>which is roughly twice as long. Conceptually, cache misses occur much more frequently in a stride-n code. Cache lines that are already loaded must be discarded in favor of new cache lines. Part of the execution time leaves the computing units idle, waiting for the correct memory addresses to be loaded into cache before they can do any computation.</p>
+<p>which is roughly twice as long. Conceptually, cache misses occur much more frequently in a stride-<code class="docutils literal notranslate"><span class="pre">n</span></code> code. Cache lines that are already loaded must be discarded in favor of loading new cache lines. Part of the execution time leaves the computing units idle, waiting for the correct memory addresses to be loaded into cache before they can do any computation.</p>
 </div>
 </div>
 <div class="section" id="temporaries">

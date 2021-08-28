@@ -11,45 +11,13 @@ man gittutorial
 ```
 
 
-## Importing a new project
+## Cloning a new project
 
-Assume you have a tarball project.tar.gz with your initial work. You
-can place it under Git revision control as follows.
-
-```sh
-tar xzf project.tar.gz
-cd project
-git init
-```
-
-Git will reply
+We recommend you create a repository online on [Github](https://github.com/) and clone the HTTPS link down to your computer. It's simply done by
 
 ```sh
-Initialized empty Git repository in .git/
+git clone https_link
 ```
-
-
-You've now initialized the working directory--you may notice a new
-directory created, named ".git".
-
-Next, tell Git to take a snapshot of the contents of all files under
-the current directory (note the `.`, it means "the current directory"), with `git add`:
-
-```sh
-git add .
-```
-
-
-This snapshot is now stored in a temporary staging area which Git calls
-the "index". You can permanently store the contents of the index in the
-repository with `git commit`:
-
-```sh
-git commit
-```
-
-This will prompt you for a commit message. You've now stored the first
-version of your project in Git.
 
 ## Making changes
 
@@ -176,7 +144,13 @@ git switch experimental
 ```
 
 
-to switch to the experimental branch. Now edit a file, commit the
+to switch to the experimental branch.
+
+```{note}
+"git switch" requires git version 2.23 or later. You can use "git checkout" as a replacement if you use an older version of git.  
+```
+
+Now edit a file, commit the
 change, and switch back to the master branch:
 
 ```sh

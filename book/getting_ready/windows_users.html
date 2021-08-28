@@ -175,6 +175,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/source_files_and_header_files.html">
+   Source files and header files
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../introduction_to_cpp/variables.html">
    Variables
   </a>
@@ -195,8 +200,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/containers.html">
-   Containers
+  <a class="reference internal" href="../introduction_to_cpp/intro_to_armadillo.html">
+   Introduction to Armadillo
   </a>
  </li>
  <li class="toctree-l1">
@@ -205,48 +210,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/references.html">
-   References
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/functions_take_2.html">
-   Functions, take 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/source_files_and_header_files.html">
-   Source files and header files
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/declaration_vs_definition.html">
-   Declaration vs definition
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/input_and_output.html">
-   Input and output
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/compiling_and_linking_take_2.html">
-   Compiling and linking, take 2
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../introduction_to_cpp/classes.html">
    Classes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/common_errors.html">
-   Common errors
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/debugging.html">
-   Debugging
   </a>
  </li>
  <li class="toctree-l1">
@@ -411,6 +376,11 @@
    Setting up Windows Subsystem for Linux (WSL)
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#troubleshooting">
+   Troubleshooting
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -426,8 +396,26 @@
 <h1>Windows users<a class="headerlink" href="#windows-users" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="setting-up-windows-subsystem-for-linux-wsl">
 <h2>Setting up Windows Subsystem for Linux (WSL)<a class="headerlink" href="#setting-up-windows-subsystem-for-linux-wsl" title="Permalink to this headline">¶</a></h2>
-<p>There’s an excellent guide on how to install WSL <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">here</a>.</p>
-<p>Once you’ve completed the installation of WSL and Ubuntu, follow the guide for <a class="reference internal" href="linux_users.html"><span class="doc std std-doc">Linux users</span></a>.</p>
+<p>There’s an excellent guide on how to install WSL <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">here</a>. Follow the <strong>manual installation</strong>.</p>
+<p>Once you’ve completed the installation of WSL and Ubuntu</p>
+<p>run the following command in your Linux terminal</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo apt update <span class="o">&amp;&amp;</span> sudo apt upgrade
+</pre></div>
+</div>
+<p>You’ll get prompted to enter your password. Do so and it’ll run for a while. Once finished, follow the guide for <a class="reference internal" href="linux_users.html"><span class="doc std std-doc">Linux users</span></a>.</p>
+</div>
+<div class="section" id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<p>If you manage to install WSL/Ubuntu but run into trouble when trying to start the actual shell, try this:</p>
+<p>In your windows powershell type</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>wsl --set-default-version <span class="m">1</span>
+</pre></div>
+</div>
+<p>then try to restart the linux shell.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This has worked for a few other students. We’ll update the guide once we know more about the problem.</p>
+</div>
 </div>
 </div>
 

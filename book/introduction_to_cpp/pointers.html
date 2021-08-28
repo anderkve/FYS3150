@@ -51,8 +51,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="References" href="references.html" />
-    <link rel="prev" title="Containers" href="containers.html" />
+    <link rel="next" title="Classes" href="classes.html" />
+    <link rel="prev" title="Introduction to Armadillo" href="intro_to_armadillo.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -175,6 +175,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="source_files_and_header_files.html">
+   Source files and header files
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="variables.html">
    Variables
   </a>
@@ -195,8 +200,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="containers.html">
-   Containers
+  <a class="reference internal" href="intro_to_armadillo.html">
+   Introduction to Armadillo
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -205,48 +210,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="references.html">
-   References
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="functions_take_2.html">
-   Functions, take 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="source_files_and_header_files.html">
-   Source files and header files
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="declaration_vs_definition.html">
-   Declaration vs definition
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="input_and_output.html">
-   Input and output
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="compiling_and_linking_take_2.html">
-   Compiling and linking, take 2
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="classes.html">
    Classes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="common_errors.html">
-   Common errors
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="debugging.html">
-   Debugging
   </a>
  </li>
  <li class="toctree-l1">
@@ -401,6 +366,29 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#declaration-of-a-pointer">
+   Declaration of a pointer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assigning-an-address-to-a-pointer">
+   Assigning an address to a pointer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extracting-a-value-from-a-pointer">
+   Extracting a value from a pointer
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -411,7 +399,55 @@
                 
   <div class="section" id="pointers">
 <h1>Pointers<a class="headerlink" href="#pointers" title="Permalink to this headline">¶</a></h1>
-<p>Add page on pointers</p>
+<p>A <strong>pointer</strong> is a variable that stores a memory address as its value. Usually, we use to store the memory address of some <em>other</em> variable. We say that it <strong>points</strong> to the address of that variable.</p>
+<div class="section" id="declaration-of-a-pointer">
+<h2>Declaration of a pointer<a class="headerlink" href="#declaration-of-a-pointer" title="Permalink to this headline">¶</a></h2>
+<p>A pointer is declared using the <code class="docutils literal notranslate"><span class="pre">*</span></code> operator. The generic syntax with no assignment is.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">type</span><span class="o">*</span> <span class="n">pointer_name</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It’s perfectly legitimate to write the following also:
+type *pointer_name;</p>
+</div>
+</div>
+<div class="section" id="assigning-an-address-to-a-pointer">
+<h2>Assigning an address to a pointer<a class="headerlink" href="#assigning-an-address-to-a-pointer" title="Permalink to this headline">¶</a></h2>
+<p>Say we have a variable named <code class="docutils literal notranslate"><span class="pre">my_variable</span></code> and we want to create a pointer named <code class="docutils literal notranslate"><span class="pre">pointer_to_my_variable</span></code> to its address. Generically, we can do this by</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">type1</span> <span class="n">my_variable</span> <span class="o">=</span> <span class="n">some_value</span><span class="p">;</span>
+<span class="n">type1</span> <span class="o">*</span><span class="n">pointer_to_my_variable</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">my_variable</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Two things to note here:</p>
+<ol class="simple">
+<li><p>Our pointer must have the same type as the variable.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> operator extracts the address of the variable when applied to the <code class="docutils literal notranslate"><span class="pre">my_variable</span></code>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The &amp;-operator is sometimes called the “reference” operator. The *-operator is on the other hand called the “dereference” operator.</p>
+</div>
+<p>A concrete example:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">//x is assigned the value 2.</span>
+<span class="kt">double</span> <span class="o">*</span><span class="n">pointer_to_x</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span> <span class="c1">//ptr stores the memory address of x.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="extracting-a-value-from-a-pointer">
+<h2>Extracting a value from a pointer<a class="headerlink" href="#extracting-a-value-from-a-pointer" title="Permalink to this headline">¶</a></h2>
+<p>The pointer stores the memory address of a variable as its value. But we can still extract the value of a variable from the pointer itself! This is known as <strong>dereferencing</strong> and is facilitated by the <code class="docutils literal notranslate"><span class="pre">*</span></code> operator as follows:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">type1</span> <span class="n">variable_value</span> <span class="o">=</span> <span class="o">*</span><span class="n">pointer_to_variable</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Expanding the example from last section:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">//x is assigned the value 2.</span>
+<span class="kt">double</span> <span class="o">*</span><span class="n">pointer_to_x</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span> <span class="c1">//x_ptr stores the memory address of x.</span>
+
+<span class="kt">double</span> <span class="n">x_value</span> <span class="o">=</span> <span class="o">*</span><span class="n">pointer_to_x</span><span class="p">;</span> <span class="c1">//Dereference pointer_to_x (extract value of x).</span>
+</pre></div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -439,8 +475,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="containers.html" title="previous page">Containers</a>
-    <a class='right-next' id="next-link" href="references.html" title="next page">References</a>
+    <a class='left-prev' id="prev-link" href="intro_to_armadillo.html" title="previous page">Introduction to Armadillo</a>
+    <a class='right-next' id="next-link" href="classes.html" title="next page">Classes</a>
 
         </div>
         

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Source files and header files &#8212; FYS3150/FYS4150 course material</title>
+    <title>Introduction to Armadillo &#8212; FYS3150/FYS4150 course material</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,8 +51,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Variables" href="variables.html" />
-    <link rel="prev" title="Compiling and linking, take 1" href="compiling_and_linking_take_1.html" />
+    <link rel="next" title="Pointers" href="pointers.html" />
+    <link rel="prev" title="Loops" href="loops.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -174,8 +174,8 @@
    Compiling and linking, take 1
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="source_files_and_header_files.html">
    Source files and header files
   </a>
  </li>
@@ -199,8 +199,8 @@
    Loops
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="intro_to_armadillo.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Introduction to Armadillo
   </a>
  </li>
@@ -325,7 +325,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/book/introduction_to_cpp/source_files_and_header_files.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/book/introduction_to_cpp/intro_to_armadillo.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -345,7 +345,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Fbook/introduction_to_cpp/source_files_and_header_files.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Fbook/introduction_to_cpp/intro_to_armadillo.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -366,6 +366,70 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#building-code-with-armadillo">
+   Building code with Armadillo
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compiling-code-with-armadillo">
+     Compiling code with Armadillo
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linking-code-with-armadillo">
+     Linking code with Armadillo
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vectors">
+   Vectors
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#declaring-and-filling-vectors">
+     Declaring and filling vectors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accessing-and-assigning-elements-in-a-vector">
+     Accessing and assigning elements in a vector
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matrices">
+   Matrices
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#declaring-and-filling-matrices">
+     Declaring and filling matrices
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accessing-elements-in-a-matrix">
+     Accessing elements in a matrix
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extracting-a-column-of-a-matrix">
+     Extracting a column of a matrix
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -374,66 +438,74 @@
         
               <div>
                 
-  <div class="section" id="source-files-and-header-files">
-<h1>Source files and header files<a class="headerlink" href="#source-files-and-header-files" title="Permalink to this headline">¶</a></h1>
-<p>A typical C++ code consists of</p>
-<ul class="simple">
-<li><p><strong>source files</strong>, with names ending with <code class="docutils literal notranslate"><span class="pre">.cpp</span></code></p></li>
-<li><p><strong>header files</strong>, with names ending with <code class="docutils literal notranslate"><span class="pre">.hpp</span></code></p></li>
-</ul>
-<p>Header files can be <em>included</em> in source files, using the <code class="docutils literal notranslate"><span class="pre">#include</span></code> command. Say we have two files, <code class="docutils literal notranslate"><span class="pre">my_header.hpp</span></code> and <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code>:</p>
-<p><strong><code class="docutils literal notranslate"><span class="pre">my_header.hpp</span></code>:</strong></p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-
-<span class="kt">void</span> <span class="nf">print_message</span><span class="p">()</span>
-<span class="p">{</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello, World!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
-<span class="p">}</span>
+  <div class="section" id="introduction-to-armadillo">
+<h1>Introduction to Armadillo<a class="headerlink" href="#introduction-to-armadillo" title="Permalink to this headline">¶</a></h1>
+<p>Armadillo is an efficient linear algebra library for C++ users. Its aim is to provide a library that balances speed and ease of use. We recommend this library for numerical computations as a replacement for dynamic allocation of arrays.</p>
+<p>We’ll cover the very basics here to get you started with the library. However, their webpage provide an excellent, detailed <a class="reference external" href="http://arma.sourceforge.net/docs.html">code documentation</a> with examples of usage that you can search through.</p>
+<div class="section" id="building-code-with-armadillo">
+<h2>Building code with Armadillo<a class="headerlink" href="#building-code-with-armadillo" title="Permalink to this headline">¶</a></h2>
+<p>We must make sure to include the header file for Armadillo, which amounts to adding <code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&lt;armadillo&gt;</span></code> at the top of a header or source file.</p>
+<div class="section" id="compiling-code-with-armadillo">
+<h3>Compiling code with Armadillo<a class="headerlink" href="#compiling-code-with-armadillo" title="Permalink to this headline">¶</a></h3>
+<p>For macOS users specifically, you must specificy a version of C++ that is C++11 or later. This is done by adding the compiler flag <code class="docutils literal notranslate"><span class="pre">-std=c++11</span></code> during compilation.</p>
+<p>For Linux users, nothing special is typically required.</p>
+</div>
+<div class="section" id="linking-code-with-armadillo">
+<h3>Linking code with Armadillo<a class="headerlink" href="#linking-code-with-armadillo" title="Permalink to this headline">¶</a></h3>
+<p>To link to Armadillo, we must add the compiler flag <code class="docutils literal notranslate"><span class="pre">-larmadillo</span></code> during linking.</p>
+</div>
+</div>
+<div class="section" id="vectors">
+<h2>Vectors<a class="headerlink" href="#vectors" title="Permalink to this headline">¶</a></h2>
+<p>Armadillo provides a useful vector class <code class="docutils literal notranslate"><span class="pre">arma::vec</span></code> that can be used to replace arrays in numerical computations. Assume <code class="docutils literal notranslate"><span class="pre">n</span></code> is a positive integer.</p>
+<div class="section" id="declaring-and-filling-vectors">
+<h3>Declaring and filling vectors<a class="headerlink" href="#declaring-and-filling-vectors" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">arma</span><span class="o">::</span><span class="n">vec</span> <span class="n">x</span> <span class="o">=</span> <span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="p">(</span><span class="n">n</span><span class="p">);</span> <span class="c1">//Initialize vector but don&#39;t fill.</span>
+<span class="n">arma</span><span class="o">::</span><span class="n">vec</span> <span class="n">y</span> <span class="o">=</span> <span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="p">(</span><span class="n">n</span><span class="p">).</span><span class="n">fill</span><span class="p">(</span><span class="mf">2.</span><span class="p">);</span> <span class="c1">//Declare and fill with 2&#39;s.</span>
+<span class="n">arma</span><span class="o">::</span><span class="n">vec</span> <span class="n">z</span> <span class="o">=</span> <span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="p">(</span><span class="n">n</span><span class="p">).</span><span class="n">randu</span><span class="p">();</span> <span class="c1">//Declare and will with random uniform values.</span>
 </pre></div>
 </div>
-<p><strong><code class="docutils literal notranslate"><span class="pre">main.cpp</span></code>:</strong></p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;my_header.hpp&quot;</span><span class="cp"></span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-  <span class="n">print_message</span><span class="p">();</span>
-
-  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+</div>
+<div class="section" id="accessing-and-assigning-elements-in-a-vector">
+<h3>Accessing and assigning elements in a vector<a class="headerlink" href="#accessing-and-assigning-elements-in-a-vector" title="Permalink to this headline">¶</a></h3>
+<p>We can access an element <code class="docutils literal notranslate"><span class="pre">i</span></code> from a vector <code class="docutils literal notranslate"><span class="pre">x</span></code> by</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">x_i</span> <span class="o">=</span> <span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="p">);</span> <span class="c1">//Extract element i of x and assign it to x_i.</span>
 </pre></div>
 </div>
-<p>The line <code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&quot;my_header.hpp&quot;</span></code> in <code class="docutils literal notranslate"><span class="pre">main.cpp</span></code> simply tells the compiler to <strong>insert the content of <code class="docutils literal notranslate"><span class="pre">my_header.hpp</span></code> here before compiling</strong>. So the code that ends up being compiled is completely equivalent to this single <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> file:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-
-<span class="kt">void</span> <span class="nf">print_message</span><span class="p">()</span>
-<span class="p">{</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello, World!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-  <span class="n">print_message</span><span class="p">();</span>
-
-  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+<p>We can assign a new value to element <code class="docutils literal notranslate"><span class="pre">i</span></code> in the vector <code class="docutils literal notranslate"><span class="pre">x</span></code> using</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">some_new_value</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>(And this code is of course equivalent to the code you would get if you replaced <code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&lt;iostream&gt;</span></code> with the full content of <code class="docutils literal notranslate"><span class="pre">iostream.hpp</span></code> from the standard C++ library. But let’s not do that…)</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>When including our own header files, we use the syntax <code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&quot;someheader.hpp&quot;</span></code>, rather than <code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&lt;someheader&gt;</span></code>.</p>
 </div>
-<!--
-# Common directory layout
-
-It is common in larger C++ projects to put all source files (`.cpp`) in a folder called `src/`, and all header files (`.hpp`) in a folder called (`include/`). So something like this:
-
-```
-./src/main.cpp
-./src/utils.cpp
-./include/utils.hpp
-```
---></div>
+</div>
+<div class="section" id="matrices">
+<h2>Matrices<a class="headerlink" href="#matrices" title="Permalink to this headline">¶</a></h2>
+<p>Assume that <code class="docutils literal notranslate"><span class="pre">n</span></code> and <code class="docutils literal notranslate"><span class="pre">m</span></code> are positive integers.</p>
+<div class="section" id="declaring-and-filling-matrices">
+<h3>Declaring and filling matrices<a class="headerlink" href="#declaring-and-filling-matrices" title="Permalink to this headline">¶</a></h3>
+<p>Creating matrices with Armadillo is easy. Here’s a couple examples:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span> <span class="n">A</span> <span class="o">=</span> <span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">);</span> <span class="c1">//Initialize but don&#39;t fill</span>
+<span class="n">arma</span><span class="o">::</span><span class="n">mat</span> <span class="n">B</span> <span class="o">=</span> <span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">).</span><span class="n">fill</span><span class="p">(</span><span class="mf">0.</span><span class="p">);</span> <span class="c1">//Declare and fill with zeros.</span>
+<span class="n">arma</span><span class="o">::</span><span class="n">mat</span> <span class="n">C</span> <span class="o">=</span> <span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">).</span><span class="n">randn</span><span class="p">();</span> <span class="c1">//Declare and fill with random values from the normal distribution.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="accessing-elements-in-a-matrix">
+<h3>Accessing elements in a matrix<a class="headerlink" href="#accessing-elements-in-a-matrix" title="Permalink to this headline">¶</a></h3>
+<p>Access of elements in an Armadillo matrix is done as follows:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">A_ij</span> <span class="o">=</span> <span class="n">A</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">);</span> <span class="c1">//Assign element (i,j) of the matrix A to A_ij.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="extracting-a-column-of-a-matrix">
+<h3>Extracting a column of a matrix<a class="headerlink" href="#extracting-a-column-of-a-matrix" title="Permalink to this headline">¶</a></h3>
+<p>Armadillo provides a simple way to extract entire columns of a matrix:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">arma</span><span class="o">::</span><span class="n">vec</span> <span class="n">col_vec</span> <span class="o">=</span> <span class="n">A</span><span class="p">.</span><span class="n">col</span><span class="p">(</span><span class="n">j</span><span class="p">);</span> <span class="c1">//Extract column j of A and assign it to col_vec.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -460,8 +532,8 @@ It is common in larger C++ projects to put all source files (`.cpp`) in a folder
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="compiling_and_linking_take_1.html" title="previous page">Compiling and linking, take 1</a>
-    <a class='right-next' id="next-link" href="variables.html" title="next page">Variables</a>
+    <a class='left-prev' id="prev-link" href="loops.html" title="previous page">Loops</a>
+    <a class='right-next' id="next-link" href="pointers.html" title="next page">Pointers</a>
 
         </div>
         

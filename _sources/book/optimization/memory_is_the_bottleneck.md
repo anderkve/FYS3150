@@ -44,7 +44,7 @@ Armadillo, the linear algebra package for C++, allocates memory in column-major 
 ```
 
 ### Illustrative example
-We'll do an example with Armadillo because it simplifies allocation of matrices significantly. We recall that Armadillo allocates memory in column-major order. Therefore we should make sure traverse the matrix through its columns (stride-1)!
+We'll do an example with Armadillo because it simplifies allocation of matrices significantly. We recall that Armadillo allocates memory in column-major order. Therefore we should make sure to traverse the matrix through its columns (stride-1)!
 
 ```c++
 int n = 10000;
@@ -82,7 +82,7 @@ we get
 timeused = 0.96181 seconds
 ```
 
-which is roughly twice as long. Conceptually, cache misses occur much more frequently in a stride-n code. Cache lines that are already loaded must be discarded in favor of new cache lines. Part of the execution time leaves the computing units idle, waiting for the correct memory addresses to be loaded into cache before they can do any computation.
+which is roughly twice as long. Conceptually, cache misses occur much more frequently in a stride-`n` code. Cache lines that are already loaded must be discarded in favor of loading new cache lines. Part of the execution time leaves the computing units idle, waiting for the correct memory addresses to be loaded into cache before they can do any computation.
 
 ## Temporaries
 
