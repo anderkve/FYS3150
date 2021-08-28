@@ -73,3 +73,44 @@ Armadillo provides a simple way to extract entire columns of a matrix:
 ```c++
 arma::vec col_vec = A.col(j); //Extract column j of A and assign it to col_vec.
 ```
+
+
+## Saving and loading vectors and matrices
+
+Armadillo provides built-in functionality for saving and loading `arma::vec` and `arma::mat` objects to binary files.
+Not only does this simplify storage of results with a predictable format, but it turns out that they provide a Python module `pyarma` that can me used to load in these objects directly into a Python program!
+
+If `A` is an `arma::mat` object, you can save it using
+
+```c++
+A.save(filename);
+```
+
+The default storage format is binary. Your filename should end with `.bin`. Loading the object is as simple as
+
+```c++
+B = arma::mat() //Initialize an arma::mat variable
+B.load(filename) //Load content of arma::mat A stored earlier into arma::mat B.
+```
+
+
+### The Python module
+
+You can install the Armadillo Python module `pyarma` using
+
+```sh
+pip install pyarma
+```
+
+The recommended way to import the library in Python is
+
+```python
+import pyarma as pa
+```
+
+From there you can easily load the `arma::mat` (or `arma::vec`) object you saved in C++ using
+
+```python
+A = pa.mat() #Create pa.mat object (just as arma::mat in C++)
+A.load(filename) #Load the content of the matrix you saved into your Python program.
+```
