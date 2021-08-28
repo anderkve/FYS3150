@@ -15,6 +15,8 @@ A LaTeX document is compiled from a `.tex` file with the text and LaTeX code for
 pdflatex your_latex_file.tex
 ```
 
+You often need to run this command twice for all changes to be displayed correctly.
+
 Since this course typically involves collaborating with others on a single document, a simple solution is to use [Overleaf](https://www.overleaf.com/project) for the writing and compilation process. 
 
 However, you can of course also just use your git repository to collaborate on a `.tex` file, like you would for any code file. Use whatever solution that works best for you and your collaborators.
@@ -29,6 +31,7 @@ We've prepared a template for you to use in the two first projects. We have both
 - The [tex file](https://github.com/anderkve/FYS3150/blob/master/book/writing_reports/tex_mal/oppgave_mal.tex)
 - The [pdf file](https://github.com/anderkve/FYS3150/blob/master/book/writing_reports/tex_mal/oppgave_mal.pdf)
 
+The above `.tex` example tries to include a figure file `rel_err.pdf` from a subdirectory `imgs`. If you want to compile this example yourself, you can get the figure file [here](https://github.com/anderkve/FYS3150/blob/master/book/writing_reports/tex_mal/imgs/rel_err.pdf).
 
 ## LaTeX resources
 

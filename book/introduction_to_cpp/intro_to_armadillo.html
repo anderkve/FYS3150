@@ -427,6 +427,18 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#saving-and-loading-vectors-and-matrices">
+   Saving and loading vectors and matrices
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-python-module">
+     The Python module
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -501,6 +513,36 @@
 <h3>Extracting a column of a matrix<a class="headerlink" href="#extracting-a-column-of-a-matrix" title="Permalink to this headline">¶</a></h3>
 <p>Armadillo provides a simple way to extract entire columns of a matrix:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">arma</span><span class="o">::</span><span class="n">vec</span> <span class="n">col_vec</span> <span class="o">=</span> <span class="n">A</span><span class="p">.</span><span class="n">col</span><span class="p">(</span><span class="n">j</span><span class="p">);</span> <span class="c1">//Extract column j of A and assign it to col_vec.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="saving-and-loading-vectors-and-matrices">
+<h2>Saving and loading vectors and matrices<a class="headerlink" href="#saving-and-loading-vectors-and-matrices" title="Permalink to this headline">¶</a></h2>
+<p>Armadillo provides built-in functionality for saving and loading <code class="docutils literal notranslate"><span class="pre">arma::vec</span></code> and <code class="docutils literal notranslate"><span class="pre">arma::mat</span></code> objects to binary files.
+Not only does this simplify storage of results with a predictable format, but it turns out that they provide a Python module <code class="docutils literal notranslate"><span class="pre">pyarma</span></code> that can me used to load in these objects directly into a Python program!</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">A</span></code> is an <code class="docutils literal notranslate"><span class="pre">arma::mat</span></code> object, you can save it using</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">.</span><span class="n">save</span><span class="p">(</span><span class="n">filename</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The default storage format is binary. Your filename should end with <code class="docutils literal notranslate"><span class="pre">.bin</span></code>. Loading the object is as simple as</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">B</span> <span class="o">=</span> <span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="p">()</span> <span class="c1">//Initialize an arma::mat variable</span>
+<span class="n">B</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="c1">//Load content of arma::mat A stored earlier into arma::mat B.</span>
+</pre></div>
+</div>
+<div class="section" id="the-python-module">
+<h3>The Python module<a class="headerlink" href="#the-python-module" title="Permalink to this headline">¶</a></h3>
+<p>You can install the Armadillo Python module <code class="docutils literal notranslate"><span class="pre">pyarma</span></code> using</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install pyarma
+</pre></div>
+</div>
+<p>The recommended way to import the library in Python is</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyarma</span> <span class="k">as</span> <span class="nn">pa</span>
+</pre></div>
+</div>
+<p>From there you can easily load the <code class="docutils literal notranslate"><span class="pre">arma::mat</span></code> (or <code class="docutils literal notranslate"><span class="pre">arma::vec</span></code>) object you saved in C++ using</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">mat</span><span class="p">()</span> <span class="c1">#Create pa.mat object (just as arma::mat in C++)</span>
+<span class="n">A</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="c1">#Load the content of the matrix you saved into your Python program.</span>
 </pre></div>
 </div>
 </div>
