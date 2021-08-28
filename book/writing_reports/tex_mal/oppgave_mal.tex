@@ -29,10 +29,10 @@
 % defines the color of hyperref objects
 % Blending two colors:  blue!80!black  =  80% blue and 20% black
 \hypersetup{ % this is just my personal choice, feel free to change things
-	colorlinks,
-	linkcolor={red!50!black},
-	citecolor={blue!50!black},
-	urlcolor={blue!80!black}}
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}}
 
 %% Defines the style of the programming listing
 %% This is actually my personal template, go ahead and change stuff if you want
@@ -81,67 +81,67 @@
 
 
 \maketitle 
-	
-\textit{List a link to your github link here!}
-	
+    
+\textit{List a link to your github repository here!}
+    
 \section*{Problem 1}
 
 \subsection*{Problem a}
 Write a solution for problem 1a here.
 
 \subsection*{Problem b}
-write a solution for problem 1b here.
+Write a solution for problem 1b here.
 
 \section*{Problem 2}
-Here's an equation with numbering
-\begin{equation}
-	\vb{F} = \dv{\vb{p}}{t},
+We write equations using the LaTeX \texttt{equation} (or \texttt{align}) environments. Here is an equation with numbering
+\begin{equation}\label{eq:newton}
+    \vb{F} = \dv{\vb{p}}{t},
 \end{equation}
-and one without numbering:
-$$
+and here is one without numbering:
+\begin{equation*}
 \oint_C \vb{F}\cdot \dd \vb{r} = 0.
-$$
+\end{equation*}
+Sometimes it is useful to refer back to a previous equation, like we're demonstrating here for equation \ref{eq:newton}.
 
-Here's a figure which we refer to as figure \ref{fig:ref}.
-
-\begin{figure}[h!]
-	\centering %Centers the figure
-	\includegraphics[scale=0.55]{imgs/rel_err.pdf} %Imports the figure.
-	\caption{Write a descriptive caption here, explain its content. Note the size of the text on the axis and the ticks.}
-	\label{fig:ref}
+We can include figures using the \texttt{figure} environment. Whenever we include a figure or table, we \textit{must} make sure to actually refer to it in the main text, e.g.\ something like this: ``In figure \ref{fig:rel_err} we show \ldots''. 
+\begin{figure}%[h!]
+    \centering %Centers the figure
+    \includegraphics[scale=0.55]{imgs/rel_err.pdf} %Imports the figure.
+    \caption{Write a descriptive caption here that explains the content of the figure. Note the font size for the axis labels and ticks --- the size should approximately match the document font size.}
+    \label{fig:rel_err}
 \end{figure}
+Also, note the LaTeX code we used to get correct quotation marks in the previous sentence. (Simply using the \texttt{"} key on your keyboard will give the wrong result.) Figures should preferrably be vector graphics (e.g.\ a \texttt{.pdf} file) rather than raster graphics (e.g.\ a \texttt{.png} file).
 
-Next up is a table. We refer to it by table \ref{tab:ref}
+By the way, don't worry too much about where LaTeX decides to place your figures and tables --- LaTeX knows more than we do about proper document layout. As long as you label all your figures and tables and refer to them in the text, it's all good. Of course, in some cases it can be worth trying to force a specific placement, to avoid the figure/table appearing many pages away from the main text discussing it, but this isn't something you should spend time on until the very end of the writing process.
 
-\begin{table}[h!]
-	\centering
-	\begin{tabular}{c@{\hspace{1cm}} c}
-		\hline
-		Number of points & Output \\
-		\hline
-		10 &  0.3086  \\
-		
-		100 &  0.2550\\
-		\hline
-	\end{tabular}\caption{Write a descriptive caption here, explaining the content of your table.}\label{tab:ref}
+
+Next up is a table, created using the \texttt{table} and \texttt{tabular} environments. We refer to it by table \ref{tab:output_table}.
+\begin{table}%[h!]
+    \centering
+    \begin{tabular}{c@{\hspace{1cm}} c}
+        \hline
+        Number of points & Output \\
+        \hline
+        10 &  0.3086\\
+        100 &  0.2550\\
+        \hline
+    \end{tabular}\caption{Write a descriptive caption here, explaining the content of your table.}\label{tab:output_table}
 \end{table}
 
-Finally, we can list algorithms by using 
-
+Finally, we can list algorithms by using the \texttt{algorithm} environment, as demonstrated here for algorithm \ref{algo:midpoint_rule}.
 \begin{algorithm}[H]
-	\caption{Some algorithm}\label{algo:midpoint_rule}
-	\begin{algorithmic}
-		\State Some maths, e.g $f(x) = x^2$.  \Comment{Here's a comment}
-		\For{$i = 0, 1, ..., n-1$}
-		\State Do something here 
-		\EndFor
-		\While{Some condition}
-		\State Do something more here 
-		\EndWhile
-		\State Maybe even some more math here, e.g $\int_0^1 f(x) \dd x$
-	\end{algorithmic}
+    \caption{Some algorithm}\label{algo:midpoint_rule}
+    \begin{algorithmic}
+        \State Some maths, e.g $f(x) = x^2$.  \Comment{Here's a comment}
+        \For{$i = 0, 1, ..., n-1$}
+        \State Do something here 
+        \EndFor
+        \While{Some condition}
+        \State Do something more here 
+        \EndWhile
+        \State Maybe even some more math here, e.g $\int_0^1 f(x) \dd x$
+    \end{algorithmic}
 \end{algorithm}
-	
-	
+   
 \end{document}
 
