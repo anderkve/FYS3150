@@ -144,7 +144,13 @@ git switch experimental
 ```
 
 
-to switch to the experimental branch. Now edit a file, commit the
+to switch to the experimental branch.
+
+```{note}
+"git switch" requires git version 2.23 or later. You can use "git checkout" as a replacement if you use an older version of git.  
+```
+
+Now edit a file, commit the
 change, and switch back to the master branch:
 
 ```sh
