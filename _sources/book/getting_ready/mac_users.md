@@ -8,7 +8,7 @@ Installation of software for C++ can be a little bit of a hazzle on macOS. This 
 
 1. First install *Xcode* from the app store. This contains the basic building blocks we need. It installs *git* and *Make* and a few other command line tools.
 
-2. Now we'll install a *package manager* which we'll use install many other packages. Go to [Homebrew](https://brew.sh) and follow the installation instruction there. It's easy, just copy the link they provide there and run it in your terminal.
+2. Now we'll install a *package manager* which we'll use install many other packages. Go to [Homebrew](https://brew.sh) and follow the installation instruction there. It's easy, just copy the command they provide there and run it in your terminal.
 
 
 3. Now, run the following command in your terminal

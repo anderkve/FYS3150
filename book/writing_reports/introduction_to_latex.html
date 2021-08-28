@@ -377,8 +377,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-do-we-write-use-it">
-   How do we write use it?
+  <a class="reference internal nav-link" href="#how-to-use-it">
+   How to use it?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -392,6 +392,11 @@
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#latex-resources">
+   LaTeX resources
+  </a>
  </li>
 </ul>
 
@@ -411,9 +416,14 @@
 <p>Taken from the <a class="reference external" href="https://www.latex-project.org/">LaTeX-projects website</a>,</p>
 <p><em>LaTeX is a high-quality typesetting system; it includes features designed for the production of technical and scientific documentation. LaTeX is the de facto standard for the communication and publication of scientific documents.</em></p>
 </div>
-<div class="section" id="how-do-we-write-use-it">
-<h2>How do we write use it?<a class="headerlink" href="#how-do-we-write-use-it" title="Permalink to this headline">¶</a></h2>
-<p>A LaTeX document is compiled from a <code class="docutils literal notranslate"><span class="pre">.tex</span></code> file which stores the source code. Typically, the compiler renders a <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> file from the source code and creates a document with a specific format. Since this course typically involves collaboration, we recommend that you use <a class="reference external" href="https://www.overleaf.com/project">Overleaf</a> for the compilation process.</p>
+<div class="section" id="how-to-use-it">
+<h2>How to use it?<a class="headerlink" href="#how-to-use-it" title="Permalink to this headline">¶</a></h2>
+<p>A LaTeX document is compiled from a <code class="docutils literal notranslate"><span class="pre">.tex</span></code> file with the text and LaTeX code for your document. Typically, the compiler renders a <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> file from the LaTeX code and creates a document with a specific format. To compile a <code class="docutils literal notranslate"><span class="pre">.tex</span></code> file directly from the terminal, you can use <code class="docutils literal notranslate"><span class="pre">pdflatex</span></code>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pdflatex your_latex_file.tex
+</pre></div>
+</div>
+<p>Since this course typically involves collaborating with others on a single document, a simple solution is to use <a class="reference external" href="https://www.overleaf.com/project">Overleaf</a> for the writing and compilation process.</p>
+<p>However, you can of course also just use your git repository to collaborate on a <code class="docutils literal notranslate"><span class="pre">.tex</span></code> file, like you would for any code file. Use whatever solution that works best for you and your collaborators.</p>
 </div>
 <div class="section" id="templates">
 <h2>Templates<a class="headerlink" href="#templates" title="Permalink to this headline">¶</a></h2>
@@ -425,6 +435,16 @@
 <li><p>The <a class="reference external" href="https://github.com/anderkve/FYS3150/blob/master/book/writing_reports/tex_mal/oppgave_mal.pdf">pdf file</a></p></li>
 </ul>
 </div>
+</div>
+<div class="section" id="latex-resources">
+<h2>LaTeX resources<a class="headerlink" href="#latex-resources" title="Permalink to this headline">¶</a></h2>
+<p>Here are some LaTeX resources that might come in handy:</p>
+<ul class="simple">
+<li><p>Overleaf’s <a class="reference external" href="https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes">beginner’s guide</a> to LaTeX</p></li>
+<li><p>Overleaf’s <a class="reference external" href="https://www.overleaf.com/learn">documentation pages</a> have info on all aspects of LaTeX that you will need for this course</p></li>
+<li><p>Don’t know the TeX command for a mathematical symbol? Try drawing the symbol in <a class="reference external" href="https://detexify.kirelabs.org/classify.html">Detexify</a>…</p></li>
+<li><p>…or look for it in <a class="reference external" href="https://ctan.uib.no/info/symbols/comprehensive/symbols-a4.pdf">this</a> document of 18150 symbols and corresponding LaTeX commands</p></li>
+</ul>
 </div>
 </div>
 
