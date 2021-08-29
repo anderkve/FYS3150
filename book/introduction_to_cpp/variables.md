@@ -12,7 +12,7 @@ There are several **types** of variables. We'll list a few here:
 
 ## Declaration of Variables
 
-**Declaration** means to create a variable. We must specify a **type**, a variable name or **identifier**. Optionally we can assign a value to the variable. The generic syntax is
+**Declaration** means to create a variable. We must specify a **type** and a variable name, called an **identifier**. Optionally we can assign a value to the variable. The generic syntax is
 
 ```c++
 type variable_name = value;

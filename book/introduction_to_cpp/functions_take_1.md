@@ -1,6 +1,6 @@
 # Functions, take 1
 
-A **function** in C++ is a code block which is execute only when the function is called. A function takes **arguments**, performs some action and usually returns and **output**.
+A **function** in C++ is a code block which is executed only when the function is called. A function takes **arguments**, performs some action and usually returns and **output**.
 
 ## Creating a function
 
