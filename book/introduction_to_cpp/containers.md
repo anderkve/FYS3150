@@ -3,7 +3,7 @@
 Add page on containers (arrays, vectors, maps, pairs, ...).
 -->
 
-A **container** stores data in C++. We've already seen the most basic example of this, namely variables. But there's containers akin to *lists* in Python known as `std::vector`. We'll discuss this particular one in detail here.
+A **container** stores data in C++. We've already seen the most basic example of this, namely variables. But there's a container akin to *lists* in Python known as `std::vector`. We'll discuss this particular one in detail here.
 
 
 <!--
@@ -30,8 +30,8 @@ We must specify the type of the elements of a `std::vector` object. We can fill 
 
 ```c++
 std::vector<type> variable_name; //Declare, but don't initialize specific elements or length.
-std::vector<type> variable_name(length); //Initialize with length, but values are assigned randomly (not sampled to any particular probability distribution though!)
-std::vector<type> variable_name(length, value); //Initialize with length and a value for each element.
+std::vector<type> variable_name(length); //Initialize with length, but values are assigned randomly (not sampled from any particular probability distribution though!)
+std::vector<type> variable_name(length, value); //Initialize with a length and a value for each element.
 ```
 
 #### Example 1: creating a vector of length `n` filled with zeros
