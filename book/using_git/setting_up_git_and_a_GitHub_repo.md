@@ -75,21 +75,33 @@ Disclaimer: Note that this is not a secure option, as the token will be saved in
 
 ### On Linux
 
-- In your Github repository (locally on your computer), run.
+- In your Github repository (locally on your computer) do the following:
 
-  ```sh
-  git config --global credential.helper store
-  ```
+1. Create a non-empty .txt file by running:
 
-- Then run
+```
+echo "This is a line" > tmp.txt
+```
 
-  ```sh
-  git pull
-  ```
+2. Call credential.helper again:
+
+```sh
+git config --global credential.helper store
+```
+
+3. Add, commit and push the changes:
+
+```sh
+git add --all && git commit -m "added a dummy file to add token" && git push
+```
+Once you run the last command, git will require authentication. Type in your github username and paste in your token as a replacement for a password.
+
 
 - Type in your username (you'll be prompted to do so.)
 
 - Paste in the token you copied instead of your password.
+
+Finally, you can remove the file `tmp.txt`. It has served its purpose.
 
 And you're done!
 
