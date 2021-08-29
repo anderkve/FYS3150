@@ -88,11 +88,10 @@ This is version A
 ```
 Couple notes on the output:
 - Git has marked the part of the file where the two commits have different content. We are asked to choose between one of them, or create something entirely new there altogether.
-- The part between `<<<<<<< HEAD` and `=======` is your local commit that was rejected when you tried to push.
-- The part between `=======` and `>>>>>>> 89c96948fb637b83c1165743fd4e28b87f99e754` is the commit you made earlier which is now in the remote repo.
-- The long string of numbers and letters is called the commit **hash** and is simply a unique string that identifies the commit.
+- The part between `<<<<<<< HEAD` and `=======` is from your local commit that was rejected when you tried to push.
+- The part between `=======` and `>>>>>>> 89c96948fb637b83c1165743fd4e28b87f99e754` is from the commit you made earlier which is now in the remote repo.
+- The long string of numbers and letters is called the **commit hash** and is simply a unique string that identifies the commit.
 
-You can here see the parts that differ from the two commits separated by `=======`. The portion above it is your local version that you committed. The portion below the line is the remote version that you committed and pushed earlier.
 
 The solution here is simple. Us, the user, must choose version A or version B manually. This means we just delete the content we don't want, add and commit it the final version and push it. We'll just choose the following content here:
 

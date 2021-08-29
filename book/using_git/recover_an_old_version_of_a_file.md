@@ -37,12 +37,12 @@ Now we want to recover the old version of the file. We need to look up the **com
 git log
 ```
 
-Look for the commit with the correct commit message and copy its hash (the string of numbers and letters, i.e the hexadecimal number).
+Look for the commit with the correct commit message and copy its commit hash (the string of numbers and letters).
 
 Finally, we can recover the file by
 
 ```sh
-git checkout HASH_NUMBER_YOU_COPIED my_file.txt
+git checkout COMMIT_HASH_YOU_COPIED my_file.txt
 ```
 
 This will revert the content of the file back to what it was before you modified it. You can check this by running
@@ -59,5 +59,5 @@ git commit -m "recovered the old version of my_file.txt" && git push
 
 
 ```{note}
-If you want to keep the file you currently have as well, you need to change its name. Otherwise you will overwrite it in the recovery process.
+If you want to keep the file you currently have as well, you need to change its name. Otherwise you'll overwrite it in the recovery process.
 ```
