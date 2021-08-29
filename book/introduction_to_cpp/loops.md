@@ -55,7 +55,7 @@ for (int j = 0; j < n; j++){
 
 ## While loops
 
-While loops is very useful if we can predict the precise number of iterations needed to perform some task. Instead, we specify a condition that will terminate the loop one the condition is false.
+While loops is very useful if we can't predict the precise number of iterations needed to perform some task. Instead, we specify a condition that will terminate the loop once the condition is false.
 
 
 ### Syntax
