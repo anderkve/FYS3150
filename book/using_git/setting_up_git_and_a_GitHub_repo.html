@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Setting up git and Github repo &#8212; FYS3150/FYS4150 course material</title>
+    <title>Setting up git and GitHub repo &#8212; FYS3150/FYS4150 course material</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -139,7 +139,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Setting up git and Github repo
+   Setting up git and GitHub repo
   </a>
  </li>
  <li class="toctree-l1">
@@ -150,6 +150,16 @@
  <li class="toctree-l1">
   <a class="reference internal" href="using_git.html">
    Using git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dealing_with_merge_conflicts.html">
+   Dealing with merge conflicts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="recover_an_old_version_of_a_file.html">
+   Recover an old version of a file
   </a>
  </li>
 </ul>
@@ -197,6 +207,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../introduction_to_cpp/loops.html">
    Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/containers.html">
+   Containers
   </a>
  </li>
  <li class="toctree-l1">
@@ -378,12 +393,12 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-a-github-repository-for-the-course">
-   Create a Github repository for the course
+   Create a GitHub repository for the course
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#adding-a-github-token">
-   Adding a Github token
+   Adding a GitHub token
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -410,10 +425,10 @@
               <div>
                 
   <div class="section" id="setting-up-git-and-github-repo">
-<h1>Setting up git and Github repo<a class="headerlink" href="#setting-up-git-and-github-repo" title="Permalink to this headline">¶</a></h1>
+<h1>Setting up git and GitHub repo<a class="headerlink" href="#setting-up-git-and-github-repo" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="setting-up-git-on-your-computer">
 <h2>Setting up git on your computer<a class="headerlink" href="#setting-up-git-on-your-computer" title="Permalink to this headline">¶</a></h2>
-<p>You need to tell Git which user you are. Write the following commands in your terminal.</p>
+<p>You need to tell git which user you are. Write the following commands in your terminal.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git config --global user.name your_user_name_spelled_out
 
 git config --global user.email you@yourdomain.com
@@ -421,7 +436,7 @@ git config --global user.email you@yourdomain.com
 </div>
 </div>
 <div class="section" id="create-a-github-repository-for-the-course">
-<h2>Create a Github repository for the course<a class="headerlink" href="#create-a-github-repository-for-the-course" title="Permalink to this headline">¶</a></h2>
+<h2>Create a GitHub repository for the course<a class="headerlink" href="#create-a-github-repository-for-the-course" title="Permalink to this headline">¶</a></h2>
 <p>Here’s a step-by-step instruction.</p>
 <ul class="simple">
 <li><p>Go to <a class="reference external" href="https://github.com/">github.com</a> and log in. The page should look something like this:</p></li>
@@ -458,8 +473,8 @@ git config --global user.email you@yourdomain.com
 <p>Now you’ve cloned the repository to your computer! This will be a directory you can now find locally on your computer.</p>
 </div>
 <div class="section" id="adding-a-github-token">
-<h2>Adding a Github token<a class="headerlink" href="#adding-a-github-token" title="Permalink to this headline">¶</a></h2>
-<p>A Github token is a replacement of passwords to give you as a user access to perform action on your Github repositories from your computer.</p>
+<h2>Adding a GitHub token<a class="headerlink" href="#adding-a-github-token" title="Permalink to this headline">¶</a></h2>
+<p>A GitHub token is a replacement of passwords to give you as a user access to perform action on your GitHub repositories from your computer.</p>
 <p>Disclaimer: Note that this is not a secure option, as the token will be saved in clear text. But it’s nevertheless the simplest option.</p>
 <ul class="simple">
 <li><p>Go to <a class="reference external" href="https://github.com/">github.com</a>. Click on your profile in the upper right corner, then on <em>settings</em>.</p></li>
@@ -489,27 +504,40 @@ git config --global user.email you@yourdomain.com
 </ul>
 <div class="section" id="on-linux">
 <h3>On Linux<a class="headerlink" href="#on-linux" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p>In your Github repository (locally on your computer), run.</p>
+<ul class="simple">
+<li><p>In your GitHub repository (locally on your computer) do the following:</p></li>
+</ul>
+<ol class="simple">
+<li><p>Create a non-empty .txt file by running:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;This is a line&quot;</span> <span class="o">&gt;</span> <span class="n">tmp</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Call credential.helper again:</p></li>
+</ol>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git config --global credential.helper store
 </pre></div>
 </div>
-</li>
-<li><p>Then run</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git pull
+<ol class="simple">
+<li><p>Add, commit and push the changes:</p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git add --all <span class="o">&amp;&amp;</span> git commit -m <span class="s2">&quot;added a dummy file to add token&quot;</span> <span class="o">&amp;&amp;</span> git push
 </pre></div>
 </div>
-</li>
+<p>Once you run the last command, git will require authentication. Type in your github username and paste in your token as a replacement for a password.</p>
+<ul class="simple">
 <li><p>Type in your username (you’ll be prompted to do so.)</p></li>
 <li><p>Paste in the token you copied instead of your password.</p></li>
 </ul>
+<p>Finally, you can remove the file <code class="docutils literal notranslate"><span class="pre">tmp.txt</span></code>. It has served its purpose.</p>
 <p>And you’re done!</p>
 </div>
 <div class="section" id="on-macos">
 <h3>On macOS<a class="headerlink" href="#on-macos" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
 <li><p>Open the <strong>Keychain Access</strong> app.</p></li>
-<li><p>Search for <a class="reference external" href="http://Github.com">Github.com</a> and double click on the one marked with “internet password”.</p></li>
+<li><p>Search for <a class="reference external" href="http://github.com">github.com</a> and double click on the one marked with “internet password”.</p></li>
 <li><p>Click on “show password” and replace the password with your generated token.</p></li>
 </ol>
 </div>

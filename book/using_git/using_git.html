@@ -51,7 +51,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Intro" href="../introduction_to_cpp/intro.html" />
+    <link rel="next" title="Dealing with merge conflicts" href="dealing_with_merge_conflicts.html" />
     <link rel="prev" title="Add a README" href="add_a_README.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -139,7 +139,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="setting_up_git_and_a_GitHub_repo.html">
-   Setting up git and Github repo
+   Setting up git and GitHub repo
   </a>
  </li>
  <li class="toctree-l1">
@@ -150,6 +150,16 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Using git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dealing_with_merge_conflicts.html">
+   Dealing with merge conflicts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="recover_an_old_version_of_a_file.html">
+   Recover an old version of a file
   </a>
  </li>
 </ul>
@@ -197,6 +207,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../introduction_to_cpp/loops.html">
    Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/containers.html">
+   Containers
   </a>
  </li>
  <li class="toctree-l1">
@@ -403,7 +418,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#using-git-for-collaboration-using-github">
-   Using git for collaboration; Using GitHub
+   Using git for collaboration; using GitHub
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -433,15 +448,19 @@
 <h1>Using git<a class="headerlink" href="#using-git" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<p>This tutorial explains how to import a new project into Git, make
+<p>This tutorial explains how to import a new project into git, make
 changes to it, and share changes with other developers. It’s a slightly modified and extended version of the manual entry of <em>gittutorial</em>. At any point, you can look this up in your terminal should you forget it by running</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>man gittutorial
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As explained below, a git repository is organised into <em>branches</em>. For repositories created before October 1, 2020, the main branch was by default called <code class="docutils literal notranslate"><span class="pre">master</span></code>. Therefore, if you work on projects created before this, you might see the main branch called <code class="docutils literal notranslate"><span class="pre">master</span></code> instead of <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
+</div>
 </div>
 <div class="section" id="cloning-a-new-project">
 <h2>Cloning a new project<a class="headerlink" href="#cloning-a-new-project" title="Permalink to this headline">¶</a></h2>
-<p>We recommend you create a repository online on <a class="reference external" href="https://github.com/">Github</a> and clone the HTTPS link down to your computer. It’s simply done by</p>
+<p>We recommend you create a repository online on <a class="reference external" href="https://github.com/">GitHub</a> and clone the HTTPS link down to your computer. It’s simply done by</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone https_link
 </pre></div>
 </div>
@@ -461,15 +480,19 @@ using <code class="docutils literal notranslate"><span class="pre">git</span> <s
 but not yet added to the index.) You can also get a brief summary of
 the situation with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git status
-On branch master
+On branch main
 Changes to be committed:
-Your branch is up to date with <span class="s1">&#39;origin/master&#39;</span>.
+Your branch is up to date with <span class="s1">&#39;origin/main&#39;</span>.
   <span class="o">(</span>use <span class="s2">&quot;git restore --staged &lt;file&gt;...&quot;</span> to unstage<span class="o">)</span>
 
         modified:   file1
         modified:   file2
         modified:   file3
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We recommend making it a habbit to run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> whenever you are unsure about the current status of your repository, and as a first step whenever you encounter a problem. The output of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> will often tell you exactly what you need to do.</p>
 </div>
 <p>If you need to make any further adjustments, do so now, and then add
 any newly modified content to the index. Finally, commit your changes
@@ -490,12 +513,12 @@ begin the commit message with a single short (less than 50 character)
 line summarizing the change, followed by a blank line and then a more
 thorough description. The text up to the first blank line in a commit
 message is treated as the commit title, and that title is used
-throughout Git.</p>
+throughout git.</p>
 </div>
 <div class="section" id="git-tracks-content-not-files">
 <h2>Git tracks content, not files<a class="headerlink" href="#git-tracks-content-not-files" title="Permalink to this headline">¶</a></h2>
-<p>Many revision control systems provide an aadddd command that tells the
-system to start tracking changes to a new file. Git’s aadddd command does
+<p>Many revision control systems provide an <strong>add</strong> command that tells the
+system to start tracking changes to a new file. Git’s <strong>add</strong> command does
 something simpler and more powerful: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> is used both for new and
 newly modified files, and in both cases it takes a snapshot of the
 given files and stages that content in the index, ready for inclusion
@@ -518,8 +541,8 @@ in the next commit.</p>
 </div>
 <div class="section" id="managing-branches">
 <h2>Managing branches<a class="headerlink" href="#managing-branches" title="Permalink to this headline">¶</a></h2>
-<p>A single Git repository can maintain multiple branches of development.
-To create a new branch named “experimental”, use</p>
+<p>A single git repository can maintain multiple branches of development.
+To create a new branch named <code class="docutils literal notranslate"><span class="pre">experimental</span></code>, use</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git branch experimental
 </pre></div>
 </div>
@@ -529,10 +552,10 @@ To create a new branch named “experimental”, use</p>
 </div>
 <p>you’ll get a list of all existing branches:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>  experimental
-* master
+* main
 </pre></div>
 </div>
-<p>The “experimental” branch is the one you just created, and the “master”
+<p>The <code class="docutils literal notranslate"><span class="pre">experimental</span></code> branch is the one you just created, and the <code class="docutils literal notranslate"><span class="pre">main</span></code>
 branch is a default branch that was created for you automatically. The
 asterisk marks the branch you are currently on; type</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git switch experimental
@@ -541,34 +564,38 @@ asterisk marks the branch you are currently on; type</p>
 <p>to switch to the experimental branch.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>“git switch” requires git version 2.23 or later. You can use “git checkout” as a replacement if you use an older version of git.</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">switch</span></code> requires git version 2.23 or later. You can use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> as a replacement if you use an older version of git.</p>
 </div>
 <p>Now edit a file, commit the
-change, and switch back to the master branch:</p>
+change, and switch back to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>edit file<span class="o">)</span>
 git commit -a
-git switch master
+git switch main
 </pre></div>
 </div>
 <p>Check that the change you made is no longer visible, since it was made
-on the experimental branch and you’re back on the master branch.</p>
-<p>You can make a different change on the master branch:</p>
+on the experimental branch and you’re back on the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p>
+<p>You can make a different change on the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>edit file<span class="o">)</span>
 git commit -a
 </pre></div>
 </div>
 <p>at this point the two branches have diverged, with different changes
-made in each. To merge the changes made in experimental into master,
+made in each. To merge the changes made in experimental into <code class="docutils literal notranslate"><span class="pre">main</span></code>,
 run</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git merge experimental
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Keep in mind that <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">some_branch_name</span></code> merges changes <em>from</em> <code class="docutils literal notranslate"><span class="pre">some_branch_name</span></code> <em>into</em> the branch you are currently in. So if you are unsure, run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code> first to check that you are in the correct branch. Also it is recommended to not have any uncommited changes in the current branch when you do the merge.</p>
 </div>
 <p>If the changes don’t conflict, you’re done. If there are conflicts,
 markers will be left in the problematic files showing the conflict;</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git diff
 </pre></div>
 </div>
-<p>will show this. Once you’ve edited the files to resolve the conflicts,</p>
+<p>will show this. (Also, running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> at this point will give you a summary of which files have conflicts and what you need to do.) Once you’ve edited the files to resolve the conflicts,</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git commit -a
 </pre></div>
 </div>
@@ -583,32 +610,28 @@ markers will be left in the problematic files showing the conflict;</p>
 </div>
 <p>This command ensures that the changes in the experimental branch are
 already in the current branch.</p>
-<p>If you develop on a branch crazy-idea, then regret it, you can always
+<p>If you develop on a branch <code class="docutils literal notranslate"><span class="pre">crazy-idea</span></code>, then regret it, you can always
 delete the branch with</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git branch -D crazy-idea
 </pre></div>
 </div>
-<p>Branches are cheap and easy, so this is a good way to try something
-out.</p>
+<p>Branches are cheap and easy, so this is a good way to try something out.</p>
 </div>
 <div class="section" id="using-git-for-collaboration-using-github">
-<h2>Using git for collaboration; Using GitHub<a class="headerlink" href="#using-git-for-collaboration-using-github" title="Permalink to this headline">¶</a></h2>
+<h2>Using git for collaboration; using GitHub<a class="headerlink" href="#using-git-for-collaboration-using-github" title="Permalink to this headline">¶</a></h2>
 <p>So far we’ve only discussed git locally on your computer, but not how we collaborate with other developers. This is where GitHub comes into the picture.</p>
-<p>It’s customary to work on different branches to protect the content of the main branch. Just like in the example above where we worked on a branch called “experimental”, you can create your own branch when you work on a project with other people.</p>
+<p>It’s customary to work on different branches to protect the content of the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch. Just like in the example above where we worked on a branch called <code class="docutils literal notranslate"><span class="pre">experimental</span></code>, you can create your own branch when you work on a project with other people.</p>
 <div class="section" id="pull-any-changes-from-the-remote">
 <h3>Pull any changes from the remote<a class="headerlink" href="#pull-any-changes-from-the-remote" title="Permalink to this headline">¶</a></h3>
-<p>The <strong>remote</strong> repo is the term used for the cloud based copy of your local git repo. To <strong>pull</strong> down any changes done by the other developers on a branch, run</p>
+<p>The <strong>remote</strong> repo is the term used for the cloud-based (GitHub) version of your local git repo. To <strong>pull</strong> down any changes done by the other developers on a branch, run</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git pull origin branchname
 </pre></div>
 </div>
-<p>in particular, to pull from the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, run</p>
+<p>In particular, to pull from the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, run</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git pull origin main
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>For old repositories created before October 1, 2020, the main branch was called master. Therefore, if you work on projects created before this, you might see the main branch called “master” instead.</p>
-</div>
+<p>The name <code class="docutils literal notranslate"><span class="pre">origin</span></code> is just the standard name assigned to the remote repo, i.e. the repo living on GitHub. So this command is effectively saying <em>pull down any changes from the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch on the GitHub repo, and merge these into the current branch of my local repo.</em></p>
 </div>
 <div class="section" id="push-your-changes-to-the-remote">
 <h3>Push your changes to the remote<a class="headerlink" href="#push-your-changes-to-the-remote" title="Permalink to this headline">¶</a></h3>
@@ -622,7 +645,7 @@ out.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>It’s a good idea to always pull from the origin before you try to merge branches locally, commit or push to the origin. Always sync up with the remote version of the repo first!</p>
+<p>It’s a good idea to always pull from <code class="docutils literal notranslate"><span class="pre">origin</span></code> before you try to merge branches locally, commit or push to <code class="docutils literal notranslate"><span class="pre">origin</span></code>. Always sync up with the remote version of the repo first!</p>
 </div>
 </div>
 </div>
@@ -654,7 +677,7 @@ out.</p>
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="add_a_README.html" title="previous page">Add a README</a>
-    <a class='right-next' id="next-link" href="../introduction_to_cpp/intro.html" title="next page">Intro</a>
+    <a class='right-next' id="next-link" href="dealing_with_merge_conflicts.html" title="next page">Dealing with merge conflicts</a>
 
         </div>
         

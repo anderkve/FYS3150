@@ -51,6 +51,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Introduction to Armadillo" href="intro_to_armadillo.html" />
+    <link rel="prev" title="Loops" href="loops.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -137,7 +139,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../using_git/setting_up_git_and_a_GitHub_repo.html">
-   Setting up git and Github repo
+   Setting up git and GitHub repo
   </a>
  </li>
  <li class="toctree-l1">
@@ -150,13 +152,23 @@
    Using git
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/dealing_with_merge_conflicts.html">
+   Dealing with merge conflicts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/recover_an_old_version_of_a_file.html">
+   Recover an old version of a file
+  </a>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
   Introduction to C++
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
    Intro
@@ -195,6 +207,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="loops.html">
    Loops
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Containers
   </a>
  </li>
  <li class="toctree-l1">
@@ -364,6 +381,93 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#std-vector">
+   std::vector
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-a-std-vector-object">
+     Creating a
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       std::vector
+      </span>
+     </code>
+     object
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-1-creating-a-vector-of-length-n-filled-with-zeros">
+       Example 1: creating a vector of length
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         n
+        </span>
+       </code>
+       filled with zeros
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-2-create-a-matrix-of-dimension-n-x-m">
+       Example 2: Create a matrix of dimension
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         N
+        </span>
+        <span class="pre">
+         x
+        </span>
+        <span class="pre">
+         M
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#append-or-push-back">
+     Append or
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       push_back
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-3-adding-elements-of-type-double-using-push-back">
+       Example 3: Adding elements of type double using
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         push_back
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-4-creating-a-matrix-using-push-back">
+       Example 4: Creating a matrix using
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         push_back
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -374,8 +478,11 @@
                 
   <div class="section" id="containers">
 <h1>Containers<a class="headerlink" href="#containers" title="Permalink to this headline">¶</a></h1>
-<p>Add page on containers (arrays, vectors, maps, pairs, …).</p>
-<!-- 
+<!--
+Add page on containers (arrays, vectors, maps, pairs, ...).
+-->
+<p>A <strong>container</strong> stores data in C++. We’ve already seen the most basic example of this, namely variables. But there’s a container akin to <em>lists</em> in Python known as <code class="docutils literal notranslate"><span class="pre">std::vector</span></code>. We’ll discuss this particular one in detail here.</p>
+<!--
 
 - Discuss std::vector (C++) vs std::array (C++) vs C-style arrays
   - https://stackoverflow.com/questions/31548281/advantages-of-2d-vector-array
@@ -384,7 +491,66 @@
 
 
 
---></div>
+-->
+<div class="section" id="std-vector">
+<h2>std::vector<a class="headerlink" href="#std-vector" title="Permalink to this headline">¶</a></h2>
+<p>We’ll give a short introduction to the <code class="docutils literal notranslate"><span class="pre">std::vector</span></code> class here. For more details, you should consult <a class="reference external" href="https://en.cppreference.com/w/cpp/container/vector">code documentation</a>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">std::vector</span></code> class must be included using <code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&lt;vector&gt;</span></code>.</p>
+<div class="section" id="creating-a-std-vector-object">
+<h3>Creating a <code class="docutils literal notranslate"><span class="pre">std::vector</span></code> object<a class="headerlink" href="#creating-a-std-vector-object" title="Permalink to this headline">¶</a></h3>
+<p>We must specify the type of the elements of a <code class="docutils literal notranslate"><span class="pre">std::vector</span></code> object. We can fill it with any type we’d like.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">type</span><span class="o">&gt;</span> <span class="n">variable_name</span><span class="p">;</span> <span class="c1">//Declare, but don&#39;t initialize specific elements or length.</span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">type</span><span class="o">&gt;</span> <span class="n">variable_name</span><span class="p">(</span><span class="n">length</span><span class="p">);</span> <span class="c1">//Initialize with length, but values are assigned randomly (not sampled from any particular probability distribution though!)</span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">type</span><span class="o">&gt;</span> <span class="n">variable_name</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span> <span class="c1">//Initialize with a length and a value for each element.</span>
+</pre></div>
+</div>
+<div class="section" id="example-1-creating-a-vector-of-length-n-filled-with-zeros">
+<h4>Example 1: creating a vector of length <code class="docutils literal notranslate"><span class="pre">n</span></code> filled with zeros<a class="headerlink" href="#example-1-creating-a-vector-of-length-n-filled-with-zeros" title="Permalink to this headline">¶</a></h4>
+<p>We’ll choose the elements to be of the type <code class="docutils literal notranslate"><span class="pre">double</span></code>.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">my_vector</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-2-create-a-matrix-of-dimension-n-x-m">
+<h4>Example 2: Create a matrix of dimension <code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">x</span> <span class="pre">M</span></code><a class="headerlink" href="#example-2-create-a-matrix-of-dimension-n-x-m" title="Permalink to this headline">¶</a></h4>
+<p>We can create a matrix by creating a vector that we fill with vectors. That’s a mouthful, but not too difficult to understand in practice:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">std::vector&lt;std::vector&lt;double&gt; might seem daunting.</span>
+<span class="cm">It simply means that the std::vector variable will contain elements of type std::vector&lt;double&gt;</span>
+<span class="cm">*/</span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&gt;</span> <span class="n">A</span><span class="p">(</span><span class="n">N</span><span class="p">);</span> <span class="c1">//Reserve N elements of type std::vector&lt;double&gt;.</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">reserve</span><span class="p">(</span><span class="n">M</span><span class="p">);</span> <span class="c1">//Reserve memory for M elements of type double at row i</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>We haven’t filled the matrix with any values yet though, they are just randomly initialized by the operating system.</p>
+</div>
+</div>
+<div class="section" id="append-or-push-back">
+<h3>Append or <code class="docutils literal notranslate"><span class="pre">push_back</span></code><a class="headerlink" href="#append-or-push-back" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">std::vector</span></code> class comes packed with a lot of useful functionality. One of these are the <code class="docutils literal notranslate"><span class="pre">push_back</span></code> method which appends an object to the end of the vector.</p>
+<div class="section" id="example-3-adding-elements-of-type-double-using-push-back">
+<h4>Example 3: Adding elements of type double using <code class="docutils literal notranslate"><span class="pre">push_back</span></code><a class="headerlink" href="#example-3-adding-elements-of-type-double-using-push-back" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span> <span class="n">x</span><span class="p">;</span> <span class="c1">//Declare a variable x of type std::vector</span>
+<span class="n">x</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mf">2.0</span><span class="p">);</span> <span class="c1">//Append the value 2.0 to the variable x.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-4-creating-a-matrix-using-push-back">
+<h4>Example 4: Creating a matrix using <code class="docutils literal notranslate"><span class="pre">push_back</span></code><a class="headerlink" href="#example-4-creating-a-matrix-using-push-back" title="Permalink to this headline">¶</a></h4>
+<p>Instead iterating by reserving a predefined number of vectors that <code class="docutils literal notranslate"><span class="pre">A</span></code> should contain, we can instead append how many we feel like as follows.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&gt;</span> <span class="n">A</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">tmp</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="mf">1.</span><span class="o">*</span><span class="n">i</span><span class="p">);</span> <span class="c1">//Create a temporary vector of length m and fill it with the value i.</span>
+    <span class="n">A</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">tmp</span><span class="p">);</span> <span class="c1">//Append the vector to A. Each vector becomes a row of A.</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -411,6 +577,8 @@
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="loops.html" title="previous page">Loops</a>
+    <a class='right-next' id="next-link" href="intro_to_armadillo.html" title="next page">Introduction to Armadillo</a>
 
         </div>
         
