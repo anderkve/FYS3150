@@ -1,8 +1,8 @@
-# Setting up git and Github repo
+# Setting up git and GitHub repo
 
 ## Setting up git on your computer
 
-You need to tell Git which user you are. Write the following commands in your terminal.
+You need to tell git which user you are. Write the following commands in your terminal.
 
 ```sh
 git config --global user.name your_user_name_spelled_out
@@ -10,7 +10,7 @@ git config --global user.name your_user_name_spelled_out
 git config --global user.email you@yourdomain.com
 ```
 
-## Create a Github repository for the course
+## Create a GitHub repository for the course
 
 Here's a step-by-step instruction.
 
@@ -42,10 +42,10 @@ Now you've cloned the repository to your computer! This will be a directory you 
 
 
 
-## Adding a Github token
+## Adding a GitHub token
 
 
-A Github token is a replacement of passwords to give you as a user access to perform action on your Github repositories from your computer.
+A GitHub token is a replacement of passwords to give you as a user access to perform action on your GitHub repositories from your computer.
 
 Disclaimer: Note that this is not a secure option, as the token will be saved in clear text. But it's nevertheless the simplest option.
 
@@ -75,7 +75,7 @@ Disclaimer: Note that this is not a secure option, as the token will be saved in
 
 ### On Linux
 
-- In your Github repository (locally on your computer) do the following:
+- In your GitHub repository (locally on your computer) do the following:
 
 1. Create a non-empty .txt file by running:
 
@@ -108,5 +108,5 @@ And you're done!
 ### On macOS
 
 1. Open the **Keychain Access** app.
-2. Search for Github.com and double click on the one marked with "internet password".
+2. Search for github.com and double click on the one marked with "internet password".
 3. Click on "show password" and replace the password with your generated token.
