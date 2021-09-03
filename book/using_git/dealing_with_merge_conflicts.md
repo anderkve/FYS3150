@@ -1,4 +1,4 @@
-# Dealing With Merge Conflicts
+# Dealing with merge conflicts
 
 In most cases, git **auto-merges** when local branches are merged with `git merge`.
 The same applies when you pull from the `remote` to your local branch.
