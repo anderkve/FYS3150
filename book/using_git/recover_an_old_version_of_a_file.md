@@ -1,7 +1,8 @@
+(sec:recover_file)=
 # Recover an old version of a file
 
 Git tracks the content of your files and keeps their history.
-Accidents happen when developing code, and sometimes you break it. In such cases, it's convenient to know how to recover an old version of your file. We'll show you how through a hands-on example.
+Accidents happen when developing code, and sometimes you break it. In such cases it's convenient to know how to recover an old version of your file. We'll show you how through a hands-on example.
 
 ## Hands-on example
 
@@ -31,15 +32,14 @@ git commit -am "modified the file" && git push
 
 Feel free to check that the content of the file actually changed.
 
-Now we want to recover the old version of the file. We need to look up the **commit hash** of the previous version to recover it. This is easy, run
+Now we want to recover the old version of the file. We need to look up the **commit hash** of the previous version to recover it. This is easy -- just run
 
 ```sh
 git log
 ```
 
-Look for the commit with the correct commit message and copy its commit hash (the string of numbers and letters).
-
-Finally, we can recover the file by
+and look for the commit with the correct commit message. Copy the commit hash (the string of numbers and letters) of this commit. 
+Now we can recover the file by
 
 ```sh
 git checkout COMMIT_HASH_YOU_COPIED my_file.txt
