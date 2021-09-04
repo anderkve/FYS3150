@@ -31,7 +31,7 @@ In other words:
 ```c++
 type function_name(type1 input1, ..., typeN inputN); //Declaration
 
-int main(int argc, char const *argv[]) {
+int main() {
     /* code of the main function */
     return 0;
 }
@@ -49,7 +49,7 @@ Say we want to implements the function `f(x) = x*x` in C++ and call it once in a
 ```c++
 double f(double x); //Declaration
 
-int main(int argc, char const *argv[]) {
+int main() {
     double x = 2;
     double res = f(x); //Should return 2*2 = 4.
     return 0;
@@ -67,7 +67,7 @@ Let's do the same with a function of multiple arguments. Assume we're to impleme
 ```c++
 double f(double x, double y); //Definition
 
-int main(int argc, char const *argv[]) {
+int main() {
     double x = 2, y = 1;
     double res = f(x, y);
     return 0;

@@ -121,7 +121,7 @@ The main program that uses the `Line` class can be as simple as
 ```c++
 #include "line.hpp"
 
-int main(int argc, char const *argv[]) {
+int main() {
     double x = 2; //Point to evaluate the polynomials in
     double c0 = 1, c1 = 1; //Coefficients of the straight line.
     Line my_line = Line(c0, c1); //Create a Line object called my_line
@@ -210,7 +210,7 @@ Again, we can write a short program to use the `Quadratic` class:
 
 ```c++
 #include "quadratic.hpp"
-int main(int argc, char const *argv[]) {
+int main() {
   double x = 2; //Point to evaluate the polynomials in
   double c0 = 1, c1 = 1, c2 = 1;
   Quadratic my_quad = Quadratic(c0, c1, c2); //Call constructor and create Quadratic object my_quad.
