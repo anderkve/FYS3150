@@ -68,7 +68,7 @@ Your push will be rejected because your local commit history isn't up-to-date wi
 git pull
 ```
 
-This will results in a failure of auto-merging! The last few lines of the output should look something like this:
+Git will now fail to auto-merge! The last few lines of the output should look something like this:
 
 ```sh
 Auto-merging tmp.txt
@@ -93,7 +93,7 @@ Couple notes on the output:
 - The long string of numbers and letters is called the **commit hash** and is simply a unique string that identifies the commit.
 
 
-The solution here is simple. Us, the user, must choose version A or version B manually. This means we just delete the content we don't want, add and commit it the final version and push it. We'll just choose the following content here:
+The solution here is simple -- we must simply choose version A or version B manually. This means we just delete the content we don't want, and then add and commit the final version of the file. Now we should be able to push it. For this example we'll choose to keep the following content:
 
 ```
 This is a line.

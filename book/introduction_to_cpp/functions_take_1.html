@@ -51,7 +51,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="If else" href="if_else.html" />
+    <link rel="next" title="Read command line input" href="read_command_line_input.html" />
     <link rel="prev" title="Variables" href="variables.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -162,6 +162,11 @@
    Recover an old version of a file
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/other_ways_to_fix_mistakes.html">
+   Other ways to fix mistakes
+  </a>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -197,6 +202,11 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Functions, take 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="read_command_line_input.html">
+   Read command line input
   </a>
  </li>
  <li class="toctree-l1">
@@ -448,7 +458,7 @@
 <p>In other words:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">type</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">type1</span> <span class="n">input1</span><span class="p">,</span> <span class="p">...,</span> <span class="n">typeN</span> <span class="n">inputN</span><span class="p">);</span> <span class="c1">//Declaration</span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="k">const</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="cm">/* code of the main function */</span>
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
@@ -464,7 +474,7 @@
 <p>Say we want to implements the function <code class="docutils literal notranslate"><span class="pre">f(x)</span> <span class="pre">=</span> <span class="pre">x*x</span></code> in C++ and call it once in a <code class="docutils literal notranslate"><span class="pre">main()</span></code> program. A short program for this looks like</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="nf">f</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">);</span> <span class="c1">//Declaration</span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="k">const</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="kt">double</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
     <span class="kt">double</span> <span class="n">res</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">);</span> <span class="c1">//Should return 2*2 = 4.</span>
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
@@ -482,7 +492,7 @@
 <p>Let’s do the same with a function of multiple arguments. Assume we’re to implement <code class="docutils literal notranslate"><span class="pre">f(x,y)</span> <span class="pre">=</span> <span class="pre">x*x</span> <span class="pre">+</span> <span class="pre">y</span></code> and call it once. This can be done as follows.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="nf">f</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y</span><span class="p">);</span> <span class="c1">//Definition</span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="k">const</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="kt">double</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
     <span class="kt">double</span> <span class="n">res</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
@@ -524,7 +534,7 @@
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="variables.html" title="previous page">Variables</a>
-    <a class='right-next' id="next-link" href="if_else.html" title="next page">If else</a>
+    <a class='right-next' id="next-link" href="read_command_line_input.html" title="next page">Read command line input</a>
 
         </div>
         

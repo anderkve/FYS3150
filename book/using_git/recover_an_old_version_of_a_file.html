@@ -51,7 +51,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Intro" href="../introduction_to_cpp/intro.html" />
+    <link rel="next" title="Other ways to fix mistakes" href="other_ways_to_fix_mistakes.html" />
     <link rel="prev" title="Dealing with merge conflicts" href="dealing_with_merge_conflicts.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -162,6 +162,11 @@
    Recover an old version of a file
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="other_ways_to_fix_mistakes.html">
+   Other ways to fix mistakes
+  </a>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -197,6 +202,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../introduction_to_cpp/functions_take_1.html">
    Functions, take 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/read_command_line_input.html">
+   Read command line input
   </a>
  </li>
  <li class="toctree-l1">
@@ -403,9 +413,9 @@
               <div>
                 
   <div class="section" id="recover-an-old-version-of-a-file">
-<h1>Recover an old version of a file<a class="headerlink" href="#recover-an-old-version-of-a-file" title="Permalink to this headline">¶</a></h1>
+<span id="sec-recover-file"></span><h1>Recover an old version of a file<a class="headerlink" href="#recover-an-old-version-of-a-file" title="Permalink to this headline">¶</a></h1>
 <p>Git tracks the content of your files and keeps their history.
-Accidents happen when developing code, and sometimes you break it. In such cases, it’s convenient to know how to recover an old version of your file. We’ll show you how through a hands-on example.</p>
+Accidents happen when developing code, and sometimes you break it. In such cases it’s convenient to know how to recover an old version of your file. We’ll show you how through a hands-on example.</p>
 <div class="section" id="hands-on-example">
 <h2>Hands-on example<a class="headerlink" href="#hands-on-example" title="Permalink to this headline">¶</a></h2>
 <p>First, let’s create a file with some text. Run</p>
@@ -425,12 +435,12 @@ Accidents happen when developing code, and sometimes you break it. In such cases
 </pre></div>
 </div>
 <p>Feel free to check that the content of the file actually changed.</p>
-<p>Now we want to recover the old version of the file. We need to look up the <strong>commit hash</strong> of the previous version to recover it. This is easy, run</p>
+<p>Now we want to recover the old version of the file. We need to look up the <strong>commit hash</strong> of the previous version to recover it. This is easy – just run</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git log
 </pre></div>
 </div>
-<p>Look for the commit with the correct commit message and copy its commit hash (the string of numbers and letters).</p>
-<p>Finally, we can recover the file by</p>
+<p>and look for the commit with the correct commit message. Copy the commit hash (the string of numbers and letters) of this commit.
+Now we can recover the file by</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git checkout COMMIT_HASH_YOU_COPIED my_file.txt
 </pre></div>
 </div>
@@ -475,7 +485,7 @@ Accidents happen when developing code, and sometimes you break it. In such cases
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="dealing_with_merge_conflicts.html" title="previous page">Dealing with merge conflicts</a>
-    <a class='right-next' id="next-link" href="../introduction_to_cpp/intro.html" title="next page">Intro</a>
+    <a class='right-next' id="next-link" href="other_ways_to_fix_mistakes.html" title="next page">Other ways to fix mistakes</a>
 
         </div>
         

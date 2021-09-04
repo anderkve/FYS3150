@@ -162,6 +162,11 @@
    Recover an old version of a file
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/other_ways_to_fix_mistakes.html">
+   Other ways to fix mistakes
+  </a>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -197,6 +202,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="functions_take_1.html">
    Functions, take 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="read_command_line_input.html">
+   Read command line input
   </a>
  </li>
  <li class="toctree-l1">
@@ -601,7 +611,7 @@
 <p>The main program that uses the <code class="docutils literal notranslate"><span class="pre">Line</span></code> class can be as simple as</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;line.hpp&quot;</span><span class="cp"></span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="k">const</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="kt">double</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">//Point to evaluate the polynomials in</span>
     <span class="kt">double</span> <span class="n">c0</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//Coefficients of the straight line.</span>
     <span class="n">Line</span> <span class="n">my_line</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">c0</span><span class="p">,</span> <span class="n">c1</span><span class="p">);</span> <span class="c1">//Create a Line object called my_line</span>
@@ -685,7 +695,7 @@
 <h3>Quadratic polynomial: using the class<a class="headerlink" href="#quadratic-polynomial-using-the-class" title="Permalink to this headline">¶</a></h3>
 <p>Again, we can write a short program to use the <code class="docutils literal notranslate"><span class="pre">Quadratic</span></code> class:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;quadratic.hpp&quot;</span><span class="cp"></span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="k">const</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
   <span class="kt">double</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">//Point to evaluate the polynomials in</span>
   <span class="kt">double</span> <span class="n">c0</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
   <span class="n">Quadratic</span> <span class="n">my_quad</span> <span class="o">=</span> <span class="n">Quadratic</span><span class="p">(</span><span class="n">c0</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">);</span> <span class="c1">//Call constructor and create Quadratic object my_quad.</span>

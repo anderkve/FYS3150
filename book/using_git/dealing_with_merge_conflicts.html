@@ -162,6 +162,11 @@
    Recover an old version of a file
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="other_ways_to_fix_mistakes.html">
+   Other ways to fix mistakes
+  </a>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -197,6 +202,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../introduction_to_cpp/functions_take_1.html">
    Functions, take 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/read_command_line_input.html">
+   Read command line input
   </a>
  </li>
  <li class="toctree-l1">
@@ -450,7 +460,7 @@ be accepted, while the other will result in a merge conflict.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git pull
 </pre></div>
 </div>
-<p>This will results in a failure of auto-merging! The last few lines of the output should look something like this:</p>
+<p>Git will now fail to auto-merge! The last few lines of the output should look something like this:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>Auto-merging tmp.txt
 CONFLICT <span class="o">(</span>content<span class="o">)</span>: Merge conflict <span class="k">in</span> tmp.txt
 Automatic merge failed<span class="p">;</span> fix conflicts and <span class="k">then</span> commit the result.
@@ -472,7 +482,7 @@ Automatic merge failed<span class="p">;</span> fix conflicts and <span class="k"
 <li><p>The part between <code class="docutils literal notranslate"><span class="pre">=======</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> <span class="pre">89c96948fb637b83c1165743fd4e28b87f99e754</span></code> is from the commit you made earlier which is now in the remote repo.</p></li>
 <li><p>The long string of numbers and letters is called the <strong>commit hash</strong> and is simply a unique string that identifies the commit.</p></li>
 </ul>
-<p>The solution here is simple. Us, the user, must choose version A or version B manually. This means we just delete the content we don’t want, add and commit it the final version and push it. We’ll just choose the following content here:</p>
+<p>The solution here is simple – we must simply choose version A or version B manually. This means we just delete the content we don’t want, and then add and commit the final version of the file. Now we should be able to push it. For this example we’ll choose to keep the following content:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">line</span><span class="o">.</span>
 <span class="n">This</span> <span class="ow">is</span> <span class="n">version</span> <span class="n">B</span>
 </pre></div>

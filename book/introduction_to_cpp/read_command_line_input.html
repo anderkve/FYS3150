@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Variables &#8212; FYS3150/FYS4150 course material</title>
+    <title>Read command line input &#8212; FYS3150/FYS4150 course material</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,8 +51,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Functions, take 1" href="functions_take_1.html" />
-    <link rel="prev" title="Source files and header files" href="source_files_and_header_files.html" />
+    <link rel="next" title="If else" href="if_else.html" />
+    <link rel="prev" title="Functions, take 1" href="functions_take_1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -194,8 +194,8 @@
    Source files and header files
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="variables.html">
    Variables
   </a>
  </li>
@@ -204,8 +204,8 @@
    Functions, take 1
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="read_command_line_input.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Read command line input
   </a>
  </li>
@@ -350,7 +350,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/book/introduction_to_cpp/variables.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/book/introduction_to_cpp/read_command_line_input.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -370,7 +370,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Fbook/introduction_to_cpp/variables.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Fbook/introduction_to_cpp/read_command_line_input.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -391,26 +391,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#declaration-of-variables">
-   Declaration of Variables
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#declaration-of-multiple-variables">
-     Declaration of multiple variables:
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -419,41 +399,89 @@
         
               <div>
                 
-  <div class="section" id="variables">
-<h1>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h1>
-<p>Variables are containers for storing data.</p>
-<p>There are several <strong>types</strong> of variables. We’ll list a few here:</p>
+  <div class="section" id="read-command-line-input">
+<h1>Read command line input<a class="headerlink" href="#read-command-line-input" title="Permalink to this headline">¶</a></h1>
+<p>We often want to run our program repeatedly for new choices of the program settings, such as new step sizes, matrix sizes, output filenames, etc. In these cases it is useful if our program can read options directly from the command line, e.g. that we can execute our program with a command like</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./main.exe <span class="m">100</span> output_n_100.txt 
+</pre></div>
+</div>
+<p>to run with n=100 steps in our discretized computation, and have the results written to an output file <code class="docutils literal notranslate"><span class="pre">output_n_100.txt</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">main</span></code> function in a C++ program can read command-line input via two standard function arguments called <code class="docutils literal notranslate"><span class="pre">argc</span></code> and <code class="docutils literal notranslate"><span class="pre">argv</span></code>:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
+</pre></div>
+</div>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code> stores integers.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">double</span></code> stores floating point numbers (kind of like numbers on the real axis, but limited by machine precision).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">char</span></code> stores single characters, for instance the letter <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">string</span></code> stores text strings, e.g it can store <code class="docutils literal notranslate"><span class="pre">&quot;Hello</span> <span class="pre">world!&quot;</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">bool</span></code> stores one of either two states: <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p></li>
+<li><p>The “argument counter” <code class="docutils literal notranslate"><span class="pre">argc</span></code> is just an integer (<code class="docutils literal notranslate"><span class="pre">int</span></code>) that contains the number of provided input arguments.</p></li>
+<li><p>The “argument vector” <code class="docutils literal notranslate"><span class="pre">argv</span></code> contains the command-line input stored as strings. So you can think of <code class="docutils literal notranslate"><span class="pre">argv</span></code> as effectively being a vector of strings, but because C++ uses the same approach as C to reading command-line input, the actual variable type for <code class="docutils literal notranslate"><span class="pre">argv</span></code> looks slightly awkward: <code class="docutils literal notranslate"><span class="pre">char*</span> <span class="pre">argv[]</span></code> (or equivalently, <code class="docutils literal notranslate"><span class="pre">char**</span> <span class="pre">argv</span></code>). What this says is that <code class="docutils literal notranslate"><span class="pre">argv</span></code> is an <em>array with elements of type pointer-to-character</em>, which is a C-way of storing a vector of strings. In practice it doesn’t matter much – we’ll anyway immediately extract the elements of <code class="docutils literal notranslate"><span class="pre">argv</span></code> and convert them into the types we expect.</p></li>
 </ul>
-<div class="section" id="declaration-of-variables">
-<h2>Declaration of Variables<a class="headerlink" href="#declaration-of-variables" title="Permalink to this headline">¶</a></h2>
-<p><strong>Declaration</strong> means to create a variable. We must specify a <strong>type</strong> and a variable name, called an <strong>identifier</strong>. Optionally we can assign a value to the variable. The generic syntax is</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">type</span> <span class="n">variable_name</span> <span class="o">=</span> <span class="n">value</span><span class="p">;</span>
+<p>Note that the first element, <code class="docutils literal notranslate"><span class="pre">argv[0]</span></code>, always contains the name of the executable file itself. So <code class="docutils literal notranslate"><span class="pre">argv</span></code> is never empty, and correspondingly, the smallest possible value for <code class="docutils literal notranslate"><span class="pre">argc</span></code> is 1. This corresponds to the user running the program without any input arguments, e.g. as</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./main.exe
 </pre></div>
 </div>
-<p>For example,</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<p>Below is a minimal example that demonstrates how to read an integer, a floating-point number and a string from the command line. The program also implements a quick check that it has been called with the correct number of arguments.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+
+  <span class="c1">// </span>
+  <span class="c1">// Check number of command-line arguments</span>
+  <span class="c1">// </span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">!=</span> <span class="mi">4</span><span class="p">)</span>  <span class="c1">// Expect 3 command-line arguments</span>
+  <span class="p">{</span>
+    <span class="c1">// Get the name of the executable file</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">executable_name</span> <span class="o">=</span> <span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Error: Wrong number of input arguments.&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Usage: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">executable_name</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &lt;some integer&gt; &lt;some double&gt; &lt;some string&gt;&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="c1">// Exit program with non-zero return code to indicate a problem</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>   
+  <span class="p">}</span>
+
+  <span class="c1">// </span>
+  <span class="c1">// Save the command-line arguments as different variables</span>
+  <span class="c1">// </span>
+
+  <span class="kt">int</span> <span class="n">some_integer</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>    <span class="c1">// atoi converts argv[2] to an integer</span>
+  <span class="kt">double</span> <span class="n">some_double</span> <span class="o">=</span> <span class="n">atof</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>  <span class="c1">// atof converts argv[3] to a floating-point number</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">some_string</span> <span class="o">=</span> <span class="n">argv</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>   <span class="c1">// no convertion needed</span>
+
+
+  <span class="c1">//</span>
+  <span class="c1">// Some dummy code that uses the input arguments</span>
+  <span class="c1">// </span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Got the following input: &quot;</span>
+            <span class="o">&lt;&lt;</span> <span class="s">&quot;some_integer: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">some_integer</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;, &quot;</span>
+            <span class="o">&lt;&lt;</span> <span class="s">&quot;some_double: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">some_double</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;, &quot;</span>
+            <span class="o">&lt;&lt;</span> <span class="s">&quot;some_string: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">some_string</span>
+            <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+
+  <span class="c1">// All is well. Exit program with return code 0.</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>declared a variable named <code class="docutils literal notranslate"><span class="pre">x</span></code> assigned the value <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p>
-<p>As stated, we need not specify the value of the declared variable. Statements like</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">type</span> <span class="n">variable_name</span><span class="p">;</span>
+<p>Running this program as</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./main.exe <span class="m">100</span> <span class="m">3</span>.14 hello
 </pre></div>
 </div>
-<p>are perfectly legitimate. You can assign a value to the declared variable at later point in the code. However, it’s considered good practice to declare the variable as close to its assignment as possible.</p>
-<div class="section" id="declaration-of-multiple-variables">
-<h3>Declaration of multiple variables:<a class="headerlink" href="#declaration-of-multiple-variables" title="Permalink to this headline">¶</a></h3>
-<p>We can declare multiple variables at once. For example</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">z</span><span class="p">;</span>
+<p>should now produce the output</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>Got the following input: some_integer: <span class="m">100</span>, some_double: <span class="m">3</span>.14, some_string: hello
 </pre></div>
 </div>
-<p>This declares three variables <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">z</span></code>. It only assigns <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">0</span></code>, while the other two are currently not assigned a specific value by us.</p>
+<p>On the other hand, running with the wrong number of input arguments, e.g.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./main.exe <span class="m">100</span> <span class="m">3</span>.14
+</pre></div>
 </div>
+<p>should produce some output like this:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>Error: Wrong number of input arguments.
+Usage: ./main.exe &lt;some integer&gt; &lt;some double&gt; &lt;some string&gt;
+</pre></div>
 </div>
 </div>
 
@@ -482,8 +510,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="source_files_and_header_files.html" title="previous page">Source files and header files</a>
-    <a class='right-next' id="next-link" href="functions_take_1.html" title="next page">Functions, take 1</a>
+    <a class='left-prev' id="prev-link" href="functions_take_1.html" title="previous page">Functions, take 1</a>
+    <a class='right-next' id="next-link" href="if_else.html" title="next page">If else</a>
 
         </div>
         
