@@ -64,8 +64,6 @@ and writes the x and y values to a file `x_y.txt` in a nicely formatted way. For
 #include <fstream>
 #include <iomanip>
 
-
-// Main program
 int main()
 {
   // Set a filename
@@ -111,7 +109,7 @@ int main()
 }
 ```
 
-We can take a look at the ten first lines of `x_y.txt` to see what the formatted program output looks like:
+After building and running this program, we can take a look at the ten first lines of `x_y.txt` to see what the formatted program output looks like:
 
 ```sh
 head -10 x_y.txt
@@ -134,8 +132,5 @@ Output:
 
 We see that each number is written in scientific notation (`std::scientific`), has four decimals (`std::setprecision(...)`), 
 and takes up a width of 12 characters (`std::setw(...)`) in the file; 2 blank spaces plus 10 characters for the actual number. By using two blank spaces between numbers we ensure that the formatting will still look nice even if some numbers get a minus sign in front.
-
-
-
 
 
