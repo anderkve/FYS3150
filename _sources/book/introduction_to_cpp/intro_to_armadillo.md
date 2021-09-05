@@ -1,3 +1,4 @@
+(sec:intro_to_armadillo)=
 # Introduction to Armadillo
 
 Armadillo is an efficient linear algebra library for C++ users. Its aim is to provide a library that balances speed and ease of use. We recommend this library for numerical computations as a replacement for dynamic allocation of arrays.
