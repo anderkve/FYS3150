@@ -29,34 +29,54 @@ common_title_string = "for approximation of\n u''(x=2) = 4*exp(2*2) = {:.8e}".fo
 figwidth = 5.5
 figheight = figwidth / 1.33333
 
-# Plot absolute error
+# Plot absolute error vs h
+plt.figure(figsize=(figwidth, figheight))
+plt.plot(h, abs_err, '--', c="0.8", linewidth=1.5)
+plt.plot(h, abs_err, '.', c="black", markersize=10)
+plt.title("Absolute error " + common_title_string, fontsize=10)
+plt.ylabel("absolute error")
+plt.xlabel("h")
+plt.savefig("abs_err_vs_h.pdf")
+
+# Plot absolute error vs log10(h)
 plt.figure(figsize=(figwidth, figheight))
 plt.plot(log10_h, abs_err, '--', c="0.8", linewidth=1.5)
 plt.plot(log10_h, abs_err, '.', c="black", markersize=10)
 plt.title("Absolute error " + common_title_string, fontsize=10)
 plt.ylabel("absolute error")
 plt.xlabel("log10(h)")
-plt.savefig("abs_err.pdf")
+plt.savefig("abs_err_vs_log10_h.pdf")
 
-# Plot relative error
+# Plot absolute error vs h on log-log axes
+plt.figure(figsize=(figwidth, figheight))
+plt.plot(h, abs_err, '--', c="0.8", linewidth=1.5)
+plt.plot(h, abs_err, '.', c="black", markersize=10)
+plt.title("Absolute error " + common_title_string, fontsize=10)
+plt.ylabel("absolute error")
+plt.xlabel("h")
+plt.xscale("log")
+plt.yscale("log")
+plt.savefig("abs_err_vs_h_loglog.pdf")
+
+# Plot relative error vs log10(h)
 plt.figure(figsize=(figwidth, figheight))
 plt.plot(log10_h, rel_err, '--', c="0.8", linewidth=1.5)
 plt.plot(log10_h, rel_err, '.', c="black", markersize=10)
 plt.title("Relative error " + common_title_string, fontsize=10)
 plt.ylabel("relative error")
 plt.xlabel("log10(h)")
-plt.savefig("rel_err.pdf")
+plt.savefig("rel_err_vs_log10_h.pdf")
 
-# Plot log10(relative error)
+# Plot log10(relative error) vs log10(h)
 plt.figure(figsize=(figwidth, figheight))
 plt.plot(log10_h, log10_rel_err, '--', c="0.8", linewidth=1.5)
 plt.plot(log10_h, log10_rel_err, '.', c="black", markersize=10)
 plt.title("Log10(relative error) " + common_title_string, fontsize=10)
 plt.ylabel("log10(relative error)")
 plt.xlabel("log10(h)")
-plt.savefig("log10_rel_err.pdf")
+plt.savefig("log10_rel_err_vs_log10_h.pdf")
 
-# Alternative way of making log-log plot for relative error
+# Plot relative error vs h on log-log axes
 plt.figure(figsize=(figwidth, figheight))
 plt.plot(h, rel_err, '--', c="0.8", linewidth=1.5)
 plt.plot(h, rel_err, '.', c="black", markersize=10)
@@ -65,5 +85,5 @@ plt.ylabel("relative error")
 plt.xlabel("h")
 plt.xscale("log")
 plt.yscale("log")
-plt.savefig("log10_rel_err_v2.pdf")
+plt.savefig("rel_err_vs_h_loglog.pdf")
 
