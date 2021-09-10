@@ -1,4 +1,5 @@
-# Example code structure to reduce code repetition
+Example code structure to reduce code repetition
+------------------------------------------------
 
 There are different opinions on what code structure is preferrable, but
 a common standard is that too much code repetition should be avoided. 
@@ -22,8 +23,8 @@ code repitition:
   below.
 
 With this setup you can typically write reasonably short and clear main programs that 
-each just do a single task / answer a single question, since the common code needed by all
-main programs have been put in a separate file.
+each just do a small number of tasks (or answer a small number of questions) since the 
+common code needed by all main programs have been put into some other files.
 
 
 The example in this folder has two header files in the include directory:
@@ -56,7 +57,8 @@ main programs by just including the relevant header files.
 
 
 
-# How to build and run the examples
+How to build and run the examples
+---------------------------------
 
 - main_test_algo_one.cpp
   
