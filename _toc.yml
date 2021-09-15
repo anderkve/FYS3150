@@ -73,6 +73,7 @@ parts:
   - caption: Projects
     chapters:
       - file: book/projects/project1
+      - file: book/projects/project2
 
 
 
