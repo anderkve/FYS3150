@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project 1 &#8212; FYS3150/FYS4150 course material</title>
+    <title>Project 2 &#8212; FYS3150/FYS4150 course material</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,8 +53,7 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Project 2" href="project2.html" />
-    <link rel="prev" title="Introduction to LaTeX" href="../writing_reports/introduction_to_latex.html" />
+    <link rel="prev" title="Project 1" href="project1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -311,13 +310,13 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="project1.html">
    Project 1
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="project2.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Project 2
   </a>
  </li>
@@ -362,7 +361,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/book/projects/project1.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/book/projects/project2.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -382,7 +381,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Fbook/projects/project1.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Fbook/projects/project2.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -411,11 +410,6 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#practicalities">
    Practicalities
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#preliminaries">
-   Preliminaries
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -464,23 +458,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-8">
-     Problem 8
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-9">
-     Problem 9
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-10">
-     Problem 10
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-11">
-     Problem 11
+    <a class="reference internal nav-link" href="#problem-8-if-you-have-time">
+     Problem 8 (if you have time)
     </a>
    </li>
   </ul>
@@ -501,208 +480,182 @@
         
               <div>
                 
-  <div class="section" id="project-1">
-<h1>Project 1<a class="headerlink" href="#project-1" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="project-2">
+<h1>Project 2<a class="headerlink" href="#project-2" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="practicalities">
 <h2>Practicalities<a class="headerlink" href="#practicalities" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><strong>Deadline</strong>: Monday, September 13.</p></li>
+<li><p><strong>Deadline</strong>: Monday, September 27, 23:59.</p></li>
 <li><p><strong>Format:</strong></p>
 <ul>
 <li><p>A pdf document, typeset in LaTeX, with answers to all the problems below. You deliver the pdf on Canvas.</p></li>
 <li><p>Code (with comments, of course) on a GitHub repo, with the repo link provided in the pdf documentet.</p></li>
+<li><p>You <em>must</em> deliver via your group on Canvas (even if you are working alone).</p></li>
 </ul>
 </li>
-<li><p><strong>Not a complete report:</strong> For project 1 we do not require you to write a proper scientific report — only a document with an answer for each problem. But the quality of the presentation still matters, of course. So pay attention to figures, figure captions, grammar, etc.</p></li>
-<li><p><strong>Collaboration:</strong> If you are collaborating with others (<em>and we hope you are!</em>) you <em>must</em> register a group on Canvas. The group hands in a single pdf. Remember to list everyone’s name in the pdf.</p></li>
-<li><p><strong>Reproducibility:</strong> Your code should be available on a GitHub repo. You can refer to relevant parts of your code in your answers. Make sure to include a README file in the repo that explains how the code should be compiled and run in order to reproduce your results.</p></li>
+<li><p><strong>Not a complete report:</strong> For project 2 we do not require you to write a proper scientific report — only a document with an answer for each problem. But the quality of the presentation still matters, of course. So pay attention to figures, figure captions, grammar, etc.</p></li>
+<li><p><strong>Collaboration:</strong> We <em>strongly</em> encourage you to collaborate with others, in groups up to four students. The group hands in a single pdf. Remember to list everyone’s name in the pdf.</p></li>
+<li><p><strong>Reproducibility:</strong> Your code should be available on a GitHub repo. You can refer to relevant parts of your code in your answers. Make sure to include a README file in the repo that briefly explains how the code is organized, and how it should be compiled and run in order to reproduce your results.</p></li>
 <li><p><strong>Figures:</strong> Figures included in your LaTeX document should be made as vector graphics (e.g. <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> files), rather than raster graphics (e.g. <code class="docutils literal notranslate"><span class="pre">.png</span></code> files). If you are making plots with <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> in Python, this is as simple as calling <code class="docutils literal notranslate"><span class="pre">plt.savefig(&quot;figure.pdf&quot;)</span></code> rather than <code class="docutils literal notranslate"><span class="pre">plt.savefig(&quot;figure.png&quot;)</span></code>.</p></li>
-</ul>
-</div>
-<div class="section" id="preliminaries">
-<h2>Preliminaries<a class="headerlink" href="#preliminaries" title="Permalink to this headline">¶</a></h2>
-<ul>
-<li><p>If you’re not familiar with using the terminal, we recommend taking the time to work through the examples on the terminal <a class="reference internal" href="../using_the_terminal/basics.html"><span class="doc std std-doc">basics</span></a> page, and look at the <a class="reference internal" href="../using_the_terminal/keyboard_shortcuts.html"><span class="doc std std-doc">keyboard shortcuts</span></a>.</p></li>
-<li><p>Similarly, if you’ve not used git before, it’s a good idea to learn some of the basics before jumping into the project. See the links on the left-hand side.</p></li>
-<li><p>The most important C++ aspects for this project are:</p>
-<ul class="simple">
-<li><p>basic C++ program structure</p></li>
-<li><p>compiliation and linking</p></li>
-<li><p>functions</p></li>
-<li><p>vectors/arrays (examples of <em>containers</em>)</p></li>
-<li><p>writing output to screen and/or file</p></li>
-</ul>
-<p>We will discuss these topics in the lectures, and our discussions there will largely be based on the “Introduction to C++” pages on the left (which are currently under development.)</p>
-</li>
+<li><p><strong>We recommend using Armadillo:</strong> For this project we recommend using Armadillo to work with matrices and vectors.</p></li>
 </ul>
 </div>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>The overall topic of this project is numerical solution of the one-dimensional Poisson equation. This is a second-order differential equation that shows up in several areas of physics, e.g. electrostatics. In future projects we will pay close attention to scaling of dimensionfull physics equations, but for this first project we start directly from the differential equation <em>after</em> scaling to dimensionless variables.</p>
-<p>The one-dimensional Poisson equation can be written as</p>
-<div class="math notranslate nohighlight" id="equation-poisson-eq">
-<span class="eqno">(1)<a class="headerlink" href="#equation-poisson-eq" title="Permalink to this equation">¶</a></span>\[ 
--\frac{d^2 u}{dx^2} = f(x).
-\]</div>
-<p>Here <span class="math notranslate nohighlight">\(f(x)\)</span> is a known function (the <em>source term</em>). Our task is to find the function <span class="math notranslate nohighlight">\(u(x)\)</span> that satisfies this equation for a given boundary condition. The specific setup we will assume is the following:</p>
+<p>The main topics of this project are</p>
 <ul class="simple">
-<li><p>source term: <span class="math notranslate nohighlight">\(f(x) = 100 e^{-10 x}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(x\)</span> range: <span class="math notranslate nohighlight">\(x \in [0,1]\)</span></p></li>
-<li><p>boundary condition: <span class="math notranslate nohighlight">\(u(0) = 0\)</span> and <span class="math notranslate nohighlight">\(u(1) = 0\)</span></p></li>
+<li><p>scaling of equations</p></li>
+<li><p>eigenvalue problems</p></li>
+<li><p>code testing (<em>unit testing</em>).</p></li>
 </ul>
+<p>Our example of an eigenvalue problem is a special case of a one-dimensional buckling beam. Consider the following situation:</p>
+<ul class="simple">
+<li><p>A horisontal beam of length <span class="math notranslate nohighlight">\(L\)</span>.</p></li>
+<li><p>We let <span class="math notranslate nohighlight">\(u(x)\)</span> be the vertical displacement of the beam at horizontal position <span class="math notranslate nohighlight">\(x\)</span>, with <span class="math notranslate nohighlight">\(x \in [0,L]\)</span>.</p></li>
+<li><p>A force <span class="math notranslate nohighlight">\(F\)</span> is applied at the endpoint (<span class="math notranslate nohighlight">\(x=L\)</span>), <em>directed into the beam</em>, i.e. towards <span class="math notranslate nohighlight">\(x=0\)</span>.</p></li>
+<li><p>The beam is fastened with <em>pin endpoints</em>, meaning that <span class="math notranslate nohighlight">\(u(0)=0\)</span> and <span class="math notranslate nohighlight">\(u(L)=0\)</span>, but the endpoints are allowed to rotate (<span class="math notranslate nohighlight">\(u'(x) \neq 0\)</span>).</p></li>
+</ul>
+<p>We can then describe this situation with the second-order differential equation</p>
+<div class="math notranslate nohighlight" id="equation-bb-eq-1">
+<span class="eqno">(4)<a class="headerlink" href="#equation-bb-eq-1" title="Permalink to this equation">¶</a></span>\[ 
+\gamma \frac{d^2 u(x)}{dx^2} = - F u(x),
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\gamma\)</span> is some constant defined by material properties. However, the equation we will actually be working with is the scaled equation</p>
+<div class="math notranslate nohighlight" id="equation-bb-eq-2">
+<span class="eqno">(5)<a class="headerlink" href="#equation-bb-eq-2" title="Permalink to this equation">¶</a></span>\[ 
+\frac{d^2 u(\hat{x})}{d\hat{x}^2} = - \lambda u(\hat{x}),
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\hat{x} \equiv x/L\)</span> is a dimensionless (unitless) varible, <span class="math notranslate nohighlight">\(\hat{x} \in [0,1]\)</span>, and <span class="math notranslate nohighlight">\(\lambda = \frac{F L^2}{\gamma}\)</span>. (See problem 1.)</p>
+<hr class="docutils" />
+<p><strong>Discretization:</strong> We discretize this by dividing our <span class="math notranslate nohighlight">\(\hat{x}\)</span> range into <span class="math notranslate nohighlight">\(n\)</span> parts, i.e. we will have <span class="math notranslate nohighlight">\(n+1\)</span> points <span class="math notranslate nohighlight">\(\hat{x}_0\)</span>, <span class="math notranslate nohighlight">\(\hat{x}_1\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(\hat{x}_{n-1}\)</span>, <span class="math notranslate nohighlight">\(\hat{x}_{n}\)</span>. Thus we have a stepsize</p>
+<div class="math notranslate nohighlight">
+\[
+h = \frac{\hat{x}_{\text{max}} - \hat{x}_{\text{min}}}{n} = \frac{1 - 0}{n} = \frac{1}{n}
+\]</div>
+<p>and our <span class="math notranslate nohighlight">\(\hat{x}_i\)</span> points are given by</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{x}_i = \hat{x}_0 + ih, \quad i=0,1,\ldots,n.
+\]</div>
+<p>From this dicretization we get the following set of equations for <span class="math notranslate nohighlight">\(v_i\)</span> (our approximations to the exact <span class="math notranslate nohighlight">\(u_i\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{-v_{i+1} + 2v_i -v_{i-1}}{h^2} = \lambda v_i.
+\]</div>
+<p>By inserting the boundary conditions <span class="math notranslate nohighlight">\(v_0=0\)</span> and <span class="math notranslate nohighlight">\(v_n=0\)</span> we can write this as the linear algebra eigenvalue problem</p>
+<div class="math notranslate nohighlight" id="equation-bb-eq-3">
+<span class="eqno">(6)<a class="headerlink" href="#equation-bb-eq-3" title="Permalink to this equation">¶</a></span>\[
+\mathbf{A} \vec{v} = \lambda \vec{v}
+\]</div>
+<p>where</p>
+<ul class="simple">
+<li><p>the elements of the vector <span class="math notranslate nohighlight">\(\vec{v}\)</span> are <span class="math notranslate nohighlight">\(\vec{v} = [v_1, \ldots, v_{n-1}]\)</span>; and</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is tridiag(<span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(d\)</span>, <span class="math notranslate nohighlight">\(a\)</span>), with</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(a = -1/h^2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(d = 2/h^2\)</span></p></li>
+</ul>
+</li>
+<li><p><em>Note:</em> In contrast to project 1, we here keep the factor <span class="math notranslate nohighlight">\(1/h^2\)</span> as part of the definition of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>.</p></li>
+</ul>
+<p>To solve this matrix equation means finding the pairs of eigenvalues and eigenvectors, (<span class="math notranslate nohighlight">\(\lambda^{(i)}, \vec{v}^{(i)}\)</span>), that satify Eq. <a class="reference internal" href="#equation-bb-eq-3">(6)</a>. These eigenvectors are then our discretized approximations to the true <em>eigenfunctions</em> <span class="math notranslate nohighlight">\(u^{(i)}(\hat{x})\)</span> that are the solutions of the differential equation in Eq. <a class="reference internal" href="#equation-bb-eq-2">(5)</a>.</p>
+<hr class="docutils" />
+<p><strong>Notation:</strong> We will use <span class="math notranslate nohighlight">\(N\)</span> to denote the size of the matrix, so that <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is an <span class="math notranslate nohighlight">\(N \times N\)</span> matrix, and <span class="math notranslate nohighlight">\(\vec{v}\)</span> a column vector of length <span class="math notranslate nohighlight">\(N\)</span>. Make sure not to confuse <span class="math notranslate nohighlight">\(N\)</span> with the number of <em>steps</em> in our discretization of <span class="math notranslate nohighlight">\(\hat{x}\)</span> (<span class="math notranslate nohighlight">\(n\)</span> steps), or the number of <span class="math notranslate nohighlight">\(\hat{x}_i\)</span> points (<span class="math notranslate nohighlight">\(n+1\)</span> points). They are related as <span class="math notranslate nohighlight">\(N = n-1\)</span>.</p>
+<hr class="docutils" />
+<p><strong>Analytical solutions:</strong> For a given matrix size <span class="math notranslate nohighlight">\(N \times N\)</span>, the eigenvalue problem in Eq. <a class="reference internal" href="#equation-bb-eq-3">(6)</a> with the tridiagonal matrix <span class="math notranslate nohighlight">\(\mathbf{A} = \text{tridiag}(a,d,a)\)</span> has the following set of analytical eigenvalues and eigenvectors:</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda^{(i)} = d + 2 a \cos\left(\frac{i \pi}{N+1}\right), \quad i = 1,\ldots,N
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\vec{v}^{(i)} = \left[\sin\left(\frac{i \pi}{N+1}\right), \sin\left(\frac{2 i \pi}{N+1}\right), \ldots, \sin\left(\frac{N i \pi}{N+1}\right)\right]^T,\quad i = 1,\ldots,N
+\]</div>
+<hr class="docutils" />
+<p><strong>Scaling of eigenvectors:</strong> Remember that if <span class="math notranslate nohighlight">\(\vec{v}\)</span> is an eigenvector of <span class="math notranslate nohighlight">\(\mathbf{A} \vec{v} = \lambda \vec{v}\)</span>, then a scaled vector <span class="math notranslate nohighlight">\(c \vec{v}\)</span> (where <span class="math notranslate nohighlight">\(c\)</span> is some constant) is an equally good eigenvector. When presenting your results, and when comparing to results from Armadillo, it will be useful to scale each eigenvector to have unit norm (i.e. vector length 1). You can do this easily using the Armadillo function <code class="docutils literal notranslate"><span class="pre">arma::normalise</span></code> described <a class="reference external" href="http://arma.sourceforge.net/docs.html#normalise">here</a>.</p>
 </div>
 <div class="section" id="problems">
 <h2>Problems<a class="headerlink" href="#problems" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="problem-1">
 <h3>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this headline">¶</a></h3>
-<p>Check analytically that an exact solution to Eq. <a class="reference internal" href="#equation-poisson-eq">(1)</a> is given by</p>
-<div class="math notranslate nohighlight" id="equation-exact-solution">
-<span class="eqno">(2)<a class="headerlink" href="#equation-exact-solution" title="Permalink to this equation">¶</a></span>\[
-u(x) = 1 - (1 - e^{-10}) x - e^{-10 x}.
-\]</div>
+<p>With the definition <span class="math notranslate nohighlight">\(\hat{x} \equiv x/L\)</span>, show that Eq. <a class="reference internal" href="#equation-bb-eq-1">(4)</a> can be written as Eq. <a class="reference internal" href="#equation-bb-eq-2">(5)</a>.</p>
 </div>
 <div class="section" id="problem-2">
 <h3>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this headline">¶</a></h3>
-<p>Make a plot of the exact solution above, using the following strategy:</p>
+<p>Jacobi’s rotation algorithm is based on an important property of orthogonal transformations that we will show here. Assume that</p>
 <ul class="simple">
-<li><p>Write a program that defines an array of <span class="math notranslate nohighlight">\(x\)</span> values, evaluates the exact solution <span class="math notranslate nohighlight">\(u(x)\)</span> above for these points, and outputs the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(u(x)\)</span> values as two columns in a data file. The numbers should be written to file in scientific notation and with a fixed number of decimals. (Choose a sensible number.)</p></li>
-<li><p>Write a short plotting script (we recommend Python for this) that reads the data file and generates the plot.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\vec{v}_i\)</span> is a set of <em>orthonormal</em> basis vectors, i.e. that <span class="math notranslate nohighlight">\(\vec{v}_i^T \cdot \vec{v}_j = \delta_{ij}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{U}\)</span> is an <em>orthogonal</em> transformation matrix, i.e. that <span class="math notranslate nohighlight">\(\mathbf{U}^T = \mathbf{U}^{-1}\)</span>.</p></li>
 </ul>
+<p>Show that transformations with <span class="math notranslate nohighlight">\(\mathbf{U}\)</span> preserves orthonormality, i.e. show that the set of vectors <span class="math notranslate nohighlight">\(\vec{w}_i = \mathbf{U} \vec{v}_i\)</span> is also an orthonormal set.</p>
 </div>
 <div class="section" id="problem-3">
 <h3>Problem 3<a class="headerlink" href="#problem-3" title="Permalink to this headline">¶</a></h3>
-<p>Derive a discretized version of the Possion equation. You don’t have to show every step of your derivation, but include the main steps and a couple of sentences to explain the logic.</p>
-<p><em>Notation:</em> Make sure that your notation clearly distinguishes the <em>discretized approximation to <span class="math notranslate nohighlight">\(u(x)\)</span></em> from the <em>actual exact <span class="math notranslate nohighlight">\(u(x)\)</span></em>. Here we will use <span class="math notranslate nohighlight">\(v\)</span> to represent an approximation to <span class="math notranslate nohighlight">\(u\)</span>.</p>
+<p>Before we get started with implementing the Jacobi rotation algorithm, let’s make sure that we can set up the tridiagonal matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> correctly. So, write a short program that:</p>
+<ul class="simple">
+<li><p>sets up the tridiagonal <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> for <span class="math notranslate nohighlight">\(N=6\)</span>;</p></li>
+<li><p>solves <span class="math notranslate nohighlight">\(\mathbf{A} \vec{v} = \lambda \vec{v}\)</span> using Armadillo’s <code class="docutils literal notranslate"><span class="pre">arma::eig_sym</span></code>, described <a class="reference external" href="http://arma.sourceforge.net/docs.html#eig_sym">here</a>;</p></li>
+<li><p>checks that the eigenvalues and eigenvectors from Armadillo agrees with the analytical result for <span class="math notranslate nohighlight">\(N=6\)</span>. (Remember scaling of eigenvectors, as discussed above.)</p></li>
+</ul>
 </div>
 <div class="section" id="problem-4">
 <h3>Problem 4<a class="headerlink" href="#problem-4" title="Permalink to this headline">¶</a></h3>
-<p>Show that you can rewrite your discretized equation as a matrix equation on the form</p>
-<div class="math notranslate nohighlight" id="equation-matrix-eq">
-<span class="eqno">(3)<a class="headerlink" href="#equation-matrix-eq" title="Permalink to this equation">¶</a></span>\[
-\mathbf{A} \vec{v} = \vec{g}
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is a tridiagonal matrix with the subdiagonal, main diagonal and superdiagonal specified by the signature <span class="math notranslate nohighlight">\((-1,2,-1)\)</span>.</p>
-<p>Make sure to specify how an element of <span class="math notranslate nohighlight">\(\vec{g}\)</span> is related to the variables in the original differential equation.</p>
+<p>An important part of the Jacobi algorithm is to have a function that can identify the largest (in absolute value) off-diagonal element of a matrix. Here we specialize to the case of a <em>symmetric</em> matrix.</p>
+<p><strong>a)</strong> Write a C++ function that can identify the largest off-diagonal element of a matrix. A suggestion is to write a function that</p>
+<ul class="simple">
+<li><p>has return type <code class="docutils literal notranslate"><span class="pre">double</span></code></p></li>
+<li><p>takes an Armadillo matrix as input</p></li>
+<li><p>takes <em>references</em> to two integers as input</p></li>
+<li><p>identifies the largest off-diagonal element in the matrix (under the assumption of a symmetric matrix)</p></li>
+<li><p>writes the matrix indices for this element to the two integer elements</p></li>
+<li><p>returns the value of this matrix element</p></li>
+</ul>
+<p>A simple function signature could then be</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">max_offdiag_symmetric</span><span class="p">(</span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span> <span class="n">A</span><span class="p">,</span> <span class="kt">int</span><span class="o">&amp;</span> <span class="n">k</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">l</span><span class="p">),</span>
+</pre></div>
+</div>
+<p>Or, to avoid copying the (potentially large) matrix A every time we run the function, we could simply pass in a reference to A. Since the function <code class="docutils literal notranslate"><span class="pre">max_offdiag_symmetric</span></code> won’t be modifying the matrix in any way, we should make this explicit by using a <code class="docutils literal notranslate"><span class="pre">const</span></code> reference, like this:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">max_offdiag_symmetric</span><span class="p">(</span><span class="k">const</span> <span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="o">&amp;</span> <span class="n">A</span><span class="p">,</span> <span class="kt">int</span><span class="o">&amp;</span> <span class="n">k</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>b)</strong> Write a small test code that tests the above function using the matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A = 
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0.5\\
+0 &amp; 1 &amp; -0.7 &amp; 0\\
+0 &amp; -0.7 &amp; 1 &amp; 0\\
+0.5 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\end{split}\]</div>
 </div>
 <div class="section" id="problem-5">
 <h3>Problem 5<a class="headerlink" href="#problem-5" title="Permalink to this headline">¶</a></h3>
-<p>Let the vector <span class="math notranslate nohighlight">\(\vec{v}^*\)</span> of length <span class="math notranslate nohighlight">\(m\)</span> represent a complete solution of the discretized Poisson equation, with corresponding <span class="math notranslate nohighlight">\(x\)</span> values given by the lenght-<span class="math notranslate nohighlight">\(m\)</span> vector <span class="math notranslate nohighlight">\(\vec{x}\)</span>. Let <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> be an <span class="math notranslate nohighlight">\(n \times n\)</span> matrix.</p>
-<p><strong>a)</strong> How is <span class="math notranslate nohighlight">\(n\)</span> related to <span class="math notranslate nohighlight">\(m\)</span>?</p>
-<p><strong>b)</strong> What part of the complete solution <span class="math notranslate nohighlight">\(\vec{v}^*\)</span> do we find when we solve Eq. <a class="reference internal" href="#equation-matrix-eq">(3)</a> for <span class="math notranslate nohighlight">\(\vec{v}\)</span>?</p>
+<p><strong>a)</strong> Write a code implementation of Jacobi’s rotation algorithm for solving Eq. <a class="reference internal" href="#equation-bb-eq-3">(6)</a>. See the code snippets at the end of this page for a suggested code structure.</p>
+<p><strong>b)</strong> Let <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> be of size <span class="math notranslate nohighlight">\(6 \times 6\)</span>. Test your code by checking that the eigenvalues and eigenvectors you get agree with the analytical results for <span class="math notranslate nohighlight">\(N=6\)</span>.</p>
 </div>
 <div class="section" id="problem-6">
 <h3>Problem 6<a class="headerlink" href="#problem-6" title="Permalink to this headline">¶</a></h3>
-<p>Now we’ll forget about the Poisson equation for a moment, and simply consider
-the equation <span class="math notranslate nohighlight">\(\mathbf{A} \vec{v} = \vec{g}\)</span> where <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is a <em>general</em> tridiagonal matrix, with vectors
-<span class="math notranslate nohighlight">\(\vec{a}\)</span>, <span class="math notranslate nohighlight">\(\vec{b}\)</span> and <span class="math notranslate nohighlight">\(\vec{c}\)</span> representing the subdiagonal, main diagonal and superdiagonal, respectively.
-That <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is a general tridiagonal matrix means that every element of <span class="math notranslate nohighlight">\(\vec{a}\)</span>, <span class="math notranslate nohighlight">\(\vec{b}\)</span> and <span class="math notranslate nohighlight">\(\vec{c}\)</span> can be different.</p>
-<p><strong>a)</strong> Write down an algorithm for solving <span class="math notranslate nohighlight">\(\mathbf{A} \vec{v} = \vec{g}\)</span>.</p>
-<p><strong>b)</strong> Find the number of floating-point operations (FLOPs) for this algorithm.</p>
-<p>We’ll refer to this algorithm as the <em>general algorithm</em>.</p>
+<p>Now let’s look at how many similarity transformations we need before we reach a result where all non-diagonal matrix elements are close to zero.</p>
+<p><strong>a)</strong> Try to estimate how the number of required transformations scale with the matrix size <span class="math notranslate nohighlight">\(N\)</span> for your code when solving Eq. <a class="reference internal" href="#equation-bb-eq-3">(6)</a>. Present your scaling data either in a table or a plot (or both).</p>
+<p><strong>b)</strong> What scaling behaviour would you expect to see if <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> was a dense matrix?</p>
 </div>
 <div class="section" id="problem-7">
 <h3>Problem 7<a class="headerlink" href="#problem-7" title="Permalink to this headline">¶</a></h3>
-<p>Now we get back to the Poisson equation.</p>
-<p><strong>a)</strong> Write a program that</p>
-<ul class="simple">
-<li><p>uses the <em>general algorithm</em> to solve <span class="math notranslate nohighlight">\(\mathbf{A} \vec{v} = \vec{g}\)</span>,
-where <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is the tridiagonal matrix from Problem 4;</p></li>
-<li><p>writes the solution <span class="math notranslate nohighlight">\(\vec{v}\)</span> and corresponding <span class="math notranslate nohighlight">\(\vec{x}\)</span> (plus any other data you find useful) to a file.</p></li>
-</ul>
-<p><strong>b)</strong> With <span class="math notranslate nohighlight">\(n\)</span> being the number of grid points, run your program for <span class="math notranslate nohighlight">\(n=10,100,1000,\ldots\)</span> (as far as you think is reasonable) and make a plot that compares your numeric solutions for different values of <span class="math notranslate nohighlight">\(n\)</span> against the exact solution for <span class="math notranslate nohighlight">\(u(x)\)</span> in Eq. <a class="reference internal" href="#equation-exact-solution">(2)</a>.</p>
+<p><strong>a)</strong> For a discretization of <span class="math notranslate nohighlight">\(\hat{x}\)</span> with <span class="math notranslate nohighlight">\(n=10\)</span> steps, solve Eq. <a class="reference internal" href="#equation-bb-eq-3">(6)</a> using your Jacobi code and make a plot of the three eigenvectors corresponding to the three lowest eigenvalues. The plot should show vector elements <span class="math notranslate nohighlight">\(v_i\)</span> against the corresponding positions <span class="math notranslate nohighlight">\(\hat{x}_i\)</span>.</p>
+<p>Since we are effectively showing the solutions to a differential equation, your plot should also include the boundary points <span class="math notranslate nohighlight">\((\hat{x}_0, v_0)\)</span> and <span class="math notranslate nohighlight">\((\hat{x}_n, v_n)\)</span>.</p>
+<p>Plot the corresponding analytical eigenvectors (extended with the boundary points) in the same plot.</p>
+<p><strong>b)</strong> Make the same plot for discretization of <span class="math notranslate nohighlight">\(\hat{x}\)</span> with <span class="math notranslate nohighlight">\(n=100\)</span> steps.</p>
 </div>
-<div class="section" id="problem-8">
-<h3>Problem 8<a class="headerlink" href="#problem-8" title="Permalink to this headline">¶</a></h3>
-<p><strong>a)</strong> Make a plot that shows the (logarithm of) the <em>absolute</em> error,</p>
-<div class="math notranslate nohighlight">
-\[
-\log_{10}(\Delta_i) = \log_{10}(|u_i - v_i|)
-\]</div>
-<p>as a function of <span class="math notranslate nohighlight">\(x_i\)</span>. Show <span class="math notranslate nohighlight">\(\log_{10}(\Delta_i)\)</span> for different choices of <span class="math notranslate nohighlight">\(n\)</span> as different graphs in the same plot.</p>
-<p><strong>b)</strong> Similarly, make a plot of the <em>relative</em> error</p>
-<div class="math notranslate nohighlight">
-\[
-\log_{10}(\epsilon_i) = \log_{10}\left(\left| \frac{u_i - v_i}{u_i} \right| \right) 
-\]</div>
-<p>as function of <span class="math notranslate nohighlight">\(x_i\)</span>. Again, one graph per choice of <span class="math notranslate nohighlight">\(n\)</span>.</p>
-<p><strong>c</strong>) Now make a table that shows the <em>maximum</em> relative error <span class="math notranslate nohighlight">\(\max(\epsilon_i)\)</span> for each choice of <span class="math notranslate nohighlight">\(n\)</span>, up to <span class="math notranslate nohighlight">\(n = 10^7\)</span>. Feel free to also make a plot to visualise this. Comment on your result.</p>
-</div>
-<div class="section" id="problem-9">
-<h3>Problem 9<a class="headerlink" href="#problem-9" title="Permalink to this headline">¶</a></h3>
-<p><strong>a)</strong> Now specialize your algorithm from Problem 6 for our special case where <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is specified by the signature <span class="math notranslate nohighlight">\((-1,2,-1)\)</span>, that is, with <span class="math notranslate nohighlight">\(\vec{a} = (-1,-1,\ldots,-1)\)</span>, <span class="math notranslate nohighlight">\(\vec{b} = (2,2,\ldots,2)\)</span> and <span class="math notranslate nohighlight">\(\vec{c} = (-1,-1,\ldots,-1)\)</span>.</p>
-<p>We’ll refer to this as the <em>special algorithm</em>.</p>
-<p><strong>b)</strong> Find the number of FLOPs for this algorithm.</p>
-<p><strong>c)</strong> Write code that implements this algorithm.</p>
-</div>
-<div class="section" id="problem-10">
-<h3>Problem 10<a class="headerlink" href="#problem-10" title="Permalink to this headline">¶</a></h3>
-<p>For values of <span class="math notranslate nohighlight">\(n\)</span> up to <span class="math notranslate nohighlight">\(n = 10^6\)</span>, run timing tests that compares the time
-used by the general algorithm and the special algorithm. (<em>Remember:</em> reliable timing results require repeated runs for each choice of <span class="math notranslate nohighlight">\(n\)</span>.)
-Make a table or plot to present your timing results, and comment briefly on the results.</p>
-</div>
-<div class="section" id="problem-11">
-<h3>Problem 11<a class="headerlink" href="#problem-11" title="Permalink to this headline">¶</a></h3>
-<p>Now say we wanted to solve our matrix equation using the general
-LU decomposition approach to solving matrix equations.
-(Feel free to try this, either by writing your own code or using a library, e.g. armadillo.)</p>
-<p>What do you expect would happen if you attempted to run code for the case <span class="math notranslate nohighlight">\(n = 10^5\)</span> on your laptop?</p>
+<div class="section" id="problem-8-if-you-have-time">
+<h3>Problem 8 (if you have time)<a class="headerlink" href="#problem-8-if-you-have-time" title="Permalink to this headline">¶</a></h3>
+<p><em>Will add a bonus challenge here</em></p>
 </div>
 </div>
-<hr class="docutils" />
 <div class="section" id="code-snippets">
 <h2>Code snippets<a class="headerlink" href="#code-snippets" title="Permalink to this headline">¶</a></h2>
-<p>Here’s a code example that uses <code class="docutils literal notranslate"><span class="pre">&lt;chrono&gt;</span></code> from the C++ standard library to measure the time used by a part of a program:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;chrono&gt;</span><span class="cp"></span>
-
-<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span> 
-<span class="p">{</span>
-
-  <span class="c1">// ...</span>
-
-  <span class="c1">// Start measuring time</span>
-  <span class="k">auto</span> <span class="n">t1</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">high_resolution_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
-    
-  <span class="c1">//</span>
-  <span class="c1">// The code you want to perform timing on</span>
-  <span class="c1">//</span>
-
-  <span class="c1">// Stop measuring time</span>
-  <span class="k">auto</span> <span class="n">t2</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">high_resolution_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
-   
-  <span class="c1">// Calculate the elapsed time</span>
-  <span class="c1">// We use chrono::duration&lt;double&gt;::count(), which by default returns duration in seconds</span>
-  <span class="kt">double</span> <span class="n">duration_seconds</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">duration</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t2</span> <span class="o">-</span> <span class="n">t1</span><span class="p">).</span><span class="n">count</span><span class="p">();</span>
-
-  <span class="c1">// ...</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>Alternatively, you can use the C library <code class="docutils literal notranslate"><span class="pre">time.h</span></code>. Here’s a code snippet demonstrating that:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;time.h&gt;</span><span class="cp"></span>
-
-<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span> 
-<span class="p">{</span>
-
-  <span class="c1">// ...</span>
-
-  <span class="c1">// Start measuring time</span>
-  <span class="kt">clock_t</span> <span class="n">t1</span> <span class="o">=</span> <span class="n">clock</span><span class="p">();</span>
-   
-  <span class="c1">//</span>
-  <span class="c1">// The code you want to perform timing on</span>
-  <span class="c1">//</span>
-
-  <span class="c1">// Stop measuring time</span>
-  <span class="kt">clock_t</span> <span class="n">t2</span> <span class="o">=</span> <span class="n">clock</span><span class="p">();</span>
-
-  <span class="c1">// Calculate the elapsed time.</span>
-  <span class="kt">double</span> <span class="n">duration_seconds</span> <span class="o">=</span> <span class="p">((</span><span class="kt">double</span><span class="p">)</span> <span class="p">(</span><span class="n">t2</span> <span class="o">-</span> <span class="n">t1</span><span class="p">))</span> <span class="o">/</span> <span class="n">CLOCKS_PER_SEC</span><span class="p">;</span>
-   
-  <span class="c1">// ...</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>(There may appear more useful code snippets here…)</p>
+<p><em>We will add code examples here shortly</em></p>
 </div>
 </div>
 
@@ -731,8 +684,7 @@ LU decomposition approach to solving matrix equations.
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../writing_reports/introduction_to_latex.html" title="previous page">Introduction to LaTeX</a>
-    <a class='right-next' id="next-link" href="project2.html" title="next page">Project 2</a>
+    <a class='left-prev' id="prev-link" href="project1.html" title="previous page">Project 1</a>
 
         </div>
         
