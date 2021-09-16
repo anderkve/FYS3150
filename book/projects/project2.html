@@ -510,17 +510,18 @@
 </ul>
 <p>Our example of an eigenvalue problem is a special case of a one-dimensional buckling beam. Consider the following situation:</p>
 <ul class="simple">
-<li><p>A horisontal beam of length <span class="math notranslate nohighlight">\(L\)</span>.</p></li>
+<li><p>A horizontal beam of length <span class="math notranslate nohighlight">\(L\)</span>.</p></li>
 <li><p>We let <span class="math notranslate nohighlight">\(u(x)\)</span> be the vertical displacement of the beam at horizontal position <span class="math notranslate nohighlight">\(x\)</span>, with <span class="math notranslate nohighlight">\(x \in [0,L]\)</span>.</p></li>
 <li><p>A force <span class="math notranslate nohighlight">\(F\)</span> is applied at the endpoint (<span class="math notranslate nohighlight">\(x=L\)</span>), <em>directed into the beam</em>, i.e. towards <span class="math notranslate nohighlight">\(x=0\)</span>.</p></li>
 <li><p>The beam is fastened with <em>pin endpoints</em>, meaning that <span class="math notranslate nohighlight">\(u(0)=0\)</span> and <span class="math notranslate nohighlight">\(u(L)=0\)</span>, but the endpoints are allowed to rotate (<span class="math notranslate nohighlight">\(u'(x) \neq 0\)</span>).</p></li>
+<li><p>We are <em>not</em> studying a time-dependent system here – we are simply interested in the different static shapes the beam can take due to the applied force.</p></li>
 </ul>
 <p>We can then describe this situation with the second-order differential equation</p>
 <div class="math notranslate nohighlight" id="equation-bb-eq-1">
 <span class="eqno">(4)<a class="headerlink" href="#equation-bb-eq-1" title="Permalink to this equation">¶</a></span>\[ 
 \gamma \frac{d^2 u(x)}{dx^2} = - F u(x),
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\gamma\)</span> is some constant defined by material properties. However, the equation we will actually be working with is the scaled equation</p>
+<p>where <span class="math notranslate nohighlight">\(\gamma\)</span> is some constant defined by material properties like rigidity. However, the equation we will actually be working with is the scaled equation</p>
 <div class="math notranslate nohighlight" id="equation-bb-eq-2">
 <span class="eqno">(5)<a class="headerlink" href="#equation-bb-eq-2" title="Permalink to this equation">¶</a></span>\[ 
 \frac{d^2 u(\hat{x})}{d\hat{x}^2} = - \lambda u(\hat{x}),

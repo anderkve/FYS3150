@@ -29,10 +29,11 @@ The main topics of this project are
 
 Our example of an eigenvalue problem is a special case of a one-dimensional buckling beam. Consider the following situation:
 
-- A horisontal beam of length $L$.
+- A horizontal beam of length $L$.
 - We let $u(x)$ be the vertical displacement of the beam at horizontal position $x$, with $x \in [0,L]$.
 - A force $F$ is applied at the endpoint ($x=L$), *directed into the beam*, i.e. towards $x=0$. 
 - The beam is fastened with *pin endpoints*, meaning that $u(0)=0$ and $u(L)=0$, but the endpoints are allowed to rotate ($u'(x) \neq 0$).
+- We are *not* studying a time-dependent system here -- we are simply interested in the different static shapes the beam can take due to the applied force.
 
 We can then describe this situation with the second-order differential equation
 
@@ -40,7 +41,7 @@ $$
 \gamma \frac{d^2 u(x)}{dx^2} = - F u(x),
 $$ (bb_eq_1)
 
-where $\gamma$ is some constant defined by material properties. However, the equation we will actually be working with is the scaled equation
+where $\gamma$ is some constant defined by material properties like rigidity. However, the equation we will actually be working with is the scaled equation
 
 $$ 
 \frac{d^2 u(\hat{x})}{d\hat{x}^2} = - \lambda u(\hat{x}),
