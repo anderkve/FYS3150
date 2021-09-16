@@ -134,7 +134,7 @@ An important part of the Jacobi algorithm is to have a function that can identif
 - takes an Armadillo matrix as input
 - takes *references* to two integers as input
 - identifies the largest off-diagonal element in the matrix (under the assumption of a symmetric matrix)
-- writes the matrix indices for this element to the two integer elements
+- writes the matrix indices for this element to the two integer references
 - returns the value of this matrix element
 
 A simple function signature could then be 
