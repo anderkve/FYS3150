@@ -656,7 +656,45 @@ A =
 </div>
 <div class="section" id="code-snippets">
 <h2>Code snippets<a class="headerlink" href="#code-snippets" title="Permalink to this headline">¶</a></h2>
-<p><em>We will add code examples here shortly</em></p>
+<p>Here is one possible sketch for the function <code class="docutils literal notranslate"><span class="pre">max_offdiag_symmetric</span></code> discussed above:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// A function that finds the max off-diag element of a symmetric matrix A.</span>
+<span class="c1">// - The matrix indices of the max element are returned by writing to the  </span>
+<span class="c1">//   int references k and l (row and column, respectively)</span>
+<span class="c1">// - The value of the max element A(k,l) is returned as the function</span>
+<span class="c1">//   return value</span>
+<span class="kt">double</span> <span class="nf">max_offdiag_symmetric</span><span class="p">(</span><span class="k">const</span> <span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="o">&amp;</span> <span class="n">A</span><span class="p">,</span> <span class="kt">int</span><span class="o">&amp;</span> <span class="n">k</span><span class="p">,</span> <span class="kt">int</span><span class="o">&amp;</span> <span class="n">l</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">// Get size of the matrix A. Use e.g. A.n_rows, see the Armadillo documentation</span>
+
+  <span class="c1">// Possible consistency checks:</span>
+  <span class="c1">// Check that A is square and larger than 1x1. Here you can for instance use A.is_square(), </span>
+  <span class="c1">// see the Armadillo documentation.</span>
+  <span class="c1">// </span>
+  <span class="c1">// The standard function &#39;assert&#39; from &lt;assert.h&gt; can be useful for quick checks like this </span>
+  <span class="c1">// during the code development phase. Use it like this: assert(some condition),</span>
+  <span class="c1">// e.g assert(a==b). If the condition evaluates to false, the program is killed with </span>
+  <span class="c1">// an assertion error. More info: https://www.cplusplus.com/reference/cassert/assert/</span>
+
+  <span class="c1">// Initialize references k and l to the first off-diagonal element of A</span>
+
+  <span class="c1">// Initialize a double variable &#39;maxval&#39; to A(k,l). We&#39;ll use this variable </span>
+  <span class="c1">// to keep track of the largest off-diag element.</span>
+
+  <span class="c1">// Loop through all elements in the upper triangle of A (not including the diagonal)</span>
+  <span class="c1">// When encountering a matrix element with larger absolute value than the current value of maxval,</span>
+  <span class="c1">// update k, l and max accordingly.</span>
+
+  <span class="c1">// Return maxval </span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Note that this function has some inefficiencies: In an optimized program, you don’t want this
+function to always check that A is square and larger than 1x1 – perhaps you don’t want this
+function to check this at all, but rather just trust the input is is given from your main code.
+But during development, it is often useful to first write code that is fairly self-contained and “safe”
+(makes it easier to debug), and then optimize it afterwards.</p>
+<hr class="docutils" />
+<p><strong>Watch this space for more code examples…</strong></p>
 </div>
 </div>
 
