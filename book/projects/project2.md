@@ -194,11 +194,11 @@ Plot the corresponding analytical eigenvectors (extended with the boundary point
 
 
 
-
+----
 
 ## Code snippets
 
-Here is one possible sketch for the function `max_offdiag_symmetric` discussed above:
+**Finding the max off-diagonal element:** Here is one possible sketch for the function `max_offdiag_symmetric` discussed above:
 
 ```cpp
 // A function that finds the max off-diag element of a symmetric matrix A.
@@ -239,5 +239,111 @@ But during development, it is often useful to first write code that is fairly se
 (makes it easier to debug), and then optimize it afterwards.
 
 -----
+
+**Helper functions for creating tridiagonal matrices:**  A standard task that you will often need is to 
+create a tridiagonal matrix. Why not write a small helper function for doing precisely that? Here's an 
+outline of such a function:
+
+```cpp
+// Create a tridiagonal matrix tridiag(a,d,e) of size n*n, 
+// from scalar input a, d, and e. That is, create a matrix where
+// - all n-1 elements on the subdiagonal have value a
+// - all n elements on the diagonal have value d
+// - all n-1 elements on the superdiagonal have value e
+arma::mat create_tridiagonal(int n, double a, double d, double e)
+{
+  // Start from identity matrix
+  arma::mat A = arma::mat(n, n, arma::fill::eye);
+
+  // Fill the first row (row index 0), e.g.
+  A(0,0) = d;
+  A(0,1) = e;
+
+  // Loop that fills rows 2 to n-1 (row indices 1 to n-2)
+
+  // Fill last row (row index n-1)
+  
+  return A;
+}
+```
+
+Again, there are ways to make this more efficient, e.g. by writing the diagonal elements
+directly when we create the matrix, e.g. 
+
+```cpp
+// Start from identity matrix
+arma::mat A = arma::mat(n, n, arma::fill::eye) * d;
+```
+
+But this function will anyway not be the computational bottleneck of your code, so you might as well 
+keep the code more explicit if you find that easier to read/understand.
+
+Once you have a function `create_tridiagonal`, you could easily add a function specialized to the symmetric case, 
+that simply uses the more general function:
+
+```cpp
+// Create a symmetric tridiagonal matrix tridiag(a,d,a) of size n*n
+// from scalar input a and d.
+arma::mat create_symmetric_tridiagonal(int n, double a, double d)
+{
+  // Call create_tridiagonal and return the result
+  return create_tridiagonal(n, a, d, a);
+}
+```
+
+The above functions assume that all elements on a given sub-, super- or main diagonal are identical. In a more general case
+you would need to pass in three vectors with the relevant matrix elements. Then you could have a set of three helper functions as sketched here:
+
+```cpp
+// Create tridiagonal matrix from vectors.
+// - lower diagonal: vector a, lenght n-1
+// - main diagonal:  vector d, lenght n
+// - upper diagonal: vector e, lenght n-1
+arma::mat create_tridiagonal(const arma::vec& a, const arma::vec& d, const arma::vec& e)
+{
+  // Start from identity matrix
+  arma::mat A = arma::mat(n, n, fill::eye);
+
+  // Fill first row (row index 0)
+
+  // Loop that fills rows 2 to n-1 (row indices 1 to n-2)
+  
+  // Fill last row (row index n-1)
+
+  return A;
+}
+
+
+// Create a tridiagonal matrix tridiag(a,d,e) of size n*n
+// from scalar input a, d and e
+arma::mat create_tridiagonal(int n, double a, double d, double e)
+{
+  arma::vec a_vec = arma::vec(n-1, arma::fill::ones) * a;
+  arma::vec d_vec = arma::vec(n, arma::fill::ones) * d;
+  arma::vec e_vec = arma::vec(n-1, arma::fill::ones) * e;
+
+  // Call the vector version of this function and return the result
+  return create_tridiagonal(a_vec, d_vec, e_vec);
+}
+
+
+// Create a symmetric tridiagonal matrix tridiag(a,d,a) of size n*n
+// from scalar input a and d.
+arma::mat create_symmetric_tridiagonal(int n, double a, double d)
+{
+  // Call create_tridiagonal and return the result
+  return create_tridiagonal(n, a, d, a);
+}
+```
+
+Note:
+
+- Having one function call another like this can help us avoid duplicating 
+  what would have been almost identical code in multiple functions.
+
+- In C++ you can have multiple functions with the same function name (here `create_tridiagonal`)
+  as long as the set of input arguments are different. This is known as **function overloading**.
+
+----
 
 **Watch this space for more code examples...**
