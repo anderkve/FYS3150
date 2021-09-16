@@ -198,6 +198,36 @@ Plot the corresponding analytical eigenvectors (extended with the boundary point
 
 ## Code snippets
 
+**A suggested code structure:** There are many ways of designing the code for this project. The three function declarations (and descriptions) below give a hint of one possible approach:
+
+```cpp
+// Determine the the max off-diagonal element of a symmetric matrix A
+// - Saves the matrix element indicies to k and l 
+// - Returns absolute value of A(k,l) as the function return value
+double max_offdiag_symmetric(const arma::mat& A, int& k, int& l);
+
+// Performs a single Jacobi rotation, to "rotate away"
+// the off-diagonal element at A(k,l).
+// - Assumes symmetric matrix, so we only consider k < l
+// - Modifies the input matrices A and R
+void jacobi_rotate(arma::mat& A, arma::mat& R, int k, int l);
+
+// Jacobi method eigensolver:
+// - Runs jacobo_rotate until max off-diagonal element < eps
+// - Writes the eigenvalues as entries in the vector "eigenvalues"
+// - Writes the eigenvectors as columns in the matrix "eigenvectors"
+// - Stops if it the number of iterations reaches "maxiter"
+// - Writes the number of iterations to the integer "iterations"
+// - Sets the bool reference "converged" to true if convergence was reached before hitting maxiter
+void jacobi_eigensolver(const arma::mat& A, double eps, arma::vec& eigenvalues, arma::mat& eigenvectors, 
+                        const int maxiter, int& iterations, bool& converged);
+```
+
+When such helper functions are in place and working, writing a main program for some specific task is typically not too much work. (Famous last words.) 
+
+----
+
+
 **Finding the max off-diagonal element:** Here is one possible sketch for the function `max_offdiag_symmetric` discussed above:
 
 ```cpp
