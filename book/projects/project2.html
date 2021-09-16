@@ -657,6 +657,31 @@ A =
 <hr class="docutils" />
 <div class="section" id="code-snippets">
 <h2>Code snippets<a class="headerlink" href="#code-snippets" title="Permalink to this headline">¶</a></h2>
+<p><strong>A suggested code structure:</strong> There are many ways of designing the code for this project. The three function declarations (and descriptions) below give a hint of one possible approach:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Determine the the max off-diagonal element of a symmetric matrix A</span>
+<span class="c1">// - Saves the matrix element indicies to k and l </span>
+<span class="c1">// - Returns absolute value of A(k,l) as the function return value</span>
+<span class="kt">double</span> <span class="nf">max_offdiag_symmetric</span><span class="p">(</span><span class="k">const</span> <span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="o">&amp;</span> <span class="n">A</span><span class="p">,</span> <span class="kt">int</span><span class="o">&amp;</span> <span class="n">k</span><span class="p">,</span> <span class="kt">int</span><span class="o">&amp;</span> <span class="n">l</span><span class="p">);</span>
+
+<span class="c1">// Performs a single Jacobi rotation, to &quot;rotate away&quot;</span>
+<span class="c1">// the off-diagonal element at A(k,l).</span>
+<span class="c1">// - Assumes symmetric matrix, so we only consider k &lt; l</span>
+<span class="c1">// - Modifies the input matrices A and R</span>
+<span class="kt">void</span> <span class="nf">jacobi_rotate</span><span class="p">(</span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="o">&amp;</span> <span class="n">A</span><span class="p">,</span> <span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="o">&amp;</span> <span class="n">R</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">,</span> <span class="kt">int</span> <span class="n">l</span><span class="p">);</span>
+
+<span class="c1">// Jacobi method eigensolver:</span>
+<span class="c1">// - Runs jacobo_rotate until max off-diagonal element &lt; eps</span>
+<span class="c1">// - Writes the eigenvalues as entries in the vector &quot;eigenvalues&quot;</span>
+<span class="c1">// - Writes the eigenvectors as columns in the matrix &quot;eigenvectors&quot;</span>
+<span class="c1">// - Stops if it the number of iterations reaches &quot;maxiter&quot;</span>
+<span class="c1">// - Writes the number of iterations to the integer &quot;iterations&quot;</span>
+<span class="c1">// - Sets the bool reference &quot;converged&quot; to true if convergence was reached before hitting maxiter</span>
+<span class="kt">void</span> <span class="nf">jacobi_eigensolver</span><span class="p">(</span><span class="k">const</span> <span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="o">&amp;</span> <span class="n">A</span><span class="p">,</span> <span class="kt">double</span> <span class="n">eps</span><span class="p">,</span> <span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="o">&amp;</span> <span class="n">eigenvalues</span><span class="p">,</span> <span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="o">&amp;</span> <span class="n">eigenvectors</span><span class="p">,</span> 
+                        <span class="k">const</span> <span class="kt">int</span> <span class="n">maxiter</span><span class="p">,</span> <span class="kt">int</span><span class="o">&amp;</span> <span class="n">iterations</span><span class="p">,</span> <span class="kt">bool</span><span class="o">&amp;</span> <span class="n">converged</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>When such helper functions are in place and working, writing a main program for some specific task is typically not too much work. (Famous last words.)</p>
+<hr class="docutils" />
 <p><strong>Finding the max off-diagonal element:</strong> Here is one possible sketch for the function <code class="docutils literal notranslate"><span class="pre">max_offdiag_symmetric</span></code> discussed above:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// A function that finds the max off-diag element of a symmetric matrix A.</span>
 <span class="c1">// - The matrix indices of the max element are returned by writing to the  </span>
