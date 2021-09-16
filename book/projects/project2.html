@@ -654,9 +654,10 @@ A =
 <p><em>Will add a bonus challenge here</em></p>
 </div>
 </div>
+<hr class="docutils" />
 <div class="section" id="code-snippets">
 <h2>Code snippets<a class="headerlink" href="#code-snippets" title="Permalink to this headline">¶</a></h2>
-<p>Here is one possible sketch for the function <code class="docutils literal notranslate"><span class="pre">max_offdiag_symmetric</span></code> discussed above:</p>
+<p><strong>Finding the max off-diagonal element:</strong> Here is one possible sketch for the function <code class="docutils literal notranslate"><span class="pre">max_offdiag_symmetric</span></code> discussed above:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// A function that finds the max off-diag element of a symmetric matrix A.</span>
 <span class="c1">// - The matrix indices of the max element are returned by writing to the  </span>
 <span class="c1">//   int references k and l (row and column, respectively)</span>
@@ -693,6 +694,101 @@ function to always check that A is square and larger than 1x1 – perhaps you do
 function to check this at all, but rather just trust the input is is given from your main code.
 But during development, it is often useful to first write code that is fairly self-contained and “safe”
 (makes it easier to debug), and then optimize it afterwards.</p>
+<hr class="docutils" />
+<p><strong>Helper functions for creating tridiagonal matrices:</strong>  A standard task that you will often need is to
+create a tridiagonal matrix. Why not write a small helper function for doing precisely that? Here’s an
+outline of such a function:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Create a tridiagonal matrix tridiag(a,d,e) of size n*n, </span>
+<span class="c1">// from scalar input a, d, and e. That is, create a matrix where</span>
+<span class="c1">// - all n-1 elements on the subdiagonal have value a</span>
+<span class="c1">// - all n elements on the diagonal have value d</span>
+<span class="c1">// - all n-1 elements on the superdiagonal have value e</span>
+<span class="n">arma</span><span class="o">::</span><span class="n">mat</span> <span class="n">create_tridiagonal</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">double</span> <span class="n">a</span><span class="p">,</span> <span class="kt">double</span> <span class="n">d</span><span class="p">,</span> <span class="kt">double</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">// Start from identity matrix</span>
+  <span class="n">arma</span><span class="o">::</span><span class="n">mat</span> <span class="n">A</span> <span class="o">=</span> <span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">arma</span><span class="o">::</span><span class="n">fill</span><span class="o">::</span><span class="n">eye</span><span class="p">);</span>
+
+  <span class="c1">// Fill the first row (row index 0), e.g.</span>
+  <span class="n">A</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="o">=</span> <span class="n">d</span><span class="p">;</span>
+  <span class="n">A</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">e</span><span class="p">;</span>
+
+  <span class="c1">// Loop that fills rows 2 to n-1 (row indices 1 to n-2)</span>
+
+  <span class="c1">// Fill last row (row index n-1)</span>
+  
+  <span class="k">return</span> <span class="n">A</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Again, there are ways to make this more efficient, e.g. by writing the diagonal elements
+directly when we create the matrix, e.g.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Start from identity matrix</span>
+<span class="n">arma</span><span class="o">::</span><span class="n">mat</span> <span class="n">A</span> <span class="o">=</span> <span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">arma</span><span class="o">::</span><span class="n">fill</span><span class="o">::</span><span class="n">eye</span><span class="p">)</span> <span class="o">*</span> <span class="n">d</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>But this function will anyway not be the computational bottleneck of your code, so you might as well
+keep the code more explicit if you find that easier to read/understand.</p>
+<p>Once you have a function <code class="docutils literal notranslate"><span class="pre">create_tridiagonal</span></code>, you could easily add a function specialized to the symmetric case,
+that simply uses the more general function:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Create a symmetric tridiagonal matrix tridiag(a,d,a) of size n*n</span>
+<span class="c1">// from scalar input a and d.</span>
+<span class="n">arma</span><span class="o">::</span><span class="n">mat</span> <span class="n">create_symmetric_tridiagonal</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">double</span> <span class="n">a</span><span class="p">,</span> <span class="kt">double</span> <span class="n">d</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">// Call create_tridiagonal and return the result</span>
+  <span class="k">return</span> <span class="nf">create_tridiagonal</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The above functions assume that all elements on a given sub-, super- or main diagonal are identical. In a more general case
+you would need to pass in three vectors with the relevant matrix elements. Then you could have a set of three helper functions as sketched here:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Create tridiagonal matrix from vectors.</span>
+<span class="c1">// - lower diagonal: vector a, lenght n-1</span>
+<span class="c1">// - main diagonal:  vector d, lenght n</span>
+<span class="c1">// - upper diagonal: vector e, lenght n-1</span>
+<span class="n">arma</span><span class="o">::</span><span class="n">mat</span> <span class="n">create_tridiagonal</span><span class="p">(</span><span class="k">const</span> <span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="o">&amp;</span> <span class="n">d</span><span class="p">,</span> <span class="k">const</span> <span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="o">&amp;</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">// Start from identity matrix</span>
+  <span class="n">arma</span><span class="o">::</span><span class="n">mat</span> <span class="n">A</span> <span class="o">=</span> <span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">fill</span><span class="o">::</span><span class="n">eye</span><span class="p">);</span>
+
+  <span class="c1">// Fill first row (row index 0)</span>
+
+  <span class="c1">// Loop that fills rows 2 to n-1 (row indices 1 to n-2)</span>
+  
+  <span class="c1">// Fill last row (row index n-1)</span>
+
+  <span class="k">return</span> <span class="n">A</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="c1">// Create a tridiagonal matrix tridiag(a,d,e) of size n*n</span>
+<span class="c1">// from scalar input a, d and e</span>
+<span class="n">arma</span><span class="o">::</span><span class="n">mat</span> <span class="n">create_tridiagonal</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">double</span> <span class="n">a</span><span class="p">,</span> <span class="kt">double</span> <span class="n">d</span><span class="p">,</span> <span class="kt">double</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">arma</span><span class="o">::</span><span class="n">vec</span> <span class="n">a_vec</span> <span class="o">=</span> <span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="p">(</span><span class="n">n</span><span class="mi">-1</span><span class="p">,</span> <span class="n">arma</span><span class="o">::</span><span class="n">fill</span><span class="o">::</span><span class="n">ones</span><span class="p">)</span> <span class="o">*</span> <span class="n">a</span><span class="p">;</span>
+  <span class="n">arma</span><span class="o">::</span><span class="n">vec</span> <span class="n">d_vec</span> <span class="o">=</span> <span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">arma</span><span class="o">::</span><span class="n">fill</span><span class="o">::</span><span class="n">ones</span><span class="p">)</span> <span class="o">*</span> <span class="n">d</span><span class="p">;</span>
+  <span class="n">arma</span><span class="o">::</span><span class="n">vec</span> <span class="n">e_vec</span> <span class="o">=</span> <span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="p">(</span><span class="n">n</span><span class="mi">-1</span><span class="p">,</span> <span class="n">arma</span><span class="o">::</span><span class="n">fill</span><span class="o">::</span><span class="n">ones</span><span class="p">)</span> <span class="o">*</span> <span class="n">e</span><span class="p">;</span>
+
+  <span class="c1">// Call the vector version of this function and return the result</span>
+  <span class="k">return</span> <span class="nf">create_tridiagonal</span><span class="p">(</span><span class="n">a_vec</span><span class="p">,</span> <span class="n">d_vec</span><span class="p">,</span> <span class="n">e_vec</span><span class="p">);</span>
+<span class="p">}</span>
+
+
+<span class="c1">// Create a symmetric tridiagonal matrix tridiag(a,d,a) of size n*n</span>
+<span class="c1">// from scalar input a and d.</span>
+<span class="n">arma</span><span class="o">::</span><span class="n">mat</span> <span class="n">create_symmetric_tridiagonal</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">double</span> <span class="n">a</span><span class="p">,</span> <span class="kt">double</span> <span class="n">d</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">// Call create_tridiagonal and return the result</span>
+  <span class="k">return</span> <span class="nf">create_tridiagonal</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Note:</p>
+<ul class="simple">
+<li><p>Having one function call another like this can help us avoid duplicating
+what would have been almost identical code in multiple functions.</p></li>
+<li><p>In C++ you can have multiple functions with the same function name (here <code class="docutils literal notranslate"><span class="pre">create_tridiagonal</span></code>)
+as long as the set of input arguments are different. This is known as <strong>function overloading</strong>.</p></li>
+</ul>
 <hr class="docutils" />
 <p><strong>Watch this space for more code examples…</strong></p>
 </div>
