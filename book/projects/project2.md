@@ -196,7 +196,48 @@ Plot the corresponding analytical eigenvectors (extended with the boundary point
 
 
 
-
 ## Code snippets
 
-*We will add code examples here shortly*
+Here is one possible sketch for the function `max_offdiag_symmetric` discussed above:
+
+```cpp
+// A function that finds the max off-diag element of a symmetric matrix A.
+// - The matrix indices of the max element are returned by writing to the  
+//   int references k and l (row and column, respectively)
+// - The value of the max element A(k,l) is returned as the function
+//   return value
+double max_offdiag_symmetric(const arma::mat& A, int& k, int& l)
+{
+  // Get size of the matrix A. Use e.g. A.n_rows, see the Armadillo documentation
+
+  // Possible consistency checks:
+  // Check that A is square and larger than 1x1. Here you can for instance use A.is_square(), 
+  // see the Armadillo documentation.
+  // 
+  // The standard function 'assert' from <assert.h> can be useful for quick checks like this 
+  // during the code development phase. Use it like this: assert(some condition),
+  // e.g assert(a==b). If the condition evaluates to false, the program is killed with 
+  // an assertion error. More info: https://www.cplusplus.com/reference/cassert/assert/
+
+  // Initialize references k and l to the first off-diagonal element of A
+
+  // Initialize a double variable 'maxval' to A(k,l). We'll use this variable 
+  // to keep track of the largest off-diag element.
+
+  // Loop through all elements in the upper triangle of A (not including the diagonal)
+  // When encountering a matrix element with larger absolute value than the current value of maxval,
+  // update k, l and max accordingly.
+
+  // Return maxval 
+}
+```
+
+Note that this function has some inefficiencies: In an optimized program, you don't want this
+function to always check that A is square and larger than 1x1 -- perhaps you don't want this 
+function to check this at all, but rather just trust the input is is given from your main code.
+But during development, it is often useful to first write code that is fairly self-contained and "safe" 
+(makes it easier to debug), and then optimize it afterwards.
+
+-----
+
+**Watch this space for more code examples...**
