@@ -216,6 +216,7 @@ void jacobi_rotate(arma::mat& A, arma::mat& R, int k, int l);
 // - Runs jacobo_rotate until max off-diagonal element < eps
 // - Writes the eigenvalues as entries in the vector "eigenvalues"
 // - Writes the eigenvectors as columns in the matrix "eigenvectors"
+//   (The returned eigenvalues and eigenvectors are sorted using arma::sort_index)
 // - Stops if it the number of iterations reaches "maxiter"
 // - Writes the number of iterations to the integer "iterations"
 // - Sets the bool reference "converged" to true if convergence was reached before hitting maxiter
