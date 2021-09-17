@@ -3,13 +3,13 @@
 ## Practicalities
 
 - **Deadline**: Monday, September 13.
-- **Format:** 
+- **Format:**
   - A pdf document, typeset in LaTeX, with answers to all the problems below. You deliver the pdf on Canvas.
   - Code (with comments, of course) on a GitHub repo, with the repo link provided in the pdf documentet.
 
 - **Not a complete report:** For project 1 we do not require you to write a proper scientific report --- only a document with an answer for each problem. But the quality of the presentation still matters, of course. So pay attention to figures, figure captions, grammar, etc.
 
-- **Collaboration:** If you are collaborating with others (*and we hope you are!*) you *must* register a group on Canvas. The group hands in a single pdf. Remember to list everyone's name in the pdf. 
+- **Collaboration:** If you are collaborating with others (*and we hope you are!*) you *must* register a group on Canvas. The group hands in a single pdf. Remember to list everyone's name in the pdf.
 
 - **Reproducibility:** Your code should be available on a GitHub repo. You can refer to relevant parts of your code in your answers. Make sure to include a README file in the repo that explains how the code should be compiled and run in order to reproduce your results.
 
@@ -21,7 +21,7 @@
 
 - Similarly, if you've not used git before, it's a good idea to learn some of the basics before jumping into the project. See the links on the left-hand side.
 
-- The most important C++ aspects for this project are: 
+- The most important C++ aspects for this project are:
   - basic C++ program structure
   - compiliation and linking
   - functions
@@ -31,12 +31,12 @@
   We will discuss these topics in the lectures, and our discussions there will largely be based on the "Introduction to C++" pages on the left (which are currently under development.)
 
 
-## Introduction 
+## Introduction
 The overall topic of this project is numerical solution of the one-dimensional Poisson equation. This is a second-order differential equation that shows up in several areas of physics, e.g. electrostatics. In future projects we will pay close attention to scaling of dimensionfull physics equations, but for this first project we start directly from the differential equation *after* scaling to dimensionless variables.
 
 The one-dimensional Poisson equation can be written as
 
-$$ 
+$$
 -\frac{d^2 u}{dx^2} = f(x).
 $$ (poisson_eq)
 
@@ -89,9 +89,9 @@ Make sure to specify how an element of $\vec{g}$ is related to the variables in 
 
 ### Problem 5
 
-Let the vector $\vec{v}^*$ of length $m$ represent a complete solution of the discretized Poisson equation, with corresponding $x$ values given by the lenght-$m$ vector $\vec{x}$. Let $\mathbf{A}$ be an $n \times n$ matrix. 
-  
-**a)** How is $n$ related to $m$? 
+Let the vector $\vec{v}^*$ of length $m$ represent a complete solution of the discretized Poisson equation, with corresponding $x$ values given by the lenght-$m$ vector $\vec{x}$. Let $\mathbf{A}$ be an $n \times n$ matrix.
+
+**a)** How is $n$ related to $m$?
 
 **b)** What part of the complete solution $\vec{v}^*$ do we find when we solve Eq. {eq}`matrix_eq` for $\vec{v}$?
 
@@ -112,10 +112,10 @@ We'll refer to this algorithm as the *general algorithm*.
 
 ### Problem 7
 
-Now we get back to the Poisson equation. 
+Now we get back to the Poisson equation.
 
 **a)** Write a program that
-- uses the *general algorithm* to solve $\mathbf{A} \vec{v} = \vec{g}$, 
+- uses the *general algorithm* to solve $\mathbf{A} \vec{v} = \vec{g}$,
 where $\mathbf{A}$ is the tridiagonal matrix from Problem 4;
 - writes the solution $\vec{v}$ and corresponding $\vec{x}$ (plus any other data you find useful) to a file.
 
@@ -124,8 +124,8 @@ where $\mathbf{A}$ is the tridiagonal matrix from Problem 4;
 
 ### Problem 8
 
-**a)** Make a plot that shows the (logarithm of) the *absolute* error, 
-  
+**a)** Make a plot that shows the (logarithm of) the *absolute* error,
+
 $$
 \Delta_i = \log_{10}(|u_i - v_i|)
 $$  
@@ -133,10 +133,10 @@ $$
 as a function of $x_i$. Show $\Delta_i$ for different choices of $n$ as different graphs in the same plot.
 
 
-**b)** Similarly, make a plot of the *relative* error 
+**b)** Similarly, make a plot of the *relative* error
 
 $$
-\epsilon_i = \log_{10}\left(\left| \frac{u_i - v_i}{u_i} \right| \right) 
+\epsilon_i = \log_{10}\left(\left| \frac{u_i - v_i}{u_i} \right| \right)
 $$
 
 as function of $x_i$. Again, one graph per choice of $n$.
@@ -158,18 +158,18 @@ We'll refer to this as the *special algorithm*.
 
 ### Problem 10
 
-For values of $n$ up to $n = 10^6$, run timing tests that compares the time 
-used by the general algorithm and the special algorithm. (*Remember:* reliable timing results require repeated runs for each choice of $n$.) 
+For values of $n$ up to $n = 10^6$, run timing tests that compares the time
+used by the general algorithm and the special algorithm. (*Remember:* reliable timing results require repeated runs for each choice of $n$.)
 Make a table or plot to present your timing results, and comment briefly on the results.
 
 
 
 ### Problem 11
 
-Now say we wanted to solve our matrix equation using the general 
-LU decomposition approach to solving matrix equations. 
-(Feel free to try this, either by writing your own code or using a library, e.g. armadillo.) 
-  
+Now say we wanted to solve our matrix equation using the general
+LU decomposition approach to solving matrix equations.
+(Feel free to try this, either by writing your own code or using a library, e.g. armadillo.)
+
 What do you expect would happen if you attempted to run code for the case $n = 10^5$ on your laptop?
 
 
@@ -183,21 +183,21 @@ Here's a code example that uses `<chrono>` from the C++ standard library to meas
 ```cpp
 #include <chrono>
 
-int main () 
+int main ()
 {
 
   // ...
 
   // Start measuring time
   auto t1 = std::chrono::high_resolution_clock::now();
-    
+
   //
   // The code you want to perform timing on
   //
 
   // Stop measuring time
   auto t2 = std::chrono::high_resolution_clock::now();
-   
+
   // Calculate the elapsed time
   // We use chrono::duration<double>::count(), which by default returns duration in seconds
   double duration_seconds = std::chrono::duration<double>(t2 - t1).count();
@@ -213,14 +213,14 @@ Alternatively, you can use the C library `time.h`. Here's a code snippet demonst
 ```c
 #include <time.h>
 
-int main () 
+int main ()
 {
 
   // ...
 
   // Start measuring time
   clock_t t1 = clock();
-   
+
   //
   // The code you want to perform timing on
   //
@@ -230,11 +230,10 @@ int main ()
 
   // Calculate the elapsed time.
   double duration_seconds = ((double) (t2 - t1)) / CLOCKS_PER_SEC;
-   
+
   // ...
 }
 ```
 
 
 (There may appear more useful code snippets here...)
-
