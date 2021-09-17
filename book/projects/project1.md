@@ -127,16 +127,16 @@ where $\mathbf{A}$ is the tridiagonal matrix from Problem 4;
 **a)** Make a plot that shows the (logarithm of) the *absolute* error,
 
 $$
-\Delta_i = \log_{10}(|u_i - v_i|)
+\log_{10}(\Delta_i) = \log_{10}(|u_i - v_i|)
 $$  
 
-as a function of $x_i$. Show $\Delta_i$ for different choices of $n$ as different graphs in the same plot.
+as a function of $x_i$. Show $\log_{10}(\Delta_i)$ for different choices of $n$ as different graphs in the same plot.
 
 
 **b)** Similarly, make a plot of the *relative* error
 
 $$
-\epsilon_i = \log_{10}\left(\left| \frac{u_i - v_i}{u_i} \right| \right)
+\log_{10}(\epsilon_i) = \log_{10}\left(\left| \frac{u_i - v_i}{u_i} \right| \right)
 $$
 
 as function of $x_i$. Again, one graph per choice of $n$.
