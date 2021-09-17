@@ -113,6 +113,9 @@ double Line::compute_val(double x){
     //Returns the value of a straight line for an input x.
     return c0_ + c1_*x;
 }
+
+//Just an empty destructor (needs to be here even if empty).
+Line::~Line(){}
 ```
 
 ### The straight line: using the class
@@ -203,6 +206,11 @@ double Quadratic::compute_val(double x){
     //Reuses Line::compute_val(x) to compute the contribution from the straight line and tacks on the quadratic explicitly.
     return Line::compute_val(x) + c2_*x*x;
 }
+
+/*
+Just an empty destructor
+*/
+Quadratic::~Quadratic(){}
 ```
 
 ### Quadratic polynomial: using the class
