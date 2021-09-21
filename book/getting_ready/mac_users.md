@@ -18,7 +18,7 @@ Installation of software for C++ can be a little bit of a hazzle on macOS. This 
 
 
 ### M1 Mac users
-If you've bought a Mac after November 2020, then you might have a so-called M1 Mac. In that case, Homebrew defaults its installation to different bath the the Intel based ones do. Therefore, in order for the compiler to find Armadillo, you must copy the installed files to the correct directory. This is easy, simply copy and run the following commands and type in your password if prompted:
+If you've bought a Mac after November 2020, then you might have a so-called M1 Mac. In that case, Homebrew defaults its installation to a different path than the the Intel based ones do. Therefore, in order for the compiler to find Armadillo, you must copy the installed files to the correct directory. This is easy, simply copy and run the following commands and type in your password if prompted:
 
 ```sh
 sudo cp -r /opt/homebrew/Cellar/armadillo/10.6.2/lib/* /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib
@@ -28,7 +28,7 @@ sudo cp -r /opt/homebrew/Cellar/armadillo/10.6.2/lib/* /Library/Developer/Comman
 sudo cp -r /opt/homebrew/Cellar/armadillo/10.6.2/include/armadillo* /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
 ```
 
-This should do the trick.
+This should do the trick. Please open a Github issue in case it doesn't work for you.
 
 ## Additional useful command line tools
 
