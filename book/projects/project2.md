@@ -189,7 +189,7 @@ Plot the corresponding analytical eigenvectors (extended with the boundary point
 
 ### Problem 8 (if you have time)
 
-*Will add a bonus challenge here*
+*Might add a bonus challenge here...*
 
 
 

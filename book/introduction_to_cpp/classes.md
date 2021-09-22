@@ -6,6 +6,10 @@ We'll think of a **class** as a user-defined object that contains:
 
 They provide a flexible way to package code that facilitates creation of readable and easy-to-use C++ programs.
 
+```{note}
+For more examples of how to write and use classes, see the code examples [here](https://github.com/anderkve/FYS3150/tree/master/code_examples/classes).
+```
+
 ## Division of files
 
 We recommend that you structure your code as follows:
@@ -17,122 +21,158 @@ Don't worry, we'll explain how shortly.
 
 ## General structure of the class code
 
-### The #define Guard
+### The #include guard
 
-To prevent multiple inclusions when we're dealing with many header and source files, we create a so-called **#define guard** in each header file. The generic structure of a #define guard looks like this:
+To prevent multiple inclusions when we're dealing with many header and source files, we create a so-called **#include guard** (a.k.a. define guard, a.k.a. header guard) in each header file. The generic structure of an #include guard looks like this:
 
 ```c++
-#ifndef CLASS_NAME_HPP
-#define CLASS_NAME_HPP
+#ifndef __filename_hpp__
+#define __filename_hpp__
 
-...
+... (the rest of the file) ...
 
 #endif
 ```
-Always do this.
-
-### Generic syntax of header file
+Always do this for header files. The exact name you use (here `__filename_hpp__`) doesn't matter, as long as it is unique to this header file.
 
 
-The generic structure of a class header file is a follows:
+### Generic syntax of a class header file
+
+Let's say we want to create a class `MyClass`. The generic structure of a header file `MyClass.hpp` for this class would be
 
 ```c++
-#ifndef CLASS_NAME_HPP   
-#define CLASS_NAME_HPP
+#ifndef __MyClass_hpp__   
+#define __MyClass_hpp__
 
-class MyClass {
+class MyClass 
+{
 private:
-    /* declaration of variables only accessible from within the class*/
+  // Declaration of variables only accessible from within the class
 
 public:
-    /* Declaration of constructor, destructor and class methods. */
-    MyClass (arguments); //Constructor
-    virtual ~MyClass (); //Destructor
-};
+  // Declaration of constructors, e.g.
+  MyClass(arguments);
+
+  // Declaration of destructors, copy constructors, ...
+
+  // Declarations of other class methods, e.g.
+  void some_function(arguments);
+
+}; // <-- Note that class bodies end with a semicolon!
 
 #endif
 ```
+
+(We won't need to worry about destructors, copy constructors and such just yet...)
 
 
 ### Generic syntax of class source file
 
-```c++
-#include "class_name.hpp"
+The corresponding source file (`MyClass.cpp`) would have this structure:
 
-MyClass::MyClass(arguments){
-  //definition of constructor
+```c++
+#include "MyClass.hpp"
+
+// Definitions of constructors
+MyClass::MyClass(arguments)
+{
+  // ...
 }
 
-//Definitions of other class methods come here.
+// Definitions of copy constructor, ...
+
+// Definitions of other class methods, e.g. 
+void MyClass::some_function(arguments)
+{
+  // ...
+}
+
 ```
 
 
 ## Practical example: A straight line.
 
-Let's create a class that does one simple thing: it returns the value of a straight line of the form `y = c0 + c1*x` at some point `x`.
+Let's create a class `Line` that does one simple thing: it returns the value of a straight line of the form `y = c0 + c1*x` at some point `x`.
 
 ### The straight line: header file
 
-Using the theory above, we define a header file we call `line.hpp` as follows:
+Following the general structure above, we create a header file `Line.hpp` as follows:
 
 ```c++
-#ifndef LINE_HPP
-#define LINE_HPP
+#ifndef __Line_hpp__
+#define __Line_hpp__
 
-class Line {
+class Line 
+{
 protected:
-    double c0_, c1_; //Parameters of a line: y = c0 + c1*x.
-public:
-    Line(double c0, double c1); //Constructor
-    virtual ~Line ();
+  double c0_, c1_; // Parameters of a line: y = c0 + c1*x
 
-    double compute_val(double x); //Compute value y at point (x, y) given x.
+public:
+  // Constructor
+  Line(double c0, double c1);
+
+  // Method for evaluating y(x) at some point x
+  double eval(double x);
 };
+
 #endif
 ```
 
 A couple notes:
 1. We have defined coefficents `c0_` and `c1_` that will store the coefficients of the straight line. The variables are called **member variables** of the class.
-2. The trailing underdash on the member variables is there to distinguish them from other variables used in the class. The trailing underdash convention follows the [Google styleguide for C++](https://google.github.io/styleguide/cppguide.html).
+2. The trailing underscore on the member variables is there to distinguish them from other variables used in the class. This is just a convention, in this case following the [Google styleguide for C++](https://google.github.io/styleguide/cppguide.html).
+
 
 ### The straight line: source file
 
-In the source file we provide a defition of the **constructor** which creates the class object and all its class methods. For the straight line class, we get a pretty simple source file:
+In the source file we provide defitions for the **constructor** `Line(double c0, double c1)`, which creates an instance (object) of the class, and our only class method, `double eval(double x)`. Note that in the source file we have to prefix the function names with the class namespace `Line::`. We end up with the following simple source file, `Line.cpp`:
 
 ```c++
-#include "line.hpp"
+#include "Line.hpp"
 
-//This is how a constructor looks like in practice in the source file
-Line::Line(double c0, double c1){
-    //Assign member variables c0_ and c1_ to input variables c0 and c1, respectively.
-    c0_ = c0;
-    c1_ = c1;
+// Definition of the constructor
+Line::Line(double c0, double c1)
+{
+  // Use the input variables (c0, c1) to assign values to the class memeber variables (c0_, c1_)
+  c0_ = c0;
+  c1_ = c1;
 }
 
-double Line::compute_val(double x){
-    //Returns the value of a straight line for an input x.
-    return c0_ + c1_*x;
+// Definition of the eval function
+double Line::eval(double x)
+{
+  // Return the value of a straight line at a point x
+  return c0_ + c1_*x;
 }
 
-//Just an empty destructor (needs to be here even if empty).
-Line::~Line(){}
 ```
 
 ### The straight line: using the class
+
 The main program that uses the `Line` class can be as simple as
 
 ```c++
-#include "line.hpp"
+#include "Line.hpp"
 
-int main() {
-    double x = 2; //Point to evaluate the polynomials in
-    double c0 = 1, c1 = 1; //Coefficients of the straight line.
-    Line my_line = Line(c0, c1); //Create a Line object called my_line
-    double y = my_line.compute_val(x); //Compute y = c0 + c1*x for a given x.
-    return 0;
+int main() 
+{
+  // Create a Line object called my_line, with coefficients c0 = 1.5, c1 = 2.5
+  Line my_line = Line(1.5, 2.5); 
+
+  // Evaluate the line y = c0 + c1*x at point x = 2
+  double y = my_line.eval(2);
+
+  return 0;
 }
 ```
 
+
+## Inheritance: base classes and derived classes
+
+*To be continued...*
+
+
+<!-- 
 
 ## Inheritance: superclasses and derived classes.
 
@@ -184,7 +224,7 @@ private:
 public:
     Quadratic (double c0, double c1, double c2); //Constructor
     virtual ~Quadratic (); //Destructor
-    double compute_val(double x); //Computes the value y of the polynomial
+    double eval(double x); //Computes the value y of the polynomial
 };
 
 #endif
@@ -201,10 +241,10 @@ Quadratic::Quadratic(double c0, double c1, double c2) : Line(c0, c1){ //Here we 
     c2_ = c2; //Assign the higher order coefficient. The others are assigned in Line(c0,c1).
 }
 
-double Quadratic::compute_val(double x){
+double Quadratic::eval(double x){
     //Computes the quadratic polynomial value y at x.
-    //Reuses Line::compute_val(x) to compute the contribution from the straight line and tacks on the quadratic explicitly.
-    return Line::compute_val(x) + c2_*x*x;
+    //Reuses Line::eval(x) to compute the contribution from the straight line and tacks on the quadratic explicitly.
+    return Line::eval(x) + c2_*x*x;
 }
 
 /*
@@ -222,7 +262,9 @@ int main() {
   double x = 2; //Point to evaluate the polynomials in
   double c0 = 1, c1 = 1, c2 = 1;
   Quadratic my_quad = Quadratic(c0, c1, c2); //Call constructor and create Quadratic object my_quad.
-  double y = my_quad.compute_val(x); //Compute y = c0 + c1*x + c2*x*x.
+  double y = my_quad.eval(x); //Compute y = c0 + c1*x + c2*x*x.
   return 0;
 }
 ```
+
+ -->
