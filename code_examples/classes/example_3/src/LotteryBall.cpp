@@ -1,4 +1,4 @@
-// Definitions for the LotteryBall class
+// Definitions for the functions in the LotteryBall class
 
 #include "LotteryBall.hpp"
 

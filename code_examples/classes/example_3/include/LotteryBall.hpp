@@ -1,4 +1,4 @@
-// Declaration of the LotteryBall class
+// The LotteryBall class
 
 #ifndef __LotteryBall_hpp__  
 #define __LotteryBall_hpp__

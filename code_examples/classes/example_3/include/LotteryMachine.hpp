@@ -1,4 +1,4 @@
-// Declaration of the LotteryMachine class
+// The LotteryMachine class
 
 #ifndef __LotteryMachine_hpp__  
 #define __LotteryMachine_hpp__

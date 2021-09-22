@@ -1,4 +1,4 @@
-// Definitions for the LotteryMachine class
+// Definitions for the functions in the LotteryMachine class
 
 #include <vector>      // For vector
 #include <string>      // For string
