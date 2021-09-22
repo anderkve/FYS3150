@@ -410,6 +410,13 @@
   <a class="reference internal nav-link" href="#installation-of-basic-software">
    Installation of basic software
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#m1-mac-users">
+     M1 Mac users
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#additional-useful-command-line-tools">
@@ -442,6 +449,17 @@
 </div>
 </li>
 </ol>
+<div class="section" id="m1-mac-users">
+<h3>M1 Mac users<a class="headerlink" href="#m1-mac-users" title="Permalink to this headline">¶</a></h3>
+<p>If you’ve bought a Mac after November 2020, then you might have a so-called M1 Mac. In that case, Homebrew defaults its installation to a different path than the the Intel based ones do. Therefore, in order for the compiler to find Armadillo, you must copy the installed files to the correct directory. This is easy, simply copy and run the following commands and type in your password if prompted:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo cp -r /opt/homebrew/Cellar/armadillo/10.6.2/lib/* /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo cp -r /opt/homebrew/Cellar/armadillo/10.6.2/include/armadillo* /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
+</pre></div>
+</div>
+<p>This should do the trick. Please open a Github issue in case it doesn’t work for you.</p>
+</div>
 </div>
 <div class="section" id="additional-useful-command-line-tools">
 <h2>Additional useful command line tools<a class="headerlink" href="#additional-useful-command-line-tools" title="Permalink to this headline">¶</a></h2>

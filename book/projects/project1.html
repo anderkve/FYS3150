@@ -541,7 +541,7 @@
 <p>The overall topic of this project is numerical solution of the one-dimensional Poisson equation. This is a second-order differential equation that shows up in several areas of physics, e.g. electrostatics. In future projects we will pay close attention to scaling of dimensionfull physics equations, but for this first project we start directly from the differential equation <em>after</em> scaling to dimensionless variables.</p>
 <p>The one-dimensional Poisson equation can be written as</p>
 <div class="math notranslate nohighlight" id="equation-poisson-eq">
-<span class="eqno">(1)<a class="headerlink" href="#equation-poisson-eq" title="Permalink to this equation">¶</a></span>\[ 
+<span class="eqno">(1)<a class="headerlink" href="#equation-poisson-eq" title="Permalink to this equation">¶</a></span>\[
 -\frac{d^2 u}{dx^2} = f(x).
 \]</div>
 <p>Here <span class="math notranslate nohighlight">\(f(x)\)</span> is a known function (the <em>source term</em>). Our task is to find the function <span class="math notranslate nohighlight">\(u(x)\)</span> that satisfies this equation for a given boundary condition. The specific setup we will assume is the following:</p>
@@ -622,7 +622,7 @@ where <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is the tr
 <p><strong>b)</strong> Similarly, make a plot of the <em>relative</em> error</p>
 <div class="math notranslate nohighlight">
 \[
-\log_{10}(\epsilon_i) = \log_{10}\left(\left| \frac{u_i - v_i}{u_i} \right| \right) 
+\log_{10}(\epsilon_i) = \log_{10}\left(\left| \frac{u_i - v_i}{u_i} \right| \right)
 \]</div>
 <p>as function of <span class="math notranslate nohighlight">\(x_i\)</span>. Again, one graph per choice of <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p><strong>c</strong>) Now make a table that shows the <em>maximum</em> relative error <span class="math notranslate nohighlight">\(\max(\epsilon_i)\)</span> for each choice of <span class="math notranslate nohighlight">\(n\)</span>, up to <span class="math notranslate nohighlight">\(n = 10^7\)</span>. Feel free to also make a plot to visualise this. Comment on your result.</p>
@@ -654,21 +654,21 @@ LU decomposition approach to solving matrix equations.
 <p>Here’s a code example that uses <code class="docutils literal notranslate"><span class="pre">&lt;chrono&gt;</span></code> from the C++ standard library to measure the time used by a part of a program:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;chrono&gt;</span><span class="cp"></span>
 
-<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span> 
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span>
 <span class="p">{</span>
 
   <span class="c1">// ...</span>
 
   <span class="c1">// Start measuring time</span>
   <span class="k">auto</span> <span class="n">t1</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">high_resolution_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
-    
+
   <span class="c1">//</span>
   <span class="c1">// The code you want to perform timing on</span>
   <span class="c1">//</span>
 
   <span class="c1">// Stop measuring time</span>
   <span class="k">auto</span> <span class="n">t2</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">high_resolution_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
-   
+
   <span class="c1">// Calculate the elapsed time</span>
   <span class="c1">// We use chrono::duration&lt;double&gt;::count(), which by default returns duration in seconds</span>
   <span class="kt">double</span> <span class="n">duration_seconds</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">duration</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t2</span> <span class="o">-</span> <span class="n">t1</span><span class="p">).</span><span class="n">count</span><span class="p">();</span>
@@ -680,14 +680,14 @@ LU decomposition approach to solving matrix equations.
 <p>Alternatively, you can use the C library <code class="docutils literal notranslate"><span class="pre">time.h</span></code>. Here’s a code snippet demonstrating that:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;time.h&gt;</span><span class="cp"></span>
 
-<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span> 
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span>
 <span class="p">{</span>
 
   <span class="c1">// ...</span>
 
   <span class="c1">// Start measuring time</span>
   <span class="kt">clock_t</span> <span class="n">t1</span> <span class="o">=</span> <span class="n">clock</span><span class="p">();</span>
-   
+
   <span class="c1">//</span>
   <span class="c1">// The code you want to perform timing on</span>
   <span class="c1">//</span>
@@ -697,7 +697,7 @@ LU decomposition approach to solving matrix equations.
 
   <span class="c1">// Calculate the elapsed time.</span>
   <span class="kt">double</span> <span class="n">duration_seconds</span> <span class="o">=</span> <span class="p">((</span><span class="kt">double</span><span class="p">)</span> <span class="p">(</span><span class="n">t2</span> <span class="o">-</span> <span class="n">t1</span><span class="p">))</span> <span class="o">/</span> <span class="n">CLOCKS_PER_SEC</span><span class="p">;</span>
-   
+
   <span class="c1">// ...</span>
 <span class="p">}</span>
 </pre></div>

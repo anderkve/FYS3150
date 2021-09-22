@@ -417,13 +417,13 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-define-guard">
-     The #define Guard
+    <a class="reference internal nav-link" href="#the-include-guard">
+     The #include guard
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#generic-syntax-of-header-file">
-     Generic syntax of header file
+    <a class="reference internal nav-link" href="#generic-syntax-of-a-class-header-file">
+     Generic syntax of a class header file
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -456,43 +456,9 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#inheritance-superclasses-and-derived-classes">
-   Inheritance: superclasses and derived classes.
+  <a class="reference internal nav-link" href="#inheritance-base-classes-and-derived-classes">
+   Inheritance: base classes and derived classes
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#syntax-of-a-derived-class-header-file">
-     Syntax of a derived class: header file
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#syntax-of-derived-class-source-file">
-     Syntax of derived class: source file
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#practical-example-quadratic-polynomial">
-   Practical example: Quadratic polynomial
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#quadratic-polynomial-the-header-file">
-     Quadratic polynomial: the header file
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#quadratic-polynomial-the-source-file">
-     Quadratic polynomial: the source file
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#quadratic-polynomial-using-the-class">
-     Quadratic polynomial: using the class
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -513,6 +479,10 @@
 <li><p><strong>Class methods</strong>, i.e functions that belong to the class.</p></li>
 </ol>
 <p>They provide a flexible way to package code that facilitates creation of readable and easy-to-use C++ programs.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For more examples of how to write and use classes, see the code examples <a class="reference external" href="https://github.com/anderkve/FYS3150/tree/master/code_examples/classes">here</a>.</p>
+</div>
 <div class="section" id="division-of-files">
 <h2>Division of files<a class="headerlink" href="#division-of-files" title="Permalink to this headline">¶</a></h2>
 <p>We recommend that you structure your code as follows:</p>
@@ -524,94 +494,117 @@
 </div>
 <div class="section" id="general-structure-of-the-class-code">
 <h2>General structure of the class code<a class="headerlink" href="#general-structure-of-the-class-code" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="the-define-guard">
-<h3>The #define Guard<a class="headerlink" href="#the-define-guard" title="Permalink to this headline">¶</a></h3>
-<p>To prevent multiple inclusions when we’re dealing with many header and source files, we create a so-called <strong>#define guard</strong> in each header file. The generic structure of a #define guard looks like this:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef CLASS_NAME_HPP</span>
-<span class="cp">#define CLASS_NAME_HPP</span>
+<div class="section" id="the-include-guard">
+<h3>The #include guard<a class="headerlink" href="#the-include-guard" title="Permalink to this headline">¶</a></h3>
+<p>To prevent multiple inclusions when we’re dealing with many header and source files, we create a so-called <strong>#include guard</strong> (a.k.a. define guard, a.k.a. header guard) in each header file. The generic structure of an #include guard looks like this:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef __filename_hpp__</span>
+<span class="cp">#define __filename_hpp__</span>
 
-<span class="p">...</span>
+<span class="p">...</span> <span class="p">(</span><span class="n">the</span> <span class="n">rest</span> <span class="n">of</span> <span class="n">the</span> <span class="n">file</span><span class="p">)</span> <span class="p">...</span>
 
 <span class="cp">#endif</span>
 </pre></div>
 </div>
-<p>Always do this.</p>
+<p>Always do this for header files. The exact name you use (here <code class="docutils literal notranslate"><span class="pre">__filename_hpp__</span></code>) doesn’t matter, as long as it is unique to this header file.</p>
 </div>
-<div class="section" id="generic-syntax-of-header-file">
-<h3>Generic syntax of header file<a class="headerlink" href="#generic-syntax-of-header-file" title="Permalink to this headline">¶</a></h3>
-<p>The generic structure of a class header file is a follows:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef CLASS_NAME_HPP   </span>
-<span class="cp">#define CLASS_NAME_HPP</span>
+<div class="section" id="generic-syntax-of-a-class-header-file">
+<h3>Generic syntax of a class header file<a class="headerlink" href="#generic-syntax-of-a-class-header-file" title="Permalink to this headline">¶</a></h3>
+<p>Let’s say we want to create a class <code class="docutils literal notranslate"><span class="pre">MyClass</span></code>. The generic structure of a header file <code class="docutils literal notranslate"><span class="pre">MyClass.hpp</span></code> for this class would be</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef __MyClass_hpp__   </span>
+<span class="cp">#define __MyClass_hpp__</span>
 
-<span class="k">class</span> <span class="nc">MyClass</span> <span class="p">{</span>
+<span class="k">class</span> <span class="nc">MyClass</span> 
+<span class="p">{</span>
 <span class="k">private</span><span class="o">:</span>
-    <span class="cm">/* declaration of variables only accessible from within the class*/</span>
+  <span class="c1">// Declaration of variables only accessible from within the class</span>
 
 <span class="k">public</span><span class="o">:</span>
-    <span class="cm">/* Declaration of constructor, destructor and class methods. */</span>
-    <span class="n">MyClass</span> <span class="p">(</span><span class="n">arguments</span><span class="p">);</span> <span class="c1">//Constructor</span>
-    <span class="k">virtual</span> <span class="o">~</span><span class="n">MyClass</span> <span class="p">();</span> <span class="c1">//Destructor</span>
-<span class="p">};</span>
+  <span class="c1">// Declaration of constructors, e.g.</span>
+  <span class="n">MyClass</span><span class="p">(</span><span class="n">arguments</span><span class="p">);</span>
+
+  <span class="c1">// Declaration of destructors, copy constructors, ...</span>
+
+  <span class="c1">// Declarations of other class methods, e.g.</span>
+  <span class="kt">void</span> <span class="nf">some_function</span><span class="p">(</span><span class="n">arguments</span><span class="p">);</span>
+
+<span class="p">};</span> <span class="c1">// &lt;-- Note that class bodies end with a semicolon!</span>
 
 <span class="cp">#endif</span>
 </pre></div>
 </div>
+<p>(We won’t need to worry about destructors, copy constructors and such just yet…)</p>
 </div>
 <div class="section" id="generic-syntax-of-class-source-file">
 <h3>Generic syntax of class source file<a class="headerlink" href="#generic-syntax-of-class-source-file" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;class_name.hpp&quot;</span><span class="cp"></span>
+<p>The corresponding source file (<code class="docutils literal notranslate"><span class="pre">MyClass.cpp</span></code>) would have this structure:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;MyClass.hpp&quot;</span><span class="cp"></span>
 
-<span class="n">MyClass</span><span class="o">::</span><span class="n">MyClass</span><span class="p">(</span><span class="n">arguments</span><span class="p">){</span>
-  <span class="c1">//definition of constructor</span>
+<span class="c1">// Definitions of constructors</span>
+<span class="n">MyClass</span><span class="o">::</span><span class="n">MyClass</span><span class="p">(</span><span class="n">arguments</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">// ...</span>
 <span class="p">}</span>
 
-<span class="c1">//Definitions of other class methods come here.</span>
+<span class="c1">// Definitions of copy constructor, ...</span>
+
+<span class="c1">// Definitions of other class methods, e.g. </span>
+<span class="kt">void</span> <span class="n">MyClass</span><span class="o">::</span><span class="n">some_function</span><span class="p">(</span><span class="n">arguments</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="practical-example-a-straight-line">
 <h2>Practical example: A straight line.<a class="headerlink" href="#practical-example-a-straight-line" title="Permalink to this headline">¶</a></h2>
-<p>Let’s create a class that does one simple thing: it returns the value of a straight line of the form <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">c0</span> <span class="pre">+</span> <span class="pre">c1*x</span></code> at some point <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<p>Let’s create a class <code class="docutils literal notranslate"><span class="pre">Line</span></code> that does one simple thing: it returns the value of a straight line of the form <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">c0</span> <span class="pre">+</span> <span class="pre">c1*x</span></code> at some point <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
 <div class="section" id="the-straight-line-header-file">
 <h3>The straight line: header file<a class="headerlink" href="#the-straight-line-header-file" title="Permalink to this headline">¶</a></h3>
-<p>Using the theory above, we define a header file we call <code class="docutils literal notranslate"><span class="pre">line.hpp</span></code> as follows:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef LINE_HPP</span>
-<span class="cp">#define LINE_HPP</span>
+<p>Following the general structure above, we create a header file <code class="docutils literal notranslate"><span class="pre">Line.hpp</span></code> as follows:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef __Line_hpp__</span>
+<span class="cp">#define __Line_hpp__</span>
 
-<span class="k">class</span> <span class="nc">Line</span> <span class="p">{</span>
+<span class="k">class</span> <span class="nc">Line</span> 
+<span class="p">{</span>
 <span class="k">protected</span><span class="o">:</span>
-    <span class="kt">double</span> <span class="n">c0_</span><span class="p">,</span> <span class="n">c1_</span><span class="p">;</span> <span class="c1">//Parameters of a line: y = c0 + c1*x.</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">Line</span><span class="p">(</span><span class="kt">double</span> <span class="n">c0</span><span class="p">,</span> <span class="kt">double</span> <span class="n">c1</span><span class="p">);</span> <span class="c1">//Constructor</span>
-    <span class="k">virtual</span> <span class="o">~</span><span class="n">Line</span> <span class="p">();</span>
+  <span class="kt">double</span> <span class="n">c0_</span><span class="p">,</span> <span class="n">c1_</span><span class="p">;</span> <span class="c1">// Parameters of a line: y = c0 + c1*x</span>
 
-    <span class="kt">double</span> <span class="nf">compute_val</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">);</span> <span class="c1">//Compute value y at point (x, y) given x.</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="c1">// Constructor</span>
+  <span class="n">Line</span><span class="p">(</span><span class="kt">double</span> <span class="n">c0</span><span class="p">,</span> <span class="kt">double</span> <span class="n">c1</span><span class="p">);</span>
+
+  <span class="c1">// Method for evaluating y(x) at some point x</span>
+  <span class="kt">double</span> <span class="nf">eval</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">);</span>
 <span class="p">};</span>
+
 <span class="cp">#endif</span>
 </pre></div>
 </div>
 <p>A couple notes:</p>
 <ol class="simple">
 <li><p>We have defined coefficents <code class="docutils literal notranslate"><span class="pre">c0_</span></code> and <code class="docutils literal notranslate"><span class="pre">c1_</span></code> that will store the coefficients of the straight line. The variables are called <strong>member variables</strong> of the class.</p></li>
-<li><p>The trailing underdash on the member variables is there to distinguish them from other variables used in the class. The trailing underdash convention follows the <a class="reference external" href="https://google.github.io/styleguide/cppguide.html">Google styleguide for C++</a>.</p></li>
+<li><p>The trailing underscore on the member variables is there to distinguish them from other variables used in the class. This is just a convention, in this case following the <a class="reference external" href="https://google.github.io/styleguide/cppguide.html">Google styleguide for C++</a>.</p></li>
 </ol>
 </div>
 <div class="section" id="the-straight-line-source-file">
 <h3>The straight line: source file<a class="headerlink" href="#the-straight-line-source-file" title="Permalink to this headline">¶</a></h3>
-<p>In the source file we provide a defition of the <strong>constructor</strong> which creates the class object and all its class methods. For the straight line class, we get a pretty simple source file:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;line.hpp&quot;</span><span class="cp"></span>
+<p>In the source file we provide defitions for the <strong>constructor</strong> <code class="docutils literal notranslate"><span class="pre">Line(double</span> <span class="pre">c0,</span> <span class="pre">double</span> <span class="pre">c1)</span></code>, which creates an instance (object) of the class, and our only class method, <code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">eval(double</span> <span class="pre">x)</span></code>. Note that in the source file we have to prefix the function names with the class namespace <code class="docutils literal notranslate"><span class="pre">Line::</span></code>. We end up with the following simple source file, <code class="docutils literal notranslate"><span class="pre">Line.cpp</span></code>:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;Line.hpp&quot;</span><span class="cp"></span>
 
-<span class="c1">//This is how a constructor looks like in practice in the source file</span>
-<span class="n">Line</span><span class="o">::</span><span class="n">Line</span><span class="p">(</span><span class="kt">double</span> <span class="n">c0</span><span class="p">,</span> <span class="kt">double</span> <span class="n">c1</span><span class="p">){</span>
-    <span class="c1">//Assign member variables c0_ and c1_ to input variables c0 and c1, respectively.</span>
-    <span class="n">c0_</span> <span class="o">=</span> <span class="n">c0</span><span class="p">;</span>
-    <span class="n">c1_</span> <span class="o">=</span> <span class="n">c1</span><span class="p">;</span>
+<span class="c1">// Definition of the constructor</span>
+<span class="n">Line</span><span class="o">::</span><span class="n">Line</span><span class="p">(</span><span class="kt">double</span> <span class="n">c0</span><span class="p">,</span> <span class="kt">double</span> <span class="n">c1</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">// Use the input variables (c0, c1) to assign values to the class memeber variables (c0_, c1_)</span>
+  <span class="n">c0_</span> <span class="o">=</span> <span class="n">c0</span><span class="p">;</span>
+  <span class="n">c1_</span> <span class="o">=</span> <span class="n">c1</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="kt">double</span> <span class="n">Line</span><span class="o">::</span><span class="n">compute_val</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">){</span>
-    <span class="c1">//Returns the value of a straight line for an input x.</span>
-    <span class="k">return</span> <span class="n">c0_</span> <span class="o">+</span> <span class="n">c1_</span><span class="o">*</span><span class="n">x</span><span class="p">;</span>
+<span class="c1">// Definition of the eval function</span>
+<span class="kt">double</span> <span class="n">Line</span><span class="o">::</span><span class="n">eval</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">// Return the value of a straight line at a point x</span>
+  <span class="k">return</span> <span class="n">c0_</span> <span class="o">+</span> <span class="n">c1_</span><span class="o">*</span><span class="n">x</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -619,103 +612,121 @@
 <div class="section" id="the-straight-line-using-the-class">
 <h3>The straight line: using the class<a class="headerlink" href="#the-straight-line-using-the-class" title="Permalink to this headline">¶</a></h3>
 <p>The main program that uses the <code class="docutils literal notranslate"><span class="pre">Line</span></code> class can be as simple as</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;line.hpp&quot;</span><span class="cp"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;Line.hpp&quot;</span><span class="cp"></span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kt">double</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">//Point to evaluate the polynomials in</span>
-    <span class="kt">double</span> <span class="n">c0</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//Coefficients of the straight line.</span>
-    <span class="n">Line</span> <span class="n">my_line</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">c0</span><span class="p">,</span> <span class="n">c1</span><span class="p">);</span> <span class="c1">//Create a Line object called my_line</span>
-    <span class="kt">double</span> <span class="n">y</span> <span class="o">=</span> <span class="n">my_line</span><span class="p">.</span><span class="n">compute_val</span><span class="p">(</span><span class="n">x</span><span class="p">);</span> <span class="c1">//Compute y = c0 + c1*x for a given x.</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="inheritance-superclasses-and-derived-classes">
-<h2>Inheritance: superclasses and derived classes.<a class="headerlink" href="#inheritance-superclasses-and-derived-classes" title="Permalink to this headline">¶</a></h2>
-<p>A <strong>superclass</strong> or <strong>base class</strong> is a class that provides the foundation for other classes.</p>
-<p>A <strong>derived class</strong> is a class that in general inherits member variables, constructors and methods from a superclass.</p>
-<div class="section" id="syntax-of-a-derived-class-header-file">
-<h3>Syntax of a derived class: header file<a class="headerlink" href="#syntax-of-a-derived-class-header-file" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef DERIVED_CLASS_HPP</span>
-<span class="cp">#define DERIVED_CLASS_HPP</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> 
+<span class="p">{</span>
+  <span class="c1">// Create a Line object called my_line, with coefficients c0 = 1.5, c1 = 2.5</span>
+  <span class="n">Line</span> <span class="n">my_line</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">);</span> 
 
-<span class="k">class</span> <span class="nc">DerivedClass</span> <span class="o">:</span> <span class="k">public</span> <span class="n">SuperClass</span> <span class="p">{</span> <span class="c1">//Inherits all public and protected from SuperClass</span>
-<span class="k">private</span><span class="o">:</span>
-    <span class="cm">/* data */</span>
+  <span class="c1">// Evaluate the line y = c0 + c1*x at point x = 2</span>
+  <span class="kt">double</span> <span class="n">y</span> <span class="o">=</span> <span class="n">my_line</span><span class="p">.</span><span class="n">eval</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">DerivedClass</span> <span class="p">(</span><span class="n">arguments</span><span class="p">);</span>
-    <span class="k">virtual</span> <span class="o">~</span><span class="n">DerivedClass</span> <span class="p">();</span>
-<span class="p">};</span>
-
-<span class="cp">#endif</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="syntax-of-derived-class-source-file">
-<h3>Syntax of derived class: source file<a class="headerlink" href="#syntax-of-derived-class-source-file" title="Permalink to this headline">¶</a></h3>
-<p>The syntax of the source file is pretty much identical to the source file of any class. We’ll instead provide an example that showcases how to actually use something you inherit from the superclass.</p>
-</div>
-</div>
-<div class="section" id="practical-example-quadratic-polynomial">
-<h2>Practical example: Quadratic polynomial<a class="headerlink" href="#practical-example-quadratic-polynomial" title="Permalink to this headline">¶</a></h2>
-<p>We’ll create a quadratic polynomial by inheriting from the <code class="docutils literal notranslate"><span class="pre">Line</span></code> class, meaning <code class="docutils literal notranslate"><span class="pre">Line</span></code> is the superclass. We’ll call our derived class for <code class="docutils literal notranslate"><span class="pre">Quadratic</span></code>.</p>
-<div class="section" id="quadratic-polynomial-the-header-file">
-<h3>Quadratic polynomial: the header file<a class="headerlink" href="#quadratic-polynomial-the-header-file" title="Permalink to this headline">¶</a></h3>
-<p>The header file of the <code class="docutils literal notranslate"><span class="pre">Quadratic</span></code> class, named <code class="docutils literal notranslate"><span class="pre">quadratic.hpp</span></code> looks as follows:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef QUADRATIC_HPP</span>
-<span class="cp">#define QUADRATIC_HPP</span>
-
-<span class="cp">#include</span> <span class="cpf">&quot;line.hpp&quot;</span><span class="c1"> //Include the superclass header file here.</span><span class="cp"></span>
-
-<span class="k">class</span> <span class="nc">Quadratic</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Line</span> <span class="p">{</span> <span class="c1">//Inherit protected and public variables, constructors and methods from Line.</span>
-<span class="k">private</span><span class="o">:</span>
-    <span class="kt">double</span> <span class="n">c0_</span><span class="p">,</span> <span class="n">c1_</span><span class="p">,</span> <span class="n">c2_</span><span class="p">;</span>
-
-<span class="k">public</span><span class="o">:</span>
-    <span class="n">Quadratic</span> <span class="p">(</span><span class="kt">double</span> <span class="n">c0</span><span class="p">,</span> <span class="kt">double</span> <span class="n">c1</span><span class="p">,</span> <span class="kt">double</span> <span class="n">c2</span><span class="p">);</span> <span class="c1">//Constructor</span>
-    <span class="k">virtual</span> <span class="o">~</span><span class="n">Quadratic</span> <span class="p">();</span> <span class="c1">//Destructor</span>
-    <span class="kt">double</span> <span class="nf">compute_val</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">);</span> <span class="c1">//Computes the value y of the polynomial</span>
-<span class="p">};</span>
-
-<span class="cp">#endif</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="quadratic-polynomial-the-source-file">
-<h3>Quadratic polynomial: the source file<a class="headerlink" href="#quadratic-polynomial-the-source-file" title="Permalink to this headline">¶</a></h3>
-<p>The source file of the <code class="docutils literal notranslate"><span class="pre">Quadratic</span></code> class looks as follows.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;quadratic.hpp&quot;</span><span class="cp"></span>
-
-<span class="n">Quadratic</span><span class="o">::</span><span class="n">Quadratic</span><span class="p">(</span><span class="kt">double</span> <span class="n">c0</span><span class="p">,</span> <span class="kt">double</span> <span class="n">c1</span><span class="p">,</span> <span class="kt">double</span> <span class="n">c2</span><span class="p">)</span> <span class="o">:</span> <span class="n">Line</span><span class="p">(</span><span class="n">c0</span><span class="p">,</span> <span class="n">c1</span><span class="p">){</span> <span class="c1">//Here we reuse the constructor of the Line class. Note the syntax!</span>
-    <span class="n">c2_</span> <span class="o">=</span> <span class="n">c2</span><span class="p">;</span> <span class="c1">//Assign the higher order coefficient. The others are assigned in Line(c0,c1).</span>
-<span class="p">}</span>
-
-<span class="kt">double</span> <span class="n">Quadratic</span><span class="o">::</span><span class="n">compute_val</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">){</span>
-    <span class="c1">//Computes the quadratic polynomial value y at x.</span>
-    <span class="c1">//Reuses Line::compute_val(x) to compute the contribution from the straight line and tacks on the quadratic explicitly.</span>
-    <span class="k">return</span> <span class="n">Line</span><span class="o">::</span><span class="n">compute_val</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">c2_</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="quadratic-polynomial-using-the-class">
-<h3>Quadratic polynomial: using the class<a class="headerlink" href="#quadratic-polynomial-using-the-class" title="Permalink to this headline">¶</a></h3>
-<p>Again, we can write a short program to use the <code class="docutils literal notranslate"><span class="pre">Quadratic</span></code> class:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;quadratic.hpp&quot;</span><span class="cp"></span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kt">double</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">//Point to evaluate the polynomials in</span>
-  <span class="kt">double</span> <span class="n">c0</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-  <span class="n">Quadratic</span> <span class="n">my_quad</span> <span class="o">=</span> <span class="n">Quadratic</span><span class="p">(</span><span class="n">c0</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">);</span> <span class="c1">//Call constructor and create Quadratic object my_quad.</span>
-  <span class="kt">double</span> <span class="n">y</span> <span class="o">=</span> <span class="n">my_quad</span><span class="p">.</span><span class="n">compute_val</span><span class="p">(</span><span class="n">x</span><span class="p">);</span> <span class="c1">//Compute y = c0 + c1*x + c2*x*x.</span>
   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </div>
+<div class="section" id="inheritance-base-classes-and-derived-classes">
+<h2>Inheritance: base classes and derived classes<a class="headerlink" href="#inheritance-base-classes-and-derived-classes" title="Permalink to this headline">¶</a></h2>
+<p><em>To be continued…</em></p>
+<!-- 
+
+## Inheritance: superclasses and derived classes.
+
+A **superclass** or **base class** is a class that provides the foundation for other classes.
+
+A **derived class** is a class that in general inherits member variables, constructors and methods from a superclass.
+
+### Syntax of a derived class: header file
+
+```c++
+#ifndef DERIVED_CLASS_HPP
+#define DERIVED_CLASS_HPP
+
+class DerivedClass : public SuperClass { //Inherits all public and protected from SuperClass
+private:
+    /* data */
+
+public:
+    DerivedClass (arguments);
+    virtual ~DerivedClass ();
+};
+
+#endif
+```
+
+### Syntax of derived class: source file
+
+The syntax of the source file is pretty much identical to the source file of any class. We'll instead provide an example that showcases how to actually use something you inherit from the superclass.
+
+
+## Practical example: Quadratic polynomial
+
+We'll create a quadratic polynomial by inheriting from the `Line` class, meaning `Line` is the superclass. We'll call our derived class for `Quadratic`.
+
+### Quadratic polynomial: the header file
+
+The header file of the `Quadratic` class, named `quadratic.hpp` looks as follows:
+
+```c++
+#ifndef QUADRATIC_HPP
+#define QUADRATIC_HPP
+
+#include "line.hpp" //Include the superclass header file here.
+
+class Quadratic : public Line { //Inherit protected and public variables, constructors and methods from Line.
+private:
+    double c0_, c1_, c2_;
+
+public:
+    Quadratic (double c0, double c1, double c2); //Constructor
+    virtual ~Quadratic (); //Destructor
+    double eval(double x); //Computes the value y of the polynomial
+};
+
+#endif
+```
+
+### Quadratic polynomial: the source file
+
+The source file of the `Quadratic` class looks as follows.
+
+```c++
+#include "quadratic.hpp"
+
+Quadratic::Quadratic(double c0, double c1, double c2) : Line(c0, c1){ //Here we reuse the constructor of the Line class. Note the syntax!
+    c2_ = c2; //Assign the higher order coefficient. The others are assigned in Line(c0,c1).
+}
+
+double Quadratic::eval(double x){
+    //Computes the quadratic polynomial value y at x.
+    //Reuses Line::eval(x) to compute the contribution from the straight line and tacks on the quadratic explicitly.
+    return Line::eval(x) + c2_*x*x;
+}
+
+/*
+Just an empty destructor
+*/
+Quadratic::~Quadratic(){}
+```
+
+### Quadratic polynomial: using the class
+Again, we can write a short program to use the `Quadratic` class:
+
+```c++
+#include "quadratic.hpp"
+int main() {
+  double x = 2; //Point to evaluate the polynomials in
+  double c0 = 1, c1 = 1, c2 = 1;
+  Quadratic my_quad = Quadratic(c0, c1, c2); //Call constructor and create Quadratic object my_quad.
+  double y = my_quad.eval(x); //Compute y = c0 + c1*x + c2*x*x.
+  return 0;
+}
+```
+
+ --></div>
 </div>
 
     <script type="text/x-thebe-config">

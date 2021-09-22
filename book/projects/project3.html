@@ -1,0 +1,787 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project 3 &#8212; FYS3150/FYS4150 course material</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">FYS3150/FYS4150 course material</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Getting ready
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_ready/windows_users.html">
+   Windows users
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_ready/mac_users.html">
+   Mac users
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_ready/linux_users.html">
+   Linux users
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Using the terminal
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_the_terminal/basics.html">
+   Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_the_terminal/keyboard_shortcuts.html">
+   Keyboard shortcuts
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Using git and GitHub
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/introduction_to_git.html">
+   Introduction to git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/setting_up_git_and_a_GitHub_repo.html">
+   Setting up git and GitHub repo
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/add_a_README.html">
+   Add a README
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/using_git.html">
+   Using git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/dealing_with_merge_conflicts.html">
+   Dealing with merge conflicts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/recover_an_old_version_of_a_file.html">
+   Recover an old version of a file
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/other_ways_to_fix_mistakes.html">
+   Other ways to fix mistakes
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Introduction to C++
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/intro.html">
+   Intro
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/hello_world.html">
+   Hello World
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/compiling_and_linking_take_1.html">
+   Compiling and linking, take 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/source_files_and_header_files.html">
+   Source files and header files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/variables.html">
+   Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/functions_take_1.html">
+   Functions, take 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/read_command_line_input.html">
+   Read command line input
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/write_to_file.html">
+   Write to file
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/if_else.html">
+   If else
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/loops.html">
+   Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/containers.html">
+   Containers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/intro_to_armadillo.html">
+   Introduction to Armadillo
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/pointers.html">
+   Pointers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/classes.html">
+   Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/online_resources.html">
+   Online C++ resources
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Optimization
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../optimization/memory_is_the_bottleneck.html">
+   Memory traffic is the bottleneck
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Parallelization
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../parallelization/introduction_to_openmp.html">
+   Introduction to OpenMP
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../parallelization/using_openmp.html">
+   Using OpenMP
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Using Make
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_make/intro.html">
+   Intro
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Writing reports
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../writing_reports/introduction_to_latex.html">
+   Introduction to LaTeX
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="project1.html">
+   Project 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="project2.html">
+   Project 2
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/book/projects/project3.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/anderkve/FYS3150"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Fbook/projects/project3.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reminder-on-electrodynamics-and-classical-mechanics">
+   Reminder on electrodynamics and classical mechanics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-penning-trap">
+   The Penning Trap
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problems">
+   Problems
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-analytical-part">
+     The analytical part
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#problem-1">
+       Problem 1
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#problem-2">
+       Problem 2
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#problem-3">
+       Problem 3
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#problem-4">
+       Problem 4
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#problem-5">
+       Problem 5
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#problem-6">
+       Problem 6
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#problem-7">
+       Problem 7
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-development">
+     Code development
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#problem-8">
+       Problem 8
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#problem-9">
+       Problem 9
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#problem-10">
+       Problem 10
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#problem-11">
+       Problem 11
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#problem-12">
+       Problem 12
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="project-3">
+<h1>Project 3<a class="headerlink" href="#project-3" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>In this project, you’ll study the effects of a device used to trap charged particles. This device is known as a <strong>Penning trap</strong> and utilizes an electromagnetic field to trap the particles. In particular, CERN uses such a trap to trap anti-hydrogen to study the properties of the most basic anti-matter.</p>
+</div>
+<div class="section" id="reminder-on-electrodynamics-and-classical-mechanics">
+<h2>Reminder on electrodynamics and classical mechanics<a class="headerlink" href="#reminder-on-electrodynamics-and-classical-mechanics" title="Permalink to this headline">¶</a></h2>
+<p>We’ll provide a brief reminder on the necessary electrodynamics you need to understand the context and to set up proper mathematical formulations.</p>
+<p>For simplicity, we’ll assume that the charge <span class="math notranslate nohighlight">\(q\)</span> of any particle is always positive in project, i.e <span class="math notranslate nohighlight">\(q &gt; 0\)</span>.</p>
+<p>The <strong>electric field</strong> <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> is related to the <strong>electric potential</strong> through the equation</p>
+<div class="math notranslate nohighlight" id="equation-e-field-pot">
+<span class="eqno">()<a class="headerlink" href="#equation-e-field-pot" title="Permalink to this equation">¶</a></span>\[
+\mathbf{E} = -\nabla V,
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\nabla\)</span> denotes the gradient operator.</p>
+<p>The electric field at a point <span class="math notranslate nohighlight">\(\mathbf{r}\)</span> set up by point charges <span class="math notranslate nohighlight">\(\{q_1, ..., q_n\}\)</span> distributed at points <span class="math notranslate nohighlight">\(\{\mathbf{r}_1, ..., \mathbf{r}_n\}\)</span> is</p>
+<div class="math notranslate nohighlight" id="equation-e-field-point-q">
+<span class="eqno">()<a class="headerlink" href="#equation-e-field-point-q" title="Permalink to this equation">¶</a></span>\[
+\mathbf{E} = \frac{1}{4\pi \epsilon_0}\sum_{j=1}^n q_j \frac{\mathbf{r}-\mathbf{r}_j}{|\mathbf{r}-\mathbf{r}_j|^3}
+\]</div>
+<p>The force <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> on a particle with charge <span class="math notranslate nohighlight">\(q\)</span> from an external electric field <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> and magnetic field <span class="math notranslate nohighlight">\(\mathbf{B}\)</span>, known as the <strong>Lorentz force</strong>, is given by</p>
+<div class="math notranslate nohighlight" id="equation-lorentz-force">
+<span class="eqno">()<a class="headerlink" href="#equation-lorentz-force" title="Permalink to this equation">¶</a></span>\[
+\mathbf{F} = q\mathbf{E} + q\mathbf{v}\times \mathbf{B},
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> is the velocity of the particle.</p>
+<p>Finally, the time evolution of a particle is governed by Newton’s second law given by</p>
+<div class="math notranslate nohighlight" id="equation-n2l">
+<span class="eqno">()<a class="headerlink" href="#equation-n2l" title="Permalink to this equation">¶</a></span>\[
+m\ddot{\mathbf{r}} = \sum_i \mathbf{F}_i,
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(m\)</span> denotes the mass of the particle and <span class="math notranslate nohighlight">\(\ddot{\mathbf{r}} \equiv d^2\mathbf{r}/dt^2\)</span>.</p>
+</div>
+<div class="section" id="the-penning-trap">
+<h2>The Penning Trap<a class="headerlink" href="#the-penning-trap" title="Permalink to this headline">¶</a></h2>
+<p>The Penning trap is built up by an electromagnetic field. The electric field part is defined by the electric potential</p>
+<div class="math notranslate nohighlight" id="equation-penning-potential">
+<span class="eqno">()<a class="headerlink" href="#equation-penning-potential" title="Permalink to this equation">¶</a></span>\[
+V(x, y, z) = \frac{V_0}{2d^2}(2z^2 - x^2 - y^2),
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(d\)</span> defines a geometric constraint on the physical apparatus and <span class="math notranslate nohighlight">\(V_0\)</span> is a physical parameter.</p>
+<p>The electric field traps the particle in the <span class="math notranslate nohighlight">\(z\)</span>-direction, but the particle can still escape in the radial direction. Therefore,
+in addition, a homogeneous magnetic field is imposed along the <span class="math notranslate nohighlight">\(z\)</span>-axis of the apparatus, i.e</p>
+<div class="math notranslate nohighlight" id="equation-b-field">
+<span class="eqno">()<a class="headerlink" href="#equation-b-field" title="Permalink to this equation">¶</a></span>\[
+\mathbf{B} = B_0\hat{e}_z = (0, 0, B_0),
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(B_0\)</span> is a parameter. The magnetic field ensures entrapment in the radial direction.</p>
+</div>
+<div class="section" id="problems">
+<h2>Problems<a class="headerlink" href="#problems" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-analytical-part">
+<h3>The analytical part<a class="headerlink" href="#the-analytical-part" title="Permalink to this headline">¶</a></h3>
+<p>For now, assume that we’re dealing with a single particle with charge <span class="math notranslate nohighlight">\(q\)</span> and mass <span class="math notranslate nohighlight">\(m\)</span>.</p>
+<div class="section" id="problem-1">
+<h4>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this headline">¶</a></h4>
+<p>Derive the equations of motion and show that they can be written as</p>
+<div class="math notranslate nohighlight" id="equation-x-eq">
+<span class="eqno">()<a class="headerlink" href="#equation-x-eq" title="Permalink to this equation">¶</a></span>\[
+\ddot{x} - \omega_0 \dot{y} - \frac{1}{2}\omega_z^2 x = 0,
+\]</div>
+<div class="math notranslate nohighlight" id="equation-y-eq">
+<span class="eqno">()<a class="headerlink" href="#equation-y-eq" title="Permalink to this equation">¶</a></span>\[
+\ddot{y} + \omega_0 \dot{x} - \frac{1}{2}\omega_z^2 y = 0,
+\]</div>
+<div class="math notranslate nohighlight" id="equation-z-eq">
+<span class="eqno">()<a class="headerlink" href="#equation-z-eq" title="Permalink to this equation">¶</a></span>\[
+\ddot{z} + \omega_z^2 z = 0.
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\omega_0 \equiv qB_0/m\)</span> and <span class="math notranslate nohighlight">\(\omega_z^2 = 2qV_0/(md^2)\)</span>.
+Write down the general solution for equation <a class="reference internal" href="#equation-z-eq">()</a>.</p>
+</div>
+<div class="section" id="problem-2">
+<h4>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this headline">¶</a></h4>
+<p>Eqs. <a class="reference internal" href="#equation-x-eq">()</a> and <a class="reference internal" href="#equation-y-eq">()</a> introduces a challenge because the two equations are coupled.</p>
+<p>Introduce a complex function <span class="math notranslate nohighlight">\(f(t) = x(t) + iy(t)\)</span> and show that eqs. <a class="reference internal" href="#equation-x-eq">()</a> and <a class="reference internal" href="#equation-y-eq">()</a>
+can be rewritten to a single differential equation for <span class="math notranslate nohighlight">\(f\)</span> as</p>
+<div class="math notranslate nohighlight" id="equation-f-eq">
+<span class="eqno">()<a class="headerlink" href="#equation-f-eq" title="Permalink to this equation">¶</a></span>\[
+\ddot{f} + i\omega_0 \dot{f} - \frac{\omega_z^2}{2}f = 0.
+\]</div>
+<p><em>Hint: Add the two equations and multiply one of them with the complex number <span class="math notranslate nohighlight">\(i\)</span></em>.</p>
+</div>
+<div class="section" id="problem-3">
+<h4>Problem 3<a class="headerlink" href="#problem-3" title="Permalink to this headline">¶</a></h4>
+<p>Show that the general solution of eq. <a class="reference internal" href="#equation-f-eq">()</a> is</p>
+<div class="math notranslate nohighlight" id="equation-f-general-sol">
+<span class="eqno">()<a class="headerlink" href="#equation-f-general-sol" title="Permalink to this equation">¶</a></span>\[
+f(t) = A_+ e^{-i\omega_+ t} + A_- e^{-i\omega_- t},
+\]</div>
+<p>by assuming that <span class="math notranslate nohighlight">\(f \propto e^{-i\omega t}\)</span>.</p>
+<p>Derive a necessary condition on <span class="math notranslate nohighlight">\(\omega_0\)</span> and <span class="math notranslate nohighlight">\(\omega_z\)</span> to obtain a bounded solution (i.e the particle becomes trapped inside the apparatus).</p>
+<p><em>Hint: The condition should be a consequence of the solutions <span class="math notranslate nohighlight">\(\omega_\pm\)</span>.</em></p>
+</div>
+<div class="section" id="problem-4">
+<h4>Problem 4<a class="headerlink" href="#problem-4" title="Permalink to this headline">¶</a></h4>
+<p>Derive the general solutions <span class="math notranslate nohighlight">\(x(t)\)</span> and <span class="math notranslate nohighlight">\(y(t)\)</span> from eq. <a class="reference internal" href="#equation-f-general-sol">()</a>.</p>
+</div>
+<div class="section" id="problem-5">
+<h4>Problem 5<a class="headerlink" href="#problem-5" title="Permalink to this headline">¶</a></h4>
+<p>Show that the upper-bound and lower-bound on the distance of the particle from the origin in the <span class="math notranslate nohighlight">\(xy\)</span>-plane is given by</p>
+<div class="math notranslate nohighlight">
+\[
+R_+ = A_+ + A_- \quad \text{and} \quad R_- = |A_+ - A_-|,
+\]</div>
+<p>respectively.</p>
+</div>
+<div class="section" id="problem-6">
+<h4>Problem 6<a class="headerlink" href="#problem-6" title="Permalink to this headline">¶</a></h4>
+<p>To measure the validity of your code, you’ll need an actual special solution you can use for comparison.</p>
+<p>Assume we have a single charged particle with charge <span class="math notranslate nohighlight">\(q\)</span> and mass <span class="math notranslate nohighlight">\(m\)</span> in the Penning trap with the following
+initial conditions:</p>
+<div class="math notranslate nohighlight">
+\[
+x(0) = x_0, \qquad \dot{x}(0) = 0,
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+y(0) = 0, \qquad \dot{y}(0) = v_0,
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+z(0) = z_0, \qquad \dot{z}(0) = 0.
+\]</div>
+<p>Find the special solution of <span class="math notranslate nohighlight">\(z(t)\)</span>. Show that</p>
+<div class="math notranslate nohighlight">
+\[
+A_+ = \frac{v_0 + \omega_- x_0}{\omega_- - \omega_+}, \qquad A_- = - \frac{v_0 + \omega_+ x_0}{\omega_- - \omega_+}.
+\]</div>
+</div>
+<div class="section" id="problem-7">
+<h4>Problem 7<a class="headerlink" href="#problem-7" title="Permalink to this headline">¶</a></h4>
+<p>So far, we haven’t considered more than a single particle in the trap. Consider a set of <span class="math notranslate nohighlight">\(n\)</span> particles with charges <span class="math notranslate nohighlight">\(\{q_1, ..., q_n\}\)</span>
+and masses <span class="math notranslate nohighlight">\(\{m_1, ..., m_n\}\)</span>. Derive a set of equations that accounts for <em>both</em> the force due to the external field set up
+by the apparatus and the force due to the electric force among the charges themselves.</p>
+</div>
+</div>
+<div class="section" id="code-development">
+<h3>Code development<a class="headerlink" href="#code-development" title="Permalink to this headline">¶</a></h3>
+<p>In this part, you’ll develop a code to simulate a set of <span class="math notranslate nohighlight">\(n\)</span> particles with charges <span class="math notranslate nohighlight">\(\{q_1, ..., q_n\}\)</span> and masses <span class="math notranslate nohighlight">\(\{m_1, ..., m_n\}\)</span>.
+You are <strong>expected</strong> to write an <strong>object-oriented</strong> code in this project. Not doing so will severely reduce the points given for the code.
+Don’t worry, though. We’ll help you to think about <em>how</em> you should structure and come with suggestions.
+Also, once you write the parts we suggest below as object-oriented, you can write anything else using functions.
+It’s not necessarily a good idea to object-orient <em>everything</em>.</p>
+<div class="section" id="problem-8">
+<h4>Problem 8<a class="headerlink" href="#problem-8" title="Permalink to this headline">¶</a></h4>
+<p>Create a class named <code class="docutils literal notranslate"><span class="pre">Particle</span></code> that should at least store the following properties of a single particle:</p>
+<ul class="simple">
+<li><p>Charge</p></li>
+<li><p>Mass</p></li>
+<li><p>Position</p></li>
+<li><p>Velocity</p></li>
+</ul>
+<p>You are of course free to store add any attribute you need.</p>
+<p>Some helpful advice:</p>
+<ul class="simple">
+<li><p>The constructor should assign the attributes to member variables.</p></li>
+<li><p>The constructor should initialize an <code class="docutils literal notranslate"><span class="pre">arma::vec</span></code> object for position and velocity.</p></li>
+<li><p>To begin with, make all its attributes public. This makes it easier to use it together with other classes.</p></li>
+</ul>
+</div>
+<div class="section" id="problem-9">
+<h4>Problem 9<a class="headerlink" href="#problem-9" title="Permalink to this headline">¶</a></h4>
+<p>Create class named <code class="docutils literal notranslate"><span class="pre">PenningTrap</span></code> that should at least contain following attributes:</p>
+<ul>
+<li><p>An <code class="docutils literal notranslate"><span class="pre">std::vector</span></code> containing multiple <code class="docutils literal notranslate"><span class="pre">Particle</span></code> objects. You can declare the object in the following way:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```c++
+std::vector&lt;Particle&gt; particles_; //std::vector who&#39;s elements are Particle objects.
+```
+</pre></div>
+</div>
+</li>
+<li><p>An <code class="docutils literal notranslate"><span class="pre">arma::cube</span></code> storing the position of each particle at all time steps.</p></li>
+<li><p>An <code class="docutils literal notranslate"><span class="pre">arma::cube</span></code> storing the velocity of each particle at all time steps.</p></li>
+</ul>
+<p>Again, you are free to add any attribute you need.</p>
+<p>For now, the <code class="docutils literal notranslate"><span class="pre">PenningTrap</span></code> class should contain methods (i.e member functions) for the following:</p>
+<ul class="simple">
+<li><p>The electric and magnetic force due to the external fields from the physical apparatus.</p></li>
+<li><p>The force due to the interaction among the particles (<strong>wait with this part until you’ve checked your code without the interactions</strong>).</p></li>
+</ul>
+</div>
+<div class="section" id="problem-10">
+<h4>Problem 10<a class="headerlink" href="#problem-10" title="Permalink to this headline">¶</a></h4>
+<p>Write a function or set of functions that implements Runge-Kutta 4. It should utilize your classes <code class="docutils literal notranslate"><span class="pre">PenningTrap</span></code> and <code class="docutils literal notranslate"><span class="pre">Particle</span></code> to
+solve the equations of motion.</p>
+<p>You may also object-orient this part, but it’s not necessary.</p>
+</div>
+<div class="section" id="problem-11">
+<h4>Problem 11<a class="headerlink" href="#problem-11" title="Permalink to this headline">¶</a></h4>
+<p>It’s time to test your code and check that it does what it’s supposed to. You should <em>at least</em> do the following:</p>
+<ul>
+<li><p>Create a plot of the particles motion in <span class="math notranslate nohighlight">\(xy\)</span>-plane with and without interactions. Make sure to use the same initial conditions in the two cases.</p></li>
+<li><p>Create a 3D plot of the trajectory of two particles with and without interactions. Make sure to use the same initial conditions in the two cases.</p></li>
+<li><p>Compute a <em>heatmap</em> of the maximum relative error as a function of <span class="math notranslate nohighlight">\(t\)</span> and step size <span class="math notranslate nohighlight">\(h\)</span> using the special solution derived earlier.</p></li>
+<li><p>Compute the convergence rate of Runge-Kutta 4 using the formula</p>
+<div class="math notranslate nohighlight">
+\[
+    r = \frac{1}{N}\sum_{i=1}^N\frac{\log (E_{i}/E_{i-1})}{\log (h_{i}/h_{i-1}) }.
+    \]</div>
+</li>
+</ul>
+<p>where <span class="math notranslate nohighlight">\(E_i = (\sum_{j=1}^N |y_j - \hat{y}_j|^p )^{1/p}\)</span> is the <span class="math notranslate nohighlight">\(L^p\)</span>-norm for simulation <span class="math notranslate nohighlight">\(i\)</span> with step size <span class="math notranslate nohighlight">\(h_i\)</span>.</p>
+<p>Here <span class="math notranslate nohighlight">\(y_j\)</span> represents the analytical result at a time <span class="math notranslate nohighlight">\(t_j\)</span> and <span class="math notranslate nohighlight">\(\hat{y}_j\)</span> represents the numerical approximation. <span class="math notranslate nohighlight">\(p = 2\)</span> is typically chosen. Another convenient choice is the <span class="math notranslate nohighlight">\(L^\infty\)</span>-norm given by <span class="math notranslate nohighlight">\(E_i = \max_j |y_j - \hat{y}_j|\)</span>,
+which you can deduce by computing <span class="math notranslate nohighlight">\(\lim_{p\to \infty}E_i\)</span>. You are free to use either of the two.</p>
+<p>You can think of the <span class="math notranslate nohighlight">\(L^p\)</span>-norm as a measure of the distance between the analytical solution and the numerical approximation at a finite set of times <span class="math notranslate nohighlight">\(t_j\)</span>.</p>
+</div>
+<div class="section" id="problem-12">
+<h4>Problem 12<a class="headerlink" href="#problem-12" title="Permalink to this headline">¶</a></h4>
+<p>From the perspective of an experimental physicist, it’s natural to ask whether the entrapment of the particle
+can sustain for a long enough period that actual measurements can be made. Therefore:</p>
+<ul class="simple">
+<li><p>Measure how long you can keep a set of <span class="math notranslate nohighlight">\(n\)</span> particles trapped as a function of <span class="math notranslate nohighlight">\(\omega_0\)</span> and <span class="math notranslate nohighlight">\(\omega_z\)</span>.</p></li>
+<li><p>For a specific choice of <span class="math notranslate nohighlight">\(\omega_z\)</span> and <span class="math notranslate nohighlight">\(\omega_0\)</span>, measure how long you can trap a set of particles as a function of number of particles <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./book/projects"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By the FYS3150 teaching team<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
