@@ -176,6 +176,17 @@ Now let's look at how many similarity transformations we need before we reach a 
 
 **b)** What scaling behaviour would you expect to see if $\mathbf{A}$ was a dense matrix?
 
+**First hint:** Think about the result you got in problem a). Why is it that the algorithm is so slow, even when starting with a matrix with so many zero elements? 
+
+**Second hint:** While you're not required to do so, there's nothing stopping you from just testing the case in b) with your Jacobi code. Here's a quick way to generate a N*N dense and symmetric matrix with random entries in Armadillo:
+```cpp
+// Generate random N*N matrix
+arma::mat A = arma::mat(N, N).randn();  
+
+// Symmetrize the matrix by reflecting the upper triangle to lower triangle
+A = arma::symmatu(A);  
+```
+
 
 ### Problem 7
 **a)** For a discretization of $\hat{x}$ with $n=10$ steps, solve Eq. {eq}`bb_eq_3` using your Jacobi code and make a plot of the three eigenvectors corresponding to the three lowest eigenvalues. The plot should show vector elements $v_i$ against the corresponding positions $\hat{x}_i$. 
