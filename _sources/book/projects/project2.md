@@ -178,7 +178,7 @@ Now let's look at how many similarity transformations we need before we reach a 
 
 **First hint:** Think about the result you got in problem a). Why is it that the algorithm is so slow, even when starting with a matrix with so many zero elements? 
 
-**Second hint:** While you're not required to do so, there's nothing stopping you from just testing the case in b) with your Jacobi code. Here's a quick way to generate a N*N dense and symmetric matrix with random entries in Armadillo:
+**Second hint:** While you're not required to do so, there's of course nothing stopping you from just testing the case in b) with your Jacobi code! Here's a quick way to generate a N*N dense and symmetric matrix with random entries in Armadillo:
 ```cpp
 // Generate random N*N matrix
 arma::mat A = arma::mat(N, N).randn();  
@@ -196,11 +196,6 @@ Since we are effectively showing the solutions to a differential equation, your 
 Plot the corresponding analytical eigenvectors (extended with the boundary points) in the same plot.
 
 **b)** Make the same plot for discretization of $\hat{x}$ with $n=100$ steps.
-
-
-### Problem 8 (if you have time)
-
-*Might add a bonus challenge here...*
 
 
 
