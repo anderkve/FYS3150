@@ -44,13 +44,6 @@ int LotteryMachine::ball_count()
 }
 
 
-// Method that empties the LotteryMachine, using the std::vector::clear() method
-void LotteryMachine::clear_machine()
-{
-  ball_collection.clear();
-}
-
-
 // Throw an error if the machine is empty. Uses the std::vector::empty() method to check.
 void LotteryMachine::error_if_empty()
 {

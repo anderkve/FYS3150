@@ -34,9 +34,6 @@ class LotteryMachine
     // Method that counts returns the number of balls, using the std::vector::size() method
     int ball_count();
 
-    // Method that empties the LotteryMachine, using the std::vector::clear() method
-    void clear_machine();
-
     // Throw an error if the machine is empty. Uses the std::vector::empty() method to check.
     void error_if_empty();
 

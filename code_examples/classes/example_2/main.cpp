@@ -99,12 +99,6 @@ class LotteryMachine
       return ball_collection.size();
     }
 
-    // Method that empties the LotteryMachine, using the std::vector::clear() method
-    void clear_machine()
-    {
-      ball_collection.clear();
-    }
-
     // Throw an error if the machine is empty. Uses the std::vector::empty() method to check.
     void error_if_empty()
     {
