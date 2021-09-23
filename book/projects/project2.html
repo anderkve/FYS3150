@@ -641,6 +641,15 @@ A =
 <p>Now let’s look at how many similarity transformations we need before we reach a result where all non-diagonal matrix elements are close to zero.</p>
 <p><strong>a)</strong> Try to estimate how the number of required transformations scale with the matrix size <span class="math notranslate nohighlight">\(N\)</span> for your code when solving Eq. <a class="reference internal" href="#equation-bb-eq-3">(6)</a>. Present your scaling data either in a table or a plot (or both).</p>
 <p><strong>b)</strong> What scaling behaviour would you expect to see if <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> was a dense matrix?</p>
+<p><strong>First hint:</strong> Think about the result you got in problem a). Why is it that the algorithm is so slow, even when starting with a matrix with so many zero elements?</p>
+<p><strong>Second hint:</strong> While you’re not required to do so, there’s nothing stopping you from just testing the case in b) with your Jacobi code. Here’s a quick way to generate a N*N dense and symmetric matrix with random entries in Armadillo:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Generate random N*N matrix</span>
+<span class="n">arma</span><span class="o">::</span><span class="n">mat</span> <span class="n">A</span> <span class="o">=</span> <span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">).</span><span class="n">randn</span><span class="p">();</span>  
+
+<span class="c1">// Symmetrize the matrix by reflecting the upper triangle to lower triangle</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">arma</span><span class="o">::</span><span class="n">symmatu</span><span class="p">(</span><span class="n">A</span><span class="p">);</span>  
+</pre></div>
+</div>
 </div>
 <div class="section" id="problem-7">
 <h3>Problem 7<a class="headerlink" href="#problem-7" title="Permalink to this headline">¶</a></h3>
