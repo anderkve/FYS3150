@@ -96,25 +96,28 @@ $$
 \ddot{f} + i\omega_0 \dot{f} - \frac{\omega_z^2}{2}f = 0.
 $$ (f_eq)
 
-*Hint: Add the two equations and multiply one of them with the complex number $i$*.
+*Hint: if $F(f, \dot{f}, \ddot{f}) = 0$ and  $G(g, \dot{g}, \ddot{g}) = 0$, then $F(f, \dot{f}, \ddot{f}) + c G(g, \dot{g}, \ddot{g}) = 0$ for arbitrary functions $F$, $G$, $f$ and $g$ and an arbitrary complex number $c$.*
 
 #### Problem 3
 
-Show that the general solution of eq. {eq}`f_eq` is
+The general solution to eq. {eq}`f_eq` is
 
 $$
 f(t) = A_+ e^{-i\omega_+ t} + A_- e^{-i\omega_- t},
 $$ (f_general_sol)
 
-by assuming that $f \propto e^{-i\omega t}$.
+where
 
-Derive a necessary condition on $\omega_0$ and $\omega_z$ to obtain a bounded solution (i.e the particle becomes trapped inside the apparatus).
+$$
+\omega_\pm = \frac{\omega_0 \pm \sqrt{\omega_0^2 - 2\omega_z^2}}{2}.
+$$
 
-*Hint: The condition should be a consequence of the solutions $\omega_\pm$.*
+The physical coordinates are then found as $x(t) = \text{Re} f(t)$ and $y(t). = \text{Im} f(t)$
 
-#### Problem 4
+**The actual problem:**
 
-Derive the general solutions $x(t)$ and $y(t)$ from eq. {eq}`f_general_sol`.
+What is the necessary constraint on $\omega_0$ and $\omega_z$ to obtain a bounded solution (i.e a solution where $|f(t)| < \infty$ as $t\to\infty$).
+
 
 #### Problem 5
 Show that the upper-bound and lower-bound on the distance of the particle from the origin in the $xy$-plane is given by
@@ -153,8 +156,21 @@ $$
 
 #### Problem 7
 So far, we haven't considered more than a single particle in the trap. Consider a set of $n$ particles with charges $\{q_1, ..., q_n\}$
-and masses $\{m_1, ..., m_n\}$. Derive a set of equations that accounts for *both* the force due to the external field set up
-by the apparatus and the force due to the electric force among the charges themselves.
+and masses $\{m_1, ..., m_n\}$. Show that the set of equations that accounts for *both* the force due to the external field set up
+by the apparatus and the force due to the electric force among the charges themselves are
+
+$$
+\ddot{x}_i - \omega_{0,i}\dot{y}_i - \frac{\omega_{z,i}^2}{2}x - \frac{q_i/m_i}{4\pi \epsilon_0}\sum_{j\neq i} \frac{x_i-x_j}{|\mathbf{r}_i - \mathbf{r}_j|^3} = 0.
+$$ (x_eq_int)
+
+$$
+\ddot{y}_i + \omega_{0,i}\dot{x}_i - \frac{\omega_{z,i}^2}{2}y - \frac{q_i/m_i}{4\pi \epsilon_0}\sum_{j\neq i} \frac{y_i-y_j}{|\mathbf{r}_i - \mathbf{r}_j|^3} = 0.
+$$ (y_eq_int)
+
+
+$$
+\ddot{z}_i + \omega_{z,i}^2z_i - \frac{q_i/m_i}{4\pi \epsilon_0}\sum_{j\neq i} \frac{z_i-z_j}{|\mathbf{r}_i - \mathbf{r}_j|^3} = 0.
+$$ (z_eq_int)
 
 
 ### Code development
@@ -185,13 +201,9 @@ Some helpful advice:
 Create class named `PenningTrap` that should at least contain following attributes:
   - An `std::vector` containing multiple `Particle` objects. You can declare the object in the following way:
 
-        ```c++
-        std::vector<Particle> particles_; //std::vector who's elements are Particle objects.
-        ```
-
-  - An `arma::cube` storing the position of each particle at all time steps.
-  - An `arma::cube` storing the velocity of each particle at all time steps.
-
+  ```c++
+  std::vector<Particle> particles_; //std::vector who's elements are Particle objects.
+  ```
 
 Again, you are free to add any attribute you need.
 
@@ -205,14 +217,15 @@ For now, the `PenningTrap` class should contain methods (i.e member functions) f
 Write a function or set of functions that implements Runge-Kutta 4. It should utilize your classes `PenningTrap` and `Particle` to
 solve the equations of motion.
 
-You may also object-orient this part, but it's not necessary.
+You may also object-orient this part, but it's not necessary nor especially useful.
 
 
 #### Problem 11
 
 It's time to test your code and check that it does what it's supposed to. You should *at least* do the following:
 
-  - Create a plot of the particles motion in $xy$-plane with and without interactions. Make sure to use the same initial conditions in the two cases.
+  - Create a plot of two particles' motion in $xy$-plane with and without interactions. Make sure to use the same initial conditions in the two cases.
+  How does the trajectories differ in this case? Does the difference make sense from a physical standpoint?
   - Create a 3D plot of the trajectory of two particles with and without interactions. Make sure to use the same initial conditions in the two cases.
   - Compute a *heatmap* of the maximum relative error as a function of $t$ and step size $h$ using the special solution derived earlier.
   - Compute the convergence rate of Runge-Kutta 4 using the formula
@@ -221,12 +234,16 @@ It's time to test your code and check that it does what it's supposed to. You sh
     r = \frac{1}{N}\sum_{i=1}^N\frac{\log (E_{i}/E_{i-1})}{\log (h_{i}/h_{i-1}) }.
     $$
 
-  where $E_i = (\sum_{j=1}^N |y_j - \hat{y}_j|^p )^{1/p}$ is the $L^p$-norm for simulation $i$ with step size $h_i$.
+  where
 
-   Here $y_j$ represents the analytical result at a time $t_j$ and $\hat{y}_j$ represents the numerical approximation. $p = 2$ is typically chosen. Another convenient choice is the $L^\infty$-norm given by $E_i = \max_j |y_j - \hat{y}_j|$,
-  which you can deduce by computing $\lim_{p\to \infty}E_i$. You are free to use either of the two.
+  $$
+  E_i = \max_j |\mathbf{r}_{j, \text{exact}} - \mathbf{r}_{j,\text{approx}}|
+  $$
 
-  You can think of the $L^p$-norm as a measure of the distance between the analytical solution and the numerical approximation at a finite set of times $t_j$.
+  is the $L^\infty$-norm for simulation $i$ with step size $h_i$.
+
+
+  You can think of the $L^\infty$-norm as a measure of the distance between the analytical solution $\mathbf{r}_\text{exact} (t)$ and the numerical approximation $\mathbf{r}_{\text{approx}}(t)$ at a finite set of times $t_j$.
 
 
 #### Problem 12
