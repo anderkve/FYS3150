@@ -831,7 +831,38 @@ free to design in the way you think is best.</p>
 <hr class="docutils" />
 <div class="section" id="code-snippets">
 <h3>Code snippets<a class="headerlink" href="#code-snippets" title="Permalink to this headline">¶</a></h3>
-<p><strong>To appear shortly…</strong></p>
+<p>Here are suggestions for some member functions for the <code class="docutils literal notranslate"><span class="pre">PenningTrap</span></code> class:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span>  <span class="c1">// Constructor</span>
+  <span class="n">PenningTrap</span><span class="p">(</span><span class="kt">double</span> <span class="n">B0_in</span><span class="p">,</span> <span class="kt">double</span> <span class="n">V0_in</span><span class="p">,</span> <span class="kt">double</span> <span class="n">d_in</span><span class="p">);</span>
+
+  <span class="c1">// Add a particle to the trap</span>
+  <span class="kt">void</span> <span class="nf">add_particle</span><span class="p">(</span><span class="n">Particle</span> <span class="n">p_in</span><span class="p">);</span>
+
+  <span class="c1">// External electric field at point r=(x,y,z)</span>
+  <span class="n">arma</span><span class="o">::</span><span class="n">vec</span> <span class="n">external_E_field</span><span class="p">(</span><span class="n">arma</span><span class="o">::</span><span class="n">vec</span> <span class="n">r</span><span class="p">);</span>  
+
+  <span class="c1">// External magnetic field at point r=(x,y,z)</span>
+  <span class="n">arma</span><span class="o">::</span><span class="n">vec</span> <span class="n">external_B_field</span><span class="p">(</span><span class="n">arma</span><span class="o">::</span><span class="n">vec</span> <span class="n">r</span><span class="p">);</span>  
+
+  <span class="c1">// Force on particle_i from particle_j</span>
+  <span class="n">arma</span><span class="o">::</span><span class="n">vec</span> <span class="n">force_particle</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">);</span>
+
+  <span class="c1">// The total force on particle_i from the external fields</span>
+  <span class="n">arma</span><span class="o">::</span><span class="n">vec</span> <span class="n">total_force_external</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">);</span>
+
+  <span class="c1">// The total force on particle_i from the other particles</span>
+  <span class="n">arma</span><span class="o">::</span><span class="n">vec</span> <span class="n">total_force_particles</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">);</span>
+
+  <span class="c1">// The total force on particle_i from both external fields and other particles</span>
+  <span class="n">arma</span><span class="o">::</span><span class="n">vec</span> <span class="n">total_force</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">);</span>
+
+  <span class="c1">// Evolve the system one time step (dt) using Runge-Kutta 4th order</span>
+  <span class="kt">void</span> <span class="nf">evolve_RK4</span><span class="p">(</span><span class="kt">double</span> <span class="n">dt</span><span class="p">);</span>
+
+  <span class="c1">// Evolve the system one time step (dt) using Forward Euler</span>
+  <span class="kt">void</span> <span class="nf">evolve_forward_Euler</span><span class="p">(</span><span class="kt">double</span> <span class="n">dt</span><span class="p">);</span>
+</pre></div>
+</div>
 <!-- 
 From the perspective of an experimental physicist, it's natural to ask whether the entrapment of the particle
 can sustain for a long enough period that actual measurements can be made. Therefore:
