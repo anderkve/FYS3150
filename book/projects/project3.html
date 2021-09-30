@@ -53,6 +53,7 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Project 2" href="project2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -308,7 +309,7 @@
   Projects
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="project1.html">
    Project 1
@@ -317,6 +318,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="project2.html">
    Project 2
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Project 3
   </a>
  </li>
 </ul>
@@ -407,19 +413,26 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practicalities">
+   Practicalities
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
    Introduction
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reminder-on-electrodynamics-and-classical-mechanics">
-   Reminder on electrodynamics and classical mechanics
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-penning-trap">
-   The Penning Trap
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reminder-on-electrodynamics-and-classical-mechanics">
+     Reminder on electrodynamics and classical mechanics
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-penning-trap">
+     The Penning Trap
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#problems">
@@ -457,6 +470,23 @@
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#note">
+       Note
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-development-and-numerical-investigations">
+     Code development and numerical investigations
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#numbers-and-units">
+       Numbers and units
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#problem-6">
        Problem 6
       </a>
@@ -466,13 +496,6 @@
        Problem 7
       </a>
      </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#code-development">
-     Code development
-    </a>
-    <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#problem-8">
        Problem 8
@@ -488,17 +511,12 @@
        Problem 10
       </a>
      </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#problem-11">
-       Problem 11
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#problem-12">
-       Problem 12
-      </a>
-     </li>
     </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-snippets">
+     Code snippets
+    </a>
    </li>
   </ul>
  </li>
@@ -515,53 +533,80 @@
                 
   <div class="section" id="project-3">
 <h1>Project 3<a class="headerlink" href="#project-3" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="practicalities">
+<h2>Practicalities<a class="headerlink" href="#practicalities" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Deadline</strong>: Monday, October 25, 23:59.</p></li>
+<li><p><strong>Format:</strong></p>
+<ul>
+<li><p>A scientific report, typeset in LaTeX, delivered as a pdf file on Canvas.</p></li>
+<li><p>Code (with comments, of course) on a GitHub repo, with the repo link provided in your report.</p></li>
+<li><p>You <em>must</em> deliver via your group on Canvas (even if you are working alone).</p></li>
+</ul>
+</li>
+<li><p><strong>A scientific report:</strong> In contrast to projects 1 and 2, we now require you to write a proper scientific report. The details of this is discussed during the lectures, and we will provide you with a .tex file template.</p></li>
+<li><p><strong>Collaboration:</strong> We <em>strongly</em> encourage you to collaborate with others, in groups of up to four students. The group hands in a single pdf. Remember to list everyone’s name in the pdf.</p></li>
+<li><p><strong>Reproducibility:</strong> Your code should be available on a GitHub repo. You can refer to relevant parts of your code in your answers. Make sure to include a README file in the repo that briefly explains how the code is organized, and how it should be compiled and run in order for others to reproduce your results.</p></li>
+<li><p><strong>Figures:</strong> Figures included in your LaTeX document should be made as vector graphics (e.g. <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> files), rather than raster graphics (e.g. <code class="docutils literal notranslate"><span class="pre">.png</span></code> files). If you are making plots with <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> in Python, this is as simple as calling <code class="docutils literal notranslate"><span class="pre">plt.savefig(&quot;figure.pdf&quot;)</span></code> rather than <code class="docutils literal notranslate"><span class="pre">plt.savefig(&quot;figure.png&quot;)</span></code>.</p></li>
+</ul>
+</div>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>In this project, you’ll study the effects of a device used to trap charged particles. This device is known as a <strong>Penning trap</strong> and utilizes an electromagnetic field to trap the particles. In particular, CERN uses such a trap to trap anti-hydrogen to study the properties of the most basic anti-matter.</p>
-</div>
+<p>In this project, you’ll study the effects of a device used to store charged particles. This device is known as a <strong>Penning trap</strong> and utilizes a static configuration of electric and magnetic fields to confine charged particles, so that they can be used for various types of measurements and experiments. In particular, experiments at CERN such as ALPHA, AEgIS and BASE use Penning traps to control the antimatter in their experiments.</p>
 <div class="section" id="reminder-on-electrodynamics-and-classical-mechanics">
-<h2>Reminder on electrodynamics and classical mechanics<a class="headerlink" href="#reminder-on-electrodynamics-and-classical-mechanics" title="Permalink to this headline">¶</a></h2>
-<p>We’ll provide a brief reminder on the necessary electrodynamics you need to understand the context and to set up proper mathematical formulations.</p>
-<p>For simplicity, we’ll assume that the charge <span class="math notranslate nohighlight">\(q\)</span> of any particle is always positive in project, i.e <span class="math notranslate nohighlight">\(q &gt; 0\)</span>.</p>
-<p>The <strong>electric field</strong> <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> is related to the <strong>electric potential</strong> through the equation</p>
+<h3>Reminder on electrodynamics and classical mechanics<a class="headerlink" href="#reminder-on-electrodynamics-and-classical-mechanics" title="Permalink to this headline">¶</a></h3>
+<p>Not everyone in this course study physics as their main subject. Therefore we’ll summarize the main equations from electrodynamics that you need to work on this project. Good ol’ classical physics is sufficient to study the basics of Penning trap, so we won’t worry about quantum aspects.</p>
+<ul>
+<li><p>The <strong>electric field</strong> (<span class="math notranslate nohighlight">\(\mathbf{E}\)</span>) is related to the <strong>electric potential</strong> (<span class="math notranslate nohighlight">\(V\)</span>) through the equation</p>
 <div class="math notranslate nohighlight" id="equation-e-field-pot">
-<span class="eqno">()<a class="headerlink" href="#equation-e-field-pot" title="Permalink to this equation">¶</a></span>\[
-\mathbf{E} = -\nabla V,
-\]</div>
+<span class="eqno">(7)<a class="headerlink" href="#equation-e-field-pot" title="Permalink to this equation">¶</a></span>\[
+  \mathbf{E} = -\nabla V,
+  \]</div>
 <p>where <span class="math notranslate nohighlight">\(\nabla\)</span> denotes the gradient operator.</p>
-<p>The electric field at a point <span class="math notranslate nohighlight">\(\mathbf{r}\)</span> set up by point charges <span class="math notranslate nohighlight">\(\{q_1, ..., q_n\}\)</span> distributed at points <span class="math notranslate nohighlight">\(\{\mathbf{r}_1, ..., \mathbf{r}_n\}\)</span> is</p>
+</li>
+<li><p>The electric field <span class="math notranslate nohighlight">\(\mathbf{E}(\mathbf{r})\)</span> at a point <span class="math notranslate nohighlight">\(\mathbf{r}\)</span> set up by point charges <span class="math notranslate nohighlight">\(\{q_1, ..., q_n\}\)</span> distributed at points <span class="math notranslate nohighlight">\(\{\mathbf{r}_1, ..., \mathbf{r}_n\}\)</span> is</p>
 <div class="math notranslate nohighlight" id="equation-e-field-point-q">
-<span class="eqno">()<a class="headerlink" href="#equation-e-field-point-q" title="Permalink to this equation">¶</a></span>\[
-\mathbf{E} = \frac{1}{4\pi \epsilon_0}\sum_{j=1}^n q_j \frac{\mathbf{r}-\mathbf{r}_j}{|\mathbf{r}-\mathbf{r}_j|^3}
-\]</div>
-<p>The force <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> on a particle with charge <span class="math notranslate nohighlight">\(q\)</span> from an external electric field <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> and magnetic field <span class="math notranslate nohighlight">\(\mathbf{B}\)</span>, known as the <strong>Lorentz force</strong>, is given by</p>
+<span class="eqno">(8)<a class="headerlink" href="#equation-e-field-point-q" title="Permalink to this equation">¶</a></span>\[
+  \mathbf{E} = k_e \sum_{j=1}^n q_j \frac{\mathbf{r}-\mathbf{r}_j}{|\mathbf{r}-\mathbf{r}_j|^3}
+  \]</div>
+<p>where <span class="math notranslate nohighlight">\(k_e\)</span> is Coulomb’s constant.</p>
+</li>
+<li><p>The force <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> on a particle with charge <span class="math notranslate nohighlight">\(q\)</span> from an electric field <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> and magnetic field <span class="math notranslate nohighlight">\(\mathbf{B}\)</span>, known as the <strong>Lorentz force</strong>, is given by</p>
 <div class="math notranslate nohighlight" id="equation-lorentz-force">
-<span class="eqno">()<a class="headerlink" href="#equation-lorentz-force" title="Permalink to this equation">¶</a></span>\[
-\mathbf{F} = q\mathbf{E} + q\mathbf{v}\times \mathbf{B},
-\]</div>
+<span class="eqno">(9)<a class="headerlink" href="#equation-lorentz-force" title="Permalink to this equation">¶</a></span>\[
+  \mathbf{F} = q\mathbf{E} + q\mathbf{v}\times \mathbf{B},
+  \]</div>
 <p>where <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> is the velocity of the particle.</p>
-<p>Finally, the time evolution of a particle is governed by Newton’s second law given by</p>
+</li>
+<li><p>Finally, the time evolution of a particle is governed by Newton’s second law,</p>
 <div class="math notranslate nohighlight" id="equation-n2l">
-<span class="eqno">()<a class="headerlink" href="#equation-n2l" title="Permalink to this equation">¶</a></span>\[
-m\ddot{\mathbf{r}} = \sum_i \mathbf{F}_i,
-\]</div>
+<span class="eqno">(10)<a class="headerlink" href="#equation-n2l" title="Permalink to this equation">¶</a></span>\[
+  m\ddot{\mathbf{r}} = \sum_i \mathbf{F}_i,
+  \]</div>
 <p>where <span class="math notranslate nohighlight">\(m\)</span> denotes the mass of the particle and <span class="math notranslate nohighlight">\(\ddot{\mathbf{r}} \equiv d^2\mathbf{r}/dt^2\)</span>.</p>
+</li>
+</ul>
 </div>
 <div class="section" id="the-penning-trap">
-<h2>The Penning Trap<a class="headerlink" href="#the-penning-trap" title="Permalink to this headline">¶</a></h2>
-<p>The Penning trap is built up by an electromagnetic field. The electric field part is defined by the electric potential</p>
+<h3>The Penning Trap<a class="headerlink" href="#the-penning-trap" title="Permalink to this headline">¶</a></h3>
+<p>A schematic of a Penning trap is shown in figure <a class="reference internal" href="#penning-fig"><span class="std std-numref">Fig. 2</span></a>. Charged particles are confined using constant electric and magnetic fields. The electric field is set by three electrodes: the two end caps (a) and a ring (b) (only the ring cross-section is shown). The constant and homogenous magnetic field in the trap is set up by a cylinder magnet (c) (only cross-section shown). The red dot represents a (positively charged) trapped particle.</p>
+<div class="figure align-default" id="penning-fig">
+<a class="reference internal image-reference" href="../../_images/Penning_Trap.svg"><img alt="../../_images/Penning_Trap.svg" height="465" src="../../_images/Penning_Trap.svg" width="641" /></a>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Schematic of a Penning trap. See the text for further details. This illustration is by Arian Kriesch and taken from <a class="reference external" href="https://en.wikipedia.org/wiki/File:Penning_Trap.svg">Wikimedia Commons</a>.</span><a class="headerlink" href="#penning-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>We will consider an ideal Penning trap in which the electric field is defined by the electric potential</p>
 <div class="math notranslate nohighlight" id="equation-penning-potential">
-<span class="eqno">()<a class="headerlink" href="#equation-penning-potential" title="Permalink to this equation">¶</a></span>\[
-V(x, y, z) = \frac{V_0}{2d^2}(2z^2 - x^2 - y^2),
+<span class="eqno">(11)<a class="headerlink" href="#equation-penning-potential" title="Permalink to this equation">¶</a></span>\[
+V(x, y, z) = \frac{V_0}{2d^2}(2z^2 - x^2 - y^2).
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(d\)</span> defines a geometric constraint on the physical apparatus and <span class="math notranslate nohighlight">\(V_0\)</span> is a physical parameter.</p>
-<p>The electric field traps the particle in the <span class="math notranslate nohighlight">\(z\)</span>-direction, but the particle can still escape in the radial direction. Therefore,
-in addition, a homogeneous magnetic field is imposed along the <span class="math notranslate nohighlight">\(z\)</span>-axis of the apparatus, i.e</p>
+<p>Here <span class="math notranslate nohighlight">\(V_0\)</span> is the potential applied to the electrodes and <span class="math notranslate nohighlight">\(d\)</span> is called the <em>characteristic dimension</em>, which represents the length scale for the region between the electrodes. (Techincally, <span class="math notranslate nohighlight">\(d\)</span> is defined as <span class="math notranslate nohighlight">\(d = \sqrt{z_0^2 + r_0^2/2}\)</span>, where <span class="math notranslate nohighlight">\(z_0\)</span> is the distance from the center to one of the end caps and <span class="math notranslate nohighlight">\(r_0\)</span> is the distance from the center to the ring.)</p>
+<p>The electric field traps the particle in the <span class="math notranslate nohighlight">\(z\)</span>-direction, but the particle can still escape in the radial direction (in the <span class="math notranslate nohighlight">\(xy\)</span>-plane). Therefore, a homogeneous magnetic field is imposed in the <span class="math notranslate nohighlight">\(z\)</span>-direction of the apparatus, i.e</p>
 <div class="math notranslate nohighlight" id="equation-b-field">
-<span class="eqno">()<a class="headerlink" href="#equation-b-field" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(12)<a class="headerlink" href="#equation-b-field" title="Permalink to this equation">¶</a></span>\[
 \mathbf{B} = B_0\hat{e}_z = (0, 0, B_0),
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(B_0\)</span> is a parameter. The magnetic field ensures entrapment in the radial direction.</p>
+<p>where <span class="math notranslate nohighlight">\(B_0\)</span> is the field strength, with <span class="math notranslate nohighlight">\(B_0 &gt; 0\)</span>. If this field is strong enough, the resulting force will stop particles from escaping outwards in the <span class="math notranslate nohighlight">\(xy\)</span>-plane by instead forcing the particles into orbital motions.</p>
+</div>
 </div>
 <div class="section" id="problems">
 <h2>Problems<a class="headerlink" href="#problems" title="Permalink to this headline">¶</a></h2>
@@ -570,62 +615,56 @@ in addition, a homogeneous magnetic field is imposed along the <span class="math
 <p>For now, assume that we’re dealing with a single particle with charge <span class="math notranslate nohighlight">\(q\)</span> and mass <span class="math notranslate nohighlight">\(m\)</span>.</p>
 <div class="section" id="problem-1">
 <h4>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this headline">¶</a></h4>
-<p>Derive the equations of motion and show that they can be written as</p>
+<p>Starting from Newton’s second law, show that the differential equations governing the time evolution of the particle’s position (the <em>equations of motion</em>) can be written as</p>
 <div class="math notranslate nohighlight" id="equation-x-eq">
-<span class="eqno">()<a class="headerlink" href="#equation-x-eq" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(13)<a class="headerlink" href="#equation-x-eq" title="Permalink to this equation">¶</a></span>\[
 \ddot{x} - \omega_0 \dot{y} - \frac{1}{2}\omega_z^2 x = 0,
 \]</div>
 <div class="math notranslate nohighlight" id="equation-y-eq">
-<span class="eqno">()<a class="headerlink" href="#equation-y-eq" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(14)<a class="headerlink" href="#equation-y-eq" title="Permalink to this equation">¶</a></span>\[
 \ddot{y} + \omega_0 \dot{x} - \frac{1}{2}\omega_z^2 y = 0,
 \]</div>
 <div class="math notranslate nohighlight" id="equation-z-eq">
-<span class="eqno">()<a class="headerlink" href="#equation-z-eq" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(15)<a class="headerlink" href="#equation-z-eq" title="Permalink to this equation">¶</a></span>\[
 \ddot{z} + \omega_z^2 z = 0.
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\omega_0 \equiv qB_0/m\)</span> and <span class="math notranslate nohighlight">\(\omega_z^2 = 2qV_0/(md^2)\)</span>.
-Write down the general solution for equation <a class="reference internal" href="#equation-z-eq">()</a>.</p>
+<p>where <span class="math notranslate nohighlight">\(\omega_0 \equiv \frac{|q|B_0}{m}\)</span> and <span class="math notranslate nohighlight">\(\omega_z = \sqrt{\frac{2|q|V_0}{md^2}}\)</span>.
+Write down the general solution for equation <a class="reference internal" href="#equation-z-eq">(15)</a>.</p>
 </div>
 <div class="section" id="problem-2">
 <h4>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this headline">¶</a></h4>
-<p>Eqs. <a class="reference internal" href="#equation-x-eq">()</a> and <a class="reference internal" href="#equation-y-eq">()</a> introduces a challenge because the two equations are coupled.</p>
-<p>Introduce a complex function <span class="math notranslate nohighlight">\(f(t) = x(t) + iy(t)\)</span> and show that eqs. <a class="reference internal" href="#equation-x-eq">()</a> and <a class="reference internal" href="#equation-y-eq">()</a>
+<p>Eqs. <a class="reference internal" href="#equation-x-eq">(13)</a> and <a class="reference internal" href="#equation-y-eq">(14)</a> introduces a challenge because the two equations are coupled.</p>
+<p>Introduce a complex function <span class="math notranslate nohighlight">\(f(t) = x(t) + iy(t)\)</span> and show that eqs. <a class="reference internal" href="#equation-x-eq">(13)</a> and <a class="reference internal" href="#equation-y-eq">(14)</a>
 can be rewritten to a single differential equation for <span class="math notranslate nohighlight">\(f\)</span> as</p>
 <div class="math notranslate nohighlight" id="equation-f-eq">
-<span class="eqno">()<a class="headerlink" href="#equation-f-eq" title="Permalink to this equation">¶</a></span>\[
-\ddot{f} + i\omega_0 \dot{f} - \frac{\omega_z^2}{2}f = 0.
+<span class="eqno">(16)<a class="headerlink" href="#equation-f-eq" title="Permalink to this equation">¶</a></span>\[
+\ddot{f} + i\omega_0 \dot{f} - \frac{1}{2} \omega_z^2 f = 0.
 \]</div>
-<p><em>Hint: Add the two equations and multiply one of them with the complex number <span class="math notranslate nohighlight">\(i\)</span></em>.</p>
+<p><em>Hint: if <span class="math notranslate nohighlight">\(F(f, \dot{f}, \ddot{f}) = 0\)</span> and  <span class="math notranslate nohighlight">\(G(g, \dot{g}, \ddot{g}) = 0\)</span>, then <span class="math notranslate nohighlight">\(F(f, \dot{f}, \ddot{f}) + c G(g, \dot{g}, \ddot{g}) = 0\)</span> for arbitrary functions <span class="math notranslate nohighlight">\(F\)</span>, <span class="math notranslate nohighlight">\(G\)</span>, <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> and an arbitrary complex number <span class="math notranslate nohighlight">\(c\)</span>.</em></p>
 </div>
 <div class="section" id="problem-3">
 <h4>Problem 3<a class="headerlink" href="#problem-3" title="Permalink to this headline">¶</a></h4>
-<p>Show that the general solution of eq. <a class="reference internal" href="#equation-f-eq">()</a> is</p>
+<p>The general solution to eq. <a class="reference internal" href="#equation-f-eq">(16)</a> is</p>
 <div class="math notranslate nohighlight" id="equation-f-general-sol">
-<span class="eqno">()<a class="headerlink" href="#equation-f-general-sol" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(17)<a class="headerlink" href="#equation-f-general-sol" title="Permalink to this equation">¶</a></span>\[
 f(t) = A_+ e^{-i\omega_+ t} + A_- e^{-i\omega_- t},
 \]</div>
-<p>by assuming that <span class="math notranslate nohighlight">\(f \propto e^{-i\omega t}\)</span>.</p>
-<p>Derive a necessary condition on <span class="math notranslate nohighlight">\(\omega_0\)</span> and <span class="math notranslate nohighlight">\(\omega_z\)</span> to obtain a bounded solution (i.e the particle becomes trapped inside the apparatus).</p>
-<p><em>Hint: The condition should be a consequence of the solutions <span class="math notranslate nohighlight">\(\omega_\pm\)</span>.</em></p>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[
+\omega_\pm = \frac{\omega_0 \pm \sqrt{\omega_0^2 - 2\omega_z^2}}{2}.
+\]</div>
+<p>The physical coordinates are then found as <span class="math notranslate nohighlight">\(x(t) = \text{Re} f(t)\)</span> and <span class="math notranslate nohighlight">\(y(t). = \text{Im} f(t)\)</span></p>
+<p>What is the necessary constraint on <span class="math notranslate nohighlight">\(\omega_0\)</span> and <span class="math notranslate nohighlight">\(\omega_z\)</span> to obtain a bounded solution for the movement in the <span class="math notranslate nohighlight">\(xy\)</span>-plane (i.e. a solution where <span class="math notranslate nohighlight">\(|f(t)| &lt; \infty\)</span> as <span class="math notranslate nohighlight">\(t\to\infty\)</span>). Also express this as a constraint that relates the Penning trap parameters (<span class="math notranslate nohighlight">\(B_0\)</span>, <span class="math notranslate nohighlight">\(V_0\)</span>, <span class="math notranslate nohighlight">\(d\)</span>) to the particle properties (<span class="math notranslate nohighlight">\(m\)</span>, <span class="math notranslate nohighlight">\(q\)</span>).</p>
 </div>
 <div class="section" id="problem-4">
 <h4>Problem 4<a class="headerlink" href="#problem-4" title="Permalink to this headline">¶</a></h4>
-<p>Derive the general solutions <span class="math notranslate nohighlight">\(x(t)\)</span> and <span class="math notranslate nohighlight">\(y(t)\)</span> from eq. <a class="reference internal" href="#equation-f-general-sol">()</a>.</p>
+<p>Show that the upper and lower bounds on the particle’s distance from the origin in the <span class="math notranslate nohighlight">\(xy\)</span>-plane are given by
+<span class="math notranslate nohighlight">\(R_+ = A_+ + A_-\)</span> and <span class="math notranslate nohighlight">\(R_- = |A_+ - A_-|\)</span>, respectively.</p>
 </div>
 <div class="section" id="problem-5">
 <h4>Problem 5<a class="headerlink" href="#problem-5" title="Permalink to this headline">¶</a></h4>
-<p>Show that the upper-bound and lower-bound on the distance of the particle from the origin in the <span class="math notranslate nohighlight">\(xy\)</span>-plane is given by</p>
-<div class="math notranslate nohighlight">
-\[
-R_+ = A_+ + A_- \quad \text{and} \quad R_- = |A_+ - A_-|,
-\]</div>
-<p>respectively.</p>
-</div>
-<div class="section" id="problem-6">
-<h4>Problem 6<a class="headerlink" href="#problem-6" title="Permalink to this headline">¶</a></h4>
-<p>To measure the validity of your code, you’ll need an actual special solution you can use for comparison.</p>
-<p>Assume we have a single charged particle with charge <span class="math notranslate nohighlight">\(q\)</span> and mass <span class="math notranslate nohighlight">\(m\)</span> in the Penning trap with the following
-initial conditions:</p>
+<p>To measure the validity of your code, you’ll need a specific analytical solution to use for comparison. Assume we have a single charged particle with charge <span class="math notranslate nohighlight">\(q\)</span> and mass <span class="math notranslate nohighlight">\(m\)</span> in the Penning trap with the following initial conditions:</p>
 <div class="math notranslate nohighlight">
 \[
 x(0) = x_0, \qquad \dot{x}(0) = 0,
@@ -638,99 +677,168 @@ y(0) = 0, \qquad \dot{y}(0) = v_0,
 \[
 z(0) = z_0, \qquad \dot{z}(0) = 0.
 \]</div>
-<p>Find the special solution of <span class="math notranslate nohighlight">\(z(t)\)</span>. Show that</p>
+<p>Find the corresponding specific solution of <span class="math notranslate nohighlight">\(z(t)\)</span>. For the movement in the <span class="math notranslate nohighlight">\(xy\)</span>-plane, show that the specific solution for <span class="math notranslate nohighlight">\(f(t)\)</span> has</p>
 <div class="math notranslate nohighlight">
 \[
 A_+ = \frac{v_0 + \omega_- x_0}{\omega_- - \omega_+}, \qquad A_- = - \frac{v_0 + \omega_+ x_0}{\omega_- - \omega_+}.
 \]</div>
 </div>
-<div class="section" id="problem-7">
-<h4>Problem 7<a class="headerlink" href="#problem-7" title="Permalink to this headline">¶</a></h4>
-<p>So far, we haven’t considered more than a single particle in the trap. Consider a set of <span class="math notranslate nohighlight">\(n\)</span> particles with charges <span class="math notranslate nohighlight">\(\{q_1, ..., q_n\}\)</span>
-and masses <span class="math notranslate nohighlight">\(\{m_1, ..., m_n\}\)</span>. Derive a set of equations that accounts for <em>both</em> the force due to the external field set up
-by the apparatus and the force due to the electric force among the charges themselves.</p>
+<hr class="docutils" />
+<div class="section" id="note">
+<h4>Note<a class="headerlink" href="#note" title="Permalink to this headline">¶</a></h4>
+<p>We remind you that so far we have only been looking at the special case of a single particle. In a trap with more particles, the equations of motion for each particle are coupled to those of the other particles. Specifically, consider the case where we fill our Penning trap with a set of <span class="math notranslate nohighlight">\(n\)</span> particles with charges <span class="math notranslate nohighlight">\(\{q_1, ..., q_n\}\)</span> and masses <span class="math notranslate nohighlight">\(\{m_1, ..., m_n\}\)</span>. Each particle will then experience both the force from the external electric and magnetic fields and the Coulomb force from all the other particles. In this case our set of equations of motion would become</p>
+<div class="math notranslate nohighlight" id="equation-x-eq-int">
+<span class="eqno">(18)<a class="headerlink" href="#equation-x-eq-int" title="Permalink to this equation">¶</a></span>\[\begin{split}
+\ddot{x}_i - \sum\\
+\ddot{x}_i - \omega_{0,i}\dot{y}_i - \frac{1}{2} \omega_{z,i}^2 x - k_e \frac{q_i}{m_i}\sum_{j\neq i} \frac{x_i-x_j}{|\mathbf{r}_i - \mathbf{r}_j|^3} = 0,
+\end{split}\]</div>
+<div class="math notranslate nohighlight" id="equation-y-eq-int">
+<span class="eqno">(19)<a class="headerlink" href="#equation-y-eq-int" title="Permalink to this equation">¶</a></span>\[
+\ddot{y}_i + \omega_{0,i}\dot{x}_i - \frac{1}{2} \omega_{z,i}^2 y - k_e \frac{q_i}{m_i}\sum_{j\neq i} \frac{y_i-y_j}{|\mathbf{r}_i - \mathbf{r}_j|^3} = 0,
+\]</div>
+<div class="math notranslate nohighlight" id="equation-z-eq-int">
+<span class="eqno">(20)<a class="headerlink" href="#equation-z-eq-int" title="Permalink to this equation">¶</a></span>\[
+\ddot{z}_i + \omega_{z,i}^2z_i - k_e \frac{q_i}{m_i} \sum_{j\neq i} \frac{z_i-z_j}{|\mathbf{r}_i - \mathbf{r}_j|^3} = 0,
+\]</div>
+<p>Here <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> are particle indices. We will not attempt an analytical treatment of this problem, but rather move on to a numerical simulation.</p>
+<p><strong>Note:</strong> While the above equations are the equations our simulation will solve, our code does not have to contain these equations as single, long mathematical formulas. The code snippets we provide will outline an approach where the contributions from different forces are specificed in separate functions in the code.</p>
+<p>This will allow us to write a quite <em>general</em> Penning trap simulator, for which the specific Penning trap configuration described by the equations above is just one special case.</p>
 </div>
 </div>
-<div class="section" id="code-development">
-<h3>Code development<a class="headerlink" href="#code-development" title="Permalink to this headline">¶</a></h3>
-<p>In this part, you’ll develop a code to simulate a set of <span class="math notranslate nohighlight">\(n\)</span> particles with charges <span class="math notranslate nohighlight">\(\{q_1, ..., q_n\}\)</span> and masses <span class="math notranslate nohighlight">\(\{m_1, ..., m_n\}\)</span>.
-You are <strong>expected</strong> to write an <strong>object-oriented</strong> code in this project. Not doing so will severely reduce the points given for the code.
-Don’t worry, though. We’ll help you to think about <em>how</em> you should structure and come with suggestions.
-Also, once you write the parts we suggest below as object-oriented, you can write anything else using functions.
-It’s not necessarily a good idea to object-orient <em>everything</em>.</p>
-<div class="section" id="problem-8">
-<h4>Problem 8<a class="headerlink" href="#problem-8" title="Permalink to this headline">¶</a></h4>
+<hr class="docutils" />
+<div class="section" id="code-development-and-numerical-investigations">
+<h3>Code development and numerical investigations<a class="headerlink" href="#code-development-and-numerical-investigations" title="Permalink to this headline">¶</a></h3>
+<p>In this part, you’ll develop a code to simulate a set of <span class="math notranslate nohighlight">\(n\)</span> particles with charges <span class="math notranslate nohighlight">\(\{q_1, ..., q_n\}\)</span> and masses <span class="math notranslate nohighlight">\(\{m_1, ..., m_n\}\)</span>. You are <strong>required</strong> to write an <strong>object-oriented</strong> code in this project.
+Don’t worry, though – we’ll help you with suggestions for <em>how</em> you might structure your code.
+Also, writing object-oriented code does not mean that <em>everything</em> in the code should be solved using classes.
+Below we only require you to write two classes, <code class="docutils literal notranslate"><span class="pre">Particle</span></code> and <code class="docutils literal notranslate"><span class="pre">PenningTrap</span></code>. The other aspects of your code you are
+free to design in the way you think is best.</p>
+<hr class="docutils" />
+<div class="section" id="numbers-and-units">
+<h4>Numbers and units<a class="headerlink" href="#numbers-and-units" title="Permalink to this headline">¶</a></h4>
+<p>For this project we’ll work with the following set of base units:</p>
+<ul class="simple">
+<li><p>Length: micrometre (<span class="math notranslate nohighlight">\(\mu m\)</span>)</p></li>
+<li><p>Time: microseconds (<span class="math notranslate nohighlight">\(\mu s\)</span>)</p></li>
+<li><p>Mass: atomic mass unit (<span class="math notranslate nohighlight">\(u\)</span>)</p></li>
+<li><p>Charge: the elementary charge <span class="math notranslate nohighlight">\(e\)</span></p></li>
+</ul>
+<p>In these units, the Coulomb constant takes the value</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(k_e = 1.38935333 \times 10^5 \, \frac{u \, (\mu m)^3}{(\mu s)^2 \, e^2}\)</span></p></li>
+</ul>
+<p>and the derived SI units for magnetic field strength (Tesla, <span class="math notranslate nohighlight">\(T\)</span>) and electric potential (Volt, <span class="math notranslate nohighlight">\(V\)</span>) become</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(T = 9.64852558 \times 10^1 \, \frac{u}{(\mu s) \, e}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(V = 9.64852558 \times 10^7 \, \frac{u \, (\mu m)^2}{(\mu s)^2 \, e}\)</span>.</p></li>
+</ul>
+<p>Our default Penning trap configuration will have</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(B_0 = 1.00\,T = 9.65 \times 10^1 \, \frac{u}{(\mu s) \, e}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(V_0 = 10.0\,V = 9.65 \times 10^8 \, \frac{u \, (\mu m)^2}{(\mu s)^2 \, e}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(d = 1\,cm = 10^4 \mu m\)</span>.</p></li>
+</ul>
+<p>We note that <span class="math notranslate nohighlight">\(V_0\)</span> and <span class="math notranslate nohighlight">\(d\)</span> only appear as the ratio <span class="math notranslate nohighlight">\(V_0/d^2\)</span>, which now takes the value</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(V_0/d^2 = 9.65 \, \frac{u}{(\mu s)^2 \, e}\)</span>.</p></li>
+</ul>
+<p>Unless stated otherwise, we’ll use singly-charged Calcium ions (<span class="math notranslate nohighlight">\(Ca^+\)</span>) as our charged particles.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="problem-6">
+<h4>Problem 6<a class="headerlink" href="#problem-6" title="Permalink to this headline">¶</a></h4>
 <p>Create a class named <code class="docutils literal notranslate"><span class="pre">Particle</span></code> that should at least store the following properties of a single particle:</p>
 <ul class="simple">
-<li><p>Charge</p></li>
-<li><p>Mass</p></li>
-<li><p>Position</p></li>
-<li><p>Velocity</p></li>
+<li><p>Charge (<span class="math notranslate nohighlight">\(q\)</span>)</p></li>
+<li><p>Mass (<span class="math notranslate nohighlight">\(m\)</span>)</p></li>
+<li><p>Position (<span class="math notranslate nohighlight">\(\mathbf{r}\)</span>)</p></li>
+<li><p>Velocity (<span class="math notranslate nohighlight">\(\mathbf{v}\)</span>)</p></li>
 </ul>
-<p>You are of course free to store add any attribute you need.</p>
-<p>Some helpful advice:</p>
+<p>You are of course free to extend the class with more attributes (member variables) and/or methods (member functions) if you think its useful.</p>
+<p>Some advice:</p>
 <ul class="simple">
-<li><p>The constructor should assign the attributes to member variables.</p></li>
-<li><p>The constructor should initialize an <code class="docutils literal notranslate"><span class="pre">arma::vec</span></code> object for position and velocity.</p></li>
-<li><p>To begin with, make all its attributes public. This makes it easier to use it together with other classes.</p></li>
+<li><p>The constructor should assign values to the member variables.</p></li>
+<li><p>For the position and velocity, use <code class="docutils literal notranslate"><span class="pre">arma::vec</span></code> objects.</p></li>
+<li><p>Make all member variables public. This is just to ease the interplay between the <code class="docutils literal notranslate"><span class="pre">Particle</span></code> class and the <code class="docutils literal notranslate"><span class="pre">PenningTrap</span></code> class. (Alternatively, a nice approach in this case would be to make <code class="docutils literal notranslate"><span class="pre">PenningTrap</span></code> a <a class="reference external" href="https://en.wikipedia.org/wiki/Friend_class">friend class</a> of <code class="docutils literal notranslate"><span class="pre">Particle</span></code>.)</p></li>
 </ul>
+</div>
+<div class="section" id="problem-7">
+<h4>Problem 7<a class="headerlink" href="#problem-7" title="Permalink to this headline">¶</a></h4>
+<p>Create class named <code class="docutils literal notranslate"><span class="pre">PenningTrap</span></code> that should at least contain member variables for the following:</p>
+<ul class="simple">
+<li><p>The magnetic field strength (<span class="math notranslate nohighlight">\(B_0\)</span>)</p></li>
+<li><p>The applied potential (<span class="math notranslate nohighlight">\(V_0\)</span>)</p></li>
+<li><p>The characteristic dimension (<span class="math notranslate nohighlight">\(d\)</span>)</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">std::vector&lt;Particle&gt;</span></code> to contain all the <code class="docutils literal notranslate"><span class="pre">Particle</span></code> objects in the Penning trap.</p></li>
+</ul>
+<p>Further, the class should contain some member functions for evaluating</p>
+<ul class="simple">
+<li><p>The external electric field</p></li>
+<li><p>The external magnetic field</p></li>
+<li><p>The force due to the interaction among the particles</p></li>
+</ul>
+<p>Remember to run small tests during your code development. In particular, since the analytic solutions you have derived are for the case of a single particle, you can consider carrying out the single-particle tests in Problem 11 before implementing any of the code related to particle interactions.</p>
+</div>
+<div class="section" id="problem-8">
+<h4>Problem 8<a class="headerlink" href="#problem-8" title="Permalink to this headline">¶</a></h4>
+<p>Now we need functionality for actually solving the equations of motion, i.e. evolving our system in time. Our main method will be the fourth-order Runge-Kutta (RK4) method, but for comparison (and debugging) we’ll also implement the simple forward Euler method.</p>
+<p>So, write functions that can evolve your <code class="docutils literal notranslate"><span class="pre">PenningTrap</span></code> system in time using</p>
+<ul class="simple">
+<li><p>the forward Euler method</p></li>
+<li><p>the RK4 method</p></li>
+</ul>
+<p>You can implement these methods either</p>
+<ul class="simple">
+<li><p>via regular functions, that take a <code class="docutils literal notranslate"><span class="pre">PenningTrap</span></code> object as input;</p></li>
+<li><p>via some type of “solver class” or “integrator class”, that contains/interacts with the <code class="docutils literal notranslate"><span class="pre">PenningTrap</span></code> object; or</p></li>
+<li><p>via member functions implemented directly in the <code class="docutils literal notranslate"><span class="pre">PenningTrap</span></code> class.</p></li>
+</ul>
+<p>The code snippets below outline the third approach, but feel free to choose the approach you prefer.</p>
+<p>We will use RK4 in the problems below, unless specified otherwise. However, having the simple forward Euler method implemented is still very useful – for instance it can help you check if a problem in your results is due a problem in your RK4 code or some other part of the code.</p>
 </div>
 <div class="section" id="problem-9">
 <h4>Problem 9<a class="headerlink" href="#problem-9" title="Permalink to this headline">¶</a></h4>
-<p>Create class named <code class="docutils literal notranslate"><span class="pre">PenningTrap</span></code> that should at least contain following attributes:</p>
+<p>It’s time to test and explore your code, to check that it does what it’s supposed to. You should at least perform the experiments listed below, but feel free to run other tests/experiments as well.</p>
 <ul>
-<li><p>An <code class="docutils literal notranslate"><span class="pre">std::vector</span></code> containing multiple <code class="docutils literal notranslate"><span class="pre">Particle</span></code> objects. You can declare the object in the following way:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```c++
-std::vector&lt;Particle&gt; particles_; //std::vector who&#39;s elements are Particle objects.
-```
-</pre></div>
-</div>
-</li>
-<li><p>An <code class="docutils literal notranslate"><span class="pre">arma::cube</span></code> storing the position of each particle at all time steps.</p></li>
-<li><p>An <code class="docutils literal notranslate"><span class="pre">arma::cube</span></code> storing the velocity of each particle at all time steps.</p></li>
-</ul>
-<p>Again, you are free to add any attribute you need.</p>
-<p>For now, the <code class="docutils literal notranslate"><span class="pre">PenningTrap</span></code> class should contain methods (i.e member functions) for the following:</p>
+<li><p>Simulate the movement of single particle in your Penning trap for a total time of <span class="math notranslate nohighlight">\(100 \mu s\)</span>. Make a plot of the motion in the <span class="math notranslate nohighlight">\(z\)</span> direction as a function of time. Does the result look as expected, given the value of <span class="math notranslate nohighlight">\(\omega_z\)</span>?</p></li>
+<li><p>Simulate two particles in your Penning trap and make a plot of their motion in the <span class="math notranslate nohighlight">\(xy\)</span>-plane with and without particle interactions. Make sure to use the same initial conditions in the two cases.</p></li>
+<li><p>Similarly, for the case of two particles, make some <em>phase space</em> plots (i.e. plots of some of the planes (<span class="math notranslate nohighlight">\(x,v_x)\)</span>, <span class="math notranslate nohighlight">\((y,v_y)\)</span> and <span class="math notranslate nohighlight">\((z,v_z)\)</span>) for the cases with and without interactions. How do the trajectories change when you include interactions? Are the results reasonable from a physical point of view?</p></li>
+<li><p>Make a 3D plot of the trajectory of two particles with and without interactions. Make sure to use the same initial conditions in the two cases.</p></li>
+<li><p>Now consider the case of a single particle, which means we can easily compare to the analytical solution. Choose a total simulation time and five different values for the step size <span class="math notranslate nohighlight">\(h\)</span>. Run the simulation for each value of <span class="math notranslate nohighlight">\(h\)</span>, and make a graph showing the size of the relative error in <span class="math notranslate nohighlight">\(\mathbf{r}_i\)</span> at each time step <span class="math notranslate nohighlight">\(t_i\)</span>. Present the five graphs in a single plot. Do the same with the forward Euler method.</p>
 <ul class="simple">
-<li><p>The electric and magnetic force due to the external fields from the physical apparatus.</p></li>
-<li><p>The force due to the interaction among the particles (<strong>wait with this part until you’ve checked your code without the interactions</strong>).</p></li>
+<li><p><strong>Alternative:</strong> If you repeat the simulations for for more values of <span class="math notranslate nohighlight">\(h\)</span>, you can instead present the result as a <em>colourmap</em> (<em>heatmap</em>) of the <span class="math notranslate nohighlight">\((h,t)\)</span> plane, where the colour shows the size of the relative error.</p></li>
 </ul>
-</div>
-<div class="section" id="problem-10">
-<h4>Problem 10<a class="headerlink" href="#problem-10" title="Permalink to this headline">¶</a></h4>
-<p>Write a function or set of functions that implements Runge-Kutta 4. It should utilize your classes <code class="docutils literal notranslate"><span class="pre">PenningTrap</span></code> and <code class="docutils literal notranslate"><span class="pre">Particle</span></code> to
-solve the equations of motion.</p>
-<p>You may also object-orient this part, but it’s not necessary.</p>
-</div>
-<div class="section" id="problem-11">
-<h4>Problem 11<a class="headerlink" href="#problem-11" title="Permalink to this headline">¶</a></h4>
-<p>It’s time to test your code and check that it does what it’s supposed to. You should <em>at least</em> do the following:</p>
-<ul>
-<li><p>Create a plot of the particles motion in <span class="math notranslate nohighlight">\(xy\)</span>-plane with and without interactions. Make sure to use the same initial conditions in the two cases.</p></li>
-<li><p>Create a 3D plot of the trajectory of two particles with and without interactions. Make sure to use the same initial conditions in the two cases.</p></li>
-<li><p>Compute a <em>heatmap</em> of the maximum relative error as a function of <span class="math notranslate nohighlight">\(t\)</span> and step size <span class="math notranslate nohighlight">\(h\)</span> using the special solution derived earlier.</p></li>
-<li><p>Compute the convergence rate of Runge-Kutta 4 using the formula</p>
+</li>
+<li><p>Let <span class="math notranslate nohighlight">\(k = 1, \ldots, 5\)</span> indicate the five simulations with different step sizes (<span class="math notranslate nohighlight">\(h_k\)</span>) from the previous task. Using these results, estimate the error convergence rate <span class="math notranslate nohighlight">\(r_{\text{err}}\)</span> for forward Euler and RK4 with the expression</p>
 <div class="math notranslate nohighlight">
 \[
-    r = \frac{1}{N}\sum_{i=1}^N\frac{\log (E_{i}/E_{i-1})}{\log (h_{i}/h_{i-1}) }.
+    r_{\text{err}} = \frac{1}{4}\sum_{k=2}^5\frac{\log (\Delta_{\text{max},k}/\Delta_{\text{max},k-1})}{\log (h_{k}/h_{k-1}) }.
     \]</div>
 </li>
 </ul>
-<p>where <span class="math notranslate nohighlight">\(E_i = (\sum_{j=1}^N |y_j - \hat{y}_j|^p )^{1/p}\)</span> is the <span class="math notranslate nohighlight">\(L^p\)</span>-norm for simulation <span class="math notranslate nohighlight">\(i\)</span> with step size <span class="math notranslate nohighlight">\(h_i\)</span>.</p>
-<p>Here <span class="math notranslate nohighlight">\(y_j\)</span> represents the analytical result at a time <span class="math notranslate nohighlight">\(t_j\)</span> and <span class="math notranslate nohighlight">\(\hat{y}_j\)</span> represents the numerical approximation. <span class="math notranslate nohighlight">\(p = 2\)</span> is typically chosen. Another convenient choice is the <span class="math notranslate nohighlight">\(L^\infty\)</span>-norm given by <span class="math notranslate nohighlight">\(E_i = \max_j |y_j - \hat{y}_j|\)</span>,
-which you can deduce by computing <span class="math notranslate nohighlight">\(\lim_{p\to \infty}E_i\)</span>. You are free to use either of the two.</p>
-<p>You can think of the <span class="math notranslate nohighlight">\(L^p\)</span>-norm as a measure of the distance between the analytical solution and the numerical approximation at a finite set of times <span class="math notranslate nohighlight">\(t_j\)</span>.</p>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[
+  \Delta_{\text{max},k} = \max_i |\mathbf{r}_{i, \text{exact}} - \mathbf{r}_{i}|
+  \]</div>
+<p>is the maximum error (taken over all timesteps <span class="math notranslate nohighlight">\(i\)</span>) of the simulation with stepsize <span class="math notranslate nohighlight">\(h_k\)</span>. Here <span class="math notranslate nohighlight">\(\mathbf{r}_{i, \text{exact}}\)</span> is the analytical solution and <span class="math notranslate nohighlight">\(\mathbf{r}_{i}\)</span> our numerical approximation.</p>
 </div>
-<div class="section" id="problem-12">
-<h4>Problem 12<a class="headerlink" href="#problem-12" title="Permalink to this headline">¶</a></h4>
-<p>From the perspective of an experimental physicist, it’s natural to ask whether the entrapment of the particle
-can sustain for a long enough period that actual measurements can be made. Therefore:</p>
-<ul class="simple">
-<li><p>Measure how long you can keep a set of <span class="math notranslate nohighlight">\(n\)</span> particles trapped as a function of <span class="math notranslate nohighlight">\(\omega_0\)</span> and <span class="math notranslate nohighlight">\(\omega_z\)</span>.</p></li>
-<li><p>For a specific choice of <span class="math notranslate nohighlight">\(\omega_z\)</span> and <span class="math notranslate nohighlight">\(\omega_0\)</span>, measure how long you can trap a set of particles as a function of number of particles <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
-</ul>
+<div class="section" id="problem-10">
+<h4>Problem 10<a class="headerlink" href="#problem-10" title="Permalink to this headline">¶</a></h4>
+<p><strong>To appear shortly…</strong></p>
 </div>
 </div>
+<hr class="docutils" />
+<div class="section" id="code-snippets">
+<h3>Code snippets<a class="headerlink" href="#code-snippets" title="Permalink to this headline">¶</a></h3>
+<p><strong>To appear shortly…</strong></p>
+<!-- 
+From the perspective of an experimental physicist, it's natural to ask whether the entrapment of the particle
+can sustain for a long enough period that actual measurements can be made. Therefore:
+
+  - Measure how long you can keep a set of $n$ particles trapped as a function of $\omega_0$ and $\omega_z$.
+  - For a specific choice of $\omega_z$ and $\omega_0$, measure how long you can trap a set of particles as a function of number of particles $n$.
+ --></div>
 </div>
 </div>
 
@@ -759,6 +867,7 @@ can sustain for a long enough period that actual measurements can be made. There
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="project2.html" title="previous page">Project 2</a>
 
         </div>
         
