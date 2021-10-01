@@ -4,12 +4,12 @@
 ## Practicalities
 
 - **Deadline**: Monday, October 25, 23:59.
-- **Format:** 
+- **Format:**
   - A scientific report, typeset in LaTeX, delivered as a pdf file on Canvas.
   - Code (with comments, of course) on a GitHub repo, with the repo link provided in your report.
   - You *must* deliver via your group on Canvas (even if you are working alone).
 
-- **A scientific report:** In contrast to projects 1 and 2, we now require you to write a proper scientific report. The details of this is discussed during the lectures, and we will provide you with a .tex file template. 
+- **A scientific report:** In contrast to projects 1 and 2, we now require you to write a proper scientific report. The details of this is discussed during the lectures, and we will provide you with a .tex file template.
 
 - **Collaboration:** We *strongly* encourage you to collaborate with others, in groups of up to four students. The group hands in a single pdf. Remember to list everyone's name in the pdf.
 
@@ -69,7 +69,7 @@ A schematic of a Penning trap is shown in figure {numref}`penning-fig`. Charged 
 name: penning-fig
 scale: 70%
 ---
-Schematic of a Penning trap. See the text for further details. This illustration is by Arian Kriesch and taken from [Wikimedia Commons](https://en.wikipedia.org/wiki/File:Penning_Trap.svg). 
+Schematic of a Penning trap. See the text for further details. This illustration is by Arian Kriesch and taken from [Wikimedia Commons](https://en.wikipedia.org/wiki/File:Penning_Trap.svg).
 ```
 
 We will consider an ideal Penning trap in which the electric field is defined by the electric potential
@@ -78,7 +78,7 @@ $$
 V(x, y, z) = \frac{V_0}{2d^2}(2z^2 - x^2 - y^2).
 $$ (penning_potential)
 
-Here $V_0$ is the potential applied to the electrodes and $d$ is called the *characteristic dimension*, which represents the length scale for the region between the electrodes. (Techincally, $d$ is defined as $d = \sqrt{z_0^2 + r_0^2/2}$, where $z_0$ is the distance from the center to one of the end caps and $r_0$ is the distance from the center to the ring.) 
+Here $V_0$ is the potential applied to the electrodes and $d$ is called the *characteristic dimension*, which represents the length scale for the region between the electrodes. (Techincally, $d$ is defined as $d = \sqrt{z_0^2 + r_0^2/2}$, where $z_0$ is the distance from the center to one of the end caps and $r_0$ is the distance from the center to the ring.)
 
 The electric field traps the particle in the $z$-direction, but the particle can still escape in the radial direction (in the $xy$-plane). Therefore, a homogeneous magnetic field is imposed in the $z$-direction of the apparatus, i.e
 
@@ -169,7 +169,7 @@ z(0) = z_0, \qquad \dot{z}(0) = 0.
 $$
 
 
-Find the corresponding specific solution of $z(t)$. For the movement in the $xy$-plane, show that the specific solution for $f(t)$ has 
+Find the corresponding specific solution of $z(t)$. For the movement in the $xy$-plane, show that the specific solution for $f(t)$ has
 
 $$
 A_+ = \frac{v_0 + \omega_- x_0}{\omega_- - \omega_+}, \qquad A_- = - \frac{v_0 + \omega_+ x_0}{\omega_- - \omega_+}.
@@ -193,9 +193,9 @@ $$
 \ddot{z}_i + \omega_{z,i}^2z_i - k_e \frac{q_i}{m_i} \sum_{j\neq i} \frac{z_i-z_j}{|\mathbf{r}_i - \mathbf{r}_j|^3} = 0,
 $$ (z_eq_int)
 
-Here $i$ and $j$ are particle indices. We will not attempt an analytical treatment of this problem, but rather move on to a numerical simulation. 
+Here $i$ and $j$ are particle indices. We will not attempt an analytical treatment of this problem, but rather move on to a numerical simulation.
 
-**Note:** While the above equations are the equations our simulation will solve, our code does not have to contain these equations as single, long mathematical formulas. The code snippets we provide will outline an approach where the contributions from different forces are specificed in separate functions in the code. 
+**Note:** While the above equations are the equations our simulation will solve, our code does not have to contain these equations as single, long mathematical formulas. The code snippets we provide will outline an approach where the contributions from different forces are specificed in separate functions in the code.
 
 This will allow us to write a quite *general* Penning trap simulator, for which the specific Penning trap configuration described by the equations above is just one special case.
 
@@ -204,8 +204,8 @@ This will allow us to write a quite *general* Penning trap simulator, for which 
 
 ### Code development and numerical investigations
 
-In this part, you'll develop a code to simulate a set of $n$ particles with charges $\{q_1, ..., q_n\}$ and masses $\{m_1, ..., m_n\}$. You are **required** to write an **object-oriented** code in this project. 
-Don't worry, though -- we'll help you with suggestions for *how* you might structure your code. 
+In this part, you'll develop a code to simulate a set of $n$ particles with charges $\{q_1, ..., q_n\}$ and masses $\{m_1, ..., m_n\}$. You are **required** to write an **object-oriented** code in this project.
+Don't worry, though -- we'll help you with suggestions for *how* you might structure your code.
 Also, writing object-oriented code does not mean that *everything* in the code should be solved using classes.
 Below we only require you to write two classes, `Particle` and `PenningTrap`. The other aspects of your code you are
 free to design in the way you think is best.
@@ -230,7 +230,7 @@ and the derived SI units for magnetic field strength (Tesla, $T$) and electric p
 - $T = 9.64852558 \times 10^1 \, \frac{u}{(\mu s) \, e}$
 - $V = 9.64852558 \times 10^7 \, \frac{u \, (\mu m)^2}{(\mu s)^2 \, e}$.
 
-Our default Penning trap configuration will have 
+Our default Penning trap configuration will have
 
 - $B_0 = 1.00\,T = 9.65 \times 10^1 \, \frac{u}{(\mu s) \, e}$
 - $V_0 = 10.0\,V = 9.65 \times 10^8 \, \frac{u \, (\mu m)^2}{(\mu s)^2 \, e}$
@@ -268,21 +268,21 @@ Create class named `PenningTrap` that should at least contain member variables f
   - The magnetic field strength ($B_0$)
   - The applied potential ($V_0$)
   - The characteristic dimension ($d$)
-  - A `std::vector<Particle>` to contain all the `Particle` objects in the Penning trap. 
+  - A `std::vector<Particle>` to contain all the `Particle` objects in the Penning trap.
 
-Further, the class should contain some member functions for evaluating 
-  - The external electric field 
-  - The external magnetic field 
-  - The force due to the interaction among the particles 
+Further, the class should contain some member functions for evaluating
+  - The external electric field
+  - The external magnetic field
+  - The force due to the interaction among the particles
 
-Remember to run small tests during your code development. In particular, since the analytic solutions you have derived are for the case of a single particle, you can consider carrying out the single-particle tests in Problem 11 before implementing any of the code related to particle interactions.
+Remember to run small tests during your code development. In particular, since the analytic solutions you have derived are for the case of a single particle, you can consider carrying out the single-particle tests in Problem 9 before implementing any of the code related to particle interactions.
 
 
 #### Problem 8
 
 Now we need functionality for actually solving the equations of motion, i.e. evolving our system in time. Our main method will be the fourth-order Runge-Kutta (RK4) method, but for comparison (and debugging) we'll also implement the simple forward Euler method.
 
-So, write functions that can evolve your `PenningTrap` system in time using 
+So, write functions that can evolve your `PenningTrap` system in time using
 
 - the forward Euler method
 - the RK4 method
@@ -312,7 +312,7 @@ It's time to test and explore your code, to check that it does what it's suppose
   - Now consider the case of a single particle, which means we can easily compare to the analytical solution. Choose a total simulation time and five different values for the step size $h$. Run the simulation for each value of $h$, and make a graph showing the size of the relative error in $\mathbf{r}_i$ at each time step $t_i$. Present the five graphs in a single plot. Do the same with the forward Euler method.
     - **Alternative:** If you repeat the simulations for for more values of $h$, you can instead present the result as a *colourmap* (*heatmap*) of the $(h,t)$ plane, where the colour shows the size of the relative error.
 
-  - Let $k = 1, \ldots, 5$ indicate the five simulations with different step sizes ($h_k$) from the previous task. Using these results, estimate the error convergence rate $r_{\text{err}}$ for forward Euler and RK4 with the expression 
+  - Let $k = 1, \ldots, 5$ indicate the five simulations with different step sizes ($h_k$) from the previous task. Using these results, estimate the error convergence rate $r_{\text{err}}$ for forward Euler and RK4 with the expression
 
     $$
     r_{\text{err}} = \frac{1}{4}\sum_{k=2}^5\frac{\log (\Delta_{\text{max},k}/\Delta_{\text{max},k-1})}{\log (h_{k}/h_{k-1}) }.
@@ -375,7 +375,7 @@ Here are suggestions for some member functions for the `PenningTrap` class:
 
 
 
-<!-- 
+<!--
 From the perspective of an experimental physicist, it's natural to ask whether the entrapment of the particle
 can sustain for a long enough period that actual measurements can be made. Therefore:
 
