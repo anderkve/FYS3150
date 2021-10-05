@@ -330,7 +330,68 @@ It's time to test and explore your code, to check that it does what it's suppose
 
 #### Problem 10
 
-**To appear shortly...**
+Now that we have explored the basics of our simulation setup it's time to use it to explore some Penning trap physics. For this problem we will modify our Penning trap to be much smaller, but keeping the same strength of the static E-field as before:
+
+- $d = 0.05\,cm$.
+- $V_0 = 0.0025\,V$,
+
+(Make sure to convert these to the appropriate units.)
+
+In a system with complicated periodic motions we should expect the possibility for seeing resonance phenomena. In a Penning trap, this can be investigated by subjecting the system to a time-dependent electromagnetic field and study *the loss of trapped particles as function of the applied frequency*. 
+
+There are multiple ways of subjecting the system to a time-dependent field, here we will do it by including a time-dependent perturbation to the applied potential, i.e. make the replacement
+
+$$
+V_0 \rightarrow V_0 \left(1 + f \cos(\omega_V t)\right),
+$$ (timedep_potential)
+
+where $f$ is a constant amplitude and $\omega_V$ is the angular frequency of the time-dependent potential term.
+
+For this task you should implement (at least) the following extensions to your code:
+
+- A check that sets the external E- and B-fields to zero in the region outside the trap. 
+  We'll use the characteristic distance $d$ as a simple measure for the trap size, so what we need is
+  a check that sets the external fields $\mathbf{E}(\mathbf{r})$ and $\mathbf{B}(\mathbf{r})$ to zero
+  when $|\mathbf{r}| > d$.
+
+- An extension of the code for the external E-field such that it can have a time dependence.
+  (For the different steps in RK4, make sure you evaluate the now time-dependent force at the correct time steps.)
+
+- A small function (either as part of the `PenningTrap` class or outside it) that can count how many of the particles
+  are still inside the trap region, i.e. the number of particles with $|\mathbf{r}| < d$.
+
+- An option to switch the Coulomb interactions on/off.
+
+- Code for filling the `PenningTrap` with particles with randomly generated initial positions and velocities. 
+  Initial positions and velocities for each particle can be sampled from normal distributions, suitably scaled relative to the length scale of our Penning trap. Here's a snippet illustrating this for a single particle, using the `vec::randn()` function of Armadillo to sample a position and velocity (`my_trap` is an instance of `PenningTrap`):
+
+  ```cpp
+    vec r = vec(3).randn() * 0.1 * my_trap.d;  // random initial position
+    vec v = vec(3).randn() * 0.1 * my_trap.d;  // random initial velocity
+  ```
+  
+  *Note:* To set the seed for Armadillos random number generator, you can use `arma_rng::set_seed(value)` or `arma_rng::set_seed_random()`.
+
+
+We want to use our simulation to search for resonance frequencies of the system. Starting from a system filled with *100 randomly initalized $Ca^+$ particles*, do the following:
+
+- For each of the amplitudes $f = 0.1, 0.4, 0.7$, produce a graph that shows *the fraction of particles that are still trapped after $500\, \mu s$* as a function of the applied angular frequency $\omega_V$. Plot the three graphs in the same figure. You should explore frequencies in the range $\omega_V \in (0.2, 2.5)\, MHz$. For this broad exploration of frequencies you can *switch off* the Coulomb interactions between the particles in the trap, as your code should then run much faster. Make sure you use sufficiently small steps along the $\omega_V$ axis -- steps of $0.02\,MHz$ can be a starting point. Comment on your results. Some suggested things to discusss:
+
+  - A qualtiative explanation of what's going on: Given the periodic / quasi-periodic nature of the Penning trap system, why is it that some frequencies can be particularly effective for pushing particles out of the trap? (Here we do *not* expect a detailed explanation of the physics behind why the resonances appear exactly where they do -- the resonance structure of a many-particle Penning trap is a complicated topic beyond the scope of this project.)
+
+  - How do the resonances change when the amplitude for the time-varying potential is increased?
+
+  - Based on the research literature on Penning Traps, we expect that some of resonance frequencies of our system can
+    be expressed as simple combinations of $\omega_z$, $\omega_+$ and $\omega_-$. Does this seem to be the case for the resonances you've uncovered?
+
+- Now we want to check if the Coulomb interactions have some impact on the structure of the these resonances. To do this you should "zoom in" on one of the resonances you've uncovered by performing fine-grained frequency scans around that resonance. 
+
+  - Perform two such scans, one where you include Coulomb interactions in your simulation and one without. (If you have time, you can run multiple scans for each case and use the average results, to lower the statistical uncertainty coming from the fact that we only simulate 100 randomly initialized particles.)
+
+  - Produce a plot that shows the fraction of trapped particles versus frequency for the two cases. Comment on noteworthy differences.
+
+
+**Good luck!** 
 
 
 ----

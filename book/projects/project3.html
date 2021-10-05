@@ -824,7 +824,57 @@ free to design in the way you think is best.</p>
 </div>
 <div class="section" id="problem-10">
 <h4>Problem 10<a class="headerlink" href="#problem-10" title="Permalink to this headline">¶</a></h4>
-<p><strong>To appear shortly…</strong></p>
+<p>Now that we have explored the basics of our simulation setup it’s time to use it to explore some Penning trap physics. For this problem we will modify our Penning trap to be much smaller, but keeping the same strength of the static E-field as before:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(d = 0.05\,cm\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(V_0 = 0.0025\,V\)</span>,</p></li>
+</ul>
+<p>(Make sure to convert these to the appropriate units.)</p>
+<p>In a system with complicated periodic motions we should expect the possibility for seeing resonance phenomena. In a Penning trap, this can be investigated by subjecting the system to a time-dependent electromagnetic field and study <em>the loss of trapped particles as function of the applied frequency</em>.</p>
+<p>There are multiple ways of subjecting the system to a time-dependent field, here we will do it by including a time-dependent perturbation to the applied potential, i.e. make the replacement</p>
+<div class="math notranslate nohighlight" id="equation-timedep-potential">
+<span class="eqno">(21)<a class="headerlink" href="#equation-timedep-potential" title="Permalink to this equation">¶</a></span>\[
+V_0 \rightarrow V_0 \left(1 + f \cos(\omega_V t)\right),
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(f\)</span> is a constant amplitude and <span class="math notranslate nohighlight">\(\omega_V\)</span> is the angular frequency of the time-dependent potential term.</p>
+<p>For this task you should implement (at least) the following extensions to your code:</p>
+<ul>
+<li><p>A check that sets the external E- and B-fields to zero in the region outside the trap.
+We’ll use the characteristic distance <span class="math notranslate nohighlight">\(d\)</span> as a simple measure for the trap size, so what we need is
+a check that sets the external fields <span class="math notranslate nohighlight">\(\mathbf{E}(\mathbf{r})\)</span> and <span class="math notranslate nohighlight">\(\mathbf{B}(\mathbf{r})\)</span> to zero
+when <span class="math notranslate nohighlight">\(|\mathbf{r}| &gt; d\)</span>.</p></li>
+<li><p>An extension of the code for the external E-field such that it can have a time dependence.
+(For the different steps in RK4, make sure you evaluate the now time-dependent force at the correct time steps.)</p></li>
+<li><p>A small function (either as part of the <code class="docutils literal notranslate"><span class="pre">PenningTrap</span></code> class or outside it) that can count how many of the particles
+are still inside the trap region, i.e. the number of particles with <span class="math notranslate nohighlight">\(|\mathbf{r}| &lt; d\)</span>.</p></li>
+<li><p>An option to switch the Coulomb interactions on/off.</p></li>
+<li><p>Code for filling the <code class="docutils literal notranslate"><span class="pre">PenningTrap</span></code> with particles with randomly generated initial positions and velocities.
+Initial positions and velocities for each particle can be sampled from normal distributions, suitably scaled relative to the length scale of our Penning trap. Here’s a snippet illustrating this for a single particle, using the <code class="docutils literal notranslate"><span class="pre">vec::randn()</span></code> function of Armadillo to sample a position and velocity (<code class="docutils literal notranslate"><span class="pre">my_trap</span></code> is an instance of <code class="docutils literal notranslate"><span class="pre">PenningTrap</span></code>):</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span>  <span class="n">vec</span> <span class="n">r</span> <span class="o">=</span> <span class="n">vec</span><span class="p">(</span><span class="mi">3</span><span class="p">).</span><span class="n">randn</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">my_trap</span><span class="p">.</span><span class="n">d</span><span class="p">;</span>  <span class="c1">// random initial position</span>
+  <span class="n">vec</span> <span class="n">v</span> <span class="o">=</span> <span class="n">vec</span><span class="p">(</span><span class="mi">3</span><span class="p">).</span><span class="n">randn</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">my_trap</span><span class="p">.</span><span class="n">d</span><span class="p">;</span>  <span class="c1">// random initial velocity</span>
+</pre></div>
+</div>
+<p><em>Note:</em> To set the seed for Armadillos random number generator, you can use <code class="docutils literal notranslate"><span class="pre">arma_rng::set_seed(value)</span></code> or <code class="docutils literal notranslate"><span class="pre">arma_rng::set_seed_random()</span></code>.</p>
+</li>
+</ul>
+<p>We want to use our simulation to search for resonance frequencies of the system. Starting from a system filled with <em>100 randomly initalized <span class="math notranslate nohighlight">\(Ca^+\)</span> particles</em>, do the following:</p>
+<ul class="simple">
+<li><p>For each of the amplitudes <span class="math notranslate nohighlight">\(f = 0.1, 0.4, 0.7\)</span>, produce a graph that shows <em>the fraction of particles that are still trapped after <span class="math notranslate nohighlight">\(500\, \mu s\)</span></em> as a function of the applied angular frequency <span class="math notranslate nohighlight">\(\omega_V\)</span>. Plot the three graphs in the same figure. You should explore frequencies in the range <span class="math notranslate nohighlight">\(\omega_V \in (0.2, 2.5)\, MHz\)</span>. For this broad exploration of frequencies you can <em>switch off</em> the Coulomb interactions between the particles in the trap, as your code should then run much faster. Make sure you use sufficiently small steps along the <span class="math notranslate nohighlight">\(\omega_V\)</span> axis – steps of <span class="math notranslate nohighlight">\(0.02\,MHz\)</span> can be a starting point. Comment on your results. Some suggested things to discusss:</p>
+<ul>
+<li><p>A qualtiative explanation of what’s going on: Given the periodic / quasi-periodic nature of the Penning trap system, why is it that some frequencies can be particularly effective for pushing particles out of the trap? (Here we do <em>not</em> expect a detailed explanation of the physics behind why the resonances appear exactly where they do – the resonance structure of a many-particle Penning trap is a complicated topic beyond the scope of this project.)</p></li>
+<li><p>How do the resonances change when the amplitude for the time-varying potential is increased?</p></li>
+<li><p>Based on the research literature on Penning Traps, we expect that some of resonance frequencies of our system can
+be expressed as simple combinations of <span class="math notranslate nohighlight">\(\omega_z\)</span>, <span class="math notranslate nohighlight">\(\omega_+\)</span> and <span class="math notranslate nohighlight">\(\omega_-\)</span>. Does this seem to be the case for the resonances you’ve uncovered?</p></li>
+</ul>
+</li>
+<li><p>Now we want to check if the Coulomb interactions have some impact on the structure of the these resonances. To do this you should “zoom in” on one of the resonances you’ve uncovered by performing fine-grained frequency scans around that resonance.</p>
+<ul>
+<li><p>Perform two such scans, one where you include Coulomb interactions in your simulation and one without. (If you have time, you can run multiple scans for each case and use the average results, to lower the statistical uncertainty coming from the fact that we only simulate 100 randomly initialized particles.)</p></li>
+<li><p>Produce a plot that shows the fraction of trapped particles versus frequency for the two cases. Comment on noteworthy differences.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Good luck!</strong></p>
 </div>
 </div>
 <hr class="docutils" />
