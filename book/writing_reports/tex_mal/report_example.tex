@@ -86,49 +86,67 @@
 \maketitle 
 
 \section{Introduction}
-The purpose of this report is to teach you how to write a report. We'll discuss a toy example where we look at an implementation of something rather dull and simple, the midpoint rule for integration. We've chosen this so you can understand how you communicate your own work properly. Our problem is two-fold. We want to teach you how you write a report while simultaneously providing you with a concrete example. We'll therefore provide both pedagogical commentary along the way and explain the midpoint rule for integration in a way that meets the scientific standard. Fron now on, the pedagogical commentary will be written as \textit{italic text} so you, the reader, can easily distinguish this from what is part of the actual report. The next part could've been part of the report, but we'll leave it as a pedagogical commentary:
-\textit{Writing reports, or papers, is a fundamental part of the scientific enterprise. It's vital to properly communicate precisely what has been done, what the results are and their implications. The motivation for this is to make it reproducible, so others can check your work - to make sure you didn't make any mistakes. After all, humans are flawed creatures that regularly make efficient but sloppy leaps in judgments.}
+The purpose of this report is to teach you how to write a report. We'll discuss a toy example where we look at an implementation of something rather dull and simple, the midpoint rule for integration. We've chosen this so you can understand how you communicate your own work properly. Our problem is two-fold. We want to teach you how you write a report while simultaneously providing you with a concrete example. We'll therefore provide both pedagogical commentary along the way and explain the midpoint rule for integration in a way that meets the scientific standard. From now on, the pedagogical commentary will be written as \textit{italic text} so you, the reader, can easily distinguish this from what is part of the actual report. The next part could've been part of the report, but we'll leave it as a pedagogical commentary:
+\textit{Writing reports, or papers, is a fundamental part of the scientific enterprise. It's vital to properly communicate precisely what has been done, what the results are and their implications. The motivation for this is to make it reproducible, so others can check your work --- to make sure you didn't make any mistakes. After all, humans are flawed creatures that regularly make efficient but sloppy leaps in judgment.}
 
 \textit{The purpose of the introduction section is to provide context and motivation as well as outlining the report. So far we've provided this, but have not outlined what to expect in each section of the report. We'll do this next.}
 
-In section 
+In section \ref{sec:methods} we outline the mathematical background and formulate a concrete algorithm which can be implemented in any coding language. Section \label{sec:results} outlines the results where we verify the implementation. Section \label{sec:discussion} provides a discussion of implementation. In section \ref{sec:conclusion} we provide a short summary and an outlook.
 
-\section{Methods}
+\textit{Now, since the toy example we study here is rather short and simple, our outline isn't particularly detailed. But for a report that is longer, a more detailed outline is preferred.}
+
+\section{Methods}\label{sec:methods}
 \textit{The "method" section is there to provide the reader with background knowledge. It should be enough to both understand and reproduce what you've done. You are free to divide this section into subsections, which we will demonstrate an example of.}
 
 Assume a continuous and differentiable function $f : [a,b] \to \mathbb{R}$. Assume we want to integrate this function over the entire interval $[a,b]$. To this end, we employ the midpoint rule for integration, which is defined by the equation \cite{midpoint_rule}
 \begin{equation}
 	I = \int_a^b f(x)\dd x \approx h\sum_{i=0}^{n-1} f(x_i), 
 \end{equation}
-where $x_i = a + ih/2$ for $i = 0, 1, ..., n-1$ and $h = (b-a)/n$ where $n$ is the number of gridpoints.
+where $x_i = a + ih/2$ for $i = 0, 1, ..., n-1$ and $h = (b-a)/n$ where $n$ is the number of gridpoints. This equation can be written out explicitly (although here it's a little silly)
 
-\textit{Note the following: we have provided a definition for every single variable introduced here. Always do this so your work is transparent and easily readable! Also note that we cited a source for our claim. There's no need to cite trivial stuff like Newton's second law and such, but you should cite material that's vital for your report.}
+\begin{equation}
+	\begin{split}
+		\int_a^b f(x)\dd x & \approx h \sum_{i=0}^{n-1} f(x_i) \\
+									\\
+									& = h\left(f(x_0) + \cdots + f(x_{n-1})\right).
+	\end{split}
+\end{equation}
 
-To test our implementation, we'll apply it to an integral with an analytical solution. We the simple polynomial $f(x) = x^3$ on the interval $[a,b] = [0,1]$ which has the solution 
+\textit{Note the following: we have provided a definition for every single variable introduced here. Always do this so your work is transparent and easily readable! Also note that we cited a source for our claim. There's no need to cite trivial stuff like Newton's second law and such, but you should cite material that's vital for your report. Once a variable is defined, you can reuse it throughout the rest of the report without stating its definition as long as the variable means the same.}
+
+To test our implementation, we'll apply it to an integral with an analytical solution. We'll use the  polynomial $f(x) = x^3$ on the interval $[a,b] = [0,1]$ which has the solution 
 \begin{equation}
 	\int_0^1 x^3 \dd x = \frac{1}{4}.
 \end{equation}
 
+To measure the error, we'll use the relative error defined as 
+\begin{equation}
+ 	\epsilon = \abs{ \frac{I - I_{\text{approx}}}{I} },
+\end{equation}
+where $I$ denotes the exact integral, $I_\text{approx}$ denotes the approximation of the integral.
+
 \subsection*{The algorithm}
-\textit{There's a conventional way to cite algorithms in papers. This way is independent of specific code language such that anyway can translate it into their code language of choice.}
+\textit{There's a conventional way to cite algorithms in papers. It's typically stated independently of a specific code language such that the reader can translate it into their code language of choice.}
 
 The algorithm for the midpoint rule can be summarized in the following way:
 
-\begin{algorithm}[H]
-	\caption{Midpoint rule for integration}\label{algo:midpoint_rule}
-	\begin{algorithmic}
+\begin{algorithm}\caption{Midpoint rule for integration}\label{algo:midpoint_rule}
+	\begin{algorithmic}	
+		\Procedure{Midpoint rule}{$f, a, b, n$}
 		\State $I = 0$ \Comment{Initiate the integral variable}
 		\For{$i = 0, 1, ..., n-1$}
-		\State $x \leftarrow x + ih/2$  \Comment{Assign x to the midpoint} %This means x is assigned the value x + ih/2. 
+		\State $x \leftarrow x + ih/2$  \Comment{Assign $x$ to the midpoint} %This means x is assigned the value x + ih/2. 
 		\State $I \leftarrow I + f(x)$ \Comment{Add contribution to integral} %Assign I to I + f(x).
 		\EndFor
 		\State $I \leftarrow Ih$ \Comment{Finalize the computation}
+		\EndProcedure
 	\end{algorithmic}
 \end{algorithm}
 
+
 \textit{The arrow from left to right means that we assign the variable on the left to what is to the right of the arrow.}
 
-\section{Results}
+\section{Results}\label{sec:results}
 We tested our implementation for a variable number of intervals $n$. The results are listed in table \ref{tab:midpoint_rule_tab}.
 
 \begin{table}[h!]
@@ -158,19 +176,19 @@ In figure \ref{fig:rel_err}, we show the relative error as a function number of 
 
 \textit{Note especially how we reference both the table and the figure with a short explanation of their content. Always do this! In their captions we also typically add additional information such as what we used to produce them. You can also do this in the text if you'd like to. Explain enough so the reader can reproduce them.}
 
-\section{Discussion}
+\section{Discussion}\label{sec:discussion}
 \textit{First note that you are free to merge results and discussions of the results into a single section. This often leads to a more fluid presentation for the reader. On the other hand it's more cumbersome to look at the results a second or third time. Either way, your choice!}
 
 From table \ref{tab:midpoint_rule_tab}, we note that our implementation reproduces the analytical results to a four-digit precision for $n = 10000$ points. This indicates that our implementation is correct.
 
-From figure \ref{fig:rel_err}, the relative error appears to be proportional to $\exp(-\lambda n)$ for some constant $\lambda$, but further investigations of the precise convergence rate of the algorithm should be done.
+From figure \ref{fig:rel_err}, we can deduce that the $\log_{10}(\epsilon)$ decreases linearly in $\log_{2}(n)$. From this, it should be possible to extract the convergence rate of the midpoint rule, which from a theoretical point of view is of the order $\mathcal{O}(h^2)$. To properly verify our implementation, we should've inferred the rate. Without, we cannot with certainty state that the implementation is correct even though we observed that the numerical approxiation converges to the correct answer in \ref{tab:midpoint_rule_tab} with a four-digit precision.
 
-\textit{Although, a somewhat silly example, you should take note of the following: we are to-the-point with the dicussion and only make strong claims about what we are certain about. We also suggest other avenues of inquiry that was not done in this particular report. Both of these points are important to do. }
+\textit{Although, a somewhat silly example, you should take note of the following: we are to-the-point with the discussion and only make strong claims about what we are certain about. We also suggest other avenues of inquiry that was not done in this particular report. Both of these points are important to do. It's not necessary to state obvious things and write wordy paragraphs that ultimately have no substance.}
 
-\section{Concluding remarks}
-\textit{In the "conclusion" section, we state three things in a concise manner: what we did, what the results implied and what should/could be done further.} 
+\section{Concluding remarks}\label{sec:conclusion}
+\textit{In the ``conclusion'' section, we state three things in a concise manner: what we did, what the results implied and what should/could be done further.} 
 
-We've looked at an implementation of the midpoint rule. We checked that the implementation indeed reproduced an analytical result which implied its correctly done. Furthermore, we looked at the relative error of the method as a function of number of points. We did not extract a precise convergence rate for the method and suggest this to be a fruitful inquiry for further investigation.
+We've looked at an implementation of the midpoint rule. We checked that the implementation indeed reproduced an analytical result which implied its correctly done. Furthermore, we looked at the relative error of the method as a function of number of points. We did not extract a precise convergence rate for the method. Because of this, we cannot with certainty state that the implementation is correct and conclude that this should be verified.
 \onecolumngrid
 %\bibliographystyle{apalike}
 \bibliography{ref}
