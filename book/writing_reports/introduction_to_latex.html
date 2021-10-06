@@ -427,8 +427,13 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#template-for-the-two-first-projects">
-     Template for the two first projects:
+    <a class="reference internal nav-link" href="#template-for-projects-1-and-2-problem-sets">
+     Template for projects 1 and 2: problem sets
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#template-for-projects-3-4-and-5-scientific-reports">
+     Template for projects 3, 4 and 5: scientific reports
     </a>
    </li>
   </ul>
@@ -468,14 +473,28 @@
 </div>
 <div class="section" id="templates">
 <h2>Templates<a class="headerlink" href="#templates" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="template-for-the-two-first-projects">
-<h3>Template for the two first projects:<a class="headerlink" href="#template-for-the-two-first-projects" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="template-for-projects-1-and-2-problem-sets">
+<h3>Template for projects 1 and 2: problem sets<a class="headerlink" href="#template-for-projects-1-and-2-problem-sets" title="Permalink to this headline">¶</a></h3>
 <p>We’ve prepared a template for you to use in the two first projects. We have both the source code found in a <code class="docutils literal notranslate"><span class="pre">.tex</span></code> and a rendered file in <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> format.</p>
 <ul class="simple">
 <li><p>The <a class="reference external" href="https://github.com/anderkve/FYS3150/blob/master/book/writing_reports/tex_mal/oppgave_mal.tex">tex file</a></p></li>
 <li><p>The <a class="reference external" href="https://github.com/anderkve/FYS3150/blob/master/book/writing_reports/tex_mal/oppgave_mal.pdf">pdf file</a></p></li>
 </ul>
 <p>The above <code class="docutils literal notranslate"><span class="pre">.tex</span></code> example tries to include a figure file <code class="docutils literal notranslate"><span class="pre">rel_err.pdf</span></code> from a subdirectory <code class="docutils literal notranslate"><span class="pre">imgs</span></code>. If you want to compile this example yourself, you can get the figure file <a class="reference external" href="https://github.com/anderkve/FYS3150/blob/master/book/writing_reports/tex_mal/imgs/rel_err.pdf">here</a>.</p>
+</div>
+<div class="section" id="template-for-projects-3-4-and-5-scientific-reports">
+<h3>Template for projects 3, 4 and 5: scientific reports<a class="headerlink" href="#template-for-projects-3-4-and-5-scientific-reports" title="Permalink to this headline">¶</a></h3>
+<p>Here’s a template you can use when writing the scientific reports for projects 3, 4 and 5. We recommend taking the time to read through all the text in the template, as it contains a lot of useful information on how to structure a scientific report, as well as some LaTeX tips and tricks.</p>
+<ul class="simple">
+<li><p>The <a class="reference external" href="https://github.com/anderkve/FYS3150/blob/master/book/writing_reports/tex_mal/report_example.tex">tex file</a></p></li>
+<li><p>The <a class="reference external" href="https://github.com/anderkve/FYS3150/blob/master/book/writing_reports/tex_mal/report_example.pdf">pdf file</a></p></li>
+<li><p>The <a class="reference external" href="https://github.com/anderkve/FYS3150/blob/master/book/writing_reports/tex_mal/ref.bib">BibTex references file</a></p></li>
+</ul>
+<p>Similar to the template for projects 1 and 2, this template includes a figure file <code class="docutils literal notranslate"><span class="pre">rel_err.pdf</span></code> from a subdirectory <code class="docutils literal notranslate"><span class="pre">imgs</span></code>. If you want to compile this example yourself, you can get the figure file <a class="reference external" href="https://github.com/anderkve/FYS3150/blob/master/book/writing_reports/tex_mal/imgs/rel_err.pdf">here</a>.</p>
+<p>To build the template along with the reference list, you need to run <code class="docutils literal notranslate"><span class="pre">pdflatex</span></code> and <code class="docutils literal notranslate"><span class="pre">bibtex</span></code> a few times over. Here’s a single-line command that should do the trick:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pdflatex report_example.tex <span class="o">&amp;&amp;</span> bibtex report_example.aux <span class="o">&amp;&amp;</span> pdflatex report_example.tex <span class="o">&amp;&amp;</span> pdflatex report_example.tex
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="latex-resources">
