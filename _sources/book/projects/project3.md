@@ -111,8 +111,8 @@ $$
 \ddot{z} + \omega_z^2 z = 0.
 $$ (z_eq)
 
-where $\omega_0 \equiv \frac{|q|B_0}{m}$ and $\omega_z = \sqrt{\frac{2|q|V_0}{md^2}}$.
-Write down the general solution for equation {eq}`z_eq`.
+where $\omega_0 \equiv \frac{q B_0}{m}$ and $\omega_z^2 \equiv \sqrt{\frac{2 q V_0}{md^2}}$.
+Write down the general solution for equation {eq}`z_eq`. While the above equations of motion are of course equally valid for $q < 0$ and $q > 0$, you can assume $q > 0$ for this project.
 
 
 #### Problem 2
