@@ -399,7 +399,7 @@ We want to use our simulation to search for resonance frequencies of the system.
 
 ### Code snippets
 
-Here are suggestions for some member functions for the `PenningTrap` class:
+Here is a suggested starting point for member functions of the `PenningTrap` class:
 
 ```cpp
   // Constructor
@@ -433,7 +433,7 @@ Here are suggestions for some member functions for the `PenningTrap` class:
   void evolve_forward_Euler(double dt);
 ```
 
-
+Note that for Problem 10 you probably want to modify the declarations of some of these functions, as well as add some new ones.
 
 
 
