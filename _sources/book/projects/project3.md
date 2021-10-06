@@ -155,7 +155,7 @@ $R_+ = A_+ + A_-$ and $R_- = |A_+ - A_-|$, respectively.
 
 #### Problem 5
 
-To measure the validity of your code, you'll need a specific analytical solution to use for comparison. Assume we have a single charged particle with charge $q$ and mass $m$ in the Penning trap with the following initial conditions:
+To test that your code works as expected you'll need a specific analytical solution to use for comparison. Assume we have a single charged particle with charge $q$ and mass $m$ in the Penning trap with the following initial conditions:
 
 $$
 x(0) = x_0, \qquad \dot{x}(0) = 0,
@@ -340,7 +340,7 @@ Now that we have explored the basics of our simulation setup it's time to use it
 
 In a system with complicated periodic motions we should expect the possibility for seeing resonance phenomena. In a Penning trap, this can be investigated by subjecting the system to a time-dependent electromagnetic field and study *the loss of trapped particles as function of the applied frequency*. 
 
-There are multiple ways of subjecting the system to a time-dependent field, here we will do it by including a time-dependent perturbation to the applied potential, i.e. make the replacement
+There are multiple ways of subjecting the system to a time-dependent field. Here we will do it by including a time-dependent perturbation to the applied potential, i.e. make the replacement
 
 $$
 V_0 \rightarrow V_0 \left(1 + f \cos(\omega_V t)\right),
