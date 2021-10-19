@@ -383,7 +383,7 @@ We want to use our simulation to search for resonance frequencies of the system.
   - How do the resonances change when the amplitude for the time-varying potential is increased?
 
   - Based on the research literature on Penning Traps, we expect that some of resonance frequencies of our system can
-    be expressed as simple combinations of $\omega_z$, $\omega_+$ and $\omega_-$. Does this seem to be the case for the resonances you've uncovered?
+    be expressed as simple combinations of $\omega_z$, $\omega_+$ and $\omega_-$. Does this seem to be the case for the resonances you've uncovered? **Note:** While the electric potential is now time-dependent, $\omega_z$ is still defined the same way as before, i.e. in terms of the *constant* $V_0$.
 
 - Now we want to check if the Coulomb interactions have some impact on the structure of the these resonances. To do this you should "zoom in" on one of the resonances you've uncovered by performing fine-grained frequency scans around that resonance. 
 
