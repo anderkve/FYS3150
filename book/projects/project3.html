@@ -645,12 +645,16 @@ can be rewritten to a single differential equation for <span class="math notrans
 </div>
 <div class="section" id="problem-3">
 <h4>Problem 3<a class="headerlink" href="#problem-3" title="Permalink to this headline">¶</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There’s been a typo in Equation <a class="reference internal" href="#equation-f-general-sol">(17)</a>: We were missing the two constant phases <span class="math notranslate nohighlight">\(\phi_+\)</span> and <span class="math notranslate nohighlight">\(\phi_-\)</span>, which lead to some confusion about the signs of <span class="math notranslate nohighlight">\(A_+\)</span> and <span class="math notranslate nohighlight">\(A_-\)</span>, and the absolute values in Problem 5. The equation is correct now. Apologies for the confusion! (Given the late correction, we will not subtract points for confusion about this in your reports.)</p>
+</div>
 <p>The general solution to eq. <a class="reference internal" href="#equation-f-eq">(16)</a> is</p>
 <div class="math notranslate nohighlight" id="equation-f-general-sol">
 <span class="eqno">(17)<a class="headerlink" href="#equation-f-general-sol" title="Permalink to this equation">¶</a></span>\[
-f(t) = A_+ e^{-i\omega_+ t} + A_- e^{-i\omega_- t},
+f(t) = A_+ e^{-i(\omega_+ t + \phi_+)} + A_- e^{-i(\omega_- t + \phi_-)},
 \]</div>
-<p>where</p>
+<p>where <span class="math notranslate nohighlight">\(\phi_+\)</span> and <span class="math notranslate nohighlight">\(\phi_-\)</span> are constant phases, the amplitudes <span class="math notranslate nohighlight">\(A_+\)</span> and <span class="math notranslate nohighlight">\(A_-\)</span> are positive, and</p>
 <div class="math notranslate nohighlight">
 \[
 \omega_\pm = \frac{\omega_0 \pm \sqrt{\omega_0^2 - 2\omega_z^2}}{2}.
@@ -665,6 +669,10 @@ f(t) = A_+ e^{-i\omega_+ t} + A_- e^{-i\omega_- t},
 </div>
 <div class="section" id="problem-5">
 <h4>Problem 5<a class="headerlink" href="#problem-5" title="Permalink to this headline">¶</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See note under Problem 3 about a typo in Equation <a class="reference internal" href="#equation-f-general-sol">(17)</a>.</p>
+</div>
 <p>To test that your code works as expected you’ll need a specific analytical solution to use for comparison. Assume we have a single charged particle with charge <span class="math notranslate nohighlight">\(q\)</span> and mass <span class="math notranslate nohighlight">\(m\)</span> in the Penning trap with the following initial conditions:</p>
 <div class="math notranslate nohighlight">
 \[
