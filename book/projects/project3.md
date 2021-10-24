@@ -131,17 +131,22 @@ $$ (f_eq)
 
 #### Problem 3
 
+```{note}
+There's been a typo in Equation {eq}`f_general_sol`: We were missing the two constant phases $\phi_+$ and $\phi_-$, which lead to some confusion about the signs of $A_+$ and $A_-$, and the absolute values in Problem 5. The equation is correct now. Apologies for the confusion! (Given the late correction, we will not subtract points for confusion about this in your reports.)
+```
+
 The general solution to eq. {eq}`f_eq` is
 
 $$
-f(t) = A_+ e^{-i\omega_+ t} + A_- e^{-i\omega_- t},
+f(t) = A_+ e^{-i(\omega_+ t + \phi_+)} + A_- e^{-i(\omega_- t + \phi_-)},
 $$ (f_general_sol)
 
-where
+where $\phi_+$ and $\phi_-$ are constant phases, the amplitudes $A_+$ and $A_-$ are positive, and 
 
 $$
 \omega_\pm = \frac{\omega_0 \pm \sqrt{\omega_0^2 - 2\omega_z^2}}{2}.
 $$
+
 
 The physical coordinates are then found as $x(t) = \text{Re} f(t)$ and $y(t). = \text{Im} f(t)$
 
@@ -154,6 +159,10 @@ $R_+ = A_+ + A_-$ and $R_- = |A_+ - A_-|$, respectively.
 
 
 #### Problem 5
+
+```{note}
+See note under Problem 3 about a typo in Equation {eq}`f_general_sol`.
+```
 
 To test that your code works as expected you'll need a specific analytical solution to use for comparison. Assume we have a single charged particle with charge $q$ and mass $m$ in the Penning trap with the following initial conditions:
 
@@ -175,6 +184,8 @@ Find the corresponding specific solution of $z(t)$. For the movement in the $xy$
 $$
 A_+ = \frac{v_0 + \omega_- x_0}{\omega_- - \omega_+}, \qquad A_- = - \frac{v_0 + \omega_+ x_0}{\omega_- - \omega_+}.
 $$
+
+
 
 ----
 
