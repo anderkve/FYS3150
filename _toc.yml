@@ -75,6 +75,7 @@ parts:
       - file: book/projects/project1
       - file: book/projects/project2
       - file: book/projects/project3
+      - file: book/projects/project4
 
 
 
