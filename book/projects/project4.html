@@ -1,0 +1,772 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project 4 &#8212; FYS3150/FYS4150 course material</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Project 3" href="project3.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">FYS3150/FYS4150 course material</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Getting ready
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_ready/windows_users.html">
+   Windows users
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_ready/mac_users.html">
+   Mac users
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_ready/linux_users.html">
+   Linux users
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Using the terminal
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_the_terminal/basics.html">
+   Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_the_terminal/keyboard_shortcuts.html">
+   Keyboard shortcuts
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Using git and GitHub
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/introduction_to_git.html">
+   Introduction to git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/setting_up_git_and_a_GitHub_repo.html">
+   Setting up git and GitHub repo
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/add_a_README.html">
+   Add a README
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/using_git.html">
+   Using git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/dealing_with_merge_conflicts.html">
+   Dealing with merge conflicts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/recover_an_old_version_of_a_file.html">
+   Recover an old version of a file
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/other_ways_to_fix_mistakes.html">
+   Other ways to fix mistakes
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Introduction to C++
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/intro.html">
+   Intro
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/hello_world.html">
+   Hello World
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/compiling_and_linking_take_1.html">
+   Compiling and linking, take 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/source_files_and_header_files.html">
+   Source files and header files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/variables.html">
+   Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/functions_take_1.html">
+   Functions, take 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/read_command_line_input.html">
+   Read command line input
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/write_to_file.html">
+   Write to file
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/if_else.html">
+   If else
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/loops.html">
+   Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/containers.html">
+   Containers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/intro_to_armadillo.html">
+   Introduction to Armadillo
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/pointers.html">
+   Pointers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/classes.html">
+   Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/online_resources.html">
+   Online C++ resources
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Optimization
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../optimization/memory_is_the_bottleneck.html">
+   Memory traffic is the bottleneck
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Parallelization
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../parallelization/introduction_to_openmp.html">
+   Introduction to OpenMP
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../parallelization/using_openmp.html">
+   Using OpenMP
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Using Make
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_make/intro.html">
+   Intro
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Writing reports
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../writing_reports/introduction_to_latex.html">
+   Introduction to LaTeX
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Projects
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="project1.html">
+   Project 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="project2.html">
+   Project 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="project3.html">
+   Project 3
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Project 4
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/book/projects/project4.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/anderkve/FYS3150"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Fbook/projects/project4.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practicalities">
+   Practicalities
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definitions-notation-and-units">
+   Definitions, notation and units
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problems">
+   Problems
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-1">
+     Problem 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-2">
+     Problem 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-3">
+     Problem 3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-4">
+     Problem 4
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-5">
+     Problem 5
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-6">
+     Problem 6
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-7">
+     Problem 7
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-8">
+     Problem 8
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-9">
+     Problem 9
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-snippets">
+     Code snippets
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="project-4">
+<h1>Project 4<a class="headerlink" href="#project-4" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This version is not final — look out for small updates in the near future.</p>
+</div>
+<div class="section" id="practicalities">
+<h2>Practicalities<a class="headerlink" href="#practicalities" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Deadline</strong>: Monday, November 22, 23:59.</p></li>
+<li><p><strong>Format:</strong></p>
+<ul>
+<li><p>A scientific report, typeset in LaTeX, delivered as a pdf file on Canvas.</p></li>
+<li><p>Code (with comments, of course) on a GitHub repo, with the repo link provided in your report.</p></li>
+<li><p>You <em>must</em> deliver via your group on Canvas (even if you are working alone).</p></li>
+</ul>
+</li>
+<li><p><strong>A scientific report:</strong> Like for project 3, we require you to write a proper scientific report.</p></li>
+<li><p><strong>Collaboration:</strong> We <em>strongly</em> encourage you to collaborate with others, in groups of up to four students. The group hands in a single pdf. Remember to list everyone’s name in the pdf.</p></li>
+<li><p><strong>Reproducibility:</strong> Your code should be available on a GitHub repo. You can refer to relevant parts of your code in your answers. Make sure to include a README file in the repo that briefly explains how the code is organized, and how it should be compiled and run in order for others to reproduce your results.</p></li>
+<li><p><strong>Figures:</strong> Figures included in your LaTeX document should preferrably be made as vector graphics (e.g. <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> files), rather than raster graphics (e.g. <code class="docutils literal notranslate"><span class="pre">.png</span></code> files).</p></li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The topic of this project is the <strong>Ising model</strong> in two dimensions. We will use this simple model to explore temperature-dependent behaviour in ferromagnets. A particular goal is to numerically estimate the <strong>critical temperature</strong> at which our 2D system undergoes a <strong>phase transition</strong>, from a magnetized phase to a phase with no net magnetization.</p>
+<p>A basic introduction to the Ising model will be given in the lectures. For a more detailed introduction, see Chapter 13 (in particular 13.3 and 13.4) in Morten’s lecture notes.</p>
+<p>On the methodological side, our focus in this project is</p>
+<ul class="simple">
+<li><p>the Markov Chain Monte Carlo method for sampling from probability distributions of many variables, and how the resulting samples can be used to approximate probability distributions and expectation values for derived quantities; and</p></li>
+<li><p>using parallelization to speed up our code.</p></li>
+</ul>
+</div>
+<div class="section" id="definitions-notation-and-units">
+<h2>Definitions, notation and units<a class="headerlink" href="#definitions-notation-and-units" title="Permalink to this headline">¶</a></h2>
+<p>We will study 2D square lattices of spins <span class="math notranslate nohighlight">\(s_i\)</span>. Below we summarize our notation and the main definitions we will need:</p>
+<ul>
+<li><p>Each individual spin <span class="math notranslate nohighlight">\(s_i\)</span> has only two possible states: <span class="math notranslate nohighlight">\(s_i = -1\)</span> and <span class="math notranslate nohighlight">\(s_i = +1\)</span>.</p></li>
+<li><p>A lattice of length <span class="math notranslate nohighlight">\(L\)</span> contains <span class="math notranslate nohighlight">\(N\)</span> spins in total, i.e. <span class="math notranslate nohighlight">\(N = L^2\)</span>.</p></li>
+<li><p>A <strong>spin configuration</strong> (or <strong>microstate</strong>) refers to the spin state of the <em>entire system</em>. Here we denote this using vector notation</p>
+<div class="math notranslate nohighlight">
+\[
+  \mathbf{s} = (s_1, s_2, \ldots, s_N),
+  \]</div>
+<p>but in your code you probably want to use a <span class="math notranslate nohighlight">\(L \times L\)</span> matrix to represent the spin configuration.</p>
+</li>
+<li><p>The total energy of the system is given by</p>
+<div class="math notranslate nohighlight">
+\[
+  E(\mathbf{s}) = -J \sum\limits_{\langle kl \rangle}^{N} s_k s_l
+  \]</div>
+<p>Here <span class="math notranslate nohighlight">\(\langle kl \rangle\)</span> means that the sum goes over all <em>neighbouring pairs</em> of spins, without double-counting, and <span class="math notranslate nohighlight">\(J\)</span> is the <strong>coupling constant</strong>. We see that in this model (with no external magnetic field) the total system energy is fully determined by the interaction between neihbouring spin pairs, and <span class="math notranslate nohighlight">\(J\)</span> is simply a constant that sets the energy associated with each such interaction.</p>
+</li>
+<li><p>We will use <em>periodic boundary conditions</em> for our lattice. Thus, all spins will have exactly <em>four neighbours</em> (left, right, up, down).</p></li>
+<li><p>The total magnetization of the system is simply given by the sum over all the spins in the system:</p>
+<div class="math notranslate nohighlight">
+\[
+  M(\mathbf{s}) = \sum\limits_{i}^{N} s_i
+  \]</div>
+</li>
+<li><p>To ease the comparison of results for different lattice sizes, we will mostly use the <em>energy per spin</em> (<span class="math notranslate nohighlight">\(\epsilon\)</span>) and <em>magnetization per spin</em> (<span class="math notranslate nohighlight">\(m\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \epsilon(\mathbf{s}) &amp;= \frac{E(\mathbf{s})}{N}\\[1ex]
+  m(\mathbf{s}) &amp;= \frac{M(\mathbf{s})}{N}
+  \end{split}\]</div>
+</li>
+<li><p>Given a system temperature <span class="math notranslate nohighlight">\(T\)</span>, the probability for the system state <span class="math notranslate nohighlight">\(\mathbf{s}\)</span> is given by the <em>Boltzmann distribution</em>:</p>
+<div class="math notranslate nohighlight">
+\[
+  p(\mathbf{s} ; T) = \frac{1}{Z} e^{-\beta E(\mathbf{s})}
+  \]</div>
+<p>Here the normalization constant <span class="math notranslate nohighlight">\(Z\)</span> is the so-caleed <strong>partition function</strong> (see below), and <span class="math notranslate nohighlight">\(\beta\)</span> is the “inverse temperature”:</p>
+<div class="math notranslate nohighlight">
+\[
+  \beta = \frac{1}{k_B T}
+  \]</div>
+<p>with <span class="math notranslate nohighlight">\(k_B\)</span> being the Boltzmann constant.</p>
+</li>
+<li><p>The partition function <span class="math notranslate nohighlight">\(Z\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[
+  Z = \sum\limits_{\textrm{all possible}\;\mathbf{s}} e^{-\beta E(\mathbf{s})}
+  \]</div>
+</li>
+<li><p><strong>Units</strong>: We are working with unitless spins, which means that the coupling constant <span class="math notranslate nohighlight">\(J\)</span> has units of energy. Thus we can take <span class="math notranslate nohighlight">\(J\)</span> as the base unit for energy, and use it together with the Boltzmann constant <span class="math notranslate nohighlight">\(k_B\)</span> to formulate all other units that we’ll need. So our units are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  [E] &amp;= J\\[1ex]
+  [T] &amp;= J/k_B\\[1ex]
+  \ldots &amp;
+  \end{split}\]</div>
+<p>(You can figure out the rest.)</p>
+</li>
+</ul>
+</div>
+<div class="section" id="problems">
+<h2>Problems<a class="headerlink" href="#problems" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="problem-1">
+<h3>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this headline">¶</a></h3>
+<p>Assume a <span class="math notranslate nohighlight">\(2 \times 2\)</span> lattice with periodic boundary conditions.</p>
+<ul>
+<li><p><strong>a)</strong> Summarize all possible states of the system by setting up a table with four coloumns showing the following quantities</p>
+<ul class="simple">
+<li><p>number of spins in state +1</p></li>
+<li><p>total energy</p></li>
+<li><p>total magnetization</p></li>
+<li><p>degeneracy</p></li>
+</ul>
+</li>
+<li><p><strong>b)</strong> Find analytical expressions for</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Z\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\langle \epsilon \rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\langle \epsilon^2 \rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\langle |m| \rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\langle m^2 \rangle\)</span></p></li>
+<li><p>the specific heat capacity (normalized to number of spins):</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+  C_V = \frac{1}{k_B T^2}(\langle \epsilon^2 \rangle - \langle \epsilon \rangle^2)
+  \]</div>
+<ul class="simple">
+<li><p>the susceptibility (normalized to number of spins):</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+  \chi = \frac{1}{k_B T}(\langle m^2 \rangle - \langle m \rangle^2)
+  \]</div>
+</li>
+</ul>
+<p>We will use these analytical results to test our code.</p>
+</div>
+<div class="section" id="problem-2">
+<h3>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this headline">¶</a></h3>
+<p>In our Monte Carlo code we will repeatedly need the Boltzmann factor <span class="math notranslate nohighlight">\(e^{-\beta \Delta E}\)</span>, where</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta E = E_{\textrm{after}} - E_{\textrm{before}}
+\]</div>
+<p>is the energy shift due to <em>flipping a single spin</em>.</p>
+<p><strong>a)</strong> Consider a 2D lattice of arbitrary size. Show that there are only five possible values <span class="math notranslate nohighlight">\(\Delta E\)</span> can take.</p>
+<p><strong>b)</strong> How can you use this result to avoid repeatedly calling the exponential function <code class="docutils literal notranslate"><span class="pre">exp(...)</span></code> in your code?</p>
+</div>
+<div class="section" id="problem-3">
+<h3>Problem 3<a class="headerlink" href="#problem-3" title="Permalink to this headline">¶</a></h3>
+<p>There are many ways to implement periodic boundary conditions. The simplest is a set of if-tests. That works (and may be a useful starting point!), but if-tests inside loops can slow down your code. (It can hinder compiler optimizations.) Can you come up with a more efficient way of implementing periodic boundary conditions in your code?</p>
+</div>
+<div class="section" id="problem-4">
+<h3>Problem 4<a class="headerlink" href="#problem-4" title="Permalink to this headline">¶</a></h3>
+<p>Time to actually write some code!</p>
+<p><strong>a)</strong> Implement a code for the Ising model which uses the Markov Chain Monte Carlo approach to sample spin configurations <span class="math notranslate nohighlight">\(\mathbf{s}\)</span> and computes</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\langle \epsilon \rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\langle |m| \rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(C_V\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\chi\)</span></p></li>
+</ul>
+<p><strong>b)</strong> Validation: For a temperature of <span class="math notranslate nohighlight">\(T = 1.0\,J/k_B\)</span>, compare your results to the analytical results from Problem 1. (Feel free to compare for other temperature values as well, or simply make plots of these quantities versus temperature.)</p>
+<p><strong>c)</strong> How many <strong>Monte Carlo cycles</strong> do you need to get good agreement with the analytical result? (Here <em>one Monte Carlo cycle</em> corresponds to <em><span class="math notranslate nohighlight">\(N\)</span> attempted spin flips</em>.)</p>
+</div>
+<div class="section" id="problem-5">
+<h3>Problem 5<a class="headerlink" href="#problem-5" title="Permalink to this headline">¶</a></h3>
+<p>Now we will use a lattice with size <span class="math notranslate nohighlight">\(L=20\)</span> and study the <strong>burn-in time</strong> (or <strong>equilibration time</strong>), measured in number of Monte Carlo cycles.</p>
+<p><strong>a)</strong> Make plots that show how the numerical estimates of <span class="math notranslate nohighlight">\(\langle \epsilon \rangle\)</span> and <span class="math notranslate nohighlight">\(\langle |m| \rangle\)</span> evolve with the number of Monte Carlo cycles. You should produce graphs for temperatures <span class="math notranslate nohighlight">\(T = 1.0\,J/k_B\)</span> and <span class="math notranslate nohighlight">\(T = 2.4\,J/k_B\)</span>, and starting from <em>ordered</em> and <em>unordered</em> (random) initial states.</p>
+<p><strong>b)</strong> Based on these plots, how long would you say the burn-in time is?</p>
+<p><strong>c)</strong> What is the argument for not using the samples generated during the burn-in time?</p>
+</div>
+<div class="section" id="problem-6">
+<h3>Problem 6<a class="headerlink" href="#problem-6" title="Permalink to this headline">¶</a></h3>
+<p>Now let’s move beyond mere expectation values and see how we can use our MCMC to estimate the full probability distribution for <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
+<p>For <span class="math notranslate nohighlight">\(L=20\)</span>, approximate the probability function <span class="math notranslate nohighlight">\(p_{\epsilon}(\epsilon;T)\)</span> for <span class="math notranslate nohighlight">\(T = 1.0\,J/k_B\)</span> and <span class="math notranslate nohighlight">\(T = 2.4\,J/k_B\)</span> by creating normalized histograms of generated <span class="math notranslate nohighlight">\(\epsilon\)</span> samples. (Keep an eye on bin widths and remember that <span class="math notranslate nohighlight">\(\epsilon\)</span> is not a continuous variable.) Comment on your results, in particular on the variance of the two distributions.</p>
+</div>
+<div class="section" id="problem-7">
+<h3>Problem 7<a class="headerlink" href="#problem-7" title="Permalink to this headline">¶</a></h3>
+<p>Now parallelize your code using either OpenMP or MPI. Perform some timing tests to estimate the speed-up factor resulting from the parallelization.</p>
+</div>
+<div class="section" id="problem-8">
+<h3>Problem 8<a class="headerlink" href="#problem-8" title="Permalink to this headline">¶</a></h3>
+<p>Now we will start investigating phase transitions.</p>
+<ul class="simple">
+<li><p><strong>a)</strong> For lattices of size <span class="math notranslate nohighlight">\(L = 40,60,80,100\)</span> (and higher if you want), make plots of <span class="math notranslate nohighlight">\(\langle \epsilon \rangle\)</span>, <span class="math notranslate nohighlight">\(\langle |m| \rangle\)</span>, <span class="math notranslate nohighlight">\(C_V\)</span> and <span class="math notranslate nohighlight">\(\chi\)</span> as function of temperature <span class="math notranslate nohighlight">\(T\)</span>. (Plot the results for different <span class="math notranslate nohighlight">\(L\)</span> values in the same figure.) Focus on temperatures in a range around <span class="math notranslate nohighlight">\(T \in [2.1, 2.4]\,J/k_B\)</span>. Make sure to use sufficiently small temperature steps, at least in the region where the graphs change most rapidly.</p></li>
+<li><p><strong>b)</strong> Do you see an indication of a phase transition?</p></li>
+<li><p><strong>c)</strong> What is the critical temperature <span class="math notranslate nohighlight">\(T_C(L)\)</span> for the different lattice sizes <span class="math notranslate nohighlight">\(L\)</span>? Use the <span class="math notranslate nohighlight">\(\chi\)</span> or <span class="math notranslate nohighlight">\(C_V\)</span> results to determine <span class="math notranslate nohighlight">\(T_C(L)\)</span>.</p></li>
+</ul>
+</div>
+<div class="section" id="problem-9">
+<h3>Problem 9<a class="headerlink" href="#problem-9" title="Permalink to this headline">¶</a></h3>
+<p>The critical temperature for an <em>infinite</em> (<span class="math notranslate nohighlight">\(L=\infty\)</span>) 2D Ising model was found analytically by Lars Onsager in 1944. The result is</p>
+<div class="math notranslate nohighlight">
+\[
+T_C(L=\infty) = \frac{2}{\ln(1 + \sqrt{2})}\,J/k_B \approx 2.269\,J/k_B
+\]</div>
+<p>Our task now is to try to numerically estimate <span class="math notranslate nohighlight">\(T_C(L=\infty)\)</span> using our numerical results for <span class="math notranslate nohighlight">\(T_C(L)\)</span> of <em>finite</em> systems.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some more theory details will be added here soon.</p>
+</div>
+<p>Using your set of <span class="math notranslate nohighlight">\(L\)</span> and <span class="math notranslate nohighlight">\(T_C(L)\)</span> values from Problem 9 as data points, and the scaling relation</p>
+<div class="math notranslate nohighlight">
+\[
+T_C(L) - T_C(L=\infty) = a L^{-1}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(a\)</span> is a constant, extract an estimate for <span class="math notranslate nohighlight">\(T_C(L=\infty)\)</span> and compare it to Onsager’s analtical result.</p>
+<p><strong>Good luck!</strong></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="code-snippets">
+<h3>Code snippets<a class="headerlink" href="#code-snippets" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some helpful stuff might appear here…</p>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./book/projects"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="project3.html" title="previous page">Project 3</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By the FYS3150 teaching team<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
