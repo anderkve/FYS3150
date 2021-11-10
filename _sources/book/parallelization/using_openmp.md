@@ -5,12 +5,12 @@ For future reference, you can download OpenMP reference cards that contain table
 ## Compiler directives
 
 OpenMP is very user-friendly in the sense that
-a code written to run series can easily be parallelized
-simply by adding **compiler directives**. We'll go through a couple useful ones here.
+a code written to run in series can easily be parallelized
+simply by adding **compiler directives** to the serial code. We'll go through a couple useful ones here.
 
 ## Parallel region
 
-A flexible , one can create a **parallel region**, which looks like this
+The most basic compiler directive provided by OpenMP is the **parallel region**, which looks like
 
 ```c++
 #pragma omp parallel
@@ -47,27 +47,22 @@ and
 ```c++
 #pragma omp for
 ```
-is fused to a simpler compiler directive given by
+is fused to a single compiler directive given by
 
 ```c++
 #pragma omp parallel for
 ```
-Thus the same for-loop can more compactly be parallelized by
+Thus the same for-loop can be parallelized by
 ```c++
 #pragma omp parallel for
 for (int i = 0; i < n; i++){
   //some code that is parallelized with respect to i
 }
 ```
-The compiler directive here is
-
-```c++
-#pragma omp parallel for
-```
 The variable `i` in the loop is distributed among the threads so that each thread operates with a subset of the loop. The distribution is decided by the compiler. But it may look like this:
   - Assume there are `p` threads. Then thread 0 gets the `n/p` first values of `i`, thread 1 gets the next `n/p` values and so on.
   - Sometimes the compiler divides the for loop cyclically, so thread 0 gets `i = 0, p, 2p, ...` while thread 1 gets `i = 1, p+1, 2p+1, ...` and so on.
-
+  - The first option is typically the chosen division among the threads. For very complex problems, you can perform the division of tasks among the threads manually. For the problems we meet in this course, though, you should let OpenMP do the work for you.
 
 The compiler directive only parallelize the *first* following for-loop. For instance
 ```c++
@@ -79,6 +74,31 @@ for (int i = 0; i < n; i++){
 }
 ```
 is only parallelized with respect to `i`, not the inner loop that runs over `j`.
+
+Sometimes, it's possible to parallelize both for-loops to achieve a speedup. This is known as **loop-collapse** and looks like:
+
+```c++
+#pragma omp parallel for collapse(2)
+for (int i = 0; i < n; i++){
+  for (int j = 0; j < m; j++){
+    //some code
+  }
+}
+```
+
+It's only possible with *perfectly* nested for-loops like this. By that, we mean that if the a nested for-loop looks like
+
+```c++
+for (int i = 0; i < n; i++){
+  //Some code only dependent on i
+  for (int j = 0; j < m; j++){
+    //some code dependent on i and j.
+  }
+}
+```
+
+you cannot perform loop collapse!
+
 
 ## Build a code that can run in serial and in parallel
 

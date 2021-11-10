@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Introduction to OpenMP &#8212; FYS3150/FYS4150 course material</title>
+    <title>Checklist for reports &#8212; FYS3150/FYS4150 course material</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,10 +49,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Using OpenMP" href="using_openmp.html" />
-    <link rel="prev" title="Memory traffic is the bottleneck" href="../optimization/memory_is_the_bottleneck.html" />
+    <link rel="next" title="Project 1" href="../projects/project1.html" />
+    <link rel="prev" title="Introduction to LaTeX" href="introduction_to_latex.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -267,14 +269,14 @@
   Parallelization
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../parallelization/introduction_to_openmp.html">
    Introduction to OpenMP
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="using_openmp.html">
+  <a class="reference internal" href="../parallelization/using_openmp.html">
    Using OpenMP
   </a>
  </li>
@@ -296,14 +298,14 @@
   Writing reports
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../writing_reports/introduction_to_latex.html">
+  <a class="reference internal" href="introduction_to_latex.html">
    Introduction to LaTeX
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../writing_reports/checklist.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Checklist for reports
   </a>
  </li>
@@ -375,7 +377,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/book/parallelization/introduction_to_openmp.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/book/writing_reports/checklist.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -395,7 +397,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Fbook/parallelization/introduction_to_openmp.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Fbook/writing_reports/checklist.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -416,58 +418,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-openmp">
-   What is OpenMP?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#forking-and-joining-threads">
-   Forking and joining threads
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#building-c-code-with-openmp">
-   Building C++ code with OpenMP
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#linux-users">
-     Linux users
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#macos-users">
-     macOS users
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#shared-memory-programming">
-   Shared memory programming
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#false-sharing">
-     False sharing
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#race-condition">
-     Race condition
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -476,96 +426,38 @@
         
               <div>
                 
-  <div class="section" id="introduction-to-openmp">
-<h1>Introduction to OpenMP<a class="headerlink" href="#introduction-to-openmp" title="Permalink to this headline">¶</a></h1>
-<p>Here we’ll add some introductory remarks about OpenMP</p>
-<div class="section" id="what-is-openmp">
-<h2>What is OpenMP?<a class="headerlink" href="#what-is-openmp" title="Permalink to this headline">¶</a></h2>
-<p>OpenMP is an application programming interface (API) that
-allows for easy parallelization of C, C++ and Fortran code.
-It has an abundance of built in functionality,
-which can be used to parallelize code with very few changes
-to the existing code project.</p>
-</div>
-<div class="section" id="forking-and-joining-threads">
-<h2>Forking and joining threads<a class="headerlink" href="#forking-and-joining-threads" title="Permalink to this headline">¶</a></h2>
-<p>OpenMP assumes an underlying <strong>shared-memory</strong> architecture. This means that when a code runs in parallel, all <strong>threads</strong> access the same memory. Once a <strong>parallel region</strong> is executed, the <strong>primary</strong> thread that <strong>forks</strong> a set of <strong>sub-threads</strong>. Tasks are then divided among these and execute the code block <strong>concurrently</strong>, meaning at the same time. Once execution of the parallel region is completed, the sub-threads are <strong>joined</strong> and only the primary thread remains. The following image illustrates this process</p>
-<p><img alt="fork_join" src="../../_images/Fork_join.svg" /></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Sometimes, you’ll see the term “master” thread used for the primary thread and “slave” threads used for sub-threads. This was recently changed due to negative connotations to slavery.</p>
-</div>
-</div>
-<div class="section" id="building-c-code-with-openmp">
-<h2>Building C++ code with OpenMP<a class="headerlink" href="#building-c-code-with-openmp" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="linux-users">
-<h3>Linux users<a class="headerlink" href="#linux-users" title="Permalink to this headline">¶</a></h3>
-<p>For linux users, compilation with OpenMP is easily facilitated
-by the compiler flag <code class="docutils literal notranslate"><span class="pre">-fopenmp</span></code>. Thus compilation can be as easy as</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>g++ -c *.cpp -fopenmp
-</pre></div>
-</div>
-<p>The star tells the shell to search for <em>any</em> file that ends with <code class="docutils literal notranslate"><span class="pre">.cpp</span></code>; just a convenient shorthand.</p>
-<p>Linking is done by adding <code class="docutils literal notranslate"><span class="pre">-lomp</span></code>:.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>g++ -o main.out *.o -lomp
-</pre></div>
-</div>
-</div>
-<div class="section" id="macos-users">
-<h3>macOS users<a class="headerlink" href="#macos-users" title="Permalink to this headline">¶</a></h3>
-<p>For macOS users, compilation is a little bit different from Linux. Here we must add <code class="docutils literal notranslate"><span class="pre">-Xpreprocessor</span> <span class="pre">-fopenmp</span></code> (in this specific order!):</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>g++ -c *.cpp -Xpreprocessor -fopenmp
-</pre></div>
-</div>
-<p>Note: this assumes you use the Apple clang compiler (which you should be using if you followed the setup process described <a class="reference internal" href="../getting_ready/mac_users.html"><span class="doc std std-doc">here</span></a>).</p>
-<p>Linking is done by adding <code class="docutils literal notranslate"><span class="pre">-lomp</span></code>:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>g++ -o main.out *.o -lomp
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="shared-memory-programming">
-<h2>Shared memory programming<a class="headerlink" href="#shared-memory-programming" title="Permalink to this headline">¶</a></h2>
-<p>OpenMP assumes that the underlying memory is <strong>shared</strong>
-among all processes, or <strong>threads</strong> as they are called.
-This means that all threads share variables, allocated memory for pointers and so on by default. We must specify
-if some variable is to be specific to a particular thread.
-The terminology OpenMP uses for this is a <strong>private</strong> variable.</p>
-<p>There are two very important concepts to understand
-when you parallelize with OpenMP.</p>
-<div class="section" id="false-sharing">
-<h3>False sharing<a class="headerlink" href="#false-sharing" title="Permalink to this headline">¶</a></h3>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This is a technical concept, and you might be better suited to return to this at a later point.</p>
-</div>
-<p>If more than one thread uses a memory block stored in the <strong>cache</strong> (a type of fast memory used by your cpu), any change to it will require all the threads that uses it to make the exact same update to their version of the memory block. This is imposed by what is known by the <strong>cache-coherence policy</strong>. The punchline is that this leads to performance degradation. This process is called false sharing.</p>
+  <div class="section" id="checklist-for-reports">
+<h1>Checklist for reports<a class="headerlink" href="#checklist-for-reports" title="Permalink to this headline">¶</a></h1>
+<p>Writing a good scientific report is difficult and requires attention to a lot of details. On this page we will collect some of the things that are useful to check before handing in a report. Note that this list is not meant to be exhaustive — it’s just a convenient reminder for some of the more common problems.</p>
+<ul>
+<li><p><strong>Units:</strong> Check that all the numbers and plot axes that should have units actually have units.</p></li>
+<li><p><strong>Axis ranges:</strong> Make sure all plots have reasonable axis ranges. (If your code deals with numbers that are not incredibly small or large, but you end up with plot axes with a scale of e.g. <span class="math notranslate nohighlight">\(10^{20}\)</span> or <span class="math notranslate nohighlight">\(10^{-20}\)</span>, then this is often a sign that something has gone wrong in your code.) A useful rule is to <em>always</em> set the axis ranges “manually” (e.g. with <code class="docutils literal notranslate"><span class="pre">plt.xlim(...)</span></code> and <code class="docutils literal notranslate"><span class="pre">plt.ylim(...)</span></code>) for all plots you produce, since this forces you to pay attention to the axis ranges.</p></li>
+<li><p><strong>Grammar:</strong> Read through your report to remove as many grammatical mistakes as you can. Some common mistakes to look out for are:</p>
 <ul class="simple">
-<li><p>Example: say you’re working with a pointer of length n. One thread updates the first element and another thread updates the second element. Then the computer must send this update back and forth between the threads so that the copy of their pointer is identical at all times. This means that computing time must be divided to send information between the threads which slows down execution of the code.</p></li>
+<li><p>Wrong/missing capitalization (<em>Wrong:</em> “penning trap”, “Penning Trap”. <em>Correct:</em> “Penning trap”.)</p></li>
+<li><p>Singular versus plural forms (e.g. when to use “is” and when to use “are”)</p></li>
+<li><p>The use of “a” versus “an”</p></li>
+<li><p>Switching between “we” and “I”</p></li>
+<li><p>Incomplete sentences (<em>Wrong:</em> “Derivation in Appendix A.” <em>Correct:</em> “The derivation is given in Appendix A”.)</p></li>
 </ul>
+</li>
+<li><p><strong>Avoid empty lines after equations:</strong> Avoid empty lines after equations in your .tex file, unless you actually want to start a new paragraph in your text. (LaTeX will indent the text following an empty line.) If you just want some “air” surrounding the equations in your .tex file, use empty comment lines.</p></li>
+<li><p><strong>Quotation marks:</strong> To get correct quotation marks you should use LaTeX code like this</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Writing a report is ``fun&#39;&#39;.
+</pre></div>
 </div>
-<div class="section" id="race-condition">
-<h3>Race condition<a class="headerlink" href="#race-condition" title="Permalink to this headline">¶</a></h3>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This is a technical concept, and you might be better suited to return to this at a later point.</p>
+<p>not like this</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Writing</span> <span class="n">a</span> <span class="n">report</span> <span class="ow">is</span> <span class="s2">&quot;fun&quot;</span><span class="o">.</span>
+</pre></div>
 </div>
-<p>Suppose two threads are to increment a variable <em>v</em> that is initially set to zero, i.e <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">0</span></code>. The ideal result is that the final value should be <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">2</span></code>. This will happen if the following sequence of events occur:</p>
-<ol class="simple">
-<li><p>Thread 1 reads the value of <code class="docutils literal notranslate"><span class="pre">v</span></code> from memory.</p></li>
-<li><p>Thread 1 adds 1 to <code class="docutils literal notranslate"><span class="pre">v</span></code> and writes it back to memory.</p></li>
-<li><p>Only after this, thread 2 performs the exact same action.</p></li>
-</ol>
-<p>The following scenario describes when it goes wrong:</p>
-<ol class="simple">
-<li><p>Thread 1 reads the value of <code class="docutils literal notranslate"><span class="pre">v</span></code> from memory.</p></li>
-<li><p>Thread 2 reads the value of <code class="docutils literal notranslate"><span class="pre">v</span></code> from memory <em>before</em> thread 1 adds 1 and writes it back to memory.</p></li>
-<li><p>Both thread 1 and 2 now adds 1 to <code class="docutils literal notranslate"><span class="pre">v</span></code> and writes it back to memory. But the value both of them read was <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">0</span></code>, so the final value written to memory will be <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">1</span></code>.</p></li>
-</ol>
-<p>We can of course create more scenarios in which this happens, but the main idea to take from this is:
-when two threads operate on the same memory address, they must do so sequentially. Sometimes, absurd results from your program can boil down to this process, so it’s important to be aware of it for debugging purposes.</p>
-</div>
-</div>
+</li>
+<li><p><strong>Consistent mathematical notation:</strong> Make sure the mathematical notation is consistent. For instance, check that all vector quantities are typeset like <code class="docutils literal notranslate"><span class="pre">\mathbf{x}</span></code> or <code class="docutils literal notranslate"><span class="pre">\vec{x}</span></code>.</p></li>
+<li><p><strong>Explain all mathematical symbols:</strong> The first time a new symbol appears in an equation the surrounding text should specify what it means.</p></li>
+<li><p><strong>Text in math mode:</strong> Regular words that appear in mathematical expressions (i.e. in math mode in LaTeX) should be typeset with <code class="docutils literal notranslate"><span class="pre">\text{}</span></code>. <em>Correct:</em> <code class="docutils literal notranslate"><span class="pre">y_{\text{analytical}}</span></code>. <em>Wrong:</em> <code class="docutils literal notranslate"><span class="pre">y_{analytical}</span></code></p></li>
+<li><p><strong>Explicitly refer to all figures/tables:</strong> All figures/tables you include in your report should be explicitly mentioned in the main text.</p></li>
+<li><p><strong>Explicitly cite all references:</strong> All references you include in your reference list should be explicitly cited in the main text. If you don’t cite it, remove it.</p></li>
+<li><p><strong>Explicitly mention appendices:</strong> Have you added any appendices? If so you must refer to them at the relevant point(s) in the main text.</p></li>
+</ul>
 </div>
 
     <script type="text/x-thebe-config">
@@ -581,7 +473,7 @@ when two threads operate on the same memory address, they must do so sequentiall
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./book/parallelization"
+            path: "./book/writing_reports"
         },
         predefinedOutput: true
     }
@@ -593,8 +485,8 @@ when two threads operate on the same memory address, they must do so sequentiall
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../optimization/memory_is_the_bottleneck.html" title="previous page">Memory traffic is the bottleneck</a>
-    <a class='right-next' id="next-link" href="using_openmp.html" title="next page">Using OpenMP</a>
+    <a class='left-prev' id="prev-link" href="introduction_to_latex.html" title="previous page">Introduction to LaTeX</a>
+    <a class='right-next' id="next-link" href="../projects/project1.html" title="next page">Project 1</a>
 
         </div>
         

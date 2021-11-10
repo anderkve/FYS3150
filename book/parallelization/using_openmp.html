@@ -302,6 +302,11 @@
    Introduction to LaTeX
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../writing_reports/checklist.html">
+   Checklist for reports
+  </a>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -497,12 +502,12 @@
 <div class="section" id="compiler-directives">
 <h2>Compiler directives<a class="headerlink" href="#compiler-directives" title="Permalink to this headline">¶</a></h2>
 <p>OpenMP is very user-friendly in the sense that
-a code written to run series can easily be parallelized
-simply by adding <strong>compiler directives</strong>. We’ll go through a couple useful ones here.</p>
+a code written to run in series can easily be parallelized
+simply by adding <strong>compiler directives</strong> to the serial code. We’ll go through a couple useful ones here.</p>
 </div>
 <div class="section" id="parallel-region">
 <h2>Parallel region<a class="headerlink" href="#parallel-region" title="Permalink to this headline">¶</a></h2>
-<p>A flexible , one can create a <strong>parallel region</strong>, which looks like this</p>
+<p>The most basic compiler directive provided by OpenMP is the <strong>parallel region</strong>, which looks like</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma omp parallel</span>
 <span class="p">{</span>
   <span class="c1">//Some code to parallelize here.</span>
@@ -537,25 +542,22 @@ simply by adding <strong>compiler directives</strong>. We’ll go through a coup
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma omp for</span>
 </pre></div>
 </div>
-<p>is fused to a simpler compiler directive given by</p>
+<p>is fused to a single compiler directive given by</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma omp parallel for</span>
 </pre></div>
 </div>
-<p>Thus the same for-loop can more compactly be parallelized by</p>
+<p>Thus the same for-loop can be parallelized by</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma omp parallel for</span>
 <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
   <span class="c1">//some code that is parallelized with respect to i</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The compiler directive here is</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma omp parallel for</span>
-</pre></div>
-</div>
 <p>The variable <code class="docutils literal notranslate"><span class="pre">i</span></code> in the loop is distributed among the threads so that each thread operates with a subset of the loop. The distribution is decided by the compiler. But it may look like this:</p>
 <ul class="simple">
 <li><p>Assume there are <code class="docutils literal notranslate"><span class="pre">p</span></code> threads. Then thread 0 gets the <code class="docutils literal notranslate"><span class="pre">n/p</span></code> first values of <code class="docutils literal notranslate"><span class="pre">i</span></code>, thread 1 gets the next <code class="docutils literal notranslate"><span class="pre">n/p</span></code> values and so on.</p></li>
 <li><p>Sometimes the compiler divides the for loop cyclically, so thread 0 gets <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">p,</span> <span class="pre">2p,</span> <span class="pre">...</span></code> while thread 1 gets <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">p+1,</span> <span class="pre">2p+1,</span> <span class="pre">...</span></code> and so on.</p></li>
+<li><p>The first option is typically the chosen division among the threads. For very complex problems, you can perform the division of tasks among the threads manually. For the problems we meet in this course, though, you should let OpenMP do the work for you.</p></li>
 </ul>
 <p>The compiler directive only parallelize the <em>first</em> following for-loop. For instance</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma omp parallel for</span>
@@ -567,6 +569,25 @@ simply by adding <strong>compiler directives</strong>. We’ll go through a coup
 </pre></div>
 </div>
 <p>is only parallelized with respect to <code class="docutils literal notranslate"><span class="pre">i</span></code>, not the inner loop that runs over <code class="docutils literal notranslate"><span class="pre">j</span></code>.</p>
+<p>Sometimes, it’s possible to parallelize both for-loops to achieve a speedup. This is known as <strong>loop-collapse</strong> and looks like:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma omp parallel for collapse(2)</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">){</span>
+    <span class="c1">//some code</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>It’s only possible with <em>perfectly</em> nested for-loops like this. By that, we mean that if the a nested for-loop looks like</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+  <span class="c1">//Some code only dependent on i</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">){</span>
+    <span class="c1">//some code dependent on i and j.</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>you cannot perform loop collapse!</p>
 </div>
 <div class="section" id="build-a-code-that-can-run-in-serial-and-in-parallel">
 <h2>Build a code that can run in serial and in parallel<a class="headerlink" href="#build-a-code-that-can-run-in-serial-and-in-parallel" title="Permalink to this headline">¶</a></h2>
