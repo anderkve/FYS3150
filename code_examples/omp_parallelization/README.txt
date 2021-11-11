@@ -121,11 +121,34 @@ be combined later, e.g. using the "cat" command.
 
     export OMP_NUM_THREADS=4
 
-- Run like this (with timing)
+- Run like this:
 
-    time ./main_no_omp.exe 0 4 401 1000000 output.dat
+    ./main_omp_outer_loop.exe <A_min> <A_max> <n_A> <n_cycles_per_thread> <output_file_name>
+
+- So a run that includes timeing with the "time" command could be:
+
+    time ./main_omp_outer_loop.exe 0 4 401 1000000 output.dat
 
 - Look at the output files
+
+
+
+main_omp_inner_loop_inmem.cpp
+-----------------------------
+
+Similar to main_omp_outer_loop.cpp, but now storing the results from all threads
+in memory during the run (in a shared armadillo matrix) and only writing a single 
+output file at the end.
+
+- Build like this (now also with the -laramdillo flag):
+
+    g++ -O3 main_omp_outer_loop_inmem.cpp -fopenmp -o main_omp_outer_loop_inmem.exe
+
+- Run like this:
+
+    ./main_omp_outer_loop_inmem.exe <A_min> <A_max> <n_A> <n_cycles_per_thread> <output_file_basename>
+
+  after having set OMP_NUM_THREADS (see above)
 
 
 
@@ -133,12 +156,16 @@ main_omp_inner_loop.cpp
 -----------------------
 
 Similar to main_omp_outer_loop.cpp, but now using OpenMP to parallelize the 
-inner loop (loop with n_cycles iterations). 
+inner loop (a loop with n_cycles_per_thread iterations). 
 
-In this example we treat n_cycles as the number of cycles *per thread*, 
-i.e. we don't use "#pragma omp for" to split up the inner loop. This is
-then an example of performing similar computations on each thread and 
-taking an average as the combined result.
+As the variable name suggestes, in this example we treat n_cycles_per_thread 
+as the number of cycles *per thread*, i.e. we don't use "#pragma omp for" 
+to split up the inner loop. This is then an example of performing similar 
+computations on each thread and taking an average as the combined result.
+
+(For instance, in the case of MCMC, the threads could represent independent
+"walkers" that each should perform n_cycles_per_thread iterations of the MCMC 
+algorithm, before the combined results are formed.)
 
 In this example the results from different threads are combined before
 the parallel block ends, and then just the single (main) thread writes to

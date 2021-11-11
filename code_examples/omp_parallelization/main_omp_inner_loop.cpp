@@ -5,7 +5,7 @@ Build:
 g++ -O3 main_omp_inner_loop.cpp -fopenmp -o main_omp_inner_loop.exe
 
 Run: 
-./main_omp_inner_loop.exe <A_min> <A_max> <n_A> <n_cycles> <output_file_name>
+./main_omp_inner_loop.exe <A_min> <A_max> <n_A> <n_cycles_per_thread> <output_file_name>
 
 */
 
@@ -30,7 +30,7 @@ int main(int argc, const char* argv[])
   const double A_min = atof(argv[1]);
   const double A_max = atof(argv[2]);
   const int n_A = atoi(argv[3]);
-  const int n_cycles = atoi(argv[4]);
+  const int n_cycles_per_thread = atoi(argv[4]);
   const string output_file_name = argv[5];
 
   // Prepare for file output
@@ -61,8 +61,14 @@ int main(int argc, const char* argv[])
       double my_dummy_result = A;
 
       // In this example we *don't* ask OpenMP to split up the inner loop (with "#pragma omp for").
-      // Rather, n_cycles refers to the number of cycles for each thread
-      for (int j = 0; j < n_cycles; ++j)
+      // Rather, n_cycles_per_thread refers to the number of cycles for each thread. 
+      //
+      // So if we want faster execution speed while keeping the total number of cycles constant, we
+      // we could run with more threads and reduce n_cycles_per_thread value correspondingly.
+
+      // If we rather want to perform more cycles (e.g. collect more MCMC samples) in the same total 
+      // time, we simply increase the number of threads and keep n_cycles_per_thread unchanged
+      for (int j = 0; j < n_cycles_per_thread; ++j)
       {
 
         // 
