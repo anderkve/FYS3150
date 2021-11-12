@@ -509,7 +509,7 @@
 <h1>Project 4<a class="headerlink" href="#project-4" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This version is not final — look out for small updates in the near future.</p>
+<p>While working on the project, check this page regularly in case of small updates (typo fixes, added hints, etc.)</p>
 </div>
 <div class="section" id="practicalities">
 <h2>Practicalities<a class="headerlink" href="#practicalities" title="Permalink to this headline">¶</a></h2>
@@ -626,18 +626,22 @@
 </ul>
 <div class="math notranslate nohighlight">
 \[
-  C_V = \frac{1}{k_B T^2}(\langle \epsilon^2 \rangle - \langle \epsilon \rangle^2)
+  C_V = \frac{1}{N} \frac{1}{k_B T^2}(\langle E^2 \rangle - \langle E \rangle^2) 
   \]</div>
 <ul class="simple">
 <li><p>the susceptibility (normalized to number of spins):</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[
-  \chi = \frac{1}{k_B T}(\langle m^2 \rangle - \langle m \rangle^2)
+  \chi = \frac{1}{N} \frac{1}{k_B T}(\langle M^2 \rangle - \langle |M| \rangle^2)
   \]</div>
 </li>
 </ul>
 <p>We will use these analytical results to test our code.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There was a typo in a previous version, where <span class="math notranslate nohighlight">\(C_V\)</span> and <span class="math notranslate nohighlight">\(\chi\)</span> were defined using <span class="math notranslate nohighlight">\(\epsilon\)</span> and <span class="math notranslate nohighlight">\(m\)</span> rather than <span class="math notranslate nohighlight">\(E\)</span> and <span class="math notranslate nohighlight">\(M\)</span>. This is now corrected, along with the normalization factor <span class="math notranslate nohighlight">\(\frac{1}{N}\)</span> in front to enusure that we normalize the heat capacity and susceptibility to the total number of spins in the system. Apologies for the confusion!</p>
+</div>
 </div>
 <div class="section" id="problem-2">
 <h3>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this headline">¶</a></h3>
@@ -670,7 +674,7 @@
 <div class="section" id="problem-5">
 <h3>Problem 5<a class="headerlink" href="#problem-5" title="Permalink to this headline">¶</a></h3>
 <p>Now we will use a lattice with size <span class="math notranslate nohighlight">\(L=20\)</span> and study the <strong>burn-in time</strong> (or <strong>equilibration time</strong>), measured in number of Monte Carlo cycles.</p>
-<p><strong>a)</strong> Make plots that show how the numerical estimates of <span class="math notranslate nohighlight">\(\langle \epsilon \rangle\)</span> and <span class="math notranslate nohighlight">\(\langle |m| \rangle\)</span> evolve with the number of Monte Carlo cycles. You should produce graphs for temperatures <span class="math notranslate nohighlight">\(T = 1.0\,J/k_B\)</span> and <span class="math notranslate nohighlight">\(T = 2.4\,J/k_B\)</span>, and starting from <em>ordered</em> and <em>unordered</em> (random) initial states.</p>
+<p><strong>a)</strong> Make plots that show how the numerical estimates of <span class="math notranslate nohighlight">\(\langle \epsilon \rangle\)</span> and <span class="math notranslate nohighlight">\(\langle |m| \rangle\)</span> evolve with the number of Monte Carlo cycles. You should produce graphs for temperatures <span class="math notranslate nohighlight">\(T = 1.0\,J/k_B\)</span> and <span class="math notranslate nohighlight">\(T = 2.4\,J/k_B\)</span>, and starting from <em>ordered</em> (all spins pointing the same way) and <em>unordered</em> (random) initial states.</p>
 <p><strong>b)</strong> Based on these plots, how long would you say the burn-in time is?</p>
 <p><strong>c)</strong> What is the argument for not using the samples generated during the burn-in time?</p>
 </div>
@@ -682,6 +686,16 @@
 <div class="section" id="problem-7">
 <h3>Problem 7<a class="headerlink" href="#problem-7" title="Permalink to this headline">¶</a></h3>
 <p>Now parallelize your code using either OpenMP or MPI. Perform some timing tests to estimate the speed-up factor resulting from the parallelization.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As discussed in the lectures, there are basically three different approaches you can take here, corresponding to three different levels at which you can parallelize your code:</p>
+<ol class="simple">
+<li><p><em>At the temperature level:</em> You can parallelize the outer loop over temperature values (see Problem 8, which is where parallelization becomes important)</p></li>
+<li><p><em>At the level of MCMC “walkers”:</em> You can use multiple threads to perform multiple independent MCMC runs in parallel and combine their results.</p></li>
+<li><p><em>At the level of spin flipping:</em> You could parallelize the part of the code where you generate new states by attempting to flip N spins.</p></li>
+</ol>
+<p>We recommend you do either approach 1 or 2. (You only need to do one approach.) Approach 1 is probably the easiest. Approach 2 is the standard approach to parallelizing a single MCMC run (i.e. when there isn’t any scan over some external parameter, like <span class="math notranslate nohighlight">\(T\)</span> in our case.) Approach 3 would by far be the most complicated and it is probably also the least efficient.</p>
+</div>
 </div>
 <div class="section" id="problem-8">
 <h3>Problem 8<a class="headerlink" href="#problem-8" title="Permalink to this headline">¶</a></h3>
@@ -715,10 +729,7 @@ T_C(L) - T_C(L=\infty) = a L^{-1}
 <hr class="docutils" />
 <div class="section" id="code-snippets">
 <h3>Code snippets<a class="headerlink" href="#code-snippets" title="Permalink to this headline">¶</a></h3>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Some helpful stuff might appear here…</p>
-</div>
+<p>See the code snippets in <a class="reference external" href="https://github.com/anderkve/FYS3150/tree/master/code_examples/omp_parallelization"><code class="docutils literal notranslate"><span class="pre">code_examples/omp_parallelization</span></code></a> for some simple examples on parallelization using OpenMP.</p>
 </div>
 </div>
 </div>

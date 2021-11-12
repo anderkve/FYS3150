@@ -1,7 +1,7 @@
 # Project 4
 
 ```{note}
-This version is not final --- look out for small updates in the near future.
+While working on the project, check this page regularly in case of small updates (typo fixes, added hints, etc.)
 ```
 
 ## Practicalities
@@ -126,16 +126,20 @@ Assume a $2 \times 2$ lattice with periodic boundary conditions.
   - the specific heat capacity (normalized to number of spins):
 
   $$
-  C_V = \frac{1}{k_B T^2}(\langle \epsilon^2 \rangle - \langle \epsilon \rangle^2)
+  C_V = \frac{1}{N} \frac{1}{k_B T^2}(\langle E^2 \rangle - \langle E \rangle^2) 
   $$
 
   - the susceptibility (normalized to number of spins): 
 
   $$
-  \chi = \frac{1}{k_B T}(\langle m^2 \rangle - \langle m \rangle^2)
+  \chi = \frac{1}{N} \frac{1}{k_B T}(\langle M^2 \rangle - \langle |M| \rangle^2)
   $$
   
 We will use these analytical results to test our code.
+
+```{note}
+There was a typo in a previous version, where $C_V$ and $\chi$ were defined using $\epsilon$ and $m$ rather than $E$ and $M$. This is now corrected, along with the normalization factor $\frac{1}{N}$ in front to enusure that we normalize the heat capacity and susceptibility to the total number of spins in the system. Apologies for the confusion!
+```
 
 
 ### Problem 2
@@ -178,7 +182,7 @@ Time to actually write some code!
 
 Now we will use a lattice with size $L=20$ and study the **burn-in time** (or **equilibration time**), measured in number of Monte Carlo cycles. 
 
-**a)** Make plots that show how the numerical estimates of $\langle \epsilon \rangle$ and $\langle |m| \rangle$ evolve with the number of Monte Carlo cycles. You should produce graphs for temperatures $T = 1.0\,J/k_B$ and $T = 2.4\,J/k_B$, and starting from *ordered* and *unordered* (random) initial states. 
+**a)** Make plots that show how the numerical estimates of $\langle \epsilon \rangle$ and $\langle |m| \rangle$ evolve with the number of Monte Carlo cycles. You should produce graphs for temperatures $T = 1.0\,J/k_B$ and $T = 2.4\,J/k_B$, and starting from *ordered* (all spins pointing the same way) and *unordered* (random) initial states. 
 
 **b)** Based on these plots, how long would you say the burn-in time is?
 
@@ -196,6 +200,15 @@ For $L=20$, approximate the probability function $p_{\epsilon}(\epsilon;T)$ for 
 
 Now parallelize your code using either OpenMP or MPI. Perform some timing tests to estimate the speed-up factor resulting from the parallelization.
 
+```{note}
+As discussed in the lectures, there are basically three different approaches you can take here, corresponding to three different levels at which you can parallelize your code:
+
+1. *At the temperature level:* You can parallelize the outer loop over temperature values (see Problem 8, which is where parallelization becomes important)
+2. *At the level of MCMC "walkers":* You can use multiple threads to perform multiple independent MCMC runs in parallel and combine their results.
+3. *At the level of spin flipping:* You could parallelize the part of the code where you generate new states by attempting to flip N spins.
+
+We recommend you do either approach 1 or 2. (You only need to do one approach.) Approach 1 is probably the easiest. Approach 2 is the standard approach to parallelizing a single MCMC run (i.e. when there isn't any scan over some external parameter, like $T$ in our case.) Approach 3 would by far be the most complicated and it is probably also the least efficient. 
+```
 
 ### Problem 8
 
@@ -237,8 +250,6 @@ where $a$ is a constant, extract an estimate for $T_C(L=\infty)$ and compare it 
 
 ### Code snippets
 
-```{note}
-Some helpful stuff might appear here...
-```
+See the code snippets in [`code_examples/omp_parallelization`](https://github.com/anderkve/FYS3150/tree/master/code_examples/omp_parallelization) for some simple examples on parallelization using OpenMP.
 
 
