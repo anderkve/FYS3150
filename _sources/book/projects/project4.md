@@ -243,6 +243,9 @@ $$
 
 where $a$ is a constant, extract an estimate for $T_C(L=\infty)$ and compare it to Onsager's analtical result.
 
+```{note}
+Hint: If you are unsure about how to approach this, try to first plot your data points in such a way that they, according to the relation above, should fall on a straight line.
+```
 
 **Good luck!** 
 
