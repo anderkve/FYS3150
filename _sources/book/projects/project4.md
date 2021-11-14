@@ -214,11 +214,15 @@ We recommend you do either approach 1 or 2. (You only need to do one approach.) 
 
 Now we will start investigating phase transitions. 
 
+```{note}
+For a brief introduction to the phase transition of the 2D Ising model, see Chapters 13.4 and 13.4.1 of Morten Hjort-Jensen's lecture notes. See also the brief theoretical summary for Problem 9.
+```
+
 - **a)** For lattices of size $L = 40,60,80,100$ (and higher if you want), make plots of $\langle \epsilon \rangle$, $\langle |m| \rangle$, $C_V$ and $\chi$ as function of temperature $T$. (Plot the results for different $L$ values in the same figure.) Focus on temperatures in a range around $T \in [2.1, 2.4]\,J/k_B$. Make sure to use sufficiently small temperature steps, at least in the region where the graphs change most rapidly.
 
-- **b)** Do you see an indication of a phase transition? 
+- **b)** Do you see an indication of a phase transition?
 
-- **c)** What is the critical temperature $T_C(L)$ for the different lattice sizes $L$? Use the $\chi$ or $C_V$ results to determine $T_C(L)$.
+- **c)** What is the critical temperature $T_c(L)$ for the different lattice sizes $L$? Use the $\chi$ or $C_V$ results to determine $T_c(L)$.
 
 
 ### Problem 9
@@ -226,26 +230,48 @@ Now we will start investigating phase transitions.
 The critical temperature for an *infinite* ($L=\infty$) 2D Ising model was found analytically by Lars Onsager in 1944. The result is
 
 $$
-T_C(L=\infty) = \frac{2}{\ln(1 + \sqrt{2})}\,J/k_B \approx 2.269\,J/k_B
+T_c(L=\infty) = \frac{2}{\ln(1 + \sqrt{2})}\,J/k_B \approx 2.269\,J/k_B
 $$ 
 
-Our task now is to try to numerically estimate $T_C(L=\infty)$ using our numerical results for $T_C(L)$ of *finite* systems.
+Our task now is to try to numerically estimate $T_c(L=\infty)$ using our numerical results for $T_c(L)$ of *finite* systems.
 
-```{note}
-Some more theory details will be added here soon.
-```
-
-Using your set of $L$ and $T_C(L)$ values from Problem 9 as data points, and the scaling relation
+Using your set of $L$ and $T_c(L)$ values from Problem 8 as data points, and the scaling relation
 
 $$
-T_C(L) - T_C(L=\infty) = a L^{-1}
-$$
+T_c(L) - T_c(L=\infty) = a L^{-1}
+$$ (scaling_relation)
 
-where $a$ is a constant, extract an estimate for $T_C(L=\infty)$ and compare it to Onsager's analtical result.
+where $a$ is a constant, extract an estimate for $T_c(L=\infty)$ and compare it to Onsager's analtical result.
 
 ```{note}
 Hint: If you are unsure about how to approach this, try to first plot your data points in such a way that they, according to the relation above, should fall on a straight line.
 ```
+
+**Theoretical background:** *What follows here is a very brief summary. For more information see Chapters 13.4 and 13.4.1 of Morten Hjort-Jensen's lecture notes, and references therein.* 
+
+One of the many fascinating aspects of so-called critical phenomena is that vastly different physical systems can exhibit the same behaviour close to their critical point (here: critical temperature). This behaviour is decsribed by power laws, with exponents called *critical exponents*. For the *infinite* 2D Ising model, the mean magnetization, heat capacity and susceptibility behave as 
+
+$$
+\langle |m| \rangle &\propto |T - T_c(L=\infty)|^{\beta}\\
+C_V &\propto |T - T_c(L=\infty)|^{-\alpha}\\
+\chi &\propto |T - T_c(L=\infty)|^{-\gamma}
+$$
+
+for temperatures $T$ close to $T_c$, with critical exponents $\beta=1/8$, $\alpha=0$ and $\gamma=7/4$. Both $C_V$ and $\chi$ diverge near $T_c$. Similarly, the *correlation length* (here: the typical lenght scale of regions with aligned spins) $\xi$ also diverges near the critical point,
+
+$$
+\xi \propto |T - T_c(L=\infty)|^{-\nu}
+$$ (corr_length)
+
+with critical exponent $\nu = 1$. However, since we are studying a *finite* system, the largest correlation length is $\xi = L$, which we associate with the critical temperature of the finite system, $T = T_c(L)$. Inserting this into equation {eq}`corr_length` gives rise to equation {eq}`scaling_relation` above.
+
+Using this relation we see that, when $T$ is close to $T_c(L)$, we expect the mean magnetization, heat capacity and susceptibility to depend on the system size $L$ as 
+
+$$
+\langle |m| \rangle &\propto L^{-\beta/\nu}\\
+C_V &\propto L^{\alpha/\nu}\\
+\chi &\propto L^{\gamma/\nu}.
+$$
 
 **Good luck!** 
 
