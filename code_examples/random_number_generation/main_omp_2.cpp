@@ -3,11 +3,11 @@
 See description in README.txt
 
 Build: 
-g++ main_omp.cpp -o main_omp.exe -fopenmp
+g++ main_omp_2.cpp -o main_omp_2.exe -fopenmp
 
 Run: 
 export OMP_NUM_THREADS=<number of threads>
-./main_omp.exe
+./main_omp_2.exe
 
 */
 
