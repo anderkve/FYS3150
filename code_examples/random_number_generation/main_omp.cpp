@@ -25,9 +25,9 @@ int main()
 {
 
   // Use the system clock to get a seed
-  // unsigned int seed = chrono::system_clock::now().time_since_epoch().count();
+  unsigned int seed = chrono::system_clock::now().time_since_epoch().count();
   // ...or set the base seed manually
-  unsigned int seed = 831923;
+  // unsigned int seed = 831923;
 
   // Create a <random> generator and distribution (uniform distribution 
   // on the integers 1 to 6) private to this thread
