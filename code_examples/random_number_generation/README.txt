@@ -18,7 +18,7 @@ where each thread gets its own random number generator with its
 own unique seed constructed from a base seed.
 
 
-main_omp_2.cpp
+main_omp_3.cpp
 --------------
 
 Similar to main_omp.cpp, but now we've created a simple system in 
