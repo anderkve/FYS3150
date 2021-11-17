@@ -247,6 +247,11 @@ where $a$ is a constant, extract an estimate for $T_c(L=\infty)$ and compare it 
 Hint: If you are unsure about how to approach this, try to first plot your data points in such a way that they, according to the relation above, should fall on a straight line.
 ```
 
+```{note}
+Hint 2: If you find that doing a linear fit (a.k.a. linear least squares, a.k.a. linear regression, ...) could be useful, we don't expect you to discuss that method in a lot of detail in your report. Feel free to simply apply one of the many tools available, e.g. `scipy.stats.linregress`.
+```
+
+
 **Theoretical background:** *What follows here is a very brief summary. For more information see Chapters 13.4 and 13.4.1 of Morten Hjort-Jensen's lecture notes, and references therein.* 
 
 One of the many fascinating aspects of so-called critical phenomena is that vastly different physical systems can exhibit the same behaviour close to their critical point (here: critical temperature). This behaviour is decsribed by power laws, with exponents called *critical exponents*. For the *infinite* 2D Ising model, the mean magnetization, heat capacity and susceptibility behave as 
