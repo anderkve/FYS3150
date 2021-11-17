@@ -248,7 +248,7 @@ Hint: If you are unsure about how to approach this, try to first plot your data 
 ```
 
 ```{note}
-Hint 2: If you find that doing a linear fit (a.k.a. linear least squares, a.k.a. linear regression, ...) could be useful, we don't expect you to discuss that method in a lot of detail in your report. Feel free to simply apply one of the many tools available, e.g. `scipy.stats.linregress`.
+Hint 2: If you find that doing a linear fit (a.k.a. linear least squares, a.k.a. linear regression, ...) could be useful, we don't expect you to discuss that method in detail in your report. Feel free to simply apply one of the many tools available, e.g. `scipy.stats.linregress`.
 ```
 
 
