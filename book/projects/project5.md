@@ -86,9 +86,9 @@ Below we define the basic notation we will use for this project.
 - $y \rightarrow y_j = j h$, with $j = 0, 1, \ldots, M-1$.
 - $t \rightarrow t_n = n \Delta t$, with $n = 0, 1, \ldots, N_t-1$.
 - $u(x,y,t) \rightarrow u(ih,jh,n \Delta t) \equiv u_{ij}^n$. Note that the superscript $n$ here is simply a time index --- we have not raised $u_{ij}$ to the $n$-th power!
-- The matrix $U$^n is a matrix with elements $u_{ij}^n$.
+- The matrix $U^n$ is a matrix with elements $u_{ij}^n$.
 - $v(x,y) \rightarrow v(ih,jh) \equiv v_{ij}$.
-- The matrix $V$^n is a matrix with elements $v_{ij}^n$.
+- The matrix $V^n$ is a matrix with elements $v_{ij}^n$.
 
 Note:
 
