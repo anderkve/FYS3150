@@ -620,7 +620,7 @@ p(x,y;t) = |u(x,y,t)|^2 = u^*(x,y,t) \, u(x,y,t).
 </div>
 <div class="section" id="intial-and-boundary-conditions">
 <h2>Intial and boundary conditions<a class="headerlink" href="#intial-and-boundary-conditions" title="Permalink to this headline">¶</a></h2>
-<p>Throughout this project we will assume Dirchlet boundary conditions in the <span class="math notranslate nohighlight">\(xy\)</span> plane:</p>
+<p>Throughout this project we will assume Dirichlet boundary conditions in the <span class="math notranslate nohighlight">\(xy\)</span> plane:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(u(x=0, y, t) = 0\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(u(x=1, y, t) = 0\)</span></p></li>
@@ -640,12 +640,13 @@ p(x,y;t) = |u(x,y,t)|^2 = u^*(x,y,t) \, u(x,y,t).
 </div>
 <div class="section" id="problem-1">
 <h3>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this headline">¶</a></h3>
-<p>Show analytically that by discretizing equation <a class="reference internal" href="#equation-schr-eq">(24)</a> according to the Crank-Nicolson approach, you end up with this expression:</p>
+<p>Show analytically that by discretizing equation <a class="reference internal" href="#equation-schr-eq">(24)</a> according to the Crank-Nicolson approach, you end up with the expression</p>
 <div class="math notranslate nohighlight" id="equation-cn-eq1">
 <span class="eqno">(25)<a class="headerlink" href="#equation-cn-eq1" title="Permalink to this equation">¶</a></span>\[\begin{split}
 u_{ij}^{n+1}  -  r \left[u_{i+1,j}^{n+1} - 2u_{ij}^{n+1} + u_{i-1,j}^{n+1}\right]  -  r \left[u_{i,j+1}^{n+1} - 2u_{ij}^{n+1} + u_{i,j-1}^{n+1}\right]  +  \frac{i \Delta t}{2} v_{ij} u_{ij}^{n+1} \\
-= u_{ij}^n  +  r \left[u_{i+1,j}^n - 2u_{ij}^n + u_{i-1,j}^n\right]  +  r \left[u_{i,j+1}^n - 2u_{ij}^n + u_{i,j-1}^n\right]  -  \frac{i \Delta t}{2} v_{ij} u_{ij}^n
+= u_{ij}^n  +  r \left[u_{i+1,j}^n - 2u_{ij}^n + u_{i-1,j}^n\right]  +  r \left[u_{i,j+1}^n - 2u_{ij}^n + u_{i,j-1}^n\right]  -  \frac{i \Delta t}{2} v_{ij} u_{ij}^n,
 \end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(r \equiv \frac{i \Delta t}{2 h^2}\)</span>.</p>
 </div>
 <div class="section" id="problem-2">
 <h3>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this headline">¶</a></h3>
