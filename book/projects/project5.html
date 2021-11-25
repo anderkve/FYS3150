@@ -1,0 +1,1049 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project 5 &#8212; FYS3150/FYS4150 course material</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Project 4" href="project4.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">FYS3150/FYS4150 course material</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Getting ready
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_ready/windows_users.html">
+   Windows users
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_ready/mac_users.html">
+   Mac users
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_ready/linux_users.html">
+   Linux users
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Using the terminal
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_the_terminal/basics.html">
+   Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_the_terminal/keyboard_shortcuts.html">
+   Keyboard shortcuts
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Using git and GitHub
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/introduction_to_git.html">
+   Introduction to git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/setting_up_git_and_a_GitHub_repo.html">
+   Setting up git and GitHub repo
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/add_a_README.html">
+   Add a README
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/using_git.html">
+   Using git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/dealing_with_merge_conflicts.html">
+   Dealing with merge conflicts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/recover_an_old_version_of_a_file.html">
+   Recover an old version of a file
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/other_ways_to_fix_mistakes.html">
+   Other ways to fix mistakes
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Introduction to C++
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/intro.html">
+   Intro
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/hello_world.html">
+   Hello World
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/compiling_and_linking_take_1.html">
+   Compiling and linking, take 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/source_files_and_header_files.html">
+   Source files and header files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/variables.html">
+   Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/functions_take_1.html">
+   Functions, take 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/read_command_line_input.html">
+   Read command line input
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/write_to_file.html">
+   Write to file
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/if_else.html">
+   If else
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/loops.html">
+   Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/containers.html">
+   Containers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/intro_to_armadillo.html">
+   Introduction to Armadillo
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/pointers.html">
+   Pointers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/classes.html">
+   Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction_to_cpp/online_resources.html">
+   Online C++ resources
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Optimization
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../optimization/memory_is_the_bottleneck.html">
+   Memory traffic is the bottleneck
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Parallelization
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../parallelization/introduction_to_openmp.html">
+   Introduction to OpenMP
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../parallelization/using_openmp.html">
+   Using OpenMP
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Using Make
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_make/intro.html">
+   Intro
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Writing reports
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../writing_reports/introduction_to_latex.html">
+   Introduction to LaTeX
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../writing_reports/checklist.html">
+   Checklist for reports
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Projects
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="project1.html">
+   Project 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="project2.html">
+   Project 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="project3.html">
+   Project 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="project4.html">
+   Project 4
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Project 5
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/book/projects/project5.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/anderkve/FYS3150"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Fbook/projects/project5.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practicalities">
+   Practicalities
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-schroding-equation">
+   The Schröding equation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notation">
+   Notation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#intial-and-boundary-conditions">
+   Intial and boundary conditions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problems">
+   Problems
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-0">
+     Problem 0
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-1">
+     Problem 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-2">
+     Problem 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-3">
+     Problem 3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-4">
+     Problem 4
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-5">
+     Problem 5
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-6">
+     Problem 6
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-7">
+     Problem 7
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-8">
+     Problem 8
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-9">
+     Problem 9
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-x">
+     Problem X
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-snippets">
+     Code snippets
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="project-5">
+<h1>Project 5<a class="headerlink" href="#project-5" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This project description is still somewhat incomplete. It will be completed in the next couple of days.</p>
+</div>
+<div class="section" id="practicalities">
+<h2>Practicalities<a class="headerlink" href="#practicalities" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Deadline</strong>: Monday, December 13, 23:59.</p></li>
+<li><p><strong>Format:</strong></p>
+<ul>
+<li><p>A scientific report, typeset in LaTeX, delivered as a pdf file on Canvas.</p></li>
+<li><p>Code (with comments, of course) on a GitHub repo, with the repo link provided in your report.</p></li>
+<li><p>You <em>must</em> deliver via your group on Canvas (even if you are working alone).</p></li>
+</ul>
+</li>
+<li><p><strong>Collaboration:</strong> We strongly encourage you to collaborate with others, in groups of up to four students. The group hands in a single pdf. Remember to list everyone’s name in the pdf.</p></li>
+<li><p><strong>Reproducibility:</strong> Your code should be available on a GitHub repo. You can refer to relevant parts of your code in your answers. Make sure to include a README file in the repo that briefly explains how the code is organized, and how it should be compiled and run in order for others to reproduce your results.</p></li>
+<li><p><strong>Figures:</strong> Figures included in your LaTeX document should preferrably be made as vector graphics (e.g. <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> files), rather than raster graphics (e.g. <code class="docutils literal notranslate"><span class="pre">.png</span></code> files).</p></li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The goal of this project is to simulate the two-dimensional time-dependent Schrödinger equation, and use it to study a double-slit-in-a-box setup and variations thereof. In short, you will write a simulation that can give results <a class="reference external" href="https://www.dropbox.com/s/76sdq2ecp0ekiin/animation.mp4?dl=0"><code class="docutils literal notranslate"><span class="pre">like</span> <span class="pre">this</span></code></a>. (Note that you will not be required to animate your results, but it’s quite instructive and fun to do so.)</p>
+<p>The key methodological aspects of the projects are:</p>
+<ul class="simple">
+<li><p>Understanding partial differential equations (PDEs)</p></li>
+<li><p>Applying the Crank-Nicholson method in 2+1 dimensions</p></li>
+<li><p>Working with complex numbers in code</p></li>
+<li><p>Getting them indices straight…</p></li>
+<li><p>Using conserved quantities as stability checks</p></li>
+</ul>
+</div>
+<div class="section" id="the-schroding-equation">
+<h2>The Schröding equation<a class="headerlink" href="#the-schroding-equation" title="Permalink to this headline">¶</a></h2>
+<p>The general formulation of the time-dependent Schrödinger equation is</p>
+<div class="math notranslate nohighlight">
+\[
+i \hbar \frac{d}{dt} |\Psi\rangle = \hat{H} |\Psi\rangle,
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\hat{H}\)</span> is some Hamiltonian operator and <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span> is the quantum state (<a class="reference external" href="https://plato.stanford.edu/entries/qt-issues/#OntoIssu">whatever that is</a>). While we’re not really sure what the quantum state <em>is</em>, we do know it is related to probability (<a class="reference external" href="https://plato.stanford.edu/entries/probability-interpret/">whatever that is</a>) through the <a class="reference external" href="https://en.wikipedia.org/wiki/Born_rule">Born rule</a>, which we will use extensively in this project. More details below.</p>
+<p>We will now consider the case of a <em>a single, non-relativistic particle in two dimensions</em>. If we work in “position space”, the quantum state <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span> can then be expressed as a <em>complex valued</em> function <span class="math notranslate nohighlight">\(\Psi(x,y,t)\)</span>, historically called the <em>the wave function</em>. The Schrödinger equation then becomes</p>
+<div class="math notranslate nohighlight">
+\[
+i \hbar \frac{\partial}{\partial t} \Psi(x,y,t) = -\frac{\hbar^2}{2m} \left( \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} \right) \Psi(x,y,t) + V(x,y,t) \Psi(x,y,t).
+\]</div>
+<p>Here the terms <span class="math notranslate nohighlight">\(-\frac{\hbar^2}{2m} \frac{\partial^2 \Psi}{\partial x^2}\)</span> and <span class="math notranslate nohighlight">\(-\frac{\hbar^2}{2m} \frac{\partial^2 \Psi}{\partial y^2}\)</span> are expressions of the kinetic energy, corresponding to <span class="math notranslate nohighlight">\(\frac{p^2}{2m}\)</span> from classical physics, with <span class="math notranslate nohighlight">\(m\)</span> being the particle mass. The external environment is encoded in <em>the potential</em> <span class="math notranslate nohighlight">\(V\)</span>. We will only consider the case of a <em>time-independent</em> potential, <span class="math notranslate nohighlight">\(V = V(x,y)\)</span>.</p>
+<p>When working in position space like this, the Born rule takes the form</p>
+<div class="math notranslate nohighlight">
+\[
+p(x,y\,;t) = |\Psi(x,y,t)|^2 = \Psi^*(x,y,t) \, \Psi(x,y,t),
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(p(x,y\,;t)\)</span> denotes the probability density for detecting the particle at position <span class="math notranslate nohighlight">\((x,y)\)</span> if we made a position measurement at time <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p>To keep things simple, we will in this project assume that all dimensionful variables have been scaled away, leaving us with a “bare” Schrödinger equation on the form</p>
+<div class="math notranslate nohighlight" id="equation-schr-eq">
+<span class="eqno">(24)<a class="headerlink" href="#equation-schr-eq" title="Permalink to this equation">¶</a></span>\[
+i \frac{\partial u}{\partial t} = -\frac{\partial^2 u}{\partial x^2} - \frac{\partial^2 u}{\partial y^2} + v(x,y) u.
+\]</div>
+<p>So in this equation <em>all the variables are dimensionless</em>, which means you do not have to worry about units for this project. Our goal is to solve equation <a class="reference internal" href="#equation-schr-eq">(24)</a> numerically to determine the evolution of the “wave function” <span class="math notranslate nohighlight">\(u(x,y,t)\)</span> in the presence of some potential <span class="math notranslate nohighlight">\(v(x.y)\)</span>.</p>
+<p>In our new notation the Born rule takes the form</p>
+<div class="math notranslate nohighlight">
+\[
+p(x,y;t) = |u(x,y,t)|^2 = u^*(x,y,t) \, u(x,y,t).
+\]</div>
+<p>assuming the wave function <span class="math notranslate nohighlight">\(u(x,y,t)\)</span> has been properly normalized.</p>
+</div>
+<div class="section" id="notation">
+<h2>Notation<a class="headerlink" href="#notation" title="Permalink to this headline">¶</a></h2>
+<p>Below we define the basic notation we will use for this project.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x \in [0,1]\)</span>, <span class="math notranslate nohighlight">\(y \in [0,1]\)</span>, <span class="math notranslate nohighlight">\(t \in [0,T]\)</span>.</p></li>
+<li><p>We’ll use equal an equal step size <span class="math notranslate nohighlight">\(h\)</span> in both the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> directions.</p></li>
+<li><p><span class="math notranslate nohighlight">\(x \rightarrow x_i = i h\)</span>, with <span class="math notranslate nohighlight">\(i = 0, 1, \ldots, M-1\)</span>. (Don’t confuse this index <span class="math notranslate nohighlight">\(i\)</span> with the imaginary unit <span class="math notranslate nohighlight">\(i\)</span> appearing in the Schrödinger equation!)</p></li>
+<li><p><span class="math notranslate nohighlight">\(y \rightarrow y_j = j h\)</span>, with <span class="math notranslate nohighlight">\(j = 0, 1, \ldots, M-1\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(t \rightarrow t_n = n \Delta t\)</span>, with <span class="math notranslate nohighlight">\(n = 0, 1, \ldots, N_t-1\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(u(x,y,t) \rightarrow u(ih,jh,n \Delta t) \equiv u_{ij}^n\)</span>. Note that the superscript <span class="math notranslate nohighlight">\(n\)</span> here is simply a time index — we have not raised <span class="math notranslate nohighlight">\(u_{ij}\)</span> to the <span class="math notranslate nohighlight">\(n\)</span>-th power!</p></li>
+<li><p>The matrix <span class="math notranslate nohighlight">\(U\)</span>^n is a matrix with elements <span class="math notranslate nohighlight">\(u_{ij}^n\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(v(x,y) \rightarrow v(ih,jh) \equiv v_{ij}\)</span>.</p></li>
+<li><p>The matrix <span class="math notranslate nohighlight">\(V\)</span>^n is a matrix with elements <span class="math notranslate nohighlight">\(v_{ij}^n\)</span>.</p></li>
+</ul>
+<p>Note:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(M\)</span> is the number of <em>points</em> along the <span class="math notranslate nohighlight">\(x\)</span> axis, including the boundary points. Thus, the <span class="math notranslate nohighlight">\(x\)</span> axis has been discretized using <span class="math notranslate nohighlight">\(M-1\)</span> <em>steps</em>, and there are <span class="math notranslate nohighlight">\(M-2\)</span> “internal points” <span class="math notranslate nohighlight">\(x_1, \ldots, x_{M-2}\)</span>, i.e. excluding the boundary points <span class="math notranslate nohighlight">\(x_0\)</span> and <span class="math notranslate nohighlight">\(x_{M-1}\)</span>.</p></li>
+<li><p>Similarly for the <span class="math notranslate nohighlight">\(y\)</span> axis, again with <span class="math notranslate nohighlight">\(M\)</span> being the number of <em>points</em>.</p></li>
+<li><p>We will mix index notation with and without commas as needed for clarity. So keep in mind that e.g. <span class="math notranslate nohighlight">\(u_{ij}\)</span> and <span class="math notranslate nohighlight">\(u_{i,j}\)</span> mean the same thing.</p></li>
+</ul>
+</div>
+<div class="section" id="intial-and-boundary-conditions">
+<h2>Intial and boundary conditions<a class="headerlink" href="#intial-and-boundary-conditions" title="Permalink to this headline">¶</a></h2>
+<p>Throughout this project we will assume Dirchlet boundary conditions in the <span class="math notranslate nohighlight">\(xy\)</span> plane:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(u(x=0, y, t) = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u(x=1, y, t) = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u(x, y=0, t) = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u(x, y=1, t) = 0\)</span></p></li>
+</ul>
+<p>This assumption simplifies the implemention of the Crank-Niocolson scheme quite a bit, so keep in mind that the code we write will have this assumption baked in from the beginning.</p>
+<p>For the initial wave function <span class="math notranslate nohighlight">\(u(x,y,t=0)\)</span> we will typically use a quantum mechanical Gaussian wavepacket, to be specified in the problems below.</p>
+</div>
+<div class="section" id="problems">
+<h2>Problems<a class="headerlink" href="#problems" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="problem-0">
+<h3>Problem 0<a class="headerlink" href="#problem-0" title="Permalink to this headline">¶</a></h3>
+<p>Not really a problem but an advice: Before diving into this project, take a look at the <a class="reference external" href="http://arma.sourceforge.net/docs.html">Armadillo documentation</a> to see how you can work with complex numbers. For instance, look up terms like <code class="docutils literal notranslate"><span class="pre">cx_double</span></code>, <code class="docutils literal notranslate"><span class="pre">cx_vec</span></code>, <code class="docutils literal notranslate"><span class="pre">cx_mat</span></code>, etc.</p>
+<p>In practice, this simply means having your Armadillo objects filled with the standard <code class="docutils literal notranslate"><span class="pre">std::complex&lt;double&gt;</span></code> type in C++. You should read about that <a class="reference external" href="https://en.cppreference.com/w/cpp/numeric/complex">here</a> and take a look at the examples.</p>
+<p>PS: You might also find <code class="docutils literal notranslate"><span class="pre">sp_cx_mat</span></code> in Armadillo very useful at some point…</p>
+</div>
+<div class="section" id="problem-1">
+<h3>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this headline">¶</a></h3>
+<p>Show analytically that by discretizing equation <a class="reference internal" href="#equation-schr-eq">(24)</a> according to the Crank-Nicolson approach, you end up with this expression:</p>
+<div class="math notranslate nohighlight" id="equation-cn-eq1">
+<span class="eqno">(25)<a class="headerlink" href="#equation-cn-eq1" title="Permalink to this equation">¶</a></span>\[\begin{split}
+u_{ij}^{n+1}  -  r \left[u_{i+1,j}^{n+1} - 2u_{ij}^{n+1} + u_{i-1,j}^{n+1}\right]  -  r \left[u_{i,j+1}^{n+1} - 2u_{ij}^{n+1} + u_{i,j-1}^{n+1}\right]  +  \frac{i \Delta t}{2} v_{ij} u_{ij}^{n+1} \\
+= u_{ij}^n  +  r \left[u_{i+1,j}^n - 2u_{ij}^n + u_{i-1,j}^n\right]  +  r \left[u_{i,j+1}^n - 2u_{ij}^n + u_{i,j-1}^n\right]  -  \frac{i \Delta t}{2} v_{ij} u_{ij}^n
+\end{split}\]</div>
+</div>
+<div class="section" id="problem-2">
+<h3>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this headline">¶</a></h3>
+<p>One of the tricky things when implementing Crank-Nicolson with two spatial dimensions is getting the matrices and all the different indices right. When taking into account our choice of simple boundary conditions, equation <a class="reference internal" href="#equation-cn-eq1">(25)</a> can be expressed in matrix form as</p>
+<div class="math notranslate nohighlight" id="equation-cn-eq2">
+<span class="eqno">(26)<a class="headerlink" href="#equation-cn-eq2" title="Permalink to this equation">¶</a></span>\[
+A \,\vec{u}^{n+1} = B \,\vec{u}^{n}.
+\]</div>
+<p>Here the vector <span class="math notranslate nohighlight">\(\vec{u}^n\)</span> (and similarly <span class="math notranslate nohighlight">\(\vec{u}^{n+1}\)</span>) is a column vector that contains the <span class="math notranslate nohighlight">\(u_{ij}\)</span> values for <em>all the internal points</em> of the <span class="math notranslate nohighlight">\(xy\)</span> grid at time step <span class="math notranslate nohighlight">\(n\)</span>. In row-form it would look like this:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{u}^n = \left[(u_{1,1}^n, u_{2,1}^n, \ldots, u_{M-2,1}^n), (u_{1,2}^n, u_{2,2}^n, \ldots u_{M-2,2}^n), \ldots, (u_{1,M-2}^n \ldots u_{M-2,M-2}^n)\right].
+\]</div>
+<p>The parentheses are just added to make it clear where there is a change in the second index <span class="math notranslate nohighlight">\(j\)</span>. Thus the <span class="math notranslate nohighlight">\(\vec{u}\)</span> vectors have length <span class="math notranslate nohighlight">\((M-2)^2\)</span>, and the matrices <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are thus (potentially very large) matrices of size <span class="math notranslate nohighlight">\((M-2)^2 \times (M-2)^2\)</span>.</p>
+<p>Now we need some code to help us get this straight in our program:</p>
+<ul>
+<li><p>Write a code snippet that translates a pair of indices <span class="math notranslate nohighlight">\((i,j)\)</span> into a corresponding single index <span class="math notranslate nohighlight">\(k\)</span> that gives the position of <span class="math notranslate nohighlight">\(u_{ij}\)</span> in the vector <span class="math notranslate nohighlight">\(\vec{u}\)</span>.</p></li>
+<li><p>Start with <span class="math notranslate nohighlight">\((M-2)=3\)</span> as a concrete example and write a code snippet that can take a number <span class="math notranslate nohighlight">\(r\)</span> and two lenght-9 vectors <span class="math notranslate nohighlight">\(\vec{a}\)</span> and <span class="math notranslate nohighlight">\(\vec{b}\)</span> and produce the following matrices:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  A = 
+  \begin{bmatrix}
+  a_0 &amp;  -r  &amp;  0   &amp;  -r   &amp;   0   &amp;  0    &amp;  0   &amp;  0    &amp;  0    \\
+  -r  &amp;  a_1 &amp;  -r  &amp;  0    &amp;   -r  &amp;  0    &amp;  0   &amp;  0    &amp;  0    \\
+  0   &amp;  -r  &amp;  a_2 &amp;  0    &amp;   0   &amp;  -r   &amp;  0   &amp;  0    &amp;  0    \\
+  -r  &amp;  0   &amp;  0   &amp;  a_3  &amp;   -r  &amp;  0    &amp;  -r  &amp;  0    &amp;  0    \\
+  0   &amp;  -r  &amp;  0   &amp;  -r   &amp;   a_4 &amp;  -r   &amp;  0   &amp;  -r   &amp;  0    \\
+  0   &amp;  0   &amp;  -r  &amp;  0    &amp;   -r  &amp;  a_5  &amp;  0   &amp;  0    &amp;  -r   \\
+  0   &amp;  0   &amp;  0   &amp;  -r   &amp;   0   &amp;  0    &amp;  a_6 &amp;  -r   &amp;  0    \\
+  0   &amp;  0   &amp;  0   &amp;  0    &amp;   -r  &amp;  0    &amp;  -r  &amp;  a_7  &amp;  -r   \\
+  0   &amp;  0   &amp;  0   &amp;  0    &amp;   0   &amp;  -r   &amp;  0   &amp;  -r   &amp;  a_8  \\
+  \end{bmatrix}
+  \end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  B = 
+  \begin{bmatrix}
+  b_0 &amp;  r   &amp;  0   &amp;  r    &amp;   0   &amp;  0    &amp;  0   &amp;  0    &amp;  0    \\
+  r   &amp;  b_1 &amp;  r   &amp;  0    &amp;   r   &amp;  0    &amp;  0   &amp;  0    &amp;  0    \\
+  0   &amp;  r   &amp;  b_2 &amp;  0    &amp;   0   &amp;  r    &amp;  0   &amp;  0    &amp;  0    \\
+  r   &amp;  0   &amp;  0   &amp;  b_3  &amp;   r   &amp;  0    &amp;  r   &amp;  0    &amp;  0    \\
+  0   &amp;  r   &amp;  0   &amp;  r    &amp;   b_4 &amp;  r    &amp;  0   &amp;  r    &amp;  0    \\
+  0   &amp;  0   &amp;  r   &amp;  0    &amp;   r   &amp;  b_5  &amp;  0   &amp;  0    &amp;  r    \\
+  0   &amp;  0   &amp;  0   &amp;  r    &amp;   0   &amp;  0    &amp;  b_6 &amp;  r    &amp;  0    \\
+  0   &amp;  0   &amp;  0   &amp;  0    &amp;   r   &amp;  0    &amp;  r   &amp;  b_7  &amp;  r    \\
+  0   &amp;  0   &amp;  0   &amp;  0    &amp;   0   &amp;  r    &amp;  0   &amp;  r    &amp;  b_8  \\
+  \end{bmatrix}
+  \end{split}\]</div>
+<p>If you look closely you will see that the matrix structure is based on submatrices of size <span class="math notranslate nohighlight">\((M-2) \times (M-2)\)</span>. Make sure your code works for a general value of <span class="math notranslate nohighlight">\((M-2)\)</span>, even though we’re testing it for the simple case <span class="math notranslate nohighlight">\((M-2)=3\)</span>.</p>
+</li>
+<li><p>Now you are ready to write a function for your program that, using inputs <span class="math notranslate nohighlight">\(M\)</span>, <span class="math notranslate nohighlight">\(h\)</span>, <span class="math notranslate nohighlight">\(\Delta t\)</span> and the matrix <span class="math notranslate nohighlight">\(V\)</span> as input, can fill two <span class="math notranslate nohighlight">\((M-2)^2 \times (M-2)^2\)</span> matrices <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> according to the above pattern, with</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  a_k &amp;= 1 + 4r + \frac{i \Delta t}{2} v_{ij},\\
+  b_k &amp;= 1 - 4r - \frac{i \Delta t}{2} v_{ij}.
+  \end{split}\]</div>
+<p>(Here the <span class="math notranslate nohighlight">\(i\)</span> in <span class="math notranslate nohighlight">\(i \Delta t\)</span> is again the imaginary unit.)</p>
+</li>
+</ul>
+</div>
+<div class="section" id="problem-3">
+<h3>Problem 3<a class="headerlink" href="#problem-3" title="Permalink to this headline">¶</a></h3>
+<p>When we have the matrices <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, finding the next <span class="math notranslate nohighlight">\(\vec{u}^{n+1}\)</span> from the current <span class="math notranslate nohighlight">\(\vec{u}^n\)</span> in a time loop can be done in two steps:</p>
+<ol class="simple">
+<li><p>Perform the matrix multiplication <span class="math notranslate nohighlight">\(B \, \vec{u}^n = \vec{b}\)</span>.</p></li>
+<li><p>Solve the matrix equation <span class="math notranslate nohighlight">\(A \, \vec{u}^{n+1} = \vec{b}\)</span> for the unknown <span class="math notranslate nohighlight">\(\vec{u}^{n+1}\)</span>.</p></li>
+</ol>
+<p>Given what you know about matrix <span class="math notranslate nohighlight">\(A\)</span>, discuss which approaches might be well-suited to solve <span class="math notranslate nohighlight">\(A \, \vec{u}^{n+1} = \vec{b}\)</span>. For your code you can either implement a solver yourself or use a built-in solver in Armadillo.</p>
+</div>
+<div class="section" id="problem-4">
+<h3>Problem 4<a class="headerlink" href="#problem-4" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Write a part of your program that can set up the initial state <span class="math notranslate nohighlight">\(u_{ij}^0\)</span> based on the following expression for a Gaussian wave packet</p>
+<div class="math notranslate nohighlight">
+\[
+  u(x,y,t=0) = \ldots \textbf{[to be added]}
+  \]</div>
+<p>Make sure that your initial state <span class="math notranslate nohighlight">\(u_{ij}^0\)</span> satisfies the boundary conditions. Also add code that normalizes your initial state such that</p>
+<div class="math notranslate nohighlight">
+\[
+  \sum\limits_{i,j} u_{ij}^* u_{ij} = 1,
+  \]</div>
+<p>i.e. that the total probability in our 2D probability distribution <span class="math notranslate nohighlight">\(p_{ij} = u_{ij}^* u_{ij}\)</span> starts out normalized to 1.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="problem-5">
+<h3>Problem 5<a class="headerlink" href="#problem-5" title="Permalink to this headline">¶</a></h3>
+<p>Write a part of your program that initializes the potential <span class="math notranslate nohighlight">\(V\)</span>. To construct the barriers used for the double-slit (and other configurations) we will simply set the elements <span class="math notranslate nohighlight">\(v_{ij}\)</span> of <span class="math notranslate nohighlight">\(V\)</span> that correspond to points inside the barriers to some high constant value <span class="math notranslate nohighlight">\(v_{ij} = v_0\)</span>.</p>
+</div>
+<div class="section" id="problem-6">
+<h3>Problem 6<a class="headerlink" href="#problem-6" title="Permalink to this headline">¶</a></h3>
+<p>Put everything together into a program that… <strong>[details to be added]</strong></p>
+</div>
+<div class="section" id="problem-7">
+<h3>Problem 7<a class="headerlink" href="#problem-7" title="Permalink to this headline">¶</a></h3>
+<p>The total probability (<span class="math notranslate nohighlight">\(= 1\)</span>) in the probability distribution <span class="math notranslate nohighlight">\(p_{ij} = u_{ij}^* u_{ij}\)</span> should be conserved over time. This is a nice consistency check for our code. Run your simulation with the following settings <strong>[to be added]</strong> and make a plot of the total probability as function of time.</p>
+</div>
+<div class="section" id="problem-8">
+<h3>Problem 8<a class="headerlink" href="#problem-8" title="Permalink to this headline">¶</a></h3>
+<p>Run your simulation with the following settings <strong>[to be added]</strong>.</p>
+<ul class="simple">
+<li><p>Make (at least) three colourmap plots that illustrate the time evolution of the 2D probability distribution given by <span class="math notranslate nohighlight">\(p_{ij} = u_{ij}^* u_{ij}\)</span>.</p></li>
+<li><p>For the same time steps, also make colourmap plots that show <span class="math notranslate nohighlight">\(\text{Re}(u_{ij})\)</span> and <span class="math notranslate nohighlight">\(\text{Im}(u_{ij})\)</span>.</p></li>
+</ul>
+</div>
+<div class="section" id="problem-9">
+<h3>Problem 9<a class="headerlink" href="#problem-9" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Run your simulation with the following settings <strong>[to be added]</strong>. Make a plot of the 1D probability distribution for detecting the particle along a strip near the right-hand wall (i.e. the screen position in a normal double-slit experiment).</p></li>
+<li><p>Adjust your code to also simulate single-slit and triple-slit experiments. Run your simulations with the following settings <strong>[to be added]</strong>. Plot similar 1D probability distributions as in the previous problem, i.e. 1D probability distributions along the right-hand wall.</p></li>
+</ul>
+</div>
+<div class="section" id="problem-x">
+<h3>Problem X<a class="headerlink" href="#problem-x" title="Permalink to this headline">¶</a></h3>
+<p>If you find it useful, feel free to make some animations of your simulation and put links to these in your report! (However, don’t overdo it — your report will be more readable if the reader doesn’t have to switch between the report and watching animations all the time.)</p>
+<!-- 
+### Problem 10
+
+Run your simulation with the following settings **[to be added]** and for a total time of **[to be added]**. Make a plot that shows the probability of detecting the particle in the left half of the box, $Prob(\text{detect particle in region} x < 0.5)$, as a function of time. 
+ -->
+</div>
+<div class="section" id="code-snippets">
+<h3>Code snippets<a class="headerlink" href="#code-snippets" title="Permalink to this headline">¶</a></h3>
+<p>Here we might add suggestions for code layout, and some short code snippets.</p>
+<!-- 
+
+$$
+A = 
+\begin{bmatrix}
+a_0 & -r  &  0   & 0      &     -r  &  0  &  0   & 0      &     0   &  0  &  0   & 0      &   0   &  0  &  0      & 0       \\
+-r  & a_1 & -r   & 0      &     0   & -r  &  0   & 0      &     0   &  0  &  0   & 0      &   0   &  0  &  0      & 0       \\
+0   & -r  &  a_2 & -r     &     0   &  0  & -r   & 0      &     0   &  0  &  0   & 0      &   0   &  0  &  0      & 0       \\
+0   &  0  &  -r  & a_3    &     0   &  0  &  0   & -r     &     0   &  0  &  0   & 0      &   0   &  0  &  0      & 0       \\
+-r  &  0  &  0   & 0      &     a_4 & -r  &  0   & 0      &     -r  &  0  &  0   & 0      &   0   &  0  &  0      & 0       \\
+0   & -r  &  0   & 0      &     -r  & a_5 & -r   & 0      &     0   & -r  &  0   & 0      &   0   &  0  &  0      & 0       \\
+0   &  0  & -r   & 0      &     0   & -r  &  a_6 & -r     &     0   &  0  & -r   & 0      &   0   &  0  &  0      & 0       \\
+0   &  0  &  0   & -r     &     0   &  0  &  -r  & a_7    &     0   &  0  &  0   & -r     &   0   &  0  &  0      & 0       \\
+0   &  0  &  0   & 0      &     -r  &  0  &  0   & 0      &     a_8 & -r  &  0   & 0      &   -r  &  0  &  0      & 0       \\
+0   &  0  &  0   & 0      &     0   & -r  &  0   & 0      &     -r  & a_9 & -r   & 0      &   0   & -r  &  0      & 0       \\
+0   &  0  &  0   & 0      &     0   &  0  & -r   & 0      &     0   & -r  &  a_{10} & -r  &   0   &  0  & -r      & 0       \\
+0   &  0  &  0   & 0      &     0   &  0  &  0   & -r     &     0   &  0  &  -r  & a_{11} &   0   &  0  &  0      & -r      \\
+0   &  0  &  0   & 0      &     0   &  0  &  0   & 0      &     -r  &  0  &  0   & 0      &   a_{12} & -r  &  0   & 0       \\
+0   &  0  &  0   & 0      &     0   &  0  &  0   & 0      &     0   & -r  &  0   & 0      &   -r  & a_{13} & -r   & 0       \\
+0   &  0  &  0   & 0      &     0   &  0  &  0   & 0      &     0   &  0  & -r   & 0      &   0   & -r  &  a_{14} & -r      \\
+0   &  0  &  0   & 0      &     0   &  0  &  0   & 0      &     0   &  0  &  0   & -r     &   0   &  0  &  -r     & a_{15}  \\
+\end{bmatrix}
+
+$$
+
+ -->
+<!-- 
+Assume a $2 \times 2$ lattice with periodic boundary conditions.
+
+- **a)** Summarize all possible states of the system by setting up a table with four coloumns showing the following quantities
+  - number of spins in state +1
+  - total energy
+  - total magnetization
+  - degeneracy
+
+- **b)** Find analytical expressions for 
+  - $Z$
+  - $\langle \epsilon \rangle$
+  - $\langle \epsilon^2 \rangle$
+  - $\langle |m| \rangle$
+  - $\langle m^2 \rangle$
+  - the specific heat capacity (normalized to number of spins):
+
+  $$
+  C_V = \frac{1}{N} \frac{1}{k_B T^2}(\langle E^2 \rangle - \langle E \rangle^2) 
+  $$
+
+  - the susceptibility (normalized to number of spins): 
+
+  $$
+  \chi = \frac{1}{N} \frac{1}{k_B T}(\langle M^2 \rangle - \langle |M| \rangle^2)
+  $$
+  
+We will use these analytical results to test our code.
+
+```{note}
+There was a typo in a previous version, where $C_V$ and $\chi$ were defined using $\epsilon$ and $m$ rather than $E$ and $M$. This is now corrected, along with the normalization factor $\frac{1}{N}$ in front to enusure that we normalize the heat capacity and susceptibility to the total number of spins in the system. Apologies for the confusion!
+```
+
+
+### Problem 2
+
+In our Monte Carlo code we will repeatedly need the Boltzmann factor $e^{-\beta \Delta E}$, where 
+
+$$
+\Delta E = E_{\textrm{after}} - E_{\textrm{before}}
+$$
+
+is the energy shift due to *flipping a single spin*.
+
+**a)** Consider a 2D lattice of arbitrary size. Show that there are only five possible values $\Delta E$ can take.
+
+**b)** How can you use this result to avoid repeatedly calling the exponential function `exp(...)` in your code?
+
+
+### Problem 3
+
+There are many ways to implement periodic boundary conditions. The simplest is a set of if-tests. That works (and may be a useful starting point!), but if-tests inside loops can slow down your code. (It can hinder compiler optimizations.) Can you come up with a more efficient way of implementing periodic boundary conditions in your code?
+
+
+### Problem 4
+
+Time to actually write some code! 
+
+**a)** Implement a code for the Ising model which uses the Markov Chain Monte Carlo approach to sample spin configurations $\mathbf{s}$ and computes 
+
+  - $\langle \epsilon \rangle$
+  - $\langle |m| \rangle$
+  - $C_V$
+  - $\chi$
+
+**b)** Validation: For a temperature of $T = 1.0\,J/k_B$, compare your results to the analytical results from Problem 1. (Feel free to compare for other temperature values as well, or simply make plots of these quantities versus temperature.)
+
+**c)** How many **Monte Carlo cycles** do you need to get good agreement with the analytical result? (Here *one Monte Carlo cycle* corresponds to *$N$ attempted spin flips*.)
+
+
+### Problem 5
+
+Now we will use a lattice with size $L=20$ and study the **burn-in time** (or **equilibration time**), measured in number of Monte Carlo cycles. 
+
+**a)** Make plots that show how the numerical estimates of $\langle \epsilon \rangle$ and $\langle |m| \rangle$ evolve with the number of Monte Carlo cycles. You should produce graphs for temperatures $T = 1.0\,J/k_B$ and $T = 2.4\,J/k_B$, and starting from *ordered* (all spins pointing the same way) and *unordered* (random) initial states. 
+
+**b)** Based on these plots, how long would you say the burn-in time is?
+
+**c)** What is the argument for not using the samples generated during the burn-in time? 
+
+
+### Problem 6
+
+Now let's move beyond mere expectation values and see how we can use our MCMC to estimate the full probability distribution for $\epsilon$. 
+
+For $L=20$, approximate the probability function $p_{\epsilon}(\epsilon;T)$ for $T = 1.0\,J/k_B$ and $T = 2.4\,J/k_B$ by creating normalized histograms of generated $\epsilon$ samples. (Keep an eye on bin widths and remember that $\epsilon$ is not a continuous variable.) Comment on your results, in particular on the variance of the two distributions. 
+ 
+
+### Problem 7
+
+Now parallelize your code using either OpenMP or MPI. Perform some timing tests to estimate the speed-up factor resulting from the parallelization.
+
+```{note}
+As discussed in the lectures, there are basically three different approaches you can take here, corresponding to three different levels at which you can parallelize your code:
+
+1. *At the temperature level:* You can parallelize the outer loop over temperature values (see Problem 8, which is where parallelization becomes important)
+2. *At the level of MCMC "walkers":* You can use multiple threads to perform multiple independent MCMC runs in parallel and combine their results.
+3. *At the level of spin flipping:* You could parallelize the part of the code where you generate new states by attempting to flip N spins.
+
+We recommend you do either approach 1 or 2. (You only need to do one approach.) Approach 1 is probably the easiest. Approach 2 is the standard approach to parallelizing a single MCMC run (i.e. when there isn't any scan over some external parameter, like $T$ in our case.) Approach 3 would by far be the most complicated and it is probably also the least efficient. 
+```
+
+### Problem 8
+
+Now we will start investigating phase transitions. 
+
+```{note}
+For a brief introduction to the phase transition of the 2D Ising model, see Chapters 13.4 and 13.4.1 of Morten Hjort-Jensen's lecture notes. See also the brief theoretical summary for Problem 9.
+```
+
+- **a)** For lattices of size $L = 40,60,80,100$ (and higher if you want), make plots of $\langle \epsilon \rangle$, $\langle |m| \rangle$, $C_V$ and $\chi$ as function of temperature $T$. (Plot the results for different $L$ values in the same figure.) Focus on temperatures in a range around $T \in [2.1, 2.4]\,J/k_B$. Make sure to use sufficiently small temperature steps, at least in the region where the graphs change most rapidly.
+
+- **b)** Do you see an indication of a phase transition?
+
+- **c)** What is the critical temperature $T_c(L)$ for the different lattice sizes $L$? Use the $\chi$ or $C_V$ results to determine $T_c(L)$.
+
+```{note}
+Some suggestions in case you are short on time because the code is slower than expected: 
+
+- Make sure you're not running way more temperature points than necessary. As suggested in the lectures, first run a scan with large T steps, to roughly identify the subregion of $T$ values where the graphs change most quickly. (E.g. only 10 points on the suggested $T$ range can be sufficient here.) Then run a second scan that zooms in on the much smaller $T$ range needed to identify $T_c$. Again, you can probably get good results with as few as 10 $T$ points -- though more points always make for better results. 
+
+- If you're having trouble with OpenMP/MPI parallelisation, remember that to just make sure you get the numerical results you need, you can always do "dummy parallelisation" by just running multiple instances of your program. (Use separete terminal windows, or run your program in the background with the `&` command, e.g. `./main.exe <command line options> &`. You can view your background jobs with `jobs` and bring them to the foreground with `fg <job number>`.) This "manual" way of splitting up tasks works well assuming that your program can take options like `L`, `Tmin`, `Tmax`, `deltaT` (or `n_Tsteps`) as command-line arguments.
+
+- Perhaps you can afford to reduce the number of Monte Carlo cycles a bit and still get decent results? E.g. halving the number of cycles should half the program runtime.
+
+- Keep in mind that you don't need to finish all the runs for Problem 8 to get started on Problem 9. To get a first result for Problem 9 you basically only need to identify $T_c$ for two of the $L$ values in Problem 8. So you can do Problem 9 in parallel with the runs for Problem 8, and then just update your plots/numbers as new runs in Problem 8 finishes. 
+```
+
+
+
+### Problem 9
+
+The critical temperature for an *infinite* ($L=\infty$) 2D Ising model was found analytically by Lars Onsager in 1944. The result is
+
+$$
+T_c(L=\infty) = \frac{2}{\ln(1 + \sqrt{2})}\,J/k_B \approx 2.269\,J/k_B
+$$ 
+
+Our task now is to try to numerically estimate $T_c(L=\infty)$ using our numerical results for $T_c(L)$ of *finite* systems.
+
+Using your set of $L$ and $T_c(L)$ values from Problem 8 as data points, and the scaling relation
+
+$$
+T_c(L) - T_c(L=\infty) = a L^{-1}
+$$ (scaling_relation)
+
+where $a$ is a constant, extract an estimate for $T_c(L=\infty)$ and compare it to Onsager's analtical result.
+
+```{note}
+Hint: If you are unsure about how to approach this, try to first plot your data points in such a way that they, according to the relation above, should fall on a straight line.
+```
+
+```{note}
+Hint 2: If you find that doing a linear fit (a.k.a. linear least squares, a.k.a. linear regression, ...) could be useful, we don't expect you to discuss that method in detail in your report. Feel free to simply apply one of the many tools available, e.g. `scipy.stats.linregress`.
+```
+
+
+**Theoretical background:** *What follows here is a very brief summary. For more information see Chapters 13.4 and 13.4.1 of Morten Hjort-Jensen's lecture notes, and references therein.* 
+
+One of the many fascinating aspects of so-called critical phenomena is that vastly different physical systems can exhibit the same behaviour close to their critical point (here: critical temperature). This behaviour is decsribed by power laws, with exponents called *critical exponents*. For the *infinite* 2D Ising model, the mean magnetization, heat capacity and susceptibility behave as 
+
+$$
+\langle |m| \rangle &\propto |T - T_c(L=\infty)|^{\beta}\\
+C_V &\propto |T - T_c(L=\infty)|^{-\alpha}\\
+\chi &\propto |T - T_c(L=\infty)|^{-\gamma}
+$$
+
+for temperatures $T$ close to $T_c$, with critical exponents $\beta=1/8$, $\alpha=0$ and $\gamma=7/4$. Both $C_V$ and $\chi$ diverge near $T_c$. Similarly, the *correlation length* (here: the typical lenght scale of regions with aligned spins) $\xi$ also diverges near the critical point,
+
+$$
+\xi \propto |T - T_c(L=\infty)|^{-\nu}
+$$ (corr_length)
+
+with critical exponent $\nu = 1$. However, since we are studying a *finite* system, the largest correlation length is $\xi = L$, which we associate with the critical temperature of the finite system, $T = T_c(L)$. Inserting this into equation {eq}`corr_length` gives rise to equation {eq}`scaling_relation` above.
+
+Using this relation we see that, when $T$ is close to $T_c(L)$, we expect the mean magnetization, heat capacity and susceptibility to depend on the system size $L$ as 
+
+$$
+\langle |m| \rangle &\propto L^{-\beta/\nu}\\
+C_V &\propto L^{\alpha/\nu}\\
+\chi &\propto L^{\gamma/\nu}.
+$$
+
+**Good luck!** 
+
+----
+
+### Code snippets
+
+- See the code snippets in [`code_examples/omp_parallelization`](https://github.com/anderkve/FYS3150/tree/master/code_examples/omp_parallelization) for some simple examples on parallelization using OpenMP.
+
+- For some illustrations on how you can use the C++ `<random>` library for random number generation, see code examples in [`code_examples/random_number_generation`](https://github.com/anderkve/FYS3150/tree/master/code_examples/random_number_generation). These examples use a Mersenne Twister generator. Some of the examples demonstrate how one can do seeding when working with multiple OpenMP threads.
+
+ -->
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./book/projects"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="project4.html" title="previous page">Project 4</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By the FYS3150 teaching team<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
