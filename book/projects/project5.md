@@ -99,7 +99,7 @@ Note:
 
 ## Intial and boundary conditions
 
-Throughout this project we will assume Dirchlet boundary conditions in the $xy$ plane:
+Throughout this project we will assume Dirichlet boundary conditions in the $xy$ plane:
 
 - $u(x=0, y, t) = 0$
 - $u(x=1, y, t) = 0$
@@ -124,12 +124,14 @@ PS: You might also find `sp_cx_mat` in Armadillo very useful at some point...
 
 ### Problem 1
 
-Show analytically that by discretizing equation {eq}`schr_eq` according to the Crank-Nicolson approach, you end up with this expression:
+Show analytically that by discretizing equation {eq}`schr_eq` according to the Crank-Nicolson approach, you end up with the expression
 
 $$
 u_{ij}^{n+1}  -  r \left[u_{i+1,j}^{n+1} - 2u_{ij}^{n+1} + u_{i-1,j}^{n+1}\right]  -  r \left[u_{i,j+1}^{n+1} - 2u_{ij}^{n+1} + u_{i,j-1}^{n+1}\right]  +  \frac{i \Delta t}{2} v_{ij} u_{ij}^{n+1} \\
-= u_{ij}^n  +  r \left[u_{i+1,j}^n - 2u_{ij}^n + u_{i-1,j}^n\right]  +  r \left[u_{i,j+1}^n - 2u_{ij}^n + u_{i,j-1}^n\right]  -  \frac{i \Delta t}{2} v_{ij} u_{ij}^n
+= u_{ij}^n  +  r \left[u_{i+1,j}^n - 2u_{ij}^n + u_{i-1,j}^n\right]  +  r \left[u_{i,j+1}^n - 2u_{ij}^n + u_{i,j-1}^n\right]  -  \frac{i \Delta t}{2} v_{ij} u_{ij}^n,
 $$ (CN_eq1)
+
+where $r \equiv \frac{i \Delta t}{2 h^2}$.
 
 
 ### Problem 2
