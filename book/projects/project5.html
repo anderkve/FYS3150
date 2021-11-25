@@ -438,8 +438,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-schroding-equation">
-   The Schröding equation
+  <a class="reference internal nav-link" href="#the-schrodinger-equation">
+   The Schrödinger equation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -564,8 +564,8 @@
 <li><p>Using conserved quantities as stability checks</p></li>
 </ul>
 </div>
-<div class="section" id="the-schroding-equation">
-<h2>The Schröding equation<a class="headerlink" href="#the-schroding-equation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-schrodinger-equation">
+<h2>The Schrödinger equation<a class="headerlink" href="#the-schrodinger-equation" title="Permalink to this headline">¶</a></h2>
 <p>The general formulation of the time-dependent Schrödinger equation is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -583,7 +583,7 @@ i \hbar \frac{\partial}{\partial t} \Psi(x,y,t) = -\frac{\hbar^2}{2m} \left( \fr
 \[
 p(x,y\,;t) = |\Psi(x,y,t)|^2 = \Psi^*(x,y,t) \, \Psi(x,y,t),
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(p(x,y\,;t)\)</span> denotes the probability density for detecting the particle at position <span class="math notranslate nohighlight">\((x,y)\)</span> if we made a position measurement at time <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p>where <span class="math notranslate nohighlight">\(p(x,y\,;t)\)</span> denotes the probability density for detecting the particle at position <span class="math notranslate nohighlight">\((x,y)\)</span> if we perform a position measurement at time <span class="math notranslate nohighlight">\(t\)</span>.</p>
 <p>To keep things simple, we will in this project assume that all dimensionful variables have been scaled away, leaving us with a “bare” Schrödinger equation on the form</p>
 <div class="math notranslate nohighlight" id="equation-schr-eq">
 <span class="eqno">(24)<a class="headerlink" href="#equation-schr-eq" title="Permalink to this equation">¶</a></span>\[
@@ -763,7 +763,7 @@ A \,\vec{u}^{n+1} = B \,\vec{u}^{n}.
 <h3>Problem X<a class="headerlink" href="#problem-x" title="Permalink to this headline">¶</a></h3>
 <p>If you find it useful, feel free to make some animations of your simulation and put links to these in your report! (However, don’t overdo it — your report will be more readable if the reader doesn’t have to switch between the report and watching animations all the time.)</p>
 <!-- 
-### Problem 10
+### Problem ?
 
 Run your simulation with the following settings **[to be added]** and for a total time of **[to be added]**. Make a plot that shows the probability of detecting the particle in the left half of the box, $Prob(\text{detect particle in region} x < 0.5)$, as a function of time. 
  -->
@@ -795,200 +795,6 @@ a_0 & -r  &  0   & 0      &     -r  &  0  &  0   & 0      &     0   &  0  &  0  
 \end{bmatrix}
 
 $$
-
- -->
-<!-- 
-Assume a $2 \times 2$ lattice with periodic boundary conditions.
-
-- **a)** Summarize all possible states of the system by setting up a table with four coloumns showing the following quantities
-  - number of spins in state +1
-  - total energy
-  - total magnetization
-  - degeneracy
-
-- **b)** Find analytical expressions for 
-  - $Z$
-  - $\langle \epsilon \rangle$
-  - $\langle \epsilon^2 \rangle$
-  - $\langle |m| \rangle$
-  - $\langle m^2 \rangle$
-  - the specific heat capacity (normalized to number of spins):
-
-  $$
-  C_V = \frac{1}{N} \frac{1}{k_B T^2}(\langle E^2 \rangle - \langle E \rangle^2) 
-  $$
-
-  - the susceptibility (normalized to number of spins): 
-
-  $$
-  \chi = \frac{1}{N} \frac{1}{k_B T}(\langle M^2 \rangle - \langle |M| \rangle^2)
-  $$
-  
-We will use these analytical results to test our code.
-
-```{note}
-There was a typo in a previous version, where $C_V$ and $\chi$ were defined using $\epsilon$ and $m$ rather than $E$ and $M$. This is now corrected, along with the normalization factor $\frac{1}{N}$ in front to enusure that we normalize the heat capacity and susceptibility to the total number of spins in the system. Apologies for the confusion!
-```
-
-
-### Problem 2
-
-In our Monte Carlo code we will repeatedly need the Boltzmann factor $e^{-\beta \Delta E}$, where 
-
-$$
-\Delta E = E_{\textrm{after}} - E_{\textrm{before}}
-$$
-
-is the energy shift due to *flipping a single spin*.
-
-**a)** Consider a 2D lattice of arbitrary size. Show that there are only five possible values $\Delta E$ can take.
-
-**b)** How can you use this result to avoid repeatedly calling the exponential function `exp(...)` in your code?
-
-
-### Problem 3
-
-There are many ways to implement periodic boundary conditions. The simplest is a set of if-tests. That works (and may be a useful starting point!), but if-tests inside loops can slow down your code. (It can hinder compiler optimizations.) Can you come up with a more efficient way of implementing periodic boundary conditions in your code?
-
-
-### Problem 4
-
-Time to actually write some code! 
-
-**a)** Implement a code for the Ising model which uses the Markov Chain Monte Carlo approach to sample spin configurations $\mathbf{s}$ and computes 
-
-  - $\langle \epsilon \rangle$
-  - $\langle |m| \rangle$
-  - $C_V$
-  - $\chi$
-
-**b)** Validation: For a temperature of $T = 1.0\,J/k_B$, compare your results to the analytical results from Problem 1. (Feel free to compare for other temperature values as well, or simply make plots of these quantities versus temperature.)
-
-**c)** How many **Monte Carlo cycles** do you need to get good agreement with the analytical result? (Here *one Monte Carlo cycle* corresponds to *$N$ attempted spin flips*.)
-
-
-### Problem 5
-
-Now we will use a lattice with size $L=20$ and study the **burn-in time** (or **equilibration time**), measured in number of Monte Carlo cycles. 
-
-**a)** Make plots that show how the numerical estimates of $\langle \epsilon \rangle$ and $\langle |m| \rangle$ evolve with the number of Monte Carlo cycles. You should produce graphs for temperatures $T = 1.0\,J/k_B$ and $T = 2.4\,J/k_B$, and starting from *ordered* (all spins pointing the same way) and *unordered* (random) initial states. 
-
-**b)** Based on these plots, how long would you say the burn-in time is?
-
-**c)** What is the argument for not using the samples generated during the burn-in time? 
-
-
-### Problem 6
-
-Now let's move beyond mere expectation values and see how we can use our MCMC to estimate the full probability distribution for $\epsilon$. 
-
-For $L=20$, approximate the probability function $p_{\epsilon}(\epsilon;T)$ for $T = 1.0\,J/k_B$ and $T = 2.4\,J/k_B$ by creating normalized histograms of generated $\epsilon$ samples. (Keep an eye on bin widths and remember that $\epsilon$ is not a continuous variable.) Comment on your results, in particular on the variance of the two distributions. 
- 
-
-### Problem 7
-
-Now parallelize your code using either OpenMP or MPI. Perform some timing tests to estimate the speed-up factor resulting from the parallelization.
-
-```{note}
-As discussed in the lectures, there are basically three different approaches you can take here, corresponding to three different levels at which you can parallelize your code:
-
-1. *At the temperature level:* You can parallelize the outer loop over temperature values (see Problem 8, which is where parallelization becomes important)
-2. *At the level of MCMC "walkers":* You can use multiple threads to perform multiple independent MCMC runs in parallel and combine their results.
-3. *At the level of spin flipping:* You could parallelize the part of the code where you generate new states by attempting to flip N spins.
-
-We recommend you do either approach 1 or 2. (You only need to do one approach.) Approach 1 is probably the easiest. Approach 2 is the standard approach to parallelizing a single MCMC run (i.e. when there isn't any scan over some external parameter, like $T$ in our case.) Approach 3 would by far be the most complicated and it is probably also the least efficient. 
-```
-
-### Problem 8
-
-Now we will start investigating phase transitions. 
-
-```{note}
-For a brief introduction to the phase transition of the 2D Ising model, see Chapters 13.4 and 13.4.1 of Morten Hjort-Jensen's lecture notes. See also the brief theoretical summary for Problem 9.
-```
-
-- **a)** For lattices of size $L = 40,60,80,100$ (and higher if you want), make plots of $\langle \epsilon \rangle$, $\langle |m| \rangle$, $C_V$ and $\chi$ as function of temperature $T$. (Plot the results for different $L$ values in the same figure.) Focus on temperatures in a range around $T \in [2.1, 2.4]\,J/k_B$. Make sure to use sufficiently small temperature steps, at least in the region where the graphs change most rapidly.
-
-- **b)** Do you see an indication of a phase transition?
-
-- **c)** What is the critical temperature $T_c(L)$ for the different lattice sizes $L$? Use the $\chi$ or $C_V$ results to determine $T_c(L)$.
-
-```{note}
-Some suggestions in case you are short on time because the code is slower than expected: 
-
-- Make sure you're not running way more temperature points than necessary. As suggested in the lectures, first run a scan with large T steps, to roughly identify the subregion of $T$ values where the graphs change most quickly. (E.g. only 10 points on the suggested $T$ range can be sufficient here.) Then run a second scan that zooms in on the much smaller $T$ range needed to identify $T_c$. Again, you can probably get good results with as few as 10 $T$ points -- though more points always make for better results. 
-
-- If you're having trouble with OpenMP/MPI parallelisation, remember that to just make sure you get the numerical results you need, you can always do "dummy parallelisation" by just running multiple instances of your program. (Use separete terminal windows, or run your program in the background with the `&` command, e.g. `./main.exe <command line options> &`. You can view your background jobs with `jobs` and bring them to the foreground with `fg <job number>`.) This "manual" way of splitting up tasks works well assuming that your program can take options like `L`, `Tmin`, `Tmax`, `deltaT` (or `n_Tsteps`) as command-line arguments.
-
-- Perhaps you can afford to reduce the number of Monte Carlo cycles a bit and still get decent results? E.g. halving the number of cycles should half the program runtime.
-
-- Keep in mind that you don't need to finish all the runs for Problem 8 to get started on Problem 9. To get a first result for Problem 9 you basically only need to identify $T_c$ for two of the $L$ values in Problem 8. So you can do Problem 9 in parallel with the runs for Problem 8, and then just update your plots/numbers as new runs in Problem 8 finishes. 
-```
-
-
-
-### Problem 9
-
-The critical temperature for an *infinite* ($L=\infty$) 2D Ising model was found analytically by Lars Onsager in 1944. The result is
-
-$$
-T_c(L=\infty) = \frac{2}{\ln(1 + \sqrt{2})}\,J/k_B \approx 2.269\,J/k_B
-$$ 
-
-Our task now is to try to numerically estimate $T_c(L=\infty)$ using our numerical results for $T_c(L)$ of *finite* systems.
-
-Using your set of $L$ and $T_c(L)$ values from Problem 8 as data points, and the scaling relation
-
-$$
-T_c(L) - T_c(L=\infty) = a L^{-1}
-$$ (scaling_relation)
-
-where $a$ is a constant, extract an estimate for $T_c(L=\infty)$ and compare it to Onsager's analtical result.
-
-```{note}
-Hint: If you are unsure about how to approach this, try to first plot your data points in such a way that they, according to the relation above, should fall on a straight line.
-```
-
-```{note}
-Hint 2: If you find that doing a linear fit (a.k.a. linear least squares, a.k.a. linear regression, ...) could be useful, we don't expect you to discuss that method in detail in your report. Feel free to simply apply one of the many tools available, e.g. `scipy.stats.linregress`.
-```
-
-
-**Theoretical background:** *What follows here is a very brief summary. For more information see Chapters 13.4 and 13.4.1 of Morten Hjort-Jensen's lecture notes, and references therein.* 
-
-One of the many fascinating aspects of so-called critical phenomena is that vastly different physical systems can exhibit the same behaviour close to their critical point (here: critical temperature). This behaviour is decsribed by power laws, with exponents called *critical exponents*. For the *infinite* 2D Ising model, the mean magnetization, heat capacity and susceptibility behave as 
-
-$$
-\langle |m| \rangle &\propto |T - T_c(L=\infty)|^{\beta}\\
-C_V &\propto |T - T_c(L=\infty)|^{-\alpha}\\
-\chi &\propto |T - T_c(L=\infty)|^{-\gamma}
-$$
-
-for temperatures $T$ close to $T_c$, with critical exponents $\beta=1/8$, $\alpha=0$ and $\gamma=7/4$. Both $C_V$ and $\chi$ diverge near $T_c$. Similarly, the *correlation length* (here: the typical lenght scale of regions with aligned spins) $\xi$ also diverges near the critical point,
-
-$$
-\xi \propto |T - T_c(L=\infty)|^{-\nu}
-$$ (corr_length)
-
-with critical exponent $\nu = 1$. However, since we are studying a *finite* system, the largest correlation length is $\xi = L$, which we associate with the critical temperature of the finite system, $T = T_c(L)$. Inserting this into equation {eq}`corr_length` gives rise to equation {eq}`scaling_relation` above.
-
-Using this relation we see that, when $T$ is close to $T_c(L)$, we expect the mean magnetization, heat capacity and susceptibility to depend on the system size $L$ as 
-
-$$
-\langle |m| \rangle &\propto L^{-\beta/\nu}\\
-C_V &\propto L^{\alpha/\nu}\\
-\chi &\propto L^{\gamma/\nu}.
-$$
-
-**Good luck!** 
-
-----
-
-### Code snippets
-
-- See the code snippets in [`code_examples/omp_parallelization`](https://github.com/anderkve/FYS3150/tree/master/code_examples/omp_parallelization) for some simple examples on parallelization using OpenMP.
-
-- For some illustrations on how you can use the C++ `<random>` library for random number generation, see code examples in [`code_examples/random_number_generation`](https://github.com/anderkve/FYS3150/tree/master/code_examples/random_number_generation). These examples use a Mersenne Twister generator. Some of the examples demonstrate how one can do seeding when working with multiple OpenMP threads.
 
  -->
 </div>
