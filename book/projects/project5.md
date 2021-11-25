@@ -30,7 +30,7 @@ The key methodological aspects of the projects are:
 - Getting them indices straight...
 - Using conserved quantities as stability checks
 
-## The Schröding equation
+## The Schrödinger equation
 
 The general formulation of the time-dependent Schrödinger equation is 
 
