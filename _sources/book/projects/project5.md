@@ -1,7 +1,7 @@
 # Project 5
 
 ```{note}
-This project description is still somewhat incomplete. It will be completed in the next couple of days.
+Apologies for the delay in completing the project description. It will be completed today, Monday 29 November. Stay tuned!
 ```
 
 ## Practicalities
