@@ -88,7 +88,7 @@ Below we define the basic notation we will use for this project.
 - $u(x,y,t) \rightarrow u(ih,jh,n \Delta t) \equiv u_{ij}^n$. Note that the superscript $n$ here is simply a time index --- we have not raised $u_{ij}$ to the $n$-th power!
 - The matrix $U^n$ is a matrix with elements $u_{ij}^n$.
 - $v(x,y) \rightarrow v(ih,jh) \equiv v_{ij}$.
-- The matrix $V^n$ is a matrix with elements $v_{ij}^n$.
+- The matrix $V$ is a matrix with elements $v_{ij}$.
 
 Note:
 
@@ -212,34 +212,64 @@ Given what you know about matrix $A$, discuss which approaches might be well-sui
 
 ### Problem 4
 
-- Write a part of your program that can set up the initial state $u_{ij}^0$ based on the following expression for a Gaussian wave packet
+Write a part of your program that can set up the initial state $u_{ij}^0$ based on the following expression for an unnormalised Gaussian wave packet
 
-  $$
-  u(x,y,t=0) = \ldots \textbf{[to be added]}
-  $$
+$$
+u(x,y,t=0) = e^{-\frac{(x-x_c)^2}{2 \sigma_x^2} - \frac{(y-y_c)^2}{2 \sigma_y^2} + i p_x (x-x_c) + i p_y (x-x_c)}.
+$$
+  
+Here $x_c$ and $y_c$ are the coordinates of the centre of the initial wave packet, $\sigma_x$ and $\sigma_y$ are the initial widths of the wave packet in the $x$ and $y$ directions, and $p_x$ and $p_y$ are the wave packet momenta.
 
-  Make sure that your initial state $u_{ij}^0$ satisfies the boundary conditions. Also add code that normalizes your initial state such that 
+Make sure that the initial state $u_{ij}^0$ satisfies the boundary conditions. 
 
-  $$
-  \sum\limits_{i,j} u_{ij}^* u_{ij} = 1,
-  $$
+Also, add code that normalizes your initial state such that 
 
-  i.e. that the total probability in our 2D probability distribution $p_{ij} = u_{ij}^* u_{ij}$ starts out normalized to 1.
+$$
+\sum\limits_{i,j} u_{ij}^* u_{ij} = 1,
+$$
+
+i.e. that the total probability in our 2D probability distribution $p_{ij} = u_{ij}^* u_{ij}$ starts out normalized to 1.
 
 
 ### Problem 5
 
-Write a part of your program that initializes the potential $V$. To construct the barriers used for the double-slit (and other configurations) we will simply set the elements $v_{ij}$ of $V$ that correspond to points inside the barriers to some high constant value $v_{ij} = v_0$.
+Write a part of your program that initializes the potential $V$. To construct the barriers used for the double-slit (and other configurations) we will simply set the elements $v_{ij}$ of $V$ that correspond to points inside the barriers to some high constant value $v_{ij} = v_0$. As our starting point we will use the following double-slit setup:
+
+- Wall thickness: 0.02
+- Wall position in the $x$ direction: 0.5
+- Slit separation in the $y$ direction, i.e. distance between the inner edges of the two slits: 0.05
+- Slit aperature, i.e. opening width i the $y$ direction: 0.05
+
+(In Problem 9 you will also use single-slit and triple-slit configurations.)
 
 
 ### Problem 6
 
-Put everything together into a program that... **[details to be added]**
+Put everything together into a program that does (at least) the following:
+
+1. Set the simulation parameters. It may be useful to read some or all of these as command-line input, or from an input file. The main simulation parameters are $h$, $\Delta t$, $T$, $x_c$, $\sigma_x$, $p_x$, $y_c$, $\sigma_y$, $p_y$ and $v_0$. 
+
+2. Set up the potential matrix, $V$. 
+
+3. Set up the initial state matrix, $U^0$.
+
+4. Set up the matrices $A$ and $B$ required by the Crank-Nicolson approach.
+
+5. Run the time loop and store each new state $U^n$. You can either write every new state directly to file during the loop, or store them in memory and write everything to file after the loop. (Armadillo's `cx_cube` might be useful.)
+
 
 
 ### Problem 7
 
-The total probability ($= 1$) in the probability distribution $p_{ij} = u_{ij}^* u_{ij}$ should be conserved over time. This is a nice consistency check for our code. Run your simulation with the following settings **[to be added]** and make a plot of the total probability as function of time. 
+The total probability ($= 1$) in the probability distribution $p_{ij} = u_{ij}^* u_{ij}$ should be conserved over time. This is a nice consistency check to make sure your code works as it should.
+
+- First run your simulation with the settings $h = 5\times10^{-3}$, $\Delta t = 2.5\times10^{-5}$, $T = 8\times10^{-3}$, $x_c = 0.25$, $\sigma_x = 0.05$, $p_x = 200$, $y_c = 0.5$, $\sigma_y = 0.05$, $p_y = 0$ and $v_0 = 0$, i.e. without any double-slit barrier.
+
+- Make a plot of the deviation of the total probability from 1.0 as a function of time. (If the deviations are too small to be visible in your plot, consider plotting the data in a different way...)
+
+- Run the simulation again, but now with a double-slit barrier switched on. Use $v_0 = 1\times10^10$ and the double-slit configuration from Problem 5, and make the initial state broader in the $y$-direction by setting $\sigma_y = 0.10$.
+
+- Make a similar plot of the deviation of the total probability from 1.0 as a function of time.
 
 
 
@@ -250,6 +280,10 @@ Run your simulation with the following settings **[to be added]**.
 - Make (at least) three colourmap plots that illustrate the time evolution of the 2D probability distribution given by $p_{ij} = u_{ij}^* u_{ij}$.
 
 - For the same time steps, also make colourmap plots that show $\text{Re}(u_{ij})$ and $\text{Im}(u_{ij})$.
+
+```{note}
+When making the colourmap plots, it may be beneficial to not use $p_{ij}$ as the $z$ axis (colour) value, but rather some tranformation of $p_{ij}$, to more clearly see the structures in the probability distribution. But regardless of your choice, make sure to specify exactly what quantity the colour scale shows.
+```
 
 
 ### Problem 9
