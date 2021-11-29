@@ -609,7 +609,7 @@ p(x,y;t) = |u(x,y,t)|^2 = u^*(x,y,t) \, u(x,y,t).
 <li><p><span class="math notranslate nohighlight">\(u(x,y,t) \rightarrow u(ih,jh,n \Delta t) \equiv u_{ij}^n\)</span>. Note that the superscript <span class="math notranslate nohighlight">\(n\)</span> here is simply a time index — we have not raised <span class="math notranslate nohighlight">\(u_{ij}\)</span> to the <span class="math notranslate nohighlight">\(n\)</span>-th power!</p></li>
 <li><p>The matrix <span class="math notranslate nohighlight">\(U^n\)</span> is a matrix with elements <span class="math notranslate nohighlight">\(u_{ij}^n\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(v(x,y) \rightarrow v(ih,jh) \equiv v_{ij}\)</span>.</p></li>
-<li><p>The matrix <span class="math notranslate nohighlight">\(V^n\)</span> is a matrix with elements <span class="math notranslate nohighlight">\(v_{ij}^n\)</span>.</p></li>
+<li><p>The matrix <span class="math notranslate nohighlight">\(V\)</span> is a matrix with elements <span class="math notranslate nohighlight">\(v_{ij}\)</span>.</p></li>
 </ul>
 <p>Note:</p>
 <ul class="simple">
@@ -718,32 +718,51 @@ A \,\vec{u}^{n+1} = B \,\vec{u}^{n}.
 </div>
 <div class="section" id="problem-4">
 <h3>Problem 4<a class="headerlink" href="#problem-4" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p>Write a part of your program that can set up the initial state <span class="math notranslate nohighlight">\(u_{ij}^0\)</span> based on the following expression for a Gaussian wave packet</p>
+<p>Write a part of your program that can set up the initial state <span class="math notranslate nohighlight">\(u_{ij}^0\)</span> based on the following expression for an unnormalised Gaussian wave packet</p>
 <div class="math notranslate nohighlight">
 \[
-  u(x,y,t=0) = \ldots \textbf{[to be added]}
-  \]</div>
-<p>Make sure that your initial state <span class="math notranslate nohighlight">\(u_{ij}^0\)</span> satisfies the boundary conditions. Also add code that normalizes your initial state such that</p>
+u(x,y,t=0) = e^{-\frac{(x-x_c)^2}{2 \sigma_x^2} - \frac{(y-y_c)^2}{2 \sigma_y^2} + i p_x (x-x_c) + i p_y (x-x_c)}.
+\]</div>
+<p>Here <span class="math notranslate nohighlight">\(x_c\)</span> and <span class="math notranslate nohighlight">\(y_c\)</span> are the coordinates of the centre of the initial wave packet, <span class="math notranslate nohighlight">\(\sigma_x\)</span> and <span class="math notranslate nohighlight">\(\sigma_y\)</span> are the initial widths of the wave packet in the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> directions, and <span class="math notranslate nohighlight">\(p_x\)</span> and <span class="math notranslate nohighlight">\(p_y\)</span> are the wave packet momenta.</p>
+<p>Make sure that the initial state <span class="math notranslate nohighlight">\(u_{ij}^0\)</span> satisfies the boundary conditions.</p>
+<p>Also, add code that normalizes your initial state such that</p>
 <div class="math notranslate nohighlight">
 \[
-  \sum\limits_{i,j} u_{ij}^* u_{ij} = 1,
-  \]</div>
+\sum\limits_{i,j} u_{ij}^* u_{ij} = 1,
+\]</div>
 <p>i.e. that the total probability in our 2D probability distribution <span class="math notranslate nohighlight">\(p_{ij} = u_{ij}^* u_{ij}\)</span> starts out normalized to 1.</p>
-</li>
-</ul>
 </div>
 <div class="section" id="problem-5">
 <h3>Problem 5<a class="headerlink" href="#problem-5" title="Permalink to this headline">¶</a></h3>
-<p>Write a part of your program that initializes the potential <span class="math notranslate nohighlight">\(V\)</span>. To construct the barriers used for the double-slit (and other configurations) we will simply set the elements <span class="math notranslate nohighlight">\(v_{ij}\)</span> of <span class="math notranslate nohighlight">\(V\)</span> that correspond to points inside the barriers to some high constant value <span class="math notranslate nohighlight">\(v_{ij} = v_0\)</span>.</p>
+<p>Write a part of your program that initializes the potential <span class="math notranslate nohighlight">\(V\)</span>. To construct the barriers used for the double-slit (and other configurations) we will simply set the elements <span class="math notranslate nohighlight">\(v_{ij}\)</span> of <span class="math notranslate nohighlight">\(V\)</span> that correspond to points inside the barriers to some high constant value <span class="math notranslate nohighlight">\(v_{ij} = v_0\)</span>. As our starting point we will use the following double-slit setup:</p>
+<ul class="simple">
+<li><p>Wall thickness: 0.02</p></li>
+<li><p>Wall position in the <span class="math notranslate nohighlight">\(x\)</span> direction: 0.5</p></li>
+<li><p>Slit separation in the <span class="math notranslate nohighlight">\(y\)</span> direction, i.e. distance between the inner edges of the two slits: 0.05</p></li>
+<li><p>Slit aperature, i.e. opening width i the <span class="math notranslate nohighlight">\(y\)</span> direction: 0.05</p></li>
+</ul>
+<p>(In Problem 9 you will also use single-slit and triple-slit configurations.)</p>
 </div>
 <div class="section" id="problem-6">
 <h3>Problem 6<a class="headerlink" href="#problem-6" title="Permalink to this headline">¶</a></h3>
-<p>Put everything together into a program that… <strong>[details to be added]</strong></p>
+<p>Put everything together into a program that does (at least) the following:</p>
+<ol class="simple">
+<li><p>Set the simulation parameters. It may be useful to read some or all of these as command-line input, or from an input file. The main simulation parameters are <span class="math notranslate nohighlight">\(h\)</span>, <span class="math notranslate nohighlight">\(\Delta t\)</span>, <span class="math notranslate nohighlight">\(T\)</span>, <span class="math notranslate nohighlight">\(x_c\)</span>, <span class="math notranslate nohighlight">\(\sigma_x\)</span>, <span class="math notranslate nohighlight">\(p_x\)</span>, <span class="math notranslate nohighlight">\(y_c\)</span>, <span class="math notranslate nohighlight">\(\sigma_y\)</span>, <span class="math notranslate nohighlight">\(p_y\)</span> and <span class="math notranslate nohighlight">\(v_0\)</span>.</p></li>
+<li><p>Set up the potential matrix, <span class="math notranslate nohighlight">\(V\)</span>.</p></li>
+<li><p>Set up the initial state matrix, <span class="math notranslate nohighlight">\(U^0\)</span>.</p></li>
+<li><p>Set up the matrices <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> required by the Crank-Nicolson approach.</p></li>
+<li><p>Run the time loop and store each new state <span class="math notranslate nohighlight">\(U^n\)</span>. You can either write every new state directly to file during the loop, or store them in memory and write everything to file after the loop. (Armadillo’s <code class="docutils literal notranslate"><span class="pre">cx_cube</span></code> might be useful.)</p></li>
+</ol>
 </div>
 <div class="section" id="problem-7">
 <h3>Problem 7<a class="headerlink" href="#problem-7" title="Permalink to this headline">¶</a></h3>
-<p>The total probability (<span class="math notranslate nohighlight">\(= 1\)</span>) in the probability distribution <span class="math notranslate nohighlight">\(p_{ij} = u_{ij}^* u_{ij}\)</span> should be conserved over time. This is a nice consistency check for our code. Run your simulation with the following settings <strong>[to be added]</strong> and make a plot of the total probability as function of time.</p>
+<p>The total probability (<span class="math notranslate nohighlight">\(= 1\)</span>) in the probability distribution <span class="math notranslate nohighlight">\(p_{ij} = u_{ij}^* u_{ij}\)</span> should be conserved over time. This is a nice consistency check to make sure your code works as it should.</p>
+<ul class="simple">
+<li><p>First run your simulation with the settings <span class="math notranslate nohighlight">\(h = 5\times10^{-3}\)</span>, <span class="math notranslate nohighlight">\(\Delta t = 2.5\times10^{-5}\)</span>, <span class="math notranslate nohighlight">\(T = 8\times10^{-3}\)</span>, <span class="math notranslate nohighlight">\(x_c = 0.25\)</span>, <span class="math notranslate nohighlight">\(\sigma_x = 0.05\)</span>, <span class="math notranslate nohighlight">\(p_x = 200\)</span>, <span class="math notranslate nohighlight">\(y_c = 0.5\)</span>, <span class="math notranslate nohighlight">\(\sigma_y = 0.05\)</span>, <span class="math notranslate nohighlight">\(p_y = 0\)</span> and <span class="math notranslate nohighlight">\(v_0 = 0\)</span>, i.e. without any double-slit barrier.</p></li>
+<li><p>Make a plot of the deviation of the total probability from 1.0 as a function of time. (If the deviations are too small to be visible in your plot, consider plotting the data in a different way…)</p></li>
+<li><p>Run the simulation again, but now with a double-slit barrier switched on. Use <span class="math notranslate nohighlight">\(v_0 = 1\times10^10\)</span> and the double-slit configuration from Problem 5, and make the initial state broader in the <span class="math notranslate nohighlight">\(y\)</span>-direction by setting <span class="math notranslate nohighlight">\(\sigma_y = 0.10\)</span>.</p></li>
+<li><p>Make a similar plot of the deviation of the total probability from 1.0 as a function of time.</p></li>
+</ul>
 </div>
 <div class="section" id="problem-8">
 <h3>Problem 8<a class="headerlink" href="#problem-8" title="Permalink to this headline">¶</a></h3>
@@ -752,6 +771,10 @@ A \,\vec{u}^{n+1} = B \,\vec{u}^{n}.
 <li><p>Make (at least) three colourmap plots that illustrate the time evolution of the 2D probability distribution given by <span class="math notranslate nohighlight">\(p_{ij} = u_{ij}^* u_{ij}\)</span>.</p></li>
 <li><p>For the same time steps, also make colourmap plots that show <span class="math notranslate nohighlight">\(\text{Re}(u_{ij})\)</span> and <span class="math notranslate nohighlight">\(\text{Im}(u_{ij})\)</span>.</p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When making the colourmap plots, it may be beneficial to not use <span class="math notranslate nohighlight">\(p_{ij}\)</span> as the <span class="math notranslate nohighlight">\(z\)</span> axis (colour) value, but rather some tranformation of <span class="math notranslate nohighlight">\(p_{ij}\)</span>, to more clearly see the structures in the probability distribution. But regardless of your choice, make sure to specify exactly what quantity the colour scale shows.</p>
+</div>
 </div>
 <div class="section" id="problem-9">
 <h3>Problem 9<a class="headerlink" href="#problem-9" title="Permalink to this headline">¶</a></h3>
