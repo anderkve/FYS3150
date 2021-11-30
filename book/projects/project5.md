@@ -215,7 +215,7 @@ Given what you know about matrix $A$, discuss which approaches might be well-sui
 Write a part of your program that can set up the initial state $u_{ij}^0$ based on the following expression for an unnormalised Gaussian wave packet
 
 $$
-u(x,y,t=0) = e^{-\frac{(x-x_c)^2}{2 \sigma_x^2} - \frac{(y-y_c)^2}{2 \sigma_y^2} + i p_x (x-x_c) + i p_y (x-x_c)}.
+u(x,y,t=0) = e^{-\frac{(x-x_c)^2}{2 \sigma_x^2} - \frac{(y-y_c)^2}{2 \sigma_y^2} + i p_x (x-x_c) + i p_y (y-y_c)}.
 $$
   
 Here $x_c$ and $y_c$ are the coordinates of the centre of the initial wave packet, $\sigma_x$ and $\sigma_y$ are the initial widths of the wave packet in the $x$ and $y$ directions, and $p_x$ and $p_y$ are the wave packet momenta.
