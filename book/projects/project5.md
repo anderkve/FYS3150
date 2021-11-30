@@ -142,7 +142,7 @@ $$
 A \,\vec{u}^{n+1} = B \,\vec{u}^{n}.
 $$ (CN_eq2)
 
-Here the vector $\vec{u}^n$ (and similarly $\vec{u}^{n+1}$) is a column vector that contains the $u_{ij}$ values for *all the internal points* of the $xy$ grid at time step $n$. In row-form it would look like this:
+Here the vector $\vec{u}^n$ (and similarly $\vec{u}^{n+1}$) is a column vector that contains the $u^n_{ij}$ values for *all the internal points* of the $xy$ grid at time step $n$. In row-form it would look like this:
 
 $$
 \vec{u}^n = \left[(u_{1,1}^n, u_{2,1}^n, \ldots, u_{M-2,1}^n), (u_{1,2}^n, u_{2,2}^n, \ldots u_{M-2,2}^n), \ldots, (u_{1,M-2}^n \ldots u_{M-2,M-2}^n)\right].
@@ -152,7 +152,7 @@ The parentheses are just added to make it clear where there is a change in the s
 
 Now we need some code to help us get this straight in our program:
 
-- Write a code snippet that translates a pair of indices $(i,j)$ into a corresponding single index $k$ that gives the position of $u_{ij}$ in the vector $\vec{u}$.
+- Write a code snippet that translates a pair of indices $(i,j)$ into a corresponding single index $k$ that gives the position of $u^n_{ij}$ in the vector $\vec{u}^n$.
 
 - Start with $(M-2)=3$ as a concrete example and write a code snippet that can take a number $r$ and two lenght-9 vectors $\vec{a}$ and $\vec{b}$ and produce the following matrices:
 
@@ -225,13 +225,13 @@ Make sure that the initial state $u_{ij}^0$ satisfies the boundary conditions.
 Also, add code that normalizes your initial state such that 
 
 $$
-\sum\limits_{i,j} u_{ij}^* u_{ij} = 1,
+\sum\limits_{i,j} u^{0*}_{ij} \, u^0_{ij} = 1,\\
 $$
 
-i.e. that the total probability in our 2D probability function $p_{ij} = u_{ij}^* u_{ij}$ starts out normalized to 1.
+i.e. that the total probability in our 2D probability function $p^n_{ij} = u^{n*}_{ij} \, u^n_{ij}$ starts out normalized to 1.
 
 ```{note}
-By requiring that $\sum\limits_{i,j} p_{ij} = 1$, rather than requiring $\sum\limits_{i,j} p_{ij} h^2 = 1$, we interpret $p_{ij}$ as a *probability*, not a probability *density*. That is, $p_{ij}$ is the probability associated with a small grid cell of area $h^2$ centered on $(x, y) = (x_i, y_j)$.
+By requiring that $\sum\limits_{i,j} p^n_{ij} = 1$, rather than requiring $\sum\limits_{i,j} p^n_{ij} h^2 = 1$, we interpret $p^n_{ij}$ as a *probability*, not a probability *density*. That is, $p^n_{ij}$ is the probability that at time step $n$ is associated with a small grid cell of area $h^2$ centered on $(x, y) = (x_i, y_j)$.
 ```
 
 
@@ -265,9 +265,9 @@ Put everything together into a program that does (at least) the following:
 
 ### Problem 7
 
-The total probability ($= 1$) in the probability function $p_{ij} = u_{ij}^* u_{ij}$ should be conserved over time. This is a nice consistency check to make sure your code works as it should.
+The total probability ($= 1$) in the probability function $p^n_{ij} = u^{n*}_{ij}\,u^n_{ij}$ should be conserved over time. This is a nice consistency check to make sure your code works as it should.
 
-- First run your simulation with the settings $h = 5\times10^{-3}$, $\Delta t = 2.5\times10^{-5}$, $T = 8\times10^{-3}$, $x_c = 0.25$, $\sigma_x = 0.05$, $p_x = 200$, $y_c = 0.5$, $\sigma_y = 0.05$, $p_y = 0$ and $v_0 = 0$, i.e. without any double-slit barrier.
+- First run your simulation with the settings $h = 0.005$, $\Delta t = 2.5\times10^{-5}$, $T = 0.008$, $x_c = 0.25$, $\sigma_x = 0.05$, $p_x = 200$, $y_c = 0.5$, $\sigma_y = 0.05$, $p_y = 0$ and $v_0 = 0$, i.e. without any double-slit barrier.
 
 - Make a plot of the deviation of the total probability from 1.0 as a function of time. (If the deviations are too small to be visible in your plot, consider plotting the data in a different way...)
 
@@ -279,23 +279,25 @@ The total probability ($= 1$) in the probability function $p_{ij} = u_{ij}^* u_{
 
 ### Problem 8
 
-Run your simulation with the following settings: $h = 5\times10^{-3}$, $\Delta t = 2.5\times10^{-5}$, $T = 2.0\times10^{-3}$, $x_c = 0.25$, $\sigma_x = 0.05$, $p_x = 200$, $y_c = 0.5$, $\sigma_y = 0.20$, $p_y = 0$ and $v_0 = 1\times10^{10}$. Use the double-slit configuration from Problem 5.
+Run your simulation with the following settings: $h = 0.005$, $\Delta t = 2.5\times10^{-5}$, $T = 0.002$, $x_c = 0.25$, $\sigma_x = 0.05$, $p_x = 200$, $y_c = 0.5$, $\sigma_y = 0.20$, $p_y = 0$ and $v_0 = 1\times10^{10}$. Use the double-slit configuration from Problem 5.
 
 
-- Make three colourmap plots that illustrate the time evolution of the 2D probability function given by $p_{ij} = u_{ij}^* u_{ij}$. Use the times $t = 0, 1.0\times10^{-3}, 2.0\times10^{-3}$. (Feel free to make more plots if you want, but at least include these time steps.)
+- Make three colourmap plots that illustrate the time evolution of the 2D probability function $p^n_{ij} = u^{n*}_{ij}\,u^n_{ij}$. Use the times $t = 0$, $t = 0.001$ and $t = 0.002$. (Feel free to make more plots if you want, but at least include these time steps.)
 
 - For the same time steps, also make colourmap plots that show $\text{Re}(u_{ij})$ and $\text{Im}(u_{ij})$.
 
 ```{note}
-When making the colourmap plots, you may prefer to not use $p_{ij}$ as the $z$ axis (colour) value, but rather some tranformation of $p_{ij}$ like $\sqrt{p_{ij}}$, to more clearly see the structures in the low-probability regions. But regardless of your choice make sure to specify exactly what quantity the values on the colour scale represent.
+When making the colourmap plots, you may prefer to not use $p^n_{ij}$ as the $z$ axis (colour) value, but rather some tranformation of $p^n_{ij}$ like $\sqrt{p^n_{ij}}$, to more clearly see the structures in the low-probability regions. But regardless of your choice make sure to specify exactly what quantity the values on the colour scale represent.
 ```
 
 
 ### Problem 9
 
-- Assume that we measure the particle with a detector screen at $x = 0.8$ (spanning the entire $y$ axis) at time $t = 2.0\times10^{-3}$. Using your simulation results from Problem 8, make a plot that shows the detection probability along this screen at this time. Since we assume that we do indeed detect the particle *somewhere* along this line, you should normalise the one-dimensional probability function to sum to 1.0. Or in other words, you should plot $p(y\,|\,x=0.8\,;\,t=2.0\times10^{-3})$, not $p(x,y\,;\,t=2.0\times10^{-3})$ along $x=0.8$.
+- Assume that we measure the particle with a detector screen at $x = 0.8$ (spanning the entire $y$ axis) at time $t = 0.002$. Using your simulation results from Problem 8, make a plot that shows the detection probability along this screen at this time. 
 
-- Adjust your code to also simulate single-slit and triple-slit experiments. Like for the double-slit case, use slits with aperture 0.05 and use walls of $y$-length 0.05 to separate each pair of slits (in the triple-slit case). For each case, make a plot of the same 1D probability function as above, i.e. $p(y\,|\,x=0.8\,;\,t=2.0\times10^{-3})$.
+  Since we assume that we do indeed detect the particle *somewhere* along this line, you should normalise the one-dimensional probability function to sum to 1.0. Or in other words, you should plot $p(y\,|\,x=0.8\,;\,t=0.002)$, not $p(x,y\,;\,t=0.002)$ along $x=0.8$.
+
+- Adjust your code to also simulate single-slit and triple-slit experiments. Like for the double-slit case, use slits with aperture 0.05 and use walls of $y$-length 0.05 to separate each pair of slits (in the triple-slit case). For each case, make a plot of the same 1D probability function as above, i.e. $p(y\,|\,x=0.8\,;\,t=0.002)$.
 
 
 ### Problem X
