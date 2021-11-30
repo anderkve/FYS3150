@@ -534,7 +534,7 @@
 <h1>Project 5<a class="headerlink" href="#project-5" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Apologies for the delay in completing the project description. It will be completed today, Monday 29 November. Stay tuned!</p>
+<p>The project description is now ready. But check back regularly for small updates, typo fixes and hints.</p>
 </div>
 <div class="section" id="practicalities">
 <h2>Practicalities<a class="headerlink" href="#practicalities" title="Permalink to this headline">¶</a></h2>
@@ -730,16 +730,20 @@ u(x,y,t=0) = e^{-\frac{(x-x_c)^2}{2 \sigma_x^2} - \frac{(y-y_c)^2}{2 \sigma_y^2}
 \[
 \sum\limits_{i,j} u_{ij}^* u_{ij} = 1,
 \]</div>
-<p>i.e. that the total probability in our 2D probability distribution <span class="math notranslate nohighlight">\(p_{ij} = u_{ij}^* u_{ij}\)</span> starts out normalized to 1.</p>
+<p>i.e. that the total probability in our 2D probability function <span class="math notranslate nohighlight">\(p_{ij} = u_{ij}^* u_{ij}\)</span> starts out normalized to 1.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By requiring that <span class="math notranslate nohighlight">\(\sum\limits_{i,j} p_{ij} = 1\)</span>, rather than requiring <span class="math notranslate nohighlight">\(\sum\limits_{i,j} p_{ij} h^2 = 1\)</span>, we interpret <span class="math notranslate nohighlight">\(p_{ij}\)</span> as a <em>probability</em>, not a probability <em>density</em>. That is, <span class="math notranslate nohighlight">\(p_{ij}\)</span> is the probability associated with a small grid cell of area <span class="math notranslate nohighlight">\(h^2\)</span> centered on <span class="math notranslate nohighlight">\((x, y) = (x_i, y_j)\)</span>.</p>
+</div>
 </div>
 <div class="section" id="problem-5">
 <h3>Problem 5<a class="headerlink" href="#problem-5" title="Permalink to this headline">¶</a></h3>
 <p>Write a part of your program that initializes the potential <span class="math notranslate nohighlight">\(V\)</span>. To construct the barriers used for the double-slit (and other configurations) we will simply set the elements <span class="math notranslate nohighlight">\(v_{ij}\)</span> of <span class="math notranslate nohighlight">\(V\)</span> that correspond to points inside the barriers to some high constant value <span class="math notranslate nohighlight">\(v_{ij} = v_0\)</span>. As our starting point we will use the following double-slit setup:</p>
 <ul class="simple">
-<li><p>Wall thickness: 0.02</p></li>
-<li><p>Wall position in the <span class="math notranslate nohighlight">\(x\)</span> direction: 0.5</p></li>
-<li><p>Slit separation in the <span class="math notranslate nohighlight">\(y\)</span> direction, i.e. distance between the inner edges of the two slits: 0.05</p></li>
-<li><p>Slit aperature, i.e. opening width i the <span class="math notranslate nohighlight">\(y\)</span> direction: 0.05</p></li>
+<li><p>Wall thickness in the <span class="math notranslate nohighlight">\(x\)</span> direction: 0.02</p></li>
+<li><p>Wall position (centre) in the <span class="math notranslate nohighlight">\(x\)</span> direction: 0.5</p></li>
+<li><p>Length of the wall piece separating the two slits (the <span class="math notranslate nohighlight">\(y\)</span> distance between the inner edges of the two slits): 0.05</p></li>
+<li><p>Slit aperture (opening i the <span class="math notranslate nohighlight">\(y\)</span> direction): 0.05</p></li>
 </ul>
 <p>(In Problem 9 you will also use single-slit and triple-slit configurations.)</p>
 </div>
@@ -751,36 +755,36 @@ u(x,y,t=0) = e^{-\frac{(x-x_c)^2}{2 \sigma_x^2} - \frac{(y-y_c)^2}{2 \sigma_y^2}
 <li><p>Set up the potential matrix, <span class="math notranslate nohighlight">\(V\)</span>.</p></li>
 <li><p>Set up the initial state matrix, <span class="math notranslate nohighlight">\(U^0\)</span>.</p></li>
 <li><p>Set up the matrices <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> required by the Crank-Nicolson approach.</p></li>
-<li><p>Run the time loop and store each new state <span class="math notranslate nohighlight">\(U^n\)</span>. You can either write every new state directly to file during the loop, or store them in memory and write everything to file after the loop. (Armadillo’s <code class="docutils literal notranslate"><span class="pre">cx_cube</span></code> might be useful.)</p></li>
+<li><p>Run the loop over time steps and store each new state <span class="math notranslate nohighlight">\(U^n\)</span>. You can either write every new state directly to file during the loop, or store them in memory and write everything to file after the loop. (Armadillo’s <code class="docutils literal notranslate"><span class="pre">cx_cube</span></code> might be useful.)</p></li>
 </ol>
 </div>
 <div class="section" id="problem-7">
 <h3>Problem 7<a class="headerlink" href="#problem-7" title="Permalink to this headline">¶</a></h3>
-<p>The total probability (<span class="math notranslate nohighlight">\(= 1\)</span>) in the probability distribution <span class="math notranslate nohighlight">\(p_{ij} = u_{ij}^* u_{ij}\)</span> should be conserved over time. This is a nice consistency check to make sure your code works as it should.</p>
+<p>The total probability (<span class="math notranslate nohighlight">\(= 1\)</span>) in the probability function <span class="math notranslate nohighlight">\(p_{ij} = u_{ij}^* u_{ij}\)</span> should be conserved over time. This is a nice consistency check to make sure your code works as it should.</p>
 <ul class="simple">
 <li><p>First run your simulation with the settings <span class="math notranslate nohighlight">\(h = 5\times10^{-3}\)</span>, <span class="math notranslate nohighlight">\(\Delta t = 2.5\times10^{-5}\)</span>, <span class="math notranslate nohighlight">\(T = 8\times10^{-3}\)</span>, <span class="math notranslate nohighlight">\(x_c = 0.25\)</span>, <span class="math notranslate nohighlight">\(\sigma_x = 0.05\)</span>, <span class="math notranslate nohighlight">\(p_x = 200\)</span>, <span class="math notranslate nohighlight">\(y_c = 0.5\)</span>, <span class="math notranslate nohighlight">\(\sigma_y = 0.05\)</span>, <span class="math notranslate nohighlight">\(p_y = 0\)</span> and <span class="math notranslate nohighlight">\(v_0 = 0\)</span>, i.e. without any double-slit barrier.</p></li>
 <li><p>Make a plot of the deviation of the total probability from 1.0 as a function of time. (If the deviations are too small to be visible in your plot, consider plotting the data in a different way…)</p></li>
-<li><p>Run the simulation again, but now with a double-slit barrier switched on. Use <span class="math notranslate nohighlight">\(v_0 = 1\times10^10\)</span> and the double-slit configuration from Problem 5, and make the initial state broader in the <span class="math notranslate nohighlight">\(y\)</span>-direction by setting <span class="math notranslate nohighlight">\(\sigma_y = 0.10\)</span>.</p></li>
+<li><p>Run the simulation again, but now with a double-slit barrier switched on. Use <span class="math notranslate nohighlight">\(v_0 = 1\times10^{10}\)</span> and the double-slit configuration from Problem 5, and make the initial state broader in the <span class="math notranslate nohighlight">\(y\)</span>-direction by setting <span class="math notranslate nohighlight">\(\sigma_y = 0.10\)</span>.</p></li>
 <li><p>Make a similar plot of the deviation of the total probability from 1.0 as a function of time.</p></li>
 </ul>
 </div>
 <div class="section" id="problem-8">
 <h3>Problem 8<a class="headerlink" href="#problem-8" title="Permalink to this headline">¶</a></h3>
-<p>Run your simulation with the following settings <strong>[to be added]</strong>.</p>
+<p>Run your simulation with the following settings: <span class="math notranslate nohighlight">\(h = 5\times10^{-3}\)</span>, <span class="math notranslate nohighlight">\(\Delta t = 2.5\times10^{-5}\)</span>, <span class="math notranslate nohighlight">\(T = 2.0\times10^{-3}\)</span>, <span class="math notranslate nohighlight">\(x_c = 0.25\)</span>, <span class="math notranslate nohighlight">\(\sigma_x = 0.05\)</span>, <span class="math notranslate nohighlight">\(p_x = 200\)</span>, <span class="math notranslate nohighlight">\(y_c = 0.5\)</span>, <span class="math notranslate nohighlight">\(\sigma_y = 0.20\)</span>, <span class="math notranslate nohighlight">\(p_y = 0\)</span> and <span class="math notranslate nohighlight">\(v_0 = 1\times10^{10}\)</span>. Use the double-slit configuration from Problem 5.</p>
 <ul class="simple">
-<li><p>Make (at least) three colourmap plots that illustrate the time evolution of the 2D probability distribution given by <span class="math notranslate nohighlight">\(p_{ij} = u_{ij}^* u_{ij}\)</span>.</p></li>
+<li><p>Make three colourmap plots that illustrate the time evolution of the 2D probability function given by <span class="math notranslate nohighlight">\(p_{ij} = u_{ij}^* u_{ij}\)</span>. Use the times <span class="math notranslate nohighlight">\(t = 0, 1.0\times10^{-3}, 2.0\times10^{-3}\)</span>. (Feel free to make more plots if you want, but at least include these time steps.)</p></li>
 <li><p>For the same time steps, also make colourmap plots that show <span class="math notranslate nohighlight">\(\text{Re}(u_{ij})\)</span> and <span class="math notranslate nohighlight">\(\text{Im}(u_{ij})\)</span>.</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>When making the colourmap plots, it may be beneficial to not use <span class="math notranslate nohighlight">\(p_{ij}\)</span> as the <span class="math notranslate nohighlight">\(z\)</span> axis (colour) value, but rather some tranformation of <span class="math notranslate nohighlight">\(p_{ij}\)</span>, to more clearly see the structures in the probability distribution. But regardless of your choice, make sure to specify exactly what quantity the colour scale shows.</p>
+<p>When making the colourmap plots, you may prefer to not use <span class="math notranslate nohighlight">\(p_{ij}\)</span> as the <span class="math notranslate nohighlight">\(z\)</span> axis (colour) value, but rather some tranformation of <span class="math notranslate nohighlight">\(p_{ij}\)</span> like <span class="math notranslate nohighlight">\(\sqrt{p_{ij}}\)</span>, to more clearly see the structures in the low-probability regions. But regardless of your choice make sure to specify exactly what quantity the values on the colour scale represent.</p>
 </div>
 </div>
 <div class="section" id="problem-9">
 <h3>Problem 9<a class="headerlink" href="#problem-9" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Run your simulation with the following settings <strong>[to be added]</strong>. Make a plot of the 1D probability distribution for detecting the particle along a strip near the right-hand wall (i.e. the screen position in a normal double-slit experiment).</p></li>
-<li><p>Adjust your code to also simulate single-slit and triple-slit experiments. Run your simulations with the following settings <strong>[to be added]</strong>. Plot similar 1D probability distributions as in the previous problem, i.e. 1D probability distributions along the right-hand wall.</p></li>
+<li><p>Assume that we measure the particle with a detector screen at <span class="math notranslate nohighlight">\(x = 0.8\)</span> (spanning the entire <span class="math notranslate nohighlight">\(y\)</span> axis) at time <span class="math notranslate nohighlight">\(t = 2.0\times10^{-3}\)</span>. Using your simulation results from Problem 8, make a plot that shows the detection probability along this screen at this time. Since we assume that we do indeed detect the particle <em>somewhere</em> along this line, you should normalise the one-dimensional probability function to sum to 1.0. Or in other words, you should plot <span class="math notranslate nohighlight">\(p(y\,|\,x=0.8\,;\,t=2.0\times10^{-3})\)</span>, not <span class="math notranslate nohighlight">\(p(x,y\,;\,t=2.0\times10^{-3})\)</span> along <span class="math notranslate nohighlight">\(x=0.8\)</span>.</p></li>
+<li><p>Adjust your code to also simulate single-slit and triple-slit experiments. Like for the double-slit case, use slits with aperture 0.05 and use walls of <span class="math notranslate nohighlight">\(y\)</span>-length 0.05 to separate each pair of slits (in the triple-slit case). For each case, make a plot of the same 1D probability function as above, i.e. <span class="math notranslate nohighlight">\(p(y\,|\,x=0.8\,;\,t=2.0\times10^{-3})\)</span>.</p></li>
 </ul>
 </div>
 <div class="section" id="problem-x">
