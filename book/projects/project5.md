@@ -1,7 +1,7 @@
 # Project 5
 
 ```{note}
-Apologies for the delay in completing the project description. It will be completed today, Monday 29 November. Stay tuned!
+The project description is now ready. But check back regularly for small updates, typo fixes and hints.
 ```
 
 ## Practicalities
@@ -228,17 +228,21 @@ $$
 \sum\limits_{i,j} u_{ij}^* u_{ij} = 1,
 $$
 
-i.e. that the total probability in our 2D probability distribution $p_{ij} = u_{ij}^* u_{ij}$ starts out normalized to 1.
+i.e. that the total probability in our 2D probability function $p_{ij} = u_{ij}^* u_{ij}$ starts out normalized to 1.
+
+```{note}
+By requiring that $\sum\limits_{i,j} p_{ij} = 1$, rather than requiring $\sum\limits_{i,j} p_{ij} h^2 = 1$, we interpret $p_{ij}$ as a *probability*, not a probability *density*. That is, $p_{ij}$ is the probability associated with a small grid cell of area $h^2$ centered on $(x, y) = (x_i, y_j)$.
+```
 
 
 ### Problem 5
 
 Write a part of your program that initializes the potential $V$. To construct the barriers used for the double-slit (and other configurations) we will simply set the elements $v_{ij}$ of $V$ that correspond to points inside the barriers to some high constant value $v_{ij} = v_0$. As our starting point we will use the following double-slit setup:
 
-- Wall thickness: 0.02
-- Wall position in the $x$ direction: 0.5
-- Slit separation in the $y$ direction, i.e. distance between the inner edges of the two slits: 0.05
-- Slit aperature, i.e. opening width i the $y$ direction: 0.05
+- Wall thickness in the $x$ direction: 0.02
+- Wall position (centre) in the $x$ direction: 0.5
+- Length of the wall piece separating the two slits (the $y$ distance between the inner edges of the two slits): 0.05
+- Slit aperture (opening i the $y$ direction): 0.05
 
 (In Problem 9 you will also use single-slit and triple-slit configurations.)
 
@@ -255,19 +259,19 @@ Put everything together into a program that does (at least) the following:
 
 4. Set up the matrices $A$ and $B$ required by the Crank-Nicolson approach.
 
-5. Run the time loop and store each new state $U^n$. You can either write every new state directly to file during the loop, or store them in memory and write everything to file after the loop. (Armadillo's `cx_cube` might be useful.)
+5. Run the loop over time steps and store each new state $U^n$. You can either write every new state directly to file during the loop, or store them in memory and write everything to file after the loop. (Armadillo's `cx_cube` might be useful.)
 
 
 
 ### Problem 7
 
-The total probability ($= 1$) in the probability distribution $p_{ij} = u_{ij}^* u_{ij}$ should be conserved over time. This is a nice consistency check to make sure your code works as it should.
+The total probability ($= 1$) in the probability function $p_{ij} = u_{ij}^* u_{ij}$ should be conserved over time. This is a nice consistency check to make sure your code works as it should.
 
 - First run your simulation with the settings $h = 5\times10^{-3}$, $\Delta t = 2.5\times10^{-5}$, $T = 8\times10^{-3}$, $x_c = 0.25$, $\sigma_x = 0.05$, $p_x = 200$, $y_c = 0.5$, $\sigma_y = 0.05$, $p_y = 0$ and $v_0 = 0$, i.e. without any double-slit barrier.
 
 - Make a plot of the deviation of the total probability from 1.0 as a function of time. (If the deviations are too small to be visible in your plot, consider plotting the data in a different way...)
 
-- Run the simulation again, but now with a double-slit barrier switched on. Use $v_0 = 1\times10^10$ and the double-slit configuration from Problem 5, and make the initial state broader in the $y$-direction by setting $\sigma_y = 0.10$.
+- Run the simulation again, but now with a double-slit barrier switched on. Use $v_0 = 1\times10^{10}$ and the double-slit configuration from Problem 5, and make the initial state broader in the $y$-direction by setting $\sigma_y = 0.10$.
 
 - Make a similar plot of the deviation of the total probability from 1.0 as a function of time.
 
@@ -275,22 +279,23 @@ The total probability ($= 1$) in the probability distribution $p_{ij} = u_{ij}^*
 
 ### Problem 8
 
-Run your simulation with the following settings **[to be added]**. 
+Run your simulation with the following settings: $h = 5\times10^{-3}$, $\Delta t = 2.5\times10^{-5}$, $T = 2.0\times10^{-3}$, $x_c = 0.25$, $\sigma_x = 0.05$, $p_x = 200$, $y_c = 0.5$, $\sigma_y = 0.20$, $p_y = 0$ and $v_0 = 1\times10^{10}$. Use the double-slit configuration from Problem 5.
 
-- Make (at least) three colourmap plots that illustrate the time evolution of the 2D probability distribution given by $p_{ij} = u_{ij}^* u_{ij}$.
+
+- Make three colourmap plots that illustrate the time evolution of the 2D probability function given by $p_{ij} = u_{ij}^* u_{ij}$. Use the times $t = 0, 1.0\times10^{-3}, 2.0\times10^{-3}$. (Feel free to make more plots if you want, but at least include these time steps.)
 
 - For the same time steps, also make colourmap plots that show $\text{Re}(u_{ij})$ and $\text{Im}(u_{ij})$.
 
 ```{note}
-When making the colourmap plots, it may be beneficial to not use $p_{ij}$ as the $z$ axis (colour) value, but rather some tranformation of $p_{ij}$, to more clearly see the structures in the probability distribution. But regardless of your choice, make sure to specify exactly what quantity the colour scale shows.
+When making the colourmap plots, you may prefer to not use $p_{ij}$ as the $z$ axis (colour) value, but rather some tranformation of $p_{ij}$ like $\sqrt{p_{ij}}$, to more clearly see the structures in the low-probability regions. But regardless of your choice make sure to specify exactly what quantity the values on the colour scale represent.
 ```
 
 
 ### Problem 9
 
-- Run your simulation with the following settings **[to be added]**. Make a plot of the 1D probability distribution for detecting the particle along a strip near the right-hand wall (i.e. the screen position in a normal double-slit experiment).
+- Assume that we measure the particle with a detector screen at $x = 0.8$ (spanning the entire $y$ axis) at time $t = 2.0\times10^{-3}$. Using your simulation results from Problem 8, make a plot that shows the detection probability along this screen at this time. Since we assume that we do indeed detect the particle *somewhere* along this line, you should normalise the one-dimensional probability function to sum to 1.0. Or in other words, you should plot $p(y\,|\,x=0.8\,;\,t=2.0\times10^{-3})$, not $p(x,y\,;\,t=2.0\times10^{-3})$ along $x=0.8$.
 
-- Adjust your code to also simulate single-slit and triple-slit experiments. Run your simulations with the following settings **[to be added]**. Plot similar 1D probability distributions as in the previous problem, i.e. 1D probability distributions along the right-hand wall.
+- Adjust your code to also simulate single-slit and triple-slit experiments. Like for the double-slit case, use slits with aperture 0.05 and use walls of $y$-length 0.05 to separate each pair of slits (in the triple-slit case). For each case, make a plot of the same 1D probability function as above, i.e. $p(y\,|\,x=0.8\,;\,t=2.0\times10^{-3})$.
 
 
 ### Problem X
