@@ -6,7 +6,7 @@ The project description is now ready. But check back regularly for small updates
 
 ## Practicalities
 
-- **Deadline**: Monday, December 13, 23:59.
+- **Deadline**: Wednesday, December 15, 23:59.
 - **Format:**
   - A scientific report, typeset in LaTeX, delivered as a pdf file on Canvas.
   - Code (with comments, of course) on a GitHub repo, with the repo link provided in your report.
@@ -97,7 +97,7 @@ Note:
 - We will mix index notation with and without commas as needed for clarity. So keep in mind that e.g. $u_{ij}$ and $u_{i,j}$ mean the same thing.
 
 
-## Intial and boundary conditions
+## Initial and boundary conditions
 
 Throughout this project we will assume Dirichlet boundary conditions in the $xy$ plane:
 
@@ -265,6 +265,10 @@ Put everything together into a program that does (at least) the following:
 
 ### Problem 7
 
+```{note}
+Note that for this problem the output file can become large-ish (~200MB as binary file) if you save the full simulation, i.e. the full wave function at each time step.
+```
+
 The total probability ($= 1$) in the probability function $p^n_{ij} = u^{n*}_{ij}\,u^n_{ij}$ should be conserved over time. This is a nice consistency check to make sure your code works as it should.
 
 - First run your simulation with the settings $h = 0.005$, $\Delta t = 2.5\times10^{-5}$, $T = 0.008$, $x_c = 0.25$, $\sigma_x = 0.05$, $p_x = 200$, $y_c = 0.5$, $\sigma_y = 0.05$, $p_y = 0$ and $v_0 = 0$, i.e. without any double-slit barrier.
@@ -274,7 +278,6 @@ The total probability ($= 1$) in the probability function $p^n_{ij} = u^{n*}_{ij
 - Run the simulation again, but now with a double-slit barrier switched on. Use $v_0 = 1\times10^{10}$ and the double-slit configuration from Problem 5, and make the initial state broader in the $y$-direction by setting $\sigma_y = 0.10$.
 
 - Make a similar plot of the deviation of the total probability from 1.0 as a function of time.
-
 
 
 ### Problem 8
@@ -287,7 +290,9 @@ Run your simulation with the following settings: $h = 0.005$, $\Delta t = 2.5\ti
 - For the same time steps, also make colourmap plots that show $\text{Re}(u_{ij})$ and $\text{Im}(u_{ij})$.
 
 ```{note}
-When making the colourmap plots, you may prefer to not use $p^n_{ij}$ as the $z$ axis (colour) value, but rather some tranformation of $p^n_{ij}$ like $\sqrt{p^n_{ij}}$, to more clearly see the structures in the low-probability regions. But regardless of your choice make sure to specify exactly what quantity the values on the colour scale represent.
+When making the colourmap plots, it may be a good idea adjust the color scale to the maximum of $p^n_{ij}$ at each time frame independently. Then you avoid the problem that the shape of the probability function becomes difficult to see for time steps where it is very broad and flat.
+
+You may also consider not using $p^n_{ij}$ as the $z$ axis (colour) value, but rather some tranformation of $p^n_{ij}$ like $\sqrt{p^n_{ij}}$, to more clearly see the structures in the low-probability regions. However, this comes with the prize that the plots become slightly harder to interpret. But regardless of your choice, make sure to specify exactly what quantity the values on the colour scale represent.
 ```
 
 
