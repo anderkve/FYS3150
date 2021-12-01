@@ -12,7 +12,7 @@ For the example below we will assume that the numbers are organised in a table t
 
 Assume we have a data table file `x_y_fxy.dat` that look like this:
 
-```terminal
+```
 #        x           y      f(x,y)
 0.0000e+00  0.0000e+00  0.0000e+00
 0.0000e+00  1.9635e-01  3.8553e-02
