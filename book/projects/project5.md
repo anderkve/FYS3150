@@ -346,7 +346,6 @@ x, y = np.meshgrid(x_points, y_points, sparse=True)
 # Array of time points
 dt = 0.005
 t_points = np.arange(0, 1+dt, dt)
-print(len(t_points))
 
 # A function for a Gaussian that is travelling 
 # in the x direction and broadening as time passes
