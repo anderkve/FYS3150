@@ -458,32 +458,32 @@
 <div class="section" id="minimal-example">
 <h2>Minimal example<a class="headerlink" href="#minimal-example" title="Permalink to this headline">¶</a></h2>
 <p>Assume we have a data table file <code class="docutils literal notranslate"><span class="pre">x_y_fxy.dat</span></code> that look like this:</p>
-<div class="highlight-terminal notranslate"><div class="highlight"><pre><span></span>#        x           y      f(x,y)
-0.0000e+00  0.0000e+00  0.0000e+00
-0.0000e+00  1.9635e-01  3.8553e-02
-0.0000e+00  3.9270e-01  1.5421e-01
-0.0000e+00  5.8905e-01  3.4698e-01
-0.0000e+00  7.8540e-01  6.1685e-01
-1.9635e-01  0.0000e+00  1.9635e-01
-1.9635e-01  1.9635e-01  2.4247e-01
-1.9635e-01  3.9270e-01  3.6569e-01
-1.9635e-01  5.8905e-01  5.6599e-01
-1.9635e-01  7.8540e-01  8.4336e-01
-3.9270e-01  0.0000e+00  3.9270e-01
-3.9270e-01  1.9635e-01  4.6150e-01
-3.9270e-01  3.9270e-01  6.0723e-01
-3.9270e-01  5.8905e-01  8.2971e-01
-3.9270e-01  7.8540e-01  1.1288e+00
-5.8905e-01  0.0000e+00  5.8905e-01
-5.8905e-01  1.9635e-01  6.9558e-01
-5.8905e-01  3.9270e-01  8.7831e-01
-5.8905e-01  5.8905e-01  1.1363e+00
-5.8905e-01  7.8540e-01  1.4688e+00
-7.8540e-01  0.0000e+00  7.8540e-01
-7.8540e-01  1.9635e-01  9.4459e-01
-7.8540e-01  3.9270e-01  1.1780e+00
-7.8540e-01  5.8905e-01  1.4829e+00
-7.8540e-01  7.8540e-01  1.8566e+00
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#        x           y      f(x,y)</span>
+<span class="mf">0.0000e+00</span>  <span class="mf">0.0000e+00</span>  <span class="mf">0.0000e+00</span>
+<span class="mf">0.0000e+00</span>  <span class="mf">1.9635e-01</span>  <span class="mf">3.8553e-02</span>
+<span class="mf">0.0000e+00</span>  <span class="mf">3.9270e-01</span>  <span class="mf">1.5421e-01</span>
+<span class="mf">0.0000e+00</span>  <span class="mf">5.8905e-01</span>  <span class="mf">3.4698e-01</span>
+<span class="mf">0.0000e+00</span>  <span class="mf">7.8540e-01</span>  <span class="mf">6.1685e-01</span>
+<span class="mf">1.9635e-01</span>  <span class="mf">0.0000e+00</span>  <span class="mf">1.9635e-01</span>
+<span class="mf">1.9635e-01</span>  <span class="mf">1.9635e-01</span>  <span class="mf">2.4247e-01</span>
+<span class="mf">1.9635e-01</span>  <span class="mf">3.9270e-01</span>  <span class="mf">3.6569e-01</span>
+<span class="mf">1.9635e-01</span>  <span class="mf">5.8905e-01</span>  <span class="mf">5.6599e-01</span>
+<span class="mf">1.9635e-01</span>  <span class="mf">7.8540e-01</span>  <span class="mf">8.4336e-01</span>
+<span class="mf">3.9270e-01</span>  <span class="mf">0.0000e+00</span>  <span class="mf">3.9270e-01</span>
+<span class="mf">3.9270e-01</span>  <span class="mf">1.9635e-01</span>  <span class="mf">4.6150e-01</span>
+<span class="mf">3.9270e-01</span>  <span class="mf">3.9270e-01</span>  <span class="mf">6.0723e-01</span>
+<span class="mf">3.9270e-01</span>  <span class="mf">5.8905e-01</span>  <span class="mf">8.2971e-01</span>
+<span class="mf">3.9270e-01</span>  <span class="mf">7.8540e-01</span>  <span class="mf">1.1288e+00</span>
+<span class="mf">5.8905e-01</span>  <span class="mf">0.0000e+00</span>  <span class="mf">5.8905e-01</span>
+<span class="mf">5.8905e-01</span>  <span class="mf">1.9635e-01</span>  <span class="mf">6.9558e-01</span>
+<span class="mf">5.8905e-01</span>  <span class="mf">3.9270e-01</span>  <span class="mf">8.7831e-01</span>
+<span class="mf">5.8905e-01</span>  <span class="mf">5.8905e-01</span>  <span class="mf">1.1363e+00</span>
+<span class="mf">5.8905e-01</span>  <span class="mf">7.8540e-01</span>  <span class="mf">1.4688e+00</span>
+<span class="mf">7.8540e-01</span>  <span class="mf">0.0000e+00</span>  <span class="mf">7.8540e-01</span>
+<span class="mf">7.8540e-01</span>  <span class="mf">1.9635e-01</span>  <span class="mf">9.4459e-01</span>
+<span class="mf">7.8540e-01</span>  <span class="mf">3.9270e-01</span>  <span class="mf">1.1780e+00</span>
+<span class="mf">7.8540e-01</span>  <span class="mf">5.8905e-01</span>  <span class="mf">1.4829e+00</span>
+<span class="mf">7.8540e-01</span>  <span class="mf">7.8540e-01</span>  <span class="mf">1.8566e+00</span>
 </pre></div>
 </div>
 <p>The following code will read this file and save the rows in av vector of vectors using only the standard C++ library. The example also shows how the comment line starting with <code class="docutils literal notranslate"><span class="pre">#</span></code> can be ignored when reading the data.</p>

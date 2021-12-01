@@ -812,35 +812,108 @@ u(x,y,t=0) = e^{-\frac{(x-x_c)^2}{2 \sigma_x^2} - \frac{(y-y_c)^2}{2 \sigma_y^2}
 Run your simulation with the following settings **[to be added]** and for a total time of **[to be added]**. Make a plot that shows the probability of detecting the particle in the left half of the box, $Prob(\text{detect particle in region} x < 0.5)$, as a function of time. 
  -->
 </div>
+<hr class="docutils" />
 <div class="section" id="code-snippets">
 <h3>Code snippets<a class="headerlink" href="#code-snippets" title="Permalink to this headline">¶</a></h3>
-<p>Here we might add suggestions for code layout, and some short code snippets.</p>
-<!-- 
+<p>Here’s a python example demonstrating how you can use matplotlib to animate 2D colourmap plots:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.animation</span> <span class="kn">import</span> <span class="n">FuncAnimation</span>
 
-$$
-A = 
-\begin{bmatrix}
-a_0 & -r  &  0   & 0      &     -r  &  0  &  0   & 0      &     0   &  0  &  0   & 0      &   0   &  0  &  0      & 0       \\
--r  & a_1 & -r   & 0      &     0   & -r  &  0   & 0      &     0   &  0  &  0   & 0      &   0   &  0  &  0      & 0       \\
-0   & -r  &  a_2 & -r     &     0   &  0  & -r   & 0      &     0   &  0  &  0   & 0      &   0   &  0  &  0      & 0       \\
-0   &  0  &  -r  & a_3    &     0   &  0  &  0   & -r     &     0   &  0  &  0   & 0      &   0   &  0  &  0      & 0       \\
--r  &  0  &  0   & 0      &     a_4 & -r  &  0   & 0      &     -r  &  0  &  0   & 0      &   0   &  0  &  0      & 0       \\
-0   & -r  &  0   & 0      &     -r  & a_5 & -r   & 0      &     0   & -r  &  0   & 0      &   0   &  0  &  0      & 0       \\
-0   &  0  & -r   & 0      &     0   & -r  &  a_6 & -r     &     0   &  0  & -r   & 0      &   0   &  0  &  0      & 0       \\
-0   &  0  &  0   & -r     &     0   &  0  &  -r  & a_7    &     0   &  0  &  0   & -r     &   0   &  0  &  0      & 0       \\
-0   &  0  &  0   & 0      &     -r  &  0  &  0   & 0      &     a_8 & -r  &  0   & 0      &   -r  &  0  &  0      & 0       \\
-0   &  0  &  0   & 0      &     0   & -r  &  0   & 0      &     -r  & a_9 & -r   & 0      &   0   & -r  &  0      & 0       \\
-0   &  0  &  0   & 0      &     0   &  0  & -r   & 0      &     0   & -r  &  a_{10} & -r  &   0   &  0  & -r      & 0       \\
-0   &  0  &  0   & 0      &     0   &  0  &  0   & -r     &     0   &  0  &  -r  & a_{11} &   0   &  0  &  0      & -r      \\
-0   &  0  &  0   & 0      &     0   &  0  &  0   & 0      &     -r  &  0  &  0   & 0      &   a_{12} & -r  &  0   & 0       \\
-0   &  0  &  0   & 0      &     0   &  0  &  0   & 0      &     0   & -r  &  0   & 0      &   -r  & a_{13} & -r   & 0       \\
-0   &  0  &  0   & 0      &     0   &  0  &  0   & 0      &     0   &  0  & -r   & 0      &   0   & -r  &  a_{14} & -r      \\
-0   &  0  &  0   & 0      &     0   &  0  &  0   & 0      &     0   &  0  &  0   & -r     &   0   &  0  &  -r     & a_{15}  \\
-\end{bmatrix}
 
-$$
+<span class="c1">#</span>
+<span class="c1"># Let&#39;s generate a dummy time series for a function z(x,y,t)</span>
+<span class="c1">#</span>
 
- -->
+<span class="c1"># Set up a 2D xy grid</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">0.005</span>
+<span class="n">x_points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="o">+</span><span class="n">h</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+<span class="n">y_points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="o">+</span><span class="n">h</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x_points</span><span class="p">,</span> <span class="n">y_points</span><span class="p">,</span> <span class="n">sparse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Array of time points</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">0.005</span>
+<span class="n">t_points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="o">+</span><span class="n">dt</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t_points</span><span class="p">))</span>
+
+<span class="c1"># A function for a Gaussian that is travelling </span>
+<span class="c1"># in the x direction and broadening as time passes</span>
+<span class="k">def</span> <span class="nf">z</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">t</span><span class="p">):</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="mf">0.5</span>
+    <span class="n">x_c</span> <span class="o">=</span> <span class="mf">0.2</span>
+    <span class="n">sigma_x</span> <span class="o">=</span> <span class="mf">0.025</span> <span class="o">+</span> <span class="mf">0.15</span> <span class="o">*</span> <span class="n">t</span>
+    <span class="k">return</span> <span class="mf">1.</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sigma_x</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x_c</span> <span class="o">-</span> <span class="n">v</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">sigma_x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Fill z_data_list with f(x,y,t)</span>
+<span class="n">z_data_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">t_points</span><span class="p">:</span>
+    <span class="n">z_data</span> <span class="o">=</span> <span class="n">z</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+    <span class="n">z_data_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">z_data</span><span class="p">)</span>
+
+
+<span class="c1">#</span>
+<span class="c1"># Now the list z_data_list contains a series of &quot;frames&quot; of z(x,y,t), </span>
+<span class="c1"># where each frame can be plotted as a 2D image using imshow. Let&#39;s</span>
+<span class="c1"># animate it!</span>
+<span class="c1">#</span>
+
+<span class="c1"># Some settings</span>
+<span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">t_min</span> <span class="o">=</span> <span class="n">t_points</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span> <span class="o">=</span> <span class="n">x_points</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x_points</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span> <span class="o">=</span> <span class="n">y_points</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y_points</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># Create figure</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+
+<span class="c1"># Create a colour scale normalization according to the max z value in the first frame</span>
+<span class="n">norm</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">z_data_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="c1"># Plot the first frame</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">z_data_list</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="n">x_min</span><span class="p">,</span><span class="n">x_max</span><span class="p">,</span><span class="n">y_min</span><span class="p">,</span><span class="n">y_max</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s2">&quot;viridis&quot;</span><span class="p">),</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">)</span>
+
+<span class="c1"># Axis labels</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+
+<span class="c1"># Add a colourbar</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s2">&quot;z(x,y,t)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+
+<span class="c1"># Add a text element showing the time</span>
+<span class="n">time_txt</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.95</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">,</span> <span class="s2">&quot;t = </span><span class="si">{:.3e}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">t_min</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> 
+                    <span class="n">horizontalalignment</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+
+<span class="c1"># Function that takes care of updating the z data and other things for each frame</span>
+<span class="k">def</span> <span class="nf">animation</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+    <span class="c1"># Normalize the colour scale to the current frame?</span>
+    <span class="n">norm</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">z_data_list</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    <span class="n">img</span><span class="o">.</span><span class="n">set_norm</span><span class="p">(</span><span class="n">norm</span><span class="p">)</span>
+
+    <span class="c1"># Update z data</span>
+    <span class="n">img</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">z_data_list</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+    <span class="c1"># Update the time label</span>
+    <span class="n">current_time</span> <span class="o">=</span> <span class="n">t_min</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">dt</span>
+    <span class="n">time_txt</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s2">&quot;t = </span><span class="si">{:.3e}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">current_time</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">img</span>
+
+<span class="c1"># Use matplotlib.animation.FuncAnimation to put it all together</span>
+<span class="n">anim</span> <span class="o">=</span> <span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">animation</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">z_data_list</span><span class="p">),</span> <span class="mi">2</span><span class="p">),</span> <span class="n">repeat</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">blit</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Run the animation!</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># # Save the animation</span>
+<span class="c1"># anim.save(&#39;./animation.mp4&#39;, writer=&quot;ffmpeg&quot;, bitrate=-1, fps=30)</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
