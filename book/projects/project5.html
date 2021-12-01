@@ -453,8 +453,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#intial-and-boundary-conditions">
-   Intial and boundary conditions
+  <a class="reference internal nav-link" href="#initial-and-boundary-conditions">
+   Initial and boundary conditions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -544,7 +544,7 @@
 <div class="section" id="practicalities">
 <h2>Practicalities<a class="headerlink" href="#practicalities" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><strong>Deadline</strong>: Monday, December 13, 23:59.</p></li>
+<li><p><strong>Deadline</strong>: Wednesday, December 15, 23:59.</p></li>
 <li><p><strong>Format:</strong></p>
 <ul>
 <li><p>A scientific report, typeset in LaTeX, delivered as a pdf file on Canvas.</p></li>
@@ -623,8 +623,8 @@ p(x,y;t) = |u(x,y,t)|^2 = u^*(x,y,t) \, u(x,y,t).
 <li><p>We will mix index notation with and without commas as needed for clarity. So keep in mind that e.g. <span class="math notranslate nohighlight">\(u_{ij}\)</span> and <span class="math notranslate nohighlight">\(u_{i,j}\)</span> mean the same thing.</p></li>
 </ul>
 </div>
-<div class="section" id="intial-and-boundary-conditions">
-<h2>Intial and boundary conditions<a class="headerlink" href="#intial-and-boundary-conditions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="initial-and-boundary-conditions">
+<h2>Initial and boundary conditions<a class="headerlink" href="#initial-and-boundary-conditions" title="Permalink to this headline">¶</a></h2>
 <p>Throughout this project we will assume Dirichlet boundary conditions in the <span class="math notranslate nohighlight">\(xy\)</span> plane:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(u(x=0, y, t) = 0\)</span></p></li>
@@ -765,6 +765,10 @@ u(x,y,t=0) = e^{-\frac{(x-x_c)^2}{2 \sigma_x^2} - \frac{(y-y_c)^2}{2 \sigma_y^2}
 </div>
 <div class="section" id="problem-7">
 <h3>Problem 7<a class="headerlink" href="#problem-7" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that for this problem the output file can become large-ish (~200MB as binary file) if you save the full simulation, i.e. the full wave function at each time step.</p>
+</div>
 <p>The total probability (<span class="math notranslate nohighlight">\(= 1\)</span>) in the probability function <span class="math notranslate nohighlight">\(p^n_{ij} = u^{n*}_{ij}\,u^n_{ij}\)</span> should be conserved over time. This is a nice consistency check to make sure your code works as it should.</p>
 <ul class="simple">
 <li><p>First run your simulation with the settings <span class="math notranslate nohighlight">\(h = 0.005\)</span>, <span class="math notranslate nohighlight">\(\Delta t = 2.5\times10^{-5}\)</span>, <span class="math notranslate nohighlight">\(T = 0.008\)</span>, <span class="math notranslate nohighlight">\(x_c = 0.25\)</span>, <span class="math notranslate nohighlight">\(\sigma_x = 0.05\)</span>, <span class="math notranslate nohighlight">\(p_x = 200\)</span>, <span class="math notranslate nohighlight">\(y_c = 0.5\)</span>, <span class="math notranslate nohighlight">\(\sigma_y = 0.05\)</span>, <span class="math notranslate nohighlight">\(p_y = 0\)</span> and <span class="math notranslate nohighlight">\(v_0 = 0\)</span>, i.e. without any double-slit barrier.</p></li>
@@ -782,7 +786,8 @@ u(x,y,t=0) = e^{-\frac{(x-x_c)^2}{2 \sigma_x^2} - \frac{(y-y_c)^2}{2 \sigma_y^2}
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>When making the colourmap plots, you may prefer to not use <span class="math notranslate nohighlight">\(p^n_{ij}\)</span> as the <span class="math notranslate nohighlight">\(z\)</span> axis (colour) value, but rather some tranformation of <span class="math notranslate nohighlight">\(p^n_{ij}\)</span> like <span class="math notranslate nohighlight">\(\sqrt{p^n_{ij}}\)</span>, to more clearly see the structures in the low-probability regions. But regardless of your choice make sure to specify exactly what quantity the values on the colour scale represent.</p>
+<p>When making the colourmap plots, it may be a good idea adjust the color scale to the maximum of <span class="math notranslate nohighlight">\(p^n_{ij}\)</span> at each time frame independently. Then you avoid the problem that the shape of the probability function becomes difficult to see for time steps where it is very broad and flat.</p>
+<p>You may also consider not using <span class="math notranslate nohighlight">\(p^n_{ij}\)</span> as the <span class="math notranslate nohighlight">\(z\)</span> axis (colour) value, but rather some tranformation of <span class="math notranslate nohighlight">\(p^n_{ij}\)</span> like <span class="math notranslate nohighlight">\(\sqrt{p^n_{ij}}\)</span>, to more clearly see the structures in the low-probability regions. However, this comes with the prize that the plots become slightly harder to interpret. But regardless of your choice, make sure to specify exactly what quantity the values on the colour scale represent.</p>
 </div>
 </div>
 <div class="section" id="problem-9">
