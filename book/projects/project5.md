@@ -293,7 +293,7 @@ Run your simulation with the following settings: $h = 0.005$, $\Delta t = 2.5\ti
 - For the same time steps, also make colourmap plots that show $\text{Re}(u_{ij})$ and $\text{Im}(u_{ij})$.
 
 ```{note}
-When making the colourmap plots, it may be a good idea adjust the color scale to the maximum of $p^n_{ij}$ at each time frame independently. Then you avoid the problem that the shape of the probability function becomes difficult to see for time steps where it is very broad and flat.
+When making the colourmap plots, it may be a good idea adjust the colour scale to the maximum of $p^n_{ij}$ at each time step independently. Then you avoid the problem that the shape of the probability function becomes difficult to see for time steps where it is very broad and flat.
 
 You may also consider not using $p^n_{ij}$ as the $z$ axis (colour) value, but rather some tranformation of $p^n_{ij}$ like $\sqrt{p^n_{ij}}$, to more clearly see the structures in the low-probability regions. However, this comes with the cost that the plots become somewhat harder to interpret. But regardless of your choice, make sure to specify exactly what quantity the values on the colour scale represent.
 ```
