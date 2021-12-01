@@ -244,8 +244,11 @@ Write a part of your program that initializes the potential $V$. To construct th
 - Length of the wall piece separating the two slits (the $y$ distance between the inner edges of the two slits): 0.05
 - Slit aperture (opening i the $y$ direction): 0.05
 
-(In Problem 9 you will also use single-slit and triple-slit configurations.)
+In Problem 9 you will also use single-slit and triple-slit configurations.
 
+```{note}
+If you want to simulate new potential configurations without having to hard-code the potentials in your program or specify a very long list of command-line arguments, you can consider using an input text file to specify the potential configuration. See the [introduction to Armadillo](sec:intro_to_armadillo) page for an easy example of how to read a text data table with Armadillo, or take a look at the [read from file](sec:read_from_file) page for an example using only the standard C++ library.
+```
 
 ### Problem 6
 
@@ -292,7 +295,7 @@ Run your simulation with the following settings: $h = 0.005$, $\Delta t = 2.5\ti
 ```{note}
 When making the colourmap plots, it may be a good idea adjust the color scale to the maximum of $p^n_{ij}$ at each time frame independently. Then you avoid the problem that the shape of the probability function becomes difficult to see for time steps where it is very broad and flat.
 
-You may also consider not using $p^n_{ij}$ as the $z$ axis (colour) value, but rather some tranformation of $p^n_{ij}$ like $\sqrt{p^n_{ij}}$, to more clearly see the structures in the low-probability regions. However, this comes with the prize that the plots become slightly harder to interpret. But regardless of your choice, make sure to specify exactly what quantity the values on the colour scale represent.
+You may also consider not using $p^n_{ij}$ as the $z$ axis (colour) value, but rather some tranformation of $p^n_{ij}$ like $\sqrt{p^n_{ij}}$, to more clearly see the structures in the low-probability regions. However, this comes with the cost that the plots become somewhat harder to interpret. But regardless of your choice, make sure to specify exactly what quantity the values on the colour scale represent.
 ```
 
 

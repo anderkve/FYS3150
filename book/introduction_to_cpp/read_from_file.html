@@ -448,7 +448,7 @@
               <div>
                 
   <div class="section" id="read-from-file">
-<h1>Read from file<a class="headerlink" href="#read-from-file" title="Permalink to this headline">¶</a></h1>
+<span id="sec-read-from-file"></span><h1>Read from file<a class="headerlink" href="#read-from-file" title="Permalink to this headline">¶</a></h1>
 <p>Here we will look at a simple example of how to read a set of numbers from a text file. Our two most common use cases for reading from file are</p>
 <ol class="simple">
 <li><p>that our computation/simulation needs some input data; or</p></li>
@@ -491,7 +491,10 @@
 <p class="admonition-title">Note</p>
 <p>You can also use Armadillo to very easily read a data table — see the <a class="reference internal" href="intro_to_armadillo.html#sec-intro-to-armadillo"><span class="std std-ref">introduction to Armadillo</span></a> page.</p>
 </div>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;fstream&gt;</span><span class="cp"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;sstream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;fstream&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>

@@ -750,7 +750,11 @@ u(x,y,t=0) = e^{-\frac{(x-x_c)^2}{2 \sigma_x^2} - \frac{(y-y_c)^2}{2 \sigma_y^2}
 <li><p>Length of the wall piece separating the two slits (the <span class="math notranslate nohighlight">\(y\)</span> distance between the inner edges of the two slits): 0.05</p></li>
 <li><p>Slit aperture (opening i the <span class="math notranslate nohighlight">\(y\)</span> direction): 0.05</p></li>
 </ul>
-<p>(In Problem 9 you will also use single-slit and triple-slit configurations.)</p>
+<p>In Problem 9 you will also use single-slit and triple-slit configurations.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you want to simulate new potential configurations without having to hard-code the potentials in your program or specify a very long list of command-line arguments, you can consider using an input text file to specify the potential configuration. See the <a class="reference internal" href="../introduction_to_cpp/intro_to_armadillo.html#sec-intro-to-armadillo"><span class="std std-ref">introduction to Armadillo</span></a> page for an easy example of how to read a text data table with Armadillo, or take a look at the <a class="reference internal" href="../introduction_to_cpp/read_from_file.html#sec-read-from-file"><span class="std std-ref">read from file</span></a> page for an example using only the standard C++ library.</p>
+</div>
 </div>
 <div class="section" id="problem-6">
 <h3>Problem 6<a class="headerlink" href="#problem-6" title="Permalink to this headline">¶</a></h3>
@@ -787,7 +791,7 @@ u(x,y,t=0) = e^{-\frac{(x-x_c)^2}{2 \sigma_x^2} - \frac{(y-y_c)^2}{2 \sigma_y^2}
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>When making the colourmap plots, it may be a good idea adjust the color scale to the maximum of <span class="math notranslate nohighlight">\(p^n_{ij}\)</span> at each time frame independently. Then you avoid the problem that the shape of the probability function becomes difficult to see for time steps where it is very broad and flat.</p>
-<p>You may also consider not using <span class="math notranslate nohighlight">\(p^n_{ij}\)</span> as the <span class="math notranslate nohighlight">\(z\)</span> axis (colour) value, but rather some tranformation of <span class="math notranslate nohighlight">\(p^n_{ij}\)</span> like <span class="math notranslate nohighlight">\(\sqrt{p^n_{ij}}\)</span>, to more clearly see the structures in the low-probability regions. However, this comes with the prize that the plots become slightly harder to interpret. But regardless of your choice, make sure to specify exactly what quantity the values on the colour scale represent.</p>
+<p>You may also consider not using <span class="math notranslate nohighlight">\(p^n_{ij}\)</span> as the <span class="math notranslate nohighlight">\(z\)</span> axis (colour) value, but rather some tranformation of <span class="math notranslate nohighlight">\(p^n_{ij}\)</span> like <span class="math notranslate nohighlight">\(\sqrt{p^n_{ij}}\)</span>, to more clearly see the structures in the low-probability regions. However, this comes with the cost that the plots become somewhat harder to interpret. But regardless of your choice, make sure to specify exactly what quantity the values on the colour scale represent.</p>
 </div>
 </div>
 <div class="section" id="problem-9">
