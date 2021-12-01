@@ -1,3 +1,4 @@
+(sec:read_from_file)=
 # Read from file
 
 Here we will look at a simple example of how to read a set of numbers from a text file. Our two most common use cases for reading from file are
@@ -46,8 +47,10 @@ The following code will read this file and save the rows in av vector of vectors
 You can also use Armadillo to very easily read a data table --- see the [introduction to Armadillo](sec:intro_to_armadillo) page.
 ```
 
-
 ```c++
+#include <iostream>
+#include <sstream>
+#include <string>
 #include <fstream>
 #include <vector>
 
