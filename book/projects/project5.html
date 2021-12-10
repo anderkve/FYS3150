@@ -577,7 +577,7 @@
 i \hbar \frac{d}{dt} |\Psi\rangle = \hat{H} |\Psi\rangle,
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\hat{H}\)</span> is some Hamiltonian operator and <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span> is the quantum state (<a class="reference external" href="https://plato.stanford.edu/entries/qt-issues/#OntoIssu">whatever that is</a>). While we’re not really sure what the quantum state <em>is</em>, we do know it is related to probability (<a class="reference external" href="https://plato.stanford.edu/entries/probability-interpret/">whatever that is</a>) through the <a class="reference external" href="https://en.wikipedia.org/wiki/Born_rule">Born rule</a>, which we will use extensively in this project. More details below.</p>
-<p>We will now consider the case of a <em>a single, non-relativistic particle in two dimensions</em>. If we work in “position space”, the quantum state <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span> can then be expressed as a <em>complex valued</em> function <span class="math notranslate nohighlight">\(\Psi(x,y,t)\)</span>, historically called the <em>the wave function</em>. The Schrödinger equation then becomes</p>
+<p>We will now consider the case of a <em>a single, non-relativistic particle in two dimensions</em>. If we work in “position space”, the quantum state <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span> can then be expressed through a <em>complex-valued</em> function <span class="math notranslate nohighlight">\(\Psi(x,y,t)\)</span>, historically called the <em>the wave function</em>. The Schrödinger equation then becomes</p>
 <div class="math notranslate nohighlight">
 \[
 i \hbar \frac{\partial}{\partial t} \Psi(x,y,t) = -\frac{\hbar^2}{2m} \left( \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} \right) \Psi(x,y,t) + V(x,y,t) \Psi(x,y,t).
@@ -594,13 +594,49 @@ p(x,y\,;t) = |\Psi(x,y,t)|^2 = \Psi^*(x,y,t) \, \Psi(x,y,t),
 <span class="eqno">(24)<a class="headerlink" href="#equation-schr-eq" title="Permalink to this equation">¶</a></span>\[
 i \frac{\partial u}{\partial t} = -\frac{\partial^2 u}{\partial x^2} - \frac{\partial^2 u}{\partial y^2} + v(x,y) u.
 \]</div>
-<p>So in this equation <em>all the variables are dimensionless</em>, which means you do not have to worry about units for this project. Our goal is to solve equation <a class="reference internal" href="#equation-schr-eq">(24)</a> numerically to determine the evolution of the “wave function” <span class="math notranslate nohighlight">\(u(x,y,t)\)</span> in the presence of some potential <span class="math notranslate nohighlight">\(v(x.y)\)</span>.</p>
+<p>So in this equation <em>all the variables are dimensionless</em>, which means you do not have to worry about units for this project. Our goal is to solve equation <a class="reference internal" href="#equation-schr-eq">(24)</a> numerically to determine the evolution of the “wave function” <span class="math notranslate nohighlight">\(u(x,y,t)\)</span> in the presence of some potential <span class="math notranslate nohighlight">\(v(x,y)\)</span>.</p>
 <p>In our new notation the Born rule takes the form</p>
 <div class="math notranslate nohighlight">
 \[
 p(x,y;t) = |u(x,y,t)|^2 = u^*(x,y,t) \, u(x,y,t).
 \]</div>
 <p>assuming the wave function <span class="math notranslate nohighlight">\(u(x,y,t)\)</span> has been properly normalized.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this course we don’t expect any background knowledge in quantum mechanics, so you are not expected to discuss a lot of quantum mechanics in your report. That is, you can simply view the Schrödinger equation as a particular type of differential equation given by equation <a class="reference internal" href="#equation-schr-eq">(24)</a>, where the solution is some complex-valued function <span class="math notranslate nohighlight">\(u(x,y,t)\)</span>, and where we have a rule for connecting this <span class="math notranslate nohighlight">\(u(x,y,t)\)</span> to a probability distribution.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>For those with some quantum mechanics background:</em> There was a question during a lab session on how the wave function <span class="math notranslate nohighlight">\(\Psi(x,y,t)\)</span> actually is related to the state <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span>, so here’s a short answer. (Again, you are not expected to discuss any of this in your reports.)</p>
+<p>Consider the one-dimensional case and for simplicity assume that we have discretized time and space (notation <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(t_n\)</span>). To work in position space we can express <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span> in terms of a set of orhtonormal basis states <span class="math notranslate nohighlight">\(|x_i\rangle\)</span>. (These are eigenstates of the position operator, <span class="math notranslate nohighlight">\(\hat{X} |x_i \rangle = x_i |x_i\rangle\)</span>). In doing this, the now-discretized wavefunction <span class="math notranslate nohighlight">\(\Psi(x_i,t_n) \equiv \Psi_i^n\)</span> simply corresponds to the complex coefficients in this way of expressing <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+|\Psi\rangle = \Psi_1^n |x_1 \rangle + \Psi_2^n |x_2 \rangle + \Psi_3^n |x_3 \rangle + \ldots,
+\]</div>
+<p>and correspondingly</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \Psi| =  \langle x_1 | \Psi^{n*}_1 + \langle x_2 | \Psi^{n*}_2 + \langle x_3 | \Psi^{n*}_3 \ldots
+\]</div>
+<p>Since the states <span class="math notranslate nohighlight">\(|x_i\rangle\)</span> are orthonormal, i.e. <span class="math notranslate nohighlight">\(\langle x_i|x_j\rangle = \delta_{ij}\)</span>, we have that the wavefunction value for position <span class="math notranslate nohighlight">\(x_i\)</span> and time <span class="math notranslate nohighlight">\(t_n\)</span> can be viewed as the overlap between the current state <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span> and the basis state <span class="math notranslate nohighlight">\(|x_i\rangle\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle x_i | \Psi \rangle = \Psi_i^n.
+\]</div>
+<p>Assuming that we make a position measurement at time <span class="math notranslate nohighlight">\(t_n\)</span>, the probability <span class="math notranslate nohighlight">\(P(x_i;t_n)\)</span> (not probability density, since we now work with discretized space) that the outcome will be <span class="math notranslate nohighlight">\(x_i\)</span> can be expressed as</p>
+<div class="math notranslate nohighlight">
+\[
+P(x_i;t_n) = | \langle x_i | \Psi \rangle |^2 = |\Psi_i^n|^2 = \Psi^{n*}_i \, \Psi^n_i.
+\]</div>
+<p>In this notation, the normalization condition for the total probability can be viewed as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+1 &amp;= \langle \Psi | \Psi \rangle\\ 
+  &amp;= \big[ \langle x_1 | \Psi^{n*}_1 + \langle x_2 | \Psi^{n*}_2 + \ldots \big] \; \big[ \Psi^n_1 |x_1 \rangle + \Psi^n_2 |x_2 \rangle + \ldots \big]\\ 
+  &amp;= \Psi^{n*}_1 \, \Psi^n_1 + \Psi^{n*}_2 \, \Psi^n_2 + \ldots \\
+  &amp;= P(x_1;t) + P(x_2;t) + \ldots
+\end{split}\]</div>
+</div>
 </div>
 <div class="section" id="notation">
 <h2>Notation<a class="headerlink" href="#notation" title="Permalink to this headline">¶</a></h2>
@@ -720,6 +756,10 @@ A \,\vec{u}^{n+1} = B \,\vec{u}^{n}.
 <li><p>Solve the matrix equation <span class="math notranslate nohighlight">\(A \, \vec{u}^{n+1} = \vec{b}\)</span> for the unknown <span class="math notranslate nohighlight">\(\vec{u}^{n+1}\)</span>.</p></li>
 </ol>
 <p>Given what you know about matrix <span class="math notranslate nohighlight">\(A\)</span>, discuss which approaches might be well-suited to solve <span class="math notranslate nohighlight">\(A \, \vec{u}^{n+1} = \vec{b}\)</span>. For your code you can either implement a solver yourself or use a built-in solver in Armadillo.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you want to implement your own solver to solve <span class="math notranslate nohighlight">\(A \, \vec{u}^{n+1} = \vec{b}\)</span>, keep in mind that in the lectures we have discussed several different types of methods for solving matrix equations, including some that are easy to implement but that we haven’t used in any previous project…</p>
+</div>
 </div>
 <div class="section" id="problem-4">
 <h3>Problem 4<a class="headerlink" href="#problem-4" title="Permalink to this headline">¶</a></h3>
@@ -773,13 +813,17 @@ u(x,y,t=0) = e^{-\frac{(x-x_c)^2}{2 \sigma_x^2} - \frac{(y-y_c)^2}{2 \sigma_y^2}
 <p class="admonition-title">Note</p>
 <p>Note that for this problem the output file can become large-ish (~200MB as binary file) if you save the full simulation, i.e. the full wave function at each time step.</p>
 </div>
-<p>The total probability (<span class="math notranslate nohighlight">\(= 1\)</span>) in the probability function <span class="math notranslate nohighlight">\(p^n_{ij} = u^{n*}_{ij}\,u^n_{ij}\)</span> should be conserved over time. This is a nice consistency check to make sure your code works as it should.</p>
+<p>In theory, the total probability (<span class="math notranslate nohighlight">\(= 1\)</span>) in the probability function <span class="math notranslate nohighlight">\(p^n_{ij} = u^{n*}_{ij}\,u^n_{ij}\)</span> should be conserved over time. This is a nice consistency check to make sure your code works as it should.</p>
 <ul class="simple">
 <li><p>First run your simulation with the settings <span class="math notranslate nohighlight">\(h = 0.005\)</span>, <span class="math notranslate nohighlight">\(\Delta t = 2.5\times10^{-5}\)</span>, <span class="math notranslate nohighlight">\(T = 0.008\)</span>, <span class="math notranslate nohighlight">\(x_c = 0.25\)</span>, <span class="math notranslate nohighlight">\(\sigma_x = 0.05\)</span>, <span class="math notranslate nohighlight">\(p_x = 200\)</span>, <span class="math notranslate nohighlight">\(y_c = 0.5\)</span>, <span class="math notranslate nohighlight">\(\sigma_y = 0.05\)</span>, <span class="math notranslate nohighlight">\(p_y = 0\)</span> and <span class="math notranslate nohighlight">\(v_0 = 0\)</span>, i.e. without any double-slit barrier.</p></li>
 <li><p>Make a plot of the deviation of the total probability from 1.0 as a function of time. (If the deviations are too small to be visible in your plot, consider plotting the data in a different way…)</p></li>
 <li><p>Run the simulation again, but now with a double-slit barrier switched on. Use <span class="math notranslate nohighlight">\(v_0 = 1\times10^{10}\)</span> and the double-slit configuration from Problem 5, and make the initial state broader in the <span class="math notranslate nohighlight">\(y\)</span>-direction by setting <span class="math notranslate nohighlight">\(\sigma_y = 0.10\)</span>.</p></li>
 <li><p>Make a similar plot of the deviation of the total probability from 1.0 as a function of time.</p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Keep in mind that how accurately you should expect the probability to be conserved will depend on what type of approach you have chosen for solving the matrix equation in Problem 3.</p>
+</div>
 </div>
 <div class="section" id="problem-8">
 <h3>Problem 8<a class="headerlink" href="#problem-8" title="Permalink to this headline">¶</a></h3>

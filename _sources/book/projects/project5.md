@@ -41,7 +41,7 @@ $$
 where $\hat{H}$ is some Hamiltonian operator and $|\Psi\rangle$ is the quantum state ([whatever that is](https://plato.stanford.edu/entries/qt-issues/#OntoIssu)). While we're not really sure what the quantum state *is*, we do know it is related to probability ([whatever that is](https://plato.stanford.edu/entries/probability-interpret/)) through the [Born rule](https://en.wikipedia.org/wiki/Born_rule), which we will use extensively in this project. More details below.
 
 
-We will now consider the case of a *a single, non-relativistic particle in two dimensions*. If we work in "position space", the quantum state $|\Psi\rangle$ can then be expressed as a *complex valued* function $\Psi(x,y,t)$, historically called the *the wave function*. The Schrödinger equation then becomes
+We will now consider the case of a *a single, non-relativistic particle in two dimensions*. If we work in "position space", the quantum state $|\Psi\rangle$ can then be expressed through a *complex-valued* function $\Psi(x,y,t)$, historically called the *the wave function*. The Schrödinger equation then becomes
 
 $$
 i \hbar \frac{\partial}{\partial t} \Psi(x,y,t) = -\frac{\hbar^2}{2m} \left( \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} \right) \Psi(x,y,t) + V(x,y,t) \Psi(x,y,t).
@@ -55,7 +55,7 @@ $$
 p(x,y\,;t) = |\Psi(x,y,t)|^2 = \Psi^*(x,y,t) \, \Psi(x,y,t),
 $$
 
-where $p(x,y\,;t)$ denotes the probability density for detecting the particle at position $(x,y)$ if we perform a position measurement at time $t$. 
+where $p(x,y\,;t)$ denotes the probability density for detecting the particle at position $(x,y)$ if we perform a position measurement at time $t$.
 
 
 To keep things simple, we will in this project assume that all dimensionful variables have been scaled away, leaving us with a "bare" Schrödinger equation on the form
@@ -64,7 +64,7 @@ $$
 i \frac{\partial u}{\partial t} = -\frac{\partial^2 u}{\partial x^2} - \frac{\partial^2 u}{\partial y^2} + v(x,y) u.
 $$ (schr_eq)
 
-So in this equation *all the variables are dimensionless*, which means you do not have to worry about units for this project. Our goal is to solve equation {eq}`schr_eq` numerically to determine the evolution of the "wave function" $u(x,y,t)$ in the presence of some potential $v(x.y)$.
+So in this equation *all the variables are dimensionless*, which means you do not have to worry about units for this project. Our goal is to solve equation {eq}`schr_eq` numerically to determine the evolution of the "wave function" $u(x,y,t)$ in the presence of some potential $v(x,y)$.
 
 In our new notation the Born rule takes the form
 
@@ -73,6 +73,49 @@ p(x,y;t) = |u(x,y,t)|^2 = u^*(x,y,t) \, u(x,y,t).
 $$
 
 assuming the wave function $u(x,y,t)$ has been properly normalized.
+
+
+```{note}
+In this course we don't expect any background knowledge in quantum mechanics, so you are not expected to discuss a lot of quantum mechanics in your report. That is, you can simply view the Schrödinger equation as a particular type of differential equation given by equation {eq}`schr_eq`, where the solution is some complex-valued function $u(x,y,t)$, and where we have a rule for connecting this $u(x,y,t)$ to a probability distribution.
+```
+
+
+```{note}
+*For those with some quantum mechanics background:* There was a question during a lab session on how the wave function $\Psi(x,y,t)$ actually is related to the state $|\Psi\rangle$, so here's a short answer. (Again, you are not expected to discuss any of this in your reports.) 
+
+Consider the one-dimensional case and for simplicity assume that we have discretized time and space (notation $x_i$ and $t_n$). To work in position space we can express $|\Psi\rangle$ in terms of a set of orhtonormal basis states $|x_i\rangle$. (These are eigenstates of the position operator, $\hat{X} |x_i \rangle = x_i |x_i\rangle$). In doing this, the now-discretized wavefunction $\Psi(x_i,t_n) \equiv \Psi_i^n$ simply corresponds to the complex coefficients in this way of expressing $|\Psi\rangle$:
+
+$$
+|\Psi\rangle = \Psi_1^n |x_1 \rangle + \Psi_2^n |x_2 \rangle + \Psi_3^n |x_3 \rangle + \ldots,
+$$
+
+and correspondingly 
+
+$$
+\langle \Psi| =  \langle x_1 | \Psi^{n*}_1 + \langle x_2 | \Psi^{n*}_2 + \langle x_3 | \Psi^{n*}_3 \ldots
+$$
+
+Since the states $|x_i\rangle$ are orthonormal, i.e. $\langle x_i|x_j\rangle = \delta_{ij}$, we have that the wavefunction value for position $x_i$ and time $t_n$ can be viewed as the overlap between the current state $|\Psi\rangle$ and the basis state $|x_i\rangle$:
+
+$$
+\langle x_i | \Psi \rangle = \Psi_i^n.
+$$
+
+Assuming that we make a position measurement at time $t_n$, the probability $P(x_i;t_n)$ (not probability density, since we now work with discretized space) that the outcome will be $x_i$ can be expressed as 
+
+$$
+P(x_i;t_n) = | \langle x_i | \Psi \rangle |^2 = |\Psi_i^n|^2 = \Psi^{n*}_i \, \Psi^n_i.
+$$
+
+In this notation, the normalization condition for the total probability can be viewed as 
+
+$$
+1 &= \langle \Psi | \Psi \rangle\\ 
+  &= \big[ \langle x_1 | \Psi^{n*}_1 + \langle x_2 | \Psi^{n*}_2 + \ldots \big] \; \big[ \Psi^n_1 |x_1 \rangle + \Psi^n_2 |x_2 \rangle + \ldots \big]\\ 
+  &= \Psi^{n*}_1 \, \Psi^n_1 + \Psi^{n*}_2 \, \Psi^n_2 + \ldots \\
+  &= P(x_1;t) + P(x_2;t) + \ldots
+$$
+```
 
 
 
@@ -210,6 +253,11 @@ When we have the matrices $A$ and $B$, finding the next $\vec{u}^{n+1}$ from the
 Given what you know about matrix $A$, discuss which approaches might be well-suited to solve $A \, \vec{u}^{n+1} = \vec{b}$. For your code you can either implement a solver yourself or use a built-in solver in Armadillo.
 
 
+```{note}
+If you want to implement your own solver to solve $A \, \vec{u}^{n+1} = \vec{b}$, keep in mind that in the lectures we have discussed several different types of methods for solving matrix equations, including some that are easy to implement but that we haven't used in any previous project...
+```
+
+
 ### Problem 4
 
 Write a part of your program that can set up the initial state $u_{ij}^0$ based on the following expression for an unnormalised Gaussian wave packet
@@ -272,7 +320,7 @@ Put everything together into a program that does (at least) the following:
 Note that for this problem the output file can become large-ish (~200MB as binary file) if you save the full simulation, i.e. the full wave function at each time step.
 ```
 
-The total probability ($= 1$) in the probability function $p^n_{ij} = u^{n*}_{ij}\,u^n_{ij}$ should be conserved over time. This is a nice consistency check to make sure your code works as it should.
+In theory, the total probability ($= 1$) in the probability function $p^n_{ij} = u^{n*}_{ij}\,u^n_{ij}$ should be conserved over time. This is a nice consistency check to make sure your code works as it should.
 
 - First run your simulation with the settings $h = 0.005$, $\Delta t = 2.5\times10^{-5}$, $T = 0.008$, $x_c = 0.25$, $\sigma_x = 0.05$, $p_x = 200$, $y_c = 0.5$, $\sigma_y = 0.05$, $p_y = 0$ and $v_0 = 0$, i.e. without any double-slit barrier.
 
@@ -281,6 +329,10 @@ The total probability ($= 1$) in the probability function $p^n_{ij} = u^{n*}_{ij
 - Run the simulation again, but now with a double-slit barrier switched on. Use $v_0 = 1\times10^{10}$ and the double-slit configuration from Problem 5, and make the initial state broader in the $y$-direction by setting $\sigma_y = 0.10$.
 
 - Make a similar plot of the deviation of the total probability from 1.0 as a function of time.
+
+```{note}
+Keep in mind that how accurately you should expect the probability to be conserved will depend on what type of approach you have chosen for solving the matrix equation in Problem 3.
+```
 
 
 ### Problem 8
