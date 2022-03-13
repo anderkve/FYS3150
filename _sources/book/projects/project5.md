@@ -1,5 +1,8 @@
 # Project 5
 
+This project is not published yet.
+
+<!-- 
 ```{note}
 The project description is now ready. But check back regularly for small updates, typo fixes and hints.
 ```
@@ -365,12 +368,6 @@ You may also consider not using $p^n_{ij}$ as the $z$ axis (colour) value, but r
 If you find it useful, feel free to make some animations of your simulation and put links to these in your report! (However, don't overdo it --- your report will be more readable if the reader doesn't have to switch between the report and watching animations all the time.)
 
 
-<!-- 
-### Problem ?
-
-Run your simulation with the following settings **[to be added]** and for a total time of **[to be added]**. Make a plot that shows the probability of detecting the particle in the left half of the box, $Prob(\text{detect particle in region} x < 0.5)$, as a function of time. 
- -->
-
 --------
 
 
@@ -475,3 +472,5 @@ plt.show()
 # # Save the animation
 # anim.save('./animation.mp4', writer="ffmpeg", bitrate=-1, fps=30)
 ```
+
+ -->

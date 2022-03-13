@@ -1,6 +1,8 @@
 # Project 3
 
+This project is not published yet.
 
+<!-- 
 ## Practicalities
 
 - **Deadline**: Monday, October 25, 23:59.
@@ -446,12 +448,5 @@ Here is a suggested starting point for member functions of the `PenningTrap` cla
 
 Note that for Problem 10 you probably want to modify the declarations of some of these functions, as well as add some new ones.
 
-
-
-<!--
-From the perspective of an experimental physicist, it's natural to ask whether the entrapment of the particle
-can sustain for a long enough period that actual measurements can be made. Therefore:
-
-  - Measure how long you can keep a set of $n$ particles trapped as a function of $\omega_0$ and $\omega_z$.
-  - For a specific choice of $\omega_z$ and $\omega_0$, measure how long you can trap a set of particles as a function of number of particles $n$.
  -->
+

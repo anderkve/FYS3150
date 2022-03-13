@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project 1 &#8212; FYS3150/FYS4150 course material</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -31,32 +31,35 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Project 2" href="project2.html" />
     <link rel="prev" title="Checklist for reports" href="../writing_reports/checklist.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -74,13 +77,14 @@
     <a class="navbar-brand text-wrap" href="../../index.html">
       
       
+      
       <h1 class="site-logo" id="site-title">FYS3150/FYS4150 course material</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -89,7 +93,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Getting ready
  </span>
@@ -111,7 +115,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Using the terminal
  </span>
@@ -128,7 +132,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Using git and GitHub
  </span>
@@ -170,7 +174,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Introduction to C++
  </span>
@@ -257,7 +261,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Optimization
  </span>
@@ -269,7 +273,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Parallelization
  </span>
@@ -286,7 +290,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Using Make
  </span>
@@ -298,7 +302,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Writing reports
  </span>
@@ -315,7 +319,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Projects
  </span>
@@ -392,7 +396,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -426,310 +430,267 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#practicalities">
-   Practicalities
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#preliminaries">
-   Preliminaries
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   Introduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#problems">
-   Problems
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-1">
-     Problem 1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-2">
-     Problem 2
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-3">
-     Problem 3
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-4">
-     Problem 4
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-5">
-     Problem 5
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-6">
-     Problem 6
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-7">
-     Problem 7
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-8">
-     Problem 8
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-9">
-     Problem 9
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-10">
-     Problem 10
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-11">
-     Problem 11
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#code-snippets">
-   Code snippets
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Project 1</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
-  <div class="section" id="project-1">
+  <div class="tex2jax_ignore mathjax_ignore section" id="project-1">
 <h1>Project 1<a class="headerlink" href="#project-1" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="practicalities">
-<h2>Practicalities<a class="headerlink" href="#practicalities" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><strong>Deadline</strong>: Monday, September 13.</p></li>
-<li><p><strong>Format:</strong></p>
-<ul>
-<li><p>A pdf document, typeset in LaTeX, with answers to all the problems below. You deliver the pdf on Canvas.</p></li>
-<li><p>Code (with comments, of course) on a GitHub repo, with the repo link provided in the pdf documentet.</p></li>
-</ul>
-</li>
-<li><p><strong>Not a complete report:</strong> For project 1 we do not require you to write a proper scientific report — only a document with an answer for each problem. But the quality of the presentation still matters, of course. So pay attention to figures, figure captions, grammar, etc.</p></li>
-<li><p><strong>Collaboration:</strong> If you are collaborating with others (<em>and we hope you are!</em>) you <em>must</em> register a group on Canvas. The group hands in a single pdf. Remember to list everyone’s name in the pdf.</p></li>
-<li><p><strong>Reproducibility:</strong> Your code should be available on a GitHub repo. You can refer to relevant parts of your code in your answers. Make sure to include a README file in the repo that explains how the code should be compiled and run in order to reproduce your results.</p></li>
-<li><p><strong>Figures:</strong> Figures included in your LaTeX document should be made as vector graphics (e.g. <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> files), rather than raster graphics (e.g. <code class="docutils literal notranslate"><span class="pre">.png</span></code> files). If you are making plots with <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> in Python, this is as simple as calling <code class="docutils literal notranslate"><span class="pre">plt.savefig(&quot;figure.pdf&quot;)</span></code> rather than <code class="docutils literal notranslate"><span class="pre">plt.savefig(&quot;figure.png&quot;)</span></code>.</p></li>
-</ul>
-</div>
-<div class="section" id="preliminaries">
-<h2>Preliminaries<a class="headerlink" href="#preliminaries" title="Permalink to this headline">¶</a></h2>
-<ul>
-<li><p>If you’re not familiar with using the terminal, we recommend taking the time to work through the examples on the terminal <a class="reference internal" href="../using_the_terminal/basics.html"><span class="doc std std-doc">basics</span></a> page, and look at the <a class="reference internal" href="../using_the_terminal/keyboard_shortcuts.html"><span class="doc std std-doc">keyboard shortcuts</span></a>.</p></li>
-<li><p>Similarly, if you’ve not used git before, it’s a good idea to learn some of the basics before jumping into the project. See the links on the left-hand side.</p></li>
-<li><p>The most important C++ aspects for this project are:</p>
-<ul class="simple">
-<li><p>basic C++ program structure</p></li>
-<li><p>compiliation and linking</p></li>
-<li><p>functions</p></li>
-<li><p>vectors/arrays (examples of <em>containers</em>)</p></li>
-<li><p>writing output to screen and/or file</p></li>
-</ul>
-<p>We will discuss these topics in the lectures, and our discussions there will largely be based on the “Introduction to C++” pages on the left (which are currently under development.)</p>
-</li>
-</ul>
-</div>
-<div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>The overall topic of this project is numerical solution of the one-dimensional Poisson equation. This is a second-order differential equation that shows up in several areas of physics, e.g. electrostatics. In future projects we will pay close attention to scaling of dimensionfull physics equations, but for this first project we start directly from the differential equation <em>after</em> scaling to dimensionless variables.</p>
-<p>The one-dimensional Poisson equation can be written as</p>
-<div class="math notranslate nohighlight" id="equation-poisson-eq">
-<span class="eqno">(1)<a class="headerlink" href="#equation-poisson-eq" title="Permalink to this equation">¶</a></span>\[
+<p>This project is not published yet.</p>
+<!-- ## Practicalities
+
+- **Deadline**: Monday, September 13.
+- **Format:**
+  - A pdf document, typeset in LaTeX, with answers to all the problems below. You deliver the pdf on Canvas.
+  - Code (with comments, of course) on a GitHub repo, with the repo link provided in the pdf documentet.
+
+- **Not a complete report:** For project 1 we do not require you to write a proper scientific report --- only a document with an answer for each problem. But the quality of the presentation still matters, of course. So pay attention to figures, figure captions, grammar, etc.
+
+- **Collaboration:** If you are collaborating with others (*and we hope you are!*) you *must* register a group on Canvas. The group hands in a single pdf. Remember to list everyone's name in the pdf.
+
+- **Reproducibility:** Your code should be available on a GitHub repo. You can refer to relevant parts of your code in your answers. Make sure to include a README file in the repo that explains how the code should be compiled and run in order to reproduce your results.
+
+- **Figures:** Figures included in your LaTeX document should be made as vector graphics (e.g. `.pdf` files), rather than raster graphics (e.g. `.png` files). If you are making plots with `matplotlib.pyplot` in Python, this is as simple as calling `plt.savefig("figure.pdf")` rather than `plt.savefig("figure.png")`.
+
+## Preliminaries
+
+- If you're not familiar with using the terminal, we recommend taking the time to work through the examples on the terminal [basics](../using_the_terminal/basics.md) page, and look at the [keyboard shortcuts](../using_the_terminal/keyboard_shortcuts.md).
+
+- Similarly, if you've not used git before, it's a good idea to learn some of the basics before jumping into the project. See the links on the left-hand side.
+
+- The most important C++ aspects for this project are:
+  - basic C++ program structure
+  - compiliation and linking
+  - functions
+  - vectors/arrays (examples of *containers*)
+  - writing output to screen and/or file
+
+  We will discuss these topics in the lectures, and our discussions there will largely be based on the "Introduction to C++" pages on the left (which are currently under development.)
+
+
+## Introduction
+The overall topic of this project is numerical solution of the one-dimensional Poisson equation. This is a second-order differential equation that shows up in several areas of physics, e.g. electrostatics. In future projects we will pay close attention to scaling of dimensionfull physics equations, but for this first project we start directly from the differential equation *after* scaling to dimensionless variables.
+
+The one-dimensional Poisson equation can be written as
+
+$$
 -\frac{d^2 u}{dx^2} = f(x).
-\]</div>
-<p>Here <span class="math notranslate nohighlight">\(f(x)\)</span> is a known function (the <em>source term</em>). Our task is to find the function <span class="math notranslate nohighlight">\(u(x)\)</span> that satisfies this equation for a given boundary condition. The specific setup we will assume is the following:</p>
-<ul class="simple">
-<li><p>source term: <span class="math notranslate nohighlight">\(f(x) = 100 e^{-10 x}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(x\)</span> range: <span class="math notranslate nohighlight">\(x \in [0,1]\)</span></p></li>
-<li><p>boundary condition: <span class="math notranslate nohighlight">\(u(0) = 0\)</span> and <span class="math notranslate nohighlight">\(u(1) = 0\)</span></p></li>
-</ul>
-</div>
-<div class="section" id="problems">
-<h2>Problems<a class="headerlink" href="#problems" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="problem-1">
-<h3>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this headline">¶</a></h3>
-<p>Check analytically that an exact solution to Eq. <a class="reference internal" href="#equation-poisson-eq">(1)</a> is given by</p>
-<div class="math notranslate nohighlight" id="equation-exact-solution">
-<span class="eqno">(2)<a class="headerlink" href="#equation-exact-solution" title="Permalink to this equation">¶</a></span>\[
+$$ (poisson_eq)
+
+Here $f(x)$ is a known function (the *source term*). Our task is to find the function $u(x)$ that satisfies this equation for a given boundary condition. The specific setup we will assume is the following:
+
+- source term: $f(x) = 100 e^{-10 x}$
+- $x$ range: $x \in [0,1]$
+- boundary condition: $u(0) = 0$ and $u(1) = 0$
+
+
+
+## Problems
+
+
+### Problem 1
+
+Check analytically that an exact solution to Eq. {eq}`poisson_eq` is given by
+
+$$
 u(x) = 1 - (1 - e^{-10}) x - e^{-10 x}.
-\]</div>
-</div>
-<div class="section" id="problem-2">
-<h3>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this headline">¶</a></h3>
-<p>Make a plot of the exact solution above, using the following strategy:</p>
-<ul class="simple">
-<li><p>Write a program that defines an array of <span class="math notranslate nohighlight">\(x\)</span> values, evaluates the exact solution <span class="math notranslate nohighlight">\(u(x)\)</span> above for these points, and outputs the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(u(x)\)</span> values as two columns in a data file. The numbers should be written to file in scientific notation and with a fixed number of decimals. (Choose a sensible number.)</p></li>
-<li><p>Write a short plotting script (we recommend Python for this) that reads the data file and generates the plot.</p></li>
-</ul>
-</div>
-<div class="section" id="problem-3">
-<h3>Problem 3<a class="headerlink" href="#problem-3" title="Permalink to this headline">¶</a></h3>
-<p>Derive a discretized version of the Possion equation. You don’t have to show every step of your derivation, but include the main steps and a couple of sentences to explain the logic.</p>
-<p><em>Notation:</em> Make sure that your notation clearly distinguishes the <em>discretized approximation to <span class="math notranslate nohighlight">\(u(x)\)</span></em> from the <em>actual exact <span class="math notranslate nohighlight">\(u(x)\)</span></em>. Here we will use <span class="math notranslate nohighlight">\(v\)</span> to represent an approximation to <span class="math notranslate nohighlight">\(u\)</span>.</p>
-</div>
-<div class="section" id="problem-4">
-<h3>Problem 4<a class="headerlink" href="#problem-4" title="Permalink to this headline">¶</a></h3>
-<p>Show that you can rewrite your discretized equation as a matrix equation on the form</p>
-<div class="math notranslate nohighlight" id="equation-matrix-eq">
-<span class="eqno">(3)<a class="headerlink" href="#equation-matrix-eq" title="Permalink to this equation">¶</a></span>\[
+$$ (exact_solution)
+
+
+### Problem 2
+
+Make a plot of the exact solution above, using the following strategy:
+- Write a program that defines an array of $x$ values, evaluates the exact solution $u(x)$ above for these points, and outputs the $x$ and $u(x)$ values as two columns in a data file. The numbers should be written to file in scientific notation and with a fixed number of decimals. (Choose a sensible number.)
+- Write a short plotting script (we recommend Python for this) that reads the data file and generates the plot.
+
+
+### Problem 3
+
+Derive a discretized version of the Possion equation. You don't have to show every step of your derivation, but include the main steps and a couple of sentences to explain the logic.
+
+*Notation:* Make sure that your notation clearly distinguishes the *discretized approximation to $u(x)$* from the *actual exact $u(x)$*. Here we will use $v$ to represent an approximation to $u$.
+
+
+### Problem 4
+
+Show that you can rewrite your discretized equation as a matrix equation on the form
+
+$$
 \mathbf{A} \vec{v} = \vec{g}
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is a tridiagonal matrix with the subdiagonal, main diagonal and superdiagonal specified by the signature <span class="math notranslate nohighlight">\((-1,2,-1)\)</span>.</p>
-<p>Make sure to specify how an element of <span class="math notranslate nohighlight">\(\vec{g}\)</span> is related to the variables in the original differential equation.</p>
-</div>
-<div class="section" id="problem-5">
-<h3>Problem 5<a class="headerlink" href="#problem-5" title="Permalink to this headline">¶</a></h3>
-<p>Let the vector <span class="math notranslate nohighlight">\(\vec{v}^*\)</span> of length <span class="math notranslate nohighlight">\(m\)</span> represent a complete solution of the discretized Poisson equation, with corresponding <span class="math notranslate nohighlight">\(x\)</span> values given by the lenght-<span class="math notranslate nohighlight">\(m\)</span> vector <span class="math notranslate nohighlight">\(\vec{x}\)</span>. Let <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> be an <span class="math notranslate nohighlight">\(n \times n\)</span> matrix.</p>
-<p><strong>a)</strong> How is <span class="math notranslate nohighlight">\(n\)</span> related to <span class="math notranslate nohighlight">\(m\)</span>?</p>
-<p><strong>b)</strong> What part of the complete solution <span class="math notranslate nohighlight">\(\vec{v}^*\)</span> do we find when we solve Eq. <a class="reference internal" href="#equation-matrix-eq">(3)</a> for <span class="math notranslate nohighlight">\(\vec{v}\)</span>?</p>
-</div>
-<div class="section" id="problem-6">
-<h3>Problem 6<a class="headerlink" href="#problem-6" title="Permalink to this headline">¶</a></h3>
-<p>Now we’ll forget about the Poisson equation for a moment, and simply consider
-the equation <span class="math notranslate nohighlight">\(\mathbf{A} \vec{v} = \vec{g}\)</span> where <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is a <em>general</em> tridiagonal matrix, with vectors
-<span class="math notranslate nohighlight">\(\vec{a}\)</span>, <span class="math notranslate nohighlight">\(\vec{b}\)</span> and <span class="math notranslate nohighlight">\(\vec{c}\)</span> representing the subdiagonal, main diagonal and superdiagonal, respectively.
-That <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is a general tridiagonal matrix means that every element of <span class="math notranslate nohighlight">\(\vec{a}\)</span>, <span class="math notranslate nohighlight">\(\vec{b}\)</span> and <span class="math notranslate nohighlight">\(\vec{c}\)</span> can be different.</p>
-<p><strong>a)</strong> Write down an algorithm for solving <span class="math notranslate nohighlight">\(\mathbf{A} \vec{v} = \vec{g}\)</span>.</p>
-<p><strong>b)</strong> Find the number of floating-point operations (FLOPs) for this algorithm.</p>
-<p>We’ll refer to this algorithm as the <em>general algorithm</em>.</p>
-</div>
-<div class="section" id="problem-7">
-<h3>Problem 7<a class="headerlink" href="#problem-7" title="Permalink to this headline">¶</a></h3>
-<p>Now we get back to the Poisson equation.</p>
-<p><strong>a)</strong> Write a program that</p>
-<ul class="simple">
-<li><p>uses the <em>general algorithm</em> to solve <span class="math notranslate nohighlight">\(\mathbf{A} \vec{v} = \vec{g}\)</span>,
-where <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is the tridiagonal matrix from Problem 4;</p></li>
-<li><p>writes the solution <span class="math notranslate nohighlight">\(\vec{v}\)</span> and corresponding <span class="math notranslate nohighlight">\(\vec{x}\)</span> (plus any other data you find useful) to a file.</p></li>
-</ul>
-<p><strong>b)</strong> With <span class="math notranslate nohighlight">\(n\)</span> being the number of grid points, run your program for <span class="math notranslate nohighlight">\(n=10,100,1000,\ldots\)</span> (as far as you think is reasonable) and make a plot that compares your numeric solutions for different values of <span class="math notranslate nohighlight">\(n\)</span> against the exact solution for <span class="math notranslate nohighlight">\(u(x)\)</span> in Eq. <a class="reference internal" href="#equation-exact-solution">(2)</a>.</p>
-</div>
-<div class="section" id="problem-8">
-<h3>Problem 8<a class="headerlink" href="#problem-8" title="Permalink to this headline">¶</a></h3>
-<p><strong>a)</strong> Make a plot that shows the (logarithm of) the <em>absolute</em> error,</p>
-<div class="math notranslate nohighlight">
-\[
+$$ (matrix_eq)
+
+where $\mathbf{A}$ is a tridiagonal matrix with the subdiagonal, main diagonal and superdiagonal specified by the signature $(-1,2,-1)$.
+
+Make sure to specify how an element of $\vec{g}$ is related to the variables in the original differential equation.
+
+
+### Problem 5
+
+Let the vector $\vec{v}^*$ of length $m$ represent a complete solution of the discretized Poisson equation, with corresponding $x$ values given by the lenght-$m$ vector $\vec{x}$. Let $\mathbf{A}$ be an $n \times n$ matrix.
+
+**a)** How is $n$ related to $m$?
+
+**b)** What part of the complete solution $\vec{v}^*$ do we find when we solve Eq. {eq}`matrix_eq` for $\vec{v}$?
+
+
+### Problem 6
+
+Now we'll forget about the Poisson equation for a moment, and simply consider
+the equation $\mathbf{A} \vec{v} = \vec{g}$ where $\mathbf{A}$ is a *general* tridiagonal matrix, with vectors
+$\vec{a}$, $\vec{b}$ and $\vec{c}$ representing the subdiagonal, main diagonal and superdiagonal, respectively.
+That $\mathbf{A}$ is a general tridiagonal matrix means that every element of $\vec{a}$, $\vec{b}$ and $\vec{c}$ can be different.
+
+**a)** Write down an algorithm for solving $\mathbf{A} \vec{v} = \vec{g}$.
+
+**b)** Find the number of floating-point operations (FLOPs) for this algorithm.
+
+We'll refer to this algorithm as the *general algorithm*.
+
+
+### Problem 7
+
+Now we get back to the Poisson equation.
+
+**a)** Write a program that
+- uses the *general algorithm* to solve $\mathbf{A} \vec{v} = \vec{g}$,
+where $\mathbf{A}$ is the tridiagonal matrix from Problem 4;
+- writes the solution $\vec{v}$ and corresponding $\vec{x}$ (plus any other data you find useful) to a file.
+
+**b)** With $n$ being the number of grid points, run your program for $n=10,100,1000,\ldots$ (as far as you think is reasonable) and make a plot that compares your numeric solutions for different values of $n$ against the exact solution for $u(x)$ in Eq. {eq}`exact_solution`.
+
+
+### Problem 8
+
+**a)** Make a plot that shows the (logarithm of) the *absolute* error,
+
+$$
 \log_{10}(\Delta_i) = \log_{10}(|u_i - v_i|)
-\]</div>
-<p>as a function of <span class="math notranslate nohighlight">\(x_i\)</span>. Show <span class="math notranslate nohighlight">\(\log_{10}(\Delta_i)\)</span> for different choices of <span class="math notranslate nohighlight">\(n\)</span> as different graphs in the same plot.</p>
-<p><strong>b)</strong> Similarly, make a plot of the <em>relative</em> error</p>
-<div class="math notranslate nohighlight">
-\[
+$$  
+
+as a function of $x_i$. Show $\log_{10}(\Delta_i)$ for different choices of $n$ as different graphs in the same plot.
+
+
+**b)** Similarly, make a plot of the *relative* error
+
+$$
 \log_{10}(\epsilon_i) = \log_{10}\left(\left| \frac{u_i - v_i}{u_i} \right| \right)
-\]</div>
-<p>as function of <span class="math notranslate nohighlight">\(x_i\)</span>. Again, one graph per choice of <span class="math notranslate nohighlight">\(n\)</span>.</p>
-<p><strong>c</strong>) Now make a table that shows the <em>maximum</em> relative error <span class="math notranslate nohighlight">\(\max(\epsilon_i)\)</span> for each choice of <span class="math notranslate nohighlight">\(n\)</span>, up to <span class="math notranslate nohighlight">\(n = 10^7\)</span>. Feel free to also make a plot to visualise this. Comment on your result.</p>
-</div>
-<div class="section" id="problem-9">
-<h3>Problem 9<a class="headerlink" href="#problem-9" title="Permalink to this headline">¶</a></h3>
-<p><strong>a)</strong> Now specialize your algorithm from Problem 6 for our special case where <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is specified by the signature <span class="math notranslate nohighlight">\((-1,2,-1)\)</span>, that is, with <span class="math notranslate nohighlight">\(\vec{a} = (-1,-1,\ldots,-1)\)</span>, <span class="math notranslate nohighlight">\(\vec{b} = (2,2,\ldots,2)\)</span> and <span class="math notranslate nohighlight">\(\vec{c} = (-1,-1,\ldots,-1)\)</span>.</p>
-<p>We’ll refer to this as the <em>special algorithm</em>.</p>
-<p><strong>b)</strong> Find the number of FLOPs for this algorithm.</p>
-<p><strong>c)</strong> Write code that implements this algorithm.</p>
-</div>
-<div class="section" id="problem-10">
-<h3>Problem 10<a class="headerlink" href="#problem-10" title="Permalink to this headline">¶</a></h3>
-<p>For values of <span class="math notranslate nohighlight">\(n\)</span> up to <span class="math notranslate nohighlight">\(n = 10^6\)</span>, run timing tests that compares the time
-used by the general algorithm and the special algorithm. (<em>Remember:</em> reliable timing results require repeated runs for each choice of <span class="math notranslate nohighlight">\(n\)</span>.)
-Make a table or plot to present your timing results, and comment briefly on the results.</p>
-</div>
-<div class="section" id="problem-11">
-<h3>Problem 11<a class="headerlink" href="#problem-11" title="Permalink to this headline">¶</a></h3>
-<p>Now say we wanted to solve our matrix equation using the general
+$$
+
+as function of $x_i$. Again, one graph per choice of $n$.
+
+**c**) Now make a table that shows the *maximum* relative error $\max(\epsilon_i)$ for each choice of $n$, up to $n = 10^7$. Feel free to also make a plot to visualise this. Comment on your result.
+
+
+
+### Problem 9
+
+**a)** Now specialize your algorithm from Problem 6 for our special case where $\mathbf{A}$ is specified by the signature $(-1,2,-1)$, that is, with $\vec{a} = (-1,-1,\ldots,-1)$, $\vec{b} = (2,2,\ldots,2)$ and $\vec{c} = (-1,-1,\ldots,-1)$.
+
+We'll refer to this as the *special algorithm*.
+
+**b)** Find the number of FLOPs for this algorithm.
+
+**c)** Write code that implements this algorithm.
+
+
+### Problem 10
+
+For values of $n$ up to $n = 10^6$, run timing tests that compares the time
+used by the general algorithm and the special algorithm. (*Remember:* reliable timing results require repeated runs for each choice of $n$.)
+Make a table or plot to present your timing results, and comment briefly on the results.
+
+
+
+### Problem 11
+
+Now say we wanted to solve our matrix equation using the general
 LU decomposition approach to solving matrix equations.
-(Feel free to try this, either by writing your own code or using a library, e.g. armadillo.)</p>
-<p>What do you expect would happen if you attempted to run code for the case <span class="math notranslate nohighlight">\(n = 10^5\)</span> on your laptop?</p>
-</div>
-</div>
-<hr class="docutils" />
-<div class="section" id="code-snippets">
-<h2>Code snippets<a class="headerlink" href="#code-snippets" title="Permalink to this headline">¶</a></h2>
-<p>Here’s a code example that uses <code class="docutils literal notranslate"><span class="pre">&lt;chrono&gt;</span></code> from the C++ standard library to measure the time used by a part of a program:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;chrono&gt;</span><span class="cp"></span>
+(Feel free to try this, either by writing your own code or using a library, e.g. armadillo.)
 
-<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span>
-<span class="p">{</span>
+What do you expect would happen if you attempted to run code for the case $n = 10^5$ on your laptop?
 
-  <span class="c1">// ...</span>
 
-  <span class="c1">// Start measuring time</span>
-  <span class="k">auto</span> <span class="n">t1</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">high_resolution_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+----
 
-  <span class="c1">//</span>
-  <span class="c1">// The code you want to perform timing on</span>
-  <span class="c1">//</span>
 
-  <span class="c1">// Stop measuring time</span>
-  <span class="k">auto</span> <span class="n">t2</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">high_resolution_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+## Code snippets
 
-  <span class="c1">// Calculate the elapsed time</span>
-  <span class="c1">// We use chrono::duration&lt;double&gt;::count(), which by default returns duration in seconds</span>
-  <span class="kt">double</span> <span class="n">duration_seconds</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">duration</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t2</span> <span class="o">-</span> <span class="n">t1</span><span class="p">).</span><span class="n">count</span><span class="p">();</span>
+Here's a code example that uses `<chrono>` from the C++ standard library to measure the time used by a part of a program:
 
-  <span class="c1">// ...</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>Alternatively, you can use the C library <code class="docutils literal notranslate"><span class="pre">time.h</span></code>. Here’s a code snippet demonstrating that:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;time.h&gt;</span><span class="cp"></span>
+```cpp
+#include <chrono>
 
-<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span>
-<span class="p">{</span>
+int main ()
+{
 
-  <span class="c1">// ...</span>
+  // ...
 
-  <span class="c1">// Start measuring time</span>
-  <span class="kt">clock_t</span> <span class="n">t1</span> <span class="o">=</span> <span class="n">clock</span><span class="p">();</span>
+  // Start measuring time
+  auto t1 = std::chrono::high_resolution_clock::now();
 
-  <span class="c1">//</span>
-  <span class="c1">// The code you want to perform timing on</span>
-  <span class="c1">//</span>
+  //
+  // The code you want to perform timing on
+  //
 
-  <span class="c1">// Stop measuring time</span>
-  <span class="kt">clock_t</span> <span class="n">t2</span> <span class="o">=</span> <span class="n">clock</span><span class="p">();</span>
+  // Stop measuring time
+  auto t2 = std::chrono::high_resolution_clock::now();
 
-  <span class="c1">// Calculate the elapsed time.</span>
-  <span class="kt">double</span> <span class="n">duration_seconds</span> <span class="o">=</span> <span class="p">((</span><span class="kt">double</span><span class="p">)</span> <span class="p">(</span><span class="n">t2</span> <span class="o">-</span> <span class="n">t1</span><span class="p">))</span> <span class="o">/</span> <span class="n">CLOCKS_PER_SEC</span><span class="p">;</span>
+  // Calculate the elapsed time
+  // We use chrono::duration<double>::count(), which by default returns duration in seconds
+  double duration_seconds = std::chrono::duration<double>(t2 - t1).count();
 
-  <span class="c1">// ...</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>(There may appear more useful code snippets here…)</p>
-</div>
-</div>
+  // ...
+}
+```
+
+
+Alternatively, you can use the C library `time.h`. Here's a code snippet demonstrating that:
+
+
+```c
+#include <time.h>
+
+int main ()
+{
+
+  // ...
+
+  // Start measuring time
+  clock_t t1 = clock();
+
+  //
+  // The code you want to perform timing on
+  //
+
+  // Stop measuring time
+  clock_t t2 = clock();
+
+  // Calculate the elapsed time.
+  double duration_seconds = ((double) (t2 - t1)) / CLOCKS_PER_SEC;
+
+  // ...
+}
+```
+
+
+(There may appear more useful code snippets here...)
+ --></div>
 
     <script type="text/x-thebe-config">
     {
@@ -753,34 +714,42 @@ LU decomposition approach to solving matrix equations.
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../writing_reports/checklist.html" title="previous page">Checklist for reports</a>
-    <a class='right-next' id="next-link" href="project2.html" title="next page">Project 2</a>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../writing_reports/checklist.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Checklist for reports</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="project2.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Project 2</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By the FYS3150 teaching team<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
+    <footer class="footer">
+  <p>
+    
+      By the FYS3150 teaching team<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>
