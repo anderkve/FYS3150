@@ -1,6 +1,8 @@
 # Project 1
 
-## Practicalities
+This project is not published yet.
+
+<!-- ## Practicalities
 
 - **Deadline**: Monday, September 13.
 - **Format:**
@@ -237,3 +239,4 @@ int main ()
 
 
 (There may appear more useful code snippets here...)
+ -->

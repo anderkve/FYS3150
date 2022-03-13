@@ -1,5 +1,8 @@
 # Project 2
 
+This project is not published yet.
+
+<!-- 
 ## Practicalities
 
 - **Deadline**: Monday, September 27, 23:59.
@@ -384,3 +387,4 @@ Note:
 ----
 
 **Watch this space for more code examples...**
+ -->
