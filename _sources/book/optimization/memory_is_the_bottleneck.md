@@ -52,7 +52,7 @@ Armadillo, the linear algebra package for C++, allocates memory in column-major 
 ```
 
 ### Illustrative example
-We'll do an example with Armadillo because it simplifies allocation of matrices significantly. We recall that Armadillo allocates memory in column-major order. Therefore we should make sure to traverse the matrix along its columns (stride-1)! This means that we let the innemost loop be a loop over the **row index** (here `i`):
+We'll do an example with Armadillo because it simplifies allocation of matrices significantly. We recall that Armadillo allocates memory in column-major order. Therefore we should make sure to traverse the matrix along its columns (stride-1)! This means that we let the innermost loop be a loop over the **row index** (here `i`):
 
 ```c++
 int n = 10000;

@@ -605,7 +605,7 @@ We should traverse the <strong>columns</strong> (i.e. the innermost loop should 
 </div>
 <div class="section" id="illustrative-example">
 <h3>Illustrative example<a class="headerlink" href="#illustrative-example" title="Permalink to this headline">¶</a></h3>
-<p>We’ll do an example with Armadillo because it simplifies allocation of matrices significantly. We recall that Armadillo allocates memory in column-major order. Therefore we should make sure to traverse the matrix along its columns (stride-1)! This means that we let the innemost loop be a loop over the <strong>row index</strong> (here <code class="docutils literal notranslate"><span class="pre">i</span></code>):</p>
+<p>We’ll do an example with Armadillo because it simplifies allocation of matrices significantly. We recall that Armadillo allocates memory in column-major order. Therefore we should make sure to traverse the matrix along its columns (stride-1)! This means that we let the innermost loop be a loop over the <strong>row index</strong> (here <code class="docutils literal notranslate"><span class="pre">i</span></code>):</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">;</span>
 <span class="n">mat</span> <span class="n">A</span> <span class="o">=</span> <span class="n">mat</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">);</span>
 <span class="kt">clock_t</span> <span class="n">start</span> <span class="o">=</span> <span class="n">clock</span><span class="p">();</span>
