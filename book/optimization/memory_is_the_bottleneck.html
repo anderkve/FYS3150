@@ -585,15 +585,19 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Row- and column-major order<a class="headerlink" href="#row-and-column-major-order" title="Permalink to this headline">¶</a></h2>
 <p>It’s important to understand how your computer allocates memory when you writing code. If you make a mistake here, it will severely impede the execution speed of your code! But why?</p>
 <p>For the most part, this will be relevant knowledge when we’re working with matrices.</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/Row_and_column_major_order.png"><img alt="../../_images/Row_and_column_major_order.png" src="../../_images/Row_and_column_major_order.png" style="width: 204.8px; height: 273.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Illustration by Cmglee, taken from <a class="reference external" href="https://commons.wikimedia.org/w/index.php?curid=65107030">Wikimedia Commons</a>.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
 <div class="section" id="row-major-order">
 <h3>Row-major order<a class="headerlink" href="#row-major-order" title="Permalink to this headline">¶</a></h3>
 <p>In C and C++, memory is allocated in what is known as <strong>row-major</strong> order. For a matrix <code class="docutils literal notranslate"><span class="pre">A[i][j]</span></code>, any two elements on a row <code class="docutils literal notranslate"><span class="pre">i</span></code> is adjacent to each other in memory. We say that the elements on the row is allocated <strong>contiguously</strong>.
-When the underlying memory is allocated as row-major, we should traverse the rows to reduce the <strong>stride</strong> through memory. Stride means how many memory addresses we skip over before we reach the desired memory address. If the memory address lies right next to the last one, it’s called <strong>stride-1</strong>. If it lies N addresses away, it’s called <strong>stride-N</strong>.</p>
+When the underlying memory is allocated as row-major, we should traverse the <strong>rows</strong> (i.e. the innermost loop should be over the <strong>column index</strong>) to reduce the <strong>stride</strong> through memory. Stride means how many memory addresses we skip over before we reach the desired memory address. If the memory address lies right next to the last one, it’s called <strong>stride-1</strong>. If it lies N addresses away, it’s called <strong>stride-N</strong>.</p>
 </div>
 <div class="section" id="column-major-order">
 <h3>Column-major order<a class="headerlink" href="#column-major-order" title="Permalink to this headline">¶</a></h3>
 <p>When memory is allocated in <strong>column-major</strong> order, each column <code class="docutils literal notranslate"><span class="pre">j</span></code> in a matrix <code class="docutils literal notranslate"><span class="pre">A[i][j]</span></code> is allocated contiguously instead. Fortran is a programming language that does this.
-We should traverse the columns to reduce the stride in memory when the underlying memory has column-major order.</p>
+We should traverse the <strong>columns</strong> (i.e. the innermost loop should be over the <strong>row index</strong>) to reduce the stride in memory when the underlying memory has column-major order.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Armadillo, the linear algebra package for C++, allocates memory in column-major order! If you use this, you must be careful about how you stride through matrices.</p>
@@ -601,7 +605,7 @@ We should traverse the columns to reduce the stride in memory when the underlyin
 </div>
 <div class="section" id="illustrative-example">
 <h3>Illustrative example<a class="headerlink" href="#illustrative-example" title="Permalink to this headline">¶</a></h3>
-<p>We’ll do an example with Armadillo because it simplifies allocation of matrices significantly. We recall that Armadillo allocates memory in column-major order. Therefore we should make sure to traverse the matrix through its columns (stride-1)!</p>
+<p>We’ll do an example with Armadillo because it simplifies allocation of matrices significantly. We recall that Armadillo allocates memory in column-major order. Therefore we should make sure to traverse the matrix along its columns (stride-1)! This means that we let the innemost loop be a loop over the <strong>row index</strong> (here <code class="docutils literal notranslate"><span class="pre">i</span></code>):</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">;</span>
 <span class="n">mat</span> <span class="n">A</span> <span class="o">=</span> <span class="n">mat</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">);</span>
 <span class="kt">clock_t</span> <span class="n">start</span> <span class="o">=</span> <span class="n">clock</span><span class="p">();</span>
@@ -619,7 +623,7 @@ We should traverse the columns to reduce the stride in memory when the underlyin
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">timeused</span> <span class="o">=</span> <span class="m">0</span>.474549 seconds
 </pre></div>
 </div>
-<p>If we instead stride through its rows (stride-<code class="docutils literal notranslate"><span class="pre">n</span></code>)</p>
+<p>If we instead stride along its rows (stride-<code class="docutils literal notranslate"><span class="pre">n</span></code>)</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">){</span>
         <span class="n">A</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">j</span><span class="p">;</span>

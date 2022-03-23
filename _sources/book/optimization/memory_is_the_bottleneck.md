@@ -29,22 +29,30 @@ It's important to understand how your computer allocates memory when you writing
 
 For the most part, this will be relevant knowledge when we're working with matrices.
 
+```{figure} ./imgs/Row_and_column_major_order.png
+---
+name: Row_and_column_major_order
+scale: 20%
+---
+Illustration by Cmglee, taken from [Wikimedia Commons](https://commons.wikimedia.org/w/index.php?curid=65107030).
+```
+
 ### Row-major order
 
 In C and C++, memory is allocated in what is known as **row-major** order. For a matrix `A[i][j]`, any two elements on a row `i` is adjacent to each other in memory. We say that the elements on the row is allocated **contiguously**.
-When the underlying memory is allocated as row-major, we should traverse the rows to reduce the **stride** through memory. Stride means how many memory addresses we skip over before we reach the desired memory address. If the memory address lies right next to the last one, it's called **stride-1**. If it lies N addresses away, it's called **stride-N**.
+When the underlying memory is allocated as row-major, we should traverse the **rows** (i.e. the innermost loop should be over the **column index**) to reduce the **stride** through memory. Stride means how many memory addresses we skip over before we reach the desired memory address. If the memory address lies right next to the last one, it's called **stride-1**. If it lies N addresses away, it's called **stride-N**.
 
 ### Column-major order
 
 When memory is allocated in **column-major** order, each column `j` in a matrix `A[i][j]` is allocated contiguously instead. Fortran is a programming language that does this.
-We should traverse the columns to reduce the stride in memory when the underlying memory has column-major order.
+We should traverse the **columns** (i.e. the innermost loop should be over the **row index**) to reduce the stride in memory when the underlying memory has column-major order.
 
 ```{note}
 Armadillo, the linear algebra package for C++, allocates memory in column-major order! If you use this, you must be careful about how you stride through matrices.
 ```
 
 ### Illustrative example
-We'll do an example with Armadillo because it simplifies allocation of matrices significantly. We recall that Armadillo allocates memory in column-major order. Therefore we should make sure to traverse the matrix through its columns (stride-1)!
+We'll do an example with Armadillo because it simplifies allocation of matrices significantly. We recall that Armadillo allocates memory in column-major order. Therefore we should make sure to traverse the matrix along its columns (stride-1)! This means that we let the innemost loop be a loop over the **row index** (here `i`):
 
 ```c++
 int n = 10000;
@@ -66,7 +74,7 @@ which outputs
 timeused = 0.474549 seconds
 ```
 
-If we instead stride through its rows (stride-`n`)
+If we instead stride along its rows (stride-`n`)
 
 ```c++
 for (int i = 0; i < n; i++){
