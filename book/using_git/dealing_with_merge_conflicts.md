@@ -1,6 +1,6 @@
 # Dealing with merge conflicts
 
-In most cases, git **auto-merges** when local branches are merged with `git merge`.
+In most cases, Git **auto-merges** when local branches are merged with `git merge`.
 The same applies when you pull from the `remote` to your local branch.
 
 
@@ -8,7 +8,7 @@ A problem occurs when two people work in the same file and make a commit.
 For instance, say you and your partner work in the `main` branch on the same file
 and commit your changes separately. Git simply doesn't know how to deal with this
 automatically and will throw an error. This error is a **merge conflict**.
-This is the intended behaviour of git. In these cases, we will need to resolve
+This is the intended behaviour of Git. In these cases, we will need to resolve
 the merging process manually, which we'll look at below through a hands-on example.
 
 ## Hands-on example
