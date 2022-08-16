@@ -1,4 +1,4 @@
-# Using git
+# Using Git
 
 
 ## Synopsis
