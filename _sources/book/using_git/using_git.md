@@ -3,8 +3,7 @@
 
 ## Synopsis
 
-This tutorial explains how to import a new project into git, make
-changes to it, and share changes with other developers. It's a slightly modified and extended version of the manual entry of *gittutorial*. At any point, you can look this up in your terminal should you forget it by running
+This tutorial explains how to import a new project into Git, make changes to it, and share changes with other developers. It's a slightly modified and extended version of the manual entry called *gittutorial*, which you can look up in your terminal by running
 
 ```sh
 man gittutorial
@@ -12,17 +11,20 @@ man gittutorial
 
 
 ```{note}
-As explained below, a git repository is organised into *branches*. For repositories created before October 1, 2020, the main branch was by default called `master`. Therefore, if you work on projects created before this, you might see the main branch called `master` instead of `main`.
+As explained below, a Git repository is organised into *branches*. For repositories created before October 1, 2020, the main branch was by default called `master`. Therefore, if you work on older projects, you might see the main branch called `master` instead of `main`.
 ```
 
 
 ## Cloning a new project
 
-We recommend you create a repository online on [GitHub](https://github.com/) and clone the HTTPS link down to your computer. It's simply done by
+We recommend you create a repository online on [GitHub](https://github.com/) and clone the repository on your computer using the HTTPS link. It's simply done by running
 
 ```sh
 git clone https_link
 ```
+
+where `https_link` is simply the URL for your repo on GitHub.
+
 
 ## Making changes
 
@@ -87,10 +89,10 @@ begin the commit message with a single short (less than 50 character)
 line summarizing the change, followed by a blank line and then a more
 thorough description. The text up to the first blank line in a commit
 message is treated as the commit title, and that title is used
-throughout git.
+throughout Git.
+
 
 ## Git tracks content, not files
-
 
 Many revision control systems provide an **add** command that tells the
 system to start tracking changes to a new file. Git's **add** command does
@@ -123,7 +125,7 @@ git log --stat --summary
 ## Managing branches
 
 
-A single git repository can maintain multiple branches of development.
+A single Git repository can maintain multiple branches of development.
 To create a new branch named `experimental`, use
 
 ```sh
@@ -156,7 +158,7 @@ git switch experimental
 to switch to the experimental branch.
 
 ```{note}
-`git switch` requires git version 2.23 or later. You can use `git checkout` as a replacement if you use an older version of git.  
+`git switch` requires Git version 2.23 or later. You can use `git checkout` as a replacement if you use an older version of Git.  
 ```
 
 Now edit a file, commit the
@@ -232,16 +234,16 @@ git branch -D crazy-idea
 Branches are cheap and easy, so this is a good way to try something out.
 
 
-## Using git for collaboration; using GitHub
+## Collaborating using GitHub
 
-So far we've only discussed git locally on your computer, but not how we collaborate with other developers. This is where GitHub comes into the picture.
+So far we've only discussed Git locally on your computer, but not how we collaborate with other developers. This is where GitHub comes into the picture.
 
 It's customary to work on different branches to protect the content of the `main` branch. Just like in the example above where we worked on a branch called `experimental`, you can create your own branch when you work on a project with other people.
 
 
 ### Pull any changes from the remote
 
-The **remote** repo is the term used for the cloud-based (GitHub) version of your local git repo. To **pull** down any changes done by the other developers on a branch, run
+The **remote** repo is the term used for the cloud-based (GitHub) version of your local Git repo. To **pull** down any changes done by the other developers on a branch, run
 
 ```sh
 git pull origin branchname

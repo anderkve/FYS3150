@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Setting up git and GitHub repo &#8212; FYS3150/FYS4150 course material</title>
+    <title>Setting up Git and a GitHub repository &#8212; FYS3150/FYS4150 course material</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Add a README" href="add_a_README.html" />
-    <link rel="prev" title="Introduction to git" href="introduction_to_git.html" />
+    <link rel="prev" title="Introduction to Git" href="introduction_to_git.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -149,18 +149,18 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Using git and GitHub
+  Using Git and GitHub
  </span>
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="introduction_to_git.html">
-   Introduction to git
+   Introduction to Git
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Setting up git and GitHub repo
+   Setting up Git and a GitHub repository
   </a>
  </li>
  <li class="toctree-l1">
@@ -544,12 +544,12 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#setting-up-git-on-your-computer">
-   Setting up git on your computer
+   Setting up Git on your computer
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-github-repository-for-the-course">
-   Create a GitHub repository for the course
+  <a class="reference internal nav-link" href="#create-a-github-repository">
+   Create a GitHub repository
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -578,7 +578,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Setting up git and GitHub repo</h1>
+                <h1>Setting up Git and a GitHub repository</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -590,12 +590,12 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#setting-up-git-on-your-computer">
-   Setting up git on your computer
+   Setting up Git on your computer
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-github-repository-for-the-course">
-   Create a GitHub repository for the course
+  <a class="reference internal nav-link" href="#create-a-github-repository">
+   Create a GitHub repository
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -625,20 +625,20 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="setting-up-git-and-github-repo">
-<h1>Setting up git and GitHub repo<a class="headerlink" href="#setting-up-git-and-github-repo" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="setting-up-git-and-a-github-repository">
+<h1>Setting up Git and a GitHub repository<a class="headerlink" href="#setting-up-git-and-a-github-repository" title="Permalink to this headline">#</a></h1>
 <section id="setting-up-git-on-your-computer">
-<h2>Setting up git on your computer<a class="headerlink" href="#setting-up-git-on-your-computer" title="Permalink to this headline">#</a></h2>
-<p>You need to tell git which user you are. Write the following commands in your terminal.</p>
+<h2>Setting up Git on your computer<a class="headerlink" href="#setting-up-git-on-your-computer" title="Permalink to this headline">#</a></h2>
+<p>You need to tell Git which user you are. Write the following commands in your terminal:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git config --global user.name your_user_name_spelled_out
 
 git config --global user.email you@yourdomain.com
 </pre></div>
 </div>
 </section>
-<section id="create-a-github-repository-for-the-course">
-<h2>Create a GitHub repository for the course<a class="headerlink" href="#create-a-github-repository-for-the-course" title="Permalink to this headline">#</a></h2>
-<p>Here’s a step-by-step instruction.</p>
+<section id="create-a-github-repository">
+<h2>Create a GitHub repository<a class="headerlink" href="#create-a-github-repository" title="Permalink to this headline">#</a></h2>
+<p>Here’s a step-by-step instruction to create a repository (“repo”):</p>
 <ul class="simple">
 <li><p>Go to <a class="reference external" href="https://github.com/">github.com</a> and log in. The page should look something like this:</p></li>
 </ul>
@@ -726,7 +726,7 @@ git config --global user.email you@yourdomain.com
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git add --all <span class="o">&amp;&amp;</span> git commit -m <span class="s2">&quot;added a dummy file to add token&quot;</span> <span class="o">&amp;&amp;</span> git push
 </pre></div>
 </div>
-<p>Once you run the last command, git will require authentication. Type in your github username and paste in your token as a replacement for a password.</p>
+<p>Once you run the last command, Git will require authentication. Type in your GitHub username and paste in your token as a replacement for a password.</p>
 <ul class="simple">
 <li><p>Type in your username (you’ll be prompted to do so.)</p></li>
 <li><p>Paste in the token you copied instead of your password.</p></li>
@@ -776,7 +776,7 @@ git config --global user.email you@yourdomain.com
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Introduction to git</p>
+            <p class="prev-next-title">Introduction to Git</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="add_a_README.html" title="next page">

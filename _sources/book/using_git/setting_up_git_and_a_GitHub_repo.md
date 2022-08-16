@@ -1,8 +1,8 @@
-# Setting up git and GitHub repo
+# Setting up Git and a GitHub repository
 
-## Setting up git on your computer
+## Setting up Git on your computer
 
-You need to tell git which user you are. Write the following commands in your terminal.
+You need to tell Git which user you are. Write the following commands in your terminal:
 
 ```sh
 git config --global user.name your_user_name_spelled_out
@@ -10,9 +10,9 @@ git config --global user.name your_user_name_spelled_out
 git config --global user.email you@yourdomain.com
 ```
 
-## Create a GitHub repository for the course
+## Create a GitHub repository
 
-Here's a step-by-step instruction.
+Here's a step-by-step instruction to create a repository ("repo"):
 
 - Go to [github.com](https://github.com/) and log in. The page should look something like this:
 
@@ -94,7 +94,7 @@ git config --global credential.helper store
 ```sh
 git add --all && git commit -m "added a dummy file to add token" && git push
 ```
-Once you run the last command, git will require authentication. Type in your github username and paste in your token as a replacement for a password.
+Once you run the last command, Git will require authentication. Type in your GitHub username and paste in your token as a replacement for a password.
 
 
 - Type in your username (you'll be prompted to do so.)

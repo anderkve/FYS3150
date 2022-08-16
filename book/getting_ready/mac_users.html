@@ -149,18 +149,18 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Using git and GitHub
+  Using Git and GitHub
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../using_git/introduction_to_git.html">
-   Introduction to git
+   Introduction to Git
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../using_git/setting_up_git_and_a_GitHub_repo.html">
-   Setting up git and GitHub repo
+   Setting up Git and a GitHub repository
   </a>
  </li>
  <li class="toctree-l1">
@@ -546,17 +546,15 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#installation-of-basic-software">
    Installation of basic software
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#m1-mac-users">
-     M1 Mac users
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#additional-useful-command-line-tools">
-   Additional useful command line tools
+  <a class="reference internal nav-link" href="#additional-setup-for-m1-mac-users">
+   Additional setup for M1 Mac users
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-additional-command-line-tools">
+   Install additional command line tools
   </a>
  </li>
 </ul>
@@ -582,17 +580,15 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#installation-of-basic-software">
    Installation of basic software
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#m1-mac-users">
-     M1 Mac users
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#additional-useful-command-line-tools">
-   Additional useful command line tools
+  <a class="reference internal nav-link" href="#additional-setup-for-m1-mac-users">
+   Additional setup for M1 Mac users
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-additional-command-line-tools">
+   Install additional command line tools
   </a>
  </li>
 </ul>
@@ -607,34 +603,35 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="mac-users">
 <h1>Mac users<a class="headerlink" href="#mac-users" title="Permalink to this headline">#</a></h1>
-<p>Here we’ll add info to help Mac users get their system set up for this course.</p>
-<p>Installation of software for C++ can be a little bit of a hazzle on macOS. This page will walk you through the process, step-by-step.</p>
+<p>Installation of software for C++ can be a little bit of a hassle on macOS. This page will walk you through the process, step-by-step.</p>
 <section id="installation-of-basic-software">
 <h2>Installation of basic software<a class="headerlink" href="#installation-of-basic-software" title="Permalink to this headline">#</a></h2>
 <ol>
-<li><p>First install <em>Xcode</em> from the app store. This contains the basic building blocks we need. It installs <em>git</em> and <em>Make</em> and a few other command line tools.</p></li>
-<li><p>Now we’ll install a <em>package manager</em> which we’ll use install many other packages. Go to <a class="reference external" href="https://brew.sh">Homebrew</a> and follow the installation instruction there. It’s easy, just copy the command they provide there and run it in your terminal.</p></li>
-<li><p>Now, run the following command in your terminal</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>brew install armadillo libomp git-gui
+<li><p>First install <em>Xcode</em> from the app store. This contains the basic building blocks we need. It installs <em>Git</em> and <em>Make</em> and a few other command line tools. (Note that Xcode unfortunately is a very large package – over 12 GBs, and may even require substantially more available disk space than this for the installation.)</p></li>
+<li><p>Now we’ll install a <em>package manager</em> which we’ll use install many other packages. Go to <a class="reference external" href="https://brew.sh">Homebrew</a> and follow the installation instructions there. It’s easy, just copy the command they provide there and run it in your terminal.</p></li>
+<li><p>Now, run the following command in your terminal to install some additional C++ libraries we’ll use (Armadillo and OpenMP).</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>brew install armadillo libomp
 </pre></div>
 </div>
 </li>
 </ol>
-<section id="m1-mac-users">
-<h3>M1 Mac users<a class="headerlink" href="#m1-mac-users" title="Permalink to this headline">#</a></h3>
-<p>If you’ve bought a Mac after November 2020, then you might have a so-called M1 Mac. In that case, Homebrew defaults its installation to a different path than the the Intel based ones do. Therefore, in order for the compiler to find Armadillo, you must copy the installed files to the correct directory. This is easy, simply copy and run the following commands and type in your password if prompted:</p>
+</section>
+<section id="additional-setup-for-m1-mac-users">
+<h2>Additional setup for M1 Mac users<a class="headerlink" href="#additional-setup-for-m1-mac-users" title="Permalink to this headline">#</a></h2>
+<p>If your Mac is sufficiently new (since late 2020), then you might have a so-called “M1 Mac”, that is a Mac based on the Apple M1 processor. (An alternative name for these processors is “Apple silicon”.) Older Macs are based on Intel processors.</p>
+<p>To check if you have an M1-based or Intel-based Mac, click the Apple logo in the top-left corner, select “About This Mac”, and see what it says under “Chip”. (See an example <a class="reference external" href="https://support.apple.com/en-us/HT211814">here</a>.)</p>
+<p>Homebrew uses a different default installation directory on M1 Macs compared to on the older Intel-based Macs. So in order for the C++ compiler to find the Armadillo library, you must copy the installed files to the correct directory. This is easy, simply copy and run the following commands and type your password if prompted:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo cp -r /opt/homebrew/Cellar/armadillo/10.6.2/lib/* /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib
 </pre></div>
 </div>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo cp -r /opt/homebrew/Cellar/armadillo/10.6.2/include/armadillo* /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
 </pre></div>
 </div>
-<p>This should do the trick. Please open a Github issue in case it doesn’t work for you.</p>
+<p>This should do the trick. Please open an issue on our GitHub page if this doesn’t work for you.</p>
 </section>
-</section>
-<section id="additional-useful-command-line-tools">
-<h2>Additional useful command line tools<a class="headerlink" href="#additional-useful-command-line-tools" title="Permalink to this headline">#</a></h2>
-<p>There’s a plethora of useful command line tools for macOS that can be useful.</p>
+<section id="install-additional-command-line-tools">
+<h2>Install additional command line tools<a class="headerlink" href="#install-additional-command-line-tools" title="Permalink to this headline">#</a></h2>
+<p>There’s a plethora of command line tools that can be useful. Here are som examples:</p>
 <ol class="simple">
 <li><p><em>wget</em> and <em>curl</em> are command line tools that allow you to download from the web using the command line.</p></li>
 <li><p><em>htop</em> is a powerful task manager that also displays the work each thread uses graphically in your terminal. This is a useful tool when you’re code is parallelized (later in the course) so that you can monitor the work each thread does.</p></li>
