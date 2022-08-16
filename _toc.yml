@@ -17,7 +17,7 @@ parts:
       - file: book/using_the_terminal/basics
       - file: book/using_the_terminal/keyboard_shortcuts
 
-  - caption: Using git and GitHub
+  - caption: Using Git and GitHub
     chapters:
       - file: book/using_git/introduction_to_git
       - file: book/using_git/setting_up_git_and_a_GitHub_repo
