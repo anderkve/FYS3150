@@ -1,10 +1,7 @@
 # Project 1
 
-This project is not published yet.
+## Practicalities
 
-<!-- ## Practicalities
-
-- **Deadline**: Monday, September 13.
 - **Format:**
   - A pdf document, typeset in LaTeX, with answers to all the problems below. You deliver the pdf on Canvas.
   - Code (with comments, of course) on a GitHub repo, with the repo link provided in the pdf documentet.
@@ -21,7 +18,7 @@ This project is not published yet.
 
 - If you're not familiar with using the terminal, we recommend taking the time to work through the examples on the terminal [basics](../using_the_terminal/basics.md) page, and look at the [keyboard shortcuts](../using_the_terminal/keyboard_shortcuts.md).
 
-- Similarly, if you've not used git before, it's a good idea to learn some of the basics before jumping into the project. See the links on the left-hand side.
+- Similarly, if you've not used Git before, it's a good idea to learn the basics before jumping into the project. See the links on the left-hand side.
 
 - The most important C++ aspects for this project are:
   - basic C++ program structure
@@ -30,7 +27,7 @@ This project is not published yet.
   - vectors/arrays (examples of *containers*)
   - writing output to screen and/or file
 
-  We will discuss these topics in the lectures, and our discussions there will largely be based on the "Introduction to C++" pages on the left (which are currently under development.)
+  We will discuss these topics in the lectures, and our discussions there will largely be based on the "Introduction to C++" pages on the left.
 
 
 ## Introduction
@@ -236,7 +233,3 @@ int main ()
   // ...
 }
 ```
-
-
-(There may appear more useful code snippets here...)
- -->
