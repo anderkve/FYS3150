@@ -7,6 +7,10 @@ For the examples below we will often need some dummy directories and files. To c
 
 Don't worry if you don't yet understand what's going on in these preparation commands --- you'll learn all of it soon. After each example we also provide a single-line command that deletes the dummy files we've just created.
 
+```{note}
+The [Unix shell](https://en.wikipedia.org/wiki/Unix_shell) comes in a few different versions, with `bash` and `zsh` being among the most widely used. Most commands are identical across different shells, but in some cases there are small differences. The commands listed on our course pages have generally been tested on `bash`. If you are running macOS 10.15 (Catalina) or later, you probably are running `zsh` by default. If so, it's useful to read the [Choosing a Unix shell](sec:choosing_shell) subsection before you continue.
+```
+
 We will start by creating a directory `compphys_examples` in our home directory and go to that directory. This directory will be starting point for the examples below.
 
 ```sh
