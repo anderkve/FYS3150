@@ -543,6 +543,11 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#choosing-a-unix-shell">
+   Choosing a Unix shell
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#installation-of-basic-software">
    Installation of basic software
   </a>
@@ -577,6 +582,11 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#choosing-a-unix-shell">
+   Choosing a Unix shell
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#installation-of-basic-software">
    Installation of basic software
   </a>
@@ -603,9 +613,28 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="mac-users">
 <h1>Mac users<a class="headerlink" href="#mac-users" title="Permalink to this headline">#</a></h1>
-<p>Installation of software for C++ can be a little bit of a hassle on macOS. This page will walk you through the process, step-by-step.</p>
+<section id="choosing-a-unix-shell">
+<h2>Choosing a Unix shell<a class="headerlink" href="#choosing-a-unix-shell" title="Permalink to this headline">#</a></h2>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Unix_shell">Unix shell</a> (Unix command line interface) comes in a few different versions, with <code class="docutils literal notranslate"><span class="pre">bash</span></code> and <code class="docutils literal notranslate"><span class="pre">zsh</span></code> being among the most widely used. Most commands are identical across different shells, but in some cases there are small differences. One <a class="reference external" href="https://superuser.com/questions/420525/scp-with-zsh-no-matches-found">example</a> is commands that use <a class="reference internal" href="../using_the_terminal/basics.html#sec-wildcards"><span class="std std-ref">wildcards</span></a> like <code class="docutils literal notranslate"><span class="pre">*</span></code>, where <code class="docutils literal notranslate"><span class="pre">zsh</span></code> might require you to <a class="reference external" href="https://superuser.com/a/1212433">add quotation marks</a> around the command arguments, or <a class="reference external" href="https://superuser.com/a/625864">“escape” the wildcard</a> by writing <code class="docutils literal notranslate"><span class="pre">\*</span></code> instead of <code class="docutils literal notranslate"><span class="pre">*</span></code>.</p>
+<p>The commands listed on our course pages have generally been tested on <code class="docutils literal notranslate"><span class="pre">bash</span></code>, which is the default shell on Ubuntu Linux. It was also the default on Mac until macOS 10.15 Catalina, when Mac switched to use <code class="docutils literal notranslate"><span class="pre">zsh</span></code> as default.</p>
+<p>To see which shell you are currently running, open a terminal and run the command</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nv">$0</span>
+</pre></div>
+</div>
+<p>This will give the path to the shell you are running, which will probably be <code class="docutils literal notranslate"><span class="pre">/bin/bash</span></code> or <code class="docutils literal notranslate"><span class="pre">/bin/zsh</span></code>.</p>
+<p>It’s easy to change the default shell – have a look <a class="reference external" href="https://support.apple.com/en-us/HT208050">here</a> for point-and-click instructions, or simply run the command</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>chsh -s /bin/bash
+</pre></div>
+</div>
+<p>to set <code class="docutils literal notranslate"><span class="pre">bash</span></code> as default, or run</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>chsh -s /bin/zsh
+</pre></div>
+</div>
+<p>to set <code class="docutils literal notranslate"><span class="pre">zsh</span></code> as default.</p>
+</section>
 <section id="installation-of-basic-software">
 <h2>Installation of basic software<a class="headerlink" href="#installation-of-basic-software" title="Permalink to this headline">#</a></h2>
+<p>Installation of software for C++ can be a little bit of a hassle on macOS. Here we’ll try to walk you through the process, step-by-step.</p>
 <ol>
 <li><p>First install <em>Xcode</em> from the app store. This contains the basic building blocks we need. It installs <em>Git</em> and <em>Make</em> and a few other command line tools. (Note that Xcode unfortunately is a very large package – over 12 GBs, and may even require substantially more available disk space than this for the installation.)</p></li>
 <li><p>Now we’ll install a <em>package manager</em> which we’ll use install many other packages. Go to <a class="reference external" href="https://brew.sh">Homebrew</a> and follow the installation instructions there. It’s easy, just copy the command they provide there and run it in your terminal.</p></li>

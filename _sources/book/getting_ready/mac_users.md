@@ -1,8 +1,37 @@
 # Mac users
 
-Installation of software for C++ can be a little bit of a hassle on macOS. This page will walk you through the process, step-by-step.
+## Choosing a Unix shell
+
+The [Unix shell](https://en.wikipedia.org/wiki/Unix_shell) (Unix command line interface) comes in a few different versions, with `bash` and `zsh` being among the most widely used. Most commands are identical across different shells, but in some cases there are small differences. One [example](https://superuser.com/questions/420525/scp-with-zsh-no-matches-found) is commands that use [wildcards](sec:wildcards) like `*`, where `zsh` might require you to [add quotation marks](https://superuser.com/a/1212433) around the command arguments, or ["escape" the wildcard](https://superuser.com/a/625864) by writing `\*` instead of `*`.
+
+The commands listed on our course pages have generally been tested on `bash`, which is the default shell on Ubuntu Linux. It was also the default on Mac until macOS 10.15 Catalina, when Mac switched to use `zsh` as default.
+
+To see which shell you are currently running, open a terminal and run the command 
+
+```sh
+echo $0
+```
+This will give the path to the shell you are running, which will probably be `/bin/bash` or `/bin/zsh`. 
+
+It's easy to change the default shell -- have a look [here](https://support.apple.com/en-us/HT208050) for point-and-click instructions, or simply run the command 
+
+```sh
+chsh -s /bin/bash
+```
+
+to set `bash` as default, or run 
+
+```sh
+chsh -s /bin/zsh
+```
+
+to set `zsh` as default.
+
+
 
 ## Installation of basic software
+
+Installation of software for C++ can be a little bit of a hassle on macOS. Here we'll try to walk you through the process, step-by-step.
 
 1. First install *Xcode* from the app store. This contains the basic building blocks we need. It installs *Git* and *Make* and a few other command line tools. (Note that Xcode unfortunately is a very large package -- over 12 GBs, and may even require substantially more available disk space than this for the installation.)
 
