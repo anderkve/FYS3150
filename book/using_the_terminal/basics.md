@@ -120,7 +120,7 @@ cd $HOME/compphys_examples && rm -r delete
 *With great power comes great responsibility!* If you delete or overwrite a file/directory by mistake, it is basically gone. (Unless it's a file that is tracked by `git` --- then it's very easy to restore it. You will learn about that in the git section.) So it can be wise to take a second look before executing a `rm` or `mv` command. For instance, you *never ever* want to do the mistake of accidentally running the command `rm -r /`, which would delete *everything* your user has access to. Another dangerous example is `rm -r *`, which would delete everything in the current directory and all subdirectories --- so you want to make very sure you're in the correct directory... (See below for an explanation of the wildcard `*`.) 
 ```
 
-
+(sec:wildcards)=
 ## Using wildcards
 
 **Preparation command:**
