@@ -3,9 +3,13 @@
 
 On this page you will learn some basics (and some not-so-basics) of working from the **terminal**, a.k.a. the **shell**, a.k.a. the **command line**, a.k.a. the **console**. Typing commands instead of the usual point-and-click may feel a bit clumsy and old-fashioned at first. But if you stick with it, you'll soon realize why the terminal is a standard tool for code developers, computational scientists and anyone else doing fancy stuff with computers.
 
-For the examples below we will often need some dummy directories and files. To create/download these files and directories we'll provide one-line *preparation commands* that you can simply copy and paste into the terminal. To paste in the terminal, right-click or press **ctrl-shift-v** (Linux) or **cmd-c** (MacOS). To execute a command, simply hit 'enter'. 
+For the examples below we will often need some dummy directories and files. To create/download these files and directories we'll provide one-line *preparation commands* that you can simply copy and paste into the terminal. To paste in the terminal, right-click or press **ctrl-shift-v** (Linux) or **cmd-c** (macOS). To execute a command, simply hit 'enter'. 
 
 Don't worry if you don't yet understand what's going on in these preparation commands --- you'll learn all of it soon. After each example we also provide a single-line command that deletes the dummy files we've just created.
+
+```{note}
+The [Unix shell](https://en.wikipedia.org/wiki/Unix_shell) comes in a few different versions, with `bash` and `zsh` being among the most widely used. Most commands are identical across different shells, but in some cases there are small differences. The commands listed on our course pages have generally been tested on `bash`. If you are running macOS 10.15 (Catalina) or later, you probably are running `zsh` by default. If so, it's useful to read the [Choosing a Unix shell](sec:choosing_shell) subsection before you continue.
+```
 
 We will start by creating a directory `compphys_examples` in our home directory and go to that directory. This directory will be starting point for the examples below.
 

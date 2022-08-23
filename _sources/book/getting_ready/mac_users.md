@@ -1,5 +1,6 @@
 # Mac users
 
+(sec:choosing_shell)=
 ## Choosing a Unix shell
 
 The [Unix shell](https://en.wikipedia.org/wiki/Unix_shell) (Unix command line interface) comes in a few different versions, with `bash` and `zsh` being among the most widely used. Most commands are identical across different shells, but in some cases there are small differences. One [example](https://superuser.com/questions/420525/scp-with-zsh-no-matches-found) is commands that use [wildcards](sec:wildcards) like `*`, where `zsh` might require you to [add quotation marks](https://superuser.com/a/1212433) around the command arguments, or ["escape" the wildcard](https://superuser.com/a/625864) by writing `\*` instead of `*`.
