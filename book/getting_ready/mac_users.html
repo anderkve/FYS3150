@@ -649,14 +649,19 @@ title="Print to PDF"
 <h2>Additional setup for M1 Mac users<a class="headerlink" href="#additional-setup-for-m1-mac-users" title="Permalink to this headline">#</a></h2>
 <p>If your Mac is sufficiently new (since late 2020), then you might have a so-called “M1 Mac”, that is a Mac based on the Apple M1 processor. (An alternative name for these processors is “Apple silicon”.) Older Macs are based on Intel processors.</p>
 <p>To check if you have an M1-based or Intel-based Mac, click the Apple logo in the top-left corner, select “About This Mac”, and see what it says under “Chip”. (See an example <a class="reference external" href="https://support.apple.com/en-us/HT211814">here</a>.)</p>
-<p>Homebrew uses a different default installation directory on M1 Macs compared to on the older Intel-based Macs. So in order for the C++ compiler to find the Armadillo library, you must copy the installed files to the correct directory. This is easy, simply copy and run the following commands and type your password if prompted:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo cp -r /opt/homebrew/Cellar/armadillo/10.6.2/lib/* /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib
+<p>Homebrew uses a different default installation directory on M1 Macs compared to on the older Intel-based Macs. So in order for the C++ compiler to find the Armadillo library, you must copy the installed files to the correct directory.</p>
+<p>First, check which version of Armadillo that Homebrew installed on your system by listing the content of the directory <code class="docutils literal notranslate"><span class="pre">/opt/homebrew/Cellar/armadillo</span></code>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ls /opt/homebrew/Cellar/armadillo
 </pre></div>
 </div>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo cp -r /opt/homebrew/Cellar/armadillo/10.6.2/include/armadillo* /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
+<p>Here you should see a directory with the version number, e.g. <code class="docutils literal notranslate"><span class="pre">10.6.2</span></code> or <code class="docutils literal notranslate"><span class="pre">11.2.3_1</span></code> or similar. Now run the copy commands below, adjusted to use your Armadillo version number in the paths. For version <code class="docutils literal notranslate"><span class="pre">11.2.3_1</span></code> the commands are:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo cp -r /opt/homebrew/Cellar/armadillo/11.2.3_1/lib/* /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib
 </pre></div>
 </div>
-<p>This should do the trick. Please open an issue on our GitHub page if this doesn’t work for you.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo cp -r /opt/homebrew/Cellar/armadillo/11.2.3_1/include/armadillo* /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
+</pre></div>
+</div>
+<p>Since we use <code class="docutils literal notranslate"><span class="pre">sudo</span></code> here you will (probably) have to type in your password.</p>
 </section>
 <section id="install-additional-command-line-tools">
 <h2>Install additional command line tools<a class="headerlink" href="#install-additional-command-line-tools" title="Permalink to this headline">#</a></h2>

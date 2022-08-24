@@ -50,17 +50,26 @@ If your Mac is sufficiently new (since late 2020), then you might have a so-call
 
 To check if you have an M1-based or Intel-based Mac, click the Apple logo in the top-left corner, select "About This Mac", and see what it says under "Chip". (See an example [here](https://support.apple.com/en-us/HT211814).)
 
-Homebrew uses a different default installation directory on M1 Macs compared to on the older Intel-based Macs. So in order for the C++ compiler to find the Armadillo library, you must copy the installed files to the correct directory. This is easy, simply copy and run the following commands and type your password if prompted:
+Homebrew uses a different default installation directory on M1 Macs compared to on the older Intel-based Macs. So in order for the C++ compiler to find the Armadillo library, you must copy the installed files to the correct directory. 
+
+First, check which version of Armadillo that Homebrew installed on your system by listing the content of the directory `/opt/homebrew/Cellar/armadillo`:
 
 ```sh
-sudo cp -r /opt/homebrew/Cellar/armadillo/10.6.2/lib/* /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib
+ls /opt/homebrew/Cellar/armadillo
+```
+
+Here you should see a directory with the version number, e.g. `10.6.2` or `11.2.3_1` or similar. Now run the copy commands below, adjusted to use your Armadillo version number in the paths. For version `11.2.3_1` the commands are:
+
+```sh
+sudo cp -r /opt/homebrew/Cellar/armadillo/11.2.3_1/lib/* /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib
 ```
 
 ```sh
-sudo cp -r /opt/homebrew/Cellar/armadillo/10.6.2/include/armadillo* /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
+sudo cp -r /opt/homebrew/Cellar/armadillo/11.2.3_1/include/armadillo* /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
 ```
 
-This should do the trick. Please open an issue on our GitHub page if this doesn't work for you.
+Since we use `sudo` here you will (probably) have to type in your password. 
+
 
 
 ## Install additional command line tools
