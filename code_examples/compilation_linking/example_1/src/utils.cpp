@@ -3,7 +3,7 @@
 //
 
 // By including utils.hpp, we also include all 
-// the headers included in utils.hpp (<armadillo>, <sstream>, ...)
+// the headers included in utils.hpp (<string>, <vector>, <sstream>, ...)
 #include "utils.hpp"
 
 
@@ -16,8 +16,8 @@ std::string scientific_format(const double d, const int width, const int prec)
 }
 
 
-// Return a string with an armadillo vector in scientific notation
-std::string scientific_format(const arma::vec& v, const int width, const int prec)
+// Return a string with a vector<double> in scientific notation
+std::string scientific_format(const std::vector<double>& v, const int width, const int prec)
 {
   std::stringstream ss;
   for(double elem : v)

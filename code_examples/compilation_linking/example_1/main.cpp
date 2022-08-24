@@ -1,3 +1,6 @@
+// A simple program that prints two numbers in different ways.
+// Intended for demonstration of compilation and linking.
+
 #include <iostream>
 #include "utils.hpp"
 
