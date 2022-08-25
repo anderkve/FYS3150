@@ -8,10 +8,10 @@ This project is not published yet.
 - **Deadline**: Monday, September 27, 23:59.
 - **Format:** 
   - A pdf document, typeset in LaTeX, with answers to all the problems below. You deliver the pdf on Canvas.
-  - Code (with comments, of course) on a GitHub repo, with the repo link provided in the pdf documentet.
+  - Code (with comments, of course) on a GitHub repo, with the repo link provided in the pdf document.
   - You *must* deliver via your group on Canvas (even if you are working alone).
 
-- **Not a complete report:** For project 2 we do not require you to write a proper scientific report --- only a document with an answer for each problem. But the quality of the presentation still matters, of course. So pay attention to figures, figure captions, grammar, etc.
+- **Not a complete report:** For project 2, we do not require you to write a proper scientific report --- only a document with an answer for each problem. But the quality of the presentation still matters, of course. So pay attention to figures, figure captions, grammar, etc.
 
 - **Collaboration:** We *strongly* encourage you to collaborate with others, in groups up to four students. The group hands in a single pdf. Remember to list everyone's name in the pdf.
 

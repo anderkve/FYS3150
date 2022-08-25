@@ -40,7 +40,7 @@ for (int i = 0; i <= 100; i++){
 ```
 
 ### Example 2
-Let's look a nested loop. We'll implement matrix multiplication `C = AB`. Assume `A` is an (n x m) matrix, `B` is an (m x n) matrix. Then `C` is an (n x n) matrix. The for-loop explicitly implementing this can look as follows (using Armadillo matrices):
+Let's look at a nested loop. We'll implement matrix multiplication `C = AB`. Assume `A` is an (n x m) matrix, `B` is an (m x n) matrix. Then `C` is an (n x n) matrix. The for-loop explicitly implementing this can look as follows (using Armadillo matrices):
 
 ```c++
 for (int j = 0; j < n; j++){
@@ -55,7 +55,7 @@ for (int j = 0; j < n; j++){
 
 ## While loops
 
-While loops is very useful if we can't predict the precise number of iterations needed to perform some task. Instead, we specify a condition that will terminate the loop once the condition is false.
+While loops are very useful if we can't predict the precise number of iterations needed to perform some task. Instead, we specify a condition that will terminate the loop once the condition is false.
 
 
 ### Syntax

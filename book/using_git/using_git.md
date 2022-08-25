@@ -23,7 +23,7 @@ We recommend you create a repository online on [GitHub](https://github.com/) and
 git clone https_link
 ```
 
-where `https_link` is simply the URL for your repo on GitHub.
+where `https_link` is the URL for your repo on GitHub.
 
 
 ## Making changes
@@ -259,7 +259,7 @@ The name `origin` is just the standard name assigned to the remote repo, i.e. th
 
 ### Push your changes to the remote
 
-When you've performed local changes to a branch, you can push it to the remote using
+When you've performed local changes to a branch, you can push them to the remote using
 
 ```sh
 git push origin branchname

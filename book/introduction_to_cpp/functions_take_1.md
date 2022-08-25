@@ -1,6 +1,6 @@
 # Functions, take 1
 
-A **function** in C++ is a code block which is executed only when the function is called. A function takes **arguments**, performs some action and usually returns and **output**.
+A **function** in C++ is a code block which is executed only when the function is called. A function takes **arguments**, performs some action, and usually returns an **output**.
 
 ## Creating a function
 
@@ -22,7 +22,7 @@ If you declare a function after the main() function in C++, you will get an erro
 
 ## Separation of declaration and definition
 
-As noted, we can't declare a function after the `main()` function of a C++ program. We can however separate the two. What this means is
+As noted, we can't declare a function after the `main()` function of a C++ program. We can, however, separate the two. What this means is
 - Declare the function *before* `main()`. This is called **forward declaration** if a definition isn't provided simultaneously.
 - Provide a definition of the function *after* `main()`.
 
@@ -44,7 +44,7 @@ type function_name(type1 input1, ..., typeN inputN){
 
 ## Example 1: single argument
 
-Say we want to implements the function `f(x) = x*x` in C++ and call it once in a `main()` program. A short program for this looks like
+Say we want to implement the function `f(x) = x*x` in C++ and call it once in a `main()` program. A short program for this looks like
 
 ```c++
 double f(double x); //Declaration

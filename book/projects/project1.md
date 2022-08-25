@@ -4,9 +4,9 @@
 
 - **Format:**
   - A pdf document, typeset in LaTeX, with answers to all the problems below. You deliver the pdf on Canvas.
-  - Code (with comments, of course) on a GitHub repo, with the repo link provided in the pdf documentet.
+  - Code (with comments, of course) on a GitHub repo, with the repo link provided in the pdf document.
 
-- **Not a complete report:** For project 1 we do not require you to write a proper scientific report --- only a document with an answer for each problem. But the quality of the presentation still matters, of course. So pay attention to figures, figure captions, grammar, etc.
+- **Not a complete report:** For project 1, we do not require you to write a proper scientific report --- only a document with an answer for each problem. But the quality of the presentation still matters, of course. So pay attention to figures, figure captions, grammar, etc.
 
 - **Collaboration:** If you are collaborating with others (*and we hope you are!*) you *must* register a group on Canvas. The group hands in a single pdf. Remember to list everyone's name in the pdf.
 
@@ -22,7 +22,7 @@
 
 - The most important C++ aspects for this project are:
   - basic C++ program structure
-  - compiliation and linking
+  - compilation and linking
   - functions
   - vectors/arrays (examples of *containers*)
   - writing output to screen and/or file
@@ -31,7 +31,7 @@
 
 
 ## Introduction
-The overall topic of this project is numerical solution of the one-dimensional Poisson equation. This is a second-order differential equation that shows up in several areas of physics, e.g. electrostatics. In future projects we will pay close attention to scaling of dimensionfull physics equations, but for this first project we start directly from the differential equation *after* scaling to dimensionless variables.
+The overall topic of this project is numerical solution of the one-dimensional Poisson equation. This is a second-order differential equation that shows up in several areas of physics, e.g. electrostatics. In future projects, we will pay close attention to scaling of dimensionfull physics equations - but for this first project, we start directly from the differential equation *after* scaling to dimensionless variables.
 
 The one-dimensional Poisson equation can be written as
 
@@ -75,7 +75,7 @@ Derive a discretized version of the Possion equation. You don't have to show eve
 
 ### Problem 4
 
-Show that you can rewrite your discretized equation as a matrix equation on the form
+Show that you can rewrite your discretized equation as a matrix equation of the form
 
 $$
 \mathbf{A} \vec{v} = \vec{g}

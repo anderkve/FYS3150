@@ -47,7 +47,7 @@ The pointer stores the memory address of a variable as its value. But we can sti
 type1 variable_value = *pointer_to_variable;
 ```
 
-Expanding the example from last section:
+Expanding the example from the last section:
 
 ```c++
 double x = 2; //x is assigned the value 2.

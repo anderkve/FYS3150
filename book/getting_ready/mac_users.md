@@ -4,9 +4,9 @@ Installation of software for C++ can be a little bit of a hassle on macOS. This 
 
 ## Installation of basic software
 
-1. First install *Xcode* from the app store. This contains the basic building blocks we need. It installs *Git* and *Make* and a few other command line tools. (Note that Xcode unfortunately is a very large package -- over 12 GBs, and may even require substantially more available disk space than this for the installation.)
+1. First, install *Xcode* from the app store. This contains the basic building blocks we need. It installs *Git* and *Make*, along with a few other command line tools. (Note that Xcode unfortunately is a very large package -- over 12 GBs, and may even require substantially more available disk space than this for the installation.)
 
-2. Now we'll install a *package manager* which we'll use install many other packages. Go to [Homebrew](https://brew.sh) and follow the installation instructions there. It's easy, just copy the command they provide there and run it in your terminal.
+2. Now we'll install a *package manager* which we'll use to install many other packages. Go to [Homebrew](https://brew.sh) and follow the installation instructions there. It's easy, just copy the command they provide there and run it in your terminal.
 
 
 3. Now, run the following command in your terminal to install some additional C++ libraries we'll use (Armadillo and OpenMP).
@@ -23,11 +23,11 @@ To check if you have an M1-based or Intel-based Mac, click the Apple logo in the
 Homebrew uses a different default installation directory on M1 Macs compared to on the older Intel-based Macs. So in order for the C++ compiler to find the Armadillo library, you must copy the installed files to the correct directory. This is easy, simply copy and run the following commands and type your password if prompted:
 
 ```sh
-sudo cp -r /opt/homebrew/Cellar/armadillo/10.6.2/lib/* /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib
+sudo cp -r /opt/homebrew/Cellar/armadillo/11.2.3_1/lib/* /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib
 ```
 
 ```sh
-sudo cp -r /opt/homebrew/Cellar/armadillo/10.6.2/include/armadillo* /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
+sudo cp -r /opt/homebrew/Cellar/armadillo/11.2.3_1/include/armadillo* /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
 ```
 
 This should do the trick. Please open an issue on our GitHub page if this doesn't work for you.
@@ -35,7 +35,7 @@ This should do the trick. Please open an issue on our GitHub page if this doesn'
 
 ## Install additional command line tools
 
-There's a plethora of command line tools that can be useful. Here are som examples:
+There's a plethora of command line tools that can be useful. Here are some examples:
 
 1. *wget* and *curl* are command line tools that allow you to download from the web using the command line.
 

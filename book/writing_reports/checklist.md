@@ -1,6 +1,6 @@
 # Checklist for reports
 
-Writing a good scientific report is difficult and requires attention to a lot of details. On this page we will collect some of the things that are useful to check before handing in a report. Note that this list is not meant to be exhaustive --- it's just a convenient reminder for some of the more common problems.
+Writing a good scientific report is difficult and requires attention to a lot of details. On this page, we will collect some of the things that are useful to check before handing in a report. Note that this list is not meant to be exhaustive --- it's just a convenient reminder for some of the more common problems.
 
 
 - **Units:** Check that all the numbers and plot axes that should have units actually have units.
@@ -22,7 +22,7 @@ Writing a good scientific report is difficult and requires attention to a lot of
 
 - **Avoid empty lines after equations:** Avoid empty lines after equations in your .tex file, unless you actually want to start a new paragraph in your text. (LaTeX will indent the text following an empty line.) If you just want some "air" surrounding the equations in your .tex file, use empty comment lines.
 
-- **Quotation marks:** To get correct quotation marks you should use LaTeX code like this
+- **Quotation marks:** To get correct quotation marks, you should use LaTeX code like this
 
   ```
   Writing a report is ``fun''.
@@ -36,7 +36,7 @@ Writing a good scientific report is difficult and requires attention to a lot of
 
 - **Consistent mathematical notation:** Make sure the mathematical notation is consistent. For instance, check that all vector quantities are typeset like `\mathbf{x}` or `\vec{x}`.
 
-- **Explain all mathematical symbols:** The first time a new symbol appears in an equation the surrounding text should specify what it means.
+- **Explain all mathematical symbols:** The first time a new symbol appears in an equation, the surrounding text should specify what it means.
 
 - **Text in math mode:** Regular words that appear in mathematical expressions (i.e. in math mode in LaTeX) should be typeset with `\text{}`. *Correct:* `y_{\text{analytical}}`. *Wrong:* `y_{analytical}`
 
