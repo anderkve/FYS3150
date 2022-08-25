@@ -26,7 +26,7 @@ to set `bash` as default, or run
 chsh -s /bin/zsh
 ```
 
-to set `zsh` as default.
+to set `zsh` as default. Note that you probably have to close and restart your terminal for this change to take effect.
 
 
 
