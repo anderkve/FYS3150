@@ -543,16 +543,30 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#declaration-of-variables">
-   Declaration of Variables
+  <a class="reference internal nav-link" href="#c-cares-a-lot-about-variable-types">
+   C++ cares a lot about variable types
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#declaration-of-multiple-variables">
-     Declaration of multiple variables:
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#declaration-of-variables">
+   Declaration of variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-does-const-mean">
+   What does
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     const
+    </span>
+   </code>
+   mean?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scope-where-does-my-variable-live">
+   Scope – where does my variable live?
+  </a>
  </li>
 </ul>
 
@@ -574,16 +588,30 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#declaration-of-variables">
-   Declaration of Variables
+  <a class="reference internal nav-link" href="#c-cares-a-lot-about-variable-types">
+   C++ cares a lot about variable types
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#declaration-of-multiple-variables">
-     Declaration of multiple variables:
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#declaration-of-variables">
+   Declaration of variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-does-const-mean">
+   What does
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     const
+    </span>
+   </code>
+   mean?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scope-where-does-my-variable-live">
+   Scope – where does my variable live?
+  </a>
  </li>
 </ul>
 
@@ -597,39 +625,111 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="variables">
 <h1>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">#</a></h1>
-<p>Variables are containers for storing data.</p>
-<p>There are several <strong>types</strong> of variables. We’ll list a few here:</p>
+<p>We use variables to hold information in memory. There is a large number of different <strong>types</strong> of variables – here we’ll only list some of the most basic and common types:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code> stores integers.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code> stores integers (positive or negative).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">unsigned</span> <span class="pre">int</span></code> stores non-negative integers.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">double</span></code> stores floating point numbers (kind of like numbers on the real axis, but limited by machine precision).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">char</span></code> stores single characters, for instance the letter <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">string</span></code> stores text strings, e.g it can store <code class="docutils literal notranslate"><span class="pre">&quot;Hello</span> <span class="pre">world!&quot;</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">bool</span></code> stores one of either two states: <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bool</span></code> stores one of two states: <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">char</span></code> stores single characters, for instance the letter ‘a’.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">std::string</span></code> stores text strings, e.g it can store “Hello world!”.</p></li>
 </ul>
-<section id="declaration-of-variables">
-<h2>Declaration of Variables<a class="headerlink" href="#declaration-of-variables" title="Permalink to this headline">#</a></h2>
-<p><strong>Declaration</strong> means to create a variable. We must specify a <strong>type</strong> and a variable name, called an <strong>identifier</strong>. Optionally we can assign a value to the variable. The generic syntax is</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">type</span><span class="w"> </span><span class="n">variable_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w"></span>
+<p>We’ll encounter many more variable types throughout the course – and also make some new types (classes) ourselves.</p>
+<section id="c-cares-a-lot-about-variable-types">
+<h2>C++ cares a lot about variable types<a class="headerlink" href="#c-cares-a-lot-about-variable-types" title="Permalink to this headline">#</a></h2>
+<p>In Python one can do crazy stuff like e.g. changing a variable from an integer to a string like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Oh, I&#39;m a string now!&quot;</span>
 </pre></div>
 </div>
-<p>For example,</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
-</pre></div>
-</div>
-<p>declared a variable named <code class="docutils literal notranslate"><span class="pre">x</span></code> assigned the value <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p>
-<p>As stated, we need not specify the value of the declared variable. Statements like</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">type</span><span class="w"> </span><span class="n">variable_name</span><span class="p">;</span><span class="w"></span>
-</pre></div>
-</div>
-<p>are perfectly legitimate. You can assign a value to the declared variable at later point in the code. However, it’s considered good practice to declare the variable as close to its assignment as possible.</p>
-<section id="declaration-of-multiple-variables">
-<h3>Declaration of multiple variables:<a class="headerlink" href="#declaration-of-multiple-variables" title="Permalink to this headline">#</a></h3>
-<p>We can declare multiple variables at once. For example</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">;</span><span class="w"></span>
-</pre></div>
-</div>
-<p>This declares three variables <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">z</span></code>. It only assigns <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">0</span></code>, while the other two are currently not assigned a specific value by us.</p>
+<p>In C++ this is not allowed – you would have to use two different variables, one declared to be of type <code class="docutils literal notranslate"><span class="pre">int</span></code> and one declared to be of type <code class="docutils literal notranslate"><span class="pre">std::string</span></code>. So let’s discuss variable declarations.</p>
 </section>
+<section id="declaration-of-variables">
+<h2>Declaration of variables<a class="headerlink" href="#declaration-of-variables" title="Permalink to this headline">#</a></h2>
+<p><strong>Declaration</strong> means to create a new variable by specifying a <strong>type</strong> and a variable name (<strong>identifier</strong>). A few examples of declarations:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">d</span><span class="p">;</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Now that we have some declared variables, we can assign some <strong>values</strong> to them in the way you’d expect:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14</span><span class="p">;</span><span class="w"></span>
+<span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hi there!;</span>
+</pre></div>
+</div>
+<p>Often it is useful to do both the declaration and the value assignment as one code statement, like in these examples:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14</span><span class="p">;</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hi there!;</span>
+</pre></div>
+</div>
+<p>We can also declare multiple variables at once:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Here we declare three variables <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">z</span></code> to be of type double, but only assign a specific value to the variable <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+</section>
+<section id="what-does-const-mean">
+<h2>What does <code class="docutils literal notranslate"><span class="pre">const</span></code> mean?<a class="headerlink" href="#what-does-const-mean" title="Permalink to this headline">#</a></h2>
+<p>In C++ code you will quite frequently see the word <code class="docutils literal notranslate"><span class="pre">const</span></code> in variable declarations, e.g.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">planet_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Earth&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">9.8</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This specifies that these variables hold <em>constant</em> values, i.e. the variables are never never allowed to change. If you try to do so, e.g. like this</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">9.8</span><span class="p">;</span><span class="w"></span>
+<span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.6</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>you will get a compilation error. Declaring variables to be <code class="docutils literal notranslate"><span class="pre">const</span></code> can help to</p>
+<ul class="simple">
+<li><p>communicate to others reading your code how you intend to use a variable; and</p></li>
+<li><p>detect potential bugs and/or code design mistakes.</p></li>
+</ul>
+<p>We will get back to <code class="docutils literal notranslate"><span class="pre">const</span></code> when we discuss input arguments for functions.</p>
+</section>
+<section id="scope-where-does-my-variable-live">
+<h2>Scope – where does my variable live?<a class="headerlink" href="#scope-where-does-my-variable-live" title="Permalink to this headline">#</a></h2>
+<p>In Python, a silly code like this</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
+  <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;Hello!&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>will give the output</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Hello!
+</pre></div>
+</div>
+<p>That is, even though the variable <code class="docutils literal notranslate"><span class="pre">s</span></code> is created <em>inside</em> the <code class="docutils literal notranslate"><span class="pre">if</span></code> block, it still persists in memory after the <code class="docutils literal notranslate"><span class="pre">if</span></code> block, meaning that the statement <code class="docutils literal notranslate"><span class="pre">print(s)</span></code> will run without complaining.</p>
+<p>The equivalent code in C++ would be:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello!&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">s</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This code will <em>not</em> work. The compilation error will point to the <code class="docutils literal notranslate"><span class="pre">std::cout</span></code> statement and say something like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">error</span><span class="p">:</span> <span class="n">use</span> <span class="n">of</span> <span class="n">undeclared</span> <span class="n">identifier</span> <span class="s1">&#39;s&#39;</span>
+</pre></div>
+</div>
+<p>The reason is that in C++ the variable <code class="docutils literal notranslate"><span class="pre">s</span></code> that we created inside the <code class="docutils literal notranslate"><span class="pre">if</span></code> block is <em>deleted</em> once that code block or <strong>scope</strong> ends, which happens when we reach the closing <code class="docutils literal notranslate"><span class="pre">}</span></code>.</p>
+<p>However, the following code will work:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello!&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">s</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Here we create the variable <code class="docutils literal notranslate"><span class="pre">s</span></code> in the outer scope, which means <code class="docutils literal notranslate"><span class="pre">s</span></code> is still alive when we reach the <code class="docutils literal notranslate"><span class="pre">std::cout</span></code> statement.</p>
+<p>In this example we used an <code class="docutils literal notranslate"><span class="pre">if</span></code> block to illustrate the scope concept. It works the same way for other code blocks contained within curly brackets, like <code class="docutils literal notranslate"><span class="pre">for</span></code> loops, function bodies, etc.</p>
 </section>
 </section>
 
