@@ -64,7 +64,7 @@ $$ (exact_solution)
 ### Problem 2
 
 Make a plot of the exact solution above, using the following strategy:
-- Write a program that defines an array of $x$ values, evaluates the exact solution $u(x)$ above for these points, and outputs the $x$ and $u(x)$ values as two columns in a data file. The numbers should be written to file in scientific notation and with a fixed number of decimals. (Choose a sensible number.)
+- Write a program that defines a vector of $x$ values, evaluates the exact solution $u(x)$ above for these points, and outputs the $x$ and $u(x)$ values as two columns in a data file. The numbers should be written to file in scientific notation and with a fixed number of decimals. (Choose a sensible number.)
 - Write a short plotting script (we recommend Python for this) that reads the data file and generates the plot.
 
 
