@@ -16,7 +16,7 @@ You'll get prompted to enter your password. Do so and it'll run for a while. Onc
 
 ```{note}
 
-If you manage to install WSL/Ubuntu but run into trouble when trying to start the actual Linux terminal (shell), try this:
+If you have installed WSL/Ubuntu but run into trouble when trying to start the actual Linux terminal (shell), try this:
 
 In your Windows powershell, run the command `wsl --set-default-version 1`
 
@@ -28,7 +28,7 @@ then try to restart the Linux terminal. This has worked for a few students. We'l
 
 A nice work setup for many WSL users will be to keep all your project files on the Linux part of the computer, so you can compile, run, perform git commands etc. with your Linux (Ubuntu) terminal, but still use Windows applications to edit the files, e.g. through Visual Studio Code or whatever editor you already use.
 
-On Windows, the Linux (WSL) part of your system will appear as a network drive. To see the full path of your Linux home directory, start your Linux terminal and then launch the *Windows* file explorer using the command:
+On Windows, the Linux (WSL) part of your system will appear as a network drive. To get the full path of your Linux home directory as seen from Windows, start the Linux terminal and then launch the *Windows* file explorer using the command:
 
 ```
 explorer.exe .
