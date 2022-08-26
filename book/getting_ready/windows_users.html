@@ -548,8 +548,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#troubleshooting">
-   Troubleshooting
+  <a class="reference internal nav-link" href="#how-to-access-edit-your-linux-files-with-windows-applications">
+   How to access/edit your Linux files with Windows applications
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#enable-ctrl-shift-c-v-for-copy-paste-in-the-terminal">
+   Enable ctrl+shift+c/v for copy/paste in the terminal
   </a>
  </li>
 </ul>
@@ -577,8 +582,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#troubleshooting">
-   Troubleshooting
+  <a class="reference internal nav-link" href="#how-to-access-edit-your-linux-files-with-windows-applications">
+   How to access/edit your Linux files with Windows applications
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#enable-ctrl-shift-c-v-for-copy-paste-in-the-terminal">
+   Enable ctrl+shift+c/v for copy/paste in the terminal
   </a>
  </li>
 </ul>
@@ -600,20 +610,33 @@ title="Print to PDF"
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo apt update <span class="o">&amp;&amp;</span> sudo apt upgrade
 </pre></div>
 </div>
-<p>You’ll get prompted to enter your password. Do so and it’ll run for a while. Once finished, follow the guide for <a class="reference internal" href="linux_users.html"><span class="doc std std-doc">Linux users</span></a>.</p>
-</section>
-<section id="troubleshooting">
-<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">#</a></h2>
-<p>If you manage to install WSL/Ubuntu but run into trouble when trying to start the actual terminal (shell), try this:</p>
-<p>In your Windows powershell, type</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>wsl --set-default-version <span class="m">1</span>
-</pre></div>
-</div>
-<p>then try to restart the Linux terminal.</p>
+<p>You’ll get prompted to enter your password. Do so and it’ll run for a while. Once finished, follow the guide for <a class="reference internal" href="linux_users.html"><span class="doc std std-doc">Linux users</span></a> to install the Linux libraries and tools you’ll need. (But come back here afterwards and read the rest of this page!)</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This has worked for a few students. We’ll update this guide if we figure out more about what the underlying issue is.</p>
+<p>If you manage to install WSL/Ubuntu but run into trouble when trying to start the actual Linux terminal (shell), try this:</p>
+<p>In your Windows powershell, run the command <code class="docutils literal notranslate"><span class="pre">wsl</span> <span class="pre">--set-default-version</span> <span class="pre">1</span></code></p>
+<p>then try to restart the Linux terminal. This has worked for a few students. We’ll update this guide if we figure out more about what the underlying issue is.</p>
 </div>
+</section>
+<section id="how-to-access-edit-your-linux-files-with-windows-applications">
+<h2>How to access/edit your Linux files with Windows applications<a class="headerlink" href="#how-to-access-edit-your-linux-files-with-windows-applications" title="Permalink to this headline">#</a></h2>
+<p>A nice work setup for many WSL users will be to keep all your project files on the Linux part of the computer, so you can compile, run, perform git commands etc. with your Linux (Ubuntu) terminal, but still use Windows applications to edit the files, e.g. through Visual Studio Code or whatever editor you already use.</p>
+<p>On Windows, the Linux (WSL) part of your system will appear as a network drive. To see the full path of your Linux home directory, start your Linux terminal and then launch the <em>Windows</em> file explorer using the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">explorer</span><span class="o">.</span><span class="n">exe</span> <span class="o">.</span>
+</pre></div>
+</div>
+<p>(Make sure to include the dot, which tells explorer.exe to open the current directory you are in.)</p>
+<p>Now you see your Linux files in the Windows file explorer. It’s useful to now create a shortcut for e.g. your user’s Linux home folder and put this shortcut in the quick-access bar (the left-hand part) of the Windows file explorer. Then from any Windows application you can easily open/edit/save files in the Linux part of your system. See <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/filesystems#view-your-current-directory-in-windows-file-explorer">here</a> and <a class="reference external" href="https://www.howtogeek.com/426749/how-to-access-your-linux-wsl-files-in-windows-10/">here</a> for more details.</p>
+</section>
+<section id="enable-ctrl-shift-c-v-for-copy-paste-in-the-terminal">
+<h2>Enable ctrl+shift+c/v for copy/paste in the terminal<a class="headerlink" href="#enable-ctrl-shift-c-v-for-copy-paste-in-the-terminal" title="Permalink to this headline">#</a></h2>
+<p>On WSL, copy/paste in the Linux terminal using the standard Linux keyboard shortcuts ctrl+shift+c and ctrl+shift+c will not work by default. To enable it</p>
+<ul class="simple">
+<li><p>click the small Ubuntu icon in the top-left corner of your terminal</p></li>
+<li><p>choose <em>Properties</em></p></li>
+<li><p>select the <em>Options</em> pane</p></li>
+<li><p>tick the box saying “Use Ctrl+Shift+C/V as Copy/Paste”</p></li>
+</ul>
 </section>
 </section>
 
