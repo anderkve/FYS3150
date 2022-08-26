@@ -118,9 +118,9 @@ Now we get back to the Poisson equation.
 **a)** Write a program that
 - uses the *general algorithm* to solve $\mathbf{A} \vec{v} = \vec{g}$,
 where $\mathbf{A}$ is the tridiagonal matrix from Problem 4;
-- writes the solution $\vec{v}$ and corresponding $\vec{x}$ (plus any other data you find useful) to a file.
+- writes the solution $\vec{v}$ and corresponding $\vec{x}$ to a file. It will be useful to also include the boundary points when writing the data to file.
 
-**b)** With $n$ being the number of grid points, run your program for $n=10,100,1000,\ldots$ (as far as you think is reasonable) and make a plot that compares your numeric solutions for different values of $n$ against the exact solution for $u(x)$ in Eq. {eq}`exact_solution`.
+**b)** With $n_{\text{steps}}$ being the number of discretization *steps* along the full x axis, run your program with settings corresponding to $n_{\text{steps}}=10,100,1000,\ldots$ (as far as you think is reasonable) and make a plot that compares the exact solution for $u(x)$ in Eq. {eq}`exact_solution` against the numeric solutions you get for the different values of $n_{\text{steps}}$.
 
 
 ### Problem 8
