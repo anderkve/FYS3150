@@ -692,6 +692,13 @@ title="Print to PDF"
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git add file1 file2 file3
 </pre></div>
 </div>
+<p>You also use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> to add <em>new</em> files that aren’t yet registered as part of your repository. (More info about <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> below.)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It’s not recommended to add <em>all</em> the files you have in your project directory. When working on a code project, you should typically just add the actual code files, i.e. the <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> and <code class="docutils literal notranslate"><span class="pre">.hpp</span></code> files for a C++ project, plus README files or other documentation you write. Adding auto-generated files to Git, like the <code class="docutils literal notranslate"><span class="pre">.o</span></code> files and executables you generate in compilation and linking, will just cause confusion and frustration.</p>
+<p>In short, you should not use your Git repo as if it is a complete copy of the project folder on your computer. Use it only to track the files you actually work directly on.</p>
+<p>To see which files Git current is tracking, run the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">ls-files</span></code></p>
+</div>
 <p>You are now ready to commit. You can see what is about to be committed
 using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> with the –cached option:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git diff --cached
