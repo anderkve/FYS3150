@@ -2,13 +2,15 @@
 
 In this part we will introduce the aspects of C++ that we'll encounter in this course. Our approach will be _learning by doing_ --- we'll mostly look at short, commented examples that you can (should!) try for yourself. 
 
-Beyond this course page, there are approximately one gazillion online resources for learning C++. We encourage you to explore at least some of them!
+Beyond this course page, there are approximately one gazillion online resources for learning C++. We encourage you to explore at least [some](online_resources.md) of them!
 
 Since many that follow this course will have experince with Python, we will often contrast and compare C++ to Python.
 
 Before we jump in, here are some C++ facts you should know:
 
 - In contrast to e.g. Python programs, C++ programs must be **compiled** and **linked** before they can be run. This is done using a tool called a **compiler**.
+
+- Compared to Python, C++ is much more strict when it comes to **variable types**.
 
 - The C++ language is based on the older C language. (C is effectively a subset of C++.) This means that C code will also work in C++ programs. But for our examples we will try to stick to C++-style code.
 
@@ -21,3 +23,7 @@ Before we jump in, here are some C++ facts you should know:
 -->
 
 Now, let's look at some code!
+
+
+In C++ this would have to be two different variables, one declared to be of type `int` and one declared to be of type `string`.
+
