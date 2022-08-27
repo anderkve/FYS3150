@@ -34,6 +34,16 @@ Modify some files, then add their updated contents to the index:
 git add file1 file2 file3
 ```
 
+You also use `git add` to add *new* files that aren't yet registered as part of your repository. (More info about `git add` below.)
+
+```{note}
+It's not recommended to add *all* the files you have in your project directory. When working on a code project, you should typically just add the actual code files, i.e. the `.cpp` and `.hpp` files for a C++ project, plus README files or other documentation you write. Adding auto-generated files to Git, like the `.o` files and executables you generate in compilation and linking, will just cause confusion and frustration.
+
+In short, you should not use your Git repo as if it is a complete copy of the project folder on your computer. Use it only to track the files you actually work directly on.
+
+To see which files Git current is tracking, run the command `git ls-files`
+```
+
 You are now ready to commit. You can see what is about to be committed
 using `git diff` with the --cached option:
 

@@ -15,14 +15,13 @@ Need to first compile the second source file (src/utils.cpp):
 g++ -c src/utils.cpp -I include
 
 ...and then link all the .o files together and create main.exe:
-g++ main.o src/utils.o -o main.exe
+g++ main.o utils.o -o main.exe
 
-Now we're ready to run out program:
+Now we're ready to run our program:
 ./main.exe
-
 
 ----------------------------
 
-
-Compilation and linking in one go:
+To compile both source files and perform the linking all in one go:
 g++ main.cpp src/utils.cpp -I include -o main.exe
+

@@ -9,9 +9,9 @@
 #define __utils_hpp__
 
 // Now we include headers we need
-#include <armadillo>
-#include <sstream>
 #include <string>
+#include <vector>
+#include <sstream>
 #include <iomanip>
 
 
@@ -22,7 +22,7 @@
 // Return a string with a double in scientific notation
 std::string scientific_format(double d, const int width=20, const int prec=10);
 
-// Return a string with an armadillo vector in scientific notation
-std::string scientific_format(const arma::vec& v, const int width=20, const int prec=10);
+// Return a string with a vector<double> in scientific notation
+std::string scientific_format(const std::vector<double>& v, const int width=20, const int prec=10);
 
 #endif  // end of include guard __utils_hpp__

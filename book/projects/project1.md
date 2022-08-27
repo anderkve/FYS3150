@@ -2,13 +2,15 @@
 
 ## Practicalities
 
+- **Deadline:** September 13, at 23:59
+
 - **Format:**
   - A pdf document, typeset in LaTeX, with answers to all the problems below. You deliver the pdf on Canvas.
   - Code (with comments, of course) on a GitHub repo, with the repo link provided in the pdf document.
 
 - **Not a complete report:** For project 1, we do not require you to write a proper scientific report --- only a document with an answer for each problem. But the quality of the presentation still matters, of course. So pay attention to figures, figure captions, grammar, etc.
 
-- **Collaboration:** If you are collaborating with others (*and we hope you are!*) you *must* register a group on Canvas. The group hands in a single pdf. Remember to list everyone's name in the pdf.
+- **Collaboration:** If you are collaborating with others (*and we hope you are!*) you *must* join the same project group on Canvas. The group hands in a single pdf. Remember to list everyone's name in the pdf.
 
 - **Reproducibility:** Your code should be available on a GitHub repo. You can refer to relevant parts of your code in your answers. Make sure to include a README file in the repo that explains how the code should be compiled and run in order to reproduce your results.
 
@@ -27,7 +29,7 @@
   - vectors/arrays (examples of *containers*)
   - writing output to screen and/or file
 
-  We will discuss these topics in the lectures, and our discussions there will largely be based on the "Introduction to C++" pages on the left.
+  We will discuss some of these topics in the lectures, but probably not all. But you can learn about it from the "Introduction to C++" pages on the left.
 
 
 ## Introduction
@@ -62,7 +64,7 @@ $$ (exact_solution)
 ### Problem 2
 
 Make a plot of the exact solution above, using the following strategy:
-- Write a program that defines an array of $x$ values, evaluates the exact solution $u(x)$ above for these points, and outputs the $x$ and $u(x)$ values as two columns in a data file. The numbers should be written to file in scientific notation and with a fixed number of decimals. (Choose a sensible number.)
+- Write a program that defines a vector of $x$ values, evaluates the exact solution $u(x)$ above for these points, and outputs the $x$ and $u(x)$ values as two columns in a data file. The numbers should be written to file in scientific notation and with a fixed number of decimals. (Choose a sensible number.)
 - Write a short plotting script (we recommend Python for this) that reads the data file and generates the plot.
 
 
@@ -116,9 +118,9 @@ Now we get back to the Poisson equation.
 **a)** Write a program that
 - uses the *general algorithm* to solve $\mathbf{A} \vec{v} = \vec{g}$,
 where $\mathbf{A}$ is the tridiagonal matrix from Problem 4;
-- writes the solution $\vec{v}$ and corresponding $\vec{x}$ (plus any other data you find useful) to a file.
+- writes the solution $\vec{v}$ and corresponding $\vec{x}$ to a file. It will be useful to also include the boundary points when writing the data to file.
 
-**b)** With $n$ being the number of grid points, run your program for $n=10,100,1000,\ldots$ (as far as you think is reasonable) and make a plot that compares your numeric solutions for different values of $n$ against the exact solution for $u(x)$ in Eq. {eq}`exact_solution`.
+**b)** With $n_{\text{steps}}$ being the number of discretization *steps* along the full x axis, run your program with settings corresponding to $n_{\text{steps}}=10,100,1000,\ldots$ (as far as you think is reasonable) and make a plot that compares the exact solution for $u(x)$ in Eq. {eq}`exact_solution` against the numeric solutions you get for the different values of $n_{\text{steps}}$.
 
 
 ### Problem 8
@@ -162,6 +164,7 @@ used by the general algorithm and the special algorithm. (*Remember:* reliable t
 Make a table or plot to present your timing results, and comment briefly on the results.
 
 
+<!-- 
 
 ### Problem 11
 
@@ -171,6 +174,7 @@ LU decomposition approach to solving matrix equations.
 
 What do you expect would happen if you attempted to run code for the case $n = 10^5$ on your laptop?
 
+-->
 
 ----
 
