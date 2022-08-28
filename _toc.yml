@@ -26,6 +26,7 @@ parts:
       - file: book/using_git/dealing_with_merge_conflicts
       - file: book/using_git/recover_an_old_version_of_a_file
       - file: book/using_git/other_ways_to_fix_mistakes
+      - file: book/using_git/online_resources
 
   - caption: Introduction to C++
     chapters:

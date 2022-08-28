@@ -32,7 +32,7 @@ As stated, we need not specify the value of the declared variable. Statements li
 type variable_name;
 ```
 
-are perfectly legitimate. You can assign a value to the declared variable at later point in the code. However, it's considered good practice to declare the variable as close to its assignment as possible.
+are perfectly legitimate. You can assign a value to the declared variable at a later point in the code. However, it's considered good practice to declare the variable as close to its assignment as possible.
 
 
 ### Declaration of multiple variables:

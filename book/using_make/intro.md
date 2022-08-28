@@ -6,10 +6,10 @@ Make is, for our purposes, a programming language that facilitates compilation a
 
 A *Makefile* is both the type and the name of the file that *Make* executes.
 
-Makefiles can be quite complicated, but in this introduction we'll confine ourselves to simply writing a simple makefile. A makefile should either be named *makefile* or *Makefile*.
+Makefiles can be quite complicated, but in this introduction we'll confine ourselves to simply writing a basic makefile. A makefile should either be named *makefile* or *Makefile*.
 
 
-Let's go ahead and create a makefile that we'll use to compile a some a short C++ program. First, run
+Let's go ahead and create a makefile that we'll use to compile a short C++ program. First, run
 
 ```sh
 touch makefile

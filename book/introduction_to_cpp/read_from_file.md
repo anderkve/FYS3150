@@ -6,7 +6,7 @@ Here we will look at a simple example of how to read a set of numbers from a tex
 1. that our computation/simulation needs some input data; or
 2. that we need to pass in many control parameters (step sizes, tolerances, etc.) for our program.
 
-For the example below we will assume that the numbers are organised in a table that we should read row by row. A simple table format is most suitable for the first case above. For the second case, if you are writing a code that needs a large number of configuration parameters, you probably want to use some standard structured file format, e.g. [YAML](https://en.wikipedia.org/wiki/YAML), which you can use with C++ via external libraries such as [yaml-cpp]( https://yaml-cpp.docsforge.com/)
+For the example below we will assume that the numbers are organised in a table that we should read row by row. A simple table format is most suitable for the first case above. For the second case, if you are writing a code that needs a large number of configuration parameters, you probably want to use some standard structured file format, e.g. [YAML](https://en.wikipedia.org/wiki/YAML), which you can use with C++ via external libraries such as [yaml-cpp]( https://yaml-cpp.docsforge.com/).
 
 ## Minimal example
 
@@ -41,7 +41,7 @@ Assume we have a data table file `x_y_fxy.dat` that look like this:
 7.8540e-01  7.8540e-01  1.8566e+00
 ```
 
-The following code will read this file and save the rows in av vector of vectors using only the standard C++ library. The example also shows how the comment line starting with `#` can be ignored when reading the data.
+The following code will read this file and save the rows in a vector of vectors using only the standard C++ library. The example also shows how the comment line starting with `#` can be ignored when reading the data.
 
 ```{note}
 You can also use Armadillo to very easily read a data table --- see the [introduction to Armadillo](sec:intro_to_armadillo) page.
@@ -81,7 +81,7 @@ int main()
       }
       else
       {
-        // Parse the string (line) and intepret it as three 
+        // Parse the string (line) and interpret it as three 
         // double variables (x, y, f)
         std::stringstream mysstream(line);
         mysstream >> x >> y >> f;
@@ -111,6 +111,6 @@ int main()
 }
 ```
 
-In a larger program it is usually better to write a separate function for reading data from file, rather than placing this code directly in the main program.
+In a larger program, it's usually better to write a separate function for reading data from file rather than placing this code directly in the main program.
 
 
