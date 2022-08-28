@@ -3,7 +3,7 @@
 
 Armadillo is an efficient linear algebra library for C++ users. Its aim is to provide a library that balances speed and ease of use. We recommend this library for numerical computations as a replacement for dynamic allocation of arrays.
 
-We'll cover the very basics here to get you started with the library. However, their webpage provide an excellent, detailed [code documentation](http://arma.sourceforge.net/docs.html) with examples of usage that you can search through.
+We'll cover the very basics here to get you started with the library. However, their webpage provides an excellent, detailed [code documentation](http://arma.sourceforge.net/docs.html) with examples of usage that you can search through.
 
 ## Building code with Armadillo
 
@@ -121,7 +121,7 @@ The `load` functionality in Armadillo can also be used to load data from files n
 5.8905e-01  7.8540e-01  1.4688e+00
 ```
 
-To read these numbers into an Armadillo matrix we simply do this:
+To read these numbers into an Armadillo matrix, we simply do this:
 
 ```c++
 arma::mat A;
@@ -143,7 +143,7 @@ The recommended way to import the library in Python is
 import pyarma as pa
 ```
 
-From there you can easily load the `arma::mat` (or `arma::vec`) object you saved in C++ using
+From there, you can easily load the `arma::mat` (or `arma::vec`) object you saved in C++ using
 
 ```python
 A = pa.mat() #Create pa.mat object (just as arma::mat in C++)

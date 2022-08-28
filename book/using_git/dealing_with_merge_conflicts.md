@@ -86,7 +86,7 @@ This is version B
 This is version A
 >>>>>>> 89c96948fb637b83c1165743fd4e28b87f99e754
 ```
-Couple notes on the output:
+A couple of notes on the output:
 - Git has marked the part of the file where the two commits have different content. We are asked to choose between one of them, or create something entirely new there altogether.
 - The part between `<<<<<<< HEAD` and `=======` is from your local commit that was rejected when you tried to push.
 - The part between `=======` and `>>>>>>> 89c96948fb637b83c1165743fd4e28b87f99e754` is from the commit you made earlier which is now in the remote repo.

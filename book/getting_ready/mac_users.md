@@ -34,9 +34,9 @@ to set `zsh` as default. Note that you probably have to close and restart your t
 
 Installation of software for C++ can be a little bit of a hassle on macOS. Here we'll try to walk you through the process, step-by-step.
 
-1. First install *Xcode* from the app store. This contains the basic building blocks we need. It installs *Git* and *Make* and a few other command line tools. (Note that Xcode unfortunately is a very large package -- over 12 GBs, and may even require substantially more available disk space than this for the installation.)
+1. First, install *Xcode* from the app store. This contains the basic building blocks we need. It installs *Git* and *Make*, as well as a few other command line tools. (Note that Xcode unfortunately is a very large package -- over 12 GBs, and may even require substantially more available disk space than this for the installation.)
 
-2. Now we'll install a *package manager* which we'll use install many other packages. Go to [Homebrew](https://brew.sh) and follow the installation instructions there. It's easy, just copy the command they provide there and run it in your terminal.
+2. Now we'll install a *package manager* which we'll use to install many other packages. Go to [Homebrew](https://brew.sh) and follow the installation instructions there. It's easy, just copy the command they provide there and run it in your terminal.
 
 
 3. Now, run the following command in your terminal to install some additional C++ libraries we'll use (Armadillo and OpenMP).
@@ -74,7 +74,7 @@ Since we use `sudo` here you will (probably) have to type in your password.
 
 ## Install additional command line tools
 
-There's a plethora of command line tools that can be useful. Here are som examples:
+There's a plethora of command line tools that can be useful. Here are some examples:
 
 1. *wget* and *curl* are command line tools that allow you to download from the web using the command line.
 

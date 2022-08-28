@@ -65,7 +65,7 @@ Disclaimer: Note that this is not a secure option, as the token will be saved in
 - Your page should look somethings like what follows.
     - Fill out note with a name for the token, for instance *main_token*.
     - Change expiration date to *no expiration* (you can choose a finite expiration if security bothers you. But this is a school project, not a multibillion dollar code project.)
-    - Toggle every box under *select scopes*. Most of them are unecessary, but we just want full access.
+    - Toggle every box under *select scopes*. Most of them are unnecessary, but we just want full access.
     - Click *Generate token* at the bottom of the screen.
 
 ![token_page](./imgs/token_page.png)
