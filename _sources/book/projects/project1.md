@@ -131,7 +131,7 @@ $$
 \log_{10}(\Delta_i) = \log_{10}(|u_i - v_i|)
 $$  
 
-as a function of $x_i$. Show $\log_{10}(\Delta_i)$ for different choices of $n$ as different graphs in the same plot.
+as a function of $x_i$. Show $\log_{10}(\Delta_i)$ for different choices of $n_{\text{steps}}$ as different graphs in the same plot.
 
 
 **b)** Similarly, make a plot of the *relative* error
@@ -140,9 +140,9 @@ $$
 \log_{10}(\epsilon_i) = \log_{10}\left(\left| \frac{u_i - v_i}{u_i} \right| \right)
 $$
 
-as function of $x_i$. Again, one graph per choice of $n$.
+as function of $x_i$. Again, one graph per choice of $n_{\text{steps}}$.
 
-**c**) Now make a table that shows the *maximum* relative error $\max(\epsilon_i)$ for each choice of $n$, up to $n = 10^7$. Feel free to also make a plot to visualise this. Comment on your result.
+**c**) Now make a table that shows the *maximum* relative error $\max(\epsilon_i)$ for each choice of $n_{\text{steps}}$, up to $n_{\text{steps}} = 10^7$. Feel free to also make a plot to visualise this. Comment on your result.
 
 
 
@@ -159,8 +159,8 @@ We'll refer to this as the *special algorithm*.
 
 ### Problem 10
 
-For values of $n$ up to $n = 10^6$, run timing tests that compares the time
-used by the general algorithm and the special algorithm. (*Remember:* reliable timing results require repeated runs for each choice of $n$.)
+For values of $n_{\text{steps}}$ up to $n_{\text{steps}} = 10^6$, run timing tests that compares the time
+used by the general algorithm and the special algorithm. (*Remember:* reliable timing results require repeated runs for each choice of $n_{\text{steps}}$.)
 Make a table or plot to present your timing results, and comment briefly on the results.
 
 
