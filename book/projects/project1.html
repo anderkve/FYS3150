@@ -844,6 +844,10 @@ where <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is the tr
 </section>
 <section id="problem-8">
 <h3>Problem 8<a class="headerlink" href="#problem-8" title="Permalink to this headline">#</a></h3>
+<p>In this problem we will look at some error computations. Since the two boundary points are known
+(<span class="math notranslate nohighlight">\(u(0) = 0\)</span> and <span class="math notranslate nohighlight">\(u(1) = 0\)</span>), you should have exactly zero error at these points. You can therefore leave
+out the boundary points for this problem.</p>
+<p>(If you <em>do</em> include the boundary points, make sure to comment on how you treat the “0/0” cases for the relative error.)</p>
 <p><strong>a)</strong> Make a plot that shows the (logarithm of) the <em>absolute</em> error,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -856,7 +860,7 @@ where <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is the tr
 \log_{10}(\epsilon_i) = \log_{10}\left(\left| \frac{u_i - v_i}{u_i} \right| \right)
 \]</div>
 <p>as function of <span class="math notranslate nohighlight">\(x_i\)</span>. Again, one graph per choice of <span class="math notranslate nohighlight">\(n_{\text{steps}}\)</span>.</p>
-<p><strong>c</strong>) Now make a table that shows the <em>maximum</em> relative error <span class="math notranslate nohighlight">\(\max(\epsilon_i)\)</span> for each choice of <span class="math notranslate nohighlight">\(n_{\text{steps}}\)</span>, up to <span class="math notranslate nohighlight">\(n_{\text{steps}} = 10^7\)</span>. Feel free to also make a plot to visualise this. Comment on your result.</p>
+<p><strong>c</strong>) Now make a table that shows the <em>maximum</em> relative error <span class="math notranslate nohighlight">\(\max(\epsilon_i)\)</span> for each choice of <span class="math notranslate nohighlight">\(n_{\text{steps}}\)</span>, up to <span class="math notranslate nohighlight">\(n_{\text{steps}} = 10^7\)</span>. Comment on your results, and feel free to also make a plot to visualise the result.</p>
 </section>
 <section id="problem-9">
 <h3>Problem 9<a class="headerlink" href="#problem-9" title="Permalink to this headline">#</a></h3>
