@@ -188,6 +188,11 @@ const thebe_selector_output = ".output, .cell_output"
    Other ways to fix mistakes
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/online_resources.html">
+   Online git resources
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -672,7 +677,7 @@ to the existing code project.</p>
 </section>
 <section id="forking-and-joining-threads">
 <h2>Forking and joining threads<a class="headerlink" href="#forking-and-joining-threads" title="Permalink to this headline">#</a></h2>
-<p>OpenMP assumes an underlying <strong>shared-memory</strong> architecture. This means that when a code runs in parallel, all <strong>threads</strong> access the same memory. Once a <strong>parallel region</strong> is executed, the <strong>primary</strong> thread that <strong>forks</strong> a set of <strong>sub-threads</strong>. Tasks are then divided among these and execute the code block <strong>concurrently</strong>, meaning at the same time. Once execution of the parallel region is completed, the sub-threads are <strong>joined</strong> and only the primary thread remains. The following image illustrates this process</p>
+<p>OpenMP assumes an underlying <strong>shared-memory</strong> architecture. This means that when a code runs in parallel, all <strong>threads</strong> access the same memory. Once a <strong>parallel region</strong> is executed, the <strong>primary</strong> thread <strong>forks</strong> a set of <strong>sub-threads</strong>. Tasks are then divided among these and execute the code block <strong>concurrently</strong>, meaning at the same time. Once execution of the parallel region is completed, the sub-threads are <strong>joined</strong> and only the primary thread remains. The following image illustrates this process</p>
 <p><img alt="fork_join" src="../../_images/Fork_join.svg" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -684,7 +689,7 @@ to the existing code project.</p>
 <section id="linux-users">
 <h3>Linux users<a class="headerlink" href="#linux-users" title="Permalink to this headline">#</a></h3>
 <p>For linux users, compilation with OpenMP is easily facilitated
-by the compiler flag <code class="docutils literal notranslate"><span class="pre">-fopenmp</span></code>. Thus compilation can be as easy as</p>
+by the compiler flag <code class="docutils literal notranslate"><span class="pre">-fopenmp</span></code>. Thus, compilation can be as easy as</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>g++ -c *.cpp -fopenmp
 </pre></div>
 </div>

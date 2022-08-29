@@ -12,7 +12,7 @@ to the existing code project.
 
 ## Forking and joining threads
 
-OpenMP assumes an underlying **shared-memory** architecture. This means that when a code runs in parallel, all **threads** access the same memory. Once a **parallel region** is executed, the **primary** thread that **forks** a set of **sub-threads**. Tasks are then divided among these and execute the code block **concurrently**, meaning at the same time. Once execution of the parallel region is completed, the sub-threads are **joined** and only the primary thread remains. The following image illustrates this process
+OpenMP assumes an underlying **shared-memory** architecture. This means that when a code runs in parallel, all **threads** access the same memory. Once a **parallel region** is executed, the **primary** thread **forks** a set of **sub-threads**. Tasks are then divided among these and execute the code block **concurrently**, meaning at the same time. Once execution of the parallel region is completed, the sub-threads are **joined** and only the primary thread remains. The following image illustrates this process
 
 ![fork_join](imgs/Fork_join.svg)
 
@@ -25,7 +25,7 @@ Sometimes, you'll see the term "master" thread used for the primary thread and "
 ### Linux users
 
 For linux users, compilation with OpenMP is easily facilitated
-by the compiler flag `-fopenmp`. Thus compilation can be as easy as
+by the compiler flag `-fopenmp`. Thus, compilation can be as easy as
 
 ```sh
 g++ -c *.cpp -fopenmp

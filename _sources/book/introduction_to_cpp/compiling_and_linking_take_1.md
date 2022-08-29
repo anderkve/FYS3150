@@ -17,7 +17,7 @@ g++ -c main.cpp
 ```
 Here the option `-c` means "just compile, don't link". This produces an object file `main.o`. 
 
-**Linking**: To do the linking step we pass this object file (`main.o`) as input to `g++`:
+**Linking**: To do the linking step, we pass this object file (`main.o`) as input to `g++`:
 ```sh
 g++ main.o -o main.exe
 ```

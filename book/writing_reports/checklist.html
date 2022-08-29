@@ -190,6 +190,11 @@ const thebe_selector_output = ".output, .cell_output"
    Other ways to fix mistakes
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/online_resources.html">
+   Online git resources
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -548,7 +553,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="checklist-for-reports">
 <h1>Checklist for reports<a class="headerlink" href="#checklist-for-reports" title="Permalink to this headline">#</a></h1>
-<p>Writing a good scientific report is difficult and requires attention to a lot of details. On this page we will collect some of the things that are useful to check before handing in a report. Note that this list is not meant to be exhaustive — it’s just a convenient reminder for some of the more common problems.</p>
+<p>Writing a good scientific report is difficult and requires attention to a lot of details. On this page, we will collect some of the things that are useful to check before handing in a report. Note that this list is not meant to be exhaustive — it’s just a convenient reminder for some of the more common problems.</p>
 <ul>
 <li><p><strong>Units:</strong> Check that all the numbers and plot axes that should have units actually have units.</p></li>
 <li><p><strong>Axis ranges:</strong> Make sure all plots have reasonable axis ranges. (If your code deals with numbers that are not incredibly small or large, but you end up with plot axes with a scale of e.g. <span class="math notranslate nohighlight">\(10^{20}\)</span> or <span class="math notranslate nohighlight">\(10^{-20}\)</span>, then this is often a sign that something has gone wrong in your code.) A useful rule is to <em>always</em> set the axis ranges “manually” (e.g. with <code class="docutils literal notranslate"><span class="pre">plt.xlim(...)</span></code> and <code class="docutils literal notranslate"><span class="pre">plt.ylim(...)</span></code>) for all plots you produce, since this forces you to pay attention to the axis ranges.</p></li>
@@ -562,7 +567,7 @@ title="Print to PDF"
 </ul>
 </li>
 <li><p><strong>Avoid empty lines after equations:</strong> Avoid empty lines after equations in your .tex file, unless you actually want to start a new paragraph in your text. (LaTeX will indent the text following an empty line.) If you just want some “air” surrounding the equations in your .tex file, use empty comment lines.</p></li>
-<li><p><strong>Quotation marks:</strong> To get correct quotation marks you should use LaTeX code like this</p>
+<li><p><strong>Quotation marks:</strong> To get correct quotation marks, you should use LaTeX code like this</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Writing a report is ``fun&#39;&#39;.
 </pre></div>
 </div>
@@ -572,7 +577,7 @@ title="Print to PDF"
 </div>
 </li>
 <li><p><strong>Consistent mathematical notation:</strong> Make sure the mathematical notation is consistent. For instance, check that all vector quantities are typeset like <code class="docutils literal notranslate"><span class="pre">\mathbf{x}</span></code> or <code class="docutils literal notranslate"><span class="pre">\vec{x}</span></code>.</p></li>
-<li><p><strong>Explain all mathematical symbols:</strong> The first time a new symbol appears in an equation the surrounding text should specify what it means.</p></li>
+<li><p><strong>Explain all mathematical symbols:</strong> The first time a new symbol appears in an equation, the surrounding text should specify what it means.</p></li>
 <li><p><strong>Text in math mode:</strong> Regular words that appear in mathematical expressions (i.e. in math mode in LaTeX) should be typeset with <code class="docutils literal notranslate"><span class="pre">\text{}</span></code>. <em>Correct:</em> <code class="docutils literal notranslate"><span class="pre">y_{\text{analytical}}</span></code>. <em>Wrong:</em> <code class="docutils literal notranslate"><span class="pre">y_{analytical}</span></code></p></li>
 <li><p><strong>Explicitly refer to all figures/tables:</strong> All figures/tables you include in your report should be explicitly mentioned in the main text.</p></li>
 <li><p><strong>Explicitly cite all references:</strong> All references you include in your reference list should be explicitly cited in the main text. If you don’t cite it, remove it.</p></li>

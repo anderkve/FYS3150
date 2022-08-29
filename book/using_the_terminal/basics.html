@@ -188,6 +188,11 @@ const thebe_selector_output = ".output, .cell_output"
    Other ways to fix mistakes
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/online_resources.html">
+   Online git resources
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -715,8 +720,8 @@ title="Print to PDF"
 <h1>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">#</a></h1>
 <p><em>or: How I Learned to Stop Worrying and Love the Terminal</em></p>
 <p>On this page you will learn some basics (and some not-so-basics) of working from the <strong>terminal</strong>, a.k.a. the <strong>shell</strong>, a.k.a. the <strong>command line</strong>, a.k.a. the <strong>console</strong>. Typing commands instead of the usual point-and-click may feel a bit clumsy and old-fashioned at first. But if you stick with it, you’ll soon realize why the terminal is a standard tool for code developers, computational scientists and anyone else doing fancy stuff with computers.</p>
-<p>For the examples below we will often need some dummy directories and files. To create/download these files and directories we’ll provide one-line <em>preparation commands</em> that you can simply copy and paste into the terminal. To paste in the terminal, right-click or press <strong>ctrl-shift-v</strong> (Linux) or <strong>cmd-v</strong> (macOS). To execute a command, simply hit ‘enter’.</p>
-<p>Don’t worry if you don’t yet understand what’s going on in these preparation commands — you’ll learn all of it soon. After each example we also provide a single-line command that deletes the dummy files we’ve just created.</p>
+<p>For the examples below, we will often need some dummy directories and files. To create/download these files and directories, we’ll provide one-line <em>preparation commands</em> that you can simply copy and paste into the terminal. To paste in the terminal, right-click or press <strong>ctrl-shift-v</strong> (Linux) or <strong>cmd-v</strong> (macOS). To execute a command, simply hit ‘enter’.</p>
+<p>Don’t worry if you don’t yet understand what’s going on in these preparation commands — you’ll learn all of it soon. After each example, we also provide a single-line command that deletes the dummy files we’ve just created.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Unix_shell">Unix shell</a> comes in a few different versions, with <code class="docutils literal notranslate"><span class="pre">bash</span></code> and <code class="docutils literal notranslate"><span class="pre">zsh</span></code> being among the most widely used. Most commands are identical across different shells, but in some cases there are small differences. The commands listed on our course pages have generally been tested on <code class="docutils literal notranslate"><span class="pre">bash</span></code>. If you are running macOS 10.15 (Catalina) or later, you probably are running <code class="docutils literal notranslate"><span class="pre">zsh</span></code> by default. If so, it’s useful to read the <a class="reference internal" href="../getting_ready/mac_users.html#sec-choosing-shell"><span class="std std-ref">Choosing a Unix shell</span></a> subsection before you continue.</p>
@@ -805,7 +810,7 @@ mv dirA_copy dirA_renamed            <span class="c1"># Rename the directory dir
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> mkdir delete <span class="o">&amp;&amp;</span> <span class="nb">cd</span> delete <span class="o">&amp;&amp;</span> mkdir emptydir dirA dirA/dirB <span class="o">&amp;&amp;</span> touch file1.txt dirA/file2.txt dirA/dirB/file3.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;current directory: </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
 </pre></div>
 </div>
-<p>The basic command for deleting stuff is <code class="docutils literal notranslate"><span class="pre">rm</span></code> (for <em>remove</em>). To remove an empty directory you can use <code class="docutils literal notranslate"><span class="pre">rmdir</span></code>.</p>
+<p>The basic command for deleting stuff is <code class="docutils literal notranslate"><span class="pre">rm</span></code> (for <em>remove</em>). To remove an empty directory, you can use <code class="docutils literal notranslate"><span class="pre">rmdir</span></code>.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rm file1.txt                            <span class="c1"># Delete the file file1.txt</span>
 rm dirA/file2.txt dirA/dirB/file3.txt   <span class="c1"># Delete the two files dirA/file2.txt and dirA/dirB/file3.txt</span>
 rm -r dirA                              <span class="c1"># Delete the entire directory dirA with all content (note the -r flag)</span>
@@ -876,7 +881,7 @@ wc -l file1.txt      <span class="c1"># Count the number of lines in file1.txt</
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> mkdir download_files <span class="o">&amp;&amp;</span> <span class="nb">cd</span> download_files <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;current directory: </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
 </pre></div>
 </div>
-<p>If you have the URL you can download a file directly from the terminal with the <code class="docutils literal notranslate"><span class="pre">wget</span></code> command. Let’s demonstrate it by downloading the markdown (<code class="docutils literal notranslate"><span class="pre">.md</span></code>) file that this page is built from:</p>
+<p>If you have the URL, you can download a file directly from the terminal with the <code class="docutils literal notranslate"><span class="pre">wget</span></code> command. Let’s demonstrate it by downloading the markdown (<code class="docutils literal notranslate"><span class="pre">.md</span></code>) file that this page is built from:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>wget https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/basics.md
 
 less basics.md   <span class="c1"># Take a look at the downloaded file</span>
@@ -893,7 +898,7 @@ less basics.md   <span class="c1"># Take a look at the downloaded file</span>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/compphys_examples <span class="o">&amp;&amp;</span> mkdir run_programs run_programs/dirA <span class="o">&amp;&amp;</span> <span class="nb">cd</span> run_programs <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;echo \&quot;This program does nothing\&quot; &quot;</span> &gt; some_script.sh  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;echo \&quot;This program also does nothing\&quot; &quot;</span> &gt; dirA/some_other_script.sh  <span class="o">&amp;&amp;</span> chmod u+x some_script.sh dirA/some_other_script.sh <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span> <span class="o">&amp;&amp;</span>  <span class="nb">echo</span> <span class="s2">&quot;current directory: </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
 </pre></div>
 </div>
-<p>To run an <strong>executable</strong> (a compiled C++ program, a shell script, etc.) we simply specify the path to the executable file and hit ‘enter’. When the file lives in the current directory, we specify the directory with <code class="docutils literal notranslate"><span class="pre">./</span></code>:</p>
+<p>To run an <strong>executable</strong> (a compiled C++ program, a shell script, etc.), we simply specify the path to the executable file and hit ‘enter’. When the file lives in the current directory, we specify the directory with <code class="docutils literal notranslate"><span class="pre">./</span></code>:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./some_script.sh             <span class="c1"># Run some_script.sh that lives in the current directory</span>
 dirA/some_other_script.sh    <span class="c1"># Run some_other_script.sh that lives in the directory dirA</span>
 ./dirA/some_other_script.sh  <span class="c1"># Same as above</span>

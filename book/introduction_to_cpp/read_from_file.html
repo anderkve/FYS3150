@@ -188,6 +188,11 @@ const thebe_selector_output = ".output, .cell_output"
    Other ways to fix mistakes
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/online_resources.html">
+   Online git resources
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -588,7 +593,7 @@ title="Print to PDF"
 <li><p>that our computation/simulation needs some input data; or</p></li>
 <li><p>that we need to pass in many control parameters (step sizes, tolerances, etc.) for our program.</p></li>
 </ol>
-<p>For the example below we will assume that the numbers are organised in a table that we should read row by row. A simple table format is most suitable for the first case above. For the second case, if you are writing a code that needs a large number of configuration parameters, you probably want to use some standard structured file format, e.g. <a class="reference external" href="https://en.wikipedia.org/wiki/YAML">YAML</a>, which you can use with C++ via external libraries such as <a class="reference external" href="https://yaml-cpp.docsforge.com/">yaml-cpp</a></p>
+<p>For the example below we will assume that the numbers are organised in a table that we should read row by row. A simple table format is most suitable for the first case above. For the second case, if you are writing a code that needs a large number of configuration parameters, you probably want to use some standard structured file format, e.g. <a class="reference external" href="https://en.wikipedia.org/wiki/YAML">YAML</a>, which you can use with C++ via external libraries such as <a class="reference external" href="https://yaml-cpp.docsforge.com/">yaml-cpp</a>.</p>
 <section id="minimal-example">
 <h2>Minimal example<a class="headerlink" href="#minimal-example" title="Permalink to this headline">#</a></h2>
 <p>Assume we have a data table file <code class="docutils literal notranslate"><span class="pre">x_y_fxy.dat</span></code> that look like this:</p>
@@ -620,7 +625,7 @@ title="Print to PDF"
 <span class="mf">7.8540e-01</span>  <span class="mf">7.8540e-01</span>  <span class="mf">1.8566e+00</span>
 </pre></div>
 </div>
-<p>The following code will read this file and save the rows in av vector of vectors using only the standard C++ library. The example also shows how the comment line starting with <code class="docutils literal notranslate"><span class="pre">#</span></code> can be ignored when reading the data.</p>
+<p>The following code will read this file and save the rows in a vector of vectors using only the standard C++ library. The example also shows how the comment line starting with <code class="docutils literal notranslate"><span class="pre">#</span></code> can be ignored when reading the data.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You can also use Armadillo to very easily read a data table — see the <a class="reference internal" href="intro_to_armadillo.html#sec-intro-to-armadillo"><span class="std std-ref">introduction to Armadillo</span></a> page.</p>
@@ -658,7 +663,7 @@ title="Print to PDF"
 <span class="w">      </span><span class="p">}</span><span class="w"></span>
 <span class="w">      </span><span class="k">else</span><span class="w"></span>
 <span class="w">      </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="c1">// Parse the string (line) and intepret it as three </span>
+<span class="w">        </span><span class="c1">// Parse the string (line) and interpret it as three </span>
 <span class="w">        </span><span class="c1">// double variables (x, y, f)</span>
 <span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">stringstream</span><span class="w"> </span><span class="n">mysstream</span><span class="p">(</span><span class="n">line</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="n">mysstream</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">f</span><span class="p">;</span><span class="w"></span>
@@ -688,7 +693,7 @@ title="Print to PDF"
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>In a larger program it is usually better to write a separate function for reading data from file, rather than placing this code directly in the main program.</p>
+<p>In a larger program, it’s usually better to write a separate function for reading data from file rather than placing this code directly in the main program.</p>
 </section>
 </section>
 

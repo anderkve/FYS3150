@@ -188,6 +188,11 @@ const thebe_selector_output = ".output, .cell_output"
    Other ways to fix mistakes
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/online_resources.html">
+   Online git resources
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -668,7 +673,7 @@ title="Print to PDF"
 </ol>
 <section id="a-model-for-the-cpu">
 <h2>A model for the CPU<a class="headerlink" href="#a-model-for-the-cpu" title="Permalink to this headline">#</a></h2>
-<p>To understand how and why a certain optimization works, we need to understand a basic high-level model of the <strong>central computing unit</strong>, or <strong>CPU</strong>, of a computer workds. For our purposes, the CPU consists of</p>
+<p>To understand how and why a certain optimization works, we need to understand a basic high-level model of the <strong>central computing unit</strong>, or <strong>CPU</strong>, of a computer. For our purposes, the CPU consists of</p>
 <ol class="simple">
 <li><p><strong>A set of computing units</strong>. These perform operations on numbers.</p></li>
 <li><p><strong>Cache</strong>. This is a type of memory with incredibly fast <strong>memory bandwidth</strong>. This means it transfers data to the computing units quickly.</p></li>
@@ -678,17 +683,17 @@ title="Print to PDF"
 <li><p>You might have heard of <strong>random access memory</strong>, or <strong>RAM</strong>. Cache memory is much much faster than this!</p></li>
 </ul>
 <ol class="simple">
-<li><p><strong>Registers</strong> which is even faster than cache. But for the most part we’ll only consider the computing units and the cache.</p></li>
+<li><p><strong>Registers</strong>, which are even faster than cache. But for the most part, we’ll only consider the computing units and the cache.</p></li>
 </ol>
 </section>
 <section id="cache-hit-and-cache-miss">
 <h2>Cache hit and cache miss<a class="headerlink" href="#cache-hit-and-cache-miss" title="Permalink to this headline">#</a></h2>
-<p>When a code block is executed, your computer will first search for the variables in the cache first. If the variable is not found in the cache, the CPU must <strong>load</strong> the memory of the variable into cache. But loading a single piece of memory is uneconomic, so instead a <strong>cache line</strong> is loaded. This is a strip of memory addresses. We refer to this process as a <strong>cache miss</strong>.</p>
+<p>When a code block is executed, your computer will first search for the variables in the cache. If the variable is not found in the cache, the CPU must <strong>load</strong> the memory of the variable into cache. But loading a single piece of memory is uneconomic, so instead a <strong>cache line</strong> is loaded. This is a strip of memory addresses. We refer to this process as a <strong>cache miss</strong>.</p>
 <p>If the variable <em>is</em> loaded into memory, we refer to it as a <strong>cache hit</strong>. Ideally, we want to maximize the likelihood of a cache hit when we write code. This is generally what optimization of memory bottlenecks is about.</p>
 </section>
 <section id="row-and-column-major-order">
 <h2>Row- and column-major order<a class="headerlink" href="#row-and-column-major-order" title="Permalink to this headline">#</a></h2>
-<p>It’s important to understand how your computer allocates memory when you writing code. If you make a mistake here, it will severely impede the execution speed of your code! But why?</p>
+<p>It’s important to understand how your computer allocates memory when you’re writing code. If you make a mistake here, it will severely impede the execution speed of your code! But why?</p>
 <p>For the most part, this will be relevant knowledge when we’re working with matrices.</p>
 <figure class="align-default" id="id1">
 <a class="reference internal image-reference" href="../../_images/Row_and_column_major_order.png"><img alt="../../_images/Row_and_column_major_order.png" src="../../_images/Row_and_column_major_order.png" style="width: 204.8px; height: 273.0px;" /></a>
@@ -712,7 +717,7 @@ We should traverse the <strong>columns</strong> (i.e. the innermost loop should 
 </section>
 <section id="illustrative-example">
 <h3>Illustrative example<a class="headerlink" href="#illustrative-example" title="Permalink to this headline">#</a></h3>
-<p>We’ll do an example with Armadillo because it simplifies allocation of matrices significantly. We recall that Armadillo allocates memory in column-major order. Therefore we should make sure to traverse the matrix along its columns (stride-1)! This means that we let the innermost loop be a loop over the <strong>row index</strong> (here <code class="docutils literal notranslate"><span class="pre">i</span></code>):</p>
+<p>We’ll do an example with Armadillo, because it simplifies allocation of matrices significantly. We recall that Armadillo allocates memory in column-major order. Therefore, we should make sure to traverse the matrix along its columns (stride-1)! This means that we let the innermost loop be a loop over the <strong>row index</strong> (here <code class="docutils literal notranslate"><span class="pre">i</span></code>):</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10000</span><span class="p">;</span><span class="w"></span>
 <span class="n">mat</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mat</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">);</span><span class="w"></span>
 <span class="kt">clock_t</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clock</span><span class="p">();</span><span class="w"></span>
@@ -771,7 +776,7 @@ We should traverse the <strong>columns</strong> (i.e. the innermost loop should 
 <li><p><code class="docutils literal notranslate"><span class="pre">x(j)</span></code> is certainly not dependent on the inner loop. By including it there, it’s repeatedly discarded and loaded into cache.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">A(i,</span> <span class="pre">j)</span></code> only partially depend on the inner loop. So here we face the same problem. Cache lines that are loaded in must be discarded to make room for new ones.</p></li>
 </ol>
-<p>Let’s deal with the point 1 first. Instead of loading the vector, we create a temporary <code class="docutils literal notranslate"><span class="pre">tmp</span></code> for it:</p>
+<p>Let’s deal with point 1 first. Instead of loading the vector, we create a temporary <code class="docutils literal notranslate"><span class="pre">tmp</span></code> for it:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">(</span><span class="n">j</span><span class="p">);</span><span class="w"> </span><span class="c1">//Extract element j of the vector</span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>

@@ -190,6 +190,11 @@ const thebe_selector_output = ".output, .cell_output"
    Other ways to fix mistakes
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/online_resources.html">
+   Online git resources
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -736,10 +741,10 @@ title="Print to PDF"
 <li><p><strong>Format:</strong></p>
 <ul>
 <li><p>A pdf document, typeset in LaTeX, with answers to all the problems below. You deliver the pdf on Canvas.</p></li>
-<li><p>Code (with comments, of course) on a GitHub repo, with the repo link provided in the pdf documentet.</p></li>
+<li><p>Code (with comments, of course) on a GitHub repo, with the repo link provided in the pdf document.</p></li>
 </ul>
 </li>
-<li><p><strong>Not a complete report:</strong> For project 1 we do not require you to write a proper scientific report — only a document with an answer for each problem. But the quality of the presentation still matters, of course. So pay attention to figures, figure captions, grammar, etc.</p></li>
+<li><p><strong>Not a complete report:</strong> For project 1, we do not require you to write a proper scientific report — only a document with an answer for each problem. But the quality of the presentation still matters, of course. So pay attention to figures, figure captions, grammar, etc.</p></li>
 <li><p><strong>Collaboration:</strong> If you are collaborating with others (<em>and we hope you are!</em>) you <em>must</em> join the same project group on Canvas. The group hands in a single pdf. Remember to list everyone’s name in the pdf.</p></li>
 <li><p><strong>Reproducibility:</strong> Your code should be available on a GitHub repo. You can refer to relevant parts of your code in your answers. Make sure to include a README file in the repo that explains how the code should be compiled and run in order to reproduce your results.</p></li>
 <li><p><strong>Figures:</strong> Figures included in your LaTeX document should be made as vector graphics (e.g. <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> files), rather than raster graphics (e.g. <code class="docutils literal notranslate"><span class="pre">.png</span></code> files). If you are making plots with <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> in Python, this is as simple as calling <code class="docutils literal notranslate"><span class="pre">plt.savefig(&quot;figure.pdf&quot;)</span></code> rather than <code class="docutils literal notranslate"><span class="pre">plt.savefig(&quot;figure.png&quot;)</span></code>.</p></li>
@@ -753,7 +758,7 @@ title="Print to PDF"
 <li><p>The most important C++ aspects for this project are:</p>
 <ul class="simple">
 <li><p>basic C++ program structure</p></li>
-<li><p>compiliation and linking</p></li>
+<li><p>compilation and linking</p></li>
 <li><p>functions</p></li>
 <li><p>vectors/arrays (examples of <em>containers</em>)</p></li>
 <li><p>writing output to screen and/or file</p></li>
@@ -764,7 +769,7 @@ title="Print to PDF"
 </section>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
-<p>The overall topic of this project is numerical solution of the one-dimensional Poisson equation. This is a second-order differential equation that shows up in several areas of physics, e.g. electrostatics. In future projects we will pay close attention to scaling of dimensionfull physics equations, but for this first project we start directly from the differential equation <em>after</em> scaling to dimensionless variables.</p>
+<p>The overall topic of this project is numerical solution of the one-dimensional Poisson equation. This is a second-order differential equation that shows up in several areas of physics, e.g. electrostatics. In future projects, we will pay close attention to scaling of dimensionfull physics equations - but for this first project, we start directly from the differential equation <em>after</em> scaling to dimensionless variables.</p>
 <p>The one-dimensional Poisson equation can be written as</p>
 <div class="math notranslate nohighlight" id="equation-poisson-eq">
 <span class="eqno">(1)<a class="headerlink" href="#equation-poisson-eq" title="Permalink to this equation">#</a></span>\[
@@ -802,7 +807,7 @@ u(x) = 1 - (1 - e^{-10}) x - e^{-10 x}.
 </section>
 <section id="problem-4">
 <h3>Problem 4<a class="headerlink" href="#problem-4" title="Permalink to this headline">#</a></h3>
-<p>Show that you can rewrite your discretized equation as a matrix equation on the form</p>
+<p>Show that you can rewrite your discretized equation as a matrix equation of the form</p>
 <div class="math notranslate nohighlight" id="equation-matrix-eq">
 <span class="eqno">(3)<a class="headerlink" href="#equation-matrix-eq" title="Permalink to this equation">#</a></span>\[
 \mathbf{A} \vec{v} = \vec{g}

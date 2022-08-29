@@ -188,6 +188,11 @@ const thebe_selector_output = ".output, .cell_output"
    Other ways to fix mistakes
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/online_resources.html">
+   Online git resources
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -605,8 +610,8 @@ title="Print to PDF"
 <h1>Write to file<a class="headerlink" href="#write-to-file" title="Permalink to this headline">#</a></h1>
 <section id="text-output-vs-binary-output">
 <h2>Text output vs binary output<a class="headerlink" href="#text-output-vs-binary-output" title="Permalink to this headline">#</a></h2>
-<p>Below we will look at some simple examples of how to write output to a file in human-readable (i.e. text) format.</p>
-<p>The alternative would be to save the data directly in some binary format. This has the benefit of typically producing much smaller file sizes. For example, storing a double-precision number (precision of ~15 decimal places) directly in binary requires 8 bytes, while storing the same number as text would require (at least) 1 byte per character. (E.g. the number “1.2345e+02” would require 10 bytes.) The downside of using a binary file format is that we can’t simply open the file with a text editor and look at the content. Instead the file must be read and interpreted by some program that knows exactly how the data was structured in the file when it was written – in other words, a program that knows the given file format. A simple example of storing and reading data in binary format that may be very useful for this course is given on the <a class="reference internal" href="intro_to_armadillo.html#sec-intro-to-armadillo"><span class="std std-ref">introduction to Armadillo</span></a> page.</p>
+<p>Below, we will look at some simple examples of how to write output to a file in human-readable (i.e. text) format.</p>
+<p>The alternative would be to save the data directly in some binary format. This has the benefit of typically producing much smaller file sizes. For example, storing a double-precision number (precision of ~15 decimal places) directly in binary requires 8 bytes, while storing the same number as text would require (at least) 1 byte per character. (E.g. the number “1.2345e+02” would require 10 bytes.) The downside of using a binary file format is that we can’t simply open the file with a text editor and look at the content. Instead, the file must be read and interpreted by some program that knows exactly how the data was structured in the file when it was written – in other words, a program that knows the given file format. A simple example of storing and reading data in binary format that may be very useful for this course is given on the <a class="reference internal" href="intro_to_armadillo.html#sec-intro-to-armadillo"><span class="std std-ref">introduction to Armadillo</span></a> page.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>There exists many professional file formats for binary data, with dedicated libraries for reading/writing such files using different programming languages. One example is the <code class="docutils literal notranslate"><span class="pre">hdf5</span></code> format – see <a class="reference external" href="https://en.wikipedia.org/wiki/Hierarchical_Data_Format">this</a> Wikipedia page if you want to learn more.</p>
@@ -653,7 +658,7 @@ title="Print to PDF"
 <section id="example-with-nicely-formatted-numbers">
 <h2>Example with nicely formatted numbers<a class="headerlink" href="#example-with-nicely-formatted-numbers" title="Permalink to this headline">#</a></h2>
 <p>Below is a slightly more elaborate example. It computes y = x^2 for 101 points from x=0.0 to x=1.0 (i.e. with a stepsize of 0.01),
-and writes the x and y values to a file <code class="docutils literal notranslate"><span class="pre">x_y.txt</span></code> in a nicely formatted way. For this formatting we use functionality from <code class="docutils literal notranslate"><span class="pre">&lt;iomanip&gt;</span></code>.</p>
+and writes the x and y values to a file <code class="docutils literal notranslate"><span class="pre">x_y.txt</span></code> in a nicely formatted way. For this formatting, we use functionality from <code class="docutils literal notranslate"><span class="pre">&lt;iomanip&gt;</span></code>.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fstream&gt;</span><span class="cp"></span>

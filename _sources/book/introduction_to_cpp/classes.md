@@ -125,7 +125,7 @@ A couple notes:
 
 ### The straight line: source file
 
-In the source file we provide defitions for the **constructor** `Line(double c0, double c1)`, which creates an instance (object) of the class, and our only class method, `double eval(double x)`. Note that in the source file we have to prefix the function names with the class namespace `Line::`. We end up with the following simple source file, `Line.cpp`:
+In the source file, we provide defitions for the **constructor** `Line(double c0, double c1)`, which creates an instance (object) of the class, and our only class method, `double eval(double x)`. Note that in the source file we have to prefix the function names with the class namespace `Line::`. We end up with the following simple source file, `Line.cpp`:
 
 ```c++
 #include "Line.hpp"

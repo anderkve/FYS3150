@@ -41,7 +41,7 @@ d = 3.14;
 s = "Hi there!;
 ```
 
-Often it is useful to do both the declaration and the value assignment as one code statement, like in these examples:
+Often, it is useful to do both the declaration and the value assignment as one code statement:
 
 ```c++
 int i = 10;

@@ -188,6 +188,11 @@ const thebe_selector_output = ".output, .cell_output"
    Other ways to fix mistakes
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/online_resources.html">
+   Online git resources
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -720,7 +725,7 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-armadillo">
 <span id="sec-intro-to-armadillo"></span><h1>Introduction to Armadillo<a class="headerlink" href="#introduction-to-armadillo" title="Permalink to this headline">#</a></h1>
 <p>Armadillo is an efficient linear algebra library for C++ users. Its aim is to provide a library that balances speed and ease of use. We recommend this library for numerical computations as a replacement for dynamic allocation of arrays.</p>
-<p>We’ll cover the very basics here to get you started with the library. However, their webpage provide an excellent, detailed <a class="reference external" href="http://arma.sourceforge.net/docs.html">code documentation</a> with examples of usage that you can search through.</p>
+<p>We’ll cover the very basics here to get you started with the library. However, their webpage provides an excellent, detailed <a class="reference external" href="http://arma.sourceforge.net/docs.html">code documentation</a> with examples of usage that you can search through.</p>
 <section id="building-code-with-armadillo">
 <h2>Building code with Armadillo<a class="headerlink" href="#building-code-with-armadillo" title="Permalink to this headline">#</a></h2>
 <p>We must make sure to include the header file for Armadillo, which amounts to adding <code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&lt;armadillo&gt;</span></code> at the top of a header or source file.</p>
@@ -822,7 +827,7 @@ Not only does this simplify storage of results with a predictable format, but it
 <span class="mf">5.8905e-01</span>  <span class="mf">7.8540e-01</span>  <span class="mf">1.4688e+00</span>
 </pre></div>
 </div>
-<p>To read these numbers into an Armadillo matrix we simply do this:</p>
+<p>To read these numbers into an Armadillo matrix, we simply do this:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="w"> </span><span class="n">A</span><span class="p">;</span><span class="w"></span>
 <span class="n">A</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">&quot;mynumbers.dat&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">raw_ascii</span><span class="p">)</span><span class="w"></span>
 </pre></div>
@@ -838,7 +843,7 @@ Not only does this simplify storage of results with a predictable format, but it
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyarma</span> <span class="k">as</span> <span class="nn">pa</span>
 </pre></div>
 </div>
-<p>From there you can easily load the <code class="docutils literal notranslate"><span class="pre">arma::mat</span></code> (or <code class="docutils literal notranslate"><span class="pre">arma::vec</span></code>) object you saved in C++ using</p>
+<p>From there, you can easily load the <code class="docutils literal notranslate"><span class="pre">arma::mat</span></code> (or <code class="docutils literal notranslate"><span class="pre">arma::vec</span></code>) object you saved in C++ using</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">mat</span><span class="p">()</span> <span class="c1">#Create pa.mat object (just as arma::mat in C++)</span>
 <span class="n">A</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="c1">#Load the content of the matrix you saved into your Python program.</span>
 </pre></div>

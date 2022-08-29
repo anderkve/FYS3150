@@ -188,6 +188,11 @@ const thebe_selector_output = ".output, .cell_output"
    Other ways to fix mistakes
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/online_resources.html">
+   Online git resources
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -762,7 +767,7 @@ simply by adding <strong>compiler directives</strong> to the serial code. We’l
 <li><p>Sometimes the compiler divides the for loop cyclically, so thread 0 gets <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">p,</span> <span class="pre">2p,</span> <span class="pre">...</span></code> while thread 1 gets <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">p+1,</span> <span class="pre">2p+1,</span> <span class="pre">...</span></code> and so on.</p></li>
 <li><p>The first option is typically the chosen division among the threads. For very complex problems, you can perform the division of tasks among the threads manually. For the problems we meet in this course, though, you should let OpenMP do the work for you.</p></li>
 </ul>
-<p>The compiler directive only parallelize the <em>first</em> following for-loop. For instance</p>
+<p>The compiler directive only parallelizes the <em>first</em> following for-loop. For instance</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma omp parallel for</span>
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
 <span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">m</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
@@ -781,7 +786,7 @@ simply by adding <strong>compiler directives</strong> to the serial code. We’l
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>It’s only possible with <em>perfectly</em> nested for-loops like this. By that, we mean that if the a nested for-loop looks like</p>
+<p>It’s only possible with <em>perfectly</em> nested for-loops like this. By that, we mean that if a nested for-loop looks like</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
 <span class="w">  </span><span class="c1">//Some code only dependent on i</span>
 <span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">m</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
@@ -820,7 +825,7 @@ simply by adding <strong>compiler directives</strong> to the serial code. We’l
 </div>
 <section id="the-atomic-section">
 <h3>The atomic section<a class="headerlink" href="#the-atomic-section" title="Permalink to this headline">#</a></h3>
-<p>This is used if we simply want to combine the contribution from each thread to a global variable by addition, multiplication and division <strong>in place</strong>. For example with addition in place, this looks as:</p>
+<p>This is used if we simply want to combine the contribution from each thread to a global variable by addition, multiplication and division <strong>in place</strong>. For example - with addition in place, this looks as:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma omp atomic</span>
 <span class="w">  </span><span class="n">global_variable</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">local_thread_variable</span><span class="w"></span>
 </pre></div>
@@ -909,7 +914,7 @@ Nevertheless, we provide a few important ones, perhaps the only ones you’ll ne
 </section>
 <section id="example-computing-the-sum-of-the-100-first-integers">
 <h3>Example: computing the sum of the 100 first integers<a class="headerlink" href="#example-computing-the-sum-of-the-100-first-integers" title="Permalink to this headline">#</a></h3>
-<p>We’ve looked at a lot of general theory. Let’s put some of it to use in an example. We’ll compute the sum of the 100 first integers. The answer is 5050.</p>
+<p>We’ve looked at a lot of general theory. Let’s put some of it to use in an example. We’ll compute the sum of the first 100 integers. The answer is 5050.</p>
 <p>The first step should be to do this with a serial code so we’re sure the computations are done correctly. A short program is all we need:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"></span>

@@ -188,6 +188,11 @@ const thebe_selector_output = ".output, .cell_output"
    Other ways to fix mistakes
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../using_git/online_resources.html">
+   Online git resources
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -613,7 +618,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="functions-take-1">
 <h1>Functions, take 1<a class="headerlink" href="#functions-take-1" title="Permalink to this headline">#</a></h1>
-<p>A <strong>function</strong> in C++ is a code block which is executed only when the function is called. A function takes <strong>arguments</strong>, performs some action and usually returns and <strong>output</strong>.</p>
+<p>A <strong>function</strong> in C++ is a code block which is executed only when the function is called. A function takes <strong>arguments</strong>, performs some action, and usually returns an <strong>output</strong>.</p>
 <section id="creating-a-function">
 <h2>Creating a function<a class="headerlink" href="#creating-a-function" title="Permalink to this headline">#</a></h2>
 <p>Creating a function in C++ consists of two steps:</p>
@@ -634,7 +639,7 @@ title="Print to PDF"
 </section>
 <section id="separation-of-declaration-and-definition">
 <h2>Separation of declaration and definition<a class="headerlink" href="#separation-of-declaration-and-definition" title="Permalink to this headline">#</a></h2>
-<p>As noted, we can’t declare a function after the <code class="docutils literal notranslate"><span class="pre">main()</span></code> function of a C++ program. We can however separate the two. What this means is</p>
+<p>As noted, we can’t declare a function after the <code class="docutils literal notranslate"><span class="pre">main()</span></code> function of a C++ program. We can, however, separate the two. What this means is</p>
 <ul class="simple">
 <li><p>Declare the function <em>before</em> <code class="docutils literal notranslate"><span class="pre">main()</span></code>. This is called <strong>forward declaration</strong> if a definition isn’t provided simultaneously.</p></li>
 <li><p>Provide a definition of the function <em>after</em> <code class="docutils literal notranslate"><span class="pre">main()</span></code>.</p></li>
@@ -655,7 +660,7 @@ title="Print to PDF"
 </section>
 <section id="example-1-single-argument">
 <h2>Example 1: single argument<a class="headerlink" href="#example-1-single-argument" title="Permalink to this headline">#</a></h2>
-<p>Say we want to implements the function <code class="docutils literal notranslate"><span class="pre">f(x)</span> <span class="pre">=</span> <span class="pre">x*x</span></code> in C++ and call it once in a <code class="docutils literal notranslate"><span class="pre">main()</span></code> program. A short program for this looks like</p>
+<p>Say we want to implement the function <code class="docutils literal notranslate"><span class="pre">f(x)</span> <span class="pre">=</span> <span class="pre">x*x</span></code> in C++ and call it once in a <code class="docutils literal notranslate"><span class="pre">main()</span></code> program. A short program for this looks like</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="w"> </span><span class="c1">//Declaration</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>

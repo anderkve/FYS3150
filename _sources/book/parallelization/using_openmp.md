@@ -64,7 +64,7 @@ The variable `i` in the loop is distributed among the threads so that each threa
   - Sometimes the compiler divides the for loop cyclically, so thread 0 gets `i = 0, p, 2p, ...` while thread 1 gets `i = 1, p+1, 2p+1, ...` and so on.
   - The first option is typically the chosen division among the threads. For very complex problems, you can perform the division of tasks among the threads manually. For the problems we meet in this course, though, you should let OpenMP do the work for you.
 
-The compiler directive only parallelize the *first* following for-loop. For instance
+The compiler directive only parallelizes the *first* following for-loop. For instance
 ```c++
 #pragma omp parallel for
 for (int i = 0; i < n; i++){
@@ -86,7 +86,7 @@ for (int i = 0; i < n; i++){
 }
 ```
 
-It's only possible with *perfectly* nested for-loops like this. By that, we mean that if the a nested for-loop looks like
+It's only possible with *perfectly* nested for-loops like this. By that, we mean that if a nested for-loop looks like
 
 ```c++
 for (int i = 0; i < n; i++){
@@ -129,7 +129,7 @@ In examples where we simply want to combine the results from each thread, there 
 
 ### The atomic section
 
-This is used if we simply want to combine the contribution from each thread to a global variable by addition, multiplication and division **in place**. For example with addition in place, this looks as:
+This is used if we simply want to combine the contribution from each thread to a global variable by addition, multiplication and division **in place**. For example - with addition in place, this looks as:
 
 ```c++
 #pragma omp atomic
@@ -215,7 +215,7 @@ This does not guarantee that the operating system actually gives us that many th
 
 ### Example: computing the sum of the 100 first integers
 
-We've looked at a lot of general theory. Let's put some of it to use in an example. We'll compute the sum of the 100 first integers. The answer is 5050.
+We've looked at a lot of general theory. Let's put some of it to use in an example. We'll compute the sum of the first 100 integers. The answer is 5050.
 
 The first step should be to do this with a serial code so we're sure the computations are done correctly. A short program is all we need:
 

@@ -1,9 +1,9 @@
 # Write to file
 
 ## Text output vs binary output
-Below we will look at some simple examples of how to write output to a file in human-readable (i.e. text) format. 
+Below, we will look at some simple examples of how to write output to a file in human-readable (i.e. text) format. 
 
-The alternative would be to save the data directly in some binary format. This has the benefit of typically producing much smaller file sizes. For example, storing a double-precision number (precision of ~15 decimal places) directly in binary requires 8 bytes, while storing the same number as text would require (at least) 1 byte per character. (E.g. the number "1.2345e+02" would require 10 bytes.) The downside of using a binary file format is that we can't simply open the file with a text editor and look at the content. Instead the file must be read and interpreted by some program that knows exactly how the data was structured in the file when it was written -- in other words, a program that knows the given file format. A simple example of storing and reading data in binary format that may be very useful for this course is given on the [introduction to Armadillo](sec:intro_to_armadillo) page. 
+The alternative would be to save the data directly in some binary format. This has the benefit of typically producing much smaller file sizes. For example, storing a double-precision number (precision of ~15 decimal places) directly in binary requires 8 bytes, while storing the same number as text would require (at least) 1 byte per character. (E.g. the number "1.2345e+02" would require 10 bytes.) The downside of using a binary file format is that we can't simply open the file with a text editor and look at the content. Instead, the file must be read and interpreted by some program that knows exactly how the data was structured in the file when it was written -- in other words, a program that knows the given file format. A simple example of storing and reading data in binary format that may be very useful for this course is given on the [introduction to Armadillo](sec:intro_to_armadillo) page. 
 
 
 ```{note}
@@ -56,7 +56,7 @@ ofile.open(filename, std::ofstream::app);
 ## Example with nicely formatted numbers
 
 Below is a slightly more elaborate example. It computes y = x^2 for 101 points from x=0.0 to x=1.0 (i.e. with a stepsize of 0.01), 
-and writes the x and y values to a file `x_y.txt` in a nicely formatted way. For this formatting we use functionality from `<iomanip>`.
+and writes the x and y values to a file `x_y.txt` in a nicely formatted way. For this formatting, we use functionality from `<iomanip>`.
 
 ```c++
 #include <iostream>

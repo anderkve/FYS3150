@@ -28,7 +28,7 @@ The program illustrates some C++ basics:
 
 - Comments start with `//`
 
-- The line `#include <iostream>` includes standard C++ functionality for input/output. (More about that later.) This enables us to use `std::cout` in our code. The `#include` lines in C++ are a bit like like the `import` lines in Python.
+- The line `#include <iostream>` includes standard C++ functionality for input/output. (More about that later.) This enables us to use `std::cout` in our code. The `#include` lines in C++ are a bit like the `import` lines in Python.
 
 - A valid C++ program must have a function called `main` with **return type** `int` (integer):
   ```cpp

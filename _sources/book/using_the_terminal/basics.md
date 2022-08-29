@@ -3,9 +3,9 @@
 
 On this page you will learn some basics (and some not-so-basics) of working from the **terminal**, a.k.a. the **shell**, a.k.a. the **command line**, a.k.a. the **console**. Typing commands instead of the usual point-and-click may feel a bit clumsy and old-fashioned at first. But if you stick with it, you'll soon realize why the terminal is a standard tool for code developers, computational scientists and anyone else doing fancy stuff with computers.
 
-For the examples below we will often need some dummy directories and files. To create/download these files and directories we'll provide one-line *preparation commands* that you can simply copy and paste into the terminal. To paste in the terminal, right-click or press **ctrl-shift-v** (Linux) or **cmd-v** (macOS). To execute a command, simply hit 'enter'. 
+For the examples below, we will often need some dummy directories and files. To create/download these files and directories, we'll provide one-line *preparation commands* that you can simply copy and paste into the terminal. To paste in the terminal, right-click or press **ctrl-shift-v** (Linux) or **cmd-v** (macOS). To execute a command, simply hit 'enter'. 
 
-Don't worry if you don't yet understand what's going on in these preparation commands --- you'll learn all of it soon. After each example we also provide a single-line command that deletes the dummy files we've just created.
+Don't worry if you don't yet understand what's going on in these preparation commands --- you'll learn all of it soon. After each example, we also provide a single-line command that deletes the dummy files we've just created.
 
 ```{note}
 The [Unix shell](https://en.wikipedia.org/wiki/Unix_shell) comes in a few different versions, with `bash` and `zsh` being among the most widely used. Most commands are identical across different shells, but in some cases there are small differences. The commands listed on our course pages have generally been tested on `bash`. If you are running macOS 10.15 (Catalina) or later, you probably are running `zsh` by default. If so, it's useful to read the [Choosing a Unix shell](sec:choosing_shell) subsection before you continue.
@@ -106,7 +106,7 @@ cd $HOME/compphys_examples && rm -r copy_move_rename
 cd $HOME/compphys_examples && mkdir delete && cd delete && mkdir emptydir dirA dirA/dirB && touch file1.txt dirA/file2.txt dirA/dirB/file3.txt && echo "" && echo "current directory: $(pwd)" && echo ""
 ```
 
-The basic command for deleting stuff is `rm` (for *remove*). To remove an empty directory you can use `rmdir`.
+The basic command for deleting stuff is `rm` (for *remove*). To remove an empty directory, you can use `rmdir`.
 
 ```sh
 rm file1.txt                            # Delete the file file1.txt
@@ -190,7 +190,7 @@ cd $HOME/compphys_examples && rm -r view_files
 cd $HOME/compphys_examples && mkdir download_files && cd download_files && echo "" && echo "current directory: $(pwd)" && echo ""
 ```
 
-If you have the URL you can download a file directly from the terminal with the `wget` command. Let's demonstrate it by downloading the markdown (`.md`) file that this page is built from:
+If you have the URL, you can download a file directly from the terminal with the `wget` command. Let's demonstrate it by downloading the markdown (`.md`) file that this page is built from:
 
 ```sh
 wget https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/basics.md
@@ -211,7 +211,7 @@ cd $HOME/compphys_examples && rm -r download_files
 cd $HOME/compphys_examples && mkdir run_programs run_programs/dirA && cd run_programs && echo "echo \"This program does nothing\" " > some_script.sh  && echo "echo \"This program also does nothing\" " > dirA/some_other_script.sh  && chmod u+x some_script.sh dirA/some_other_script.sh && echo "" &&  echo "current directory: $(pwd)" && echo ""
 ```
 
-To run an **executable** (a compiled C++ program, a shell script, etc.) we simply specify the path to the executable file and hit 'enter'. When the file lives in the current directory, we specify the directory with `./`:
+To run an **executable** (a compiled C++ program, a shell script, etc.), we simply specify the path to the executable file and hit 'enter'. When the file lives in the current directory, we specify the directory with `./`:
 
 ```sh
 ./some_script.sh             # Run some_script.sh that lives in the current directory
