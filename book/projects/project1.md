@@ -125,6 +125,13 @@ where $\mathbf{A}$ is the tridiagonal matrix from Problem 4;
 
 ### Problem 8
 
+In this problem we will look at some error computations. Since the two boundary points are known 
+($u(0) = 0$ and $u(1) = 0$), you should have exactly zero error at these points. You can therefore leave
+out the boundary points for this problem. 
+
+(If you *do* include the boundary points, make sure to comment on how you treat the "0/0" cases for the relative error.)
+
+
 **a)** Make a plot that shows the (logarithm of) the *absolute* error,
 
 $$
@@ -142,7 +149,7 @@ $$
 
 as function of $x_i$. Again, one graph per choice of $n_{\text{steps}}$.
 
-**c**) Now make a table that shows the *maximum* relative error $\max(\epsilon_i)$ for each choice of $n_{\text{steps}}$, up to $n_{\text{steps}} = 10^7$. Feel free to also make a plot to visualise this. Comment on your result.
+**c**) Now make a table that shows the *maximum* relative error $\max(\epsilon_i)$ for each choice of $n_{\text{steps}}$, up to $n_{\text{steps}} = 10^7$. Comment on your results, and feel free to also make a plot to visualise the result.
 
 
 
