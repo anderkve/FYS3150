@@ -118,6 +118,7 @@ By the way, don't worry too much about where LaTeX decides to place your figures
 Next up is a table, created using the \texttt{table} and \texttt{tabular} environments. We refer to it by table \ref{tab:output_table}.
 \begin{table}%[h!]
     \centering
+    \caption{Write a descriptive caption here, explaining the content of your table.}
     \begin{tabular}{c@{\hspace{1cm}} c}
         \hline
         Number of points & Output \\
@@ -125,7 +126,7 @@ Next up is a table, created using the \texttt{table} and \texttt{tabular} enviro
         10 &  0.3086\\
         100 &  0.2550\\
         \hline
-    \end{tabular}\caption{Write a descriptive caption here, explaining the content of your table.}\label{tab:output_table}
+    \end{tabular}\label{tab:output_table}
 \end{table}
 
 Finally, we can list algorithms by using the \texttt{algorithm} environment, as demonstrated here for algorithm \ref{algo:midpoint_rule}.
