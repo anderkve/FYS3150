@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Setting up Git and a GitHub repository &#8212; FYS3150/FYS4150 course material</title>
+    <title>Add a README and gitignore &#8212; FYS3150/FYS4150 course material</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Add a README and gitignore" href="add_a_README_and_gitignore.html" />
-    <link rel="prev" title="Introduction to Git" href="introduction_to_git.html" />
+    <link rel="next" title="Using Git" href="using_git.html" />
+    <link rel="prev" title="Setting up Git and a GitHub repository" href="setting_up_git_and_a_GitHub_repo.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -158,13 +158,13 @@ const thebe_selector_output = ".output, .cell_output"
    Introduction to Git
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="setting_up_git_and_a_GitHub_repo.html">
    Setting up Git and a GitHub repository
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="add_a_README_and_gitignore.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Add a README and gitignore
   </a>
  </li>
@@ -460,7 +460,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Fbook/using_git/setting_up_git_and_a_GitHub_repo.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Fbook/using_git/add_a_README_and_gitignore.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -488,7 +488,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/book/using_git/setting_up_git_and_a_GitHub_repo.md"
+        <a href="../../_sources/book/using_git/add_a_README_and_gitignore.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -548,28 +548,23 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setting-up-git-on-your-computer">
-   Setting up Git on your computer
+  <a class="reference internal nav-link" href="#readme">
+   README
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-github-repository">
-   Create a GitHub repository
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adding-a-github-token">
-   Adding a GitHub token
+  <a class="reference internal nav-link" href="#gitignore">
+   gitignore
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#on-linux">
-     On Linux
+    <a class="reference internal nav-link" href="#why-ignore-certain-files">
+     Why ignore certain files?
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#on-macos">
-     On macOS
+    <a class="reference internal nav-link" href="#how-to-make-a-gitignore-file">
+     How to make a gitignore-file
     </a>
    </li>
   </ul>
@@ -583,7 +578,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Setting up Git and a GitHub repository</h1>
+                <h1>Add a README and gitignore</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -594,28 +589,23 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setting-up-git-on-your-computer">
-   Setting up Git on your computer
+  <a class="reference internal nav-link" href="#readme">
+   README
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-github-repository">
-   Create a GitHub repository
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adding-a-github-token">
-   Adding a GitHub token
+  <a class="reference internal nav-link" href="#gitignore">
+   gitignore
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#on-linux">
-     On Linux
+    <a class="reference internal nav-link" href="#why-ignore-certain-files">
+     Why ignore certain files?
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#on-macos">
-     On macOS
+    <a class="reference internal nav-link" href="#how-to-make-a-gitignore-file">
+     How to make a gitignore-file
     </a>
    </li>
   </ul>
@@ -630,122 +620,36 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="setting-up-git-and-a-github-repository">
-<h1>Setting up Git and a GitHub repository<a class="headerlink" href="#setting-up-git-and-a-github-repository" title="Permalink to this headline">#</a></h1>
-<section id="setting-up-git-on-your-computer">
-<h2>Setting up Git on your computer<a class="headerlink" href="#setting-up-git-on-your-computer" title="Permalink to this headline">#</a></h2>
-<p>You need to tell Git which user you are. Write the following commands in your terminal:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git config --global user.name your_user_name_spelled_out
-
-git config --global user.email you@yourdomain.com
-</pre></div>
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="add-a-readme-and-gitignore">
+<h1>Add a README and gitignore<a class="headerlink" href="#add-a-readme-and-gitignore" title="Permalink to this headline">#</a></h1>
+<section id="readme">
+<h2>README<a class="headerlink" href="#readme" title="Permalink to this headline">#</a></h2>
+<p>Make sure to add (and keep up to date) a file <code class="docutils literal notranslate"><span class="pre">README.md</span></code> at the base directory of your Git repo. GitHub will suggest adding such a file when you register a new repo. The README file should contain a short explanation of how your repository is organized, and what commands others have to run in order to build and use the various codes.</p>
+<p>You can format the file nicely using Markdown syntax, but it is also OK to just write plain text.</p>
 </section>
-<section id="create-a-github-repository">
-<h2>Create a GitHub repository<a class="headerlink" href="#create-a-github-repository" title="Permalink to this headline">#</a></h2>
-<p>Here’s a step-by-step instruction to create a repository (“repo”):</p>
+<section id="gitignore">
+<h2>gitignore<a class="headerlink" href="#gitignore" title="Permalink to this headline">#</a></h2>
+<p>As with README, GitHub will also suggest adding a <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file to your repository. A gitignore file is a file that contains a list of all the files that Git should <em>not</em> track changes for.</p>
+<section id="why-ignore-certain-files">
+<h3>Why ignore certain files?<a class="headerlink" href="#why-ignore-certain-files" title="Permalink to this headline">#</a></h3>
+<p>Some files you do not want Git to track. This can for instance be because they are large data files, auxiliary files that are not useful for anything else than the program that generated them, or configuration files containing sensitive information. Here are some examples particularly relevant for our course:</p>
 <ul class="simple">
-<li><p>Go to <a class="reference external" href="https://github.com/">github.com</a> and log in. The page should look something like this:</p></li>
+<li><p>Git has a file size limit of 100MB, and GitHub will give you a warning if you push a file larger than 50MB. Tracking changes in very large files reduces performance and can make Git noticably slow.</p></li>
+<li><p>When running Python codes, you will often get a folder called <code class="docutils literal notranslate"><span class="pre">__pycache__</span></code>. This folder is generated and used by the Python interpreter at runtime – it’s not directly useful for you or others browsing your code, so there’s no need to have Git track it.</p></li>
+<li><p>Any <em>compiled</em> C++ files, either executables or object files (e.g. files like <code class="docutils literal notranslate"><span class="pre">main.o</span></code>), do not need to be tracked by Git.</p></li>
+<li><p>When using LaTeX you will typically end up with a lot of auto-generated files with strange file extensions in your folder. (These are generated when you compile the pdf document.) All these files are perfectly happy being left alone – there’s no need to track them with Git.</p></li>
 </ul>
-<p><img alt="homepage" src="../../_images/github_homepage.png" /></p>
-<ul class="simple">
-<li><p>Click on the green button named <em>New</em>. You should be redirected to a page that looks like this:</p></li>
-</ul>
-<p><img alt="create_repo" src="../../_images/create_repo.png" /></p>
-<ul class="simple">
-<li><p>Fill out your desired repository name, for instance <em>fys3150</em></p>
-<ul>
-<li><p>Keep the repository <em>public</em>.</p></li>
-<li><p>Toggle <em>add a README file</em>.</p></li>
-<li><p>Click <em>create repository</em>.</p></li>
-<li><p>You’ll be automatically redirected to the home page of your repository, see the image below.</p></li>
-</ul>
-</li>
-</ul>
-<p><img alt="clone_repo" src="../../_images/clone_repo.png" /></p>
-<ul>
-<li><p>Clone your repository to your computer.</p>
-<ul>
-<li><p>Click on the green button named <em>code</em>.</p></li>
-<li><p>Copy the link.</p></li>
-<li><p>Run in your terminal:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone the_repository_link_you_copied
-</pre></div>
-</div>
-</li>
-</ul>
-</li>
-</ul>
-<p>Now you’ve cloned the repository to your computer! This will be a directory you can now find locally on your computer.</p>
+<p>When typing <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> in the terminal, you will get a list of all the tracked files that <em>have</em> changed, and then a list of all new files that Git is <em>not</em> currently tracking and that are <em>not</em> listed in your gitignore file. Having a gitignore file helps making sure that these lists are so cluttered that you miss adding files that you do want Git to track:</p>
+<p><img alt="annoying" src="../../_images/files_to_ignore.png" /></p>
 </section>
-<section id="adding-a-github-token">
-<h2>Adding a GitHub token<a class="headerlink" href="#adding-a-github-token" title="Permalink to this headline">#</a></h2>
-<p>A GitHub token is a replacement of passwords to give you as a user access to perform action on your GitHub repositories from your computer.</p>
-<p>Disclaimer: Note that this is not a secure option, as the token will be saved in clear text. But it’s nevertheless the simplest option.</p>
-<ul class="simple">
-<li><p>Go to <a class="reference external" href="https://github.com/">github.com</a>. Click on your profile in the upper right corner, then on <em>settings</em>.</p></li>
-</ul>
-<p><img alt="go_to_settings" src="../../_images/go_to_settings.png" /></p>
-<ul class="simple">
-<li><p>Click on <em>developer settings</em>.</p></li>
-</ul>
-<p><img alt="go_to_developer_settings" src="../../_images/go_to_developer_settings.png" /></p>
-<ul class="simple">
-<li><p>Click on <em>Personal access tokens</em> and then click on <em>Generate new token</em>.</p></li>
-</ul>
-<p><img alt="generate_new_token" src="../../_images/generate_new_token.png" /></p>
-<ul class="simple">
-<li><p>Your page should look somethings like what follows.</p>
-<ul>
-<li><p>Fill out note with a name for the token, for instance <em>main_token</em>.</p></li>
-<li><p>Change expiration date to <em>no expiration</em> (you can choose a finite expiration if security bothers you. But this is a school project, not a multibillion dollar code project.)</p></li>
-<li><p>Toggle every box under <em>select scopes</em>. Most of them are unnecessary, but we just want full access.</p></li>
-<li><p>Click <em>Generate token</em> at the bottom of the screen.</p></li>
-</ul>
-</li>
-</ul>
-<p><img alt="token_page" src="../../_images/token_page.png" /></p>
-<ul class="simple">
-<li><p>You’ll be redirected to the page with your token now. <em>Make sure you copy it!</em></p></li>
-</ul>
-<section id="on-linux">
-<h3>On Linux<a class="headerlink" href="#on-linux" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>In your GitHub repository (locally on your computer) do the following:</p></li>
-</ul>
-<ol class="simple">
-<li><p>Create a non-empty .txt file by running:</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;This is a line&quot;</span> <span class="o">&gt;</span> <span class="n">tmp</span><span class="o">.</span><span class="n">txt</span>
-</pre></div>
-</div>
-<ol class="simple">
-<li><p>Call credential.helper again:</p></li>
-</ol>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git config --global credential.helper store
-</pre></div>
-</div>
-<ol class="simple">
-<li><p>Add, commit and push the changes:</p></li>
-</ol>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git add --all <span class="o">&amp;&amp;</span> git commit -m <span class="s2">&quot;added a dummy file to add token&quot;</span> <span class="o">&amp;&amp;</span> git push
-</pre></div>
-</div>
-<p>Once you run the last command, Git will require authentication. Type in your GitHub username and paste in your token as a replacement for a password.</p>
-<ul class="simple">
-<li><p>Type in your username (you’ll be prompted to do so.)</p></li>
-<li><p>Paste in the token you copied instead of your password.</p></li>
-</ul>
-<p>Finally, you can remove the file <code class="docutils literal notranslate"><span class="pre">tmp.txt</span></code>. It has served its purpose.</p>
-<p>And you’re done!</p>
-</section>
-<section id="on-macos">
-<h3>On macOS<a class="headerlink" href="#on-macos" title="Permalink to this headline">#</a></h3>
-<ol class="simple">
-<li><p>Open the <strong>Keychain Access</strong> app.</p></li>
-<li><p>Search for <a class="reference external" href="http://github.com">github.com</a> and double click on the one marked with “internet password”.</p></li>
-<li><p>Click on “show password” and replace the password with your generated token.</p></li>
-</ol>
+<section id="how-to-make-a-gitignore-file">
+<h3>How to make a gitignore-file<a class="headerlink" href="#how-to-make-a-gitignore-file" title="Permalink to this headline">#</a></h3>
+<p>A gitignore file is simply a file called <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>, located in the root directory of your repository. Notice that there is no file extension. The <code class="docutils literal notranslate"><span class="pre">.</span></code> at the beginning of the file name means that it’s a <em>hidden</em> file. To list all files in a directory, including hidden file, use the command <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-a</span></code>.</p>
+<p>The gitignore file is a text file, where each line is a file name pattern that can match file names in your repository. A pattern can either just be a specific file name, or a pattern that uses the wildcard <code class="docutils literal notranslate"><span class="pre">*</span></code> to match multiple files. For example, <code class="docutils literal notranslate"><span class="pre">*.o</span></code> will match all files with extension <code class="docutils literal notranslate"><span class="pre">.o</span></code>. An example of a gitignore file for the repo in the image above could look like this:</p>
+<p><img alt="gitignore" src="../../_images/example_gitignore.png" /></p>
+<p>It can be a hassle to write a gitignore file from scratch, so there are tools online to help you. As mentioned above, GitHub lets you make one from a template when you set up a new repository. If you want more controll over what is placed in the gitignore file, gitignore generators like <a class="reference external" href="https://www.toptal.com/developers/gitignore/">this one</a> lets you specify which tools you are using, and gives you a suggested <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file based on that. For instance, if you use Linux, code in C++ and Python, and use the editor VSCode, it could look like this:</p>
+<p><img alt="gitignore-generators" src="../../_images/gitignore_io.png" /></p>
+<p>Hitting ‘Create’ will generate text output that you copy/paste into your <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>. You can then add more lines for your specific needs.</p>
 </section>
 </section>
 </section>
@@ -777,17 +681,17 @@ git config --global user.email you@yourdomain.com
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="introduction_to_git.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="setting_up_git_and_a_GitHub_repo.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Introduction to Git</p>
+            <p class="prev-next-title">Setting up Git and a GitHub repository</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="add_a_README_and_gitignore.html" title="next page">
+    <a class='right-next' id="next-link" href="using_git.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Add a README and gitignore</p>
+        <p class="prev-next-title">Using Git</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
