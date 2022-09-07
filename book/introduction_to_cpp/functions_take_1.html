@@ -557,16 +557,6 @@ title="Print to PDF"
    Separation of declaration and definition
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example-1-single-argument">
-   Example 1: single argument
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example-2-multiple-arguments">
-   Example 2: multiple arguments
-  </a>
- </li>
 </ul>
 
     </nav>
@@ -596,16 +586,6 @@ title="Print to PDF"
    Separation of declaration and definition
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example-1-single-argument">
-   Example 1: single argument
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example-2-multiple-arguments">
-   Example 2: multiple arguments
-  </a>
- </li>
 </ul>
 
                         </nav>
@@ -618,82 +598,72 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="functions-take-1">
 <h1>Functions, take 1<a class="headerlink" href="#functions-take-1" title="Permalink to this headline">#</a></h1>
-<p>A <strong>function</strong> in C++ is a code block which is executed only when the function is called. A function takes <strong>arguments</strong>, performs some action, and usually returns an <strong>output</strong>.</p>
+<p>A <strong>function</strong> in C++ is a code block which is executed only when the function is called. A function takes <strong>arguments</strong>, performs some action, and usually returns some <strong>output</strong>.</p>
 <section id="creating-a-function">
 <h2>Creating a function<a class="headerlink" href="#creating-a-function" title="Permalink to this headline">#</a></h2>
-<p>Creating a function in C++ consists of two steps:</p>
+<p>Creating a function in C++ is typically done in two steps:</p>
 <ol class="simple">
-<li><p><strong>Declaration</strong>. Specifies the function’s name, return type and parameters.</p></li>
-<li><p><strong>Definition</strong>. The code block of the function, or its <strong>body</strong>.</p></li>
+<li><p>The <strong>declaration</strong>: Specifies the function’s name, return type and arguments.</p></li>
+<li><p>The <strong>definition</strong>: Gives the full code block for the function.</p></li>
 </ol>
-<p>Generically:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">type</span><span class="w"> </span><span class="nf">function_name</span><span class="p">(</span><span class="n">type1</span><span class="w"> </span><span class="n">input1</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">typeN</span><span class="w"> </span><span class="n">inputN</span><span class="p">){</span><span class="w"> </span><span class="c1">//declaration</span>
-<span class="w">    </span><span class="c1">//Code block or body (i.e definition)</span>
+<p>A generic example:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">return_type</span><span class="w"> </span><span class="nf">function_name</span><span class="p">(</span><span class="n">type_1</span><span class="w"> </span><span class="n">argument_1</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">type_N</span><span class="w"> </span><span class="n">argument_N</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// The function code block (&quot;function body&quot;)</span>
+<span class="w">    </span><span class="c1">// If the return_type is not &quot;void&quot;, the functino must</span>
+<span class="w">    </span><span class="c1">// end with a &quot;return&quot; statement.</span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you declare a function after the main() function in C++, you will get an error. You must therefore declare the function before the main() function in your C++ program.</p>
+<p>A silly, specific example:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"> </span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
 </div>
+<p>And here’s a silly example function with a <code class="docutils literal notranslate"><span class="pre">void</span></code> return type, meaning that the function simply performs some action but doesn’t return anything back to the calling program:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">say_hello</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hi there, &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;!&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Note that for such <code class="docutils literal notranslate"><span class="pre">void</span></code> functions, the function doesn’t end with a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement.</p>
 </section>
 <section id="separation-of-declaration-and-definition">
 <h2>Separation of declaration and definition<a class="headerlink" href="#separation-of-declaration-and-definition" title="Permalink to this headline">#</a></h2>
-<p>As noted, we can’t declare a function after the <code class="docutils literal notranslate"><span class="pre">main()</span></code> function of a C++ program. We can, however, separate the two. What this means is</p>
-<ul class="simple">
-<li><p>Declare the function <em>before</em> <code class="docutils literal notranslate"><span class="pre">main()</span></code>. This is called <strong>forward declaration</strong> if a definition isn’t provided simultaneously.</p></li>
-<li><p>Provide a definition of the function <em>after</em> <code class="docutils literal notranslate"><span class="pre">main()</span></code>.</p></li>
-</ul>
-<p>In other words:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">type</span><span class="w"> </span><span class="nf">function_name</span><span class="p">(</span><span class="n">type1</span><span class="w"> </span><span class="n">input1</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">typeN</span><span class="w"> </span><span class="n">inputN</span><span class="p">);</span><span class="w"> </span><span class="c1">//Declaration</span>
+<p>If the function declaration and definition are separated, the function declaration must appear <em>before</em> the <code class="docutils literal notranslate"><span class="pre">main()</span></code> function. In practice, the function declaration often appears inside a header file. When a function is declared somewhere before the full function definition is provided, we refer to the declaration as a <strong>forward declaration</strong>.</p>
+<p>Below is a simple example with a function <code class="docutils literal notranslate"><span class="pre">add</span></code> which is forward declared and used in the main program, while the corresponding function <em>definition</em> appears after the main program.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="cm">/* code of the main function */</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="c1">// Forward declaration</span>
+<span class="kt">double</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">);</span><span class="w"> </span>
 
-<span class="n">type</span><span class="w"> </span><span class="nf">function_name</span><span class="p">(</span><span class="n">type1</span><span class="w"> </span><span class="n">input1</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">typeN</span><span class="w"> </span><span class="n">inputN</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="c1">//Code block or body (i.e definition)</span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-</div>
-</section>
-<section id="example-1-single-argument">
-<h2>Example 1: single argument<a class="headerlink" href="#example-1-single-argument" title="Permalink to this headline">#</a></h2>
-<p>Say we want to implement the function <code class="docutils literal notranslate"><span class="pre">f(x)</span> <span class="pre">=</span> <span class="pre">x*x</span></code> in C++ and call it once in a <code class="docutils literal notranslate"><span class="pre">main()</span></code> program. A short program for this looks like</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="w"> </span><span class="c1">//Declaration</span>
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">);</span><span class="w"> </span><span class="c1">//Should return 2*2 = 4.</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="c1">// Main function</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.2</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.4</span><span class="p">;</span><span class="w"></span>
 
-<span class="kt">double</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="c1">//Provide definition of function here:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-</div>
-</section>
-<section id="example-2-multiple-arguments">
-<h2>Example 2: multiple arguments<a class="headerlink" href="#example-2-multiple-arguments" title="Permalink to this headline">#</a></h2>
-<p>Let’s do the same with a function of multiple arguments. Assume we’re to implement <code class="docutils literal notranslate"><span class="pre">f(x,y)</span> <span class="pre">=</span> <span class="pre">x*x</span> <span class="pre">+</span> <span class="pre">y</span></code> and call it once. This can be done as follows.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">);</span><span class="w"> </span><span class="c1">//Definition</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span><span class="w"></span>
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The sum is &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
 
-<span class="kt">double</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="c1">//Definition:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="p">;</span><span class="w"></span>
+<span class="c1">// The function definition</span>
+<span class="kt">double</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
+<p>In larger programs, the function definitions are typically put in completely separate <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> files from the main program.
+During the build process, each <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> is first <em>compiled</em> to a corresponding object file, and finally these object files are <em>linked</em> together to form an executable.</p>
 </section>
 </section>
 

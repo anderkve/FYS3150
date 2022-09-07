@@ -1,81 +1,78 @@
 # Functions, take 1
 
-A **function** in C++ is a code block which is executed only when the function is called. A function takes **arguments**, performs some action, and usually returns an **output**.
+A **function** in C++ is a code block which is executed only when the function is called. A function takes **arguments**, performs some action, and usually returns some **output**.
 
 ## Creating a function
 
-Creating a function in C++ consists of two steps:
-1. **Declaration**. Specifies the function's name, return type and parameters.
-2. **Definition**. The code block of the function, or its **body**.
+Creating a function in C++ is typically done in two steps:
+1. The **declaration**: Specifies the function's name, return type and arguments.
+2. The **definition**: Gives the full code block for the function.
 
-Generically:
+A generic example:
 
 ```c++
-type function_name(type1 input1, ..., typeN inputN){ //declaration
-    //Code block or body (i.e definition)
+return_type function_name(type_1 argument_1, ..., type_N argument_N)
+{
+    // The function code block ("function body")
+    // If the return_type is not "void", the functino must
+    // end with a "return" statement.
 }
 ```
 
-```{note}
-If you declare a function after the main() function in C++, you will get an error. You must therefore declare the function before the main() function in your C++ program.
+A silly, specific example:
+
+```c++
+double add(double a, double b)
+{
+    return a + b; 
+}
 ```
+
+And here's a silly example function with a `void` return type, meaning that the function simply performs some action but doesn't return anything back to the calling program:
+
+```c++
+void say_hello(std::string name)
+{
+    std::cout << "Hi there, " << name << "!" << std::endl;
+}
+```
+
+Note that for such `void` functions, the function doesn't end with a `return` statement.
+
 
 ## Separation of declaration and definition
 
-As noted, we can't declare a function after the `main()` function of a C++ program. We can, however, separate the two. What this means is
-- Declare the function *before* `main()`. This is called **forward declaration** if a definition isn't provided simultaneously.
-- Provide a definition of the function *after* `main()`.
+If the function declaration and definition are separated, the function declaration must appear *before* the `main()` function. In practice, the function declaration often appears inside a header file. When a function is declared somewhere before the full function definition is provided, we refer to the declaration as a **forward declaration**.
 
-In other words:
+Below is a simple example with a function `add` which is forward declared and used in the main program, while the corresponding function *definition* appears after the main program. 
 
 ```c++
-type function_name(type1 input1, ..., typeN inputN); //Declaration
+#include <iostream>
 
-int main() {
-    /* code of the main function */
-    return 0;
-}
-
-type function_name(type1 input1, ..., typeN inputN){
-    //Code block or body (i.e definition)
-}
-```
+// Forward declaration
+double add(double x, double y); 
 
 
-## Example 1: single argument
+// Main function
+int main() 
+{
+    double x = 1.2;
+    double y = 3.4;
 
-Say we want to implement the function `f(x) = x*x` in C++ and call it once in a `main()` program. A short program for this looks like
+    double sum = add(x, y);
 
-```c++
-double f(double x); //Declaration
+    std::cout << "The sum is " << sum << std::endl;
 
-int main() {
-    double x = 2;
-    double res = f(x); //Should return 2*2 = 4.
-    return 0;
-}
-
-double f(double x){
-    //Provide definition of function here:
-    return x*x;
-}
-```
-## Example 2: multiple arguments
-
-Let's do the same with a function of multiple arguments. Assume we're to implement `f(x,y) = x*x + y` and call it once. This can be done as follows.
-
-```c++
-double f(double x, double y); //Definition
-
-int main() {
-    double x = 2, y = 1;
-    double res = f(x, y);
     return 0;
 }
 
 
-double f(double x, double y){
-    //Definition:
-    return x*x + y;
+// The function definition
+double add(double x, double y)
+{
+    return a + y;
 }
 ```
+
+In larger programs, the function definitions are typically put in completely separate `.cpp` files from the main program. 
+During the build process, each `.cpp` is first *compiled* to a corresponding object file, and finally these object files are *linked* together to form an executable.
