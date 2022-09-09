@@ -1,7 +1,5 @@
 # Project 2
 
-This project is not published yet.
-
 ## Practicalities
 
 - **Deadline**: Monday, September 27, 23:59.
