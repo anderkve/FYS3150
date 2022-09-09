@@ -2,7 +2,6 @@
 
 This project is not published yet.
 
-<!-- 
 ## Practicalities
 
 - **Deadline**: Monday, September 27, 23:59.
@@ -102,7 +101,7 @@ $$
 $$
 
 ----
-**Scaling of eigenvectors:** Remember that if $\vec{v}$ is an eigenvector of $\mathbf{A} \vec{v} = \lambda \vec{v}$, then a scaled vector $c \vec{v}$ (where $c$ is some constant) is an equally good eigenvector. When presenting your results, and when comparing to results from Armadillo, it will be useful to scale each eigenvector to have unit norm (i.e. vector length 1). You can do this easily using the Armadillo function `arma::normalise` described [here](http://arma.sourceforge.net/docs.html#normalise).
+**Scaling of eigenvectors:** Remember that if $\vec{v}$ is an eigenvector of $\mathbf{A} \vec{v} = \lambda \vec{v}$, then a scaled vector $c \vec{v}$, where $c$ is some constant, is an equally good eigenvector. (Remember that c can be negative.) When presenting your results, and when comparing to results from Armadillo, it will be useful to scale each eigenvector to have unit norm (i.e. vector length 1). You can do this easily using the Armadillo function `arma::normalise` described [here](http://arma.sourceforge.net/docs.html#normalise).
 
 
 ## Problems
@@ -111,16 +110,9 @@ $$
 With the definition $\hat{x} \equiv x/L$, show that Eq. {eq}`bb_eq_1` can be written as Eq. {eq}`bb_eq_2`.
 
 
+
+
 ### Problem 2
-Jacobi's rotation algorithm is based on an important property of orthogonal transformations that we will show here. Assume that 
-
-- $\vec{v}_i$ is a set of *orthonormal* basis vectors, i.e. that $\vec{v}_i^T \cdot \vec{v}_j = \delta_{ij}$.
-- $\mathbf{U}$ is an *orthogonal* transformation matrix, i.e. that $\mathbf{U}^T = \mathbf{U}^{-1}$.
-
-Show that transformations with $\mathbf{U}$ preserves orthonormality, i.e. show that the set of vectors $\vec{w}_i = \mathbf{U} \vec{v}_i$ is also an orthonormal set.
-
-
-### Problem 3
 Before we get started with implementing the Jacobi rotation algorithm, let's make sure that we can set up the tridiagonal matrix $\mathbf{A}$ correctly. So, write a short program that:
 
 - sets up the tridiagonal $\mathbf{A}$ for $N=6$;
@@ -128,7 +120,7 @@ Before we get started with implementing the Jacobi rotation algorithm, let's mak
 - checks that the eigenvalues and eigenvectors from Armadillo agrees with the analytical result for $N=6$. (Remember scaling of eigenvectors, as discussed above.)
 
 
-### Problem 4
+### Problem 3
 An important part of the Jacobi algorithm is to have a function that can identify the largest (in absolute value) off-diagonal element of a matrix. Here we specialize to the case of a *symmetric* matrix. 
 
 **a)** Write a C++ function that can identify the largest off-diagonal element of a matrix. A suggestion is to write a function that 
@@ -166,16 +158,16 @@ $$
 
 
 
-### Problem 5
+### Problem 4
 **a)** Write a code implementation of Jacobi's rotation algorithm for solving Eq. {eq}`bb_eq_3`. See the code snippets at the end of this page for a suggested code structure.
 
 **b)** Let $\mathbf{A}$ be of size $6 \times 6$. Test your code by checking that the eigenvalues and eigenvectors you get agree with the analytical results for $N=6$.
 
 
-### Problem 6
+### Problem 5
 Now let's look at how many similarity transformations we need before we reach a result where all non-diagonal matrix elements are close to zero. 
 
-**a)** Try to estimate how the number of required transformations scale with the matrix size $N$ for your code when solving Eq. {eq}`bb_eq_3`. Present your scaling data either in a table or a plot (or both).
+**a)** By running your program with different choices of $N$, try to estimate how the number of required transformations scale with the matrix size $N$ when you use your code to solve Eq. {eq}`bb_eq_3`. Present your scaling data either in a table or a plot (or both).
 
 **b)** What scaling behaviour would you expect to see if $\mathbf{A}$ was a dense matrix?
 
@@ -191,15 +183,26 @@ A = arma::symmatu(A);
 ```
 
 
-### Problem 7
+### Problem 6
 **a)** For a discretization of $\hat{x}$ with $n=10$ steps, solve Eq. {eq}`bb_eq_3` using your Jacobi code and make a plot of the three eigenvectors corresponding to the three lowest eigenvalues. The plot should show vector elements $v_i$ against the corresponding positions $\hat{x}_i$. 
 
 Since we are effectively showing the solutions to a differential equation, your plot should also include the boundary points $(\hat{x}_0, v_0)$ and $(\hat{x}_n, v_n)$.
 
 Plot the corresponding analytical eigenvectors (extended with the boundary points) in the same plot.
 
+
 **b)** Make the same plot for discretization of $\hat{x}$ with $n=100$ steps.
 
+
+<!-- 
+### Problem X
+Jacobi's rotation algorithm is based on an important property of orthogonal transformations that we will show here. Assume that 
+
+- $\vec{v}_i$ is a set of *orthonormal* basis vectors, i.e. that $\vec{v}_i^T \cdot \vec{v}_j = \delta_{ij}$.
+- $\mathbf{U}$ is an *orthogonal* transformation matrix, i.e. that $\mathbf{U}^T = \mathbf{U}^{-1}$.
+
+Show that transformations with $\mathbf{U}$ preserves orthonormality, i.e. show that the set of vectors $\vec{w}_i = \mathbf{U} \vec{v}_i$ is also an orthonormal set.
+ -->
 
 
 
@@ -386,5 +389,6 @@ Note:
 
 ----
 
+<!-- 
 **Watch this space for more code examples...**
  -->
