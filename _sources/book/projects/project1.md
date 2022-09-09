@@ -151,6 +151,9 @@ as function of $x_i$. Again, one graph per choice of $n_{\text{steps}}$.
 
 **c**) Now make a table that shows the *maximum* relative error $\max(\epsilon_i)$ for each choice of $n_{\text{steps}}$, up to $n_{\text{steps}} = 10^7$. Comment on your results, and feel free to also make a plot to visualise the result.
 
+```{note}
+If you perform your error computations based on the data files your C++ code produces (rather than performing the error computations directly in the C++ code), make sure you write your data to file using a sufficiently high number of digits. (It can be instructive to check what happens if you don't do this...)
+```
 
 
 ### Problem 9
