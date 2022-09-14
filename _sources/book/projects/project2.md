@@ -2,7 +2,7 @@
 
 ## Practicalities
 
-- **Deadline**: Monday, September 27, 23:59.
+- **Deadline**: Tuesday, September 27, 23:59.
 - **Format:** 
   - A pdf document, typeset in LaTeX, with answers to all the problems below. You deliver the pdf on Canvas.
   - Code (with comments, of course) on a GitHub repo, with the repo link provided in the pdf document.
