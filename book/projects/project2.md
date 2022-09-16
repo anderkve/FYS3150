@@ -29,7 +29,8 @@ The main topics of this project are
 
 Our example of an eigenvalue problem is a special case of a one-dimensional buckling beam. Consider the following situation:
 
-- A horizontal beam of length $L$.
+- A horizontal beam.
+- $L$ is the horizontal length between the two beam endpoints. (So before any buckling, $L$ is also the length of the beam.)
 - We let $u(x)$ be the vertical displacement of the beam at horizontal position $x$, with $x \in [0,L]$.
 - A force $F$ is applied at the endpoint ($x=L$), *directed into the beam*, i.e. towards $x=0$. 
 - The beam is fastened with *pin endpoints*, meaning that $u(0)=0$ and $u(L)=0$, but the endpoints are allowed to rotate ($u'(x) \neq 0$).
@@ -126,7 +127,7 @@ An important part of the Jacobi algorithm is to have a function that can identif
 - has return type `double`
 - takes an Armadillo matrix as input
 - takes *references* to two integers as input
-- identifies the largest off-diagonal element in the matrix (under the assumption of a symmetric matrix)
+- identifies the largest off-diagonal element (in absolute value) in the matrix, under the assumption of a symmetric matrix
 - writes the matrix indices for this element to the two integer references
 - returns the value of this matrix element
 
