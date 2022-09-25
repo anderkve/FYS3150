@@ -730,6 +730,10 @@ title="Print to PDF"
 \frac{d^2 u(\hat{x})}{d\hat{x}^2} = - \lambda u(\hat{x}),
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\hat{x} \equiv x/L\)</span> is a dimensionless (unitless) varible, <span class="math notranslate nohighlight">\(\hat{x} \in [0,1]\)</span>, and <span class="math notranslate nohighlight">\(\lambda = \frac{F L^2}{\gamma}\)</span>. (See problem 1.)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>Update:</em> Here we have been a bit sloppy with our notation. Technically, the functions <span class="math notranslate nohighlight">\(u(x)\)</span> and <span class="math notranslate nohighlight">\(u(\hat{x})\)</span> are two <em>different</em> functions, so we should have used e.g. notation like <span class="math notranslate nohighlight">\(u_x(x)\)</span> and <span class="math notranslate nohighlight">\(u_{\hat{x}}(\hat{x})\)</span>. The key thing is that the functions are related as <span class="math notranslate nohighlight">\(u_x(x) = u_{\hat{x}}(\hat{x})\)</span>.</p>
+</div>
 <hr class="docutils" />
 <p><strong>Discretization:</strong> We discretize this by dividing our <span class="math notranslate nohighlight">\(\hat{x}\)</span> range into <span class="math notranslate nohighlight">\(n\)</span> parts, i.e. we will have <span class="math notranslate nohighlight">\(n+1\)</span> points <span class="math notranslate nohighlight">\(\hat{x}_0\)</span>, <span class="math notranslate nohighlight">\(\hat{x}_1\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(\hat{x}_{n-1}\)</span>, <span class="math notranslate nohighlight">\(\hat{x}_{n}\)</span>. Thus we have a stepsize</p>
 <div class="math notranslate nohighlight">
@@ -783,6 +787,10 @@ h = \frac{\hat{x}_{\text{max}} - \hat{x}_{\text{min}}}{n} = \frac{1 - 0}{n} = \f
 <section id="problem-1">
 <h3>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this headline">#</a></h3>
 <p>With the definition <span class="math notranslate nohighlight">\(\hat{x} \equiv x/L\)</span>, show that Eq. <a class="reference internal" href="#equation-bb-eq-1">(4)</a> can be written as Eq. <a class="reference internal" href="#equation-bb-eq-2">(5)</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>Update:</em> See the note after Eq. <a class="reference internal" href="#equation-bb-eq-2">(5)</a> about some sloppy notation. Note that it’s perfectly fine to use the simple notation <span class="math notranslate nohighlight">\(u(\hat{x})\)</span> throughout this project, but keep in mind that <span class="math notranslate nohighlight">\(u(\hat{x})\)</span> and <span class="math notranslate nohighlight">\(u(x)\)</span> are <em>different</em> functions.</p>
+</div>
 </section>
 <section id="problem-2">
 <h3>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this headline">#</a></h3>

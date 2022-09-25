@@ -50,6 +50,10 @@ $$ (bb_eq_2)
 
 where $\hat{x} \equiv x/L$ is a dimensionless (unitless) varible, $\hat{x} \in [0,1]$, and $\lambda = \frac{F L^2}{\gamma}$. (See problem 1.)
 
+```{note}
+*Update:* Here we have been a bit sloppy with our notation. Technically, the functions $u(x)$ and $u(\hat{x})$ are two *different* functions, so we should have used e.g. notation like $u_x(x)$ and $u_{\hat{x}}(\hat{x})$. The key thing is that the functions are related as $u_x(x) = u_{\hat{x}}(\hat{x})$.
+``` 
+
 ----
 **Discretization:** We discretize this by dividing our $\hat{x}$ range into $n$ parts, i.e. we will have $n+1$ points $\hat{x}_0$, $\hat{x}_1$, $\ldots$, $\hat{x}_{n-1}$, $\hat{x}_{n}$. Thus we have a stepsize 
 
@@ -108,6 +112,9 @@ $$
 ### Problem 1
 With the definition $\hat{x} \equiv x/L$, show that Eq. {eq}`bb_eq_1` can be written as Eq. {eq}`bb_eq_2`.
 
+```{note}
+*Update:* See the note after Eq. {eq}`bb_eq_2` about some sloppy notation. Note that it's perfectly fine to use the simple notation $u(\hat{x})$ throughout this project, but keep in mind that $u(\hat{x})$ and $u(x)$ are *different* functions.
+``` 
 
 
 
