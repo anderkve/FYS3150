@@ -601,6 +601,11 @@ title="Print to PDF"
      Extracting a column of a matrix
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#read-matrix-columns-in-a-given-order">
+     Read matrix columns in a given order
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -693,6 +698,11 @@ title="Print to PDF"
      Extracting a column of a matrix
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#read-matrix-columns-in-a-given-order">
+     Read matrix columns in a given order
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -724,8 +734,8 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-armadillo">
 <span id="sec-intro-to-armadillo"></span><h1>Introduction to Armadillo<a class="headerlink" href="#introduction-to-armadillo" title="Permalink to this headline">#</a></h1>
-<p>Armadillo is an efficient linear algebra library for C++ users. Its aim is to provide a library that balances speed and ease of use. We recommend this library for numerical computations as a replacement for dynamic allocation of arrays.</p>
-<p>We’ll cover the very basics here to get you started with the library. However, their webpage provides an excellent, detailed <a class="reference external" href="http://arma.sourceforge.net/docs.html">code documentation</a> with examples of usage that you can search through.</p>
+<p>Armadillo is an efficient linear algebra library for C++, that balances speed and ease of use. We recommend using this library for numerical linear algebra computations in this course.</p>
+<p>We’ll cover some of the very basics of Armadillo here to get you started with the library. A complete overview of the available classes and functions, along with usage examples, can be found in the Armadillo <a class="reference external" href="http://arma.sourceforge.net/docs.html">code documentation</a>.</p>
 <section id="building-code-with-armadillo">
 <h2>Building code with Armadillo<a class="headerlink" href="#building-code-with-armadillo" title="Permalink to this headline">#</a></h2>
 <p>We must make sure to include the header file for Armadillo, which amounts to adding <code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&lt;armadillo&gt;</span></code> at the top of a header or source file.</p>
@@ -744,9 +754,10 @@ title="Print to PDF"
 <p>Armadillo provides a useful vector class <code class="docutils literal notranslate"><span class="pre">arma::vec</span></code> that can be used to replace arrays in numerical computations. Assume <code class="docutils literal notranslate"><span class="pre">n</span></code> is a positive integer.</p>
 <section id="declaring-and-filling-vectors">
 <h3>Declaring and filling vectors<a class="headerlink" href="#declaring-and-filling-vectors" title="Permalink to this headline">#</a></h3>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="p">(</span><span class="n">n</span><span class="p">);</span><span class="w"> </span><span class="c1">//Initialize vector but don&#39;t fill.</span>
-<span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="p">(</span><span class="n">n</span><span class="p">).</span><span class="n">fill</span><span class="p">(</span><span class="mf">2.</span><span class="p">);</span><span class="w"> </span><span class="c1">//Declare and fill with 2&#39;s.</span>
-<span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="p">(</span><span class="n">n</span><span class="p">).</span><span class="n">randu</span><span class="p">();</span><span class="w"> </span><span class="c1">//Declare and will with random uniform values.</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="p">(</span><span class="n">n</span><span class="p">);</span><span class="w"> </span><span class="c1">//Initialize vector but don&#39;t fill it.</span>
+<span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="p">(</span><span class="n">n</span><span class="p">).</span><span class="n">fill</span><span class="p">(</span><span class="mf">2.</span><span class="p">);</span><span class="w"> </span><span class="c1">//Declare and fill a vector with 2&#39;s.</span>
+<span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="p">(</span><span class="n">n</span><span class="p">).</span><span class="n">randu</span><span class="p">();</span><span class="w"> </span><span class="c1">//Declare and fill a vector with random values from a uniform distribution.</span>
+<span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="p">(</span><span class="s">&quot;0.0 0.1 0.2&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">//Declare and fill a vector with the values 0.1, 0.2 and 0.3.</span>
 </pre></div>
 </div>
 </section>
@@ -768,9 +779,10 @@ title="Print to PDF"
 <section id="declaring-and-filling-matrices">
 <h3>Declaring and filling matrices<a class="headerlink" href="#declaring-and-filling-matrices" title="Permalink to this headline">#</a></h3>
 <p>Creating matrices with Armadillo is easy. Here’s a couple examples:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">);</span><span class="w"> </span><span class="c1">//Initialize but don&#39;t fill</span>
-<span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">).</span><span class="n">fill</span><span class="p">(</span><span class="mf">0.</span><span class="p">);</span><span class="w"> </span><span class="c1">//Declare and fill with zeros.</span>
-<span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="w"> </span><span class="n">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">).</span><span class="n">randn</span><span class="p">();</span><span class="w"> </span><span class="c1">//Declare and fill with random values from the normal distribution.</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">);</span><span class="w"> </span><span class="c1">//Initialize matrix but don&#39;t fill.</span>
+<span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">).</span><span class="n">fill</span><span class="p">(</span><span class="mf">0.</span><span class="p">);</span><span class="w"> </span><span class="c1">//Declare and fill a matrix with zeros.</span>
+<span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="w"> </span><span class="n">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">).</span><span class="n">randn</span><span class="p">();</span><span class="w"> </span><span class="c1">//Declare and fill a matrix with random values from the normal distribution.</span>
+<span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="w"> </span><span class="n">D</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="p">(</span><span class="s">&quot;0.0 0.1 0.2 ; 1.0 1.1 1.2 ; 2.0 2.1 2.2&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">//Declare and fill a 3x3 matrix with the listed values. (Note the semicolons.)</span>
 </pre></div>
 </div>
 </section>
@@ -785,6 +797,21 @@ title="Print to PDF"
 <h3>Extracting a column of a matrix<a class="headerlink" href="#extracting-a-column-of-a-matrix" title="Permalink to this headline">#</a></h3>
 <p>Armadillo provides a simple way to extract entire columns of a matrix:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="w"> </span><span class="n">col_vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">col</span><span class="p">(</span><span class="n">j</span><span class="p">);</span><span class="w"> </span><span class="c1">//Extract column j of A and assign it to col_vec.</span>
+</pre></div>
+</div>
+</section>
+<section id="read-matrix-columns-in-a-given-order">
+<h3>Read matrix columns in a given order<a class="headerlink" href="#read-matrix-columns-in-a-given-order" title="Permalink to this headline">#</a></h3>
+<p>A particular task that may be useful in this course is to read the columns of a matrix in a specific order.
+Below is an example that uses <code class="docutils literal notranslate"><span class="pre">arma::sort_index</span></code> to find the index ordering that sorts a given vector (from low to high values),
+and then sorts both the vector and the columns of a matrix according to this ordering.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="p">(</span><span class="s">&quot;0.0 0.1 0.2 ; 1.0 1.1 1.2 ; 2.0 2.1 2.2&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="p">(</span><span class="s">&quot;20. 10. 30.&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="n">arma</span><span class="o">::</span><span class="n">uvec</span><span class="w"> </span><span class="n">x_sort_indices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">sort_index</span><span class="p">(</span><span class="n">x</span><span class="p">);</span><span class="w"> </span><span class="c1">// Get index ordering that sorts x.</span>
+<span class="w">  </span>
+<span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">(</span><span class="n">x_sort_indices</span><span class="p">);</span><span class="w"> </span><span class="c1">// Sort x according to ordering in x_sort_indices.</span>
+<span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">cols</span><span class="p">(</span><span class="n">x_sort_indices</span><span class="p">);</span><span class="w"> </span><span class="c1">// Sort columns of A according to ordering in x_sort_indices.</span>
 </pre></div>
 </div>
 </section>

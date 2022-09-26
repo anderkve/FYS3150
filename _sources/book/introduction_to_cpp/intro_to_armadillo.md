@@ -1,9 +1,9 @@
 (sec:intro_to_armadillo)=
 # Introduction to Armadillo
 
-Armadillo is an efficient linear algebra library for C++ users. Its aim is to provide a library that balances speed and ease of use. We recommend this library for numerical computations as a replacement for dynamic allocation of arrays.
+Armadillo is an efficient linear algebra library for C++, that balances speed and ease of use. We recommend using this library for numerical linear algebra computations in this course.
 
-We'll cover the very basics here to get you started with the library. However, their webpage provides an excellent, detailed [code documentation](http://arma.sourceforge.net/docs.html) with examples of usage that you can search through.
+We'll cover some of the very basics of Armadillo here to get you started with the library. A complete overview of the available classes and functions, along with usage examples, can be found in the Armadillo [code documentation](http://arma.sourceforge.net/docs.html).
 
 ## Building code with Armadillo
 
@@ -26,9 +26,10 @@ Armadillo provides a useful vector class `arma::vec` that can be used to replace
 ### Declaring and filling vectors
 
 ```c++
-arma::vec x = arma::vec(n); //Initialize vector but don't fill.
-arma::vec y = arma::vec(n).fill(2.); //Declare and fill with 2's.
-arma::vec z = arma::vec(n).randu(); //Declare and will with random uniform values.
+arma::vec x = arma::vec(n); //Initialize vector but don't fill it.
+arma::vec y = arma::vec(n).fill(2.); //Declare and fill a vector with 2's.
+arma::vec z = arma::vec(n).randu(); //Declare and fill a vector with random values from a uniform distribution.
+arma::vec u = arma::vec("0.0 0.1 0.2"); //Declare and fill a vector with the values 0.1, 0.2 and 0.3.
 ```
 
 ### Accessing and assigning elements in a vector
@@ -54,9 +55,10 @@ Assume that `n` and `m` are positive integers.
 Creating matrices with Armadillo is easy. Here's a couple examples:
 
 ```c++
-arma::mat A = arma::mat(n, m); //Initialize but don't fill
-arma::mat B = arma::mat(n, m).fill(0.); //Declare and fill with zeros.
-arma::mat C = arma::mat(n, m).randn(); //Declare and fill with random values from the normal distribution.
+arma::mat A = arma::mat(n, m); //Initialize matrix but don't fill.
+arma::mat B = arma::mat(n, m).fill(0.); //Declare and fill a matrix with zeros.
+arma::mat C = arma::mat(n, m).randn(); //Declare and fill a matrix with random values from the normal distribution.
+arma::mat D = arma::mat("0.0 0.1 0.2 ; 1.0 1.1 1.2 ; 2.0 2.1 2.2"); //Declare and fill a 3x3 matrix with the listed values. (Note the semicolons.)
 ```
 
 ### Accessing elements in a matrix
@@ -73,6 +75,23 @@ Armadillo provides a simple way to extract entire columns of a matrix:
 
 ```c++
 arma::vec col_vec = A.col(j); //Extract column j of A and assign it to col_vec.
+```
+
+
+### Read matrix columns in a given order
+
+A particular task that may be useful in this course is to read the columns of a matrix in a specific order. 
+Below is an example that uses `arma::sort_index` to find the index ordering that sorts a given vector (from low to high values), 
+and then sorts both the vector and the columns of a matrix according to this ordering.
+
+```c++
+arma::mat A = arma::mat("0.0 0.1 0.2 ; 1.0 1.1 1.2 ; 2.0 2.1 2.2");
+arma::vec x = arma::vec("20. 10. 30.");
+
+arma::uvec x_sort_indices = arma::sort_index(x); // Get index ordering that sorts x.
+  
+x = x(x_sort_indices); // Sort x according to ordering in x_sort_indices.
+A = A.cols(x_sort_indices); // Sort columns of A according to ordering in x_sort_indices.
 ```
 
 
