@@ -6,7 +6,7 @@ There may be some small updates to the project description in the coming days, s
 
 ## Practicalities
 
-- **Deadline**: Monday, October 25, 23:59.
+- **Deadline**: Tuesday, October 25, 23:59.
 - **Format:**
   - A scientific report, typeset in LaTeX, delivered as a pdf file on Canvas.
   - Code (with comments, of course) on a GitHub repo, with the repo link provided in your report.
@@ -129,7 +129,9 @@ $$
 \ddot{f} + i\omega_0 \dot{f} - \frac{1}{2} \omega_z^2 f = 0.
 $$ (f_eq)
 
-*Hint: if $F(f, \dot{f}, \ddot{f}) = 0$ and  $G(g, \dot{g}, \ddot{g}) = 0$, then $F(f, \dot{f}, \ddot{f}) + c G(g, \dot{g}, \ddot{g}) = 0$ for arbitrary functions $F$, $G$, $f$ and $g$ and an arbitrary complex number $c$.*
+<!--
+*Hint: if $F(f,g) = 0$ and  $G(f,g) = 0$, then $F(f,g) + c G(f,g) = 0$ for arbitrary functions $F$, $G$, $f$ and $g$ and an arbitrary complex number $c$.*
+-->
 
 #### Problem 3
 
