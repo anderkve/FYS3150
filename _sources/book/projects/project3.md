@@ -1,8 +1,9 @@
 # Project 3
 
-This project is not published yet.
+```{note}
+There may be some small updates to the project description in the coming days, so keep an eye out for that.
+```
 
-<!-- 
 ## Practicalities
 
 - **Deadline**: Monday, October 25, 23:59.
@@ -95,7 +96,7 @@ where $B_0$ is the field strength, with $B_0 > 0$. If this field is strong enoug
 
 ### The analytical part
 
-For now, assume that we're dealing with a single particle with charge $q$ and mass $m$.
+For now, assume that we're dealing with a *single* particle with charge $q$ and mass $m$.
 
 #### Problem 1
 
@@ -116,7 +117,6 @@ $$ (z_eq)
 where we define $\omega_0 \equiv \frac{q B_0}{m}$ and $\omega_z^2 \equiv \frac{2 q V_0}{md^2}$.
 Write down the general solution for equation {eq}`z_eq`. While the above equations of motion are of course equally valid for $q < 0$ and $q > 0$, you can assume $q > 0$ for this project.
 
-**Note:** A previous version of the problem description had a slight inconsistency related to the sign of $q$ and how $\omega_z^2$ (or rather $\omega_z$) was defined --- see this [post](https://github.com/anderkve/FYS3150/issues/17#issuecomment-936240352). This has been corrected above. The inconsistency only mattered if you considered what would happen for $q < 0$.
 
 #### Problem 2
 
@@ -133,9 +133,6 @@ $$ (f_eq)
 
 #### Problem 3
 
-```{note}
-There's been a typo in Equation {eq}`f_general_sol`: We were missing the two constant phases $\phi_+$ and $\phi_-$, which lead to some confusion about the signs of $A_+$ and $A_-$, and the absolute values in Problem 5. The equation is correct now. Apologies for the confusion! (Given the late correction, we will not subtract points for confusion about this in your reports.)
-```
 
 The general solution to eq. {eq}`f_eq` is
 
@@ -160,13 +157,11 @@ Show that the upper and lower bounds on the particle's distance from the origin 
 $R_+ = A_+ + A_-$ and $R_- = |A_+ - A_-|$, respectively.
 
 
-#### Problem 5
+----
 
-```{note}
-See note under Problem 3 about a typo in Equation {eq}`f_general_sol`.
-```
+#### Specific analytical solution
 
-To test that your code works as expected you'll need a specific analytical solution to use for comparison. Assume we have a single charged particle with charge $q$ and mass $m$ in the Penning trap with the following initial conditions:
+For later tests of the code you develop, you will need a specific analytical solution to use for comparison. For this we will consider the case of a single charged particle with charge $q$ and mass $m$ in the Penning trap, with the following initial conditions:
 
 $$
 x(0) = x_0, \qquad \dot{x}(0) = 0,
@@ -180,13 +175,22 @@ $$
 z(0) = z_0, \qquad \dot{z}(0) = 0.
 $$
 
-
-Find the corresponding specific solution of $z(t)$. For the movement in the $xy$-plane, show that the specific solution for $f(t)$ has
+From equation {eq}`z_eq` and the inital values for $z(0)$ and $\dot{z}(0)$ we get that the specific solution for $z(t)$ in this case is 
 
 $$
-A_+ = \frac{v_0 + \omega_- x_0}{\omega_- - \omega_+}, \qquad A_- = - \frac{v_0 + \omega_+ x_0}{\omega_- - \omega_+}.
+z(t) = z_0 \cos(w_z t).
 $$
 
+
+For the movement in the $xy$-plane, the specific solution for $f(t)$ is given by {eq}`f_general_sol` with 
+
+$$
+A_+ = \frac{v_0 + \omega_- x_0}{\omega_- - \omega_+}, \qquad A_- = - \frac{v_0 + \omega_+ x_0}{\omega_- - \omega_+},
+$$
+
+$$
+\phi_+ = 0, \qquad \phi_- = 0.
+$$
 
 
 ----
@@ -230,29 +234,29 @@ free to design in the way you think is best.
 
 For this project we'll work with the following set of base units:
 
-- Length: micrometre ($\mu m$)
-- Time: microseconds ($\mu s$)
-- Mass: atomic mass unit ($u$)
-- Charge: the elementary charge $e$
+- Length: micrometre ($\textrm{µm}$)
+- Time: microseconds ($\textrm{µs}$)
+- Mass: atomic mass unit ($\textrm{u}$)
+- Charge: the elementary charge ($\textrm{e}$)
 
 In these units, the Coulomb constant takes the value
 
-- $k_e = 1.38935333 \times 10^5 \, \frac{u \, (\mu m)^3}{(\mu s)^2 \, e^2}$
+- $k_e = 1.38935333 \times 10^5 \, \frac{\textrm{u} \, (\textrm{µm})^3}{(\textrm{µs})^2 \, \textrm{e}^2}$
 
-and the derived SI units for magnetic field strength (Tesla, $T$) and electric potential (Volt, $V$) become
+and the derived SI units for magnetic field strength (Tesla, $\textrm{T}$) and electric potential (Volt, $\textrm{V}$) become
 
-- $T = 9.64852558 \times 10^1 \, \frac{u}{(\mu s) \, e}$
-- $V = 9.64852558 \times 10^7 \, \frac{u \, (\mu m)^2}{(\mu s)^2 \, e}$.
+- $\mathrm{T} = 9.64852558 \times 10^1 \, \frac{\mathrm{u}}{(\mathrm{µs}) \, \mathrm{e}}$
+- $\mathrm{V} = 9.64852558 \times 10^7 \, \frac{\mathrm{u} \, (\mathrm{µm})^2}{(\mathrm{µs})^2 \, \mathrm{e}}$.
 
 Our default Penning trap configuration will have
 
-- $B_0 = 1.00\,T = 9.65 \times 10^1 \, \frac{u}{(\mu s) \, e}$
-- $V_0 = 10.0\,V = 9.65 \times 10^8 \, \frac{u \, (\mu m)^2}{(\mu s)^2 \, e}$
-- $d = 1\,cm = 10^4 \mu m$.
+- $B_0 = 1.00\,\mathrm{T} = 9.65 \times 10^1 \, \frac{\mathrm{u}}{(\mathrm{µs}) \, \mathrm{e}}$
+- $V_0 = 10.0\,\mathrm{V} = 9.65 \times 10^8 \, \frac{\mathrm{u} \, (\mathrm{µm})^2}{(\mathrm{µs})^2 \, \mathrm{e}}$
+- $d = 1\,\mathrm{cm} = 10^4 \mathrm{µm}$.
 
 We note that $V_0$ and $d$ only appear as the ratio $V_0/d^2$, which now takes the value
 
-- $V_0/d^2 = 9.65 \, \frac{u}{(\mu s)^2 \, e}$.
+- $V_0/d^2 = 9.65 \, \frac{\mathrm{u}}{(\mathrm{µs})^2 \, \mathrm{e}}$.
 
 Unless stated otherwise, we'll use singly-charged Calcium ions ($Ca^+$) as our charged particles.
 
@@ -260,7 +264,7 @@ Unless stated otherwise, we'll use singly-charged Calcium ions ($Ca^+$) as our c
 ---
 
 
-#### Problem 6
+#### Problem 5
 
 Create a class named `Particle` that should at least store the following properties of a single particle:
   - Charge ($q$)
@@ -268,7 +272,7 @@ Create a class named `Particle` that should at least store the following propert
   - Position ($\mathbf{r}$)
   - Velocity ($\mathbf{v}$)
 
-You are of course free to extend the class with more attributes (member variables) and/or methods (member functions) if you think its useful.
+You are of course free to extend the class with more attributes (member variables) and/or methods (member functions) if you think it is useful.
 
 Some advice:
   - The constructor should assign values to the member variables.
@@ -276,7 +280,7 @@ Some advice:
   - Make all member variables public. This is just to ease the interplay between the `Particle` class and the `PenningTrap` class. (Alternatively, a nice approach in this case would be to make `PenningTrap` a [friend class](https://en.wikipedia.org/wiki/Friend_class) of `Particle`.)
 
 
-#### Problem 7
+#### Problem 6
 
 Create class named `PenningTrap` that should at least contain member variables for the following:
   - The magnetic field strength ($B_0$)
@@ -289,10 +293,10 @@ Further, the class should contain some member functions for evaluating
   - The external magnetic field
   - The force due to the interaction among the particles
 
-Remember to run small tests during your code development. In particular, since the analytic solutions you have derived are for the case of a single particle, you can consider carrying out the single-particle tests in Problem 9 before implementing any of the code related to particle interactions.
+Remember to run small tests during your code development. In particular, since the analytic solution we have found are for the case of a single particle, you can consider carrying out the single-particle tests in Problem 8 before implementing any of the code related to particle interactions.
 
 
-#### Problem 8
+#### Problem 7
 
 Now we need functionality for actually solving the equations of motion, i.e. evolving our system in time. Our main method will be the fourth-order Runge-Kutta (RK4) method, but for comparison (and debugging) we'll also implement the simple forward Euler method.
 
@@ -302,7 +306,7 @@ So, write functions that can evolve your `PenningTrap` system in time using
 - the RK4 method
 
 You can implement these methods either
-- via regular functions, that take a `PenningTrap` object as input;
+- via regular functions, that take a reference to a `PenningTrap` object as input;
 - via some type of "solver class" or "integrator class", that contains/interacts with the `PenningTrap` object; or
 - via member functions implemented directly in the `PenningTrap` class.
 
@@ -311,11 +315,11 @@ The code snippets below outline the third approach, but feel free to choose the 
 We will use RK4 in the problems below, unless specified otherwise. However, having the simple forward Euler method implemented is still very useful -- for instance it can help you check if a problem in your results is due a problem in your RK4 code or some other part of the code.
 
 
-#### Problem 9
+#### Problem 8
 
 It's time to test and explore your code, to check that it does what it's supposed to. You should at least perform the experiments listed below, but feel free to run other tests/experiments as well.
 
-  - Simulate the movement of single particle in your Penning trap for a total time of $100 \mu s$. Make a plot of the motion in the $z$ direction as a function of time. Does the result look as expected, given the value of $\omega_z$?
+  - Simulate the movement of single particle in your Penning trap for a total time of $100 \textrm{µs}$. Make a plot of the motion in the $z$ direction as a function of time. Does the result look as expected, given the value of $\omega_z$?
 
   - Simulate two particles in your Penning trap and make a plot of their motion in the $xy$-plane with and without particle interactions. Make sure to use the same initial conditions in the two cases.
 
@@ -324,8 +328,9 @@ It's time to test and explore your code, to check that it does what it's suppose
   - Make a 3D plot of the trajectory of two particles with and without interactions. Make sure to use the same initial conditions in the two cases.
 
   - Now consider the case of a single particle, which means we can easily compare to the analytical solution. Choose a total simulation time and five different values for the step size $h$. Run the simulation for each value of $h$, and make a graph showing the size of the relative error in $\mathbf{r}_i$ at each time step $t_i$. Present the five graphs in a single plot. Do the same with the forward Euler method.
+<!-- 
     - **Alternative:** If you repeat the simulations for for more values of $h$, you can instead present the result as a *colourmap* (*heatmap*) of the $(h,t)$ plane, where the colour shows the size of the relative error.
-
+-->
   - Let $k = 1, \ldots, 5$ indicate the five simulations with different step sizes ($h_k$) from the previous task. Using these results, estimate the error convergence rate $r_{\text{err}}$ for forward Euler and RK4 with the expression
 
     $$
@@ -342,12 +347,12 @@ It's time to test and explore your code, to check that it does what it's suppose
   is the maximum error (taken over all timesteps $i$) of the simulation with stepsize $h_k$. Here $\mathbf{r}_{i, \text{exact}}$ is the analytical solution and $\mathbf{r}_{i}$ our numerical approximation.
 
 
-#### Problem 10
+#### Problem 9
 
 Now that we have explored the basics of our simulation setup it's time to use it to explore some Penning trap physics. For this problem we will modify our Penning trap to be much smaller, but keeping the same strength of the static E-field as before:
 
-- $d = 0.05\,cm$.
-- $V_0 = 0.0025\,V$,
+- $d = 0.05\,\textrm{cm}$.
+- $V_0 = 0.0025\,\textrm{V}$,
 
 (Make sure to convert these to the appropriate units.)
 
@@ -389,7 +394,7 @@ For this task you should implement (at least) the following extensions to your c
 
 We want to use our simulation to search for resonance frequencies of the system. Starting from a system filled with *100 randomly initalized $Ca^+$ particles*, do the following:
 
-- For each of the amplitudes $f = 0.1, 0.4, 0.7$, produce a graph that shows *the fraction of particles that are still trapped after $500\, \mu s$* as a function of the applied angular frequency $\omega_V$. Plot the three graphs in the same figure. You should explore frequencies in the range $\omega_V \in (0.2, 2.5)\, MHz$. For this broad exploration of frequencies you can *switch off* the Coulomb interactions between the particles in the trap, as your code should then run much faster. Make sure you use sufficiently small steps along the $\omega_V$ axis -- steps of $0.02\,MHz$ can be a starting point. Comment on your results. Some suggested things to discusss:
+- For each of the amplitudes $f = 0.1, 0.4, 0.7$, produce a graph that shows *the fraction of particles that are still trapped after $500\, \textrm{µs}$* as a function of the applied angular frequency $\omega_V$. Plot the three graphs in the same figure. You should explore frequencies in the range $\omega_V \in (0.2, 2.5)\, \textrm{MHz}$. For this broad exploration of frequencies you can *switch off* the Coulomb interactions between the particles in the trap, as your code should then run much faster. Make sure you use sufficiently small steps along the $\omega_V$ axis -- steps of $0.02\, \textrm{MHz}$ can be a starting point. Comment on your results. Some suggested things to discusss:
 
   - A qualtiative explanation of what's going on: Given the periodic / quasi-periodic nature of the Penning trap system, why is it that some frequencies can be particularly effective for pushing particles out of the trap? (Here we do *not* expect a detailed explanation of the physics behind why the resonances appear exactly where they do -- the resonance structure of a many-particle Penning trap is a complicated topic beyond the scope of this project.)
 
@@ -446,7 +451,5 @@ Here is a suggested starting point for member functions of the `PenningTrap` cla
   void evolve_forward_Euler(double dt);
 ```
 
-Note that for Problem 10 you probably want to modify the declarations of some of these functions, as well as add some new ones.
-
- -->
+Note that for Problem 9 you probably want to modify the declarations of some of these functions, as well as add some new ones.
 
