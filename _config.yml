@@ -10,6 +10,13 @@ author: the FYS3150 teaching team
 execute:
   execute_notebooks: force
 
+# parse:
+#   myst_enable_extensions:
+#     # don't forget to list any other extensions you want enabled,
+#     # including those that are enabled by default!
+#     - dollarmath
+#     - amsmath
+
 # Define the name of the latex output file for PDF builds
 latex:
   latex_documents:
