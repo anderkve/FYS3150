@@ -63,7 +63,7 @@ Not everyone in this course study physics as their main subject. Therefore we'll
   where $m$ denotes the mass of the particle and $\ddot{\mathbf{r}} \equiv d^2\mathbf{r}/dt^2$.
 
 
-### The Penning Trap
+### The Penning trap
 
 A schematic of a Penning trap is shown in figure {numref}`penning-fig`. Charged particles are confined using constant electric and magnetic fields. The electric field is set by three electrodes: the two end caps (a) and a ring (b) (only the ring cross-section is shown). The constant and homogenous magnetic field in the trap is set up by a cylinder magnet (c) (only cross-section shown). The red dot represents a (positively charged) trapped particle.
 
@@ -402,7 +402,7 @@ We want to use our simulation to search for resonance frequencies of the system.
 
   - How do the resonances change when the amplitude for the time-varying potential is increased?
 
-  - Based on the research literature on Penning Traps, we expect that some of resonance frequencies of our system can
+  - Based on the research literature on Penning traps, we expect that some of resonance frequencies of our system can
     be expressed as simple combinations of $\omega_z$, $\omega_+$ and $\omega_-$. Does this seem to be the case for the resonances you've uncovered? **Note:** While the electric potential is now time-dependent, $\omega_z$ is still defined the same way as before, i.e. in terms of the *constant* $V_0$.
 
 - Now we want to check if the Coulomb interactions have some impact on the structure of the these resonances. To do this you should "zoom in" on one of the resonances you've uncovered by performing fine-grained frequency scans around that resonance. 
