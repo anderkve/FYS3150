@@ -1,9 +1,5 @@
 # Project 3
 
-```{note}
-There may be some small updates to the project description in the coming days, so keep an eye out for that.
-```
-
 ## Practicalities
 
 - **Deadline**: Tuesday, October 25, 23:59.
@@ -253,14 +249,14 @@ and the derived SI units for magnetic field strength (Tesla, $\textrm{T}$) and e
 Our default Penning trap configuration will have
 
 - $B_0 = 1.00\,\mathrm{T} = 9.65 \times 10^1 \, \frac{\mathrm{u}}{(\mathrm{µs}) \, \mathrm{e}}$
-- $V_0 = 10.0\,\mathrm{V} = 9.65 \times 10^8 \, \frac{\mathrm{u} \, (\mathrm{µm})^2}{(\mathrm{µs})^2 \, \mathrm{e}}$
-- $d = 1\,\mathrm{cm} = 10^4 \mathrm{µm}$.
+- $V_0 = 25.0\,\mathrm{mV} = 2.41 \times 10^6 \, \frac{\mathrm{u} \, (\mathrm{µm})^2}{(\mathrm{µs})^2 \, \mathrm{e}}$
+- $d = 500\,\mathrm{µm}$.
 
 We note that $V_0$ and $d$ only appear as the ratio $V_0/d^2$, which now takes the value
 
 - $V_0/d^2 = 9.65 \, \frac{\mathrm{u}}{(\mathrm{µs})^2 \, \mathrm{e}}$.
 
-Unless stated otherwise, we'll use singly-charged Calcium ions ($Ca^+$) as our charged particles.
+We'll use singly-charged Calcium ions ($Ca^+$) as our charged particles.
 
 
 ---
@@ -319,15 +315,26 @@ We will use RK4 in the problems below, unless specified otherwise. However, havi
 
 #### Problem 8
 
-It's time to test and explore your code, to check that it does what it's supposed to. You should at least perform the experiments listed below, but feel free to run other tests/experiments as well.
+For the simulations in this problem we'll consider only one or two particles. Use the following initial conditions for all these simulations:
 
-  - Simulate the movement of single particle in your Penning trap for a total time of $100 \textrm{µs}$. Make a plot of the motion in the $z$ direction as a function of time. Does the result look as expected, given the value of $\omega_z$?
+  - Particle 1: 
+    - $(x_0, y_0, z_0) = (50, 0, 50)\,\mathrm{µm}$
+    - $(v_{x,0}, v_{y,0}, v_{z,0}) = (-50, 0, -50)\,\mathrm{µm/µs}$
 
-  - Simulate two particles in your Penning trap and make a plot of their motion in the $xy$-plane with and without particle interactions. Make sure to use the same initial conditions in the two cases.
+  - Particle 2: 
+    - $(x_0, y_0, z_0) = (25, 25, 0)\,\mathrm{µm}$
+    - $(v_{x,0}, v_{y,0}, v_{z,0}) = (0, 100, 50)\,\mathrm{µm/µs}$
 
-  - Similarly, for the case of two particles, make some *phase space* plots (i.e. plots of some of the planes ($x,v_x)$, $(y,v_y)$ and $(z,v_z)$) for the cases with and without interactions. How do the trajectories change when you include interactions? Are the results reasonable from a physical point of view?
+It's now time to test and explore your simulation:
 
-  - Make a 3D plot of the trajectory of two particles with and without interactions. Make sure to use the same initial conditions in the two cases.
+
+  - Simulate the movement of a single particle in your Penning trap for a total time of $50 \textrm{µs}$. Make a plot of the motion in the $z$ direction as a function of time. Does the result look as expected, given the value of $\omega_z$?
+
+  - Simulate two particles in your Penning trap and make a plot of their motion in the $(x,y)$-plane *with* and *without* particle interactions.
+
+  - Similarly, for the case of two particles, make plots of the trajectories in the ($x,v_x)$ and $(z,v_z)$ planes (i.e. *phase space* plots) for the cases *with* and *without* interactions. How do the trajectories change when you include interactions? Are the results reasonable from a physical point of view?
+
+  - Make a 3D plot of the trajectory of two particles in the $(x,y,z)$ space *with* and *without* interactions.
 
   - Now consider the case of a single particle, which means we can easily compare to the analytical solution. Choose a total simulation time and five different values for the step size $h$. Run the simulation for each value of $h$, and make a graph showing the size of the relative error in $\mathbf{r}_i$ at each time step $t_i$. Present the five graphs in a single plot. Do the same with the forward Euler method.
 <!-- 
@@ -349,14 +356,22 @@ It's time to test and explore your code, to check that it does what it's suppose
   is the maximum error (taken over all timesteps $i$) of the simulation with stepsize $h_k$. Here $\mathbf{r}_{i, \text{exact}}$ is the analytical solution and $\mathbf{r}_{i}$ our numerical approximation.
 
 
+```{note}
+When trying to interpret the plots from the simulations above, you may find it useful to also look at other plots, e.g. plots of the $(t,x)$ and $(t,y)$ planes, or plots of the Coloumb force between the two particles as function of time, or something else. (But we do not expect you to inlcude these plots in the report.)
+```
+
+```{note}
+Plots with particle trajectories can complicated to read. You may find it useful to use e.g. `plt.scatter` to put some markers in your plot that show the start point and end point of each trajectory.
+```
+
+```{note}
+If your simulation results look wrong, it can be useful to start the debugging by only simulating a few timesteps rather than running the full $50 \textrm{µs}$ simulation.
+```
+
+
 #### Problem 9
 
-Now that we have explored the basics of our simulation setup it's time to use it to explore some Penning trap physics. For this problem we will modify our Penning trap to be much smaller, but keeping the same strength of the static E-field as before:
-
-- $d = 0.05\,\textrm{cm}$.
-- $V_0 = 0.0025\,\textrm{V}$,
-
-(Make sure to convert these to the appropriate units.)
+Now that we have explored the basics of our simulation setup it's time to use it to explore some Penning trap physics.
 
 In a system with complicated periodic motions we should expect the possibility for seeing resonance phenomena. In a Penning trap, this can be investigated by subjecting the system to a time-dependent electromagnetic field and study *the loss of trapped particles as function of the applied frequency*. 
 
@@ -402,8 +417,10 @@ We want to use our simulation to search for resonance frequencies of the system.
 
   - How do the resonances change when the amplitude for the time-varying potential is increased?
 
+<!--
   - Based on the research literature on Penning traps, we expect that some of resonance frequencies of our system can
     be expressed as simple combinations of $\omega_z$, $\omega_+$ and $\omega_-$. Does this seem to be the case for the resonances you've uncovered? **Note:** While the electric potential is now time-dependent, $\omega_z$ is still defined the same way as before, i.e. in terms of the *constant* $V_0$.
+-->
 
 - Now we want to check if the Coulomb interactions have some impact on the structure of the these resonances. To do this you should "zoom in" on one of the resonances you've uncovered by performing fine-grained frequency scans around that resonance. 
 

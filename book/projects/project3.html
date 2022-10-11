@@ -796,10 +796,6 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="project-3">
 <h1>Project 3<a class="headerlink" href="#project-3" title="Permalink to this headline">#</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>There may be some small updates to the project description in the coming days, so keep an eye out for that.</p>
-</div>
 <section id="practicalities">
 <h2>Practicalities<a class="headerlink" href="#practicalities" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
@@ -1015,14 +1011,14 @@ free to design in the way you think is best.</p>
 <p>Our default Penning trap configuration will have</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(B_0 = 1.00\,\mathrm{T} = 9.65 \times 10^1 \, \frac{\mathrm{u}}{(\mathrm{µs}) \, \mathrm{e}}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(V_0 = 10.0\,\mathrm{V} = 9.65 \times 10^8 \, \frac{\mathrm{u} \, (\mathrm{µm})^2}{(\mathrm{µs})^2 \, \mathrm{e}}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(d = 1\,\mathrm{cm} = 10^4 \mathrm{µm}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(V_0 = 25.0\,\mathrm{mV} = 2.41 \times 10^6 \, \frac{\mathrm{u} \, (\mathrm{µm})^2}{(\mathrm{µs})^2 \, \mathrm{e}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(d = 500\,\mathrm{µm}\)</span>.</p></li>
 </ul>
 <p>We note that <span class="math notranslate nohighlight">\(V_0\)</span> and <span class="math notranslate nohighlight">\(d\)</span> only appear as the ratio <span class="math notranslate nohighlight">\(V_0/d^2\)</span>, which now takes the value</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(V_0/d^2 = 9.65 \, \frac{\mathrm{u}}{(\mathrm{µs})^2 \, \mathrm{e}}\)</span>.</p></li>
 </ul>
-<p>Unless stated otherwise, we’ll use singly-charged Calcium ions (<span class="math notranslate nohighlight">\(Ca^+\)</span>) as our charged particles.</p>
+<p>We’ll use singly-charged Calcium ions (<span class="math notranslate nohighlight">\(Ca^+\)</span>) as our charged particles.</p>
 </section>
 <hr class="docutils" />
 <section id="problem-5">
@@ -1078,12 +1074,27 @@ free to design in the way you think is best.</p>
 </section>
 <section id="problem-8">
 <h4>Problem 8<a class="headerlink" href="#problem-8" title="Permalink to this headline">#</a></h4>
-<p>It’s time to test and explore your code, to check that it does what it’s supposed to. You should at least perform the experiments listed below, but feel free to run other tests/experiments as well.</p>
+<p>For the simulations in this problem we’ll consider only one or two particles. Use the following initial conditions for all these simulations:</p>
 <ul class="simple">
-<li><p>Simulate the movement of single particle in your Penning trap for a total time of <span class="math notranslate nohighlight">\(100 \textrm{µs}\)</span>. Make a plot of the motion in the <span class="math notranslate nohighlight">\(z\)</span> direction as a function of time. Does the result look as expected, given the value of <span class="math notranslate nohighlight">\(\omega_z\)</span>?</p></li>
-<li><p>Simulate two particles in your Penning trap and make a plot of their motion in the <span class="math notranslate nohighlight">\(xy\)</span>-plane with and without particle interactions. Make sure to use the same initial conditions in the two cases.</p></li>
-<li><p>Similarly, for the case of two particles, make some <em>phase space</em> plots (i.e. plots of some of the planes (<span class="math notranslate nohighlight">\(x,v_x)\)</span>, <span class="math notranslate nohighlight">\((y,v_y)\)</span> and <span class="math notranslate nohighlight">\((z,v_z)\)</span>) for the cases with and without interactions. How do the trajectories change when you include interactions? Are the results reasonable from a physical point of view?</p></li>
-<li><p>Make a 3D plot of the trajectory of two particles with and without interactions. Make sure to use the same initial conditions in the two cases.</p></li>
+<li><p>Particle 1:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\((x_0, y_0, z_0) = (50, 0, 50)\,\mathrm{µm}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((v_{x,0}, v_{y,0}, v_{z,0}) = (-50, 0, -50)\,\mathrm{µm/µs}\)</span></p></li>
+</ul>
+</li>
+<li><p>Particle 2:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\((x_0, y_0, z_0) = (25, 25, 0)\,\mathrm{µm}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((v_{x,0}, v_{y,0}, v_{z,0}) = (0, 100, 50)\,\mathrm{µm/µs}\)</span></p></li>
+</ul>
+</li>
+</ul>
+<p>It’s now time to test and explore your simulation:</p>
+<ul class="simple">
+<li><p>Simulate the movement of a single particle in your Penning trap for a total time of <span class="math notranslate nohighlight">\(50 \textrm{µs}\)</span>. Make a plot of the motion in the <span class="math notranslate nohighlight">\(z\)</span> direction as a function of time. Does the result look as expected, given the value of <span class="math notranslate nohighlight">\(\omega_z\)</span>?</p></li>
+<li><p>Simulate two particles in your Penning trap and make a plot of their motion in the <span class="math notranslate nohighlight">\((x,y)\)</span>-plane <em>with</em> and <em>without</em> particle interactions.</p></li>
+<li><p>Similarly, for the case of two particles, make plots of the trajectories in the (<span class="math notranslate nohighlight">\(x,v_x)\)</span> and <span class="math notranslate nohighlight">\((z,v_z)\)</span> planes (i.e. <em>phase space</em> plots) for the cases <em>with</em> and <em>without</em> interactions. How do the trajectories change when you include interactions? Are the results reasonable from a physical point of view?</p></li>
+<li><p>Make a 3D plot of the trajectory of two particles in the <span class="math notranslate nohighlight">\((x,y,z)\)</span> space <em>with</em> and <em>without</em> interactions.</p></li>
 <li><p>Now consider the case of a single particle, which means we can easily compare to the analytical solution. Choose a total simulation time and five different values for the step size <span class="math notranslate nohighlight">\(h\)</span>. Run the simulation for each value of <span class="math notranslate nohighlight">\(h\)</span>, and make a graph showing the size of the relative error in <span class="math notranslate nohighlight">\(\mathbf{r}_i\)</span> at each time step <span class="math notranslate nohighlight">\(t_i\)</span>. Present the five graphs in a single plot. Do the same with the forward Euler method.</p></li>
 </ul>
 <!-- 
@@ -1103,15 +1114,22 @@ free to design in the way you think is best.</p>
   \Delta_{\text{max},k} = \max_i |\mathbf{r}_{i, \text{exact}} - \mathbf{r}_{i}|
   \]</div>
 <p>is the maximum error (taken over all timesteps <span class="math notranslate nohighlight">\(i\)</span>) of the simulation with stepsize <span class="math notranslate nohighlight">\(h_k\)</span>. Here <span class="math notranslate nohighlight">\(\mathbf{r}_{i, \text{exact}}\)</span> is the analytical solution and <span class="math notranslate nohighlight">\(\mathbf{r}_{i}\)</span> our numerical approximation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When trying to interpret the plots from the simulations above, you may find it useful to also look at other plots, e.g. plots of the <span class="math notranslate nohighlight">\((t,x)\)</span> and <span class="math notranslate nohighlight">\((t,y)\)</span> planes, or plots of the Coloumb force between the two particles as function of time, or something else. (But we do not expect you to inlcude these plots in the report.)</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Plots with particle trajectories can complicated to read. You may find it useful to use e.g. <code class="docutils literal notranslate"><span class="pre">plt.scatter</span></code> to put some markers in your plot that show the start point and end point of each trajectory.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If your simulation results look wrong, it can be useful to start the debugging by only simulating a few timesteps rather than running the full <span class="math notranslate nohighlight">\(50 \textrm{µs}\)</span> simulation.</p>
+</div>
 </section>
 <section id="problem-9">
 <h4>Problem 9<a class="headerlink" href="#problem-9" title="Permalink to this headline">#</a></h4>
-<p>Now that we have explored the basics of our simulation setup it’s time to use it to explore some Penning trap physics. For this problem we will modify our Penning trap to be much smaller, but keeping the same strength of the static E-field as before:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(d = 0.05\,\textrm{cm}\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(V_0 = 0.0025\,\textrm{V}\)</span>,</p></li>
-</ul>
-<p>(Make sure to convert these to the appropriate units.)</p>
+<p>Now that we have explored the basics of our simulation setup it’s time to use it to explore some Penning trap physics.</p>
 <p>In a system with complicated periodic motions we should expect the possibility for seeing resonance phenomena. In a Penning trap, this can be investigated by subjecting the system to a time-dependent electromagnetic field and study <em>the loss of trapped particles as function of the applied frequency</em>.</p>
 <p>There are multiple ways of subjecting the system to a time-dependent field. Here we will do it by including a time-dependent perturbation to the applied potential, i.e. make the replacement</p>
 <div class="math notranslate nohighlight" id="equation-timedep-potential">
@@ -1145,10 +1163,14 @@ Initial positions and velocities for each particle can be sampled from normal di
 <ul>
 <li><p>A qualtiative explanation of what’s going on: Given the periodic / quasi-periodic nature of the Penning trap system, why is it that some frequencies can be particularly effective for pushing particles out of the trap? (Here we do <em>not</em> expect a detailed explanation of the physics behind why the resonances appear exactly where they do – the resonance structure of a many-particle Penning trap is a complicated topic beyond the scope of this project.)</p></li>
 <li><p>How do the resonances change when the amplitude for the time-varying potential is increased?</p></li>
-<li><p>Based on the research literature on Penning traps, we expect that some of resonance frequencies of our system can
-be expressed as simple combinations of <span class="math notranslate nohighlight">\(\omega_z\)</span>, <span class="math notranslate nohighlight">\(\omega_+\)</span> and <span class="math notranslate nohighlight">\(\omega_-\)</span>. Does this seem to be the case for the resonances you’ve uncovered? <strong>Note:</strong> While the electric potential is now time-dependent, <span class="math notranslate nohighlight">\(\omega_z\)</span> is still defined the same way as before, i.e. in terms of the <em>constant</em> <span class="math notranslate nohighlight">\(V_0\)</span>.</p></li>
 </ul>
 </li>
+</ul>
+<!--
+  - Based on the research literature on Penning traps, we expect that some of resonance frequencies of our system can
+    be expressed as simple combinations of $\omega_z$, $\omega_+$ and $\omega_-$. Does this seem to be the case for the resonances you've uncovered? **Note:** While the electric potential is now time-dependent, $\omega_z$ is still defined the same way as before, i.e. in terms of the *constant* $V_0$.
+-->
+<ul class="simple">
 <li><p>Now we want to check if the Coulomb interactions have some impact on the structure of the these resonances. To do this you should “zoom in” on one of the resonances you’ve uncovered by performing fine-grained frequency scans around that resonance.</p>
 <ul>
 <li><p>Perform two such scans, one where you include Coulomb interactions in your simulation and one without. (If you have time, you can run multiple scans for each case and use the average results, to lower the statistical uncertainty coming from the fact that we only simulate 100 randomly initialized particles.)</p></li>
