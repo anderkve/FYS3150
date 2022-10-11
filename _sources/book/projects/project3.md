@@ -365,6 +365,10 @@ Plots with particle trajectories can complicated to read. You may find it useful
 ```
 
 ```{note}
+To make sure that e.g. circular orbits actually look circular in your plots, the pyplot command `plt.axis('equal')` might come in handy.
+```
+
+```{note}
 If your simulation results look wrong, it can be useful to start the debugging by only simulating a few timesteps rather than running the full $50 \textrm{µs}$ simulation.
 ```
 
