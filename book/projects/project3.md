@@ -336,15 +336,13 @@ It's now time to test and explore your simulation:
 
   - Make a 3D plot of the trajectory of two particles in the $(x,y,z)$ space *with* and *without* interactions.
 
-  - Now consider the case of a single particle, which means we can easily compare to the analytical solution. Choose a total simulation time and five different values for the step size $h$. Run the simulation for each value of $h$, and make a graph showing the size of the relative error in $\mathbf{r}_i$ at each time step $t_i$. Present the five graphs in a single plot. Do the same with the forward Euler method.
-<!-- 
-    - **Alternative:** If you repeat the simulations for for more values of $h$, you can instead present the result as a *colourmap* (*heatmap*) of the $(h,t)$ plane, where the colour shows the size of the relative error.
--->
-  - Let $k = 1, \ldots, 5$ indicate the five simulations with different step sizes ($h_k$) from the previous task. Using these results, estimate the error convergence rate $r_{\text{err}}$ for forward Euler and RK4 with the expression
+  - Now consider the case of a single particle, which means we can easily compare to the analytical solution. Use the initial values for Particle 1 given above, and let the total simulation time be $50 \textrm{µs}$. Run the simulation four times, using $n_1 = 4000$, $n_2 = 8000$, $n_3 = 16000$ and $n_4 = 32000$ timesteps. (Corresponding stepsizes: $h_k = 50 / n_k \,\mathrm{µs}$).
+  For each of the four simulations, make a graph showing the size of the relative error in $\mathbf{r}_i$ at each time step $t_i$. Present the four graphs in a single plot. Do the same using the forward Euler method.
+  - Using the simulation results for the four different stepsize values $h_k$, estimate the error convergence rate $r_{\text{err}}$ for forward Euler and RK4 with the expression
 
-    $$
-    r_{\text{err}} = \frac{1}{4}\sum_{k=2}^5\frac{\log (\Delta_{\text{max},k}/\Delta_{\text{max},k-1})}{\log (h_{k}/h_{k-1}) }.
-    $$
+  $$
+  r_{\text{err}} = \frac{1}{3}\sum_{k=2}^4\frac{\log (\Delta_{\text{max},k}/\Delta_{\text{max},k-1})}{\log (h_{k}/h_{k-1}) }.
+  $$
 
   where
 
