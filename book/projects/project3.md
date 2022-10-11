@@ -312,6 +312,20 @@ The code snippets below outline the third approach, but feel free to choose the 
 
 We will use RK4 in the problems below, unless specified otherwise. However, having the simple forward Euler method implemented is still very useful -- for instance it can help you check if a problem in your results is due a problem in your RK4 code or some other part of the code.
 
+```{note}
+In the Runge-Kutta algorithm you have to compute a series of $k$'s. More specifically, for every particle in the Penning trap you need four 3-vectors $\mathbf{k}_{\mathbf{r}, 1}$, $\mathbf{k}_{\mathbf{r}, 2}$, $\mathbf{k}_{\mathbf{r}, 3}$, $\mathbf{k}_{\mathbf{r}, 4}$ to update the position, and four 3-vectors $\mathbf{k}_{\mathbf{v}, 1}$, $\mathbf{k}_{\mathbf{v}, 2}$, $\mathbf{k}_{\mathbf{v}, 3}$, $\mathbf{k}_{\mathbf{v}, 4}$ to update the velocity. Remember that each $k$ is associated with a specific whole/half timestep. And since the accelleration for one particle depends on the positions of all other particles (due to the Coloumb interactions), this means that the positions and velocities for *all* particles in the trap must be updated to the correct whole/half timestep before the next set of $k$'s can be computed. 
+
+In other words, your implementation of the Runge-Kutta algorithm for one timestep should probably go something like this:
+
+- Make a temporary copy of all the particles in the Penning trap, since we'll need the original positions and velocities to perform the final RK4 update step.
+- For each particle, compute $\mathbf{k}_{\mathbf{r}, 1}$ and $\mathbf{k}_{\mathbf{v}, 1}$.
+- For each particle, update the position and velocity using the corresponding $\mathbf{k}_{\mathbf{r}, 1}$ and $\mathbf{k}_{\mathbf{v}, 1}$.
+- For each particle, compute $\mathbf{k}_{\mathbf{r}, 2}$ and $\mathbf{k}_{\mathbf{v}, 2}$.
+- For each particle, update the position and velocity using the corresponding $\mathbf{k}_{\mathbf{r}, 2}$ and $\mathbf{k}_{\mathbf{v}, 2}$
+- ...
+- For each particle, compute $\mathbf{k}_{\mathbf{r}, 4}$ and $\mathbf{k}_{\mathbf{v}, 4}$
+- Final step: For each particle, perform the proper RK4 update of position and velocity using the original particle position and velocity, together with all the $\mathbf{k}_{\mathbf{r}, i}$ and $\mathbf{k}_{\mathbf{v}, i}$ computed above.
+```
 
 #### Problem 8
 
