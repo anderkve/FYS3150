@@ -318,12 +318,12 @@ We will use RK4 in the problems below, unless specified otherwise. However, havi
 For the simulations in this problem we'll consider only one or two particles. Use the following initial conditions for all these simulations:
 
   - Particle 1: 
-    - $(x_0, y_0, z_0) = (10, 0, 10)\,\mathrm{µm}$
-    - $(v_{x,0}, v_{y,0}, v_{z,0}) = (-25, 0, -25)\,\mathrm{µm/µs}$
+    - $(x_0, y_0, z_0) = (20, 0, 20)\,\mathrm{µm}$
+    - $(v_{x,0}, v_{y,0}, v_{z,0}) = (0, 25, 0)\,\mathrm{µm/µs}$
 
   - Particle 2: 
-    - $(x_0, y_0, z_0) = (15, 15, 0)\,\mathrm{µm}$
-    - $(v_{x,0}, v_{y,0}, v_{z,0}) = (0, 50, 25)\,\mathrm{µm/µs}$
+    - $(x_0, y_0, z_0) = (25, 25, 0)\,\mathrm{µm}$
+    - $(v_{x,0}, v_{y,0}, v_{z,0}) = (0, 40, 5)\,\mathrm{µm/µs}$
 
 It's now time to test and explore your simulation:
 
