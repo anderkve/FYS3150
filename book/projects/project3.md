@@ -313,7 +313,7 @@ The code snippets below outline the third approach, but feel free to choose the 
 We will use RK4 in the problems below, unless specified otherwise. However, having the simple forward Euler method implemented is still very useful -- for instance it can help you check if a problem in your results is due a problem in your RK4 code or some other part of the code.
 
 ```{note}
-In the Runge-Kutta algorithm you have to compute a series of $k$'s. More specifically, for every particle in the Penning trap you need four 3-vectors $\mathbf{k}_{\mathbf{r}, 1}$, $\mathbf{k}_{\mathbf{r}, 2}$, $\mathbf{k}_{\mathbf{r}, 3}$, $\mathbf{k}_{\mathbf{r}, 4}$ to update the position, and four 3-vectors $\mathbf{k}_{\mathbf{v}, 1}$, $\mathbf{k}_{\mathbf{v}, 2}$, $\mathbf{k}_{\mathbf{v}, 3}$, $\mathbf{k}_{\mathbf{v}, 4}$ to update the velocity. Remember that each $k$ is associated with a specific whole/half timestep. And since the accelleration for one particle depends on the positions of all other particles (due to the Coloumb interactions), this means that the positions and velocities for *all* particles in the trap must be updated to the correct whole/half timestep before the next set of $k$'s can be computed. 
+In the Runge-Kutta algorithm you have to compute a series of $k$'s. More specifically, for every particle in the Penning trap you need four 3-vectors $\mathbf{k}_{\mathbf{r}, 1}$, $\mathbf{k}_{\mathbf{r}, 2}$, $\mathbf{k}_{\mathbf{r}, 3}$, $\mathbf{k}_{\mathbf{r}, 4}$ to update the position, and four 3-vectors $\mathbf{k}_{\mathbf{v}, 1}$, $\mathbf{k}_{\mathbf{v}, 2}$, $\mathbf{k}_{\mathbf{v}, 3}$, $\mathbf{k}_{\mathbf{v}, 4}$ to update the velocity. Recall that each $k$ is associated with a specific whole/half timestep. Since the accelleration for one particle depends on the positions of all other particles (due to the Coulomb interactions), this means that the positions and velocities for *all* particles in the trap must be updated to the correct whole/half timestep before the next set of $k$'s can be computed. 
 
 In other words, your implementation of the Runge-Kutta algorithm for one timestep should probably go something like this:
 
@@ -369,7 +369,7 @@ It's now time to test and explore your simulation:
 
 
 ```{note}
-When trying to interpret the plots from the simulations above, you may find it useful to also look at other plots, e.g. plots of the $(t,x)$ and $(t,y)$ planes, or plots of the Coloumb force between the two particles as function of time, or something else. (But we do not expect you to inlcude these plots in the report.)
+When trying to interpret the plots from the simulations above, you may find it useful to also look at other plots, e.g. plots of the $(t,x)$ and $(t,y)$ planes, or plots of the Coulomb force between the two particles as function of time, or something else. (But we do not expect you to inlcude these plots in the report.)
 ```
 
 ```{note}
