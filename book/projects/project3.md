@@ -211,9 +211,19 @@ $$ (z_eq_int)
 
 Here $i$ and $j$ are particle indices. We will not attempt an analytical treatment of this problem, but rather move on to a numerical simulation.
 
-**Note:** While the above equations are the equations our simulation will solve, our code does not have to contain these equations as single, long mathematical formulas. The code snippets we provide will outline an approach where the contributions from different forces are specificed in separate functions in the code.
+```{note} 
+While the above equations are the equations our simulation will solve, our code does not have to contain these equations as single, long mathematical formulas. First of all, the equations above are *second-order* differential equations, while we will use Forward Euler and Runge-Kutta as methods for solving *first-order* differential equations. So when approaching the numerical part of this project, the first step is to formulate the problem in terms of coupled, first-order differential equations: 
 
-This will allow us to write a quite *general* Penning trap simulator, for which the specific Penning trap configuration described by the equations above is just one special case.
+$$
+\dot{\mathbf{r}} &= \mathbf{v} \\
+\\
+\dot{\mathbf{v}} &= \frac{\mathbf{F}}{m}
+$$
+
+This suggests that all the physics-specific details in the second-order differential equations above will effectively be contained in the function(s) you use to compute the total force $\mathbf{F}$ acting on a particle at position $\mathbf{r}$ with velocity $\mathbf{v}$ at time $t$. 
+
+The code snippets we provide at the end will outline an approach where the contributions from different forces are specificed in separate functions in the code. This will allow us to write a quite *general* Penning trap simulator, for which the specific Penning trap configuration described by the equations above is just one special case.
+```
 
 ----
 
