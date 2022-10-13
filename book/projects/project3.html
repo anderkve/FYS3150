@@ -977,8 +977,18 @@ A_+ = \frac{v_0 + \omega_- x_0}{\omega_- - \omega_+}, \qquad A_- = - \frac{v_0 +
 \ddot{z}_i + \omega_{z,i}^2z_i - k_e \frac{q_i}{m_i} \sum_{j\neq i}q_j \frac{z_i-z_j}{|\mathbf{r}_i - \mathbf{r}_j|^3} = 0,
 \]</div>
 <p>Here <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> are particle indices. We will not attempt an analytical treatment of this problem, but rather move on to a numerical simulation.</p>
-<p><strong>Note:</strong> While the above equations are the equations our simulation will solve, our code does not have to contain these equations as single, long mathematical formulas. The code snippets we provide will outline an approach where the contributions from different forces are specificed in separate functions in the code.</p>
-<p>This will allow us to write a quite <em>general</em> Penning trap simulator, for which the specific Penning trap configuration described by the equations above is just one special case.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>While the above equations are the equations our simulation will solve, our code does not have to contain these equations as single, long mathematical formulas. First of all, the equations above are <em>second-order</em> differential equations, while we will use Forward Euler and Runge-Kutta as methods for solving <em>first-order</em> differential equations. So when approaching the numerical part of this project, the first step is to formulate the problem in terms of coupled, first-order differential equations:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\dot{\mathbf{r}} &amp;= \mathbf{v} \\
+\\
+\dot{\mathbf{v}} &amp;= \frac{\mathbf{F}}{m}
+\end{split}\]</div>
+<p>This suggests that all the physics-specific details in the second-order differential equations above will effectively be contained in the function(s) you use to compute the total force <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> acting on a particle at position <span class="math notranslate nohighlight">\(\mathbf{r}\)</span> with velocity <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> at time <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p>The code snippets we provide at the end will outline an approach where the contributions from different forces are specificed in separate functions in the code. This will allow us to write a quite <em>general</em> Penning trap simulator, for which the specific Penning trap configuration described by the equations above is just one special case.</p>
+</div>
 </section>
 </section>
 <hr class="docutils" />
