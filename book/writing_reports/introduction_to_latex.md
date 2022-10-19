@@ -51,6 +51,12 @@ pdflatex report_example.tex && bibtex report_example.aux && pdflatex report_exam
 ```
 
 
+### Example report
+
+An example of a very good student report from a few years back can be found [here] (https://github.com/anderkve/FYS3150/blob/master/book/writing_reports/example_report.pdf).
+
+
+
 ## LaTeX resources
 
 Here are some LaTeX resources that might come in handy:
