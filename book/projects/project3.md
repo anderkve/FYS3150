@@ -455,6 +455,17 @@ We want to use our simulation to search for resonance frequencies of the system.
   - Produce a plot that shows the fraction of trapped particles versus frequency for the two cases. Comment on noteworthy differences.
 
 
+```{note}
+Running a simulation with 100 particles is computationally quite demanding, and runtimes can vary greatly depending on how the code is written, the particular machine the code is run on, etc. Enabling [compiler optimisation](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html) can have quite a big impact on the runtime. We recommend adding either `-O2` or `-O3` to your compilation command.
+
+As a reference, for my (Anders) code and latop, running a 100-particle simulation for 40,000 timesteps using RK4 and *no* Coulomb interactions takes ~10 seconds. This reduces to ~2 seconds when compiling with `-O2`.
+```
+
+```{note}
+Some of you may experience runtimes that are so long that you are unable to perform the series of 100-particle simulations for this problem. If you unable to reduce the runtime by optimising your code, switching on compiler optimisation, etc, you can reduce the problem size by reducing the number of particles until you get workable runtimes. If you have to do this, please comment on it in your report.
+```
+
+
 **Good luck!** 
 
 
