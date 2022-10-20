@@ -1120,6 +1120,12 @@ free to design in the way you think is best.</p>
 <li><p>Simulate two particles in your Penning trap and make a plot of their motion in the <span class="math notranslate nohighlight">\((x,y)\)</span>-plane <em>with</em> and <em>without</em> particle interactions.</p></li>
 <li><p>Similarly, for the case of two particles, make plots of the trajectories in the (<span class="math notranslate nohighlight">\(x,v_x)\)</span> and <span class="math notranslate nohighlight">\((z,v_z)\)</span> planes (i.e. <em>phase space</em> plots) for the cases <em>with</em> and <em>without</em> interactions. How do the trajectories change when you include interactions? Are the results reasonable from a physical point of view?</p></li>
 <li><p>Make a 3D plot of the trajectory of two particles in the <span class="math notranslate nohighlight">\((x,y,z)\)</span> space <em>with</em> and <em>without</em> interactions.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>An example of 3D plotting with matplotlib can be found <a class="reference external" href="https://matplotlib.org/stable/gallery/mplot3d/lines3d.html#sphx-glr-gallery-mplot3d-lines3d-py">here</a>.</p>
+</div>
+<ul class="simple">
 <li><p>Now consider the case of a single particle, which means we can easily compare to the analytical solution. Use the initial values for Particle 1 given above, and let the total simulation time be <span class="math notranslate nohighlight">\(50 \textrm{µs}\)</span>. Run the simulation four times, using <span class="math notranslate nohighlight">\(n_1 = 4000\)</span>, <span class="math notranslate nohighlight">\(n_2 = 8000\)</span>, <span class="math notranslate nohighlight">\(n_3 = 16000\)</span> and <span class="math notranslate nohighlight">\(n_4 = 32000\)</span> timesteps. (Corresponding stepsizes: <span class="math notranslate nohighlight">\(h_k = 50 / n_k \,\mathrm{µs}\)</span>).
 For each of the four simulations, make a graph showing the size of the relative error in <span class="math notranslate nohighlight">\(\mathbf{r}_i\)</span> at each time step <span class="math notranslate nohighlight">\(t_i\)</span>. Present the four graphs in a single plot. Do the same using the forward Euler method.</p></li>
 <li><p>Using the simulation results for the four different stepsize values <span class="math notranslate nohighlight">\(h_k\)</span>, estimate the error convergence rate <span class="math notranslate nohighlight">\(r_{\text{err}}\)</span> for forward Euler and RK4 with the expression</p></li>
