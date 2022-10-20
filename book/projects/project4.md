@@ -1,8 +1,5 @@
 # Project 4
 
-This project is not published yet.
-
-<!-- 
 ```{note}
 While working on the project, check this page regularly in case of small updates (typo fixes, added hints, etc.)
 ```
@@ -51,7 +48,7 @@ We will study 2D square lattices of spins $s_i$. Below we summarize our notation
   \mathbf{s} = (s_1, s_2, \ldots, s_N),
   $$
 
-  but in your code you probably want to use a $L \times L$ matrix to represent the spin configuration. 
+  but in your code you probably want to use an $L \times L$ matrix to represent the spin configuration. 
 
 - The total energy of the system is given by 
 
@@ -140,9 +137,11 @@ Assume a $2 \times 2$ lattice with periodic boundary conditions.
   
 We will use these analytical results to test our code.
 
+<!--
 ```{note}
 There was a typo in a previous version, where $C_V$ and $\chi$ were defined using $\epsilon$ and $m$ rather than $E$ and $M$. This is now corrected, along with the normalization factor $\frac{1}{N}$ in front to enusure that we normalize the heat capacity and susceptibility to the total number of spins in the system. Apologies for the confusion!
 ```
+-->
 
 
 ### Problem 2
@@ -204,7 +203,7 @@ For $L=20$, approximate the probability function $p_{\epsilon}(\epsilon;T)$ for 
 Now parallelize your code using either OpenMP or MPI. Perform some timing tests to estimate the speed-up factor resulting from the parallelization.
 
 ```{note}
-As discussed in the lectures, there are basically three different approaches you can take here, corresponding to three different levels at which you can parallelize your code:
+There are basically three different approaches you can take here, corresponding to three different levels at which you can parallelize your code:
 
 1. *At the temperature level:* You can parallelize the outer loop over temperature values (see Problem 8, which is where parallelization becomes important)
 2. *At the level of MCMC "walkers":* You can use multiple threads to perform multiple independent MCMC runs in parallel and combine their results.
@@ -221,7 +220,7 @@ Now we will start investigating phase transitions.
 For a brief introduction to the phase transition of the 2D Ising model, see Chapters 13.4 and 13.4.1 of Morten Hjort-Jensen's lecture notes. See also the brief theoretical summary for Problem 9.
 ```
 
-- **a)** For lattices of size $L = 40,60,80,100$ (and higher if you want), make plots of $\langle \epsilon \rangle$, $\langle |m| \rangle$, $C_V$ and $\chi$ as function of temperature $T$. (Plot the results for different $L$ values in the same figure.) Focus on temperatures in a range around $T \in [2.1, 2.4]\,J/k_B$. Make sure to use sufficiently small temperature steps, at least in the region where the graphs change most rapidly.
+- **a)** For lattices of size $L = 40,60,80,100$ (and higher if you want), make plots of $\langle \epsilon \rangle$, $\langle |m| \rangle$, $C_V$ and $\chi$ as function of temperature $T$. (Plot the results for the different $L$ values in the same figure.) Focus on temperatures in a range around $T \in [2.1, 2.4]\,J/k_B$. Make sure to use sufficiently small temperature steps, at least in the region where the graphs change most rapidly.
 
 - **b)** Do you see an indication of a phase transition?
 
@@ -230,7 +229,7 @@ For a brief introduction to the phase transition of the 2D Ising model, see Chap
 ```{note}
 Some suggestions in case you are short on time because the code is slower than expected: 
 
-- Make sure you're not running way more temperature points than necessary. As suggested in the lectures, first run a scan with large T steps, to roughly identify the subregion of $T$ values where the graphs change most quickly. (E.g. only 10 points on the suggested $T$ range can be sufficient here.) Then run a second scan that zooms in on the much smaller $T$ range needed to identify $T_c$. Again, you can probably get good results with as few as 10 $T$ points -- though more points always make for better results. 
+- Make sure you're not running way more temperature points than necessary. A useful strategy: First run a scan with large T steps, to roughly identify the subregion of $T$ values where the graphs change most quickly. (E.g. only 10 points on the suggested $T$ range can be sufficient here.) Then run a second scan that zooms in on the much smaller $T$ range needed to identify $T_c$. Again, you can probably get good results with as few as 10 $T$ points -- though more points always make for better results. 
 
 - If you're having trouble with OpenMP/MPI parallelisation, remember that to just make sure you get the numerical results you need, you can always do "dummy parallelisation" by just running multiple instances of your program. (Use separete terminal windows, or run your program in the background with the `&` command, e.g. `./main.exe <command line options> &`. You can view your background jobs with `jobs` and bring them to the foreground with `fg <job number>`.) This "manual" way of splitting up tasks works well assuming that your program can take options like `L`, `Tmin`, `Tmax`, `deltaT` (or `n_Tsteps`) as command-line arguments.
 
@@ -303,6 +302,3 @@ $$
 - See the code snippets in [`code_examples/omp_parallelization`](https://github.com/anderkve/FYS3150/tree/master/code_examples/omp_parallelization) for some simple examples on parallelization using OpenMP.
 
 - For some illustrations on how you can use the C++ `<random>` library for random number generation, see code examples in [`code_examples/random_number_generation`](https://github.com/anderkve/FYS3150/tree/master/code_examples/random_number_generation). These examples use a Mersenne Twister generator. Some of the examples demonstrate how one can do seeding when working with multiple OpenMP threads.
-
-
- -->
