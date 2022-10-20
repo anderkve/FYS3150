@@ -360,6 +360,10 @@ It's now time to test and explore your simulation:
 
   - Make a 3D plot of the trajectory of two particles in the $(x,y,z)$ space *with* and *without* interactions.
 
+  ```{note}
+  An example of 3D plotting with matplotlib can be found [here](https://matplotlib.org/stable/gallery/mplot3d/lines3d.html#sphx-glr-gallery-mplot3d-lines3d-py).
+  ```
+
   - Now consider the case of a single particle, which means we can easily compare to the analytical solution. Use the initial values for Particle 1 given above, and let the total simulation time be $50 \textrm{µs}$. Run the simulation four times, using $n_1 = 4000$, $n_2 = 8000$, $n_3 = 16000$ and $n_4 = 32000$ timesteps. (Corresponding stepsizes: $h_k = 50 / n_k \,\mathrm{µs}$).
   For each of the four simulations, make a graph showing the size of the relative error in $\mathbf{r}_i$ at each time step $t_i$. Present the four graphs in a single plot. Do the same using the forward Euler method.
   - Using the simulation results for the four different stepsize values $h_k$, estimate the error convergence rate $r_{\text{err}}$ for forward Euler and RK4 with the expression
