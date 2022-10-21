@@ -173,7 +173,7 @@ $$
 z(0) = z_0, \qquad \dot{z}(0) = 0.
 $$
 
-From equation {eq}`z_eq` and the inital values for $z(0)$ and $\dot{z}(0)$ we get that the specific solution for $z(t)$ in this case is 
+From equation {eq}`z_eq` and the initial values for $z(0)$ and $\dot{z}(0)$ we get that the specific solution for $z(t)$ in this case is 
 
 $$
 z(t) = z_0 \cos(w_z t).
@@ -206,7 +206,7 @@ $$
 $$ (y_eq_int)
 
 $$
-\ddot{z}_i + \omega_{z,i}^2z_i - k_e \frac{q_i}{m_i} \sum_{j\neq i}q_j \frac{z_i-z_j}{|\mathbf{r}_i - \mathbf{r}_j|^3} = 0,
+\ddot{z}_i + \omega_{z,i}^2z_i - k_e \frac{q_i}{m_i} \sum_{j\neq i}q_j \frac{z_i-z_j}{|\mathbf{r}_i - \mathbf{r}_j|^3} = 0.
 $$ (z_eq_int)
 
 Here $i$ and $j$ are particle indices. We will not attempt an analytical treatment of this problem, but rather move on to a numerical simulation.
@@ -383,11 +383,11 @@ It's now time to test and explore your simulation:
 
 
 ```{note}
-When trying to interpret the plots from the simulations above, you may find it useful to also look at other plots, e.g. plots of the $(t,x)$ and $(t,y)$ planes, or plots of the Coulomb force between the two particles as function of time, or something else. (But we do not expect you to inlcude these plots in the report.)
+When trying to interpret the plots from the simulations above, you may find it useful to also look at other plots, e.g. plots of the $(t,x)$ and $(t,y)$ planes, or plots of the Coulomb force between the two particles as function of time, or something else. (But we do not expect you to include these plots in the report.)
 ```
 
 ```{note}
-Plots with particle trajectories can complicated to read. You may find it useful to use e.g. `plt.scatter` to put some markers in your plot that show the start point and end point of each trajectory.
+Plots with particle trajectories can be complicated to read. You may find it useful to use e.g. `plt.scatter` to put some markers in your plot that show the start point and end point of each trajectory.
 ```
 
 ```{note}
@@ -436,14 +436,14 @@ For this task you should implement (at least) the following extensions to your c
     vec v = vec(3).randn() * 0.1 * my_trap.d;  // random initial velocity
   ```
   
-  *Note:* To set the seed for Armadillos random number generator, you can use `arma_rng::set_seed(value)` or `arma_rng::set_seed_random()`.
+  *Note:* To set the seed for Armadillo's random number generator, you can use `arma_rng::set_seed(value)` or `arma_rng::set_seed_random()`.
 
 
 We want to use our simulation to search for resonance frequencies of the system. Starting from a system filled with *100 randomly initalized $Ca^+$ particles*, do the following:
 
 - For each of the amplitudes $f = 0.1, 0.4, 0.7$, produce a graph that shows *the fraction of particles that are still trapped after $500\, \textrm{µs}$* as a function of the applied angular frequency $\omega_V$. Plot the three graphs in the same figure. You should explore frequencies in the range $\omega_V \in (0.2, 2.5)\, \textrm{MHz}$. For this broad exploration of frequencies you can *switch off* the Coulomb interactions between the particles in the trap, as your code should then run much faster. Make sure you use sufficiently small steps along the $\omega_V$ axis -- steps of $0.02\, \textrm{MHz}$ can be a starting point. Comment on your results. Some suggested things to discusss:
 
-  - A qualtiative explanation of what's going on: Given the periodic / quasi-periodic nature of the Penning trap system, why is it that some frequencies can be particularly effective for pushing particles out of the trap? (Here we do *not* expect a detailed explanation of the physics behind why the resonances appear exactly where they do -- the resonance structure of a many-particle Penning trap is a complicated topic beyond the scope of this project.)
+  - A qualitative explanation of what's going on: Given the periodic / quasi-periodic nature of the Penning trap system, why is it that some frequencies can be particularly effective for pushing particles out of the trap? (Here we do *not* expect a detailed explanation of the physics behind why the resonances appear exactly where they do -- the resonance structure of a many-particle Penning trap is a complicated topic beyond the scope of this project.)
 
   - How do the resonances change when the amplitude for the time-varying potential is increased?
 
@@ -452,7 +452,7 @@ We want to use our simulation to search for resonance frequencies of the system.
     be expressed as simple combinations of $\omega_z$, $\omega_+$ and $\omega_-$. Does this seem to be the case for the resonances you've uncovered? **Note:** While the electric potential is now time-dependent, $\omega_z$ is still defined the same way as before, i.e. in terms of the *constant* $V_0$.
 -->
 
-- Now we want to check if the Coulomb interactions have some impact on the structure of the these resonances. To do this you should "zoom in" on one of the resonances you've uncovered by performing fine-grained frequency scans around that resonance. 
+- Now we want to check if the Coulomb interactions have some impact on the structure of these resonances. To do this you should "zoom in" on one of the resonances you've uncovered by performing fine-grained frequency scans around that resonance. 
 
   - Perform two such scans, one where you include Coulomb interactions in your simulation and one without. (If you have time, you can run multiple scans for each case and use the average results, to lower the statistical uncertainty coming from the fact that we only simulate 100 randomly initialized particles.)
 
@@ -462,11 +462,11 @@ We want to use our simulation to search for resonance frequencies of the system.
 ```{note}
 Running a simulation with 100 particles is computationally quite demanding, and runtimes can vary greatly depending on how the code is written, the particular machine the code is run on, etc. Enabling [compiler optimisation](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html) can have quite a big impact on the runtime. We recommend adding either `-O2` or `-O3` to your compilation command.
 
-As a reference, for my (Anders) code and latop, running a 100-particle simulation for 40,000 timesteps using RK4 and *no* Coulomb interactions takes ~10 seconds. This reduces to ~2 seconds when compiling with `-O2`.
+As a reference, for my (Anders) code and laptop, running a 100-particle simulation for 40,000 timesteps using RK4 and *no* Coulomb interactions takes ~10 seconds. This reduces to ~2 seconds when compiling with `-O2`.
 ```
 
 ```{note}
-Some of you may experience runtimes that are so long that you are unable to perform the series of 100-particle simulations for this problem. If you unable to reduce the runtime by optimising your code, switching on compiler optimisation, etc, you can reduce the problem size by reducing the number of particles until you get workable runtimes. If you have to do this, please comment on it in your report.
+Some of you may experience runtimes that are so long that you are unable to perform the series of 100-particle simulations for this problem. If you are unable to reduce the runtime by optimising your code, switching on compiler optimisation, etc, you can reduce the problem size by reducing the number of particles until you get workable runtimes. If you have to do this, please comment on it in your report.
 ```
 
 
