@@ -2,7 +2,7 @@
 
 ## Practicalities
 
-- **Deadline**: Tuesday, October 25, 23:59.
+- **Deadline**: Tuesday, October 25, 23:59. **Extended to Wednesday, October 26, 23:59**
 - **Format:**
   - A scientific report, typeset in LaTeX, delivered as a pdf file on Canvas.
   - Code (with comments, of course) on a GitHub repo, with the repo link provided in your report.
