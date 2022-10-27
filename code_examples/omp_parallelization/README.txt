@@ -6,7 +6,7 @@ you pay attention to whether a variable is *shared* among threads (all threads
 modify same variable in memory) or *private* (each thread is working with its
 own separate instance of the variable.)
 
-- Comment in one of the code parts in the example (part 1, 2 or 3)
+- Uncomment one of the code parts in the example (part 1, 2 or 3)
 
 - Build with: 
 

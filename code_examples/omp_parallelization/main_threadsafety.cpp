@@ -29,6 +29,14 @@ int main(int argc, const char* argv[])
 
   for (int i = 0; i < 5; i++)
   {
+
+    // Waste some time, to emulate some computation
+    double d = 0;
+    for (int j = 0; j < 1000; j++) 
+    { 
+      d += 1.0;
+    } 
+
     // Print current state
     cout << "x memory address: " << &x << "    x value: " << x << endl;
 
@@ -57,8 +65,15 @@ int main(int argc, const char* argv[])
   // {
   //   int thread_num = omp_get_thread_num();
 
-  //   for (int i = 0; i < 5; i++)
+  //   for (int i = 0; i < 10; i++)
   //   {
+
+  //     // Waste some time, to emulate some computation each thread must do
+  //     double d = 0;
+  //     for (int j = 0; j < 1000; j++) 
+  //     { 
+  //       d += 1.0;
+  //     } 
 
   //     // Print current state
   //     #pragma omp critical  // <-- Code in a "ciritical block" is only run one thread at a time. Avoids garbled screen output.
@@ -92,6 +107,13 @@ int main(int argc, const char* argv[])
 
   //   for (int i = 0; i < 5; i++)
   //   {
+
+  //     // Waste some time, to emulate some computation each thread must do
+  //     double d = 0;
+  //     for (int j = 0; j < 1000; j++) 
+  //     { 
+  //       d += 1.0;
+  //     } 
 
   //     // Print current state
   //     #pragma omp critical
