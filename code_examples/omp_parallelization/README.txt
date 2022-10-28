@@ -57,11 +57,11 @@ This example code in main_no_omp.cpp is *not* parallelized.
 - To run an example that takes a little bit of time (~40 seconds on my laptop), 
   try for instance this:
 
-    ./main_no_omp.exe 0 4 401 1000000 output.dat
+    ./main_no_omp.exe 0.0 4.0 401 1000000 output.dat
 
 - To time it, run it through the "time" command:
     
-    time ./main_no_omp.exe 0 4 401 1000000 output.dat
+    time ./main_no_omp.exe 0.0 4.0 401 1000000 output.dat
 
   (Focus on the "real" row of the time output.)
 
@@ -72,8 +72,8 @@ program with different inputs (and writing to different output files).
 
 - For instance you start the same program from two different terminal windows, with different input/output:
 
-    time ./main_no_omp.exe 0 2 201 1000000 output.dat.part1
-    time ./main_no_omp.exe 2 4 201 1000000 output.dat.part2
+    time ./main_no_omp.exe 0.0 2.0 201 1000000 output.dat.part1
+    time ./main_no_omp.exe 2.01 4.0 200 1000000 output.dat.part2
 
   and then combine the data files into one by doing e.g. this:
 
@@ -84,8 +84,8 @@ runs "in the background" by adding "&" to the command.
 
   - Try starting two runs in the background like this
 
-    ./main_no_omp.exe 0 2 201 1000000 output.dat.part1 &
-    ./main_no_omp.exe 2 4 201 1000000 output.dat.part2 &
+    ./main_no_omp.exe 0.0 2.0 201 1000000 output.dat.part1 &
+    ./main_no_omp.exe 2.01 4.0 200 1000000 output.dat.part2 &
 
 - To see the running jobs, run the command "jobs" command.
 
@@ -127,13 +127,13 @@ be combined later, e.g. using the "cat" command.
 
 - So a run that includes timeing with the "time" command could be:
 
-    time ./main_omp_outer_loop.exe 0 4 401 1000000 output.dat
+    time ./main_omp_outer_loop.exe 0.0 4.0 401 1000000 output.dat
 
 - Look at the output files
 
 
 
-main_omp_inner_loop_inmem.cpp
+main_omp_outer_loop_inmem.cpp
 -----------------------------
 
 Similar to main_omp_outer_loop.cpp, but now storing the results from all threads
