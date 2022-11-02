@@ -54,7 +54,7 @@ namespace omp_rng
 
     // Sample a number using the generator for the current thread
     int thread_id = omp_get_thread_num();
-    int r = distribution(omp_rng_container.at(thread_id));
+    double r = distribution(omp_rng_container.at(thread_id));
 
     return r;
   }
