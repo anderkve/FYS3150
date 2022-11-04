@@ -79,7 +79,7 @@ We will study 2D square lattices of spins $s_i$. Below we summarize our notation
   p(\mathbf{s} ; T) = \frac{1}{Z} e^{-\beta E(\mathbf{s})}
   $$
 
-  Here the normalization constant $Z$ is the so-caleed **partition function** (see below), and $\beta$ is the "inverse temperature":
+  Here the normalization constant $Z$ is the so-called **partition function** (see below), and $\beta$ is the "inverse temperature":
 
   $$
   \beta = \frac{1}{k_B T}
@@ -217,7 +217,7 @@ We recommend you do either approach 1 or 2. (You only need to do one approach.) 
 Now we will start investigating phase transitions. 
 
 ```{note}
-For a brief introduction to the phase transition of the 2D Ising model, see Chapters 13.4 and 13.4.1 of Morten Hjort-Jensen's lecture notes. See also the brief theoretical summary for Problem 9.
+For a brief introduction to the phase transition of the 2D Ising model, see Chapters 13.4 and 13.4.1 of Morten Hjorth-Jensen's lecture notes. See also the brief theoretical summary for Problem 9.
 ```
 
 - **a)** For lattices of size $L = 40,60,80,100$ (and higher if you want), make plots of $\langle \epsilon \rangle$, $\langle |m| \rangle$, $C_V$ and $\chi$ as function of temperature $T$. (Plot the results for the different $L$ values in the same figure.) Focus on temperatures in a range around $T \in [2.1, 2.4]\,J/k_B$. Make sure to use sufficiently small temperature steps, at least in the region where the graphs change most rapidly.
@@ -256,7 +256,7 @@ $$
 T_c(L) - T_c(L=\infty) = a L^{-1}
 $$ (scaling_relation)
 
-where $a$ is a constant, extract an estimate for $T_c(L=\infty)$ and compare it to Onsager's analtical result.
+where $a$ is a constant, extract an estimate for $T_c(L=\infty)$ and compare it to Onsager's analytical result.
 
 ```{note}
 Hint: If you are unsure about how to approach this, try to first plot your data points in such a way that they, according to the relation above, should fall on a straight line.
@@ -267,9 +267,9 @@ Hint 2: If you find that doing a linear fit (a.k.a. linear least squares, a.k.a.
 ```
 
 
-**Theoretical background:** *What follows here is a very brief summary. For more information see Chapters 13.4 and 13.4.1 of Morten Hjort-Jensen's lecture notes, and references therein.* 
+**Theoretical background:** *What follows here is a very brief summary. For more information see Chapters 13.4 and 13.4.1 of Morten Hjorth-Jensen's lecture notes, and references therein.* 
 
-One of the many fascinating aspects of so-called critical phenomena is that vastly different physical systems can exhibit the same behaviour close to their critical point (here: critical temperature). This behaviour is decsribed by power laws, with exponents called *critical exponents*. For the *infinite* 2D Ising model, the mean magnetization, heat capacity and susceptibility behave as 
+One of the many fascinating aspects of so-called critical phenomena is that vastly different physical systems can exhibit the same behaviour close to their critical point (here: critical temperature). This behaviour is described by power laws, with exponents called *critical exponents*. For the *infinite* 2D Ising model, the mean magnetization, heat capacity and susceptibility behave as 
 
 $$
 \langle |m| \rangle &\propto |T - T_c(L=\infty)|^{\beta}\\
