@@ -1,15 +1,12 @@
 # Project 5
 
-This project is not published yet.
-
-<!-- 
 ```{note}
-The project description is now ready. But check back regularly for small updates, typo fixes and hints.
+Make sure to check this page regularly for small updates, typo fixes and hints.
 ```
 
 ## Practicalities
 
-- **Deadline**: Wednesday, December 15, 23:59.
+- **Deadline**: Wednesday, December 13, 23:59.
 - **Format:**
   - A scientific report, typeset in LaTeX, delivered as a pdf file on Canvas.
   - Code (with comments, of course) on a GitHub repo, with the repo link provided in your report.
@@ -84,7 +81,7 @@ In this course we don't expect any background knowledge in quantum mechanics, so
 
 
 ```{note}
-*For those with some quantum mechanics background:* There was a question during a lab session on how the wave function $\Psi(x,y,t)$ actually is related to the state $|\Psi\rangle$, so here's a short answer. (Again, you are not expected to discuss any of this in your reports.) 
+*For those with some quantum mechanics background:* A question that sometimes come up during this project is how the wave function $\Psi(x,y,t)$ actually is related to the state $|\Psi\rangle$, so here's a short answer. (Again, you are not expected to discuss any of this in your reports.) 
 
 Consider the one-dimensional case and for simplicity assume that we have discretized time and space (notation $x_i$ and $t_n$). To work in position space we can express $|\Psi\rangle$ in terms of a set of orhtonormal basis states $|x_i\rangle$. (These are eigenstates of the position operator, $\hat{X} |x_i \rangle = x_i |x_i\rangle$). In doing this, the now-discretized wavefunction $\Psi(x_i,t_n) \equiv \Psi_i^n$ simply corresponds to the complex coefficients in this way of expressing $|\Psi\rangle$:
 
@@ -473,4 +470,3 @@ plt.show()
 # anim.save('./animation.mp4', writer="ffmpeg", bitrate=-1, fps=30)
 ```
 
- -->
