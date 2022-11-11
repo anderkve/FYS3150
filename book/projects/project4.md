@@ -277,7 +277,13 @@ C_V &\propto |T - T_c(L=\infty)|^{-\alpha}\\
 \chi &\propto |T - T_c(L=\infty)|^{-\gamma}
 $$
 
-for temperatures $T$ close to $T_c$, with critical exponents $\beta=1/8$, $\alpha=0$ and $\gamma=7/4$. Both $C_V$ and $\chi$ diverge near $T_c$. Similarly, the *correlation length* (here: the typical lenght scale of regions with aligned spins) $\xi$ also diverges near the critical point,
+for temperatures $T$ close to $T_c$, with critical exponents $\beta=1/8$, $\alpha=0$ and $\gamma=7/4$. 
+
+```{note}
+A critical exponent of 0 is just the power-law way of expression *logarithmic* behaviour. This was discussed in the beginning of the lecture on November 11, see the [recording](https://www-int.uio.no/studier/emner/matnat/fys/FYS3150/h22/forelesningsvideoer/cynap_fys3150_20221111_081651.mp4?vrtx=view-as-webpage) or the lecture notes that will be uploaded shortly.
+```
+
+Both $C_V$ and $\chi$ diverge near $T_c$. Similarly, the *correlation length* (here: the typical lenght scale of regions with aligned spins) $\xi$ also diverges near the critical point,
 
 $$
 \xi \propto |T - T_c(L=\infty)|^{-\nu}
