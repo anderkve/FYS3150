@@ -154,7 +154,7 @@ $$
 
 is the energy shift due to *flipping a single spin*.
 
-**a)** Consider a 2D lattice of arbitrary size. Show that there are only five possible values $\Delta E$ can take.
+**a)** Consider a 2D lattice of arbitrary size ($L>2$). Show that there are only five possible values $\Delta E$ can take.
 
 **b)** How can you use this result to avoid repeatedly calling the exponential function `exp(...)` in your code?
 
