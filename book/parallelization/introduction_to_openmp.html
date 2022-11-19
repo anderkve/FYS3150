@@ -666,7 +666,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-openmp">
 <h1>Introduction to OpenMP<a class="headerlink" href="#introduction-to-openmp" title="Permalink to this headline">#</a></h1>
-<p>Here we’ll add some introductory remarks about OpenMP</p>
+<p id="sec-introduction-to-openmp">Here we’ll add some introductory remarks about OpenMP</p>
 <section id="what-is-openmp">
 <h2>What is OpenMP?<a class="headerlink" href="#what-is-openmp" title="Permalink to this headline">#</a></h2>
 <p>OpenMP is an application programming interface (API) that
@@ -688,28 +688,50 @@ to the existing code project.</p>
 <h2>Building C++ code with OpenMP<a class="headerlink" href="#building-c-code-with-openmp" title="Permalink to this headline">#</a></h2>
 <section id="linux-users">
 <h3>Linux users<a class="headerlink" href="#linux-users" title="Permalink to this headline">#</a></h3>
-<p>For linux users, compilation with OpenMP is easily facilitated
-by the compiler flag <code class="docutils literal notranslate"><span class="pre">-fopenmp</span></code>. Thus, compilation can be as easy as</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>g++ -c *.cpp -fopenmp
+<p>When using the GNU g++ compiler, enabling OpenMP should be as easy as adding the compiler flag <code class="docutils literal notranslate"><span class="pre">-fopenmp</span></code>. This flag should be used both for compilation and linking commands. Thus, compilation can be as easy as</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>g++ -c your_code.cpp -fopenmp
 </pre></div>
 </div>
-<p>The star tells the shell to search for <em>any</em> file that ends with <code class="docutils literal notranslate"><span class="pre">.cpp</span></code>; just a convenient shorthand.</p>
-<p>Linking is done by adding <code class="docutils literal notranslate"><span class="pre">-lomp</span></code>:.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>g++ -o main.out *.o -lomp
+<p>Linking can then be done e.g. by:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>g++ your_code.o -o your_code.exe -fopenmp
 </pre></div>
 </div>
 </section>
 <section id="macos-users">
 <h3>macOS users<a class="headerlink" href="#macos-users" title="Permalink to this headline">#</a></h3>
-<p>For macOS users, compilation is a little bit different from Linux. Here we must add <code class="docutils literal notranslate"><span class="pre">-Xpreprocessor</span> <span class="pre">-fopenmp</span></code> (in this specific order!):</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>g++ -c *.cpp -Xpreprocessor -fopenmp
+<p>On macOS, Apple have decided (<em>sigh</em>) that the command <code class="docutils literal notranslate"><span class="pre">g++</span></code> should not refer to the actual GNU g++ compiler, but to Apple’s version of the compiler Clang. (To check that this is the case on your system, try running <code class="docutils literal notranslate"><span class="pre">g++</span> <span class="pre">--version</span></code>.)</p>
+<p>Apple’s Clang compiler typically does not support OpenMP out of the box. The easiest way around this is simply to install the GNU g++ compiler and rather use that to build your code. To install e.g. version 12 of GNU g++, do</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>brew install gcc@12
 </pre></div>
 </div>
-<p>Note: this assumes you use the Apple clang compiler (which you should be using if you followed the setup process described <a class="reference internal" href="../getting_ready/mac_users.html"><span class="doc std std-doc">here</span></a>).</p>
-<p>Linking is done by adding <code class="docutils literal notranslate"><span class="pre">-lomp</span></code>:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>g++ -o main.out *.o -lomp
+<p>You should now have access to a new terminal command <code class="docutils literal notranslate"><span class="pre">g++-12</span></code>, which you can use instead of the command <code class="docutils literal notranslate"><span class="pre">g++</span></code>. (To confirm that <code class="docutils literal notranslate"><span class="pre">g++-12</span></code> is the GNU compiler, try running <code class="docutils literal notranslate"><span class="pre">g++-12</span> <span class="pre">--version</span></code>.)</p>
+<p>That means you can compile and link your code with OpenMP enabled just as the Linux case above, e.g.:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compilation</span>
+g++-12 -c your_code.cpp -fopenmp
+
+<span class="c1"># Linking</span>
+g++-12 your_code.o -o your_code.exe -fopenmp
 </pre></div>
 </div>
+<p>The above should hopefully work regardless of what type of Mac and macOS version you are running.</p>
+<p>If you are not using an M1 Mac, the following alternative using the default <code class="docutils literal notranslate"><span class="pre">g++</span></code> command may also work:</p>
+<ul>
+<li><p>Install the OpenMP library by doing</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>brew install libomp
+</pre></div>
+</div>
+</li>
+<li><p>Compile your code with the <code class="docutils literal notranslate"><span class="pre">-Xpreprocessor</span> <span class="pre">-fopenmp</span></code> option:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>g++ -c your_code.cpp -Xpreprocessor -fopenmp
+</pre></div>
+</div>
+</li>
+<li><p>Link your code with the <code class="docutils literal notranslate"><span class="pre">-lomp</span></code> option:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>g++ your_code.o -o your_code.exe -lomp
+</pre></div>
+</div>
+</li>
+</ul>
 </section>
 </section>
 <section id="shared-memory-programming">
