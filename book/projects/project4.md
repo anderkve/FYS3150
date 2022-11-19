@@ -203,6 +203,10 @@ For $L=20$, approximate the probability function $p_{\epsilon}(\epsilon;T)$ for 
 Now parallelize your code using either OpenMP or MPI. Perform some timing tests to estimate the speed-up factor resulting from the parallelization.
 
 ```{note}
+See our updated [Introduction to OpenMP](sec:introduction_to_openmp) page for instructions on how to build your code with OpenMP enabled.
+```
+
+```{note}
 There are basically three different approaches you can take here, corresponding to three different levels at which you can parallelize your code:
 
 1. *At the temperature level:* You can parallelize the outer loop over temperature values (see Problem 8, which is where parallelization becomes important)
