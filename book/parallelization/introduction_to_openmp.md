@@ -1,4 +1,5 @@
 # Introduction to OpenMP
+(sec:introduction_to_openmp)=
 
 Here we'll add some introductory remarks about OpenMP
 
@@ -24,37 +25,62 @@ Sometimes, you'll see the term "master" thread used for the primary thread and "
 
 ### Linux users
 
-For linux users, compilation with OpenMP is easily facilitated
-by the compiler flag `-fopenmp`. Thus, compilation can be as easy as
+When using the GNU g++ compiler, enabling OpenMP should be as easy as adding the compiler flag `-fopenmp`. This flag should be used both for compilation and linking commands. Thus, compilation can be as easy as
 
 ```sh
-g++ -c *.cpp -fopenmp
+g++ -c your_code.cpp -fopenmp
 ```
 
-The star tells the shell to search for *any* file that ends with `.cpp`; just a convenient shorthand.
-
-Linking is done by adding `-lomp`:.
+Linking can then be done e.g. by:
 
 ```sh
-g++ -o main.out *.o -lomp
+g++ your_code.o -o your_code.exe -fopenmp
 ```
 
 
 ### macOS users
 
-For macOS users, compilation is a little bit different from Linux. Here we must add `-Xpreprocessor -fopenmp` (in this specific order!):
+On macOS, Apple have decided (*sigh*) that the command `g++` should not refer to the actual GNU g++ compiler, but to Apple's version of the compiler Clang. (To check that this is the case on your system, try running `g++ --version`.)
+
+Apple's Clang compiler typically does not support OpenMP out of the box. The easiest way around this is simply to install the GNU g++ compiler and rather use that to build your code. To install e.g. version 12 of GNU g++, do 
 
 ```sh
-g++ -c *.cpp -Xpreprocessor -fopenmp
+brew install gcc@12
 ```
 
-Note: this assumes you use the Apple clang compiler (which you should be using if you followed the setup process described [here](../getting_ready/mac_users.md)).
+You should now have access to a new terminal command `g++-12`, which you can use instead of the command `g++`. (To confirm that `g++-12` is the GNU compiler, try running `g++-12 --version`.)  
 
-Linking is done by adding `-lomp`:
+That means you can compile and link your code with OpenMP enabled just as the Linux case above, e.g.:
 
 ```sh
-g++ -o main.out *.o -lomp
+# Compilation
+g++-12 -c your_code.cpp -fopenmp
+
+# Linking
+g++-12 your_code.o -o your_code.exe -fopenmp
+
 ```
+
+The above should hopefully work regardless of what type of Mac and macOS version you are running. 
+
+
+If you are not using an M1 Mac, the following alternative using the default `g++` command may also work: 
+
+- Install the OpenMP library by doing 
+  ```sh
+  brew install libomp
+  ```
+
+- Compile your code with the `-Xpreprocessor -fopenmp` option:
+  ```sh
+  g++ -c your_code.cpp -Xpreprocessor -fopenmp
+  ```
+
+- Link your code with the `-lomp` option:
+  ```sh
+  g++ your_code.o -o your_code.exe -lomp
+  ```
+
 
 ## Shared memory programming
 

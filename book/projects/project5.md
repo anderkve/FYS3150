@@ -292,6 +292,8 @@ Write a part of your program that initializes the potential $V$. To construct th
 - Wall position (centre) in the $x$ direction: 0.5
 - Length of the wall piece separating the two slits (the $y$ distance between the inner edges of the two slits): 0.05
 - Slit aperture (opening in the $y$ direction): 0.05
+- Ensure that the slit setup is symmetric around $y = 0.5$. (So for the double-slit, the wall piece separating the two slits should be centered on $y = 0.5$.)
+
 
 In Problem 9 you will also use single-slit and triple-slit configurations.
 
