@@ -770,7 +770,7 @@ title="Print to PDF"
 <section id="practicalities">
 <h2>Practicalities<a class="headerlink" href="#practicalities" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p><strong>Deadline</strong>: Wednesday, December 13, 23:59.</p></li>
+<li><p><strong>Deadline</strong>: Tuesday, December 13, 23:59.</p></li>
 <li><p><strong>Format:</strong></p>
 <ul>
 <li><p>A scientific report, typeset in LaTeX, delivered as a pdf file on Canvas.</p></li>
@@ -789,7 +789,7 @@ title="Print to PDF"
 <p>The key methodological aspects of the projects are:</p>
 <ul class="simple">
 <li><p>Understanding partial differential equations (PDEs)</p></li>
-<li><p>Applying the Crank-Nicholson method in 2+1 dimensions</p></li>
+<li><p>Applying the Crank-Nicolson method in 2+1 dimensions</p></li>
 <li><p>Working with complex numbers in code</p></li>
 <li><p>Getting them indices straight…</p></li>
 <li><p>Using conserved quantities as stability checks</p></li>
@@ -803,7 +803,7 @@ title="Print to PDF"
 i \hbar \frac{d}{dt} |\Psi\rangle = \hat{H} |\Psi\rangle,
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\hat{H}\)</span> is some Hamiltonian operator and <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span> is the quantum state (<a class="reference external" href="https://plato.stanford.edu/entries/qt-issues/#OntoIssu">whatever that is</a>). While we’re not really sure what the quantum state <em>is</em>, we do know it is related to probability (<a class="reference external" href="https://plato.stanford.edu/entries/probability-interpret/">whatever that is</a>) through the <a class="reference external" href="https://en.wikipedia.org/wiki/Born_rule">Born rule</a>, which we will use extensively in this project. More details below.</p>
-<p>We will now consider the case of a <em>a single, non-relativistic particle in two dimensions</em>. If we work in “position space”, the quantum state <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span> can then be expressed through a <em>complex-valued</em> function <span class="math notranslate nohighlight">\(\Psi(x,y,t)\)</span>, historically called the <em>the wave function</em>. The Schrödinger equation then becomes</p>
+<p>We will now consider the case of <em>a single, non-relativistic particle in two dimensions</em>. If we work in “position space”, the quantum state <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span> can then be expressed through a <em>complex-valued</em> function <span class="math notranslate nohighlight">\(\Psi(x,y,t)\)</span>, historically called the <em>the wave function</em>. The Schrödinger equation then becomes</p>
 <div class="math notranslate nohighlight">
 \[
 i \hbar \frac{\partial}{\partial t} \Psi(x,y,t) = -\frac{\hbar^2}{2m} \left( \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} \right) \Psi(x,y,t) + V(x,y,t) \Psi(x,y,t).
@@ -834,7 +834,7 @@ p(x,y;t) = |u(x,y,t)|^2 = u^*(x,y,t) \, u(x,y,t).
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><em>For those with some quantum mechanics background:</em> A question that sometimes come up during this project is how the wave function <span class="math notranslate nohighlight">\(\Psi(x,y,t)\)</span> actually is related to the state <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span>, so here’s a short answer. (Again, you are not expected to discuss any of this in your reports.)</p>
-<p>Consider the one-dimensional case and for simplicity assume that we have discretized time and space (notation <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(t_n\)</span>). To work in position space we can express <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span> in terms of a set of orhtonormal basis states <span class="math notranslate nohighlight">\(|x_i\rangle\)</span>. (These are eigenstates of the position operator, <span class="math notranslate nohighlight">\(\hat{X} |x_i \rangle = x_i |x_i\rangle\)</span>). In doing this, the now-discretized wavefunction <span class="math notranslate nohighlight">\(\Psi(x_i,t_n) \equiv \Psi_i^n\)</span> simply corresponds to the complex coefficients in this way of expressing <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span>:</p>
+<p>Consider the one-dimensional case and for simplicity assume that we have discretized time and space (notation <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(t_n\)</span>). To work in position space we can express <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span> in terms of a set of orthonormal basis states <span class="math notranslate nohighlight">\(|x_i\rangle\)</span>. (These are eigenstates of the position operator, <span class="math notranslate nohighlight">\(\hat{X} |x_i \rangle = x_i |x_i\rangle\)</span>). In doing this, the now-discretized wavefunction <span class="math notranslate nohighlight">\(\Psi(x_i,t_n) \equiv \Psi_i^n\)</span> simply corresponds to the complex coefficients in this way of expressing <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 |\Psi\rangle = \Psi_1^n |x_1 \rangle + \Psi_2^n |x_2 \rangle + \Psi_3^n |x_3 \rangle + \ldots,
@@ -869,7 +869,7 @@ P(x_i;t_n) = | \langle x_i | \Psi \rangle |^2 = |\Psi_i^n|^2 = \Psi^{n*}_i \, \P
 <p>Below we define the basic notation we will use for this project.</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(x \in [0,1]\)</span>, <span class="math notranslate nohighlight">\(y \in [0,1]\)</span>, <span class="math notranslate nohighlight">\(t \in [0,T]\)</span>.</p></li>
-<li><p>We’ll use equal an equal step size <span class="math notranslate nohighlight">\(h\)</span> in both the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> directions.</p></li>
+<li><p>We’ll use an equal step size <span class="math notranslate nohighlight">\(h\)</span> in both the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> directions.</p></li>
 <li><p><span class="math notranslate nohighlight">\(x \rightarrow x_i = i h\)</span>, with <span class="math notranslate nohighlight">\(i = 0, 1, \ldots, M-1\)</span>. (Don’t confuse this index <span class="math notranslate nohighlight">\(i\)</span> with the imaginary unit <span class="math notranslate nohighlight">\(i\)</span> appearing in the Schrödinger equation!)</p></li>
 <li><p><span class="math notranslate nohighlight">\(y \rightarrow y_j = j h\)</span>, with <span class="math notranslate nohighlight">\(j = 0, 1, \ldots, M-1\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(t \rightarrow t_n = n \Delta t\)</span>, with <span class="math notranslate nohighlight">\(n = 0, 1, \ldots, N_t-1\)</span>.</p></li>
@@ -894,7 +894,7 @@ P(x_i;t_n) = | \langle x_i | \Psi \rangle |^2 = |\Psi_i^n|^2 = \Psi^{n*}_i \, \P
 <li><p><span class="math notranslate nohighlight">\(u(x, y=0, t) = 0\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(u(x, y=1, t) = 0\)</span></p></li>
 </ul>
-<p>This assumption simplifies the implemention of the Crank-Niocolson scheme quite a bit, so keep in mind that the code we write will have this assumption baked in from the beginning.</p>
+<p>This assumption simplifies the implemention of the Crank-Nicolson scheme quite a bit, so keep in mind that the code we write will have this assumption baked in from the beginning.</p>
 <p>For the initial wave function <span class="math notranslate nohighlight">\(u(x,y,t=0)\)</span> we will typically use a quantum mechanical Gaussian wavepacket, to be specified in the problems below.</p>
 </section>
 <section id="problems">
@@ -1014,7 +1014,8 @@ u(x,y,t=0) = e^{-\frac{(x-x_c)^2}{2 \sigma_x^2} - \frac{(y-y_c)^2}{2 \sigma_y^2}
 <li><p>Wall thickness in the <span class="math notranslate nohighlight">\(x\)</span> direction: 0.02</p></li>
 <li><p>Wall position (centre) in the <span class="math notranslate nohighlight">\(x\)</span> direction: 0.5</p></li>
 <li><p>Length of the wall piece separating the two slits (the <span class="math notranslate nohighlight">\(y\)</span> distance between the inner edges of the two slits): 0.05</p></li>
-<li><p>Slit aperture (opening i the <span class="math notranslate nohighlight">\(y\)</span> direction): 0.05</p></li>
+<li><p>Slit aperture (opening in the <span class="math notranslate nohighlight">\(y\)</span> direction): 0.05</p></li>
+<li><p>Ensure that the slit setup is symmetric around <span class="math notranslate nohighlight">\(y = 0.5\)</span>. (So for the double-slit, the wall piece separating the two slits should be centered on <span class="math notranslate nohighlight">\(y = 0.5\)</span>.)</p></li>
 </ul>
 <p>In Problem 9 you will also use single-slit and triple-slit configurations.</p>
 <div class="admonition note">
