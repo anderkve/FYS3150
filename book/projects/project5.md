@@ -6,7 +6,7 @@ Make sure to check this page regularly for small updates, typo fixes and hints.
 
 ## Practicalities
 
-- **Deadline**: Wednesday, December 13, 23:59.
+- **Deadline**: Tuesday, December 13, 23:59.
 - **Format:**
   - A scientific report, typeset in LaTeX, delivered as a pdf file on Canvas.
   - Code (with comments, of course) on a GitHub repo, with the repo link provided in your report.
@@ -25,7 +25,7 @@ The goal of this project is to simulate the two-dimensional time-dependent Schr�
 
 The key methodological aspects of the projects are:
 - Understanding partial differential equations (PDEs)
-- Applying the Crank-Nicholson method in 2+1 dimensions
+- Applying the Crank-Nicolson method in 2+1 dimensions
 - Working with complex numbers in code
 - Getting them indices straight...
 - Using conserved quantities as stability checks
@@ -41,7 +41,8 @@ $$
 where $\hat{H}$ is some Hamiltonian operator and $|\Psi\rangle$ is the quantum state ([whatever that is](https://plato.stanford.edu/entries/qt-issues/#OntoIssu)). While we're not really sure what the quantum state *is*, we do know it is related to probability ([whatever that is](https://plato.stanford.edu/entries/probability-interpret/)) through the [Born rule](https://en.wikipedia.org/wiki/Born_rule), which we will use extensively in this project. More details below.
 
 
-We will now consider the case of a *a single, non-relativistic particle in two dimensions*. If we work in "position space", the quantum state $|\Psi\rangle$ can then be expressed through a *complex-valued* function $\Psi(x,y,t)$, historically called the *the wave function*. The Schrödinger equation then becomes
+
+We will now consider the case of *a single, non-relativistic particle in two dimensions*. If we work in "position space", the quantum state $|\Psi\rangle$ can then be expressed through a *complex-valued* function $\Psi(x,y,t)$, historically called the *the wave function*. The Schrödinger equation then becomes
 
 $$
 i \hbar \frac{\partial}{\partial t} \Psi(x,y,t) = -\frac{\hbar^2}{2m} \left( \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} \right) \Psi(x,y,t) + V(x,y,t) \Psi(x,y,t).
@@ -83,7 +84,7 @@ In this course we don't expect any background knowledge in quantum mechanics, so
 ```{note}
 *For those with some quantum mechanics background:* A question that sometimes come up during this project is how the wave function $\Psi(x,y,t)$ actually is related to the state $|\Psi\rangle$, so here's a short answer. (Again, you are not expected to discuss any of this in your reports.) 
 
-Consider the one-dimensional case and for simplicity assume that we have discretized time and space (notation $x_i$ and $t_n$). To work in position space we can express $|\Psi\rangle$ in terms of a set of orhtonormal basis states $|x_i\rangle$. (These are eigenstates of the position operator, $\hat{X} |x_i \rangle = x_i |x_i\rangle$). In doing this, the now-discretized wavefunction $\Psi(x_i,t_n) \equiv \Psi_i^n$ simply corresponds to the complex coefficients in this way of expressing $|\Psi\rangle$:
+Consider the one-dimensional case and for simplicity assume that we have discretized time and space (notation $x_i$ and $t_n$). To work in position space we can express $|\Psi\rangle$ in terms of a set of orthonormal basis states $|x_i\rangle$. (These are eigenstates of the position operator, $\hat{X} |x_i \rangle = x_i |x_i\rangle$). In doing this, the now-discretized wavefunction $\Psi(x_i,t_n) \equiv \Psi_i^n$ simply corresponds to the complex coefficients in this way of expressing $|\Psi\rangle$:
 
 $$
 |\Psi\rangle = \Psi_1^n |x_1 \rangle + \Psi_2^n |x_2 \rangle + \Psi_3^n |x_3 \rangle + \ldots,
@@ -124,7 +125,7 @@ $$
 Below we define the basic notation we will use for this project. 
 
 - $x \in [0,1]$, $y \in [0,1]$, $t \in [0,T]$.
-- We'll use equal an equal step size $h$ in both the $x$ and $y$ directions.
+- We'll use an equal step size $h$ in both the $x$ and $y$ directions.
 - $x \rightarrow x_i = i h$, with $i = 0, 1, \ldots, M-1$. (Don't confuse this index $i$ with the imaginary unit $i$ appearing in the Schrödinger equation!)
 - $y \rightarrow y_j = j h$, with $j = 0, 1, \ldots, M-1$.
 - $t \rightarrow t_n = n \Delta t$, with $n = 0, 1, \ldots, N_t-1$.
@@ -149,7 +150,7 @@ Throughout this project we will assume Dirichlet boundary conditions in the $xy$
 - $u(x, y=0, t) = 0$
 - $u(x, y=1, t) = 0$
 
-This assumption simplifies the implemention of the Crank-Niocolson scheme quite a bit, so keep in mind that the code we write will have this assumption baked in from the beginning.
+This assumption simplifies the implemention of the Crank-Nicolson scheme quite a bit, so keep in mind that the code we write will have this assumption baked in from the beginning.
 
 For the initial wave function $u(x,y,t=0)$ we will typically use a quantum mechanical Gaussian wavepacket, to be specified in the problems below.
 
@@ -290,7 +291,7 @@ Write a part of your program that initializes the potential $V$. To construct th
 - Wall thickness in the $x$ direction: 0.02
 - Wall position (centre) in the $x$ direction: 0.5
 - Length of the wall piece separating the two slits (the $y$ distance between the inner edges of the two slits): 0.05
-- Slit aperture (opening i the $y$ direction): 0.05
+- Slit aperture (opening in the $y$ direction): 0.05
 
 In Problem 9 you will also use single-slit and triple-slit configurations.
 
