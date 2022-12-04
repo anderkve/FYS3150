@@ -770,7 +770,7 @@ title="Print to PDF"
 <section id="practicalities">
 <h2>Practicalities<a class="headerlink" href="#practicalities" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p><strong>Deadline</strong>: Tuesday, December 13, 23:59.</p></li>
+<li><p><strong>Deadline</strong>: Wednesday, December 14, 23:59.</p></li>
 <li><p><strong>Format:</strong></p>
 <ul>
 <li><p>A scientific report, typeset in LaTeX, delivered as a pdf file on Canvas.</p></li>
@@ -779,7 +779,7 @@ title="Print to PDF"
 </ul>
 </li>
 <li><p><strong>Collaboration:</strong> We strongly encourage you to collaborate with others, in groups of up to four students. The group hands in a single pdf. Remember to list everyone’s name in the pdf.</p></li>
-<li><p><strong>Reproducibility:</strong> Your code should be available on a GitHub repo. You can refer to relevant parts of your code in your answers. Make sure to include a README file in the repo that briefly explains how the code is organized, and how it should be compiled and run in order for others to reproduce your results.</p></li>
+<li><p><strong>Reproducibility:</strong> Your code should be available on a GitHub repo. You can refer to relevant parts of your code in your answers. Make sure to include a README file in the repo that briefly explains how the code is organised, and how it should be compiled and run in order for others to reproduce your results.</p></li>
 <li><p><strong>Figures:</strong> Figures included in your LaTeX document should preferrably be made as vector graphics (e.g. <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> files), rather than raster graphics (e.g. <code class="docutils literal notranslate"><span class="pre">.png</span></code> files).</p></li>
 </ul>
 </section>
@@ -826,7 +826,7 @@ i \frac{\partial u}{\partial t} = -\frac{\partial^2 u}{\partial x^2} - \frac{\pa
 \[
 p(x,y;t) = |u(x,y,t)|^2 = u^*(x,y,t) \, u(x,y,t).
 \]</div>
-<p>assuming the wave function <span class="math notranslate nohighlight">\(u(x,y,t)\)</span> has been properly normalized.</p>
+<p>assuming the wave function <span class="math notranslate nohighlight">\(u(x,y,t)\)</span> has been properly normalised.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In this course we don’t expect any background knowledge in quantum mechanics, so you are not expected to discuss a lot of quantum mechanics in your report. That is, you can simply view the Schrödinger equation as a particular type of differential equation given by equation <a class="reference internal" href="#equation-schr-eq">(24)</a>, where the solution is some complex-valued function <span class="math notranslate nohighlight">\(u(x,y,t)\)</span>, and where we have a rule for connecting this <span class="math notranslate nohighlight">\(u(x,y,t)\)</span> to a probability distribution.</p>
@@ -834,7 +834,7 @@ p(x,y;t) = |u(x,y,t)|^2 = u^*(x,y,t) \, u(x,y,t).
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><em>For those with some quantum mechanics background:</em> A question that sometimes come up during this project is how the wave function <span class="math notranslate nohighlight">\(\Psi(x,y,t)\)</span> actually is related to the state <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span>, so here’s a short answer. (Again, you are not expected to discuss any of this in your reports.)</p>
-<p>Consider the one-dimensional case and for simplicity assume that we have discretized time and space (notation <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(t_n\)</span>). To work in position space we can express <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span> in terms of a set of orthonormal basis states <span class="math notranslate nohighlight">\(|x_i\rangle\)</span>. (These are eigenstates of the position operator, <span class="math notranslate nohighlight">\(\hat{X} |x_i \rangle = x_i |x_i\rangle\)</span>). In doing this, the now-discretized wavefunction <span class="math notranslate nohighlight">\(\Psi(x_i,t_n) \equiv \Psi_i^n\)</span> simply corresponds to the complex coefficients in this way of expressing <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span>:</p>
+<p>Consider the one-dimensional case and for simplicity assume that we have discretised time and space (notation <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(t_n\)</span>). To work in position space we can express <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span> in terms of a set of orthonormal basis states <span class="math notranslate nohighlight">\(|x_i\rangle\)</span>. (These are eigenstates of the position operator, <span class="math notranslate nohighlight">\(\hat{X} |x_i \rangle = x_i |x_i\rangle\)</span>). In doing this, the now-discretised wavefunction <span class="math notranslate nohighlight">\(\Psi(x_i,t_n) \equiv \Psi_i^n\)</span> simply corresponds to the complex coefficients in this way of expressing <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 |\Psi\rangle = \Psi_1^n |x_1 \rangle + \Psi_2^n |x_2 \rangle + \Psi_3^n |x_3 \rangle + \ldots,
@@ -849,7 +849,7 @@ p(x,y;t) = |u(x,y,t)|^2 = u^*(x,y,t) \, u(x,y,t).
 \[
 \langle x_i | \Psi \rangle = \Psi_i^n.
 \]</div>
-<p>Assuming that we make a position measurement at time <span class="math notranslate nohighlight">\(t_n\)</span>, the probability <span class="math notranslate nohighlight">\(P(x_i;t_n)\)</span> (not probability density, since we now work with discretized space) that the outcome will be <span class="math notranslate nohighlight">\(x_i\)</span> can be expressed as</p>
+<p>Assuming that we make a position measurement at time <span class="math notranslate nohighlight">\(t_n\)</span>, the probability <span class="math notranslate nohighlight">\(P(x_i;t_n)\)</span> (not probability density, since we now work with discretised space) that the outcome will be <span class="math notranslate nohighlight">\(x_i\)</span> can be expressed as</p>
 <div class="math notranslate nohighlight">
 \[
 P(x_i;t_n) = | \langle x_i | \Psi \rangle |^2 = |\Psi_i^n|^2 = \Psi^{n*}_i \, \Psi^n_i.
@@ -880,7 +880,7 @@ P(x_i;t_n) = | \langle x_i | \Psi \rangle |^2 = |\Psi_i^n|^2 = \Psi^{n*}_i \, \P
 </ul>
 <p>Note:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(M\)</span> is the number of <em>points</em> along the <span class="math notranslate nohighlight">\(x\)</span> axis, including the boundary points. Thus, the <span class="math notranslate nohighlight">\(x\)</span> axis has been discretized using <span class="math notranslate nohighlight">\(M-1\)</span> <em>steps</em>, and there are <span class="math notranslate nohighlight">\(M-2\)</span> “internal points” <span class="math notranslate nohighlight">\(x_1, \ldots, x_{M-2}\)</span>, i.e. excluding the boundary points <span class="math notranslate nohighlight">\(x_0\)</span> and <span class="math notranslate nohighlight">\(x_{M-1}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(M\)</span> is the number of <em>points</em> along the <span class="math notranslate nohighlight">\(x\)</span> axis, including the boundary points. Thus, the <span class="math notranslate nohighlight">\(x\)</span> axis has been discretised using <span class="math notranslate nohighlight">\(M-1\)</span> <em>steps</em>, and there are <span class="math notranslate nohighlight">\(M-2\)</span> “internal points” <span class="math notranslate nohighlight">\(x_1, \ldots, x_{M-2}\)</span>, i.e. excluding the boundary points <span class="math notranslate nohighlight">\(x_0\)</span> and <span class="math notranslate nohighlight">\(x_{M-1}\)</span>.</p></li>
 <li><p>Similarly for the <span class="math notranslate nohighlight">\(y\)</span> axis, again with <span class="math notranslate nohighlight">\(M\)</span> being the number of <em>points</em>.</p></li>
 <li><p>We will mix index notation with and without commas as needed for clarity. So keep in mind that e.g. <span class="math notranslate nohighlight">\(u_{ij}\)</span> and <span class="math notranslate nohighlight">\(u_{i,j}\)</span> mean the same thing.</p></li>
 </ul>
@@ -996,7 +996,7 @@ u(x,y,t=0) = e^{-\frac{(x-x_c)^2}{2 \sigma_x^2} - \frac{(y-y_c)^2}{2 \sigma_y^2}
 \]</div>
 <p>Here <span class="math notranslate nohighlight">\(x_c\)</span> and <span class="math notranslate nohighlight">\(y_c\)</span> are the coordinates of the centre of the initial wave packet, <span class="math notranslate nohighlight">\(\sigma_x\)</span> and <span class="math notranslate nohighlight">\(\sigma_y\)</span> are the initial widths of the wave packet in the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> directions, and <span class="math notranslate nohighlight">\(p_x\)</span> and <span class="math notranslate nohighlight">\(p_y\)</span> are the wave packet momenta.</p>
 <p>Make sure that the initial state <span class="math notranslate nohighlight">\(u_{ij}^0\)</span> satisfies the boundary conditions.</p>
-<p>Also, add code that normalizes your initial state such that</p>
+<p>Also, add code that normalises your initial state such that</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \sum\limits_{i,j} u^{0*}_{ij} \, u^0_{ij} = 1,\\
@@ -1009,7 +1009,7 @@ u(x,y,t=0) = e^{-\frac{(x-x_c)^2}{2 \sigma_x^2} - \frac{(y-y_c)^2}{2 \sigma_y^2}
 </section>
 <section id="problem-5">
 <h3>Problem 5<a class="headerlink" href="#problem-5" title="Permalink to this headline">#</a></h3>
-<p>Write a part of your program that initializes the potential <span class="math notranslate nohighlight">\(V\)</span>. To construct the barriers used for the double-slit (and other configurations) we will simply set the elements <span class="math notranslate nohighlight">\(v_{ij}\)</span> of <span class="math notranslate nohighlight">\(V\)</span> that correspond to points inside the barriers to some high constant value <span class="math notranslate nohighlight">\(v_{ij} = v_0\)</span>. As our starting point we will use the following double-slit setup:</p>
+<p>Write a part of your program that initialises the potential <span class="math notranslate nohighlight">\(V\)</span>. To construct the barriers used for the double-slit (and other configurations) we will simply set the elements <span class="math notranslate nohighlight">\(v_{ij}\)</span> of <span class="math notranslate nohighlight">\(V\)</span> that correspond to points inside the barriers to some high constant value <span class="math notranslate nohighlight">\(v_{ij} = v_0\)</span>. As our starting point we will use the following double-slit setup:</p>
 <ul class="simple">
 <li><p>Wall thickness in the <span class="math notranslate nohighlight">\(x\)</span> direction: 0.02</p></li>
 <li><p>Wall position (centre) in the <span class="math notranslate nohighlight">\(x\)</span> direction: 0.5</p></li>

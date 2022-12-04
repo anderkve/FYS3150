@@ -741,13 +741,13 @@ title="Print to PDF"
 </li>
 <li><p><strong>A scientific report:</strong> Like for project 3, we require you to write a proper scientific report.</p></li>
 <li><p><strong>Collaboration:</strong> We <em>strongly</em> encourage you to collaborate with others, in groups of up to four students. The group hands in a single pdf. Remember to list everyone’s name in the pdf.</p></li>
-<li><p><strong>Reproducibility:</strong> Your code should be available on a GitHub repo. You can refer to relevant parts of your code in your answers. Make sure to include a README file in the repo that briefly explains how the code is organized, and how it should be compiled and run in order for others to reproduce your results.</p></li>
+<li><p><strong>Reproducibility:</strong> Your code should be available on a GitHub repo. You can refer to relevant parts of your code in your answers. Make sure to include a README file in the repo that briefly explains how the code is organised, and how it should be compiled and run in order for others to reproduce your results.</p></li>
 <li><p><strong>Figures:</strong> Figures included in your LaTeX document should preferrably be made as vector graphics (e.g. <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> files), rather than raster graphics (e.g. <code class="docutils literal notranslate"><span class="pre">.png</span></code> files).</p></li>
 </ul>
 </section>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
-<p>The topic of this project is the <strong>Ising model</strong> in two dimensions. We will use this simple model to explore temperature-dependent behaviour in ferromagnets. A particular goal is to numerically estimate the <strong>critical temperature</strong> at which our 2D system undergoes a <strong>phase transition</strong>, from a magnetized phase to a phase with no net magnetization.</p>
+<p>The topic of this project is the <strong>Ising model</strong> in two dimensions. We will use this simple model to explore temperature-dependent behaviour in ferromagnets. A particular goal is to numerically estimate the <strong>critical temperature</strong> at which our 2D system undergoes a <strong>phase transition</strong>, from a magnetised phase to a phase with no net magnetization.</p>
 <p>A basic introduction to the Ising model will be given in the lectures. For a more detailed introduction, see Chapter 13 (in particular 13.3 and 13.4) in Morten’s lecture notes.</p>
 <p>On the methodological side, our focus in this project is</p>
 <ul class="simple">
@@ -757,7 +757,7 @@ title="Print to PDF"
 </section>
 <section id="definitions-notation-and-units">
 <h2>Definitions, notation and units<a class="headerlink" href="#definitions-notation-and-units" title="Permalink to this headline">#</a></h2>
-<p>We will study 2D square lattices of spins <span class="math notranslate nohighlight">\(s_i\)</span>. Below we summarize our notation and the main definitions we will need:</p>
+<p>We will study 2D square lattices of spins <span class="math notranslate nohighlight">\(s_i\)</span>. Below we summarise our notation and the main definitions we will need:</p>
 <ul>
 <li><p>Each individual spin <span class="math notranslate nohighlight">\(s_i\)</span> has only two possible states: <span class="math notranslate nohighlight">\(s_i = -1\)</span> and <span class="math notranslate nohighlight">\(s_i = +1\)</span>.</p></li>
 <li><p>A lattice of length <span class="math notranslate nohighlight">\(L\)</span> contains <span class="math notranslate nohighlight">\(N\)</span> spins in total, i.e. <span class="math notranslate nohighlight">\(N = L^2\)</span>.</p></li>
@@ -773,7 +773,7 @@ title="Print to PDF"
 \[
   E(\mathbf{s}) = -J \sum\limits_{\langle kl \rangle}^{N} s_k s_l
   \]</div>
-<p>Here <span class="math notranslate nohighlight">\(\langle kl \rangle\)</span> means that the sum goes over all <em>neighbouring pairs</em> of spins, without double-counting, and <span class="math notranslate nohighlight">\(J\)</span> is the <strong>coupling constant</strong>. We see that in this model (with no external magnetic field) the total system energy is fully determined by the interaction between neihbouring spin pairs, and <span class="math notranslate nohighlight">\(J\)</span> is simply a constant that sets the energy associated with each such interaction.</p>
+<p>Here <span class="math notranslate nohighlight">\(\langle kl \rangle\)</span> means that the sum goes over all <em>neighbouring pairs</em> of spins, without double-counting, and <span class="math notranslate nohighlight">\(J\)</span> is the <strong>coupling constant</strong>. We see that in this model (with no external magnetic field) the total system energy is fully determined by the interaction between neighbouring spin pairs, and <span class="math notranslate nohighlight">\(J\)</span> is simply a constant that sets the energy associated with each such interaction.</p>
 </li>
 <li><p>We will use <em>periodic boundary conditions</em> for our lattice. Thus, all spins will have exactly <em>four neighbours</em> (left, right, up, down).</p></li>
 <li><p>The total magnetization of the system is simply given by the sum over all the spins in the system:</p>
@@ -824,7 +824,7 @@ title="Print to PDF"
 <h3>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this headline">#</a></h3>
 <p>Assume a <span class="math notranslate nohighlight">\(2 \times 2\)</span> lattice with periodic boundary conditions.</p>
 <ul>
-<li><p><strong>a)</strong> Summarize all possible states of the system by setting up a table with four coloumns showing the following quantities</p>
+<li><p><strong>a)</strong> Summarise all possible states of the system by setting up a table with four coloumns showing the following quantities</p>
 <ul class="simple">
 <li><p>number of spins in state +1</p></li>
 <li><p>total energy</p></li>
@@ -839,14 +839,14 @@ title="Print to PDF"
 <li><p><span class="math notranslate nohighlight">\(\langle \epsilon^2 \rangle\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\langle |m| \rangle\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\langle m^2 \rangle\)</span></p></li>
-<li><p>the specific heat capacity (normalized to number of spins):</p></li>
+<li><p>the specific heat capacity (normalised to number of spins):</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[
   C_V = \frac{1}{N} \frac{1}{k_B T^2}(\langle E^2 \rangle - \langle E \rangle^2) 
   \]</div>
 <ul class="simple">
-<li><p>the susceptibility (normalized to number of spins):</p></li>
+<li><p>the susceptibility (normalised to number of spins):</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[
@@ -857,7 +857,7 @@ title="Print to PDF"
 <p>We will use these analytical results to test our code.</p>
 <!--
 ```{note}
-There was a typo in a previous version, where $C_V$ and $\chi$ were defined using $\epsilon$ and $m$ rather than $E$ and $M$. This is now corrected, along with the normalization factor $\frac{1}{N}$ in front to enusure that we normalize the heat capacity and susceptibility to the total number of spins in the system. Apologies for the confusion!
+There was a typo in a previous version, where $C_V$ and $\chi$ were defined using $\epsilon$ and $m$ rather than $E$ and $M$. This is now corrected, along with the normalization factor $\frac{1}{N}$ in front to enusure that we normalise the heat capacity and susceptibility to the total number of spins in the system. Apologies for the confusion!
 ```
 -->
 </section>
@@ -899,22 +899,22 @@ There was a typo in a previous version, where $C_V$ and $\chi$ were defined usin
 <section id="problem-6">
 <h3>Problem 6<a class="headerlink" href="#problem-6" title="Permalink to this headline">#</a></h3>
 <p>Now let’s move beyond mere expectation values and see how we can use our MCMC to estimate the full probability distribution for <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
-<p>For <span class="math notranslate nohighlight">\(L=20\)</span>, approximate the probability function <span class="math notranslate nohighlight">\(p_{\epsilon}(\epsilon;T)\)</span> for <span class="math notranslate nohighlight">\(T = 1.0\,J/k_B\)</span> and <span class="math notranslate nohighlight">\(T = 2.4\,J/k_B\)</span> by creating normalized histograms of generated <span class="math notranslate nohighlight">\(\epsilon\)</span> samples. (Keep an eye on bin widths and remember that <span class="math notranslate nohighlight">\(\epsilon\)</span> is not a continuous variable.) Comment on your results, in particular on the variance of the two distributions.</p>
+<p>For <span class="math notranslate nohighlight">\(L=20\)</span>, approximate the probability function <span class="math notranslate nohighlight">\(p_{\epsilon}(\epsilon;T)\)</span> for <span class="math notranslate nohighlight">\(T = 1.0\,J/k_B\)</span> and <span class="math notranslate nohighlight">\(T = 2.4\,J/k_B\)</span> by creating normalised histograms of generated <span class="math notranslate nohighlight">\(\epsilon\)</span> samples. (Keep an eye on bin widths and remember that <span class="math notranslate nohighlight">\(\epsilon\)</span> is not a continuous variable.) Comment on your results, in particular on the variance of the two distributions.</p>
 </section>
 <section id="problem-7">
 <h3>Problem 7<a class="headerlink" href="#problem-7" title="Permalink to this headline">#</a></h3>
-<p>Now parallelize your code using either OpenMP or MPI. Perform some timing tests to estimate the speed-up factor resulting from the parallelization.</p>
+<p>Now parallelise your code using either OpenMP or MPI. Perform some timing tests to estimate the speed-up factor resulting from the parallelization.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>See our updated <a class="reference internal" href="../parallelization/introduction_to_openmp.html#sec-introduction-to-openmp"><span class="std std-ref">Introduction to OpenMP</span></a> page for instructions on how to build your code with OpenMP enabled.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>There are basically three different approaches you can take here, corresponding to three different levels at which you can parallelize your code:</p>
+<p>There are basically three different approaches you can take here, corresponding to three different levels at which you can parallelise your code:</p>
 <ol class="simple">
-<li><p><em>At the temperature level:</em> You can parallelize the outer loop over temperature values (see Problem 8, which is where parallelization becomes important)</p></li>
+<li><p><em>At the temperature level:</em> You can parallelise the outer loop over temperature values (see Problem 8, which is where parallelization becomes important)</p></li>
 <li><p><em>At the level of MCMC “walkers”:</em> You can use multiple threads to perform multiple independent MCMC runs in parallel and combine their results.</p></li>
-<li><p><em>At the level of spin flipping:</em> You could parallelize the part of the code where you generate new states by attempting to flip N spins.</p></li>
+<li><p><em>At the level of spin flipping:</em> You could parallelise the part of the code where you generate new states by attempting to flip N spins.</p></li>
 </ol>
 <p>We recommend you do either approach 1 or 2. (You only need to do one approach.) Approach 1 is probably the easiest. Approach 2 is the standard approach to parallelizing a single MCMC run (i.e. when there isn’t any scan over some external parameter, like <span class="math notranslate nohighlight">\(T\)</span> in our case.) Approach 3 would by far be the most complicated and it is probably also the least efficient.</p>
 </div>
