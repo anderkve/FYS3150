@@ -56,9 +56,9 @@ We will study 2D square lattices of spins $s_i$. Below we summarize our notation
   E(\mathbf{s}) = -J \sum\limits_{\langle kl \rangle}^{N} s_k s_l
   $$
 
-  Here $\langle kl \rangle$ means that the sum goes over all *neighbouring pairs* of spins, without double-counting, and $J$ is the **coupling constant**. We see that in this model (with no external magnetic field) the total system energy is fully determined by the interaction between neihbouring spin pairs, and $J$ is simply a constant that sets the energy associated with each such interaction.
+  Here $\langle kl \rangle$ means that the sum goes over all *neighboring pairs* of spins, without double-counting, and $J$ is the **coupling constant**. We see that in this model (with no external magnetic field) the total system energy is fully determined by the interaction between neighboring spin pairs, and $J$ is simply a constant that sets the energy associated with each such interaction.
 
-- We will use *periodic boundary conditions* for our lattice. Thus, all spins will have exactly *four neighbours* (left, right, up, down).
+- We will use *periodic boundary conditions* for our lattice. Thus, all spins will have exactly *four neighbors* (left, right, up, down).
 
 - The total magnetization of the system is simply given by the sum over all the spins in the system:
 
