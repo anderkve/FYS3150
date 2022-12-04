@@ -16,14 +16,14 @@ While working on the project, check this page regularly in case of small updates
 
 - **Collaboration:** We *strongly* encourage you to collaborate with others, in groups of up to four students. The group hands in a single pdf. Remember to list everyone's name in the pdf.
 
-- **Reproducibility:** Your code should be available on a GitHub repo. You can refer to relevant parts of your code in your answers. Make sure to include a README file in the repo that briefly explains how the code is organized, and how it should be compiled and run in order for others to reproduce your results.
+- **Reproducibility:** Your code should be available on a GitHub repo. You can refer to relevant parts of your code in your answers. Make sure to include a README file in the repo that briefly explains how the code is organised, and how it should be compiled and run in order for others to reproduce your results.
 
 - **Figures:** Figures included in your LaTeX document should preferrably be made as vector graphics (e.g. `.pdf` files), rather than raster graphics (e.g. `.png` files).
 
 
 ## Introduction
 
-The topic of this project is the **Ising model** in two dimensions. We will use this simple model to explore temperature-dependent behaviour in ferromagnets. A particular goal is to numerically estimate the **critical temperature** at which our 2D system undergoes a **phase transition**, from a magnetized phase to a phase with no net magnetization. 
+The topic of this project is the **Ising model** in two dimensions. We will use this simple model to explore temperature-dependent behaviour in ferromagnets. A particular goal is to numerically estimate the **critical temperature** at which our 2D system undergoes a **phase transition**, from a magnetised phase to a phase with no net magnetization. 
 
 A basic introduction to the Ising model will be given in the lectures. For a more detailed introduction, see Chapter 13 (in particular 13.3 and 13.4) in Morten's lecture notes.
 
@@ -36,7 +36,7 @@ On the methodological side, our focus in this project is
 
 ## Definitions, notation and units
 
-We will study 2D square lattices of spins $s_i$. Below we summarize our notation and the main definitions we will need:
+We will study 2D square lattices of spins $s_i$. Below we summarise our notation and the main definitions we will need:
 
 - Each individual spin $s_i$ has only two possible states: $s_i = -1$ and $s_i = +1$.
 
@@ -56,9 +56,9 @@ We will study 2D square lattices of spins $s_i$. Below we summarize our notation
   E(\mathbf{s}) = -J \sum\limits_{\langle kl \rangle}^{N} s_k s_l
   $$
 
-  Here $\langle kl \rangle$ means that the sum goes over all *neighboring pairs* of spins, without double-counting, and $J$ is the **coupling constant**. We see that in this model (with no external magnetic field) the total system energy is fully determined by the interaction between neighboring spin pairs, and $J$ is simply a constant that sets the energy associated with each such interaction.
+  Here $\langle kl \rangle$ means that the sum goes over all *neighbouring pairs* of spins, without double-counting, and $J$ is the **coupling constant**. We see that in this model (with no external magnetic field) the total system energy is fully determined by the interaction between neighbouring spin pairs, and $J$ is simply a constant that sets the energy associated with each such interaction.
 
-- We will use *periodic boundary conditions* for our lattice. Thus, all spins will have exactly *four neighbors* (left, right, up, down).
+- We will use *periodic boundary conditions* for our lattice. Thus, all spins will have exactly *four neighbours* (left, right, up, down).
 
 - The total magnetization of the system is simply given by the sum over all the spins in the system:
 
@@ -111,7 +111,7 @@ We will study 2D square lattices of spins $s_i$. Below we summarize our notation
 
 Assume a $2 \times 2$ lattice with periodic boundary conditions.
 
-- **a)** Summarize all possible states of the system by setting up a table with four coloumns showing the following quantities
+- **a)** Summarise all possible states of the system by setting up a table with four coloumns showing the following quantities
   - number of spins in state +1
   - total energy
   - total magnetization
@@ -123,13 +123,13 @@ Assume a $2 \times 2$ lattice with periodic boundary conditions.
   - $\langle \epsilon^2 \rangle$
   - $\langle |m| \rangle$
   - $\langle m^2 \rangle$
-  - the specific heat capacity (normalized to number of spins):
+  - the specific heat capacity (normalised to number of spins):
 
   $$
   C_V = \frac{1}{N} \frac{1}{k_B T^2}(\langle E^2 \rangle - \langle E \rangle^2) 
   $$
 
-  - the susceptibility (normalized to number of spins): 
+  - the susceptibility (normalised to number of spins): 
 
   $$
   \chi = \frac{1}{N} \frac{1}{k_B T}(\langle M^2 \rangle - \langle |M| \rangle^2)
@@ -139,7 +139,7 @@ We will use these analytical results to test our code.
 
 <!--
 ```{note}
-There was a typo in a previous version, where $C_V$ and $\chi$ were defined using $\epsilon$ and $m$ rather than $E$ and $M$. This is now corrected, along with the normalization factor $\frac{1}{N}$ in front to enusure that we normalize the heat capacity and susceptibility to the total number of spins in the system. Apologies for the confusion!
+There was a typo in a previous version, where $C_V$ and $\chi$ were defined using $\epsilon$ and $m$ rather than $E$ and $M$. This is now corrected, along with the normalization factor $\frac{1}{N}$ in front to enusure that we normalise the heat capacity and susceptibility to the total number of spins in the system. Apologies for the confusion!
 ```
 -->
 
@@ -195,23 +195,23 @@ Now we will use a lattice with size $L=20$ and study the **burn-in time** (or **
 
 Now let's move beyond mere expectation values and see how we can use our MCMC to estimate the full probability distribution for $\epsilon$. 
 
-For $L=20$, approximate the probability function $p_{\epsilon}(\epsilon;T)$ for $T = 1.0\,J/k_B$ and $T = 2.4\,J/k_B$ by creating normalized histograms of generated $\epsilon$ samples. (Keep an eye on bin widths and remember that $\epsilon$ is not a continuous variable.) Comment on your results, in particular on the variance of the two distributions. 
+For $L=20$, approximate the probability function $p_{\epsilon}(\epsilon;T)$ for $T = 1.0\,J/k_B$ and $T = 2.4\,J/k_B$ by creating normalised histograms of generated $\epsilon$ samples. (Keep an eye on bin widths and remember that $\epsilon$ is not a continuous variable.) Comment on your results, in particular on the variance of the two distributions. 
  
 
 ### Problem 7
 
-Now parallelize your code using either OpenMP or MPI. Perform some timing tests to estimate the speed-up factor resulting from the parallelization.
+Now parallelise your code using either OpenMP or MPI. Perform some timing tests to estimate the speed-up factor resulting from the parallelization.
 
 ```{note}
 See our updated [Introduction to OpenMP](sec:introduction_to_openmp) page for instructions on how to build your code with OpenMP enabled.
 ```
 
 ```{note}
-There are basically three different approaches you can take here, corresponding to three different levels at which you can parallelize your code:
+There are basically three different approaches you can take here, corresponding to three different levels at which you can parallelise your code:
 
-1. *At the temperature level:* You can parallelize the outer loop over temperature values (see Problem 8, which is where parallelization becomes important)
+1. *At the temperature level:* You can parallelise the outer loop over temperature values (see Problem 8, which is where parallelization becomes important)
 2. *At the level of MCMC "walkers":* You can use multiple threads to perform multiple independent MCMC runs in parallel and combine their results.
-3. *At the level of spin flipping:* You could parallelize the part of the code where you generate new states by attempting to flip N spins.
+3. *At the level of spin flipping:* You could parallelise the part of the code where you generate new states by attempting to flip N spins.
 
 We recommend you do either approach 1 or 2. (You only need to do one approach.) Approach 1 is probably the easiest. Approach 2 is the standard approach to parallelizing a single MCMC run (i.e. when there isn't any scan over some external parameter, like $T$ in our case.) Approach 3 would by far be the most complicated and it is probably also the least efficient. 
 ```

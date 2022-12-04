@@ -6,7 +6,7 @@ Make sure to check this page regularly for small updates, typo fixes and hints.
 
 ## Practicalities
 
-- **Deadline**: Tuesday, December 13, 23:59.
+- **Deadline**: Wednesday, December 14, 23:59.
 - **Format:**
   - A scientific report, typeset in LaTeX, delivered as a pdf file on Canvas.
   - Code (with comments, of course) on a GitHub repo, with the repo link provided in your report.
@@ -14,7 +14,7 @@ Make sure to check this page regularly for small updates, typo fixes and hints.
 
 - **Collaboration:** We strongly encourage you to collaborate with others, in groups of up to four students. The group hands in a single pdf. Remember to list everyone's name in the pdf.
 
-- **Reproducibility:** Your code should be available on a GitHub repo. You can refer to relevant parts of your code in your answers. Make sure to include a README file in the repo that briefly explains how the code is organized, and how it should be compiled and run in order for others to reproduce your results.
+- **Reproducibility:** Your code should be available on a GitHub repo. You can refer to relevant parts of your code in your answers. Make sure to include a README file in the repo that briefly explains how the code is organised, and how it should be compiled and run in order for others to reproduce your results.
 
 - **Figures:** Figures included in your LaTeX document should preferrably be made as vector graphics (e.g. `.pdf` files), rather than raster graphics (e.g. `.png` files).
 
@@ -73,7 +73,7 @@ $$
 p(x,y;t) = |u(x,y,t)|^2 = u^*(x,y,t) \, u(x,y,t).
 $$
 
-assuming the wave function $u(x,y,t)$ has been properly normalized.
+assuming the wave function $u(x,y,t)$ has been properly normalised.
 
 
 ```{note}
@@ -84,7 +84,7 @@ In this course we don't expect any background knowledge in quantum mechanics, so
 ```{note}
 *For those with some quantum mechanics background:* A question that sometimes come up during this project is how the wave function $\Psi(x,y,t)$ actually is related to the state $|\Psi\rangle$, so here's a short answer. (Again, you are not expected to discuss any of this in your reports.) 
 
-Consider the one-dimensional case and for simplicity assume that we have discretized time and space (notation $x_i$ and $t_n$). To work in position space we can express $|\Psi\rangle$ in terms of a set of orthonormal basis states $|x_i\rangle$. (These are eigenstates of the position operator, $\hat{X} |x_i \rangle = x_i |x_i\rangle$). In doing this, the now-discretized wavefunction $\Psi(x_i,t_n) \equiv \Psi_i^n$ simply corresponds to the complex coefficients in this way of expressing $|\Psi\rangle$:
+Consider the one-dimensional case and for simplicity assume that we have discretised time and space (notation $x_i$ and $t_n$). To work in position space we can express $|\Psi\rangle$ in terms of a set of orthonormal basis states $|x_i\rangle$. (These are eigenstates of the position operator, $\hat{X} |x_i \rangle = x_i |x_i\rangle$). In doing this, the now-discretised wavefunction $\Psi(x_i,t_n) \equiv \Psi_i^n$ simply corresponds to the complex coefficients in this way of expressing $|\Psi\rangle$:
 
 $$
 |\Psi\rangle = \Psi_1^n |x_1 \rangle + \Psi_2^n |x_2 \rangle + \Psi_3^n |x_3 \rangle + \ldots,
@@ -102,7 +102,7 @@ $$
 \langle x_i | \Psi \rangle = \Psi_i^n.
 $$
 
-Assuming that we make a position measurement at time $t_n$, the probability $P(x_i;t_n)$ (not probability density, since we now work with discretized space) that the outcome will be $x_i$ can be expressed as 
+Assuming that we make a position measurement at time $t_n$, the probability $P(x_i;t_n)$ (not probability density, since we now work with discretised space) that the outcome will be $x_i$ can be expressed as 
 
 $$
 P(x_i;t_n) = | \langle x_i | \Psi \rangle |^2 = |\Psi_i^n|^2 = \Psi^{n*}_i \, \Psi^n_i.
@@ -136,7 +136,7 @@ Below we define the basic notation we will use for this project.
 
 Note:
 
-- $M$ is the number of *points* along the $x$ axis, including the boundary points. Thus, the $x$ axis has been discretized using $M-1$ *steps*, and there are $M-2$ "internal points" $x_1, \ldots, x_{M-2}$, i.e. excluding the boundary points $x_0$ and $x_{M-1}$.
+- $M$ is the number of *points* along the $x$ axis, including the boundary points. Thus, the $x$ axis has been discretised using $M-1$ *steps*, and there are $M-2$ "internal points" $x_1, \ldots, x_{M-2}$, i.e. excluding the boundary points $x_0$ and $x_{M-1}$.
 - Similarly for the $y$ axis, again with $M$ being the number of *points*.
 - We will mix index notation with and without commas as needed for clarity. So keep in mind that e.g. $u_{ij}$ and $u_{i,j}$ mean the same thing.
 
@@ -271,7 +271,7 @@ Here $x_c$ and $y_c$ are the coordinates of the centre of the initial wave packe
 
 Make sure that the initial state $u_{ij}^0$ satisfies the boundary conditions. 
 
-Also, add code that normalizes your initial state such that 
+Also, add code that normalises your initial state such that 
 
 $$
 \sum\limits_{i,j} u^{0*}_{ij} \, u^0_{ij} = 1,\\
@@ -286,7 +286,7 @@ By requiring that $\sum\limits_{i,j} p^n_{ij} = 1$, rather than requiring $\sum\
 
 ### Problem 5
 
-Write a part of your program that initializes the potential $V$. To construct the barriers used for the double-slit (and other configurations) we will simply set the elements $v_{ij}$ of $V$ that correspond to points inside the barriers to some high constant value $v_{ij} = v_0$. As our starting point we will use the following double-slit setup:
+Write a part of your program that initialises the potential $V$. To construct the barriers used for the double-slit (and other configurations) we will simply set the elements $v_{ij}$ of $V$ that correspond to points inside the barriers to some high constant value $v_{ij} = v_0$. As our starting point we will use the following double-slit setup:
 
 - Wall thickness in the $x$ direction: 0.02
 - Wall position (centre) in the $x$ direction: 0.5
