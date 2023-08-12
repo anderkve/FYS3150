@@ -1,5 +1,9 @@
 # Project 1
 
+This project is not published yet.
+
+<!--
+
 ## Practicalities
 
 - **Deadline:** September 13, at 23:59
@@ -186,8 +190,8 @@ What do you expect would happen if you attempted to run code for the case $n = 1
 
 -->
 
-----
 
+<!-- 
 
 ## Code snippets
 
@@ -247,3 +251,7 @@ int main ()
   // ...
 }
 ```
+
+-->
+
+
