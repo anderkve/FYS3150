@@ -1,5 +1,9 @@
 # Project 2
 
+This project is not published yet.
+
+<!--
+
 ## Practicalities
 
 - **Deadline**: Tuesday, September 27, 23:59.
@@ -208,9 +212,9 @@ Jacobi's rotation algorithm is based on an important property of orthogonal tran
 - $\mathbf{U}$ is an *orthogonal* transformation matrix, i.e. that $\mathbf{U}^T = \mathbf{U}^{-1}$.
 
 Show that transformations with $\mathbf{U}$ preserves orthonormality, i.e. show that the set of vectors $\vec{w}_i = \mathbf{U} \vec{v}_i$ is also an orthonormal set.
- -->
+-->
 
-
+<!-- 
 
 ----
 
