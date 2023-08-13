@@ -6,54 +6,52 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Introduction to Git &#8212; FYS3150/FYS4150 course material</title>
+    <title>Example code structure for C++ projects &#8212; FYS3150/FYS4150 course material</title>
     
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Setting up Git and a GitHub repository" href="setting_up_git_and_a_GitHub_repo.html" />
-    <link rel="prev" title="Keyboard shortcuts" href="../using_the_terminal/keyboard_shortcuts.html" />
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -88,14 +86,14 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="bd-sidebar noprint" id="site-navigation">
     <div class="bd-sidebar__content">
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
       
       
       
       <h1 class="site-logo" id="site-title">FYS3150/FYS4150 course material</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -103,7 +101,7 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../../intro.html">
+                <a class="reference internal" href="../../../intro.html">
                     Welcome
                 </a>
             </li>
@@ -115,17 +113,17 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../getting_ready/windows_users.html">
+  <a class="reference internal" href="../../../book/getting_ready/windows_users.html">
    Windows users
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../getting_ready/mac_users.html">
+  <a class="reference internal" href="../../../book/getting_ready/mac_users.html">
    Mac users
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../getting_ready/linux_users.html">
+  <a class="reference internal" href="../../../book/getting_ready/linux_users.html">
    Linux users
   </a>
  </li>
@@ -137,12 +135,12 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../using_the_terminal/basics.html">
+  <a class="reference internal" href="../../../book/using_the_terminal/basics.html">
    Basics
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../using_the_terminal/keyboard_shortcuts.html">
+  <a class="reference internal" href="../../../book/using_the_terminal/keyboard_shortcuts.html">
    Keyboard shortcuts
   </a>
  </li>
@@ -152,44 +150,44 @@ const thebe_selector_output = ".output, .cell_output"
   Using Git and GitHub
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../book/using_git/introduction_to_git.html">
    Introduction to Git
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="setting_up_git_and_a_GitHub_repo.html">
+  <a class="reference internal" href="../../../book/using_git/setting_up_git_and_a_GitHub_repo.html">
    Setting up Git and a GitHub repository
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="add_a_README_and_gitignore.html">
+  <a class="reference internal" href="../../../book/using_git/add_a_README_and_gitignore.html">
    Add a README and gitignore
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="using_git.html">
+  <a class="reference internal" href="../../../book/using_git/using_git.html">
    Using Git
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="dealing_with_merge_conflicts.html">
+  <a class="reference internal" href="../../../book/using_git/dealing_with_merge_conflicts.html">
    Dealing with merge conflicts
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="recover_an_old_version_of_a_file.html">
+  <a class="reference internal" href="../../../book/using_git/recover_an_old_version_of_a_file.html">
    Recover an old version of a file
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="other_ways_to_fix_mistakes.html">
+  <a class="reference internal" href="../../../book/using_git/other_ways_to_fix_mistakes.html">
    Other ways to fix mistakes
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="online_resources.html">
+  <a class="reference internal" href="../../../book/using_git/online_resources.html">
    Online git resources
   </a>
  </li>
@@ -201,92 +199,92 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/intro.html">
+  <a class="reference internal" href="../../../book/introduction_to_cpp/intro.html">
    Intro
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/hello_world.html">
+  <a class="reference internal" href="../../../book/introduction_to_cpp/hello_world.html">
    Hello World
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/compiling_and_linking_take_1.html">
+  <a class="reference internal" href="../../../book/introduction_to_cpp/compiling_and_linking_take_1.html">
    Compiling and linking, take 1
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/variables.html">
+  <a class="reference internal" href="../../../book/introduction_to_cpp/variables.html">
    Variables
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/functions_take_1.html">
+  <a class="reference internal" href="../../../book/introduction_to_cpp/functions_take_1.html">
    Functions, take 1
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/source_files_and_header_files.html">
+  <a class="reference internal" href="../../../book/introduction_to_cpp/source_files_and_header_files.html">
    Source files and header files
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/code_structure.html">
+  <a class="reference internal" href="../../../book/introduction_to_cpp/code_structure.html">
    Code structure
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/compiling_and_linking_take_2.html">
+  <a class="reference internal" href="../../../book/introduction_to_cpp/compiling_and_linking_take_2.html">
    Compiling and linking, take 2
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/read_command_line_input.html">
+  <a class="reference internal" href="../../../book/introduction_to_cpp/read_command_line_input.html">
    Read command line input
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/write_to_file.html">
+  <a class="reference internal" href="../../../book/introduction_to_cpp/write_to_file.html">
    Write to file
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/read_from_file.html">
+  <a class="reference internal" href="../../../book/introduction_to_cpp/read_from_file.html">
    Read from file
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/if_else.html">
+  <a class="reference internal" href="../../../book/introduction_to_cpp/if_else.html">
    If else
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/loops.html">
+  <a class="reference internal" href="../../../book/introduction_to_cpp/loops.html">
    Loops
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/containers.html">
+  <a class="reference internal" href="../../../book/introduction_to_cpp/containers.html">
    Containers
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/intro_to_armadillo.html">
+  <a class="reference internal" href="../../../book/introduction_to_cpp/intro_to_armadillo.html">
    Introduction to Armadillo
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/pointers.html">
+  <a class="reference internal" href="../../../book/introduction_to_cpp/pointers.html">
    Pointers
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/classes.html">
+  <a class="reference internal" href="../../../book/introduction_to_cpp/classes.html">
    Classes
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/online_resources.html">
+  <a class="reference internal" href="../../../book/introduction_to_cpp/online_resources.html">
    Online C++ resources
   </a>
  </li>
@@ -298,7 +296,7 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../optimization/memory_is_the_bottleneck.html">
+  <a class="reference internal" href="../../../book/optimization/memory_is_the_bottleneck.html">
    Memory traffic is the bottleneck
   </a>
  </li>
@@ -310,12 +308,12 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../parallelization/introduction_to_openmp.html">
+  <a class="reference internal" href="../../../book/parallelization/introduction_to_openmp.html">
    Introduction to OpenMP
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../parallelization/using_openmp.html">
+  <a class="reference internal" href="../../../book/parallelization/using_openmp.html">
    Using OpenMP
   </a>
  </li>
@@ -327,7 +325,7 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../using_make/intro.html">
+  <a class="reference internal" href="../../../book/using_make/intro.html">
    Intro
   </a>
  </li>
@@ -339,12 +337,12 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../writing_reports/introduction_to_latex.html">
+  <a class="reference internal" href="../../../book/writing_reports/introduction_to_latex.html">
    Introduction to LaTeX
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../writing_reports/checklist.html">
+  <a class="reference internal" href="../../../book/writing_reports/checklist.html">
    Checklist for reports
   </a>
  </li>
@@ -356,27 +354,27 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../projects/project1.html">
+  <a class="reference internal" href="../../../book/projects/project1.html">
    Project 1
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../projects/project2.html">
+  <a class="reference internal" href="../../../book/projects/project2.html">
    Project 2
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../projects/project3.html">
+  <a class="reference internal" href="../../../book/projects/project3.html">
    Project 3
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../projects/project4.html">
+  <a class="reference internal" href="../../../book/projects/project4.html">
    Project 4
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../projects/project5.html">
+  <a class="reference internal" href="../../../book/projects/project5.html">
    Project 5
   </a>
  </li>
@@ -470,7 +468,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Fbook/using_git/introduction_to_git.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Fcode_examples/code_structure/example_1/README.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -498,7 +496,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/book/using_git/introduction_to_git.md"
+        <a href="../../../_sources/code_examples/code_structure/example_1/README.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -557,14 +555,14 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-git">
-   What is Git?
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Example code structure for C++ projects
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-github">
-   What is GitHub?
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#build-and-run-the-examples">
+   Build and run the examples
   </a>
  </li>
 </ul>
@@ -576,7 +574,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Introduction to Git</h1>
+                <h1>Example code structure for C++ projects</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -586,14 +584,14 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-git">
-   What is Git?
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Example code structure for C++ projects
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-github">
-   What is GitHub?
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#build-and-run-the-examples">
+   Build and run the examples
   </a>
  </li>
 </ul>
@@ -606,21 +604,73 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-git">
-<h1>Introduction to Git<a class="headerlink" href="#introduction-to-git" title="Permalink to this headline">#</a></h1>
-<section id="what-is-git">
-<h2>What is Git?<a class="headerlink" href="#what-is-git" title="Permalink to this headline">#</a></h2>
-<p>Git is a <em>version control software</em>. What it does is track changes in a system of files to make collaboration among developers on a code project easy. It provides a rich set of tools to ensure that several programmers can work on the same project in a non-linear way. Several programmers can even work on the exact same file.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="example-code-structure-for-c-projects">
+<h1>Example code structure for C++ projects<a class="headerlink" href="#example-code-structure-for-c-projects" title="Permalink to this headline">#</a></h1>
+<p>There are different opinions on how to best organise C++ code, but a common guiding
+principle is that too much code repetition should be avoided. Here we present one standard
+approach to structuring C++ code:</p>
+<ul class="simple">
+<li><p>Put useful functions that you’ll need again and again in dedicated
+source files (<code class="docutils literal notranslate"><span class="pre">.cpp</span></code>). Place these source files in a folder named <code class="docutils literal notranslate"><span class="pre">src</span></code>.</p></li>
+<li><p>For each such source file, write a header file (<code class="docutils literal notranslate"><span class="pre">.hpp</span></code>) that only contains
+the function <em>declarations</em>. Place these header files in a folder named <code class="docutils literal notranslate"><span class="pre">include</span></code>.</p></li>
+<li><p>In your main program(s), simply <code class="docutils literal notranslate"><span class="pre">#include</span></code> the header file with the relevant function
+declaration and use the function in your main program.</p></li>
+</ul>
+<p>Keep in mind that for this to work, the <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> files in <code class="docutils literal notranslate"><span class="pre">src/</span></code> must be compiled and linked
+to the main program – see the example compilation + linking commands below.</p>
+<p>With this code structure you can typically write reasonably short and clear main programs
+that each just do a small number of tasks (e.g. computes one number of interest or performs
+one particular simulation), since the common code needed by all the main programs have been
+placed in some other files.</p>
+<p>The example in this folder has two header files in the include directory:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">include/utils.hpp</span></code></p>
+<p>This could be your personal collection of utility functions, e.g. functions for
+doing standard tasks like formatting a number nicely as a string.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">include/clever_algorithms.hpp</span></code></p>
+<p>This could be your collection of different algorithms for performing some computation.</p>
+</li>
+</ul>
+<p>The header files only show the function <em>declarations</em>. The complete code for the functions,
+i.e. the function <em>definitions</em>, live in the corresponding <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> files</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">src/utils.cpp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">src/clever_algorithms.cpp</span></code></p></li>
+</ul>
+<p>Finally, there are two small main programs</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">main_test_algo_one.cpp</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">main_timing.cpp</span></code></p></li>
+</ul>
+<p>that demonstrate how we can use these common functions in multiple different
+main programs by just including the relevant header files.</p>
 </section>
-<section id="what-is-github">
-<h2>What is GitHub?<a class="headerlink" href="#what-is-github" title="Permalink to this headline">#</a></h2>
-<p>GitHub is a service that provides hosting and storage for software development and version control using Git as its underlying version control software. It also offers services that goes beyond the functionality of Git.</p>
-<p>For our purposes, they host <strong>repositories</strong>, or <strong>repos</strong> for short. A repository is basically some  collection of files – say some code project organised in a tree of directories – where Git keeps track of the history of changes for each file. We typically do our work on a local copy (clone) of the repository on our own laptop, and then use Git to sync our local repository with the remote copy of the repository living on a GitHub server.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>For this course we will use GitHub, but note that there are several similar services available, such as <em>GitLab</em> and <em>BitBucket</em>.</p>
+<section class="tex2jax_ignore mathjax_ignore" id="build-and-run-the-examples">
+<h1>Build and run the examples<a class="headerlink" href="#build-and-run-the-examples" title="Permalink to this headline">#</a></h1>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">main_test_algo_one.cpp</span></code></p>
+<p>Build:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>g++ main_test_algo_one.cpp src/*.cpp -I include -o main_test_algo_one.exe
+</pre></div>
 </div>
-</section>
+<p>Run:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./main_test_algo_one.exe
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">main_timing.cpp</span></code></p>
+<p>Build:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>g++ main_timing.cpp src/*.cpp -I include -o main_timing.exe
+</pre></div>
+</div>
+<p>Run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">main_timing</span><span class="o">.</span><span class="n">exe</span>
+</pre></div>
+</div>
+</li>
+</ul>
 </section>
 
     <script type="text/x-thebe-config">
@@ -636,7 +686,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./book/using_git"
+            path: "./code_examples/code_structure/example_1"
         },
         predefinedOutput: true
     }
@@ -650,20 +700,6 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../using_the_terminal/keyboard_shortcuts.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Keyboard shortcuts</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="setting_up_git_and_a_GitHub_repo.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Setting up Git and a GitHub repository</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>
@@ -685,7 +721,7 @@ title="Print to PDF"
     </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
 
   </body>

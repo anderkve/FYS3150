@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Read command line input" href="read_command_line_input.html" />
+    <link rel="next" title="Source files and header files" href="source_files_and_header_files.html" />
     <link rel="prev" title="Variables" href="variables.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -216,11 +216,6 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="source_files_and_header_files.html">
-   Source files and header files
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="variables.html">
    Variables
   </a>
@@ -228,6 +223,21 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Functions, take 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="source_files_and_header_files.html">
+   Source files and header files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="code_structure.html">
+   Code structure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="compiling_and_linking_take_2.html">
+   Compiling and linking, take 2
   </a>
  </li>
  <li class="toctree-l1">
@@ -697,7 +707,7 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>When a function is declared somewhere before the full function definition is provided, like in the example above, we refer to the declaration as a <strong>forward declaration</strong>.</p>
-<p>In larger code projects, function declarations are typically placed inside header (<code class="docutils literal notranslate"><span class="pre">.hpp</span></code>) files that the main program can <code class="docutils literal notranslate"><span class="pre">#include</span></code>, while the corresponding function definitions live in source (<code class="docutils literal notranslate"><span class="pre">.cpp</span></code>) files, completely separate from the <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> file with the <code class="docutils literal notranslate"><span class="pre">main</span></code> program. During the build process, each <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> file is first <em>compiled</em> to a corresponding object file, and finally these object files are <em>linked</em> together to form an executable.</p>
+<p>In larger code projects, function declarations are typically placed inside <strong>header files</strong> (<code class="docutils literal notranslate"><span class="pre">.hpp</span></code>) that the main program can import through <code class="docutils literal notranslate"><span class="pre">#include</span></code> statements, while the corresponding function definitions live in <strong>source files</strong> (<code class="docutils literal notranslate"><span class="pre">.cpp</span></code>), completely separate from the <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> file with the <code class="docutils literal notranslate"><span class="pre">main</span></code> program. In the next sections we will return to this approach for organising the code.</p>
 </section>
 </section>
 
@@ -735,10 +745,10 @@ title="Print to PDF"
             <p class="prev-next-title">Variables</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="read_command_line_input.html" title="next page">
+    <a class='right-next' id="next-link" href="source_files_and_header_files.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Read command line input</p>
+        <p class="prev-next-title">Source files and header files</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
