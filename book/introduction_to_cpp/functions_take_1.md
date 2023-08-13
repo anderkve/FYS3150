@@ -111,4 +111,5 @@ double add(double x, double y)
 ```
 When a function is declared somewhere before the full function definition is provided, like in the example above, we refer to the declaration as a **forward declaration**.
 
-In larger code projects, function declarations are typically placed inside header (`.hpp`) files that the main program can `#include`, while the corresponding function definitions live in source (`.cpp`) files, completely separate from the `.cpp` file with the `main` program. During the build process, each `.cpp` file is first *compiled* to a corresponding object file, and finally these object files are *linked* together to form an executable.
+In larger code projects, function declarations are typically placed inside **header files** (`.hpp`) that the main program can import through `#include` statements, while the corresponding function definitions live in **source files** (`.cpp`), completely separate from the `.cpp` file with the `main` program. In the next sections we will return to this approach for organising the code.
+

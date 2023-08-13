@@ -49,20 +49,9 @@ int main()
 (And this code is of course equivalent to the code you would get if you replaced `#include <iostream>` with the full content of `iostream.hpp` from the standard C++ library. But let's not do that...)
 
 
-
 ```{note}
 When including our own header files, we use the syntax `#include "someheader.hpp"`, rather than `#include <someheader>`.
 ```
 
+In in larger C++ projects it is common to put all source files (`.cpp`) in a folder called `src/`, and all header files (`.hpp`) in a folder called (`include/`). More on this in the next section. 
 
-<!--
-# Common directory layout
-
-It is common in larger C++ projects to put all source files (`.cpp`) in a folder called `src/`, and all header files (`.hpp`) in a folder called (`include/`). So something like this:
-
-```
-./src/main.cpp
-./src/utils.cpp
-./include/utils.hpp
-```
--->
