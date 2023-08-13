@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Loops" href="loops.html" />
-    <link rel="prev" title="Read from file" href="read_from_file.html" />
+    <link rel="prev" title="Compiling and linking, take 2" href="compiling_and_linking_take_2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -240,21 +240,6 @@ const thebe_selector_output = ".output, .cell_output"
    Compiling and linking, take 2
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="read_command_line_input.html">
-   Read command line input
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="write_to_file.html">
-   Write to file
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="read_from_file.html">
-   Read from file
-  </a>
- </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    If else
@@ -268,6 +253,21 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="containers.html">
    Containers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="read_command_line_input.html">
+   Read command line input
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="write_to_file.html">
+   Write to file
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="read_from_file.html">
+   Read from file
   </a>
  </li>
  <li class="toctree-l1">
@@ -571,7 +571,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#inline-if-tests">
-   Inline if-tests
+   Inline if tests
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -614,7 +614,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#inline-if-tests">
-   Inline if-tests
+   Inline if tests
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -639,45 +639,55 @@ title="Print to PDF"
 <section id="syntax">
 <h2>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">#</a></h2>
 <p>The general syntax for an <strong>if-else block</strong> in C++ is</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// code to run if condition is true.</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="w"> </span><span class="n">A</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// Code to run if condition A is true.</span>
 <span class="p">}</span><span class="w"></span>
-<span class="k">else</span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// Code to run if condition is false.</span>
+<span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="w"> </span><span class="n">B</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// Code to run if condition B is true.</span>
+<span class="p">}</span><span class="w"></span>
+<span class="k">else</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// Code to run if both conditions A and B are false.</span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Note that the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement is optional.</p>
+<p>Note that both the <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> and the <code class="docutils literal notranslate"><span class="pre">else</span></code> blocks are optional, that is, you can of course have a single <code class="docutils literal notranslate"><span class="pre">if</span></code> block on its own.</p>
 <section id="example-1">
 <h3>Example 1<a class="headerlink" href="#example-1" title="Permalink to this headline">#</a></h3>
 <p>Assume we want to implement a stepwise function that returns the input value if it’s positive, otherwise it returns 0. This could look as follows:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">){</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="k">else</span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="k">else</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 </section>
 <section id="inline-if-tests">
-<h2>Inline if-tests<a class="headerlink" href="#inline-if-tests" title="Permalink to this headline">#</a></h2>
-<p>We can also write inline if-else blocks in C++. This is generically done by</p>
+<h2>Inline if tests<a class="headerlink" href="#inline-if-tests" title="Permalink to this headline">#</a></h2>
+<p>We can also write <strong>inline</strong> if-else blocks in C++. The general syntax looks like this:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">variable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">expression_if_true</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">expression_if_false</span><span class="w"></span>
 </pre></div>
 </div>
 <section id="example-2">
 <h3>Example 2<a class="headerlink" href="#example-2" title="Permalink to this headline">#</a></h3>
-<p>Now let’s write the function from example 1 using a inline if-test instead.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<p>Now let’s write the function from example 1 using an inline <code class="docutils literal notranslate"><span class="pre">if</span></code> test instead.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>It looks horrible, but it is a shorthand that’s sometimes used for very simple if-tests.</p>
+<p>Arguably, this code looks horrible – it is usually better to use the longer and more readable block format for <code class="docutils literal notranslate"><span class="pre">if</span></code> tests. But for very simple <code class="docutils literal notranslate"><span class="pre">if</span></code> tests, the shorthand version can be handy.</p>
 </section>
 </section>
 </section>
@@ -709,11 +719,11 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="read_from_file.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="compiling_and_linking_take_2.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Read from file</p>
+            <p class="prev-next-title">Compiling and linking, take 2</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="loops.html" title="next page">
