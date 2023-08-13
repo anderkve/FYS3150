@@ -11,6 +11,7 @@ If you're using Ubuntu, just copy and run the following command in your terminal
 sudo apt install make git python3-pip gcc g++ cmake libopenblas-dev liblapack-dev libarpack2-dev libsuperlu-dev libarmadillo-dev libomp-dev
 ```
 
+<!--
 ## Install LaTeX
 
 If you want to write and build LaTeX documents locally on your computer (as opposed to using an online service like Overleaf), you need to install the software necessary to compile `.tex` files. The following command should install all the required packages for you.
@@ -24,4 +25,4 @@ If you prefer using a specialized IDE (integrated development environment) for w
 ```sh
 sudo apt install texstudio
 ```
-
+-->

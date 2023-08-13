@@ -553,8 +553,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-access-edit-your-linux-files-with-windows-applications">
-   How to access/edit your Linux files with Windows applications
+  <a class="reference internal nav-link" href="#how-to-access-your-linux-files-from-windows-applications">
+   How to access your Linux files from Windows applications
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-access-your-windows-files-from-the-linux-terminal">
+   How to access your Windows files from the Linux terminal
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -587,8 +592,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-access-edit-your-linux-files-with-windows-applications">
-   How to access/edit your Linux files with Windows applications
+  <a class="reference internal nav-link" href="#how-to-access-your-linux-files-from-windows-applications">
+   How to access your Linux files from Windows applications
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-access-your-windows-files-from-the-linux-terminal">
+   How to access your Windows files from the Linux terminal
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -610,37 +620,44 @@ title="Print to PDF"
 <h1>Windows users<a class="headerlink" href="#windows-users" title="Permalink to this headline">#</a></h1>
 <section id="installing-windows-subsystem-for-linux-wsl">
 <h2>Installing Windows Subsystem for Linux (WSL)<a class="headerlink" href="#installing-windows-subsystem-for-linux-wsl" title="Permalink to this headline">#</a></h2>
-<p>There’s an excellent guide on how to install WSL <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">here</a>. Follow the <strong>manual installation</strong>.</p>
-<p>Once you’ve completed the installation of WSL and Ubuntu, run the following command in your Linux terminal:</p>
+<ul>
+<li><p>Install WSL by following the guide(s) <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">here</a>.</p></li>
+<li><p>Once you’ve installed WSL and Ubuntu, run this command in your Linux terminal:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo apt update <span class="o">&amp;&amp;</span> sudo apt upgrade
 </pre></div>
 </div>
-<p>You’ll get prompted to enter your password. Do so and it’ll run for a while. Once finished, follow the guide for <a class="reference internal" href="linux_users.html"><span class="doc std std-doc">Linux users</span></a> to install the Linux libraries and tools you’ll need. (But come back here afterwards and read the rest of this page!)</p>
+<p>(You will be asked to enter your password when running this command.)</p>
+</li>
+<li><p>Next, follow our guide for <a class="reference internal" href="linux_users.html"><span class="doc std std-doc">Linux users</span></a> to install the Linux libraries and tools you’ll need.</p></li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you have installed WSL/Ubuntu but run into trouble when trying to start the actual Linux terminal (shell), try this:</p>
-<p>In your Windows powershell, run the command <code class="docutils literal notranslate"><span class="pre">wsl</span> <span class="pre">--set-default-version</span> <span class="pre">1</span></code></p>
-<p>then try to restart the Linux terminal. This has worked for a few students. We’ll update this guide if we figure out more about what the underlying issue is.</p>
+<p>If you have installed WSL but run into trouble when trying to start the actual Linux terminal (shell), try this:</p>
+<p>In your Windows PowerShell, run the command <code class="docutils literal notranslate"><span class="pre">wsl</span> <span class="pre">--set-default-version</span> <span class="pre">1</span></code> and then restart the Linux terminal. This has worked for a few students. We’ll update this guide if we figure out more about what the underlying issue is.</p>
 </div>
 </section>
-<section id="how-to-access-edit-your-linux-files-with-windows-applications">
-<h2>How to access/edit your Linux files with Windows applications<a class="headerlink" href="#how-to-access-edit-your-linux-files-with-windows-applications" title="Permalink to this headline">#</a></h2>
-<p>A nice work setup for many WSL users will be to keep all your project files on the Linux part of the computer, so you can compile, run, perform git commands etc. with your Linux (Ubuntu) terminal, but still use Windows applications to edit the files, e.g. through Visual Studio Code or whatever editor you already use.</p>
-<p>On Windows, the Linux (WSL) part of your system will appear as a network drive. To get the full path of your Linux home directory as seen from Windows, start the Linux terminal and then launch the <em>Windows</em> file explorer using the command:</p>
+<section id="how-to-access-your-linux-files-from-windows-applications">
+<h2>How to access your Linux files from Windows applications<a class="headerlink" href="#how-to-access-your-linux-files-from-windows-applications" title="Permalink to this headline">#</a></h2>
+<p>A nice setup for many WSL users will be to keep all your project files on the Linux part of the computer, so you can compile, run, perform git commands etc. with your Linux (Ubuntu) terminal, but still use Windows applications to edit the files, e.g. through Visual Studio Code or whatever editor you already use.</p>
+<p>On Windows, the Linux (WSL) part of your file system will appear as a network drive. To get the full path of your Linux home directory as seen from Windows, start the Linux terminal and then launch the <em>Windows file explorer</em> using the command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">explorer</span><span class="o">.</span><span class="n">exe</span> <span class="o">.</span>
 </pre></div>
 </div>
-<p>(Make sure to include the dot, which tells explorer.exe to open the current directory you are in.)</p>
-<p>Now you see your Linux files in the Windows file explorer. It’s useful to now create a shortcut for e.g. your user’s Linux home folder and put this shortcut in the quick-access bar (the left-hand part) of the Windows file explorer. Then from any Windows application you can easily open/edit/save files in the Linux part of your system. See <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/filesystems#view-your-current-directory-in-windows-file-explorer">here</a> and <a class="reference external" href="https://www.howtogeek.com/426749/how-to-access-your-linux-wsl-files-in-windows-10/">here</a> for more details.</p>
+<p>(Make sure to include the dot. It tells <code class="docutils literal notranslate"><span class="pre">explorer.exe</span></code> to open the directory you are currently in.)</p>
+<p>Now you see your Linux files in the Windows file explorer. It’s useful to now create a shortcut for e.g. your user’s Linux home folder and put this shortcut in the quick-access list (the left-hand part) of the Windows file explorer. Then from any Windows application you can easily open/edit/save files in the Linux part of your system. To add a folder to the quick-access list, just right-click it and select <em>pin to Quick access</em>. See <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/filesystems#view-your-current-directory-in-windows-file-explorer">here</a> and <a class="reference external" href="https://www.howtogeek.com/426749/how-to-access-your-linux-wsl-files-in-windows-10/">here</a> for more details.</p>
+</section>
+<section id="how-to-access-your-windows-files-from-the-linux-terminal">
+<h2>How to access your Windows files from the Linux terminal<a class="headerlink" href="#how-to-access-your-windows-files-from-the-linux-terminal" title="Permalink to this headline">#</a></h2>
+<p>From the Linux terminal, a Windows drive like <code class="docutils literal notranslate"><span class="pre">C:\</span></code> will appear as the folder <code class="docutils literal notranslate"><span class="pre">mnt/c</span></code>. So if you need to refer to some Windows folder <code class="docutils literal notranslate"><span class="pre">C:\your\folder</span></code> from a Linux command, you should use the path <code class="docutils literal notranslate"><span class="pre">mnt/c/your/folder</span></code>. See <a class="reference external" href="https://askubuntu.com/a/943023">here</a> for more details.</p>
 </section>
 <section id="enable-ctrl-shift-c-v-for-copy-paste-in-the-terminal">
 <h2>Enable ctrl+shift+c/v for copy/paste in the terminal<a class="headerlink" href="#enable-ctrl-shift-c-v-for-copy-paste-in-the-terminal" title="Permalink to this headline">#</a></h2>
-<p>On WSL, copy/paste in the Linux terminal using the standard Linux keyboard shortcuts ctrl+shift+c and ctrl+shift+c will not work by default. To enable it</p>
+<p>On WSL, copy/paste in the Linux terminal using the standard Linux keyboard shortcuts <strong>ctrl+shift+c</strong> and <strong>ctrl+shift+v</strong> may not work by default. To activate these shortcuts, do this:</p>
 <ul class="simple">
-<li><p>click the small Ubuntu icon in the top-left corner of your terminal</p></li>
-<li><p>choose <em>Properties</em></p></li>
-<li><p>select the <em>Options</em> pane</p></li>
-<li><p>tick the box saying “Use Ctrl+Shift+C/V as Copy/Paste”</p></li>
+<li><p>Click the small Ubuntu icon in the top-left corner of your terminal</p></li>
+<li><p>Choose <em>Properties</em></p></li>
+<li><p>Select the <em>Options</em> pane</p></li>
+<li><p>Tick the box saying “Use Ctrl+Shift+C/V as Copy/Paste”</p></li>
 </ul>
 </section>
 </section>

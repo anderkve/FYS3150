@@ -3,7 +3,7 @@
 
 On this page you will learn some basics (and some not-so-basics) of working from the **terminal**, a.k.a. the **shell**, a.k.a. the **command line**, a.k.a. the **console**. Typing commands instead of the usual point-and-click may feel a bit clumsy and old-fashioned at first. But if you stick with it, you'll soon realize why the terminal is a standard tool for code developers, computational scientists and anyone else doing fancy stuff with computers.
 
-For the examples below, we will often need some dummy directories and files. To create/download these files and directories, we'll provide one-line *preparation commands* that you can simply copy and paste into the terminal. To paste in the terminal, right-click or press **ctrl-shift-v** (Linux) or **cmd-v** (macOS). To execute a command, simply hit 'enter'. 
+For the examples below, we will often need some dummy directories and files. To create/download these files and directories, we'll provide one-line *preparation commands* that you can simply copy and paste into the terminal. To paste text into the terminal, right-click or press **ctrl+shift+v** (Linux) or **cmd+v** (macOS). To execute a command, simply hit 'enter'. 
 
 Don't worry if you don't yet understand what's going on in these preparation commands --- you'll learn all of it soon. After each example, we also provide a single-line command that deletes the dummy files we've just created.
 
@@ -322,7 +322,7 @@ cd $HOME/compphys_examples && mkdir search_file_content && cd search_file_conten
 ```
 
 The standard tool for searching trough text content is the `grep` command. Using `grep` to search is sometimes referred to simply as "grepping". 
-The preparation command above has downloaded [this](https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/extra_material/output.txt) program output from [this](https://github.com/anderkve/FYS3150/blob/master/book/using_the_terminal/extra_material/random_program.py) to a file `output.txt`. Let's use `grep` to search through it:
+The preparation command above has downloaded [this output](https://raw.githubusercontent.com/anderkve/FYS3150/master/book/using_the_terminal/extra_material/output.txt) from [this dummy program](https://github.com/anderkve/FYS3150/blob/master/book/using_the_terminal/extra_material/random_program.py) and saved it to a file `output.txt`. Let's use `grep` to search through it:
 
 ```sh
 grep "Iteration" output.txt      # Search for and print all lines containing the word "Iteration"

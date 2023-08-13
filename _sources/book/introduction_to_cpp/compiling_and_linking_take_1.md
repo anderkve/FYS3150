@@ -50,5 +50,3 @@ The compiler will then (1) compile `main.cpp` into `main.o`, (2) link `main.o` t
 > Knowing the difference between the compilation phase and the link phase can make it easier to hunt for bugs. Compiler errors are usually syntactic in nature --- a missing semicolon, an extra parenthesis. Linking errors usually have to do with missing or multiple definitions. If you get an error that a function or variable is defined multiple times from the linker, that's a good indication that the error is that two of your source code files have the same function or variable. 
 
 We will see this more clearly when we start creating larger projects with many files.
-
-But now, let's get back to writing code. Next topic: variables.
