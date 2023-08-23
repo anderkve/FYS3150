@@ -1,4 +1,55 @@
-# Setting up Git and a GitHub repository
+# Setting up a UiO GitHub repository
+
+In this course we will use GitHub via UiO's GitHub Enterprise service, at [github.uio.no](https://github.uio.no)
+
+Below are some quick instructions to get started: 
+
+- Log in to [github.uio.no](https://github.uio.no) using your UiO username and password.
+
+` `
+
+- Next you need to create a new repository ("repo"):
+
+  - Click on the green **New** button.
+
+  - Fill in a name for your repository.
+
+  - Set the access setting to **Public**. (It will only be public to users within UiO's GitHub service. We need this for it to be easy for us teachers to view all the code repositories.)
+
+  - Check the **Add a README file** box. 
+
+  - Click **Create repository**.
+
+  - You will automatically be redirected to the home page of your new repository.
+
+  - More detailed documentation about creating repositories can be found [here](https://docs.github.com/en/enterprise-server@3.9/repositories/creating-and-managing-repositories/creating-a-new-repository).
+
+` `
+
+- The last step is to *clone* the new repository to your computer:
+
+  - Click on the green **Code** button.
+
+  - Copy the link, which will look something like this: `https://github.uio.no/your-user/your-repo-name.git`
+
+  - In your terminal, go to the directory where you want your repository to stored and run a `git clone` command with the link you just copied:
+
+    ```sh
+    git clone https://github.uio.no/your-user/your-repo-name.git
+    ```
+
+    (You may be prompted for your UiO username and password.)
+
+  - You should now have a new directory `your-repo-name` containing your new repo (which so far only contains a single README.md file).
+
+  - The detailed GitHub documentation on cloning repos is [here](https://docs.github.com/en/enterprise-server@3.9/repositories/creating-and-managing-repositories/cloning-a-repository). 
+
+
+
+<!-- 
+
+--------
+
 
 ## Setting up Git on your computer
 
@@ -110,3 +161,4 @@ And you're done!
 1. Open the **Keychain Access** app.
 2. Search for github.com and double click on the one marked with "internet password".
 3. Click on "show password" and replace the password with your generated token.
+ -->
