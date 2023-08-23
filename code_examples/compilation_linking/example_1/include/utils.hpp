@@ -20,9 +20,9 @@
 // lives in src/utils.cpp
 
 // Return a string with a double in scientific notation
-std::string scientific_format(double d, const int width=20, const int prec=10);
+std::string scientific_format(double d, int width=20, int prec=10);
 
 // Return a string with a vector<double> in scientific notation
-std::string scientific_format(const std::vector<double>& v, const int width=20, const int prec=10);
+std::string scientific_format(const std::vector<double>& v, int width=20, int prec=10);
 
 #endif  // end of include guard __utils_hpp__

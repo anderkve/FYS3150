@@ -2,6 +2,7 @@
 // Intended for demonstration of compilation and linking.
 
 #include <iostream>
+#include <iomanip>
 #include "utils.hpp"
 
 int main()
