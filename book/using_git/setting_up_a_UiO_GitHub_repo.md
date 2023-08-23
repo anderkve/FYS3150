@@ -1,8 +1,6 @@
 # Setting up a UiO GitHub repository
 
-In this course we will use GitHub via UiO's GitHub Enterprise service, at [github.uio.no](https://github.uio.no)
-
-Below are some quick instructions to get started: 
+In this course we will use GitHub via UiO's GitHub Enterprise service, at [github.uio.no](https://github.uio.no). Below are some quick instructions to get started: 
 
 - Log in to [github.uio.no](https://github.uio.no) using your UiO username and password.
 

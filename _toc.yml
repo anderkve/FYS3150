@@ -20,7 +20,7 @@ parts:
   - caption: Using Git and GitHub
     chapters:
       - file: book/using_git/introduction_to_git
-      - file: book/using_git/setting_up_git_and_a_GitHub_repo
+      - file: book/using_git/setting_up_a_UiO_GitHub_repo
       - file: book/using_git/add_a_README_and_gitignore
       - file: book/using_git/using_git
       - file: book/using_git/dealing_with_merge_conflicts
