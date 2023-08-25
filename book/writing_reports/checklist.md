@@ -46,3 +46,4 @@ Writing a good scientific report is difficult and requires attention to a lot of
 
 - **Explicitly mention appendices:** Have you added any appendices? If so you must refer to them at the relevant point(s) in the main text.
 
+- **Consistent use of either British English or American English spelling:** If you have some time to really polish your report, try to be consistently British or consistently American in how you spell English words. Some common differences are the use of **ou** (British) versus **o** (American) in words like **colour**/**color**, and the use of **ise** (British) versus **ize** (American) in words like **analyse**/**analyze** and **discretise**/**discretize**.
