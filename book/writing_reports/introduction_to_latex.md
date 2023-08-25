@@ -19,7 +19,11 @@ You often need to run this command twice for all changes to be displayed correct
 
 Since this course typically involves collaborating with others on a single document, a simple solution is to use [Overleaf](https://www.overleaf.com/project) for the writing and compilation process. 
 
-However, you can of course also just use your git repository to collaborate on a `.tex` file, like you would for any code file. Use whatever solution that works best for you and your collaborators.
+```{note}
+  Many people can work simultaneously on the same Overleaf document, even when using the free version of Overleaf, as mentioned [here](https://www.overleaf.com/learn/how-to/Is_Overleaf_free_to_use%3F). Just use the **link sharing** option when you share the document with your collaborators. 
+```
+
+However, you can of course also just use your git repository to collaborate on a `.tex` file, like you would for any code file. Use whatever solution works best for you and your collaborators.
 
 
 ## Templates
