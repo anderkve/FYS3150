@@ -45,14 +45,14 @@ To see which files Git current is tracking, run the command `git ls-files`
 ```
 
 You are now ready to commit. You can see what is about to be committed
-using `git diff` with the --cached option:
+using `git diff` with the `--cached` option:
 
 ```sh
 git diff --cached
 ```
 
 
-(Without --cached, `git diff` will show you any changes that you've made
+(Without the `--cached` flag, `git diff` will show you any changes that you've made
 but not yet added to the index.) You can also get a brief summary of
 the situation with `git status`:
 
