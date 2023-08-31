@@ -717,7 +717,7 @@ Add page on containers (arrays, vectors, maps, pairs, ...).
 
 <span class="w">  </span><span class="c1">// Create a vector&lt;double&gt; of length 5, with all </span>
 <span class="w">  </span><span class="c1">// elements intitialised to 1.0</span>
-<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v3</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span><span class="w">   </span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v3</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span><span class="w">   </span>
 
 <span class="w">  </span><span class="c1">// Create a vector&lt;std::string&gt; of length 3, </span>
 <span class="w">  </span><span class="c1">// with all elements initialised differently</span>
@@ -793,7 +793,7 @@ Add page on containers (arrays, vectors, maps, pairs, ...).
 </section>
 <section id="containers-of-containers">
 <h2>Containers of containers<a class="headerlink" href="#containers-of-containers" title="Permalink to this headline">#</a></h2>
-<p>Keep in mind that you can put containers inside other containers, which can sometimes be useful. Here’s a silly example, where we construct a map of type string –&gt; vector-of-strings:</p>
+<p>Keep in mind that you can put containers inside other containers, which can sometimes be useful. Here’s a silly example, where we construct a map of type string → vector-of-strings:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">countries_europe</span><span class="p">;</span><span class="w"></span>
 
 <span class="n">countries_europe</span><span class="p">[</span><span class="s">&quot;C&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;Croatia&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Cyprus&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Czechia&quot;</span><span class="p">};</span><span class="w"></span>
