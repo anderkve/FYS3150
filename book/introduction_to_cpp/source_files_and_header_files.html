@@ -535,12 +535,36 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#when-you-should-not-be-using-namespace">
+   (When you should not be) using namespace
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -552,6 +576,19 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#when-you-should-not-be-using-namespace">
+   (When you should not be) using namespace
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -609,6 +646,37 @@ title="Print to PDF"
 <p>When including our own header files, we use the syntax <code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&quot;someheader.hpp&quot;</span></code>, rather than <code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&lt;someheader&gt;</span></code>.</p>
 </div>
 <p>In in larger C++ projects it is common to put all source files (<code class="docutils literal notranslate"><span class="pre">.cpp</span></code>) in a folder called <code class="docutils literal notranslate"><span class="pre">src/</span></code>, and all header files (<code class="docutils literal notranslate"><span class="pre">.hpp</span></code>) in a folder called (<code class="docutils literal notranslate"><span class="pre">include/</span></code>). More on this in the next section.</p>
+<section id="when-you-should-not-be-using-namespace">
+<h2>(When you should not be) using namespace<a class="headerlink" href="#when-you-should-not-be-using-namespace" title="Permalink to this headline">#</a></h2>
+<p>Towards the top of <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> files you will often see a line like</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>and similar for other namespaces, e.g.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">arma</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>if the code is using parts of the Armadillo library. What e.g. <code class="docutils literal notranslate"><span class="pre">using</span> <span class="pre">namespace</span> <span class="pre">std;</span></code> means is effectively <em>let me access everything from the <code class="docutils literal notranslate"><span class="pre">std</span></code> namespace without first writing <code class="docutils literal notranslate"><span class="pre">std::</span></code></em>. (It’s analogous to doing e.g. <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">numpy</span> <span class="pre">import</span> <span class="pre">*</span></code> in a Python program that is using the numpy library.)</p>
+<p>Here’s an example program that uses <code class="docutils literal notranslate"><span class="pre">cout</span></code> rather than <code class="docutils literal notranslate"><span class="pre">std::cout</span></code> to print a message to screen:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello, World!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Using this <code class="docutils literal notranslate"><span class="pre">using</span> <span class="pre">namespace</span></code> trick in your source files (<code class="docutils literal notranslate"><span class="pre">.cpp</span></code>) is usually fine. Just remember that in programs that involve many different libraries/namespaces, it may be important for code readability to actually write out the namespaces, since they tell us where you are getting different functions/variables/classes from.</p>
+<p><strong>However</strong>, you should <strong>not put</strong> <code class="docutils literal notranslate"><span class="pre">using</span> <span class="pre">namespace</span></code> <strong>lines in your header files (<code class="docutils literal notranslate"><span class="pre">.hpp</span></code>)</strong>. Doing this is generally regarded very bad practice. The reason is that if you do e.g.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">some_namespace</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>in a header file, this line will also affect all <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> files (all compilation units) that include your header file at the beginning. So you end up “polluting” the main namespace of that <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> file with everything from <code class="docutils literal notranslate"><span class="pre">some_namespace</span></code>, even though the person who wrote that <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> file probably just included your header file to get access to some specific variables/functions/classes from your code. And if <code class="docutils literal notranslate"><span class="pre">some_namespace</span></code> e.g. contained a variable <code class="docutils literal notranslate"><span class="pre">some_variable</span></code>, this means that the person writing the <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> file would get a surprising error message if they happened to also have a variable named <code class="docutils literal notranslate"><span class="pre">some_variable</span></code> in their code.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
