@@ -106,7 +106,7 @@ int main ()
 
   // Create a vector<double> of length 5, with all 
   // elements intitialised to 1.0
-  std::vector<int> v3(5, 1.0);   
+  std::vector<double> v3(5, 1.0);   
 
   // Create a vector<std::string> of length 3, 
   // with all elements initialised differently
@@ -191,7 +191,7 @@ Detailed documentation for `std::map` can be found [here](https://en.cppreferenc
 
 ## Containers of containers
 
-Keep in mind that you can put containers inside other containers, which can sometimes be useful. Here's a silly example, where we construct a map of type string --> vector-of-strings:
+Keep in mind that you can put containers inside other containers, which can sometimes be useful. Here's a silly example, where we construct a map of type string &rarr; vector-of-strings:
 
 ```cpp
 std::map<std::string, std::vector<std::string>> countries_europe;
