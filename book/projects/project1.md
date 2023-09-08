@@ -2,17 +2,18 @@
 
 ## Practicalities
 
-- **Deadline:** September 12, at 23:59
+- **Deadline:** Tuesday, September 12, at 23:59
 
 - **Format:**
   - A pdf document, typeset in LaTeX, with answers to all the problems below. You deliver the pdf on Canvas.
-  - Code (with comments, of course) on a GitHub repo, with the repo link provided in the pdf document.
+  - Code (with comments, of course) on a UiO GitHub repo ([github.uio.no](https://github.uio.no/)), with the URL to you repo written in the pdf document.
+  - You *must* deliver via your group on Canvas (even if you are working alone).
 
 - **Not a complete report:** For project 1, we do not require you to write a proper scientific report --- only a document with an answer for each problem. But the quality of the presentation still matters, of course. So pay attention to figures, figure captions, grammar, etc.
 
-- **Collaboration:** If you are collaborating with others (*and we hope you are!*) you *must* join the same project group on Canvas. The group hands in a single pdf. Remember to list everyone's name in the pdf.
+- **Collaboration:** We *strongly* encourage you to collaborate with others, in groups up to four students. The group hands in a single pdf. (So make sure you all join the same group on Canvas.) Remember to list everyone's name in the pdf.
 
-- **Reproducibility:** Your code should be available on a GitHub repo. You can refer to relevant parts of your code in your answers. Make sure to include a README file in the repo that explains how the code should be compiled and run in order to reproduce your results.
+- **Reproducibility:** Your code should be available on a GitHub repo. You can refer to relevant parts of your code in your answers. Make sure to include a README file in the repo that briefly explains how the code is organized, and how it should be compiled and run in order to reproduce your results.
 
 - **Figures:** Figures included in your LaTeX document should be made as vector graphics (e.g. `.pdf` files), rather than raster graphics (e.g. `.png` files). If you are making plots with `matplotlib.pyplot` in Python, this is as simple as calling `plt.savefig("figure.pdf")` rather than `plt.savefig("figure.png")`.
 
