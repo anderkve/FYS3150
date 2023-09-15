@@ -18,7 +18,7 @@ Here's a step-by-step instruction to create a repository ("repo"):
 
 ![homepage](./imgs/github_homepage.png)
 
-- Click on the green button named *New*. You should be redirected to a page that looks like this:
+- Click on the green button named *Create repository*. You should be redirected to a page that looks like this:
 
 ![create_repo](./imgs/create_repo.png)
 
