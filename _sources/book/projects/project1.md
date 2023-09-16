@@ -71,7 +71,7 @@ Make a plot of the exact solution above, using the following strategy:
 
 ### Problem 3
 
-Derive a discretized version of the Possion equation. You don't have to show every step of your derivation, but include the main steps and a couple of sentences to explain the logic.
+Derive a discretized version of the Poisson equation. You don't have to show every step of your derivation, but include the main steps and a couple of sentences to explain the logic.
 
 *Notation:* Make sure that your notation clearly distinguishes the *discretized approximation to $u(x)$* from the *actual exact $u(x)$*. Here we will use $v$ to represent an approximation to $u$.
 
@@ -91,7 +91,7 @@ Make sure to specify how an element of $\vec{g}$ is related to the variables in 
 
 ### Problem 5
 
-Let the vector $\vec{v}^*$ of length $m$ represent a complete solution of the discretized Poisson equation, with corresponding $x$ values given by the lenght-$m$ vector $\vec{x}$. Let $\mathbf{A}$ be an $n \times n$ matrix.
+Let the vector $\vec{v}^*$ of length $m$ represent a complete solution of the discretized Poisson equation, with corresponding $x$ values given by the length-$m$ vector $\vec{x}$. Let $\mathbf{A}$ be an $n \times n$ matrix.
 
 **a)** How is $n$ related to $m$?
 
@@ -221,11 +221,11 @@ int main ()
 ```
 
 
-Alternatively, you can use the C library `time.h`. Here's a code snippet demonstrating that:
+Alternatively, you can use the older C timing library by including `<ctime>`. Here's a code snippet demonstrating that:
 
 
 ```c
-#include <time.h>
+#include <ctime>
 
 int main ()
 {
@@ -233,14 +233,14 @@ int main ()
   // ...
 
   // Start measuring time
-  clock_t t1 = clock();
+  std::clock_t t1 = std::clock();
 
   //
   // The code you want to perform timing on
   //
 
   // Stop measuring time
-  clock_t t2 = clock();
+  std::clock_t t2 = std::clock();
 
   // Calculate the elapsed time.
   double duration_seconds = ((double) (t2 - t1)) / CLOCKS_PER_SEC;

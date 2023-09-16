@@ -813,7 +813,7 @@ u(x) = 1 - (1 - e^{-10}) x - e^{-10 x}.
 </section>
 <section id="problem-3">
 <h3>Problem 3<a class="headerlink" href="#problem-3" title="Permalink to this headline">#</a></h3>
-<p>Derive a discretized version of the Possion equation. You don’t have to show every step of your derivation, but include the main steps and a couple of sentences to explain the logic.</p>
+<p>Derive a discretized version of the Poisson equation. You don’t have to show every step of your derivation, but include the main steps and a couple of sentences to explain the logic.</p>
 <p><em>Notation:</em> Make sure that your notation clearly distinguishes the <em>discretized approximation to <span class="math notranslate nohighlight">\(u(x)\)</span></em> from the <em>actual exact <span class="math notranslate nohighlight">\(u(x)\)</span></em>. Here we will use <span class="math notranslate nohighlight">\(v\)</span> to represent an approximation to <span class="math notranslate nohighlight">\(u\)</span>.</p>
 </section>
 <section id="problem-4">
@@ -828,7 +828,7 @@ u(x) = 1 - (1 - e^{-10}) x - e^{-10 x}.
 </section>
 <section id="problem-5">
 <h3>Problem 5<a class="headerlink" href="#problem-5" title="Permalink to this headline">#</a></h3>
-<p>Let the vector <span class="math notranslate nohighlight">\(\vec{v}^*\)</span> of length <span class="math notranslate nohighlight">\(m\)</span> represent a complete solution of the discretized Poisson equation, with corresponding <span class="math notranslate nohighlight">\(x\)</span> values given by the lenght-<span class="math notranslate nohighlight">\(m\)</span> vector <span class="math notranslate nohighlight">\(\vec{x}\)</span>. Let <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> be an <span class="math notranslate nohighlight">\(n \times n\)</span> matrix.</p>
+<p>Let the vector <span class="math notranslate nohighlight">\(\vec{v}^*\)</span> of length <span class="math notranslate nohighlight">\(m\)</span> represent a complete solution of the discretized Poisson equation, with corresponding <span class="math notranslate nohighlight">\(x\)</span> values given by the length-<span class="math notranslate nohighlight">\(m\)</span> vector <span class="math notranslate nohighlight">\(\vec{x}\)</span>. Let <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> be an <span class="math notranslate nohighlight">\(n \times n\)</span> matrix.</p>
 <p><strong>a)</strong> How is <span class="math notranslate nohighlight">\(n\)</span> related to <span class="math notranslate nohighlight">\(m\)</span>?</p>
 <p><strong>b)</strong> What part of the complete solution <span class="math notranslate nohighlight">\(\vec{v}^*\)</span> do we find when we solve Eq. <a class="reference internal" href="#equation-matrix-eq">(3)</a> for <span class="math notranslate nohighlight">\(\vec{v}\)</span>?</p>
 </section>
@@ -931,8 +931,8 @@ What do you expect would happen if you attempted to run code for the case $n = 1
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>Alternatively, you can use the C library <code class="docutils literal notranslate"><span class="pre">time.h</span></code>. Here’s a code snippet demonstrating that:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;time.h&gt;</span><span class="cp"></span>
+<p>Alternatively, you can use the older C timing library by including <code class="docutils literal notranslate"><span class="pre">&lt;ctime&gt;</span></code>. Here’s a code snippet demonstrating that:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ctime&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">()</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
@@ -940,14 +940,14 @@ What do you expect would happen if you attempted to run code for the case $n = 1
 <span class="w">  </span><span class="c1">// ...</span>
 
 <span class="w">  </span><span class="c1">// Start measuring time</span>
-<span class="w">  </span><span class="kt">clock_t</span><span class="w"> </span><span class="n">t1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clock</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="kt">clock_t</span><span class="w"> </span><span class="n">t1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">clock</span><span class="p">();</span><span class="w"></span>
 
 <span class="w">  </span><span class="c1">//</span>
 <span class="w">  </span><span class="c1">// The code you want to perform timing on</span>
 <span class="w">  </span><span class="c1">//</span>
 
 <span class="w">  </span><span class="c1">// Stop measuring time</span>
-<span class="w">  </span><span class="kt">clock_t</span><span class="w"> </span><span class="n">t2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clock</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="kt">clock_t</span><span class="w"> </span><span class="n">t2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">clock</span><span class="p">();</span><span class="w"></span>
 
 <span class="w">  </span><span class="c1">// Calculate the elapsed time.</span>
 <span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">duration_seconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="kt">double</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">t2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t1</span><span class="p">))</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">CLOCKS_PER_SEC</span><span class="p">;</span><span class="w"></span>
