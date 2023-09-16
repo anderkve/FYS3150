@@ -87,7 +87,7 @@ where
   - $d = 2/h^2$ 
 - *Note:* In contrast to project 1, we here keep the factor $1/h^2$ as part of the definition of $\mathbf{A}$.
 
-To solve this matrix equation means finding the pairs of eigenvalues and eigenvectors, ($\lambda^{(i)}, \vec{v}^{(i)}$), that satify Eq. {eq}`bb_eq_3`. These eigenvectors are then our discretized approximations to the true *eigenfunctions* $u^{(i)}(\hat{x})$ that are the solutions of the differential equation in Eq. {eq}`bb_eq_2`.
+To solve this matrix equation means finding the pairs of eigenvalues and eigenvectors, ($\lambda^{(j)}, \vec{v}^{(j)}$), that satify Eq. {eq}`bb_eq_3`. These eigenvectors are then our discretized approximations to the true *eigenfunctions* $u^{(j)}(\hat{x})$ that are the solutions of the differential equation in Eq. {eq}`bb_eq_2`.
 
 -----
 
@@ -97,11 +97,11 @@ To solve this matrix equation means finding the pairs of eigenvalues and eigenve
 **Analytical solutions:** For a given matrix size $N \times N$, the eigenvalue problem in Eq. {eq}`bb_eq_3` with the tridiagonal matrix $\mathbf{A} = \text{tridiag}(a,d,a)$ has the following set of analytical eigenvalues and eigenvectors:
 
 $$
-\lambda^{(i)} = d + 2 a \cos\left(\frac{i \pi}{N+1}\right), \quad i = 1,\ldots,N
+\lambda^{(j)} = d + 2 a \cos\left(\frac{j \pi}{N+1}\right), \quad j = 1,\ldots,N
 $$
 
 $$
-\vec{v}^{(i)} = \left[\sin\left(\frac{i \pi}{N+1}\right), \sin\left(\frac{2 i \pi}{N+1}\right), \ldots, \sin\left(\frac{N i \pi}{N+1}\right)\right]^T,\quad i = 1,\ldots,N
+\vec{v}^{(j)} = \left[\sin\left(\frac{j \pi}{N+1}\right), \sin\left(\frac{2 j \pi}{N+1}\right), \ldots, \sin\left(\frac{N j \pi}{N+1}\right)\right]^T,\quad j = 1,\ldots,N
 $$
 
 ----

@@ -776,18 +776,18 @@ h = \frac{\hat{x}_{\text{max}} - \hat{x}_{\text{min}}}{n} = \frac{1 - 0}{n} = \f
 </li>
 <li><p><em>Note:</em> In contrast to project 1, we here keep the factor <span class="math notranslate nohighlight">\(1/h^2\)</span> as part of the definition of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>.</p></li>
 </ul>
-<p>To solve this matrix equation means finding the pairs of eigenvalues and eigenvectors, (<span class="math notranslate nohighlight">\(\lambda^{(i)}, \vec{v}^{(i)}\)</span>), that satify Eq. <a class="reference internal" href="#equation-bb-eq-3">(6)</a>. These eigenvectors are then our discretized approximations to the true <em>eigenfunctions</em> <span class="math notranslate nohighlight">\(u^{(i)}(\hat{x})\)</span> that are the solutions of the differential equation in Eq. <a class="reference internal" href="#equation-bb-eq-2">(5)</a>.</p>
+<p>To solve this matrix equation means finding the pairs of eigenvalues and eigenvectors, (<span class="math notranslate nohighlight">\(\lambda^{(j)}, \vec{v}^{(j)}\)</span>), that satify Eq. <a class="reference internal" href="#equation-bb-eq-3">(6)</a>. These eigenvectors are then our discretized approximations to the true <em>eigenfunctions</em> <span class="math notranslate nohighlight">\(u^{(j)}(\hat{x})\)</span> that are the solutions of the differential equation in Eq. <a class="reference internal" href="#equation-bb-eq-2">(5)</a>.</p>
 <hr class="docutils" />
 <p><strong>Notation:</strong> We will use <span class="math notranslate nohighlight">\(N\)</span> to denote the size of the matrix, so that <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is an <span class="math notranslate nohighlight">\(N \times N\)</span> matrix, and <span class="math notranslate nohighlight">\(\vec{v}\)</span> a column vector of length <span class="math notranslate nohighlight">\(N\)</span>. Make sure not to confuse <span class="math notranslate nohighlight">\(N\)</span> with the number of <em>steps</em> in our discretization of <span class="math notranslate nohighlight">\(\hat{x}\)</span> (<span class="math notranslate nohighlight">\(n\)</span> steps), or the number of <span class="math notranslate nohighlight">\(\hat{x}_i\)</span> points (<span class="math notranslate nohighlight">\(n+1\)</span> points). They are related as <span class="math notranslate nohighlight">\(N = n-1\)</span>.</p>
 <hr class="docutils" />
 <p><strong>Analytical solutions:</strong> For a given matrix size <span class="math notranslate nohighlight">\(N \times N\)</span>, the eigenvalue problem in Eq. <a class="reference internal" href="#equation-bb-eq-3">(6)</a> with the tridiagonal matrix <span class="math notranslate nohighlight">\(\mathbf{A} = \text{tridiag}(a,d,a)\)</span> has the following set of analytical eigenvalues and eigenvectors:</p>
 <div class="math notranslate nohighlight">
 \[
-\lambda^{(i)} = d + 2 a \cos\left(\frac{i \pi}{N+1}\right), \quad i = 1,\ldots,N
+\lambda^{(j)} = d + 2 a \cos\left(\frac{j \pi}{N+1}\right), \quad j = 1,\ldots,N
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-\vec{v}^{(i)} = \left[\sin\left(\frac{i \pi}{N+1}\right), \sin\left(\frac{2 i \pi}{N+1}\right), \ldots, \sin\left(\frac{N i \pi}{N+1}\right)\right]^T,\quad i = 1,\ldots,N
+\vec{v}^{(j)} = \left[\sin\left(\frac{j \pi}{N+1}\right), \sin\left(\frac{2 j \pi}{N+1}\right), \ldots, \sin\left(\frac{N j \pi}{N+1}\right)\right]^T,\quad j = 1,\ldots,N
 \]</div>
 <hr class="docutils" />
 <p><strong>Scaling of eigenvectors:</strong> Remember that if <span class="math notranslate nohighlight">\(\vec{v}\)</span> is an eigenvector of <span class="math notranslate nohighlight">\(\mathbf{A} \vec{v} = \lambda \vec{v}\)</span>, then a scaled vector <span class="math notranslate nohighlight">\(c \vec{v}\)</span>, where <span class="math notranslate nohighlight">\(c\)</span> is some constant, is an equally good eigenvector. (Remember that c can be negative.) When presenting your results, and when comparing to results from Armadillo, it will be useful to scale each eigenvector to have unit norm (i.e. vector length 1). You can do this easily using the Armadillo function <code class="docutils literal notranslate"><span class="pre">arma::normalise</span></code> described <a class="reference external" href="http://arma.sourceforge.net/docs.html#normalise">here</a>.</p>
