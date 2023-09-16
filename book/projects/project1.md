@@ -221,11 +221,11 @@ int main ()
 ```
 
 
-Alternatively, you can use the C library `time.h`. Here's a code snippet demonstrating that:
+Alternatively, you can use the older C timing library by including `<ctime>`. Here's a code snippet demonstrating that:
 
 
 ```c
-#include <time.h>
+#include <ctime>
 
 int main ()
 {
@@ -233,14 +233,14 @@ int main ()
   // ...
 
   // Start measuring time
-  clock_t t1 = clock();
+  std::clock_t t1 = std::clock();
 
   //
   // The code you want to perform timing on
   //
 
   // Stop measuring time
-  clock_t t2 = clock();
+  std::clock_t t2 = std::clock();
 
   // Calculate the elapsed time.
   double duration_seconds = ((double) (t2 - t1)) / CLOCKS_PER_SEC;
