@@ -12,14 +12,14 @@
 // Constructor that takes a vector of LotteryBall_collection as input
 LotteryMachine::LotteryMachine(std::vector<LotteryBall> ball_collection_in)
 {
-  ball_collection = ball_collection_in;
+  ball_collection_ = ball_collection_in;
 }
 
 
 // Method that adds a ball to the machine by copying an input LotteryBall
 void LotteryMachine::add_ball(LotteryBall ball_in)
 {
-  ball_collection.push_back(ball_in);
+  ball_collection_.push_back(ball_in);
 }
 
 
@@ -40,14 +40,14 @@ void LotteryMachine::add_n_balls(int n, std::string color)
 // Method that counts returns the number of balls, using the std::vector::size() method
 int LotteryMachine::ball_count()
 {
-  return ball_collection.size();
+  return ball_collection_.size();
 }
 
 
 // Throw an error if the machine is empty. Uses the std::vector::empty() method to check.
 void LotteryMachine::error_if_empty()
 {
-  if(ball_collection.empty())
+  if(ball_collection_.empty())
   {
     throw std::runtime_error("Can't sample an empty LotteryMachine, you know.");
   }
@@ -60,11 +60,11 @@ LotteryBall LotteryMachine::sample_ball_with_replacement()
   // Check that the machine isn't empty
   error_if_empty();
 
-  // Get a random index between 0 and ball_collection.size()
-  int ball_index = rand() % ball_collection.size();
+  // Get a random index between 0 and ball_collection_.size()
+  int ball_index = rand() % ball_collection_.size();
 
   // Return (a copy of) that ball
-  return ball_collection[ball_index];
+  return ball_collection_[ball_index];
 }
 
 
@@ -74,14 +74,14 @@ LotteryBall LotteryMachine::sample_ball_without_replacement()
   // Check that the machine isn't empty
   error_if_empty();
 
-  // Get a random index between 0 and ball_collection.size()
-  int ball_index = rand() % ball_collection.size();
+  // Get a random index between 0 and ball_collection_.size()
+  int ball_index = rand() % ball_collection_.size();
 
   // Copy the ball
-  LotteryBall sampled_ball = ball_collection[ball_index];
+  LotteryBall sampled_ball = ball_collection_[ball_index];
 
   // Delete the ball from the collection, using the std::vector::erase method
-  ball_collection.erase(ball_collection.begin() + ball_index);
+  ball_collection_.erase(ball_collection_.begin() + ball_index);
 
   // Return the copyy
   return sampled_ball;

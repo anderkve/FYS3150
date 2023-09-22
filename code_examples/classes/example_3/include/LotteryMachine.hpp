@@ -14,7 +14,7 @@ class LotteryMachine
   private:
 
     // The LotteryMachine holds a collection of LotteryBalls
-    std::vector<LotteryBall> ball_collection;
+    std::vector<LotteryBall> ball_collection_;
 
   // Public stuff
   public:

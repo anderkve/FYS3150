@@ -22,7 +22,7 @@ See example_3 for the same example but structured using multiple files as sugges
 How to build and run the examples
 ---------------------------------
 
-Build: g++ main.cpp -o main.exe
-Run: ./main.exe
+Build: g++ main.cpp -o main
+Run: ./main
 
 

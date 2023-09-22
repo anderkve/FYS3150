@@ -59,7 +59,7 @@ class LotteryMachine
   private:
 
     // The LotteryMachine holds a collection of LotteryBalls
-    std::vector<LotteryBall> ball_collection;
+    std::vector<LotteryBall> ball_collection_;
 
 
   // Public stuff
@@ -71,13 +71,13 @@ class LotteryMachine
     // Constructor that takes a vector of LotteryBall_collection as input
     LotteryMachine(std::vector<LotteryBall> ball_collection_in)
     {
-      ball_collection = ball_collection_in;
+      ball_collection_ = ball_collection_in;
     }
 
     // Method that adds a ball to the machine by copying an input LotteryBall
     void add_ball(LotteryBall ball_in)
     {
-      ball_collection.push_back(ball_in);
+      ball_collection_.push_back(ball_in);
     }
 
     // Method that adds n balls of of a given color. The balls are numbered 1 to n
@@ -96,13 +96,13 @@ class LotteryMachine
     // Method that counts returns the number of balls, using the std::vector::size() method
     int ball_count()
     {
-      return ball_collection.size();
+      return ball_collection_.size();
     }
 
     // Throw an error if the machine is empty. Uses the std::vector::empty() method to check.
     void error_if_empty()
     {
-      if(ball_collection.empty())
+      if(ball_collection_.empty())
       {
         throw std::runtime_error("Can't sample an empty LotteryMachine, you know.");
       }
@@ -114,11 +114,11 @@ class LotteryMachine
       // Check that the machine isn't empty
       error_if_empty();
 
-      // Get a random index between 0 and ball_collection.size()
-      int ball_index = rand() % ball_collection.size();
+      // Get a random index between 0 and ball_collection_.size()
+      int ball_index = rand() % ball_collection_.size();
 
       // Return (a copy of) that ball
-      return ball_collection[ball_index];
+      return ball_collection_[ball_index];
     }
 
     // Sample a ball and *don't* put it back
@@ -127,14 +127,14 @@ class LotteryMachine
       // Check that the machine isn't empty
       error_if_empty();
 
-      // Get a random index between 0 and ball_collection.size()
-      int ball_index = rand() % ball_collection.size();
+      // Get a random index between 0 and ball_collection_.size()
+      int ball_index = rand() % ball_collection_.size();
 
       // Copy the ball
-      LotteryBall sampled_ball = ball_collection[ball_index];
+      LotteryBall sampled_ball = ball_collection_[ball_index];
 
       // Delete the ball from the collection, using the std::vector::erase method
-      ball_collection.erase(ball_collection.begin() + ball_index);
+      ball_collection_.erase(ball_collection_.begin() + ball_index);
 
       // Return the copyy
       return sampled_ball;

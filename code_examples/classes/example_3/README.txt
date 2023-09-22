@@ -18,7 +18,7 @@ Files:
 How to build and run the examples
 ---------------------------------
 
-Build: g++ main.cpp src/LotteryBall.cpp src/LotteryMachine.cpp -I include/ -o main.exe
-Run: ./main.exe
+Build: g++ main.cpp src/LotteryBall.cpp src/LotteryMachine.cpp -I include/ -o main
+Run: ./main
 
 
