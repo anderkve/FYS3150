@@ -439,7 +439,7 @@ For this task you should implement (at least) the following extensions to your c
   *Note:* To set the seed for Armadillo's random number generator, you can use `arma_rng::set_seed(value)` or `arma_rng::set_seed_random()`.
 
 
-We want to use our simulation to search for resonance frequencies of the system. Starting from a system filled with *100 randomly initalized Ca$^+$ particles*, do the following:
+We want to use our simulation to search for resonance frequencies of the system. Starting from a system filled with *100 randomly initialized Ca$^+$ particles*, do the following:
 
 - For each of the amplitudes $f = 0.1, 0.4, 0.7$, produce a graph that shows *the fraction of particles that are still trapped after $500\, \textrm{µs}$* as a function of the applied angular frequency $\omega_V$. Plot the three graphs in the same figure. You should explore frequencies in the range $\omega_V \in (0.2, 2.5)\, \textrm{MHz}$. For this broad exploration of frequencies you can *switch off* the Coulomb interactions between the particles in the trap, as your code should then run much faster. Make sure you use sufficiently small steps along the $\omega_V$ axis -- steps of $0.02\, \textrm{MHz}$ can be a starting point. Comment on your results. Some suggested things to discusss:
 
