@@ -24,7 +24,7 @@ In this project, you'll study the effects of a device used to store charged part
 
 ### Reminder on electrodynamics and classical mechanics
 
-Not everyone in this course study physics as their main subject. Therefore we'll summarize the main equations from electrodynamics that you need to work on this project. Good ol' classical physics is sufficient to study the basics of Penning trap, so we won't worry about quantum aspects.
+Not everyone in this course study physics as their main subject. Therefore we'll summarize the main equations from electrodynamics that you need to work on this project. Good old classical physics is sufficient to study the basics of Penning trap, so we won't worry about quantum aspects.
 
 - The **electric field** ($\mathbf{E}$) is related to the **electric potential** ($V$) through the equation
 
