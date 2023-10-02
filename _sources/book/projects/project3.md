@@ -59,6 +59,11 @@ Not everyone in this course study physics as their main subject. Therefore we'll
   where $m$ denotes the mass of the particle and $\ddot{\mathbf{r}} \equiv d^2\mathbf{r}/dt^2$.
 
 
+```{note}
+Moving particles will in reality also induce magnetic forces on each other, but these forces will be smaller than the Coulomb forces by a factor $\mathcal{O}(v^2/c^2)$. We ignore these magnetic interactions since we are working with particle velocities far below the speed of light in vacuum, $c$. This simplification is often referred to as the *electrostatic approximation*.
+```
+
+
 ### The Penning trap
 
 A schematic of a Penning trap is shown in figure {numref}`penning-fig`. Charged particles are confined using constant electric and magnetic fields. The electric field is set by three electrodes: the two end caps (a) and a ring (b) (only the ring cross-section is shown). The constant and homogenous magnetic field in the trap is set up by a cylinder magnet (c) (only cross-section shown). The red dot represents a (positively charged) trapped particle.
@@ -113,17 +118,9 @@ $$ (z_eq)
 where we define 
 
 $$
-\omega_0 \equiv \frac{q B_0}{m} \quad \text{and} \quad \omega_z^2 \equiv \frac{2 q V_0}{md^2}.
+\omega_0 \equiv \frac{q B_0}{m}, \quad \omega_z^2 \equiv \frac{2 q V_0}{md^2}.
 $$ 
 
-<!-- 
-and 
-
-$$
-\omega_z^2 \equiv 2 q V_0/md^2.
-$$
-
- -->
 Write down the general solution for eq. {eq}`z_eq`. While the above equations of motion are of course equally valid for $q < 0$ and $q > 0$, you can assume $q > 0$ for this project.
 
 
