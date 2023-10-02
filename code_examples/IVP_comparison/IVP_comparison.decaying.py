@@ -134,7 +134,7 @@ plt.sca(ax1)
 plt.plot([t_0, t_max], [0,0], '--', linewidth=1.0, color='0.0')
 t_axis_true = np.linspace(t_0, t_max, 401)
 y_vals_true = y_true(t_axis_true)
-plt.plot(t_axis_true, y_vals_true, '-', linewidth=1.0, color='0.0', label="True")
+plt.plot(t_axis_true, y_vals_true, '-', linewidth=3.0, color='0.0', label="True")
 
 plt.xlim([t_0, t_max])
 plt.ylim([-0.4, 1.2])
