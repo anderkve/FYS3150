@@ -24,7 +24,7 @@ In this project, you'll study the effects of a device used to store charged part
 
 ### Reminder on electrodynamics and classical mechanics
 
-Not everyone in this course study physics as their main subject. Therefore we'll summarize the main equations from electrodynamics that you need to work on this project. Good ol' classical physics is sufficient to study the basics of Penning trap, so we won't worry about quantum aspects.
+Not everyone in this course study physics as their main subject. Therefore we'll summarize the main equations from electrodynamics that you need to work on this project. Good old classical physics is sufficient to study the basics of Penning trap, so we won't worry about quantum aspects.
 
 - The **electric field** ($\mathbf{E}$) is related to the **electric potential** ($V$) through the equation
 
@@ -77,7 +77,7 @@ $$
 V(x, y, z) = \frac{V_0}{2d^2}(2z^2 - x^2 - y^2).
 $$ (penning_potential)
 
-Here $V_0$ is the potential applied to the electrodes and $d$ is called the *characteristic dimension*, which represents the length scale for the region between the electrodes. (Techincally, $d$ is defined as $d = \sqrt{z_0^2 + r_0^2/2}$, where $z_0$ is the distance from the center to one of the end caps and $r_0$ is the distance from the center to the ring.)
+Here $V_0$ is the potential applied to the electrodes and $d$ is called the *characteristic dimension*, which represents the length scale for the region between the electrodes. (Technically, $d$ is defined as $d = \sqrt{z_0^2 + r_0^2/2}$, where $z_0$ is the distance from the center to one of the end caps and $r_0$ is the distance from the center to the ring.)
 
 The electric field traps the particle in the $z$-direction, but the particle can still escape in the radial direction (in the $xy$-plane). Therefore, a homogeneous magnetic field is imposed in the $z$-direction of the apparatus, i.e
 
@@ -110,8 +110,8 @@ $$
 \ddot{z} + \omega_z^2 z = 0.
 $$ (z_eq)
 
-where we define $\omega_0 \equiv \frac{q B_0}{m}$ and $\omega_z^2 \equiv \frac{2 q V_0}{md^2}$.
-Write down the general solution for equation {eq}`z_eq`. While the above equations of motion are of course equally valid for $q < 0$ and $q > 0$, you can assume $q > 0$ for this project.
+where we define $\omega_0 \equiv q B_0/m$ and $\omega_z^2 \equiv 2 q V_0/md^2$.
+Write down the general solution for eq. {eq}`z_eq`. While the above equations of motion are of course equally valid for $q < 0$ and $q > 0$, you can assume $q > 0$ for this project.
 
 
 #### Problem 2
@@ -145,7 +145,7 @@ $$
 $$
 
 
-The physical coordinates are then found as $x(t) = \text{Re} f(t)$ and $y(t). = \text{Im} f(t)$
+The physical coordinates are then found as $x(t) = \text{Re} f(t)$ and $y(t) = \text{Im} f(t)$.
 
 What is the necessary constraint on $\omega_0$ and $\omega_z$ to obtain a bounded solution for the movement in the $xy$-plane (i.e. a solution where $|f(t)| < \infty$ as $t\to\infty$). Also express this as a constraint that relates the Penning trap parameters ($B_0$, $V_0$, $d$) to the particle properties ($m$, $q$).
 
@@ -173,14 +173,14 @@ $$
 z(0) = z_0, \qquad \dot{z}(0) = 0.
 $$
 
-From equation {eq}`z_eq` and the initial values for $z(0)$ and $\dot{z}(0)$ we get that the specific solution for $z(t)$ in this case is 
+From eq. {eq}`z_eq` and the initial values for $z(0)$ and $\dot{z}(0)$ we get that the specific solution for $z(t)$ in this case is 
 
 $$
 z(t) = z_0 \cos(w_z t).
 $$
 
 
-For the movement in the $xy$-plane, the specific solution for $f(t)$ is given by {eq}`f_general_sol` with 
+For the movement in the $xy$-plane, the specific solution for $f(t)$ is given by eq. {eq}`f_general_sol` with 
 
 $$
 A_+ = \frac{v_0 + \omega_- x_0}{\omega_- - \omega_+}, \qquad A_- = - \frac{v_0 + \omega_+ x_0}{\omega_- - \omega_+},
@@ -266,7 +266,7 @@ We note that $V_0$ and $d$ only appear as the ratio $V_0/d^2$, which now takes t
 
 - $V_0/d^2 = 9.65 \, \frac{\mathrm{u}}{(\mathrm{µs})^2 \, \mathrm{e}}$.
 
-We'll use singly-charged Calcium ions ($Ca^+$) as our charged particles.
+We'll use singly-charged Calcium ions (Ca$^+$) as our charged particles.
 
 
 ---
@@ -439,7 +439,7 @@ For this task you should implement (at least) the following extensions to your c
   *Note:* To set the seed for Armadillo's random number generator, you can use `arma_rng::set_seed(value)` or `arma_rng::set_seed_random()`.
 
 
-We want to use our simulation to search for resonance frequencies of the system. Starting from a system filled with *100 randomly initalized $Ca^+$ particles*, do the following:
+We want to use our simulation to search for resonance frequencies of the system. Starting from a system filled with *100 randomly initialized Ca$^+$ particles*, do the following:
 
 - For each of the amplitudes $f = 0.1, 0.4, 0.7$, produce a graph that shows *the fraction of particles that are still trapped after $500\, \textrm{µs}$* as a function of the applied angular frequency $\omega_V$. Plot the three graphs in the same figure. You should explore frequencies in the range $\omega_V \in (0.2, 2.5)\, \textrm{MHz}$. For this broad exploration of frequencies you can *switch off* the Coulomb interactions between the particles in the trap, as your code should then run much faster. Make sure you use sufficiently small steps along the $\omega_V$ axis -- steps of $0.02\, \textrm{MHz}$ can be a starting point. Comment on your results. Some suggested things to discusss:
 
