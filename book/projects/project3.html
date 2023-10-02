@@ -828,7 +828,7 @@ title="Print to PDF"
 <p>In this project, you’ll study the effects of a device used to store charged particles. This device is known as a <strong>Penning trap</strong> and utilizes a static configuration of electric and magnetic fields to confine charged particles, so that they can be used for various types of measurements and experiments. In particular, experiments at CERN such as ALPHA, AEgIS and BASE use Penning traps to control the antimatter in their experiments.</p>
 <section id="reminder-on-electrodynamics-and-classical-mechanics">
 <h3>Reminder on electrodynamics and classical mechanics<a class="headerlink" href="#reminder-on-electrodynamics-and-classical-mechanics" title="Permalink to this headline">#</a></h3>
-<p>Not everyone in this course study physics as their main subject. Therefore we’ll summarize the main equations from electrodynamics that you need to work on this project. Good ol’ classical physics is sufficient to study the basics of Penning trap, so we won’t worry about quantum aspects.</p>
+<p>Not everyone in this course study physics as their main subject. Therefore we’ll summarize the main equations from electrodynamics that you need to work on this project. Good old classical physics is sufficient to study the basics of Penning trap, so we won’t worry about quantum aspects.</p>
 <ul>
 <li><p>The <strong>electric field</strong> (<span class="math notranslate nohighlight">\(\mathbf{E}\)</span>) is related to the <strong>electric potential</strong> (<span class="math notranslate nohighlight">\(V\)</span>) through the equation</p>
 <div class="math notranslate nohighlight" id="equation-e-field-pot">
@@ -874,7 +874,7 @@ title="Print to PDF"
 <span class="eqno">(11)<a class="headerlink" href="#equation-penning-potential" title="Permalink to this equation">#</a></span>\[
 V(x, y, z) = \frac{V_0}{2d^2}(2z^2 - x^2 - y^2).
 \]</div>
-<p>Here <span class="math notranslate nohighlight">\(V_0\)</span> is the potential applied to the electrodes and <span class="math notranslate nohighlight">\(d\)</span> is called the <em>characteristic dimension</em>, which represents the length scale for the region between the electrodes. (Techincally, <span class="math notranslate nohighlight">\(d\)</span> is defined as <span class="math notranslate nohighlight">\(d = \sqrt{z_0^2 + r_0^2/2}\)</span>, where <span class="math notranslate nohighlight">\(z_0\)</span> is the distance from the center to one of the end caps and <span class="math notranslate nohighlight">\(r_0\)</span> is the distance from the center to the ring.)</p>
+<p>Here <span class="math notranslate nohighlight">\(V_0\)</span> is the potential applied to the electrodes and <span class="math notranslate nohighlight">\(d\)</span> is called the <em>characteristic dimension</em>, which represents the length scale for the region between the electrodes. (Technically, <span class="math notranslate nohighlight">\(d\)</span> is defined as <span class="math notranslate nohighlight">\(d = \sqrt{z_0^2 + r_0^2/2}\)</span>, where <span class="math notranslate nohighlight">\(z_0\)</span> is the distance from the center to one of the end caps and <span class="math notranslate nohighlight">\(r_0\)</span> is the distance from the center to the ring.)</p>
 <p>The electric field traps the particle in the <span class="math notranslate nohighlight">\(z\)</span>-direction, but the particle can still escape in the radial direction (in the <span class="math notranslate nohighlight">\(xy\)</span>-plane). Therefore, a homogeneous magnetic field is imposed in the <span class="math notranslate nohighlight">\(z\)</span>-direction of the apparatus, i.e</p>
 <div class="math notranslate nohighlight" id="equation-b-field">
 <span class="eqno">(12)<a class="headerlink" href="#equation-b-field" title="Permalink to this equation">#</a></span>\[
@@ -901,10 +901,22 @@ V(x, y, z) = \frac{V_0}{2d^2}(2z^2 - x^2 - y^2).
 \]</div>
 <div class="math notranslate nohighlight" id="equation-z-eq">
 <span class="eqno">(15)<a class="headerlink" href="#equation-z-eq" title="Permalink to this equation">#</a></span>\[
-\ddot{z} + \omega_z^2 z = 0.
+\ddot{z} + \omega_z^2 z = 0, 
 \]</div>
-<p>where we define <span class="math notranslate nohighlight">\(\omega_0 \equiv \frac{q B_0}{m}\)</span> and <span class="math notranslate nohighlight">\(\omega_z^2 \equiv \frac{2 q V_0}{md^2}\)</span>.
-Write down the general solution for equation <a class="reference internal" href="#equation-z-eq">(15)</a>. While the above equations of motion are of course equally valid for <span class="math notranslate nohighlight">\(q &lt; 0\)</span> and <span class="math notranslate nohighlight">\(q &gt; 0\)</span>, you can assume <span class="math notranslate nohighlight">\(q &gt; 0\)</span> for this project.</p>
+<p>where we define</p>
+<div class="math notranslate nohighlight">
+\[
+\omega_0 \equiv \frac{q B_0}{m} \quad \text{and} \quad \omega_z^2 \equiv \frac{2 q V_0}{md^2}.
+\]</div>
+<!-- 
+and 
+
+$$
+\omega_z^2 \equiv 2 q V_0/md^2.
+$$
+
+ -->
+<p>Write down the general solution for eq. <a class="reference internal" href="#equation-z-eq">(15)</a>. While the above equations of motion are of course equally valid for <span class="math notranslate nohighlight">\(q &lt; 0\)</span> and <span class="math notranslate nohighlight">\(q &gt; 0\)</span>, you can assume <span class="math notranslate nohighlight">\(q &gt; 0\)</span> for this project.</p>
 </section>
 <section id="problem-2">
 <h4>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this headline">#</a></h4>
@@ -931,7 +943,7 @@ f(t) = A_+ e^{-i(\omega_+ t + \phi_+)} + A_- e^{-i(\omega_- t + \phi_-)},
 \[
 \omega_\pm = \frac{\omega_0 \pm \sqrt{\omega_0^2 - 2\omega_z^2}}{2}.
 \]</div>
-<p>The physical coordinates are then found as <span class="math notranslate nohighlight">\(x(t) = \text{Re} f(t)\)</span> and <span class="math notranslate nohighlight">\(y(t). = \text{Im} f(t)\)</span></p>
+<p>The physical coordinates are then found as <span class="math notranslate nohighlight">\(x(t) = \text{Re} f(t)\)</span> and <span class="math notranslate nohighlight">\(y(t) = \text{Im} f(t)\)</span>.</p>
 <p>What is the necessary constraint on <span class="math notranslate nohighlight">\(\omega_0\)</span> and <span class="math notranslate nohighlight">\(\omega_z\)</span> to obtain a bounded solution for the movement in the <span class="math notranslate nohighlight">\(xy\)</span>-plane (i.e. a solution where <span class="math notranslate nohighlight">\(|f(t)| &lt; \infty\)</span> as <span class="math notranslate nohighlight">\(t\to\infty\)</span>). Also express this as a constraint that relates the Penning trap parameters (<span class="math notranslate nohighlight">\(B_0\)</span>, <span class="math notranslate nohighlight">\(V_0\)</span>, <span class="math notranslate nohighlight">\(d\)</span>) to the particle properties (<span class="math notranslate nohighlight">\(m\)</span>, <span class="math notranslate nohighlight">\(q\)</span>).</p>
 </section>
 <section id="problem-4">
@@ -955,12 +967,12 @@ y(0) = 0, \qquad \dot{y}(0) = v_0,
 \[
 z(0) = z_0, \qquad \dot{z}(0) = 0.
 \]</div>
-<p>From equation <a class="reference internal" href="#equation-z-eq">(15)</a> and the initial values for <span class="math notranslate nohighlight">\(z(0)\)</span> and <span class="math notranslate nohighlight">\(\dot{z}(0)\)</span> we get that the specific solution for <span class="math notranslate nohighlight">\(z(t)\)</span> in this case is</p>
+<p>From eq. <a class="reference internal" href="#equation-z-eq">(15)</a> and the initial values for <span class="math notranslate nohighlight">\(z(0)\)</span> and <span class="math notranslate nohighlight">\(\dot{z}(0)\)</span> we get that the specific solution for <span class="math notranslate nohighlight">\(z(t)\)</span> in this case is</p>
 <div class="math notranslate nohighlight">
 \[
 z(t) = z_0 \cos(w_z t).
 \]</div>
-<p>For the movement in the <span class="math notranslate nohighlight">\(xy\)</span>-plane, the specific solution for <span class="math notranslate nohighlight">\(f(t)\)</span> is given by <a class="reference internal" href="#equation-f-general-sol">(17)</a> with</p>
+<p>For the movement in the <span class="math notranslate nohighlight">\(xy\)</span>-plane, the specific solution for <span class="math notranslate nohighlight">\(f(t)\)</span> is given by eq. <a class="reference internal" href="#equation-f-general-sol">(17)</a> with</p>
 <div class="math notranslate nohighlight">
 \[
 A_+ = \frac{v_0 + \omega_- x_0}{\omega_- - \omega_+}, \qquad A_- = - \frac{v_0 + \omega_+ x_0}{\omega_- - \omega_+},
@@ -1038,7 +1050,7 @@ free to design in the way you think is best.</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(V_0/d^2 = 9.65 \, \frac{\mathrm{u}}{(\mathrm{µs})^2 \, \mathrm{e}}\)</span>.</p></li>
 </ul>
-<p>We’ll use singly-charged Calcium ions (<span class="math notranslate nohighlight">\(Ca^+\)</span>) as our charged particles.</p>
+<p>We’ll use singly-charged Calcium ions (Ca<span class="math notranslate nohighlight">\(^+\)</span>) as our charged particles.</p>
 </section>
 <hr class="docutils" />
 <section id="problem-5">
@@ -1197,7 +1209,7 @@ Initial positions and velocities for each particle can be sampled from normal di
 <p><em>Note:</em> To set the seed for Armadillo’s random number generator, you can use <code class="docutils literal notranslate"><span class="pre">arma_rng::set_seed(value)</span></code> or <code class="docutils literal notranslate"><span class="pre">arma_rng::set_seed_random()</span></code>.</p>
 </li>
 </ul>
-<p>We want to use our simulation to search for resonance frequencies of the system. Starting from a system filled with <em>100 randomly initalized <span class="math notranslate nohighlight">\(Ca^+\)</span> particles</em>, do the following:</p>
+<p>We want to use our simulation to search for resonance frequencies of the system. Starting from a system filled with <em>100 randomly initialized Ca<span class="math notranslate nohighlight">\(^+\)</span> particles</em>, do the following:</p>
 <ul class="simple">
 <li><p>For each of the amplitudes <span class="math notranslate nohighlight">\(f = 0.1, 0.4, 0.7\)</span>, produce a graph that shows <em>the fraction of particles that are still trapped after <span class="math notranslate nohighlight">\(500\, \textrm{µs}\)</span></em> as a function of the applied angular frequency <span class="math notranslate nohighlight">\(\omega_V\)</span>. Plot the three graphs in the same figure. You should explore frequencies in the range <span class="math notranslate nohighlight">\(\omega_V \in (0.2, 2.5)\, \textrm{MHz}\)</span>. For this broad exploration of frequencies you can <em>switch off</em> the Coulomb interactions between the particles in the trap, as your code should then run much faster. Make sure you use sufficiently small steps along the <span class="math notranslate nohighlight">\(\omega_V\)</span> axis – steps of <span class="math notranslate nohighlight">\(0.02\, \textrm{MHz}\)</span> can be a starting point. Comment on your results. Some suggested things to discusss:</p>
 <ul>
