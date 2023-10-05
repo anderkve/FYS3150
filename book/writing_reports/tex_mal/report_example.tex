@@ -1,50 +1,51 @@
-%% USEFUL LINKS:
-%% -------------
-%%
-%% - UiO LaTeX guides:          https://www.mn.uio.no/ifi/tjenester/it/hjelp/latex/
-%% - Mathematics:               https://en.wikibooks.org/wiki/LaTeX/Mathematics
-%% - Physics:                   https://ctan.uib.no/macros/latex/contrib/physics/physics.pdf
-%% - Basics of Tikz:            https://en.wikibooks.org/wiki/LaTeX/PGF/Tikz
-%% - All the colors!            https://en.wikibooks.org/wiki/LaTeX/Colors
-%% - How to make tables:        https://en.wikibooks.org/wiki/LaTeX/Tables
-%% - Code listing styles:       https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
-%% - \includegraphics           https://en.wikibooks.org/wiki/LaTeX/Importing_Graphics
-%% - Learn more about figures:  https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions
-%% - Automagic bibliography:    https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management  (this one is kinda difficult the first time)
-%%
-%%                              (This document is of class "revtex4-1", the REVTeX Guide explains how the class works)
-%%   REVTeX Guide:              http://www.physics.csbsju.edu/370/papers/Journal_Style_Manuals/auguide4-1.pdf
-%%
-%% COMPILING THE .pdf FILE IN THE LINUX IN THE TERMINAL
-%% ----------------------------------------------------
-%%
-%% [terminal]$ pdflatex report_example.tex
-%%
-%% Run the command twice, always.
-%%
-%% When using references, footnotes, etc. you should run the following chain of commands:
-%%
-%% [terminal]$ pdflatex report_example.tex
-%% [terminal]$ bibtex report_example
-%% [terminal]$ pdflatex report_example.tex
-%% [terminal]$ pdflatex report_example.tex
-%%
-%% This series of commands can of course be gathered into a single-line command:
-%% [terminal]$ pdflatex report_example.tex && bibtex report_example.aux && pdflatex report_example.tex && pdflatex report_example.tex
-%%
-%% ----------------------------------------------------
+% USEFUL LINKS:
+% -------------
+%
+% - UiO LaTeX guides:          https://www.mn.uio.no/ifi/tjenester/it/hjelp/latex/
+% - Mathematics:               https://en.wikibooks.org/wiki/LaTeX/Mathematics
+% - Physics:                   https://ctan.uib.no/macros/latex/contrib/physics/physics.pdf
+% - Basics of Tikz:            https://en.wikibooks.org/wiki/LaTeX/PGF/Tikz
+% - All the colors!            https://en.wikibooks.org/wiki/LaTeX/Colors
+% - How to make tables:        https://en.wikibooks.org/wiki/LaTeX/Tables
+% - Code listing styles:       https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
+% - \includegraphics           https://en.wikibooks.org/wiki/LaTeX/Importing_Graphics
+% - Learn more about figures:  https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions
+% - Automagic bibliography:    https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management  (this one is kinda difficult the first time)
+%
+%                              (This document is of class "revtex4-1", the REVTeX Guide explains how the class works)
+%   REVTeX Guide:              http://www.physics.csbsju.edu/370/papers/Journal_Style_Manuals/auguide4-1.pdf
+%
+%
+% COMPILING THE .pdf FILE IN THE LINUX TERMINAL
+% ---------------------------------------------
+%
+% [terminal]$ pdflatex report_example.tex
+%
+% Run the command twice, always.
+%
+% When using references, footnotes, etc. you should run the following chain of commands:
+%
+% [terminal]$ pdflatex report_example.tex
+% [terminal]$ bibtex report_example
+% [terminal]$ pdflatex report_example.tex
+% [terminal]$ pdflatex report_example.tex
+%
+% This series of commands can of course be gathered into a single-line command:
+% [terminal]$ pdflatex report_example.tex && bibtex report_example.aux && pdflatex report_example.tex && pdflatex report_example.tex
+%
+% ----------------------------------------------------
+
 
 
 \documentclass[english,notitlepage,reprint,nofootinbib]{revtex4-1}  % defines the basic parameters of the document
-% For preview: skriv i terminal: latexmk -pdf -pvc filnavn
 % If you want a single-column, remove "reprint"
 
 % Allows special characters (including æøå)
 \usepackage[utf8]{inputenc}
 % \usepackage[english]{babel}
 
-%% Note that you may need to download some of these packages manually, it depends on your setup.
-%% I recommend downloading TeXMaker, because it includes a large library of the most common packages.
+% Note that you may need to download some of these packages manually, it depends on your setup.
+% It may be usefult to download TeXMaker, because it includes a large library of the most common packages.
 
 \usepackage{physics,amssymb}  % mathematical symbols (physics imports amsmath)
 \include{amsmath}
@@ -95,7 +96,7 @@ Throughout this example we will provide (hopefully) pedagogical commentary on re
 
 \textit{The main purpose of the introduction section is to provide context and motivation for the work, like we have done above. It is also common --- and quite useful --- to use the last paragraph of the introduction to outline the rest of the report, to tell the reader what they should expect in the different sections. We will do this next.}
 
-In section \ref{sec:methods} we describe the mathematical background and formulate a concrete algorithm which can be implemented in any programming language. A selection of results from a validation test are presented in section \label{sec:results}. In section \label{sec:discussion} we discuss our implementation of the algorithm in more detail, and in section \ref{sec:conclusion} we provide a short summary and outlook.
+In section \ref{sec:methods} we describe the mathematical background and formulate a concrete algorithm which can be implemented in any programming language. A selection of results from a validation test are presented in section \label{sec:results_and_discussion}. Here we also discuss our implementation of the algorithm in more detail. Finally, in section \ref{sec:conclusion} we provide a short summary and outlook.
 
 \textit{Now, since the toy example we study here is rather short and simple, our outline isn't particularly detailed. But for a report that is longer, a slightly more detailed outline might be useful.}
 
@@ -128,7 +129,7 @@ for $i = 1, 2, \ldots, n$. This equation can be written out explicitly (although
 
 \textit{Also, note that we cited a source for our claim. There is no need to provide references for trivial or very well-known results, like Newton's second law, but you should cite material that is vital for your report.}
 
-\textit{Finally, please note the following two details on how to write equations: First, remember that equations are regarded as part of a sentence, meaning that you should follow the standard rules for punctuation. This typically means that your equations should be followed by a comma or a period. Second, make sure that you do not unintentionally include blank lines before or after the equation in your \texttt{.tex} file. LaTeX interprets blank lines as the beginning of a new paragraph, and will therefore indent the text after the equation. If you prefer having a bit of ``air'' in your LaTeX document, use empty comment line.}
+\textit{Finally, please note the following two details on how to write equations: First, remember that equations are regarded as part of a sentence, meaning that you should follow the standard rules for punctuation. This typically means that your equations should be followed by a comma or a period. Second, make sure that you do not unintentionally include blank lines before or after the equation in your \texttt{.tex} file. LaTeX interprets blank lines as the beginning of a new paragraph, and will therefore indent the text after the equation. If you prefer having a bit of ``air'' in your LaTeX document, use an empty comment line.}
 
 To test our integration algorithm we will use it to integrate the polynomial $f(x) = x^3$ over the interval $[a,b] = [0,1]$. This is a suitable test case, since the integral has a known analytical solution,
 \begin{equation}
@@ -140,11 +141,10 @@ In assessing the performance of our approach we will consider the relative error
 \end{equation}
 where $I$ denotes the exact integral and $I_\text{approx}$ denotes the approximation obtained with our implementation of the midpoint rule algorithm.
 
-
-% ===========================================
+% -------------------------------------------
 \subsection*{The algorithm}
 %
-The algorithm for the midpoint rule is summarized in algorithm~\ref{algo:midpointrule}. The basic idea behind the algorithm is to divide the integration range into to $n$ small subintervals of length $h$, and on each such subinterval approximate the function $f(x)$ by a constant function. The value for this constant function is taken to be the value of $f(x)$ evaluated at the midpoint of the given subinterval --- hence the name of the method.
+The algorithm for the midpoint rule is summarized in Algorithm~\ref{algo:midpointrule}. The basic idea behind the algorithm is to divide the integration range into to $n$ small subintervals of length $h$, and on each such subinterval approximate the function $f(x)$ by a constant function. The value for this constant function is taken to be the value of $f(x)$ evaluated at the midpoint of the given subinterval --- hence the name of the method.
 %
 \begin{figure}
 % NOTE: We only need \begin{figure} ... \end{figure} here because of a compatability issue between the 'revtex4-1' document class and the 'algorithm' environment.
@@ -165,13 +165,21 @@ The algorithm for the midpoint rule is summarized in algorithm~\ref{algo:midpoin
     \end{algorithm}
 \end{figure}
 
-\textit{As demonstrated in algorithm~\ref{algo:midpointrule}, it is conventional to present algorithms in a way that is independent of any specific programming language. This ensures that it is the logic behind the algorithm that remains in focus, rather than the syntax of a particular programming language. In algorithm~\ref{algo:midpointrule} we have also demonstrated a common notation: The right-to-left arrow ($\leftarrow$) means that we assign the value of everything on the right to the variable on the left. This is nothing but how the ``='' symbol functions in most programming languages, but the arrow notation makes it clear that we are in fact assigning a value, rather than stating that two things are equal.}
+\textit{As demonstrated in Algorithm~\ref{algo:midpointrule}, it is conventional to present algorithms in a way that is independent of any specific programming language. This ensures that it is the logic behind the algorithm that remains in focus, rather than the syntax of a particular programming language. In Algorithm~\ref{algo:midpointrule} we have also demonstrated a common notation: The right-to-left arrow ($\leftarrow$) means that we assign the value of everything on the right to the variable on the left. This is nothing but how the ``='' symbol functions in most programming languages, but the arrow notation makes it clear that we are in fact assigning a value, rather than stating that two things are equal.}
+
+% -------------------------------------------
+\subsection*{Tools}
+%
+\textit{This subsection is for informing the reader about the most important tools or software packages you have used, and what you have used them for. For instance, if you have used ChatGPT for anything, this subsection is where you should write about it.}
+
+We used the Python library \texttt{matplotlib} \cite{Hunter:2007} to produce all illustrations in this report. To parallelize our numerical integration code with \texttt{OpenMP}, we made use of examples taken from the tutorial in Ref.\ \cite{OpenMP_tutorial}.
 
 
 % ===========================================
-\section{Results}\label{sec:results}
+\section{Results and discussion}\label{sec:results_and_discussion}
 %
-To test the midpoint rule algorithm, we perform the integration of $f(x)$ using different choices for the number of subintervals. The results are listed in table \ref{tab:midpointruletab}.\footnote{A general style recommendation is to avoid having vertical lines in tables. There are of course exceptions, but in most cases vertical lines will make a table less readable.}
+To test the midpoint rule algorithm, we perform the integration of $f(x)$ using different choices for the number of subintervals. The results are listed in Table~\ref{tab:midpointruletab}.\footnote{A general style recommendation is to avoid having vertical lines in tables. There are of course exceptions, but in most cases vertical lines will make a table less readable.} 
+We note that our implementation reproduces the analytical results to four digits precision when the integration range is divided into $n = 10^4$ subintervals. This indicates that that our implementation of the algorithm is correct.
 %
 \begin{table}[h!]
     \centering
@@ -192,7 +200,7 @@ To test the midpoint rule algorithm, we perform the integration of $f(x)$ using 
     \end{tabular}\label{tab:midpointruletab}
 \end{table}
 
-In figure \ref{fig:rel_err} we show the relative error as a function of the number of subintervals $n$.
+In Figure~\ref{fig:rel_err} we show the relative error as a function of the number of subintervals $n$. We see that $\log_{10}(\epsilon)$ decreases linearly with $\log_{2}(n)$. From this, it should be possible to extract the convergence rate of our implementation of the midpoint rule. From a theoretical point of view we know that the midpoint rule should have a convergence rate of $\mathcal{O}(h^2)$. To properly verify our implementation, we should have estimated the convergence rate from our results and compared it to this theoretical rate. Without doing so, we cannot know that the our implementation of the algorithm is correct, even though we have seen that the numerical approximation converges to the correct answer in Table~\ref{tab:midpointruletab}.
 \begin{figure}[h!]
     \centering %Centers the figure
     \includegraphics[scale=0.55]{imgs/rel_err.pdf} %Imports the figure.
@@ -202,28 +210,27 @@ In figure \ref{fig:rel_err} we show the relative error as a function of the numb
 
 \textit{Note especially how we reference both the table and the figure with a short explanation of their content. Always do this! In the figure/table captions we can also add additional information, such as information about how the figure/table was produced. You can also do this in the main text if you like. When writing the figure/table captions, keep in mind the general rule of thumb that an expert on the topic should be able to understand the gist of your report simply by reading the abstract and look at the figures/tables and read their corresponding captions.}
 
-
-% ===========================================
-\section{Discussion}\label{sec:discussion}
-%
-\textit{Note that you are free to merge the presentation and discussion of the results into a single section of your report. This can in many cases lead to a more fluid presentation. If you do this, we recommend you use ``Results and discussion'' or similar for the section title.}
-
-From table \ref{tab:midpointruletab}, we note that our implementation reproduces the analytical results to four digits precision when the integration range is divided into $n = 10^4$ subintervals. This indicates that that our implementation of the algorithm is correct.
-
-From figure \ref{fig:rel_err}, we see that $\log_{10}(\epsilon)$ decreases linearly with $\log_{2}(n)$. From this, it should be possible to extract the convergence rate of our implementation of the midpoint rule. From a theoretical point of view we know that the midpoint rule should have a convergence rate of $\mathcal{O}(h^2)$. To properly verify our implementation, we should have estimated the convergence rate from our results and compared it to this theoretical rate. Without doing so, we cannot know that the our implementation of the algorithm is correct, even though we have seen that the numerical approximation converges to the correct answer in \ref{tab:midpointruletab}.
-
 \textit{Although this is a somewhat silly example, please note the following: We are to-the-point in our discussion of the results, and we only make strong claims about what we are actually certain about. In the discussion it is important to try to be as concise as possible --- long paragraphs that only make very general points are typically of limited interest. Note that we also highlight aspects of our analysis that could have been improved and that might form a topic for future work.}
 
 
 % ===========================================
 \section{Conclusion}\label{sec:conclusion}
+%
 \textit{In this section we state three things in a concise manner: what we have done, what we have found, and what should or could be done in the future.}
 
 We have investigated an implementation of the midpoint rule for numerical integration. As a first validation test we have checked that our implementation of the method reproduces the analytical result for the definite integral of $f(x) = x^3$ on $x \in [0,1]$, achieving a four-digit precision when the integration range is divided into $n=10^4$ subintervals. Furthermore, we have presented results for how the relative error of the method varies with the number of subintervals. To use these results to extract a precise estimate for the convergence rate of the method remains a topic for future work. As such, while our implementation of the midpoint rule has passed the initial validation tests, more work is needed to fully assess the validity of the implementation.
 
-\onecolumngrid
 
-%\bibliographystyle{apalike}
+% ===========================================
+% \section*{Appendix A}\label{sec:AppendixA}
+
+% An appendix can be useful if there are details you want to include that do not fit in the main text. But if you include an appendix, make sure to explicitly refer to it somewhere in the main text.
+
+
+% ===========================================
+\onecolumngrid
+% \bibliographystyle{apalike}
+\bibliographystyle{unsrt}
 \bibliography{ref}
 
 
