@@ -46,7 +46,9 @@ Here's a template you can use when writing the scientific reports for projects 3
 - The [pdf file](https://github.com/anderkve/FYS3150/blob/master/book/writing_reports/tex_mal/report_example.pdf)
 - The [BibTex references file](https://github.com/anderkve/FYS3150/blob/master/book/writing_reports/tex_mal/ref.bib)
 
-Similar to the template for projects 1 and 2, this template includes a figure file `rel_err.pdf` from a subdirectory `imgs`. If you want to compile this example yourself, you can get the figure file [here](https://github.com/anderkve/FYS3150/blob/master/book/writing_reports/tex_mal/imgs/rel_err.pdf).
+You can access this template as an read-only Overleaf project [here](https://www.overleaf.com/read/ykjsqvchkhyz). That way you can easily copy the template to your own Overleaf project.
+
+If you want to compile the template report yourself, you'll need a figure file `rel_err.pdf` in a subdirectory `imgs`. (Just like for the template for projects 1 and 2.) You can get the figure file [here](https://github.com/anderkve/FYS3150/blob/master/book/writing_reports/tex_mal/imgs/rel_err.pdf).
 
 To build the template along with the reference list, you need to run `pdflatex` and `bibtex` a few times over. Here's a single-line command that should do the trick:
 
