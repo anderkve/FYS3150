@@ -268,13 +268,15 @@ and the derived SI units for magnetic field strength (Tesla, $\textrm{T}$) and e
 
 Our default Penning trap configuration will have
 
-- $B_0 = 1.00\,\mathrm{T} = 9.65 \times 10^1 \, \frac{\mathrm{u}}{(\mathrm{µs}) \, \mathrm{e}}$
-- $V_0 = 25.0\,\mathrm{mV} = 2.41 \times 10^6 \, \frac{\mathrm{u} \, (\mathrm{µm})^2}{(\mathrm{µs})^2 \, \mathrm{e}}$
+- $B_0 = 1.00\,\mathrm{T} \simeq 9.65 \times 10^1 \, \frac{\mathrm{u}}{(\mathrm{µs}) \, \mathrm{e}}$
+- $V_0 = 25.0\,\mathrm{mV} \simeq 2.41 \times 10^6 \, \frac{\mathrm{u} \, (\mathrm{µm})^2}{(\mathrm{µs})^2 \, \mathrm{e}}$
 - $d = 500\,\mathrm{µm}$.
 
 We note that $V_0$ and $d$ only appear as the ratio $V_0/d^2$, which now takes the value
 
 - $V_0/d^2 = 9.65 \, \frac{\mathrm{u}}{(\mathrm{µs})^2 \, \mathrm{e}}$.
+
+(Note that we have here used the precise $V_0 = 25.0\,\mathrm{mV}$.)
 
 We'll use singly-charged Calcium ions (Ca$^+$) as our charged particles.
 
