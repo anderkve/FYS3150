@@ -2,10 +2,10 @@
 See description in README.txt
 
 Build: 
-g++ -O3 main_omp_outer_loop_inmem.cpp -fopenmp -o main_omp_outer_loop_inmem.exe
+g++ -O3 main_omp_outer_loop_inmem.cpp -fopenmp -o main_omp_outer_loop_inmem
 
 Run: 
-./main_omp_outer_loop_inmem.exe <A_min> <A_max> <n_A> <n_cycles_per_thread> <output_file_basename>
+./main_omp_outer_loop_inmem <A_min> <A_max> <n_A> <n_cycles_per_thread> <output_file_basename>
 
 */
 
@@ -53,6 +53,7 @@ int main(int argc, const char* argv[])
     #pragma omp for
     for (int i = 0; i < n_A; ++i)
     {
+
       double A = A_min + i * delta_A;
 
       // 
@@ -60,6 +61,7 @@ int main(int argc, const char* argv[])
       // 
 
       double dummy_result = A;
+
       for (int j = 0; j < n_cycles_per_thread; ++j)
       {
         

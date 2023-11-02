@@ -62,14 +62,14 @@ This example code in `main_no_omp.cpp` is *not* parallelised.
   ```
 
 - To run an example that takes a little bit of time 
-  (~20 seconds on my laptop), try for instance this:
+  (~40 seconds on my laptop), try for instance this:
   ```sh
-  ./main_no_omp 0.0 4.0 401 1000000 output.dat
+  ./main_no_omp 0.0 4.0 401 2000000 output.dat
   ```
 
 - To time it, run it through the "time" command:
   ```sh
-  time ./main_no_omp 0.0 4.0 401 1000000 output.dat
+  time ./main_no_omp 0.0 4.0 401 2000000 output.dat
   ```
   (Focus on the "real" row of the time output.)
 
@@ -82,8 +82,8 @@ running multiple instances of the same program with different inputs
 - For instance you start the same program from two different terminal 
   windows, with different input/output:
   ```sh
-  time ./main_no_omp 0.0 2.0 201 1000000 output.dat.part1
-  time ./main_no_omp 2.01 4.0 200 1000000 output.dat.part2
+  time ./main_no_omp 0.0 2.0 201 2000000 output.dat.part1
+  time ./main_no_omp 2.01 4.0 200 2000000 output.dat.part2
   ```
   and then combine the data files into one by doing e.g. this:
   ```sh
@@ -95,8 +95,8 @@ by starting separate runs "in the background" by adding `&` to the command.
 
   - Try starting two runs in the background like this
     ```sh
-    ./main_no_omp 0.0 2.0 201 1000000 output.dat.part1 &
-    ./main_no_omp 2.01 4.0 200 1000000 output.dat.part2 &
+    ./main_no_omp 0.0 2.0 201 2000000 output.dat.part1 &
+    ./main_no_omp 2.01 4.0 200 2000000 output.dat.part2 &
     ```
 
 - To see the running jobs, run the command `jobs` command.
@@ -136,9 +136,9 @@ be combined later, e.g. using the `cat` command.
   OMP_NUM_THREADS=4 ./main_omp_outer_loop <A_min> <A_max> <n_A> <n_cycles_per_thread> <output_file_name>
   ```
 
-- A run that includes timeing with the `time` command could be:
+- A run that includes timing with the `time` command could be:
   ```sh
-  OMP_NUM_THREADS=4 time ./main_omp_outer_loop 0.0 4.0 401 1000000 output.dat
+  time OMP_NUM_THREADS=4 ./main_omp_outer_loop 0.0 4.0 401 2000000 output.dat
   ```
 
 - Look at the output files
@@ -182,5 +182,12 @@ combined before the parallel block ends, and then just
 the single (main) thread writes to file, so no need for 
 multiple output files.
 
-(Build and run using similar commands as above.)
+- Build like this:
+  ```sh
+  g++ -O3 main_omp_inner_loop.cpp -fopenmp -o main_omp_inner_loop
+  ```
 
+- Run like this:
+  ```sh
+  OMP_NUM_THREADS=4 ./main_omp_inner_loop <A_min> <A_max> <n_A> <n_cycles_per_thread> <output_file_name>
+  ```

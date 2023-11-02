@@ -2,10 +2,10 @@
 See description in README.txt
 
 Build: 
-g++ -O3 main_no_omp.cpp -o main_no_omp.exe
+g++ -O3 main_no_omp.cpp -o main_no_omp
 
 Run: 
-./main_no_omp.exe <A_min> <A_max> <n_A> <n_cycles> <output_file_name>
+./main_no_omp <A_min> <A_max> <n_A> <n_cycles> <output_file_name>
 
 */
 
@@ -46,8 +46,8 @@ int main(int argc, const char* argv[])
   const double delta_A = (A_max - A_min) / (n_A - 1);  // n_A points correspond to (n_A - 1) intervals
   for (int i = 0; i < n_A; ++i)
   {
-    double A = A_min + i * delta_A;
 
+    double A = A_min + i * delta_A;
 
     // 
     // Inner loop with some computation for the given A value

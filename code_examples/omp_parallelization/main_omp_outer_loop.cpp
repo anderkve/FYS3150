@@ -2,10 +2,10 @@
 See description in README.txt
 
 Build: 
-g++ -O3 main_omp_outer_loop.cpp -fopenmp -o main_omp_outer_loop.exe
+g++ -O3 main_omp_outer_loop.cpp -fopenmp -o main_omp_outer_loop
 
 Run: 
-./main_omp_outer_loop.exe <A_min> <A_max> <n_A> <n_cycles_per_thread> <output_file_name>
+./main_omp_outer_loop <A_min> <A_max> <n_A> <n_cycles_per_thread> <output_file_name>
 
 */
 
@@ -45,17 +45,18 @@ int main(int argc, const char* argv[])
 
     // Prepare for file output
     static int print_prec = 10;
+
     // Each thread will get its own output file name
     const int my_thread = omp_get_thread_num();
     ofstream ofile;
     string my_output_file_name = output_file_name + ".thread_" + to_string(my_thread);
     ofile.open(my_output_file_name.c_str(), ofstream::trunc);  // ofstream::trunc makes sure old content is deleted
 
-
     // Here we start the parallelized loop over A
     #pragma omp for
     for (int i = 0; i < n_A; ++i)
     {
+
       double A = A_min + i * delta_A;
 
       // 

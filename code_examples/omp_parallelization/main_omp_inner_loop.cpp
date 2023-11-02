@@ -2,10 +2,10 @@
 See description in README.txt
 
 Build: 
-g++ -O3 main_omp_inner_loop.cpp -fopenmp -o main_omp_inner_loop.exe
+g++ -O3 main_omp_inner_loop.cpp -fopenmp -o main_omp_inner_loop
 
 Run: 
-./main_omp_inner_loop.exe <A_min> <A_max> <n_A> <n_cycles_per_thread> <output_file_name>
+./main_omp_inner_loop <A_min> <A_max> <n_A> <n_cycles_per_thread> <output_file_name>
 
 */
 
@@ -44,13 +44,16 @@ int main(int argc, const char* argv[])
   // 
 
   const double delta_A = (A_max - A_min) / (n_A - 1);  // n_A points correspond to (n_A - 1) intervals
+
   for (int i = 0; i < n_A; ++i)
   {
+
     double A = A_min + i * delta_A;
 
     // 
     // Inner loop with some computation for the given A value
     // 
+
     double dummy_result = 0;
 
     #pragma omp parallel // Start parallel region

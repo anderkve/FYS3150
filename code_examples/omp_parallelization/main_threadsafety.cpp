@@ -2,10 +2,10 @@
 See description in README.txt
 
 Build: 
-g++ main_threadsafety.cpp -fopenmp -o main_threadsafety.exe
+g++ main_threadsafety.cpp -fopenmp -o main_threadsafety
 
 Run: 
-./main_threadsafety.exe
+./main_threadsafety
 
 */
 
@@ -27,6 +27,8 @@ int main(int argc, const char* argv[])
 
   int x = 0;
 
+  int thread_num = omp_get_thread_num();  // This will just return 0, since we're not in a parallel block
+  
   for (int i = 0; i < 5; i++)
   {
 
@@ -38,7 +40,7 @@ int main(int argc, const char* argv[])
     } 
 
     // Print current state
-    cout << "x memory address: " << &x << "    x value: " << x << endl;
+    cout << "thread: " << thread_num << "    x memory address: " << &x << "    x value: " << x << endl;
 
     // Move it
     x += 1;
@@ -65,7 +67,7 @@ int main(int argc, const char* argv[])
   // {
   //   int thread_num = omp_get_thread_num();
 
-  //   for (int i = 0; i < 10; i++)
+  //   for (int i = 0; i < 5; i++)
   //   {
 
   //     // Waste some time, to emulate some computation each thread must do
