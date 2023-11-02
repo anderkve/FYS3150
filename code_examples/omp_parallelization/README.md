@@ -1,4 +1,4 @@
-# main_threadsafety.cpp
+### main_threadsafety.cpp
 
 Simple example code that illustrates how a code can be
 *non-threadsafe* unless you pay attention to whether a 
@@ -41,8 +41,7 @@ of the variable.)
   are looking at. 
 
 
-
-# main_no_omp.cpp
+### main_no_omp.cpp
 
 A dummy example program with a two-loop structure. The outer loop is
 a loop over `n_A` values of some variable `A`, from `A_min` to `A_max`. 
@@ -95,10 +94,10 @@ To be a bit more fancy, you can do everything from one terminal window
 by starting separate runs "in the background" by adding `&` to the command.
 
   - Try starting two runs in the background like this
-  ```sh
-  ./main_no_omp 0.0 2.0 201 1000000 output.dat.part1 &
-  ./main_no_omp 2.01 4.0 200 1000000 output.dat.part2 &
-  ```
+    ```sh
+    ./main_no_omp 0.0 2.0 201 1000000 output.dat.part1 &
+    ./main_no_omp 2.01 4.0 200 1000000 output.dat.part2 &
+    ```
 
 - To see the running jobs, run the command `jobs` command.
 
@@ -117,7 +116,7 @@ by starting separate runs "in the background" by adding `&` to the command.
   ```
 
 
-# main_omp_outer_loop.cpp
+### main_omp_outer_loop.cpp
 
 Similar to `main_no_omp.cpp`, but now using OpenMP to parallelise the 
 outer loop. The line `#pragma omp for` divides the outer for loop
@@ -145,7 +144,7 @@ be combined later, e.g. using the `cat` command.
 - Look at the output files
 
 
-# main_omp_outer_loop_inmem.cpp
+### main_omp_outer_loop_inmem.cpp
 
 Similar to `main_omp_outer_loop.cpp`, but now storing the results 
 from all threads in memory during the run (in a shared armadillo 
@@ -161,8 +160,7 @@ matrix) and only writing a single output file at the end.
   OMP_NUM_THREADS=4 ./main_omp_outer_loop_inmem <A_min> <A_max> <n_A> <n_cycles_per_thread> <output_file_basename>
   ```
 
-
-# main_omp_inner_loop.cpp
+### main_omp_inner_loop.cpp
 
 Similar to `main_omp_outer_loop.cpp`, but now using OpenMP 
 to parallelise the inner loop (a loop with `n_cycles_per_thread`
