@@ -62,7 +62,7 @@ This example code in `main_no_omp.cpp` is *not* parallelised.
   ```
 
 - To run an example that takes a little bit of time 
-  (~40 seconds on my laptop), try for instance this:
+  (~20 seconds on my laptop), try for instance this:
   ```sh
   ./main_no_omp 0.0 4.0 401 1000000 output.dat
   ```
