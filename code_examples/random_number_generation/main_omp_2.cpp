@@ -3,11 +3,11 @@
 See description in README.txt
 
 Build: 
-g++ main_omp_2.cpp -o main_omp_2.exe -fopenmp
+g++ main_omp_2.cpp -o main_omp_2 -fopenmp
 
 Run: 
 export OMP_NUM_THREADS=<number of threads>
-./main_omp_2.exe
+./main_omp_2
 
 */
 
@@ -25,7 +25,10 @@ int main()
 {
 
   // Use the system clock to get a base seed
-  unsigned int base_seed = chrono::system_clock::now().time_since_epoch().count();
+  // unsigned int base_seed = chrono::system_clock::now().time_since_epoch().count();
+  // ...or set the base seed manually
+  unsigned int base_seed = 3599446834;
+
 
   // Start a parallel region
   #pragma omp parallel

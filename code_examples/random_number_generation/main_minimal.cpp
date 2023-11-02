@@ -3,10 +3,10 @@
 See description in README.txt
 
 Build: 
-g++ main_minimal.cpp -o main_minimal.exe
+g++ main_minimal.cpp -o main_minimal
 
 Run: 
-./main_minimal.exe
+./main_minimal
 
 */
 

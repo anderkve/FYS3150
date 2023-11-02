@@ -3,10 +3,10 @@
 See description in README.txt
 
 Build: 
-g++ main_rng_in_class.cpp -o main_rng_in_class.exe
+g++ main_rng_in_class.cpp -o main_rng_in_class
 
 Run: 
-./main_rng_in_class.exe
+./main_rng_in_class
 
 */
 
@@ -61,14 +61,13 @@ int main()
   // Create a RandomWalker. Let's call him Mr. Walker.
   RandomWalker mr_walker;
 
-
-  // Seed the generator in mr_walker using the system clock
+  // Use the system clock to get a seed
   unsigned int seed = chrono::system_clock::now().time_since_epoch().count();
+  // ...or set the seed manually
+  // unsigned int base_seed = 3599446834;
+
+  // Now use this to seed the generator in mr_walker
   mr_walker.generator.seed(seed);
-
-  // Seed the generator in mr_walker with the specific seed
-  // mr_walker.generator.seed(120473);
-
 
   // Print starting position
   cout << "mr_walker.current_state = " << mr_walker.current_state << endl;

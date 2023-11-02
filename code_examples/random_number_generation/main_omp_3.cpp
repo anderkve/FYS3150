@@ -3,11 +3,11 @@
 See description in README.txt
 
 Build: 
-g++ main_omp_3.cpp src/omp_rng.cpp -I include -o main_omp_3.exe -fopenmp
+g++ main_omp_3.cpp src/omp_rng.cpp -I include -o main_omp_3 -fopenmp
 
 Run: 
 export OMP_NUM_THREADS=<number of threads>
-./main_omp_3.exe
+./main_omp_3
 
 */
 
@@ -26,7 +26,7 @@ int main()
 {
 
   // Use the system in omp_rng.hpp to create one random number generator per thread.
-  omp_rng::initialize_omp_rng_container(123024);  // Set base seed manually
+  omp_rng::initialize_omp_rng_container(3599446834);  // Set base seed manually
   // omp_rng::initialize_omp_rng_container(-1);  // Set base seed to -1 to seed using the system clock
 
   // Start a parallel region
