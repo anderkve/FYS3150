@@ -13,17 +13,19 @@ to the existing code project.
 
 ## Forking and joining threads
 
-OpenMP assumes an underlying **shared-memory** architecture. This means that when a code runs in parallel, all **threads** access the same memory. Once a **parallel region** is executed, the **primary** thread **forks** a set of **sub-threads**. Tasks are then divided among these and execute the code block **concurrently**, meaning at the same time. Once execution of the parallel region is completed, the sub-threads are **joined** and only the primary thread remains. The following image illustrates this process
+OpenMP assumes an underlying **shared-memory** architecture. This means that when a code runs in parallel, all **threads** access the same memory. Once a **parallel region** is executed, the **primary** thread **forks** a set of **sub-threads**. Tasks are then divided among the sub-threads and executed at the same time. Once execution of the parallel region is completed, the sub-threads are **joined** and only the primary thread remains. The following image illustrates this process
 
 ![fork_join](imgs/Fork_join.svg)
 
-```{note}
-Sometimes, you'll see the term "master" thread used for the primary thread and "slave" threads used for sub-threads. This was recently changed due to negative connotations to slavery.
-```
+## Shared memory programming
+
+OpenMP assumes that the underlying memory is **shared** among threads. 
+This means that all spawned threads by default will share the variables created by the primary thread before the parallel region started. On the other hand, if a variable is created by a given thread *within* a parallel region, that variable will by default be **private** to that thread throughout the parallel region. 
+
 
 ## Building C++ code with OpenMP
 
-### Linux users
+### Linux
 
 When using the GNU g++ compiler, enabling OpenMP should be as easy as adding the compiler flag `-fopenmp`. This flag should be used both for compilation and linking commands. Thus, compilation can be as easy as
 
@@ -38,7 +40,7 @@ g++ your_code.o -o your_code.exe -fopenmp
 ```
 
 
-### macOS users
+### macOS
 
 On macOS, Apple have decided (*sigh*) that the command `g++` should not refer to the actual GNU g++ compiler, but to Apple's version of the compiler Clang. (To check that this is the case on your system, try running `g++ --version`.)
 
@@ -82,30 +84,13 @@ If you are not using an M1 Mac, the following alternative using the default `g++
   ```
 
 
-## Shared memory programming
 
-OpenMP assumes that the underlying memory is **shared**
-among all processes, or **threads** as they are called.
-This means that all threads share variables, allocated memory for pointers and so on by default. We must specify
-if some variable is to be specific to a particular thread.
-The terminology OpenMP uses for this is a **private** variable.
+### Two technical issues
 
-There are two very important concepts to understand
-when you parallelize with OpenMP.
+Below we discuss two potential pitfalls that it is useful to know about when you parallelize code with OpenMP. However, these are somewhat technical concepts, so if you have just started looking into OpenMP you may want to return to these at a later point.
 
-### False sharing
-```{note}
-This is a technical concept, and you might be better suited to return to this at a later point.
-```
 
-If more than one thread uses a memory block stored in the **cache** (a type of fast memory used by your cpu), any change to it will require all the threads that uses it to make the exact same update to their version of the memory block. This is imposed by what is known by the **cache-coherence policy**. The punchline is that this leads to performance degradation. This process is called false sharing.
-  - Example: say you're working with a pointer of length n. One thread updates the first element and another thread updates the second element. Then the computer must send this update back and forth between the threads so that the copy of their pointer is identical at all times. This means that computing time must be divided to send information between the threads which slows down execution of the code.
-
-### Race condition
-```{note}
-This is a technical concept, and you might be better suited to return to this at a later point.
-```
-
+#### Race condition
 
 Suppose two threads are to increment a variable *v* that is initially set to zero, i.e `v = 0`. The ideal result is that the final value should be `v = 2`. This will happen if the following sequence of events occur:
 
@@ -119,6 +104,17 @@ The following scenario describes when it goes wrong:
 2. Thread 2 reads the value of `v` from memory *before* thread 1 adds 1 and writes it back to memory.
 3. Both thread 1 and 2 now adds 1 to `v` and writes it back to memory. But the value both of them read was `v = 0`, so the final value written to memory will be `v = 1`.
 
-
 We can of course create more scenarios in which this happens, but the main idea to take from this is:
 when two threads operate on the same memory address, they must do so sequentially. Sometimes, absurd results from your program can boil down to this process, so it's important to be aware of it for debugging purposes.
+
+
+#### False sharing
+
+If more than one thread uses a memory block stored in the **cache** (a type of fast memory used by your CPU), any change to it will require all the threads that uses it to make the exact same update to their version of the memory block. This is imposed by what is known by the **cache-coherence policy**. The punchline is that this leads to performance degradation. This process is called false sharing.
+
+  - Example: say you're working with a array of length n. One thread updates the first element and another thread updates the second element. Then the computer must send this update back and forth between the threads so that the copy of their array is identical at all times. This means that computing time must be divided to send information between the threads which slows down execution of the code.
+
+For more on false sharing, see e.g. these links:
+
+ - [https://en.wikipedia.org/wiki/False_sharing](https://en.wikipedia.org/wiki/False_sharing)
+ - [http://www.nic.uoregon.edu/~khuck/ts/acumem-report/manual_html/multithreading_problems.html](http://www.nic.uoregon.edu/~khuck/ts/acumem-report/manual_html/multithreading_problems.html)
