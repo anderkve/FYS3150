@@ -11,7 +11,6 @@ Run:
 */
 
 #include <random>
-#include <chrono>
 #include <iostream>
 
 
@@ -24,7 +23,7 @@ int main()
   mt19937 generator(1583023);
 
   // Construct a distribution object for the uniform distribution on [0,1)
-  uniform_real_distribution<double> my_distribution(0.0 ,1.0);
+  uniform_real_distribution<double> my_distribution(0.0, 1.0);
 
   // Draw a sample from the distribution by passing in the generator
   cout << "my_distribution(generator): " << my_distribution(generator) << endl;
