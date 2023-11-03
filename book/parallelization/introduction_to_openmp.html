@@ -568,36 +568,41 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shared-memory-programming">
+   Shared memory programming
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#building-c-code-with-openmp">
    Building C++ code with OpenMP
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#linux-users">
-     Linux users
+    <a class="reference internal nav-link" href="#linux">
+     Linux
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#macos-users">
-     macOS users
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#shared-memory-programming">
-   Shared memory programming
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#false-sharing">
-     False sharing
+    <a class="reference internal nav-link" href="#macos">
+     macOS
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#race-condition">
-     Race condition
+    <a class="reference internal nav-link" href="#two-technical-issues">
+     Two technical issues
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#race-condition">
+       Race condition
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#false-sharing">
+       False sharing
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -631,36 +636,41 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shared-memory-programming">
+   Shared memory programming
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#building-c-code-with-openmp">
    Building C++ code with OpenMP
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#linux-users">
-     Linux users
+    <a class="reference internal nav-link" href="#linux">
+     Linux
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#macos-users">
-     macOS users
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#shared-memory-programming">
-   Shared memory programming
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#false-sharing">
-     False sharing
+    <a class="reference internal nav-link" href="#macos">
+     macOS
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#race-condition">
-     Race condition
+    <a class="reference internal nav-link" href="#two-technical-issues">
+     Two technical issues
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#race-condition">
+       Race condition
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#false-sharing">
+       False sharing
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -687,17 +697,18 @@ to the existing code project.</p>
 </section>
 <section id="forking-and-joining-threads">
 <h2>Forking and joining threads<a class="headerlink" href="#forking-and-joining-threads" title="Permalink to this headline">#</a></h2>
-<p>OpenMP assumes an underlying <strong>shared-memory</strong> architecture. This means that when a code runs in parallel, all <strong>threads</strong> access the same memory. Once a <strong>parallel region</strong> is executed, the <strong>primary</strong> thread <strong>forks</strong> a set of <strong>sub-threads</strong>. Tasks are then divided among these and execute the code block <strong>concurrently</strong>, meaning at the same time. Once execution of the parallel region is completed, the sub-threads are <strong>joined</strong> and only the primary thread remains. The following image illustrates this process</p>
+<p>OpenMP assumes an underlying <strong>shared-memory</strong> architecture. This means that when a code runs in parallel, all <strong>threads</strong> access the same memory. Once a <strong>parallel region</strong> is executed, the <strong>primary</strong> thread <strong>forks</strong> a set of <strong>sub-threads</strong>. Tasks are then divided among the sub-threads and executed at the same time. Once execution of the parallel region is completed, the sub-threads are <strong>joined</strong> and only the primary thread remains. The following image illustrates this process</p>
 <p><img alt="fork_join" src="../../_images/Fork_join.svg" /></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Sometimes, you’ll see the term “master” thread used for the primary thread and “slave” threads used for sub-threads. This was recently changed due to negative connotations to slavery.</p>
-</div>
+</section>
+<section id="shared-memory-programming">
+<h2>Shared memory programming<a class="headerlink" href="#shared-memory-programming" title="Permalink to this headline">#</a></h2>
+<p>OpenMP assumes that the underlying memory is <strong>shared</strong> among threads.
+This means that all spawned threads by default will share the variables created by the primary thread before the parallel region started. On the other hand, if a variable is created by a given thread <em>within</em> a parallel region, that variable will by default be <strong>private</strong> to that thread throughout the parallel region.</p>
 </section>
 <section id="building-c-code-with-openmp">
 <h2>Building C++ code with OpenMP<a class="headerlink" href="#building-c-code-with-openmp" title="Permalink to this headline">#</a></h2>
-<section id="linux-users">
-<h3>Linux users<a class="headerlink" href="#linux-users" title="Permalink to this headline">#</a></h3>
+<section id="linux">
+<h3>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">#</a></h3>
 <p>When using the GNU g++ compiler, enabling OpenMP should be as easy as adding the compiler flag <code class="docutils literal notranslate"><span class="pre">-fopenmp</span></code>. This flag should be used both for compilation and linking commands. Thus, compilation can be as easy as</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>g++ -c your_code.cpp -fopenmp
 </pre></div>
@@ -707,8 +718,8 @@ to the existing code project.</p>
 </pre></div>
 </div>
 </section>
-<section id="macos-users">
-<h3>macOS users<a class="headerlink" href="#macos-users" title="Permalink to this headline">#</a></h3>
+<section id="macos">
+<h3>macOS<a class="headerlink" href="#macos" title="Permalink to this headline">#</a></h3>
 <p>On macOS, Apple have decided (<em>sigh</em>) that the command <code class="docutils literal notranslate"><span class="pre">g++</span></code> should not refer to the actual GNU g++ compiler, but to Apple’s version of the compiler Clang. (To check that this is the case on your system, try running <code class="docutils literal notranslate"><span class="pre">g++</span> <span class="pre">--version</span></code>.)</p>
 <p>Apple’s Clang compiler typically does not support OpenMP out of the box. The easiest way around this is simply to install the GNU g++ compiler and rather use that to build your code. To install e.g. version 12 of GNU g++, do</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>brew install gcc@12
@@ -743,33 +754,11 @@ g++-12 your_code.o -o your_code.exe -fopenmp
 </li>
 </ul>
 </section>
-</section>
-<section id="shared-memory-programming">
-<h2>Shared memory programming<a class="headerlink" href="#shared-memory-programming" title="Permalink to this headline">#</a></h2>
-<p>OpenMP assumes that the underlying memory is <strong>shared</strong>
-among all processes, or <strong>threads</strong> as they are called.
-This means that all threads share variables, allocated memory for pointers and so on by default. We must specify
-if some variable is to be specific to a particular thread.
-The terminology OpenMP uses for this is a <strong>private</strong> variable.</p>
-<p>There are two very important concepts to understand
-when you parallelize with OpenMP.</p>
-<section id="false-sharing">
-<h3>False sharing<a class="headerlink" href="#false-sharing" title="Permalink to this headline">#</a></h3>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This is a technical concept, and you might be better suited to return to this at a later point.</p>
-</div>
-<p>If more than one thread uses a memory block stored in the <strong>cache</strong> (a type of fast memory used by your cpu), any change to it will require all the threads that uses it to make the exact same update to their version of the memory block. This is imposed by what is known by the <strong>cache-coherence policy</strong>. The punchline is that this leads to performance degradation. This process is called false sharing.</p>
-<ul class="simple">
-<li><p>Example: say you’re working with a pointer of length n. One thread updates the first element and another thread updates the second element. Then the computer must send this update back and forth between the threads so that the copy of their pointer is identical at all times. This means that computing time must be divided to send information between the threads which slows down execution of the code.</p></li>
-</ul>
-</section>
+<section id="two-technical-issues">
+<h3>Two technical issues<a class="headerlink" href="#two-technical-issues" title="Permalink to this headline">#</a></h3>
+<p>Below we discuss two potential pitfalls that it is useful to know about when you parallelize code with OpenMP. However, these are somewhat technical concepts, so if you have just started looking into OpenMP you may want to return to these at a later point.</p>
 <section id="race-condition">
-<h3>Race condition<a class="headerlink" href="#race-condition" title="Permalink to this headline">#</a></h3>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This is a technical concept, and you might be better suited to return to this at a later point.</p>
-</div>
+<h4>Race condition<a class="headerlink" href="#race-condition" title="Permalink to this headline">#</a></h4>
 <p>Suppose two threads are to increment a variable <em>v</em> that is initially set to zero, i.e <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">0</span></code>. The ideal result is that the final value should be <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">2</span></code>. This will happen if the following sequence of events occur:</p>
 <ol class="simple">
 <li><p>Thread 1 reads the value of <code class="docutils literal notranslate"><span class="pre">v</span></code> from memory.</p></li>
@@ -784,6 +773,19 @@ when you parallelize with OpenMP.</p>
 </ol>
 <p>We can of course create more scenarios in which this happens, but the main idea to take from this is:
 when two threads operate on the same memory address, they must do so sequentially. Sometimes, absurd results from your program can boil down to this process, so it’s important to be aware of it for debugging purposes.</p>
+</section>
+<section id="false-sharing">
+<h4>False sharing<a class="headerlink" href="#false-sharing" title="Permalink to this headline">#</a></h4>
+<p>If more than one thread uses a memory block stored in the <strong>cache</strong> (a type of fast memory used by your CPU), any change to it will require all the threads that uses it to make the exact same update to their version of the memory block. This is imposed by what is known by the <strong>cache-coherence policy</strong>. The punchline is that this leads to performance degradation. This process is called false sharing.</p>
+<ul class="simple">
+<li><p>Example: say you’re working with a array of length n. One thread updates the first element and another thread updates the second element. Then the computer must send this update back and forth between the threads so that the copy of their array is identical at all times. This means that computing time must be divided to send information between the threads which slows down execution of the code.</p></li>
+</ul>
+<p>For more on false sharing, see e.g. these links:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/False_sharing">https://en.wikipedia.org/wiki/False_sharing</a></p></li>
+<li><p><a class="reference external" href="http://www.nic.uoregon.edu/~khuck/ts/acumem-report/manual_html/multithreading_problems.html">http://www.nic.uoregon.edu/~khuck/ts/acumem-report/manual_html/multithreading_problems.html</a></p></li>
+</ul>
+</section>
 </section>
 </section>
 </section>
