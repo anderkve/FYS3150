@@ -9,7 +9,7 @@ from scipy.integrate import quad
 #
 
 def f(x):
-    return 2.0 + np.sin(2 * np.pi * x**4) 
+    return 2.0 + np.sin(1.5 * np.pi * x**4) + x
 
 
 
@@ -18,9 +18,11 @@ def f(x):
 #
 
 x_min = 0.0
-x_max = 1.0
+x_max = 1.5
 eps = 1e-2
 
+
+counter = 0
 # Keep track of evaluation points, for illustration
 x_vals = [x_min, x_max]
 
@@ -28,8 +30,11 @@ x_vals = [x_min, x_max]
 def recursive_integrate(x_min, x_max, eps):
 
     global x_vals
+    global counter
+    counter += 1
 
     print()
+    print("counter:", counter)
     print(f"Integrate:   x_min: {x_min:.6e},  x_max: {x_max:.6e}")
 
     # Compute T1
