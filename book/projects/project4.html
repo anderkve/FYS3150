@@ -849,27 +849,72 @@ title="Print to PDF"
 <li><p><span class="math notranslate nohighlight">\(\langle \epsilon^2 \rangle\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\langle |m| \rangle\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\langle m^2 \rangle\)</span></p></li>
-<li><p>the specific heat capacity (normalised to number of spins):</p></li>
+<li><p>the heat capacity, normalised to number of spins:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[
-  C_V = \frac{1}{N} \frac{1}{k_B T^2}(\langle E^2 \rangle - \langle E \rangle^2) 
+  \frac{C_V}{N} = \frac{1}{N} \frac{1}{k_B T^2}(\langle E^2 \rangle - \langle E \rangle^2) 
   \]</div>
 <ul class="simple">
-<li><p>the susceptibility (normalised to number of spins):</p></li>
+<li><p>the susceptibility, normalised to number of spins:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[
-  \chi = \frac{1}{N} \frac{1}{k_B T}(\langle M^2 \rangle - \langle |M| \rangle^2)
+  \frac{\chi}{N} = \frac{1}{N} \frac{1}{k_B T}(\langle M^2 \rangle - \langle |M| \rangle^2)
   \]</div>
 </li>
 </ul>
 <p>We will use these analytical results to test our code.</p>
-<!--
-```{note}
-There was a typo in a previous version, where $C_V$ and $\chi$ were defined using $\epsilon$ and $m$ rather than $E$ and $M$. This is now corrected, along with the normalisation factor $\frac{1}{N}$ in front to enusure that we normalise the heat capacity and susceptibility to the total number of spins in the system. Apologies for the confusion!
-```
--->
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There’s been some confusion regarding the expressions for heat capacity <span class="math notranslate nohighlight">\(C_V\)</span> and susceptibility <span class="math notranslate nohighlight">\(\chi\)</span> and how they relate to energy per spin (<span class="math notranslate nohighlight">\(\epsilon\)</span>) and magnetisation per spin (<span class="math notranslate nohighlight">\(m\)</span>), respectively. I think the confusion comes down to some unfortunate notation from my side. So let me explain, using <span class="math notranslate nohighlight">\(C_V\)</span> as example.</p>
+<p>The heat capacity <span class="math notranslate nohighlight">\(C_V\)</span> in itself is given by</p>
+<div class="math notranslate nohighlight">
+\[
+C_V = \frac{1}{k_B T^2} \textrm{Var}(E)
+\]</div>
+<p>However, I have provided an expression for the heat capacity <em>normalised to the number of spins</em> <span class="math notranslate nohighlight">\(N\)</span>. (So a quantity analogous to <em>the specific heat capacity</em> when we normalise against units of mass.)  Unfortunately I wrote this expression also using the symbol <span class="math notranslate nohighlight">\(C_V\)</span>. That is, I wrote:</p>
+<div class="math notranslate nohighlight">
+\[
+C_V = \frac{1}{N} \frac{1}{k_B T^2} \textrm{Var}(E)
+\]</div>
+<p>where I have included the extra factor <span class="math notranslate nohighlight">\(1/N\)</span>. However, what I <em>should</em> have done was to make this explicit in my notation, either by writing <span class="math notranslate nohighlight">\(C_V/N\)</span> directly, or introduce some new notation, e.g. a lower-case <span class="math notranslate nohighlight">\(c_V\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+c_V = \frac{C_V}{N} = \frac{1}{N} \frac{1}{k_B T^2} \textrm{Var}(E)
+\]</div>
+<p>From this expression we can easily express this quantity in terms of the variance of the energy per spin (<span class="math notranslate nohighlight">\(\epsilon\)</span>), if we want to. All we need is to remember the general relation that if <span class="math notranslate nohighlight">\(y=kx\)</span> where <span class="math notranslate nohighlight">\(k\)</span> is some constant, then</p>
+<div class="math notranslate nohighlight">
+\[
+\textrm{Var}(y) = \textrm{Var}(kx) = k^2\textrm{Var}(x)
+\]</div>
+<p>So in terms of energy, we have our familiar expression:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\frac{C_V}{N} &amp;= \frac{1}{N} \frac{1}{k_B T^2} \textrm{Var}(E) \\
+              &amp;= \frac{1}{N} \frac{1}{k_B T^2} \left[ \langle E^2 \rangle  -  \langle E \rangle^2 \right]
+\end{split}\]</div>
+<p>And in terms of energy per spin, since <span class="math notranslate nohighlight">\(E = N \epsilon\)</span>, we get</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\frac{C_V}{N} &amp;= \frac{1}{N} \frac{1}{k_B T^2} \textrm{Var}(E) \\ 
+&amp;=  \frac{1}{N} \frac{1}{k_B T^2} \textrm{Var}(N \epsilon) \\ 
+&amp;=  \frac{1}{N} \frac{1}{k_B T^2} N^2 \textrm{Var}(\epsilon)  \\ 
+&amp;= N \frac{1}{k_B T^2} \left[ \langle \epsilon^2 \rangle  -  \langle \epsilon \rangle^2 \right]
+\end{split}\]</div>
+<p>By the same logic we can write the magnetic susceptibility per spin as either</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\chi}{N} = \frac{1}{N} \frac{1}{k_B T} \left[ \langle M^2 \rangle  -  \langle |M| \rangle^2 \right]
+\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\chi}{N} = N \frac{1}{k_B T} \left[ \langle m^2 \rangle  -  \langle |m| \rangle^2 \right]
+\]</div>
+<p>I hope this helps clarify the issue, and apologies for the confusion.</p>
+<p>Whether you use the original notation (<span class="math notranslate nohighlight">\(C_V\)</span> and <span class="math notranslate nohighlight">\(\chi\)</span>) or some new notation (e.g. <span class="math notranslate nohighlight">\(C_V/N\)</span> and <span class="math notranslate nohighlight">\(\chi/N\)</span>) for these quantities in your report is up to you – just make sure your math agrees with the expressions above.</p>
+</div>
 </section>
 <section id="problem-2">
 <h3>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this headline">#</a></h3>

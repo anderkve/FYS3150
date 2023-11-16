@@ -122,25 +122,83 @@ Assume a $2 \times 2$ lattice with periodic boundary conditions.
   - $\langle \epsilon^2 \rangle$
   - $\langle |m| \rangle$
   - $\langle m^2 \rangle$
-  - the specific heat capacity (normalised to number of spins):
+  - the heat capacity, normalised to number of spins:
 
   $$
-  C_V = \frac{1}{N} \frac{1}{k_B T^2}(\langle E^2 \rangle - \langle E \rangle^2) 
+  \frac{C_V}{N} = \frac{1}{N} \frac{1}{k_B T^2}(\langle E^2 \rangle - \langle E \rangle^2) 
   $$
 
-  - the susceptibility (normalised to number of spins): 
+  - the susceptibility, normalised to number of spins: 
 
   $$
-  \chi = \frac{1}{N} \frac{1}{k_B T}(\langle M^2 \rangle - \langle |M| \rangle^2)
+  \frac{\chi}{N} = \frac{1}{N} \frac{1}{k_B T}(\langle M^2 \rangle - \langle |M| \rangle^2)
   $$
   
 We will use these analytical results to test our code.
 
-<!--
+
 ```{note}
-There was a typo in a previous version, where $C_V$ and $\chi$ were defined using $\epsilon$ and $m$ rather than $E$ and $M$. This is now corrected, along with the normalisation factor $\frac{1}{N}$ in front to enusure that we normalise the heat capacity and susceptibility to the total number of spins in the system. Apologies for the confusion!
+There's been some confusion regarding the expressions for heat capacity $C_V$ and susceptibility $\chi$ and how they relate to energy per spin ($\epsilon$) and magnetisation per spin ($m$), respectively. I think the confusion comes down to some unfortunate notation from my side. So let me explain, using $C_V$ as example.
+
+The heat capacity $C_V$ in itself is given by
+
+$$
+C_V = \frac{1}{k_B T^2} \textrm{Var}(E)
+$$
+
+However, I have provided an expression for the heat capacity *normalised to the number of spins* $N$. (So a quantity analogous to *the specific heat capacity* when we normalise against units of mass.)  Unfortunately I wrote this expression also using the symbol $C_V$. That is, I wrote:
+
+$$
+C_V = \frac{1}{N} \frac{1}{k_B T^2} \textrm{Var}(E)
+$$
+
+where I have included the extra factor $1/N$. However, what I *should* have done was to make this explicit in my notation, either by writing $C_V/N$ directly, or introduce some new notation, e.g. a lower-case $c_V$:
+
+$$
+c_V = \frac{C_V}{N} = \frac{1}{N} \frac{1}{k_B T^2} \textrm{Var}(E)
+$$
+
+From this expression we can easily express this quantity in terms of the variance of the energy per spin ($\epsilon$), if we want to. All we need is to remember the general relation that if $y=kx$ where $k$ is some constant, then
+
+$$
+\textrm{Var}(y) = \textrm{Var}(kx) = k^2\textrm{Var}(x)
+$$
+
+So in terms of energy, we have our familiar expression:
+
+$$
+\frac{C_V}{N} &= \frac{1}{N} \frac{1}{k_B T^2} \textrm{Var}(E) \\
+              &= \frac{1}{N} \frac{1}{k_B T^2} \left[ \langle E^2 \rangle  -  \langle E \rangle^2 \right]
+$$
+
+And in terms of energy per spin, since $E = N \epsilon$, we get
+
+$$
+\frac{C_V}{N} &= \frac{1}{N} \frac{1}{k_B T^2} \textrm{Var}(E) \\ 
+&=  \frac{1}{N} \frac{1}{k_B T^2} \textrm{Var}(N \epsilon) \\ 
+&=  \frac{1}{N} \frac{1}{k_B T^2} N^2 \textrm{Var}(\epsilon)  \\ 
+&= N \frac{1}{k_B T^2} \left[ \langle \epsilon^2 \rangle  -  \langle \epsilon \rangle^2 \right]
+$$
+
+
+By the same logic we can write the magnetic susceptibility per spin as either
+
+$$
+\frac{\chi}{N} = \frac{1}{N} \frac{1}{k_B T} \left[ \langle M^2 \rangle  -  \langle |M| \rangle^2 \right]
+$$
+
+or 
+
+$$
+\frac{\chi}{N} = N \frac{1}{k_B T} \left[ \langle m^2 \rangle  -  \langle |m| \rangle^2 \right]
+$$
+
+I hope this helps clarify the issue, and apologies for the confusion. 
+
+Whether you use the original notation ($C_V$ and $\chi$) or some new notation (e.g. $C_V/N$ and $\chi/N$) for these quantities in your report is up to you -- just make sure your math agrees with the expressions above.
+
 ```
--->
+
 
 
 ### Problem 2
