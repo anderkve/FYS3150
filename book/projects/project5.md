@@ -56,7 +56,7 @@ $$
 p(x,y\,;t) = |\Psi(x,y,t)|^2 = \Psi^*(x,y,t) \, \Psi(x,y,t),
 $$
 
-where $p(x,y\,;t)$ denotes the probability density for detecting the particle at position $(x,y)$ if we perform a position measurement at time $t$.
+where $p(x,y\,;t)$ denotes the probability density for detecting the particle at position $(x,y)$ if we perform a position measurement at time $t$. The star in $\Psi^*$ denotes complex conjugation.
 
 
 To keep things simple, we will in this project assume that all dimensionful variables have been scaled away, leaving us with a "bare" Schrödinger equation on the form
