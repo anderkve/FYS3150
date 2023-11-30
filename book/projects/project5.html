@@ -812,7 +812,7 @@ title="Print to PDF"
 \[
 i \hbar \frac{d}{dt} |\Psi\rangle = \hat{H} |\Psi\rangle,
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\hat{H}\)</span> is some Hamiltonian operator and <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span> is the quantum state (<a class="reference external" href="https://plato.stanford.edu/entries/qt-issues/#OntoIssu">whatever that is</a>). While we’re not really sure what the quantum state <em>is</em>, we do know it is related to probability (<a class="reference external" href="https://plato.stanford.edu/entries/probability-interpret/">whatever that is</a>) through the <a class="reference external" href="https://en.wikipedia.org/wiki/Born_rule">Born rule</a>, which we will use extensively in this project. More details below.</p>
+<p>where <span class="math notranslate nohighlight">\(\hat{H}\)</span> is some Hamiltonian operator and <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span> is the quantum state (<a class="reference external" href="https://plato.stanford.edu/entries/qt-issues/#OntoIssu">whatever that is</a>). While we are not really sure what the quantum state <em>is</em>, we do know it is related to probability (<a class="reference external" href="https://plato.stanford.edu/entries/probability-interpret/">whatever that is</a>) through the <a class="reference external" href="https://en.wikipedia.org/wiki/Born_rule">Born rule</a>, which we will use extensively in this project. More details below.</p>
 <p>We will now consider the case of <em>a single, non-relativistic particle in two dimensions</em>. If we work in “position space”, the quantum state <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span> can then be expressed through a <em>complex-valued</em> function <span class="math notranslate nohighlight">\(\Psi(x,y,t)\)</span>, historically called the <em>the wave function</em>. The Schrödinger equation then becomes</p>
 <div class="math notranslate nohighlight">
 \[
@@ -941,7 +941,8 @@ A \,\vec{u}^{n+1} = B \,\vec{u}^{n}.
 <p>Now we need some code to help us get this straight in our program:</p>
 <ul>
 <li><p>Write a code snippet that translates a pair of indices <span class="math notranslate nohighlight">\((i,j)\)</span> into a corresponding single index <span class="math notranslate nohighlight">\(k\)</span> that gives the position of <span class="math notranslate nohighlight">\(u^n_{ij}\)</span> in the vector <span class="math notranslate nohighlight">\(\vec{u}^n\)</span>.</p></li>
-<li><p>Start with <span class="math notranslate nohighlight">\((M-2)=3\)</span> as a concrete example and write a code snippet that can take a number <span class="math notranslate nohighlight">\(r\)</span> and two lenght-9 vectors <span class="math notranslate nohighlight">\(\vec{a}\)</span> and <span class="math notranslate nohighlight">\(\vec{b}\)</span> and produce the following matrices:</p>
+<li><p>Next, we need code to construct our <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> matrices. The code must work for any value of <span class="math notranslate nohighlight">\((M-2)\)</span>, but we can use <span class="math notranslate nohighlight">\((M-2)=3\)</span> as a first test case. So write a code snippet that takes as input a number <span class="math notranslate nohighlight">\(r\)</span> and two vectors <span class="math notranslate nohighlight">\(\vec{a}\)</span> and <span class="math notranslate nohighlight">\(\vec{b}\)</span> and produce the following matrices when the vectors are of length 9:<br />
+<code class="docutils literal notranslate">&#160; </code></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
   A = 
@@ -972,9 +973,110 @@ A \,\vec{u}^{n+1} = B \,\vec{u}^{n}.
   0   &amp;  0   &amp;  0   &amp;  0    &amp;   0   &amp;  r    &amp;  0   &amp;  r    &amp;  b_8  \\
   \end{bmatrix}
   \end{split}\]</div>
-<p>If you look closely you will see that the matrix structure is based on submatrices of size <span class="math notranslate nohighlight">\((M-2) \times (M-2)\)</span>. Make sure your code works for a general value of <span class="math notranslate nohighlight">\((M-2)\)</span>, even though we’re testing it for the simple case <span class="math notranslate nohighlight">\((M-2)=3\)</span>.</p>
 </li>
-<li><p>Now you are ready to write a function for your program that, using inputs <span class="math notranslate nohighlight">\(M\)</span>, <span class="math notranslate nohighlight">\(h\)</span>, <span class="math notranslate nohighlight">\(\Delta t\)</span> and the matrix <span class="math notranslate nohighlight">\(V\)</span> as input, can fill two <span class="math notranslate nohighlight">\((M-2)^2 \times (M-2)^2\)</span> matrices <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> according to the above pattern, with</p>
+<li><p>To get the matrix structures correct it may be useful to notice that the <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> matrices are based on submatrices of size <span class="math notranslate nohighlight">\((M-2) \times (M-2)\)</span>, as illustrated here:<br />
+<code class="docutils literal notranslate">&#160; </code></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  A,B = 
+  \begin{bmatrix}
+    \begin{pmatrix}
+      \bullet  &amp;  \bullet  &amp;  \phantom{\bullet} \\
+      \bullet  &amp;  \bullet  &amp;  \bullet \\
+      \phantom{\bullet}  &amp;  \bullet  &amp;  \bullet
+    \end{pmatrix}
+    \begin{pmatrix}
+      \bullet  &amp;  \phantom{\bullet}  &amp;  \phantom{\bullet} \\
+      \phantom{\bullet}  &amp;  \bullet  &amp;  \phantom{\bullet} \\
+      \phantom{\bullet}  &amp;  \phantom{\bullet}  &amp;  \bullet
+    \end{pmatrix}
+    \begin{pmatrix}
+      \phantom{\bullet}  &amp;  \phantom{\bullet}  &amp;  \phantom{\bullet} \\
+      \phantom{\bullet}  &amp;  \phantom{\bullet}  &amp;  \phantom{\bullet} \\
+      \phantom{\bullet}  &amp;  \phantom{\bullet}  &amp;  \phantom{\bullet}
+    \end{pmatrix}\\
+    \begin{pmatrix}
+      \bullet  &amp;  \phantom{\bullet}  &amp;  \phantom{\bullet} \\
+      \phantom{\bullet}  &amp;  \bullet  &amp;  \phantom{\bullet} \\
+      \phantom{\bullet}  &amp;  \phantom{\bullet}  &amp;  \bullet
+    \end{pmatrix}
+    \begin{pmatrix}
+      \bullet  &amp;  \bullet  &amp;  \phantom{\bullet} \\
+      \bullet  &amp;  \bullet  &amp;  \bullet \\
+      \phantom{\bullet}  &amp;  \bullet  &amp;  \bullet
+    \end{pmatrix}
+    \begin{pmatrix}
+      \bullet  &amp;  \phantom{\bullet}  &amp;  \phantom{\bullet} \\
+      \phantom{\bullet}  &amp;  \bullet  &amp;  \phantom{\bullet} \\
+      \phantom{\bullet}  &amp;  \phantom{\bullet}  &amp;  \bullet
+    \end{pmatrix}\\
+    \begin{pmatrix}
+      \phantom{\bullet}  &amp;  \phantom{\bullet}  &amp;  \phantom{\bullet} \\
+      \phantom{\bullet}  &amp;  \phantom{\bullet}  &amp;  \phantom{\bullet} \\
+      \phantom{\bullet}  &amp;  \phantom{\bullet}  &amp;  \phantom{\bullet}
+    \end{pmatrix}
+    \begin{pmatrix}
+      \bullet  &amp;  \phantom{\bullet}  &amp;  \phantom{\bullet} \\
+      \phantom{\bullet}  &amp;  \bullet  &amp;  \phantom{\bullet} \\
+      \phantom{\bullet}  &amp;  \phantom{\bullet}  &amp;  \bullet
+    \end{pmatrix}
+    \begin{pmatrix}
+      \bullet  &amp;  \bullet  &amp;  \phantom{\bullet} \\
+      \bullet  &amp;  \bullet  &amp;  \bullet \\
+      \phantom{\bullet}  &amp;  \bullet  &amp;  \bullet
+    \end{pmatrix}
+  \end{bmatrix}
+  \end{split}\]</div>
+</li>
+<li><p>In the <em>Code snippets</em> section at the bottom we provide a C++ function you can use if you want to print the structure of a sparse matrix to screen.</p></li>
+<li><p>Make sure your code works for any value of <span class="math notranslate nohighlight">\((M-2)\)</span>, even though we have so far only tested it for the simple case <span class="math notranslate nohighlight">\((M-2)=3\)</span>. One way to test that can be to check that you get the following matrices when you try with <span class="math notranslate nohighlight">\((M-2)=4\)</span>:<br />
+<code class="docutils literal notranslate">&#160; </code></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  A = 
+  \begin{bmatrix}
+  a_0 &amp;  -r  &amp;  0   &amp;  0  &amp;   -r  &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  0     &amp;  0     &amp;  0     &amp;  0     &amp;  0     \\
+  -r  &amp;  a_1 &amp;  -r  &amp;  0  &amp;   0   &amp;  -r  &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  0     &amp;  0     &amp;  0     &amp;  0     &amp;  0     \\
+  0   &amp;  -r  &amp;  a_2 &amp;  -r &amp;   0   &amp;  0   &amp;  -r  &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  0     &amp;  0     &amp;  0     &amp;  0     &amp;  0     \\
+  0   &amp;  0   &amp;  -r  &amp; a_3 &amp;   0   &amp;  0   &amp;  0   &amp;  -r &amp;   0   &amp;  0   &amp;  0   &amp;  0     &amp;  0     &amp;  0     &amp;  0     &amp;  0     \\
+  -r  &amp;  0   &amp;  0   &amp;  0  &amp;   a_4 &amp;  -r  &amp;  0   &amp;  0  &amp;   -r  &amp;  0   &amp;  0   &amp;  0     &amp;  0     &amp;  0     &amp;  0     &amp;  0     \\
+  0   &amp;  -r  &amp;  0   &amp;  0  &amp;   -r  &amp;  a_5 &amp;  -r  &amp;  0  &amp;   0   &amp;  -r  &amp;  0   &amp;  0     &amp;  0     &amp;  0     &amp;  0     &amp;  0     \\
+  0   &amp;  0   &amp;  -r  &amp;  0  &amp;   0   &amp;  -r  &amp;  a_6 &amp;  -r &amp;   0   &amp;  0   &amp;  -r  &amp;  0     &amp;  0     &amp;  0     &amp;  0     &amp;  0     \\
+  0   &amp;  0   &amp;  0   &amp;  -r &amp;   0   &amp;  0   &amp;  -r  &amp; a_7 &amp;   0   &amp;  0   &amp;  0   &amp;  -r    &amp;  0     &amp;  0     &amp;  0     &amp;  0     \\
+  0   &amp;  0   &amp;  0   &amp;  0  &amp;   -r  &amp;  0   &amp;  0   &amp;  0  &amp;   a_8 &amp;  -r  &amp;  0   &amp;  0     &amp;  -r    &amp;  0     &amp;  0     &amp;  0     \\
+  0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  -r  &amp;  0   &amp;  0  &amp;   -r  &amp;  a_9 &amp;  -r  &amp;  0     &amp;  0     &amp;  -r    &amp;  0     &amp;  0     \\
+  0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  -r  &amp;  0  &amp;   0   &amp;  -r  &amp;  a_{10} &amp;  -r &amp;  0     &amp;  0     &amp;  -r    &amp;  0     \\
+  0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  -r &amp;   0   &amp;  0   &amp;  -r  &amp; a_{11} &amp;  0     &amp;  0     &amp;  0     &amp;  -r    \\
+  0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  0  &amp;   -r  &amp;  0   &amp;  0   &amp;  0     &amp; a_{12} &amp;  -r    &amp;  0     &amp;  0     \\
+  0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  -r  &amp;  0   &amp;  0     &amp; -r     &amp; a_{13} &amp;  -r    &amp;  0     \\
+  0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  -r  &amp;  0     &amp; 0      &amp;  -r    &amp; a_{14} &amp;  -r    \\
+  0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  -r    &amp; 0      &amp;  0     &amp;  -r    &amp; a_{15} \\
+  \end{bmatrix}
+  \end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  B = 
+  \begin{bmatrix}
+  b_0 &amp;  r   &amp;  0   &amp;  0  &amp;   r   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  0     &amp;  0     &amp;  0     &amp;  0     &amp;  0     \\
+  r   &amp;  b_1 &amp;  r   &amp;  0  &amp;   0   &amp;  r   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  0     &amp;  0     &amp;  0     &amp;  0     &amp;  0     \\
+  0   &amp;  r   &amp;  b_2 &amp;  r  &amp;   0   &amp;  0   &amp;  r   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  0     &amp;  0     &amp;  0     &amp;  0     &amp;  0     \\
+  0   &amp;  0   &amp;  r   &amp; b_3 &amp;   0   &amp;  0   &amp;  0   &amp;  r  &amp;   0   &amp;  0   &amp;  0   &amp;  0     &amp;  0     &amp;  0     &amp;  0     &amp;  0     \\
+  r   &amp;  0   &amp;  0   &amp;  0  &amp;   b_4 &amp;  r   &amp;  0   &amp;  0  &amp;   r   &amp;  0   &amp;  0   &amp;  0     &amp;  0     &amp;  0     &amp;  0     &amp;  0     \\
+  0   &amp;  r   &amp;  0   &amp;  0  &amp;   r   &amp;  b_5 &amp;  r   &amp;  0  &amp;   0   &amp;  r   &amp;  0   &amp;  0     &amp;  0     &amp;  0     &amp;  0     &amp;  0     \\
+  0   &amp;  0   &amp;  r   &amp;  0  &amp;   0   &amp;  r   &amp;  b_6 &amp;  r  &amp;   0   &amp;  0   &amp;  r   &amp;  0     &amp;  0     &amp;  0     &amp;  0     &amp;  0     \\
+  0   &amp;  0   &amp;  0   &amp;  r  &amp;   0   &amp;  0   &amp;  r   &amp; b_7 &amp;   0   &amp;  0   &amp;  0   &amp;  r     &amp;  0     &amp;  0     &amp;  0     &amp;  0     \\
+  0   &amp;  0   &amp;  0   &amp;  0  &amp;   r   &amp;  0   &amp;  0   &amp;  0  &amp;   b_8 &amp;  r   &amp;  0   &amp;  0     &amp;  r     &amp;  0     &amp;  0     &amp;  0     \\
+  0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  r   &amp;  0   &amp;  0  &amp;   r   &amp;  b_9 &amp;  r   &amp;  0     &amp;  0     &amp;  r     &amp;  0     &amp;  0     \\
+  0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  r   &amp;  0  &amp;   0   &amp;  r   &amp;  b_{10} &amp;  r  &amp;  0     &amp;  0     &amp;  r     &amp;  0     \\
+  0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  r  &amp;   0   &amp;  0   &amp;  r   &amp; b_{11} &amp;  0     &amp;  0     &amp;  0     &amp;  r     \\
+  0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  0  &amp;   r   &amp;  0   &amp;  0   &amp;  0     &amp; b_{12} &amp;  r     &amp;  0     &amp;  0     \\
+  0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  r   &amp;  0   &amp;  0     &amp; r      &amp; b_{13} &amp;  r     &amp;  0     \\
+  0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  r   &amp;  0     &amp; 0      &amp;  r     &amp; b_{14} &amp;  r     \\
+  0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  r     &amp; 0      &amp;  0     &amp;  r     &amp; b_{15} \\
+  \end{bmatrix}
+  \end{split}\]</div>
+</li>
+<li><p>Now you are ready to write a proper function for your program that, using inputs <span class="math notranslate nohighlight">\(M\)</span>, <span class="math notranslate nohighlight">\(h\)</span>, <span class="math notranslate nohighlight">\(\Delta t\)</span> and the matrix <span class="math notranslate nohighlight">\(V\)</span> as input, can fill two <span class="math notranslate nohighlight">\((M-2)^2 \times (M-2)^2\)</span> matrices <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> according to the above pattern, with</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
   a_k &amp;= 1 + 4r + \frac{i \Delta t}{2} v_{ij},\\
@@ -1091,7 +1193,64 @@ u(x,y,t=0) = e^{-\frac{(x-x_c)^2}{2 \sigma_x^2} - \frac{(y-y_c)^2}{2 \sigma_y^2}
 <hr class="docutils" />
 <section id="code-snippets">
 <h3>Code snippets<a class="headerlink" href="#code-snippets" title="Permalink to this headline">#</a></h3>
-<p>Here’s a python example demonstrating how you can use matplotlib to animate 2D colourmap plots:</p>
+<p>Here’s a C++ function to print the structure of a <code class="docutils literal notranslate"><span class="pre">arma::sp_cx_mat</span></code> matrix to screen:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;armadillo&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+
+<span class="c1">// A function that prints the structure of a sparse matrix to screen.</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">print_sp_matrix_structure</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">sp_cx_mat</span><span class="o">&amp;</span><span class="w"> </span><span class="n">A</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">arma</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Declare a C-style 2D array of strings.</span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">S</span><span class="p">[</span><span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="p">][</span><span class="n">A</span><span class="p">.</span><span class="n">n_cols</span><span class="p">];</span><span class="w">  </span>
+
+<span class="w">    </span><span class="c1">// Initialise all the strings to &quot; &quot;.</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">n_cols</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Next, we want to set the string to a dot at each non-zero element.</span>
+<span class="w">    </span><span class="c1">// To do this we use the special loop iterator from the sp_cx_mat class</span>
+<span class="w">    </span><span class="c1">// to help us loop over only the non-zero matrix elements.</span>
+<span class="w">    </span><span class="n">sp_cx_mat</span><span class="o">::</span><span class="n">const_iterator</span><span class="w"> </span><span class="n">it</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">sp_cx_mat</span><span class="o">::</span><span class="n">const_iterator</span><span class="w"> </span><span class="n">it_end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">nnz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">it</span><span class="p">;</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">it_end</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">it</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">S</span><span class="p">[</span><span class="n">it</span><span class="p">.</span><span class="n">row</span><span class="p">()][</span><span class="n">it</span><span class="p">.</span><span class="n">col</span><span class="p">()]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;•&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">nnz</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Finally, print the matrix to screen.</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;| &quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">n_cols</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w">  </span><span class="s">&quot;|</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;matrix size: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">n_cols</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;non-zero elements: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">nnz</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate">&#160; </code>
+<code class="docutils literal notranslate">&#160; </code></p>
+<p>Here’s a Python example demonstrating how you can use matplotlib to animate 2D colourmap plots:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
