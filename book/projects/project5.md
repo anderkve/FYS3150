@@ -38,7 +38,7 @@ $$
 i \hbar \frac{d}{dt} |\Psi\rangle = \hat{H} |\Psi\rangle,
 $$
 
-where $\hat{H}$ is some Hamiltonian operator and $|\Psi\rangle$ is the quantum state ([whatever that is](https://plato.stanford.edu/entries/qt-issues/#OntoIssu)). While we're not really sure what the quantum state *is*, we do know it is related to probability ([whatever that is](https://plato.stanford.edu/entries/probability-interpret/)) through the [Born rule](https://en.wikipedia.org/wiki/Born_rule), which we will use extensively in this project. More details below.
+where $\hat{H}$ is some Hamiltonian operator and $|\Psi\rangle$ is the quantum state ([whatever that is](https://plato.stanford.edu/entries/qt-issues/#OntoIssu)). While we are not really sure what the quantum state *is*, we do know it is related to probability ([whatever that is](https://plato.stanford.edu/entries/probability-interpret/)) through the [Born rule](https://en.wikipedia.org/wiki/Born_rule), which we will use extensively in this project. More details below.
 
 
 
@@ -198,7 +198,8 @@ Now we need some code to help us get this straight in our program:
 
 - Write a code snippet that translates a pair of indices $(i,j)$ into a corresponding single index $k$ that gives the position of $u^n_{ij}$ in the vector $\vec{u}^n$.
 
-- Start with $(M-2)=3$ as a concrete example and write a code snippet that can take a number $r$ and two lenght-9 vectors $\vec{a}$ and $\vec{b}$ and produce the following matrices:
+- Next, we need code to construct our $A$ and $B$ matrices. The code must work for any value of $(M-2)$, but we can use $(M-2)=3$ as a first test case. So write a code snippet that takes as input a number $r$ and two vectors $\vec{a}$ and $\vec{b}$ and produce the following matrices when the vectors are of length 9:  
+`  `
 
   $$
   A = 
@@ -230,9 +231,110 @@ Now we need some code to help us get this straight in our program:
   \end{bmatrix}
   $$
 
-  If you look closely you will see that the matrix structure is based on submatrices of size $(M-2) \times (M-2)$. Make sure your code works for a general value of $(M-2)$, even though we're testing it for the simple case $(M-2)=3$.
+- To get the matrix structures correct it may be useful to notice that the $A$ and $B$ matrices are based on submatrices of size $(M-2) \times (M-2)$, as illustrated here:  
+`  `
 
-- Now you are ready to write a function for your program that, using inputs $M$, $h$, $\Delta t$ and the matrix $V$ as input, can fill two $(M-2)^2 \times (M-2)^2$ matrices $A$ and $B$ according to the above pattern, with
+  $$
+  A,B = 
+  \begin{bmatrix}
+    \begin{pmatrix}
+      \bullet  &  \bullet  &  \phantom{\bullet} \\
+      \bullet  &  \bullet  &  \bullet \\
+      \phantom{\bullet}  &  \bullet  &  \bullet
+    \end{pmatrix}
+    \begin{pmatrix}
+      \bullet  &  \phantom{\bullet}  &  \phantom{\bullet} \\
+      \phantom{\bullet}  &  \bullet  &  \phantom{\bullet} \\
+      \phantom{\bullet}  &  \phantom{\bullet}  &  \bullet
+    \end{pmatrix}
+    \begin{pmatrix}
+      \phantom{\bullet}  &  \phantom{\bullet}  &  \phantom{\bullet} \\
+      \phantom{\bullet}  &  \phantom{\bullet}  &  \phantom{\bullet} \\
+      \phantom{\bullet}  &  \phantom{\bullet}  &  \phantom{\bullet}
+    \end{pmatrix}\\
+    \begin{pmatrix}
+      \bullet  &  \phantom{\bullet}  &  \phantom{\bullet} \\
+      \phantom{\bullet}  &  \bullet  &  \phantom{\bullet} \\
+      \phantom{\bullet}  &  \phantom{\bullet}  &  \bullet
+    \end{pmatrix}
+    \begin{pmatrix}
+      \bullet  &  \bullet  &  \phantom{\bullet} \\
+      \bullet  &  \bullet  &  \bullet \\
+      \phantom{\bullet}  &  \bullet  &  \bullet
+    \end{pmatrix}
+    \begin{pmatrix}
+      \bullet  &  \phantom{\bullet}  &  \phantom{\bullet} \\
+      \phantom{\bullet}  &  \bullet  &  \phantom{\bullet} \\
+      \phantom{\bullet}  &  \phantom{\bullet}  &  \bullet
+    \end{pmatrix}\\
+    \begin{pmatrix}
+      \phantom{\bullet}  &  \phantom{\bullet}  &  \phantom{\bullet} \\
+      \phantom{\bullet}  &  \phantom{\bullet}  &  \phantom{\bullet} \\
+      \phantom{\bullet}  &  \phantom{\bullet}  &  \phantom{\bullet}
+    \end{pmatrix}
+    \begin{pmatrix}
+      \bullet  &  \phantom{\bullet}  &  \phantom{\bullet} \\
+      \phantom{\bullet}  &  \bullet  &  \phantom{\bullet} \\
+      \phantom{\bullet}  &  \phantom{\bullet}  &  \bullet
+    \end{pmatrix}
+    \begin{pmatrix}
+      \bullet  &  \bullet  &  \phantom{\bullet} \\
+      \bullet  &  \bullet  &  \bullet \\
+      \phantom{\bullet}  &  \bullet  &  \bullet
+    \end{pmatrix}
+  \end{bmatrix}
+  $$
+
+- In the *Code snippets* section at the bottom we provide a C++ function you can use if you want to print the structure of a sparse matrix to screen.
+
+- Make sure your code works for any value of $(M-2)$, even though we have so far only tested it for the simple case $(M-2)=3$. One way to test that can be to check that you get the following matrices when you try with $(M-2)=4$:  
+`  `
+
+  $$
+  A = 
+  \begin{bmatrix}
+  a_0 &  -r  &  0   &  0  &   -r  &  0   &  0   &  0  &   0   &  0   &  0   &  0     &  0     &  0     &  0     &  0     \\
+  -r  &  a_1 &  -r  &  0  &   0   &  -r  &  0   &  0  &   0   &  0   &  0   &  0     &  0     &  0     &  0     &  0     \\
+  0   &  -r  &  a_2 &  -r &   0   &  0   &  -r  &  0  &   0   &  0   &  0   &  0     &  0     &  0     &  0     &  0     \\
+  0   &  0   &  -r  & a_3 &   0   &  0   &  0   &  -r &   0   &  0   &  0   &  0     &  0     &  0     &  0     &  0     \\
+  -r  &  0   &  0   &  0  &   a_4 &  -r  &  0   &  0  &   -r  &  0   &  0   &  0     &  0     &  0     &  0     &  0     \\
+  0   &  -r  &  0   &  0  &   -r  &  a_5 &  -r  &  0  &   0   &  -r  &  0   &  0     &  0     &  0     &  0     &  0     \\
+  0   &  0   &  -r  &  0  &   0   &  -r  &  a_6 &  -r &   0   &  0   &  -r  &  0     &  0     &  0     &  0     &  0     \\
+  0   &  0   &  0   &  -r &   0   &  0   &  -r  & a_7 &   0   &  0   &  0   &  -r    &  0     &  0     &  0     &  0     \\
+  0   &  0   &  0   &  0  &   -r  &  0   &  0   &  0  &   a_8 &  -r  &  0   &  0     &  -r    &  0     &  0     &  0     \\
+  0   &  0   &  0   &  0  &   0   &  -r  &  0   &  0  &   -r  &  a_9 &  -r  &  0     &  0     &  -r    &  0     &  0     \\
+  0   &  0   &  0   &  0  &   0   &  0   &  -r  &  0  &   0   &  -r  &  a_{10} &  -r &  0     &  0     &  -r    &  0     \\
+  0   &  0   &  0   &  0  &   0   &  0   &  0   &  -r &   0   &  0   &  -r  & a_{11} &  0     &  0     &  0     &  -r    \\
+  0   &  0   &  0   &  0  &   0   &  0   &  0   &  0  &   -r  &  0   &  0   &  0     & a_{12} &  -r    &  0     &  0     \\
+  0   &  0   &  0   &  0  &   0   &  0   &  0   &  0  &   0   &  -r  &  0   &  0     & -r     & a_{13} &  -r    &  0     \\
+  0   &  0   &  0   &  0  &   0   &  0   &  0   &  0  &   0   &  0   &  -r  &  0     & 0      &  -r    & a_{14} &  -r    \\
+  0   &  0   &  0   &  0  &   0   &  0   &  0   &  0  &   0   &  0   &  0   &  -r    & 0      &  0     &  -r    & a_{15} \\
+  \end{bmatrix}
+  $$
+
+  $$
+  B = 
+  \begin{bmatrix}
+  b_0 &  r   &  0   &  0  &   r   &  0   &  0   &  0  &   0   &  0   &  0   &  0     &  0     &  0     &  0     &  0     \\
+  r   &  b_1 &  r   &  0  &   0   &  r   &  0   &  0  &   0   &  0   &  0   &  0     &  0     &  0     &  0     &  0     \\
+  0   &  r   &  b_2 &  r  &   0   &  0   &  r   &  0  &   0   &  0   &  0   &  0     &  0     &  0     &  0     &  0     \\
+  0   &  0   &  r   & b_3 &   0   &  0   &  0   &  r  &   0   &  0   &  0   &  0     &  0     &  0     &  0     &  0     \\
+  r   &  0   &  0   &  0  &   b_4 &  r   &  0   &  0  &   r   &  0   &  0   &  0     &  0     &  0     &  0     &  0     \\
+  0   &  r   &  0   &  0  &   r   &  b_5 &  r   &  0  &   0   &  r   &  0   &  0     &  0     &  0     &  0     &  0     \\
+  0   &  0   &  r   &  0  &   0   &  r   &  b_6 &  r  &   0   &  0   &  r   &  0     &  0     &  0     &  0     &  0     \\
+  0   &  0   &  0   &  r  &   0   &  0   &  r   & b_7 &   0   &  0   &  0   &  r     &  0     &  0     &  0     &  0     \\
+  0   &  0   &  0   &  0  &   r   &  0   &  0   &  0  &   b_8 &  r   &  0   &  0     &  r     &  0     &  0     &  0     \\
+  0   &  0   &  0   &  0  &   0   &  r   &  0   &  0  &   r   &  b_9 &  r   &  0     &  0     &  r     &  0     &  0     \\
+  0   &  0   &  0   &  0  &   0   &  0   &  r   &  0  &   0   &  r   &  b_{10} &  r  &  0     &  0     &  r     &  0     \\
+  0   &  0   &  0   &  0  &   0   &  0   &  0   &  r  &   0   &  0   &  r   & b_{11} &  0     &  0     &  0     &  r     \\
+  0   &  0   &  0   &  0  &   0   &  0   &  0   &  0  &   r   &  0   &  0   &  0     & b_{12} &  r     &  0     &  0     \\
+  0   &  0   &  0   &  0  &   0   &  0   &  0   &  0  &   0   &  r   &  0   &  0     & r      & b_{13} &  r     &  0     \\
+  0   &  0   &  0   &  0  &   0   &  0   &  0   &  0  &   0   &  0   &  r   &  0     & 0      &  r     & b_{14} &  r     \\
+  0   &  0   &  0   &  0  &   0   &  0   &  0   &  0  &   0   &  0   &  0   &  r     & 0      &  0     &  r     & b_{15} \\
+  \end{bmatrix}
+  $$
+
+- Now you are ready to write a proper function for your program that, using inputs $M$, $h$, $\Delta t$ and the matrix $V$ as input, can fill two $(M-2)^2 \times (M-2)^2$ matrices $A$ and $B$ according to the above pattern, with
 
   $$
   a_k &= 1 + 4r + \frac{i \Delta t}{2} v_{ij},\\
@@ -373,7 +475,67 @@ If you find it useful, feel free to make some animations of your simulation and 
 
 ### Code snippets
 
-Here's a python example demonstrating how you can use matplotlib to animate 2D colourmap plots:
+Here's a C++ function to print the structure of a `arma::sp_cx_mat` matrix to screen:
+
+```cpp
+#include <armadillo>
+#include <vector>
+#include <string>
+
+// A function that prints the structure of a sparse matrix to screen.
+void print_sp_matrix_structure(const arma::sp_cx_mat& A)
+{
+    using namespace std;
+    using namespace arma;
+
+    // Declare a C-style 2D array of strings.
+    string S[A.n_rows][A.n_cols];  
+
+    // Initialise all the strings to " ".
+    for (int i =0; i < A.n_rows; i++)
+    {
+        for (int j = 0; j < A.n_cols; j++)
+        {
+            S[i][j] = " ";
+        }
+    }
+
+    // Next, we want to set the string to a dot at each non-zero element.
+    // To do this we use the special loop iterator from the sp_cx_mat class
+    // to help us loop over only the non-zero matrix elements.
+    sp_cx_mat::const_iterator it     = A.begin();
+    sp_cx_mat::const_iterator it_end = A.end();
+
+    int nnz = 0;
+    for(it; it != it_end; ++it)
+    {
+        S[it.row()][it.col()] = "•";
+        nnz++;
+    }
+
+    // Finally, print the matrix to screen.
+    cout << endl;
+    for (int i =0; i < A.n_rows; i++)
+    {
+        cout << "| ";
+        for (int j = 0; j < A.n_cols; j++)
+        {
+            cout << S[i][j] << " ";
+        }
+        cout <<  "|\n";
+    }
+
+    cout << endl;
+    cout << "matrix size: " << A.n_rows << "x" << A.n_cols << endl;
+    cout << "non-zero elements: " << nnz << endl ;
+    cout << endl;
+}
+```
+
+`  `
+`  `
+
+Here's a Python example demonstrating how you can use matplotlib to animate 2D colourmap plots:
 
 ```python
 import numpy as np
