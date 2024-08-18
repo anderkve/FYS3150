@@ -1,5 +1,10 @@
 # Project 1
 
+Not published yet.
+
+<!-- 
+
+
 ## Practicalities
 
 - **Deadline:** Tuesday, September 12, at 23:59
@@ -174,6 +179,8 @@ For values of $n_{\text{steps}}$ up to $n_{\text{steps}} = 10^6$, run timing tes
 used by the general algorithm and the special algorithm. (*Remember:* reliable timing results require repeated runs for each choice of $n_{\text{steps}}$.)
 Make a table or plot to present your timing results, and comment briefly on the results.
 
+ -->
+
 
 <!-- 
 
@@ -186,6 +193,9 @@ LU decomposition approach to solving matrix equations.
 What do you expect would happen if you attempted to run code for the case $n = 10^5$ on your laptop?
 
 -->
+
+
+<!-- 
 
 ----
 
@@ -249,4 +259,4 @@ int main ()
 }
 ```
 
-
+-->

@@ -1,5 +1,10 @@
 # Project 4
 
+Not published yet.
+
+
+<!--
+
 ```{note}
 While working on the project, check this page regularly in case of small updates (typo fixes, added hints, etc.)
 ```
@@ -369,4 +374,6 @@ $$
 - See the code snippets in [`code_examples/omp_parallelization`](https://github.com/anderkve/FYS3150/tree/master/code_examples/omp_parallelization) for some simple examples on parallelisation using OpenMP.
 
 - For some illustrations on how you can use the C++ `<random>` library for random number generation, see code examples in [`code_examples/random_number_generation`](https://github.com/anderkve/FYS3150/tree/master/code_examples/random_number_generation). These examples use a Mersenne Twister generator. Some of the examples demonstrate how one can do seeding when working with multiple OpenMP threads.
+
+-->
 

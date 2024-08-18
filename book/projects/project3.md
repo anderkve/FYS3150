@@ -1,5 +1,10 @@
 # Project 3
 
+Not published yet.
+
+<!--
+
+
 ## Practicalities
 
 - **Deadline**: Tuesday, October 24, 23:59.
@@ -135,9 +140,13 @@ $$
 \ddot{f} + i\omega_0 \dot{f} - \frac{1}{2} \omega_z^2 f = 0.
 $$ (f_eq)
 
+-->
+
 <!--
 *Hint: if $F(f,g) = 0$ and  $G(f,g) = 0$, then $F(f,g) + c G(f,g) = 0$ for arbitrary functions $F$, $G$, $f$ and $g$ and an arbitrary complex number $c$.*
 -->
+
+<!--
 
 #### Problem 3
 
@@ -459,10 +468,15 @@ We want to use our simulation to search for resonance frequencies of the system.
 
   - How do the resonances change when the amplitude for the time-varying potential is increased?
 
+-->
+
 <!--
   - Based on the research literature on Penning traps, we expect that some of resonance frequencies of our system can
     be expressed as simple combinations of $\omega_z$, $\omega_+$ and $\omega_-$. Does this seem to be the case for the resonances you've uncovered? **Note:** While the electric potential is now time-dependent, $\omega_z$ is still defined the same way as before, i.e. in terms of the *constant* $V_0$.
 -->
+
+
+<!--
 
 - Now we want to check if the Coulomb interactions have some impact on the structure of these resonances. To do this you should "zoom in" on one of the resonances you've uncovered by performing fine-grained frequency scans around that resonance. 
 
@@ -525,3 +539,4 @@ Here is a suggested starting point for member functions of the `PenningTrap` cla
 
 Note that for Problem 9 you probably want to modify the declarations of some of these functions, as well as add some new ones.
 
+-->
