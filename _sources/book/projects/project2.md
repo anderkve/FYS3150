@@ -1,5 +1,9 @@
 # Project 2
 
+Not published yet.
+
+<!-- 
+
 ## Practicalities
 
 - **Deadline:** Tuesday, September 26, 23:59.
@@ -200,6 +204,7 @@ Plot the corresponding analytical eigenvectors (extended with the boundary point
 
 **b)** Make the same plot for discretization of $\hat{x}$ with $n=100$ steps.
 
+-->
 
 <!-- 
 ### Problem X
@@ -212,6 +217,7 @@ Show that transformations with $\mathbf{U}$ preserves orthonormality, i.e. show 
  -->
 
 
+<!--
 
 ----
 
@@ -395,6 +401,7 @@ Note:
   as long as the set of input arguments are different. This is known as **function overloading**.
 
 ----
+-->
 
 <!-- 
 **Watch this space for more code examples...**

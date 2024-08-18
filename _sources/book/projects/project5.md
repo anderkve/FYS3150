@@ -1,5 +1,10 @@
 # Project 5
 
+Not published yet.
+
+
+<!--
+
 ```{note}
 There will probably be small updates to the project description in the coming days, so check back regularly!
 ```
@@ -635,3 +640,4 @@ plt.show()
 # anim.save('./animation.mp4', writer="ffmpeg", bitrate=10000, fps=15)  # The fps (frames per second) sets the animation speed
 ```
 
+-->
