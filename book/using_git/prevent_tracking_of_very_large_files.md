@@ -68,10 +68,10 @@ exit 0
 And that's it! You should now be protected from committing very large files to your Git repository. To test if it works, generate a large file:
 ```sh
 echo "This is a large file." > large_file.blob
-# Simulate a large file by adding a lot of data
+# Simulate a large file by adding 10MB of random data
 head -c 10M /dev/urandom > large_file.blob
 ```
-and attempt to add + commit it:
+and attempt to `git add` and `git commit` it:
 ```sh
 git add large_file.blob
 git commit -m "Test commit with a large file"
