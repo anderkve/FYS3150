@@ -23,6 +23,7 @@ parts:
       - file: book/using_git/setting_up_a_UiO_GitHub_repo
       - file: book/using_git/add_a_README_and_gitignore
       - file: book/using_git/using_git
+      - file: book/using_git/prevent_tracking_of_very_large_files
       - file: book/using_git/dealing_with_merge_conflicts
       - file: book/using_git/recover_an_old_version_of_a_file
       - file: book/using_git/other_ways_to_fix_mistakes
