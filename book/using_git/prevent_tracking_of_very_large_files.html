@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Common Problems &#8212; FYS3150/FYS4150 course material</title>
+    <title>Prevent the tracking of very large files &#8212; FYS3150/FYS4150 course material</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,6 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Dealing with merge conflicts" href="dealing_with_merge_conflicts.html" />
+    <link rel="prev" title="Using Git" href="using_git.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -150,49 +152,49 @@ const thebe_selector_output = ".output, .cell_output"
   Using Git and GitHub
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/introduction_to_git.html">
+  <a class="reference internal" href="introduction_to_git.html">
    Introduction to Git
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/setting_up_a_UiO_GitHub_repo.html">
+  <a class="reference internal" href="setting_up_a_UiO_GitHub_repo.html">
    Setting up a UiO GitHub repository
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/add_a_README_and_gitignore.html">
+  <a class="reference internal" href="add_a_README_and_gitignore.html">
    Add a README and gitignore
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/using_git.html">
+  <a class="reference internal" href="using_git.html">
    Using Git
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/prevent_tracking_of_very_large_files.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Prevent the tracking of very large files
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/dealing_with_merge_conflicts.html">
+  <a class="reference internal" href="dealing_with_merge_conflicts.html">
    Dealing with merge conflicts
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/recover_an_old_version_of_a_file.html">
+  <a class="reference internal" href="recover_an_old_version_of_a_file.html">
    Recover an old version of a file
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/other_ways_to_fix_mistakes.html">
+  <a class="reference internal" href="other_ways_to_fix_mistakes.html">
    Other ways to fix mistakes
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/online_resources.html">
+  <a class="reference internal" href="online_resources.html">
    Online git resources
   </a>
  </li>
@@ -313,12 +315,12 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="introduction_to_openmp.html">
+  <a class="reference internal" href="../parallelization/introduction_to_openmp.html">
    Introduction to OpenMP
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="using_openmp.html">
+  <a class="reference internal" href="../parallelization/using_openmp.html">
    Using OpenMP
   </a>
  </li>
@@ -473,7 +475,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Fbook/parallelization/common_problems.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Fbook/using_git/prevent_tracking_of_very_large_files.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -501,7 +503,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/book/parallelization/common_problems.md"
+        <a href="../../_sources/book/using_git/prevent_tracking_of_very_large_files.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -561,32 +563,13 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#shared-memory-programming">
-   Shared memory programming
+  <a class="reference internal nav-link" href="#motivation">
+   Motivation
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#false-sharing">
-     False sharing
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#example-1-avoid-using-a-global-array-with-a-single-cache-line">
-       Example 1: Avoid using a global array with a single cache line
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#race-condition">
-     Race condition
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#measuring-speedup">
-   Measuring speedup
+  <a class="reference internal nav-link" href="#adding-a-pre-commit-hook-script">
+   Adding a pre-commit hook script
   </a>
  </li>
 </ul>
@@ -598,7 +581,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Common Problems</h1>
+                <h1>Prevent the tracking of very large files</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -609,32 +592,13 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#shared-memory-programming">
-   Shared memory programming
+  <a class="reference internal nav-link" href="#motivation">
+   Motivation
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#false-sharing">
-     False sharing
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#example-1-avoid-using-a-global-array-with-a-single-cache-line">
-       Example 1: Avoid using a global array with a single cache line
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#race-condition">
-     Race condition
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#measuring-speedup">
-   Measuring speedup
+  <a class="reference internal nav-link" href="#adding-a-pre-commit-hook-script">
+   Adding a pre-commit hook script
   </a>
  </li>
 </ul>
@@ -647,63 +611,84 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="common-problems">
-<h1>Common Problems<a class="headerlink" href="#common-problems" title="Permalink to this headline">#</a></h1>
-<section id="shared-memory-programming">
-<h2>Shared memory programming<a class="headerlink" href="#shared-memory-programming" title="Permalink to this headline">#</a></h2>
-<p>OpenMP assumes that the underlying memory is <strong>shared</strong>
-among all processes, or <strong>threads</strong> as they are called.
-This means that all threads share variables, allocated memory for pointers and so on by default. We must specify
-if some variable is to be specific to a particular thread.
-The terminology OpenMP uses for this is a <strong>private</strong> variable.</p>
-<p>There are two very important concepts to understand
-when you parallelize with OpenMP.</p>
-<section id="false-sharing">
-<h3>False sharing<a class="headerlink" href="#false-sharing" title="Permalink to this headline">#</a></h3>
+  <section class="tex2jax_ignore mathjax_ignore" id="prevent-the-tracking-of-very-large-files">
+<h1>Prevent the tracking of very large files<a class="headerlink" href="#prevent-the-tracking-of-very-large-files" title="Permalink to this headline">#</a></h1>
+<section id="motivation">
+<h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">#</a></h2>
+<p>Due to the fact that Git keeps a history of every change made to files that it tracks, adding very large files can quickly lead to a bloated repository. This applies especially to binary files, although the same effect can happen with data files (e.g. CSV files storing intermediate results such as those that we encourage you to utilize for this course). Therefore, it’s generally considered best practice not to add very large files to Git repositories in the first place.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This is a technical concept, and you might be better suited to return to this at a later point.</p>
+<p>In this context, “very large” refers to sizes on the order of &gt; 10 MB or so.</p>
 </div>
-<p>If more than one thread uses a memory block stored in the <strong>cache</strong> (a type of fast memory used by your cpu), any change to it will require all the threads that uses it to make the exact same update to their version of the memory block. This is imposed by what is known by the <strong>cache-coherence policy</strong>. The punchline is that this leads to performance degradation. This process is called false sharing.</p>
-<ul class="simple">
-<li><p>Example: If two threads P1 and P2 work on the same variable X. Then cache coherence is enforced as illustrated in the following gif:</p></li>
-</ul>
-<p><img alt="coherence" src="../../_images/Coherent.gif" /></p>
-<section id="example-1-avoid-using-a-global-array-with-a-single-cache-line">
-<h4>Example 1: Avoid using a global array with a single cache line<a class="headerlink" href="#example-1-avoid-using-a-global-array-with-a-single-cache-line" title="Permalink to this headline">#</a></h4>
+<p>There is also a practical reason not to do so, which is that there’s a hard cap on the file size (100 MB) beyond which GitHub won’t allow files to be pushed to remote repositories on the server.</p>
 </section>
-</section>
-<section id="race-condition">
-<h3>Race condition<a class="headerlink" href="#race-condition" title="Permalink to this headline">#</a></h3>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This is a technical concept, and you might be better suited to return to this at a later point.</p>
-</div>
-<p>Suppose two threads are to increment a variable <em>v</em> that is initially set to zero, i.e <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">0</span></code>. The ideal result is that the final value should be <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">2</span></code>. This will happen if the following sequence of events occur:</p>
-<ol class="simple">
-<li><p>Thread 1 reads the value of <code class="docutils literal notranslate"><span class="pre">v</span></code> from memory.</p></li>
-<li><p>Thread 1 adds 1 to <code class="docutils literal notranslate"><span class="pre">v</span></code> and writes it back to memory.</p></li>
-<li><p>Only after this, thread 2 performs the exact same action.</p></li>
-</ol>
-<p>The following scenario describes when it goes wrong:</p>
-<ol class="simple">
-<li><p>Thread 1 reads the value of <code class="docutils literal notranslate"><span class="pre">v</span></code> from memory.</p></li>
-<li><p>Thread 2 reads the value of <code class="docutils literal notranslate"><span class="pre">v</span></code> from memory <em>before</em> thread 1 adds 1 and writes it back to memory.</p></li>
-<li><p>Both thread 1 and 2 now adds 1 to <code class="docutils literal notranslate"><span class="pre">v</span></code> and writes it back to memory. But the value both of them read was <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">0</span></code>, so the final value written to memory will be <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">1</span></code>.</p></li>
-</ol>
-<p>We can of course create more scenarios in which this happens, but the main idea to take from this is:
-when two threads operate on the same memory address, they must do so sequentially. Sometimes, absurd results from your program can boil down to this process, so it’s important to be aware of it for debugging purposes.</p>
-</section>
-</section>
-<section id="measuring-speedup">
-<h2>Measuring speedup<a class="headerlink" href="#measuring-speedup" title="Permalink to this headline">#</a></h2>
-<p>A way to quantify the performance gained by parallelization is to measure <strong>speedup</strong>.
-Speedup is defined as the time a single thread uses divided by the time <em>p</em> threads uses, i.e</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">speed</span> <span class="o">=</span> time_by_one_thread/time_by_p_threads
+<section id="adding-a-pre-commit-hook-script">
+<h2>Adding a pre-commit hook script<a class="headerlink" href="#adding-a-pre-commit-hook-script" title="Permalink to this headline">#</a></h2>
+<p>Using Git, it’s possible to write arbitrary instructions that are executed each time certain actions are performed (so-called “hooks”).
+The following instructions (courtesy of ChatGPT) will allow you to automatically check the size of the files to be added in a commit and reject it if there is at least one file above a maximum size threshold.</p>
+<p>First, navigate to your Git repository’s <code class="docutils literal notranslate"><span class="pre">.git/hooks/</span></code> directory:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> path/to/your/repo/.git/hooks/
 </pre></div>
 </div>
-<p>In an ideal world, the speed up is <em>p</em>.</p>
-<p>It’s natural to wonder <em>how many threads will give the optimal speedup?</em> Modern processors use computing units called <strong>cores</strong>. Many of these support <strong>hyper-threading</strong>, which typically means that each core yield two threads. A rule-of-thumb is to use the maximum number of threads supported (i.e twice the number of cores, if the cpu supports hyper-threading). However, it’s wise to perform a performance analysis for you specific program, measure the speedup as a function of number of threads and decide based on the results you obtain.</p>
+<p>Next, create a file named <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>touch pre-commit
+</pre></div>
+</div>
+<p>and make it executable:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>chmod +x pre-commit
+</pre></div>
+</div>
+<p>Finally, edit the <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> file and add the following script:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1"># Set the size limit in bytes (e.g., 5MB = 5242880 bytes)</span>
+<span class="nv">MAX_SIZE</span><span class="o">=</span><span class="m">5242880</span>
+
+<span class="c1"># Detect the operating system to use the correct stat syntax</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="s2">&quot;</span><span class="nv">$OSTYPE</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;darwin&quot;</span>* <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="c1"># macOS</span>
+    <span class="nv">STAT_CMD</span><span class="o">=</span><span class="s2">&quot;stat -f%z&quot;</span>
+<span class="k">else</span>
+    <span class="c1"># Linux and other Unix-like systems</span>
+    <span class="nv">STAT_CMD</span><span class="o">=</span><span class="s2">&quot;stat -c%s&quot;</span>
+<span class="k">fi</span>
+
+<span class="c1"># Find files that exceed the size limit</span>
+<span class="nv">large_files</span><span class="o">=</span><span class="k">$(</span>git diff --cached --name-only --diff-filter<span class="o">=</span>A <span class="p">|</span> <span class="k">while</span> <span class="nb">read</span> -r file<span class="p">;</span> <span class="k">do</span>
+    <span class="k">if</span> <span class="o">[</span> -f <span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+        <span class="nv">file_size</span><span class="o">=</span><span class="k">$(</span><span class="nv">$STAT_CMD</span> <span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span><span class="k">)</span>
+        <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$file_size</span><span class="s2">&quot;</span> -gt <span class="s2">&quot;</span><span class="nv">$MAX_SIZE</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+            <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span>
+        <span class="k">fi</span>
+    <span class="k">fi</span>
+<span class="k">done)</span>
+
+<span class="k">if</span> <span class="o">[</span> -n <span class="s2">&quot;</span><span class="nv">$large_files</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Error: The following files are larger than the allowed limit of </span><span class="k">$((</span><span class="nv">$MAX_SIZE</span> <span class="o">/</span> <span class="m">1024</span> <span class="o">/</span> <span class="m">1024</span><span class="k">))</span><span class="s2">MB:&quot;</span>
+    <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$large_files</span><span class="s2">&quot;</span>
+    <span class="nb">exit</span> <span class="m">1</span>
+<span class="k">fi</span>
+
+<span class="nb">exit</span> <span class="m">0</span>
+</pre></div>
+</div>
+<p>And that’s it! You should now be protected from committing very large files to your Git repository. To test if it works, generate a large file:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;This is a large file.&quot;</span> &gt; large_file.blob
+<span class="c1"># Simulate a large file by adding 10MB of random data</span>
+head -c 10M /dev/urandom &gt; large_file.blob
+</pre></div>
+</div>
+<p>and attempt to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> it:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git add large_file.blob
+git commit -m <span class="s2">&quot;Test commit with a large file&quot;</span>
+</pre></div>
+</div>
+<p>You should see a message like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span><span class="p">:</span> <span class="n">The</span> <span class="n">following</span> <span class="n">files</span> <span class="n">are</span> <span class="n">larger</span> <span class="n">than</span> <span class="n">the</span> <span class="n">allowed</span> <span class="n">limit</span> <span class="n">of</span> <span class="mi">5</span><span class="n">MB</span><span class="p">:</span>
+<span class="n">large_file</span><span class="o">.</span><span class="n">blob</span>
+</pre></div>
+</div>
+<p>Don’t forget to commit the <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> file itself to the repository once you’ve verified that it works!</p>
 </section>
 </section>
 
@@ -720,7 +705,7 @@ Speedup is defined as the time a single thread uses divided by the time <em>p</e
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./book/parallelization"
+            path: "./book/using_git"
         },
         predefinedOutput: true
     }
@@ -734,6 +719,20 @@ Speedup is defined as the time a single thread uses divided by the time <em>p</e
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="using_git.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Using Git</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="dealing_with_merge_conflicts.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Dealing with merge conflicts</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
