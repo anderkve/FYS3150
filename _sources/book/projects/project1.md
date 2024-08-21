@@ -1,13 +1,9 @@
 # Project 1
 
-Not published yet.
-
-<!-- 
-
 
 ## Practicalities
 
-- **Deadline:** Tuesday, September 12, at 23:59
+- **Deadline:** Wednesday, September 11, at 23:59
 
 - **Format:**
   - A pdf document, typeset in LaTeX, with answers to all the problems below. You deliver the pdf on Canvas.
@@ -16,7 +12,7 @@ Not published yet.
 
 - **Not a complete report:** For project 1, we do not require you to write a proper scientific report --- only a document with an answer for each problem. But the quality of the presentation still matters, of course. So pay attention to figures, figure captions, grammar, etc.
 
-- **Collaboration:** We *strongly* encourage you to collaborate with others, in groups up to four students. The group hands in a single pdf. (So make sure you all join the same group on Canvas.) Remember to list everyone's name in the pdf.
+- **Collaboration:** We *strongly* encourage you to collaborate with others, in groups up to three students. The group hands in a single pdf. (So make sure you all join the same group on Canvas.) Remember to list everyone's name in the pdf.
 
 - **Reproducibility:** Your code should be available on a GitHub repo. You can refer to relevant parts of your code in your answers. Make sure to include a README file in the repo that briefly explains how the code is organized, and how it should be compiled and run in order to reproduce your results.
 
@@ -179,7 +175,6 @@ For values of $n_{\text{steps}}$ up to $n_{\text{steps}} = 10^6$, run timing tes
 used by the general algorithm and the special algorithm. (*Remember:* reliable timing results require repeated runs for each choice of $n_{\text{steps}}$.)
 Make a table or plot to present your timing results, and comment briefly on the results.
 
- -->
 
 
 <!-- 
@@ -194,8 +189,6 @@ What do you expect would happen if you attempted to run code for the case $n = 1
 
 -->
 
-
-<!-- 
 
 ----
 
@@ -259,4 +252,3 @@ int main ()
 }
 ```
 
--->
