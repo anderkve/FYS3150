@@ -7,7 +7,7 @@ Not published yet.
 
 ## Practicalities
 
-- **Deadline**: Tuesday, October 24, 23:59.
+- **Deadline**: Wednesday, October 23, 23:59.
 - **Format:**
   - A scientific report, typeset in LaTeX *using the provided template*, delivered as a pdf file on Canvas.
   - Code (with comments, of course) on a UiO GitHub repo ([github.uio.no](https://github.uio.no/)), with the URL to you repo written in the pdf document. 
@@ -15,7 +15,7 @@ Not published yet.
 
 - **A scientific report:** In contrast to projects 1 and 2, we now require you to write a proper scientific report. The details of this is discussed during the lectures, and we provide you with a `.tex` file template -- see [this page](../writing_reports/introduction_to_latex.md).
 
-- **Collaboration:** We *strongly* encourage you to collaborate with others, in groups of up to four students. The group hands in a single pdf. Remember to list everyone's name in the pdf.
+- **Collaboration:** We *strongly* encourage you to collaborate with others, in groups of up to three students. The group hands in a single pdf. Remember to list everyone's name in the pdf.
 
 - **Reproducibility:** Your code should be available on a GitHub repo. You can refer to relevant parts of your code in your answers. Make sure to include a README file in the repo that briefly explains how the code is organized, and how it should be compiled and run in order for others to reproduce your results.
 
