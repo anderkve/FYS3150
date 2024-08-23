@@ -2,8 +2,10 @@
 // Defintions for functions declared in utils.hpp
 //
 
+#include <sstream>
+#include <iomanip>
 // By including utils.hpp, we also include all 
-// the headers included in utils.hpp (<string>, <vector>, <sstream>, ...)
+// the headers included in utils.hpp (<string>, <vector>)
 #include "utils.hpp"
 
 

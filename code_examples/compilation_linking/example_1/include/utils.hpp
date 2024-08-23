@@ -11,8 +11,6 @@
 // Now we include headers we need
 #include <string>
 #include <vector>
-#include <sstream>
-#include <iomanip>
 
 
 // Below we give some function *declarations*.
