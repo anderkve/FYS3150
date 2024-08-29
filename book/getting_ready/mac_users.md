@@ -28,6 +28,15 @@ chsh -s /bin/zsh
 
 to set `zsh` as default. Note that you probably have to close and restart your terminal for this change to take effect.
 
+You can also change shell by typing 
+```sh
+zsh
+```
+or
+```sh
+bash
+```
+
 
 
 ## Installation of basic software
