@@ -87,7 +87,7 @@ There's a plethora of command line tools that can be useful. Here are some examp
 
 1. *wget* and *curl* are command line tools that allow you to download from the web using the command line.
 
-2. *htop* is a powerful task manager that also displays the work each thread uses graphically in your terminal. This is a useful tool when you're code is parallelized (later in the course) so that you can monitor the work each thread does.
+2. *htop* is a powerful task manager that also displays the work each thread uses graphically in your terminal. This is a useful tool when your code is parallelized (later in the course) so that you can monitor the work each thread does.
 
 3. *tree* is a convenient tool to display files and directories in the terminal.
 
