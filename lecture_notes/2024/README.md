@@ -1,12 +1,12 @@
 ## Overview of lecture topics
 
 
-### August 22:
+### Lecture 1, August 22:
 
 - Introduction to the course 
 
 
-### August 23:
+### Lecture 2, August 23:
 
 - Code discussions:
   - Intro to C++
@@ -17,7 +17,7 @@
   - C++ variable types and scopes
 
 
-### August 29:
+### Lecture 3, August 29:
 
 - Topics for Project 1:
   - Discretisation
