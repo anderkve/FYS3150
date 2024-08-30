@@ -30,3 +30,18 @@
   - C++: containers (`std::vector` and `std::map`)
   - C++: integer vs floating-point division
 
+
+### Lecture 4, August 30:
+
+- Topics for Project 1:
+  - Discretisation
+  - Numerical differentiation
+  - Finished discussion of boundary value problems (BVPs)
+    - Expressing a BVP as a matrix equation
+    - Overview of Gaussian elimination
+    - Gaussian elimintation for tridiagonal matrix → Thomas algorithm
+  - Counting floating-point operations (FLOPs)
+
+- Code topics:
+  - C++: pass-by-reference vs pass-by-value
+
