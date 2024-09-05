@@ -56,7 +56,7 @@ int main()
   std::cout << "#" << std::setw(width-1) << "stepsize"
             << std::setw(width) << "d2u_approx"
             << std::setw(width) << "d2u_exact"
-            // Note: Well compute the errors when analyzing and plotting the results
+            // Note: We'll compute the errors when analyzing and plotting the results
             // << std::setw(width) << "abs_error"
             // << std::setw(width) << "rel_error"
             // << std::setw(width) << "log10(rel_error)"
