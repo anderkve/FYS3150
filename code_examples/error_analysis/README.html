@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Overview of lecture topics &#8212; FYS3150/FYS4150 course material</title>
+    <title>Example error analysis &#8212; FYS3150/FYS4150 course material</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -473,7 +473,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Flecture_notes/2024/README.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Fcode_examples/error_analysis/README.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -501,7 +501,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/lecture_notes/2024/README.md"
+        <a href="../../_sources/code_examples/error_analysis/README.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -561,33 +561,13 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lecture-1-august-22">
-   Lecture 1, August 22:
+  <a class="reference internal nav-link" href="#main-cpp">
+   main.cpp
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lecture-2-august-23">
-   Lecture 2, August 23:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lecture-3-august-29">
-   Lecture 3, August 29:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lecture-4-august-30">
-   Lecture 4, August 30:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lecture-5-september-5">
-   Lecture 5, September 5:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lecture-6-september-6">
-   Lecture 6, September 6:
+  <a class="reference internal nav-link" href="#plot-py">
+   plot.py
   </a>
  </li>
 </ul>
@@ -599,7 +579,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Overview of lecture topics</h1>
+                <h1>Example error analysis</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -610,33 +590,13 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lecture-1-august-22">
-   Lecture 1, August 22:
+  <a class="reference internal nav-link" href="#main-cpp">
+   main.cpp
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lecture-2-august-23">
-   Lecture 2, August 23:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lecture-3-august-29">
-   Lecture 3, August 29:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lecture-4-august-30">
-   Lecture 4, August 30:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lecture-5-september-5">
-   Lecture 5, September 5:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lecture-6-september-6">
-   Lecture 6, September 6:
+  <a class="reference internal nav-link" href="#plot-py">
+   plot.py
   </a>
  </li>
 </ul>
@@ -649,110 +609,34 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="overview-of-lecture-topics">
-<h1>Overview of lecture topics<a class="headerlink" href="#overview-of-lecture-topics" title="Permalink to this headline">#</a></h1>
-<section id="lecture-1-august-22">
-<h2>Lecture 1, August 22:<a class="headerlink" href="#lecture-1-august-22" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Introduction to the course</p></li>
-</ul>
+  <section id="example-error-analysis">
+<h1>Example error analysis<a class="headerlink" href="#example-error-analysis" title="Permalink to this headline">#</a></h1>
+<p>This example explors the error in an approximation of the second derivative of u(x) = exp(2x).</p>
+<section id="main-cpp">
+<h2>main.cpp<a class="headerlink" href="#main-cpp" title="Permalink to this headline">#</a></h2>
+<p>C++ code that computes the second derivative of u(x) at a point xi using different stepsizes.
+Outputs the results to screen in a nice table.</p>
+<p>Build command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="o">++</span> <span class="n">main</span><span class="o">.</span><span class="n">cpp</span> <span class="o">-</span><span class="n">o</span> <span class="n">main</span>
+</pre></div>
+</div>
+<p>Run command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">main</span>
+</pre></div>
+</div>
+<p>We can pipe the output to a file <code class="docutils literal notranslate"><span class="pre">output.txt</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">main</span> <span class="o">&gt;</span> <span class="n">output</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
 </section>
-<section id="lecture-2-august-23">
-<h2>Lecture 2, August 23:<a class="headerlink" href="#lecture-2-august-23" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Code discussions:</p>
-<ul>
-<li><p>Intro to C++</p></li>
-<li><p>“Hello World” example</p></li>
-<li><p>Compilation and linking</p></li>
-<li><p>Source files and header files</p></li>
-<li><p>Compilation and linking with multiple files</p></li>
-<li><p>C++ variable types and scopes</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="lecture-3-august-29">
-<h2>Lecture 3, August 29:<a class="headerlink" href="#lecture-3-august-29" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Topics for Project 1:</p>
-<ul>
-<li><p>Discretisation</p></li>
-<li><p>Numerical differentiation</p></li>
-<li><p>Started discussion of boundary value problems (BVPs)</p></li>
-</ul>
-</li>
-<li><p>Code topics:</p>
-<ul>
-<li><p>C++: write output to file</p></li>
-<li><p>Unix terminal: redirect terminal output to file</p></li>
-<li><p>C++: containers (<code class="docutils literal notranslate"><span class="pre">std::vector</span></code> and <code class="docutils literal notranslate"><span class="pre">std::map</span></code>)</p></li>
-<li><p>C++: integer vs floating-point division</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="lecture-4-august-30">
-<h2>Lecture 4, August 30:<a class="headerlink" href="#lecture-4-august-30" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Topics for Project 1:</p>
-<ul>
-<li><p>Discretisation</p></li>
-<li><p>Numerical differentiation</p></li>
-<li><p>Finished discussion of boundary value problems (BVPs)</p>
-<ul>
-<li><p>Expressing a BVP as a matrix equation</p></li>
-<li><p>Overview of Gaussian elimination</p></li>
-<li><p>Gaussian elimintation for tridiagonal matrix → Thomas algorithm</p></li>
-</ul>
-</li>
-<li><p>Counting floating-point operations (FLOPs)</p></li>
-</ul>
-</li>
-<li><p>Code topics:</p>
-<ul>
-<li><p>C++: pass-by-reference vs pass-by-value</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="lecture-5-september-5">
-<h2>Lecture 5, September 5:<a class="headerlink" href="#lecture-5-september-5" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Binary representation</p>
-<ul>
-<li><p>Integers</p></li>
-<li><p>Floating-point numbers</p></li>
-</ul>
-</li>
-<li><p>Numerical errors</p>
-<ul>
-<li><p>Truncation errors</p></li>
-<li><p>Roundoff errors</p>
-<ul>
-<li><p>Loss of numerical precision (“catastrophic cancellation”)</p></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="lecture-6-september-6">
-<h2>Lecture 6, September 6:<a class="headerlink" href="#lecture-6-september-6" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Continue discussion of numerical errors</p>
-<ul>
-<li><p>Example error analysis</p></li>
-<li><p>Code example: <code class="docutils literal notranslate"><span class="pre">error_analysis</span></code></p></li>
-</ul>
-</li>
-<li><p>LU decomposition</p>
-<ul>
-<li><p>What it is</p></li>
-<li><p>What it’s good for</p></li>
-</ul>
-</li>
-</ul>
+<section id="plot-py">
+<h2><a class="reference external" href="http://plot.py">plot.py</a><a class="headerlink" href="#plot-py" title="Permalink to this headline">#</a></h2>
+<p>Python script that reads the data from a file <code class="docutils literal notranslate"><span class="pre">output.txt</span></code> and generates plots of the absolute error,
+relative error and log10(relative error). Plots are saved as pdf files.</p>
+<p>Run command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">plot</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -769,7 +653,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./lecture_notes/2024"
+            path: "./code_examples/error_analysis"
         },
         predefinedOutput: true
     }

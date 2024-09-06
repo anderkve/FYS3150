@@ -1,12 +1,12 @@
 ## Overview of lecture topics
 
 
-### August 22:
+### Lecture 1, August 22:
 
 - Introduction to the course 
 
 
-### August 23:
+### Lecture 2, August 23:
 
 - Code discussions:
   - Intro to C++
@@ -17,7 +17,7 @@
   - C++ variable types and scopes
 
 
-### August 29:
+### Lecture 3, August 29:
 
 - Topics for Project 1:
   - Discretisation
@@ -29,4 +29,45 @@
   - Unix terminal: redirect terminal output to file
   - C++: containers (`std::vector` and `std::map`)
   - C++: integer vs floating-point division
+
+
+### Lecture 4, August 30:
+
+- Topics for Project 1:
+  - Discretisation
+  - Numerical differentiation
+  - Finished discussion of boundary value problems (BVPs)
+    - Expressing a BVP as a matrix equation
+    - Overview of Gaussian elimination
+    - Gaussian elimintation for tridiagonal matrix → Thomas algorithm
+  - Counting floating-point operations (FLOPs)
+
+- Code topics:
+  - C++: pass-by-reference vs pass-by-value
+
+
+### Lecture 5, September 5:
+
+- Binary representation 
+  - Integers
+  - Floating-point numbers
+- Numerical errors
+  - Truncation errors
+  - Roundoff errors
+    - Loss of numerical precision ("catastrophic cancellation")
+
+
+### Lecture 6, September 6:
+
+- Continue discussion of numerical errors
+  - Example error analysis
+  - Code example: `error_analysis`
+- LU decomposition
+  - What it is
+  - What it's good for
+
+
+
+
+
 
