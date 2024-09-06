@@ -45,3 +45,29 @@
 - Code topics:
   - C++: pass-by-reference vs pass-by-value
 
+
+### Lecture 5, September 5:
+
+- Binary representation 
+  - Integers
+  - Floating-point numbers
+- Numerical errors
+  - Truncation errors
+  - Roundoff errors
+    - Loss of numerical precision ("catastrophic cancellation")
+
+
+### Lecture 6, September 6:
+
+- Continue discussion of numerical errors
+  - Example error analysis
+  - Code example: `error_analysis`
+- LU decomposition
+  - What it is
+  - What it's good for
+
+
+
+
+
+
