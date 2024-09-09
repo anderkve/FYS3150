@@ -13,7 +13,8 @@ There will probably be small updates to the project description in the coming da
 
 - **Deadline**: Wednesday, December 11, 23:59.
 - **Format:**
-  - A scientific report, typeset in LaTeX *using the provided template* (see [this page](../writing_reports/introduction_to_latex.md)), delivered as a pdf file on Canvas.
+  - A scientific report, typeset in LaTeX, delivered as a pdf file on Canvas.
+  - Use the report template we have provided [here](./../writing_reports/project_templates.md).
   - Code (with comments, of course) on a UiO GitHub repo ([github.uio.no](https://github.uio.no/)), with the URL to you repo written in the pdf document. 
   - You *must* deliver via your group on Canvas (even if you are working alone).
 

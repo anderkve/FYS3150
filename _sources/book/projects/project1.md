@@ -7,6 +7,7 @@
 
 - **Format:**
   - A pdf document, typeset in LaTeX, with answers to all the problems below. You deliver the pdf on Canvas.
+  - Use the template we have provided [here](./../writing_reports/project_templates.md).
   - Code (with comments, of course) on a UiO GitHub repo ([github.uio.no](https://github.uio.no/)), with the URL to you repo written in the pdf document.
   - You *must* deliver via your group on Canvas (even if you are working alone).
 
