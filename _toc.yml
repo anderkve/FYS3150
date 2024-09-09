@@ -74,6 +74,7 @@ parts:
   - caption: Writing reports
     chapters:
       - file: book/writing_reports/introduction_to_latex
+      - file: book/writing_reports/project_templates
       - file: book/writing_reports/checklist
 
   - caption: Projects
