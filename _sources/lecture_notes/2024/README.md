@@ -64,7 +64,20 @@
   - Code example: `error_analysis`
 - LU decomposition
   - What it is
-  - What it's good for
+  - What it's good for:
+    - Solving matrix equations  
+
+
+### Lecture 7, September 12:
+
+- Continue discussion LU decomposition
+  - What it's good for:
+    - Finding the determinant
+    - Finding the inverse
+  - How: algorithm for determining the L and U matrices
+  - PLU decomposition
+- Overview of topics for Project 2
+- Scaling equations
 
 
 

@@ -57,7 +57,7 @@ $$ (bb_eq_2)
 where $\hat{x} \equiv x/L$ is a dimensionless (unitless) varible, $\hat{x} \in [0,1]$, and $\lambda = \frac{F L^2}{\gamma}$. (See problem 1.)
 
 ```{note}
-Here we have been a bit sloppy with our notation. Technically, the functions $u(x)$ and $u(\hat{x})$ are two *different* functions, so we should have used e.g. notation like $u_x(x)$ and $u_{\hat{x}}(\hat{x})$. The key thing is that the functions are related as $u_x(x) = u_{\hat{x}}(\hat{x})$.
+Here we have been a bit sloppy with our notation. Technically, due to our change of variable, the functions $u(x)$ and $u(\hat{x})$ are two *different* functions, so we should have used e.g. notation like $u_x(x)$ for the original function and $u_{\hat{x}}(\hat{x})$ for the function after the variable change. The key thing is that the functions are related as $u_{\hat{x}}(\hat{x}(x)) = u_x(x)$.
 ``` 
 
 ----
