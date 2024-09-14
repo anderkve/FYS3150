@@ -69,7 +69,7 @@
 
   To exit `gdb`, use the command `q`.
 
-  To potentially get more information out of the `gdb`, 
+  To potentially get more information out of the `gdb` 
   call stack, like the exact line numbers for your code, 
   you can compile your code with more debug info included. 
   You do this by adding the flag `-g` to your build command:
