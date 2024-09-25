@@ -92,6 +92,16 @@
 
 
 
+### Lecture 9 and 10, September 19--20:
+
+(Videos replaced in-person lectures)
+
+- Project 2 physics case: The buckling beam
+- Iterative methods for solving matrix equations
+- Debugging tips & tricks
+- Guest lecture: How to improve your project reports
+
+
 
 
 
