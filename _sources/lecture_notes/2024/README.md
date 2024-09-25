@@ -70,7 +70,7 @@
 
 ### Lecture 7, September 12:
 
-- Continue discussion LU decomposition
+- Continue discussion of LU decomposition
   - What it's good for:
     - Finding the determinant
     - Finding the inverse
@@ -78,6 +78,18 @@
   - PLU decomposition
 - Overview of topics for Project 2
 - Scaling equations
+
+
+### Lecture 8, September 13:
+
+- Continue discussion of scaling equations
+- Eigenvalue problems
+  - Similarity transformations
+  - Jacobi's rotation method
+    - Main idea
+    - Example with $2 \times 2$ matrix
+    - Algorithm for $N \times N$ case
+
 
 
 
