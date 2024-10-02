@@ -23,7 +23,6 @@
   - Discretisation
   - Numerical differentiation
   - Started discussion of boundary value problems (BVPs)
-
 - Code topics:
   - C++: write output to file
   - Unix terminal: redirect terminal output to file
@@ -41,7 +40,6 @@
     - Overview of Gaussian elimination
     - Gaussian elimintation for tridiagonal matrix → Thomas algorithm
   - Counting floating-point operations (FLOPs)
-
 - Code topics:
   - C++: pass-by-reference vs pass-by-value
 
@@ -91,7 +89,6 @@
     - Algorithm for $N \times N$ case
 
 
-
 ### Lecture 9 and 10, September 19--20:
 
 (Videos replaced in-person lectures)
@@ -100,6 +97,32 @@
 - Iterative methods for solving matrix equations
 - Debugging tips & tricks
 - Guest lecture: How to improve your project reports
+
+
+### Lecture 11, September 26:
+
+- Overview of topics for Project 3
+- Code topics:
+  - Classes in C++
+  - Code design for simulations
+- Project 3 physics case: Penning traps
+
+
+### Lecture 12, September 27:
+
+- Cont. discussion of the physics case for Project 3: Penning traps
+- Initial value problems
+  - Introduction
+  - Classification
+  - From a second-order equation to coupled first-order equations
+  - Local vs global errors
+  - Forward Euler
+  - Forward Euler and Euler-Cromer for coupled equations
+- Code topics:
+  - Static variables
+  - Hidden files
+
+
 
 
 
