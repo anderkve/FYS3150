@@ -28,6 +28,7 @@ class LotteryBall
       number_ = number_in;
     }
 
+
     // Method that returns the color
     std::string color()
     {
@@ -114,7 +115,7 @@ class LotteryMachine
       // Check that the machine isn't empty
       error_if_empty();
 
-      // Get a random index between 0 and ball_collection_.size()
+      // Get a random index between 0 and ball_collection_.size() - 1
       int ball_index = rand() % ball_collection_.size();
 
       // Return (a copy of) that ball
@@ -184,7 +185,7 @@ int main()
 
 
   // Let's sample *without* replacement and print the result
-  n_samples = 5;
+  n_samples = 12;
 
   std::cout << std::endl;
   std::cout << "Machine has " << my_machine.ball_count() << " balls." << std::endl;

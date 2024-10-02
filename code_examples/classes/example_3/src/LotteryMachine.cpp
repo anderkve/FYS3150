@@ -83,7 +83,7 @@ LotteryBall LotteryMachine::sample_ball_without_replacement()
   // Delete the ball from the collection, using the std::vector::erase method
   ball_collection_.erase(ball_collection_.begin() + ball_index);
 
-  // Return the copyy
+  // Return the copy
   return sampled_ball;
 }
 
