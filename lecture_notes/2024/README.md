@@ -89,7 +89,7 @@
     - Algorithm for $N \times N$ case
 
 
-### Lecture 9 and 10, September 19--20:
+### Lectures 9 and 10, September 19 and 20:
 
 (Videos replaced in-person lectures)
 
