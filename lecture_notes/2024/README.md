@@ -111,7 +111,7 @@
 ### Lecture 12, September 27:
 
 - Cont. discussion of the physics case for Project 3: Penning traps
-- Initial value problems
+- Initial value problems:
   - Introduction
   - Classification
   - From a second-order equation to coupled first-order equations
@@ -121,6 +121,15 @@
 - Code topics:
   - Static variables
   - Hidden files
+
+
+### Lecture 13, October 3:
+
+- Initial value problems:
+  - Predictor-corrector
+  - Runge-Kutta
+  - Leapfrog
+  - Verlet
 
 
 
