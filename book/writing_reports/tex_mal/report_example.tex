@@ -96,7 +96,7 @@ Throughout this example we will provide (hopefully) pedagogical commentary on re
 
 \textit{The main purpose of the introduction section is to provide context and motivation for the work, like we have done above. It is also common --- and quite useful --- to use the last paragraph of the introduction to outline the rest of the report, to tell the reader what they should expect in the different sections. We will do this next.}
 
-In section \ref{sec:methods} we describe the mathematical background and formulate a concrete algorithm which can be implemented in any programming language. A selection of results from a validation test are presented in section \label{sec:results_and_discussion}. Here we also discuss our implementation of the algorithm in more detail. Finally, in section \ref{sec:conclusion} we provide a short summary and outlook.
+In Section \ref{sec:methods} we describe the mathematical background and formulate a concrete algorithm which can be implemented in any programming language. A selection of results from a validation test are presented in Section \ref{sec:results_and_discussion}. Here we also discuss our implementation of the algorithm in more detail. Finally, in Section \ref{sec:conclusion} we provide a short summary and outlook. All code developed for this report is available via a GitHub repository.\footnote{\url{https://github.uio.no/anderkve/FYS3150-forum}}
 
 \textit{Now, since the toy example we study here is rather short and simple, our outline isn't particularly detailed. But for a report that is longer, a slightly more detailed outline might be useful.}
 
@@ -109,6 +109,7 @@ In section \ref{sec:methods} we describe the mathematical background and formula
 Let $f$ be a continuous and differentiable function, $f: [a,b] \to \mathbb{R}$. Say we want to integrate this function over the entire interval $[a,b]$. To this end, we employ the midpoint rule for integration, which is defined by the equation~\cite{midpoint_rule}
 %
 \begin{equation}
+\label{eq:midpoint_rule}
     I = \int_a^b f(x)\dd x \approx h\sum_{i=1}^{n} f(x_i).
 \end{equation}
 Here $n$ denotes a number of subintervals of the range $[a,b]$, each of length $h = (b-a)/n$, and $x_i$ is the midpoint of subinterval $i$, given by
@@ -128,6 +129,8 @@ for $i = 1, 2, \ldots, n$. This equation can be written out explicitly (although
 \textit{Note the following: We have provided a definition for every single variable that appears in the equations. Always do this --- it greatly improves the transparency and readability of your work! Once a variable is defined, you can reuse it throughout the rest of the report without stating its definition. (This of course assumes that you use consistent notation, so that a symbol does not suddenly change meaning in the middle of your report.)}
 
 \textit{Also, note that we cited a source for our claim. There is no need to provide references for trivial or very well-known results, like Newton's second law, but you should cite material that is vital for your report.}
+
+\textit{If you want to refer to a specific equation from elsewhere in your text, use the equation number, just like you would refer to a table or figure, but also include a parenthesis: ``In Equation \eqref{eq:midpoint_rule} we see that \ldots''. The best approach is to use the \texttt{eqref} command, which adds the parenthesis automatically.} 
 
 \textit{Finally, please note the following two details on how to write equations: First, remember that equations are regarded as part of a sentence, meaning that you should follow the standard rules for punctuation. This typically means that your equations should be followed by a comma or a period. Second, make sure that you do not unintentionally include blank lines before or after the equation in your \texttt{.tex} file. LaTeX interprets blank lines as the beginning of a new paragraph, and will therefore indent the text after the equation. If you prefer having a bit of ``air'' in your LaTeX document, use an empty comment line.}
 
