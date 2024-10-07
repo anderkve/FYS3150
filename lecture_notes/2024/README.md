@@ -132,6 +132,11 @@
   - Verlet
 
 
+### Lecture 14, October 4:
+
+- Grading system for projects 3--5
+- How to write a scientific report
+
 
 
 
