@@ -115,13 +115,17 @@ def amp_factor(delta_i, delta_ip1):
 
 # Time settings
 
-dt = 0.2
-# dt = 0.5 * 1
+# dt = 0.2
+# t_max = 10.0
+
+# dt = 1.9
+# t_max = 20.0
+
+dt = 2.1
+t_max = 20.0
 
 t_0 = 0.0
 
-t_max = 4.0 * 1
-# t_max = 10.0 * 1
 
 
 # Create figre for plotting
