@@ -129,13 +129,46 @@
   - Predictor-corrector
   - Runge-Kutta
   - Leapfrog
-  - Verlet
 
 
 ### Lecture 14, October 4:
 
 - Grading system for projects 3--5
 - How to write a scientific report
+
+
+### Lecture 15, October 10:
+
+- Cont. on initial value problems
+  - Recap of the Leapfrog algorithm
+  - Leapfrog for coupled equations
+  - Verlet algorithm
+  - Classification of methods for solving IVPs
+  - Matrix method for stability analysis
+
+
+### Lecture 16, October 11:
+
+- Cont. on initial value problems:
+  - Cont. on the matrix method for stability analysis
+  - Python example illustrating (in)stability and accuracy of different IVP methods
+- Start on topics for Project 4:
+  - Background: probability theory, meaning of probability
+
+
+### Lecture 17, October 17:
+
+- Wrap up discussion of the meaning of probability
+- Probability theory basics (notation, definitions, ...)
+- Prob. distribution functions in many variables
+
+
+### Lecture 18, October 18:
+
+- **No lecture today**
+
+
+
 
 
 
