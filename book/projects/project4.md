@@ -1,9 +1,5 @@
 # Project 4
 
-Not published yet.
-
-
-<!--
 
 ```{note}
 While working on the project, check this page regularly in case of small updates (typo fixes, added hints, etc.)
@@ -128,21 +124,33 @@ Assume a $2 \times 2$ lattice with periodic boundary conditions.
   - $\langle \epsilon^2 \rangle$
   - $\langle |m| \rangle$
   - $\langle m^2 \rangle$
-  - the heat capacity, normalised to number of spins:
+  - the heat capacity, normalised to number of spins:  
 
   $$
-  \frac{C_V}{N} = \frac{1}{N} \frac{1}{k_B T^2}(\langle E^2 \rangle - \langle E \rangle^2) 
+  \frac{C_V(T)}{N} = \frac{1}{N} \frac{1}{k_B T^2} \textrm{Var}(E) = \frac{1}{N} \frac{1}{k_B T^2} \left[ \braket{E^2} - \braket{E}^2 \right] = N \frac{1}{k_B T^2} \left[ \braket{\epsilon^2} - \braket{\epsilon}^2 \right]
   $$
 
-  - the susceptibility, normalised to number of spins: 
+  - the susceptibility, normalised to number of spins:  
 
   $$
-  \frac{\chi}{N} = \frac{1}{N} \frac{1}{k_B T}(\langle M^2 \rangle - \langle |M| \rangle^2)
+  \frac{\chi(T)}{N} = \frac{1}{N} \frac{1}{k_B T} \textrm{Var}(M) = \frac{1}{N} \frac{1}{k_B T} \left[ \braket{M^2} - \braket{|M|}^2 \right] = N \frac{1}{k_B T} \left[ \braket{m^2} - \braket{|m|}^2 \right]
   $$
-  
+
 We will use these analytical results to test our code.
 
 
+```{note}
+Above we have replaced $\textrm{Var}(M) = \braket{M^2} - \braket{M}^2$ with $\braket{M^2} - \braket{|M|}^2$. The replacement $M \rightarrow |M|$ is a trick often used in Monte Carlo studies of this 2D Ising model, and we will also use this in the numerical tasks below. So to aid our later comparison between analytical and numerical results, we make the replacement $M \rightarrow |M|$ also in the analytical expression above.
+
+*More details:* The $M \rightarrow |M|$ replacement makes it easier to compare and combine results from different runs (e.g. repeated runs at the same or similar temperatures), because we don't have to worry about whether the system randomly ended up in a state with mostly $-1$ spins or a state with mostly $+1$ spins. We simply focus on the question "*How strong* magnetisation do we expect to observe at temperature $T$?", rather than the question "*What* magnetisation do we expect to observe at temperature $T$?".
+
+But it's worth keeping in mind that, with no external magnetic field to pick out a preferred direction, the expectation value $\braket{M}$ really is 0 for all temperatures -- that is, even at very low temperatures, where there should be overwhelmingly high probability to observe the system in an ordered state, i.e. a state with $|M| > 0$.
+
+The reason for the expected value $\braket{M} = 0$ even at low temperatures is that for each state with some positive magnetisation $M$, there exists a "mirror state" with *all spins flipped*, which means the magnetisation is $-|M|$, and this state has the same probability under the Boltzmann distribution as the original state. So the expected value $\braket{M} = 0$ is analogous to how the expected value for the amount of money earned on fair bets with 50/50 coin flips is zero, even though zero is an impossible outcome for individual trails -- every trail gives either a win or a loss.
+```
+
+
+<!--
 ```{note}
 There's been some confusion regarding the expressions for heat capacity $C_V$ and susceptibility $\chi$ and how they relate to energy per spin ($\epsilon$) and magnetisation per spin ($m$), respectively. I think the confusion comes down to some unfortunate notation from my side. So let me explain, using $C_V$ as example.
 
@@ -204,7 +212,7 @@ I hope this helps clarify the issue, and apologies for the confusion.
 Whether you use the original notation ($C_V$ and $\chi$) or some new notation (e.g. $C_V/N$ and $\chi/N$) for these quantities in your report is up to you -- just make sure your math agrees with the expressions above.
 
 ```
-
+-->
 
 
 ### Problem 2
@@ -235,8 +243,8 @@ Time to actually write some code!
 
   - $\langle \epsilon \rangle$
   - $\langle |m| \rangle$
-  - $C_V$
-  - $\chi$
+  - $C_V / N$
+  - $\chi / N$
 
 **b)** Validation: For a temperature of $T = 1.0\,J/k_B$, compare your results to the analytical results from Problem 1. (Feel free to compare for other temperature values as well, or simply make plots of these quantities versus temperature.)
 
@@ -247,11 +255,29 @@ Time to actually write some code!
 
 Now we will use a lattice with size $L=20$ and study the **burn-in time** (or **equilibration time**), measured in number of Monte Carlo cycles. 
 
-**a)** Make plots that show how the numerical estimates of $\langle \epsilon \rangle$ and $\langle |m| \rangle$ evolve with the number of Monte Carlo cycles. You should produce graphs for temperatures $T = 1.0\,J/k_B$ and $T = 2.4\,J/k_B$, and starting from *ordered* (all spins pointing the same way) and *unordered* (random) initial states. 
+**a)** Make a plot that shows the current state energy $\epsilon$ (not $\langle \epsilon \rangle$) versus the number of Monte Carlo cycles done. The plot should contain four graphs:
+
+  - $T = 1.0\,J/k_B$, starting from *ordered* initial state (all spins pointing the same way)
+  - $T = 1.0\,J/k_B$, starting from *unordered* (random) initial state
+  - $T = 2.4\,J/k_B$, starting from *ordered* initial state (all spins pointing the same way)
+  - $T = 2.4\,J/k_B$, starting from *unordered* (random) initial state
+
+Make a similar plot for the magnetisation $|m|$ of the current state versus the number of Monte Carlo cycles done.
+
+  - It may be interesting to also include plots showing how the numerical estimates of $\langle \epsilon \rangle$ and $\langle |m| \rangle$ evolve with the number of Monte Carlo cycles included in the estimation
+
+<!-- 
+for temperatures $T = 1.0\,J/k_B$ and $T = 2.4\,J/k_B$, and starting from *ordered* (all spins pointing the same way) and *unordered* (random) initial states. 
+
+plots that show the state energy $\epsilon$ and magnetisation $|m|$ versus the number of Monte Carlo cycles 
+
+how the numerical estimates of $\langle \epsilon \rangle$ and $\langle |m| \rangle$ evolve with the number of Monte Carlo cycles. You should produce graphs for temperatures $T = 1.0\,J/k_B$ and $T = 2.4\,J/k_B$, and starting from *ordered* (all spins pointing the same way) and *unordered* (random) initial states.  -->
 
 **b)** Based on these plots, how long would you say the burn-in time is?
 
+<!-- 
 **c)** What is the argument for not using the samples generated during the burn-in time? 
+ -->
 
 
 ### Problem 6
@@ -287,11 +313,11 @@ Now we will start investigating phase transitions.
 For a brief introduction to the phase transition of the 2D Ising model, see Chapters 13.4 and 13.4.1 of Morten Hjorth-Jensen's lecture notes. See also the brief theoretical summary for Problem 9.
 ```
 
-- **a)** For lattices of size $L = 40,60,80,100$ (and higher if you want), make plots of $\langle \epsilon \rangle$, $\langle |m| \rangle$, $C_V$ and $\chi$ as function of temperature $T$. (Plot the results for the different $L$ values in the same figure.) Focus on temperatures in a range around $T \in [2.1, 2.4]\,J/k_B$. Make sure to use sufficiently small temperature steps, at least in the region where the graphs change most rapidly.
+- **a)** For lattices of size $L = 40,60,80,100$ (and higher if you want), make plots of $\langle \epsilon \rangle$, $\langle |m| \rangle$, $C_V/N$ and $\chi/N$ as function of temperature $T$. (Plot the results for the different $L$ values in the same figure.) Focus on temperatures in a range around $T \in [2.1, 2.4]\,J/k_B$. Make sure to use sufficiently small temperature steps, at least in the region where the graphs change most rapidly.
 
 - **b)** Do you see an indication of a phase transition?
 
-- **c)** What is the critical temperature $T_c(L)$ for the different lattice sizes $L$? Use the $\chi$ or $C_V$ results to determine $T_c(L)$.
+- **c)** What is the critical temperature $T_c(L)$ for the different lattice sizes $L$? Use the $\chi/N$ or $C_V/N$ results to determine $T_c(L)$.
 
 ```{note}
 Some suggestions in case you are short on time because the code is slower than expected: 
@@ -300,7 +326,7 @@ Some suggestions in case you are short on time because the code is slower than e
 
 - If you're having trouble with OpenMP/MPI parallelisation, remember that to just make sure you get the numerical results you need, you can always do "dummy parallelisation" by just running multiple instances of your program. (Use separete terminal windows, or run your program in the background with the `&` command, e.g. `./main.exe <command line options> &`. You can view your background jobs with `jobs` and bring them to the foreground with `fg <job number>`.) This "manual" way of splitting up tasks works well assuming that your program can take options like `L`, `Tmin`, `Tmax`, `deltaT` (or `n_Tsteps`) as command-line arguments.
 
-- Perhaps you can afford to reduce the number of Monte Carlo cycles a bit and still get decent results? E.g. halving the number of cycles should half the program runtime.
+- Perhaps you can afford to reduce the number of Monte Carlo cycles a bit and still get decent results? E.g. halving the number of cycles should halve the program runtime.
 
 - Keep in mind that you don't need to finish all the runs for Problem 8 to get started on Problem 9. To get a first result for Problem 9 you basically only need to identify $T_c$ for two of the $L$ values in Problem 8. So you can do Problem 9 in parallel with the runs for Problem 8, and then just update your plots/numbers as new runs in Problem 8 finishes. 
 ```
@@ -339,9 +365,9 @@ Hint 2: If you find that doing a linear fit (a.k.a. linear least squares, a.k.a.
 One of the many fascinating aspects of so-called critical phenomena is that vastly different physical systems can exhibit the same behaviour close to their critical point (here: critical temperature). This behaviour is described by power laws, with exponents called *critical exponents*. For the *infinite* 2D Ising model, the mean magnetisation, heat capacity and susceptibility behave as 
 
 $$
-\langle |m| \rangle &\propto |T - T_c(L=\infty)|^{\beta}\\
-C_V &\propto |T - T_c(L=\infty)|^{-\alpha}\\
-\chi &\propto |T - T_c(L=\infty)|^{-\gamma}
+\langle |m| \rangle &\propto |T - T_c(L=\infty)|^{\beta}\\[1ex]
+\frac{C_V}{N} &\propto |T - T_c(L=\infty)|^{-\alpha}\\[1ex]
+\frac{\chi}{N} &\propto |T - T_c(L=\infty)|^{-\gamma}
 $$
 
 for temperatures $T$ close to $T_c$, with critical exponents $\beta=1/8$, $\alpha=0$ and $\gamma=7/4$. 
@@ -350,7 +376,7 @@ for temperatures $T$ close to $T_c$, with critical exponents $\beta=1/8$, $\alph
 A critical exponent of 0 is just the power-law way of expressing *logarithmic* behaviour.
 ```
 
-Both $C_V$ and $\chi$ diverge near $T_c$. Similarly, the *correlation length* (here: the typical lenght scale of regions with aligned spins) $\xi$ also diverges near the critical point,
+Both $C_V/N$ and $\chi/N$ diverge near $T_c$. Similarly, the *correlation length* (here: the typical lenght scale of regions with aligned spins) $\xi$ also diverges near the critical point,
 
 $$
 \xi \propto |T - T_c(L=\infty)|^{-\nu}
@@ -361,9 +387,9 @@ with critical exponent $\nu = 1$. However, since we are studying a *finite* syst
 Using this relation we see that, when $T$ is close to $T_c(L)$, we expect the mean magnetisation, heat capacity and susceptibility to depend on the system size $L$ as 
 
 $$
-\langle |m| \rangle &\propto L^{-\beta/\nu}\\
-C_V &\propto L^{\alpha/\nu}\\
-\chi &\propto L^{\gamma/\nu}.
+\langle |m| \rangle &\propto L^{-\beta/\nu}\\[1ex]
+\frac{C_V}{N} &\propto L^{\alpha/\nu}\\[1ex]
+\frac{\chi}{N} &\propto L^{\gamma/\nu}.
 $$
 
 **Good luck!** 
@@ -376,5 +402,4 @@ $$
 
 - For some illustrations on how you can use the C++ `<random>` library for random number generation, see code examples in [`code_examples/random_number_generation`](https://github.com/anderkve/FYS3150/tree/master/code_examples/random_number_generation). These examples use a Mersenne Twister generator. Some of the examples demonstrate how one can do seeding when working with multiple OpenMP threads.
 
--->
 
