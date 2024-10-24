@@ -23,7 +23,6 @@
   - Discretisation
   - Numerical differentiation
   - Started discussion of boundary value problems (BVPs)
-
 - Code topics:
   - C++: write output to file
   - Unix terminal: redirect terminal output to file
@@ -41,7 +40,6 @@
     - Overview of Gaussian elimination
     - Gaussian elimintation for tridiagonal matrix → Thomas algorithm
   - Counting floating-point operations (FLOPs)
-
 - Code topics:
   - C++: pass-by-reference vs pass-by-value
 
@@ -89,6 +87,88 @@
     - Main idea
     - Example with $2 \times 2$ matrix
     - Algorithm for $N \times N$ case
+
+
+### Lectures 9 and 10, September 19 and 20:
+
+(Videos replaced in-person lectures)
+
+- Project 2 physics case: The buckling beam
+- Iterative methods for solving matrix equations
+- Debugging tips & tricks
+- Guest lecture: How to improve your project reports
+
+
+### Lecture 11, September 26:
+
+- Overview of topics for Project 3
+- Code topics:
+  - Classes in C++
+  - Code design for simulations
+- Project 3 physics case: Penning traps
+
+
+### Lecture 12, September 27:
+
+- Cont. discussion of the physics case for Project 3: Penning traps
+- Initial value problems:
+  - Introduction
+  - Classification
+  - From a second-order equation to coupled first-order equations
+  - Local vs global errors
+  - Forward Euler
+  - Forward Euler and Euler-Cromer for coupled equations
+- Code topics:
+  - Static variables
+  - Hidden files
+
+
+### Lecture 13, October 3:
+
+- Initial value problems:
+  - Predictor-corrector
+  - Runge-Kutta
+  - Leapfrog
+
+
+### Lecture 14, October 4:
+
+- Grading system for projects 3--5
+- How to write a scientific report
+
+
+### Lecture 15, October 10:
+
+- Cont. on initial value problems
+  - Recap of the Leapfrog algorithm
+  - Leapfrog for coupled equations
+  - Verlet algorithm
+  - Classification of methods for solving IVPs
+  - Matrix method for stability analysis
+
+
+### Lecture 16, October 11:
+
+- Cont. on initial value problems:
+  - Cont. on the matrix method for stability analysis
+  - Python example illustrating (in)stability and accuracy of different IVP methods
+- Start on topics for Project 4:
+  - Background: probability theory, meaning of probability
+
+
+### Lecture 17, October 17:
+
+- Wrap up discussion of the meaning of probability
+- Probability theory basics (notation, definitions, ...)
+- Prob. distribution functions in many variables
+
+
+### Lecture 18, October 18:
+
+- **No lecture today**
+
+
+
 
 
 
