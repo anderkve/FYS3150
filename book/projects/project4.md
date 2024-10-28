@@ -255,16 +255,37 @@ Time to actually write some code!
 
 Now we will use a lattice with size $L=20$ and study the **burn-in time** (or **equilibration time**), measured in number of Monte Carlo cycles. 
 
-**a)** Make a plot that shows the current state energy $\epsilon$ (not $\langle \epsilon \rangle$) versus the number of Monte Carlo cycles done. The plot should contain four graphs:
+**a)** Make a plot that shows two types of graphs as a function of the number of Monte Carlo cycles done:
 
-  - $T = 1.0\,J/k_B$, starting from *ordered* initial state (all spins pointing the same way)
+  1. The current state energy $\epsilon$ at the given Monte Carlo cycle.
+  2. The average state energy $\langle \epsilon \rangle$ computed using all samples up to (and including) the current Monte Carlo cycle.
+
+  The plot should contain four versions of each of these graphs, based on the following configurations:
+
   - $T = 1.0\,J/k_B$, starting from *unordered* (random) initial state
-  - $T = 2.4\,J/k_B$, starting from *ordered* initial state (all spins pointing the same way)
+  - $T = 1.0\,J/k_B$, starting from *ordered* initial state (all spins pointing the same way)
   - $T = 2.4\,J/k_B$, starting from *unordered* (random) initial state
+  - $T = 2.4\,J/k_B$, starting from *ordered* initial state (all spins pointing the same way)
 
-Make a similar plot for the magnetisation $|m|$ of the current state versus the number of Monte Carlo cycles done.
 
-  - It may be interesting to also include plots showing how the numerical estimates of $\langle \epsilon \rangle$ and $\langle |m| \rangle$ evolve with the number of Monte Carlo cycles included in the estimation
+  Since the plot will contain eight graphs in total, some care is needed to make the plot readable: 
+
+  - Here is a Python (`matplotlib.pyplot`) code snippet with some example tricks for how make these graphs look reasonable together:
+
+    ```python
+    plt.plot(n_MC_cycles, eps_T10_u, '-', color='#377eb8', alpha=0.4, linewidth=1.0)
+    plt.plot(n_MC_cycles, eps_T10_o, '-', color='#4daf4a', alpha=0.4, linewidth=1.0)
+    plt.plot(n_MC_cycles, eps_T24_u, '-', color='#e41a1c', alpha=0.4, linewidth=1.0)
+    plt.plot(n_MC_cycles, eps_T24_o, '-', color='#984ea3', alpha=0.4, linewidth=1.0)
+    plt.plot(n_MC_cycles, mean_eps_T10_u, '-', linewidth=2.0, color='#377eb8', label='$T=1.0$ $J/k_{B}$, unordered')
+    plt.plot(n_MC_cycles, mean_eps_T10_o, '-', linewidth=2.0, color='#4daf4a', label='$T=1.0$ $J/k_{B}$, ordered')
+    plt.plot(n_MC_cycles, mean_eps_T24_u, '-', linewidth=2.0, color='#e41a1c', label='$T=2.4$ $J/k_{B}$, unordered')
+    plt.plot(n_MC_cycles, mean_eps_T24_o, '-', linewidth=2.0, color='#984ea3', label='$T=2.4$ $J/k_{B}$, ordered')
+    ```
+  - The hex codes for the colours are taken from [colorbrewer2.org](https://colorbrewer2.org).
+  
+  - It's up to you to decide how many MC cycles to include in your plot, but the figure will probably be most informative if plot your results using a logarithmic x axis.
+
 
 <!-- 
 for temperatures $T = 1.0\,J/k_B$ and $T = 2.4\,J/k_B$, and starting from *ordered* (all spins pointing the same way) and *unordered* (random) initial states. 
