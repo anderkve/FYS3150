@@ -168,6 +168,24 @@
 - **No lecture today**
 
 
+### Lecture 19, October 24:
+
+- Expectation values
+- Project 4 physics case: the 2D Ising model
+
+
+### Lecture 20, October 25:
+
+- Wrap up discussion of the 2D Ising model
+- Introduction to Monte Carlo methods
+- Markov chains
+
+
+### Plan for Lecture 21, October 31:
+
+- Wrap up discussion of Markov chains
+- Markov chain Monte Carlo (MCMC)
+- Start on parallel computing
 
 
 
