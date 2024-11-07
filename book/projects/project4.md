@@ -118,6 +118,11 @@ Assume a $2 \times 2$ lattice with periodic boundary conditions.
   - total magnetisation
   - degeneracy
 
+```{note}
+When computing the energy, we have said that the sum should avoid double-counting spin pairs. However, a $2 \times 2$ lattice is a special case, since using periodic boundary conditions in this case necessarily leads to counting all spin pairs twice. So for this particular case it is OK to double-count. And we recommend doing it, since in Problem 4 we will use the analytical results from this problem to test our code, so it's useful to have the periodic boundary conditions work the same way in the $2 \times 2$ case as in the general $L \times L$ case. (Otherwise we would have to add a special `if-else` block in the code to turn off the periodic boundaries for the case when L=2.)
+```
+
+
 - **b)** Find analytical expressions for 
   - $Z$
   - $\langle \epsilon \rangle$
@@ -247,6 +252,11 @@ Time to actually write some code!
   - $\chi / N$
 
 **b)** Validation: For a temperature of $T = 1.0\,J/k_B$, compare your results to the analytical results from Problem 1. (Feel free to compare for other temperature values as well, or simply make plots of these quantities versus temperature.)
+
+```{note}
+See the note in Problem 1 about periodic boundary conditions for the special case of a $2 \times 2$ lattice. Short summary: it is OK to double-count spin pairs for this special case, so we can use the exact same code for all lattice sizes, including $2 \times 2$.
+```
+
 
 **c)** How many **Monte Carlo cycles** do you need to get good agreement with the analytical result? (Here *one Monte Carlo cycle* corresponds to *$N$ attempted spin flips*.)
 
