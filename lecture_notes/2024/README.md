@@ -181,12 +181,30 @@
 - Markov chains
 
 
-### Plan for Lecture 21, October 31:
+### Lecture 21, October 31:
 
 - Wrap up discussion of Markov chains
 - Markov chain Monte Carlo (MCMC)
-- Start on parallel computing
 
+
+### Lecture 22, November 1:
+- Wrap up discussion of MCMC
+  - MCMC code examples
+- Parallel computing
+
+
+### Lecture 23, November 7:
+- Wrap up discussion of parallel computing
+  - Amdahl's law
+- Random number generation
+- If time: start on sampling from low-dimensional pdfs
+
+
+### Lecture 24, November 8:
+- Sampling from low-dimensional pdfs
+  - Rejection sampling
+  - Importance sampling
+  - Inverse transform sampling
 
 
 
