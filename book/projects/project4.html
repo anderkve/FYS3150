@@ -844,15 +844,21 @@ title="Print to PDF"
 <section id="problem-1">
 <h3>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this headline">#</a></h3>
 <p>Assume a <span class="math notranslate nohighlight">\(2 \times 2\)</span> lattice with periodic boundary conditions.</p>
-<ul>
-<li><p><strong>a)</strong> Summarise all possible states of the system by setting up a table with four coloumns showing the following quantities</p>
 <ul class="simple">
+<li><p><strong>a)</strong> Summarise all possible states of the system by setting up a table with four coloumns showing the following quantities</p>
+<ul>
 <li><p>number of spins in state +1</p></li>
 <li><p>total energy</p></li>
 <li><p>total magnetisation</p></li>
 <li><p>degeneracy</p></li>
 </ul>
 </li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When computing the energy, we have said that the sum should avoid double-counting spin pairs. However, a <span class="math notranslate nohighlight">\(2 \times 2\)</span> lattice is a special case, since using periodic boundary conditions in this case necessarily leads to counting all spin pairs twice. So for this particular case it is OK to double-count. And we recommend doing it, since in Problem 4 we will use the analytical results from this problem to test our code, so it’s useful to have the periodic boundary conditions work the same way in the <span class="math notranslate nohighlight">\(2 \times 2\)</span> case as in the general <span class="math notranslate nohighlight">\(L \times L\)</span> case. (Otherwise we would have to add a special <code class="docutils literal notranslate"><span class="pre">if-else</span></code> block in the code to turn off the periodic boundaries for the case when L=2.)</p>
+</div>
+<ul>
 <li><p><strong>b)</strong> Find analytical expressions for</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(Z\)</span></p></li>
@@ -973,6 +979,10 @@ Whether you use the original notation ($C_V$ and $\chi$) or some new notation (e
 <li><p><span class="math notranslate nohighlight">\(\chi / N\)</span></p></li>
 </ul>
 <p><strong>b)</strong> Validation: For a temperature of <span class="math notranslate nohighlight">\(T = 1.0\,J/k_B\)</span>, compare your results to the analytical results from Problem 1. (Feel free to compare for other temperature values as well, or simply make plots of these quantities versus temperature.)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See the note in Problem 1 about periodic boundary conditions for the special case of a <span class="math notranslate nohighlight">\(2 \times 2\)</span> lattice. Short summary: it is OK to double-count spin pairs for this special case, so we can use the exact same code for all lattice sizes, including <span class="math notranslate nohighlight">\(2 \times 2\)</span>.</p>
+</div>
 <p><strong>c)</strong> How many <strong>Monte Carlo cycles</strong> do you need to get good agreement with the analytical result? (Here <em>one Monte Carlo cycle</em> corresponds to <em><span class="math notranslate nohighlight">\(N\)</span> attempted spin flips</em>.)</p>
 </section>
 <section id="problem-5">
