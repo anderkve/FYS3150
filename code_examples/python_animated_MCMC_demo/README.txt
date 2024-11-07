@@ -39,7 +39,7 @@ Example 2
 
 Example 3
 ---------
-- Same as example 3, but with many more samples.
+- Same as example 2, but with many more samples.
 - Notice how the burn-in problem is now less severe. 
 
 Example 4
