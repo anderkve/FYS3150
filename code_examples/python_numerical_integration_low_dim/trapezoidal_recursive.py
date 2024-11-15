@@ -19,7 +19,8 @@ def f(x):
 
 x_min = 0.0
 x_max = 1.5
-eps = 1e-2
+# eps = 1e-2
+eps = 1e-3
 
 
 counter = 0
