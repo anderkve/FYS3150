@@ -3,7 +3,7 @@
 Not published yet.
 
 
-<!--
+
 
 ```{note}
 There will probably be small updates to the project description in the coming days, so check back regularly!
@@ -20,14 +20,14 @@ There will probably be small updates to the project description in the coming da
 
 - **Collaboration:** We strongly encourage you to collaborate with others, in groups of up to three students. The group hands in a single pdf. Remember to list everyone's name in the pdf.
 
-- **Reproducibility:** Your code should be available on a GitHub repo. You can refer to relevant parts of your code in your answers. Make sure to include a README file in the repo that briefly explains how the code is organised, and how it should be compiled and run in order for others to reproduce your results.
+- **Reproducibility:** Your code should be available on a GitHub repo. Make sure to include a README file in the repo that briefly explains how the code is organised, and how it should be compiled and run in order for others to reproduce your results.
 
 - **Figures:** Figures included in your LaTeX document should preferrably be made as vector graphics (e.g. `.pdf` files), rather than raster graphics (e.g. `.png` files).
 
 
 ## Introduction
 
-The goal of this project is to simulate the two-dimensional time-dependent Schrödinger equation, and use it to study a double-slit-in-a-box setup and variations thereof. In short, you will write a simulation that can give results [`like this`](https://www.dropbox.com/s/76sdq2ecp0ekiin/animation.mp4?dl=0). (Note that you will not be required to animate your results, but it's quite instructive and fun to do so.)
+The goal of this project is to simulate the two-dimensional time-dependent Schrödinger equation, and use it to study a double-slit setup (inside a box) and variations thereof. In short, you will write a simulation that can give results [`like this`](https://www.dropbox.com/s/76sdq2ecp0ekiin/animation.mp4?dl=0). (You will not be required to animate your results, but it's quite instructive and fun to do so.)
 
 The key methodological aspects of the projects are:
 - Understanding partial differential equations (PDEs)
@@ -641,4 +641,4 @@ plt.show()
 # anim.save('./animation.mp4', writer="ffmpeg", bitrate=10000, fps=15)  # The fps (frames per second) sets the animation speed
 ```
 
--->
+

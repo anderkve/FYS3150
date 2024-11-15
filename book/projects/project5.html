@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="prev" title="Project 4" href="project4.html" />
@@ -544,12 +546,123 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practicalities">
+   Practicalities
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-schrodinger-equation">
+   The Schrödinger equation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notation">
+   Notation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#initial-and-boundary-conditions">
+   Initial and boundary conditions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problems">
+   Problems
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-0">
+     Problem 0
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-1">
+     Problem 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-2">
+     Problem 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-3">
+     Problem 3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-4">
+     Problem 4
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-5">
+     Problem 5
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-6">
+     Problem 6
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-7">
+     Problem 7
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-8">
+     Problem 8
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-9">
+     Problem 9
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-x">
+     Problem X
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-snippets">
+     Code snippets
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -561,6 +674,106 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practicalities">
+   Practicalities
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-schrodinger-equation">
+   The Schrödinger equation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notation">
+   Notation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#initial-and-boundary-conditions">
+   Initial and boundary conditions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problems">
+   Problems
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-0">
+     Problem 0
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-1">
+     Problem 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-2">
+     Problem 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-3">
+     Problem 3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-4">
+     Problem 4
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-5">
+     Problem 5
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-6">
+     Problem 6
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-7">
+     Problem 7
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-8">
+     Problem 8
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-9">
+     Problem 9
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-x">
+     Problem X
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-snippets">
+     Code snippets
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -571,645 +784,584 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="project-5">
 <h1>Project 5<a class="headerlink" href="#project-5" title="Permalink to this headline">#</a></h1>
 <p>Not published yet.</p>
-<!--
-
-```{note}
-There will probably be small updates to the project description in the coming days, so check back regularly!
-```
-
-## Practicalities
-
-- **Deadline**: Wednesday, December 11, 23:59.
-- **Format:**
-  - A scientific report, typeset in LaTeX, delivered as a pdf file on Canvas.
-  - Use the report template we have provided [here](./../writing_reports/project_templates.md).
-  - Code (with comments, of course) on a UiO GitHub repo ([github.uio.no](https://github.uio.no/)), with the URL to you repo written in the pdf document. 
-  - You *must* deliver via your group on Canvas (even if you are working alone).
-
-- **Collaboration:** We strongly encourage you to collaborate with others, in groups of up to three students. The group hands in a single pdf. Remember to list everyone's name in the pdf.
-
-- **Reproducibility:** Your code should be available on a GitHub repo. You can refer to relevant parts of your code in your answers. Make sure to include a README file in the repo that briefly explains how the code is organised, and how it should be compiled and run in order for others to reproduce your results.
-
-- **Figures:** Figures included in your LaTeX document should preferrably be made as vector graphics (e.g. `.pdf` files), rather than raster graphics (e.g. `.png` files).
-
-
-## Introduction
-
-The goal of this project is to simulate the two-dimensional time-dependent Schrödinger equation, and use it to study a double-slit-in-a-box setup and variations thereof. In short, you will write a simulation that can give results [`like this`](https://www.dropbox.com/s/76sdq2ecp0ekiin/animation.mp4?dl=0). (Note that you will not be required to animate your results, but it's quite instructive and fun to do so.)
-
-The key methodological aspects of the projects are:
-- Understanding partial differential equations (PDEs)
-- Applying the Crank-Nicolson method in 2+1 dimensions
-- Working with complex numbers in code
-- Getting them indices straight...
-- Using conserved quantities as stability checks
-
-## The Schrödinger equation
-
-The general formulation of the time-dependent Schrödinger equation is 
-
-$$
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There will probably be small updates to the project description in the coming days, so check back regularly!</p>
+</div>
+<section id="practicalities">
+<h2>Practicalities<a class="headerlink" href="#practicalities" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><strong>Deadline</strong>: Wednesday, December 11, 23:59.</p></li>
+<li><p><strong>Format:</strong></p>
+<ul>
+<li><p>A scientific report, typeset in LaTeX, delivered as a pdf file on Canvas.</p></li>
+<li><p>Use the report template we have provided <a class="reference internal" href="../writing_reports/project_templates.html"><span class="doc std std-doc">here</span></a>.</p></li>
+<li><p>Code (with comments, of course) on a UiO GitHub repo (<a class="reference external" href="https://github.uio.no/">github.uio.no</a>), with the URL to you repo written in the pdf document.</p></li>
+<li><p>You <em>must</em> deliver via your group on Canvas (even if you are working alone).</p></li>
+</ul>
+</li>
+<li><p><strong>Collaboration:</strong> We strongly encourage you to collaborate with others, in groups of up to three students. The group hands in a single pdf. Remember to list everyone’s name in the pdf.</p></li>
+<li><p><strong>Reproducibility:</strong> Your code should be available on a GitHub repo. Make sure to include a README file in the repo that briefly explains how the code is organised, and how it should be compiled and run in order for others to reproduce your results.</p></li>
+<li><p><strong>Figures:</strong> Figures included in your LaTeX document should preferrably be made as vector graphics (e.g. <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> files), rather than raster graphics (e.g. <code class="docutils literal notranslate"><span class="pre">.png</span></code> files).</p></li>
+</ul>
+</section>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<p>The goal of this project is to simulate the two-dimensional time-dependent Schrödinger equation, and use it to study a double-slit setup (inside a box) and variations thereof. In short, you will write a simulation that can give results <a class="reference external" href="https://www.dropbox.com/s/76sdq2ecp0ekiin/animation.mp4?dl=0"><code class="docutils literal notranslate"><span class="pre">like</span> <span class="pre">this</span></code></a>. (You will not be required to animate your results, but it’s quite instructive and fun to do so.)</p>
+<p>The key methodological aspects of the projects are:</p>
+<ul class="simple">
+<li><p>Understanding partial differential equations (PDEs)</p></li>
+<li><p>Applying the Crank-Nicolson method in 2+1 dimensions</p></li>
+<li><p>Working with complex numbers in code</p></li>
+<li><p>Getting them indices straight…</p></li>
+<li><p>Using conserved quantities as stability checks</p></li>
+</ul>
+</section>
+<section id="the-schrodinger-equation">
+<h2>The Schrödinger equation<a class="headerlink" href="#the-schrodinger-equation" title="Permalink to this headline">#</a></h2>
+<p>The general formulation of the time-dependent Schrödinger equation is</p>
+<div class="math notranslate nohighlight">
+\[
 i \hbar \frac{d}{dt} |\Psi\rangle = \hat{H} |\Psi\rangle,
-$$
-
-where $\hat{H}$ is some Hamiltonian operator and $|\Psi\rangle$ is the quantum state ([whatever that is](https://plato.stanford.edu/entries/qt-issues/#OntoIssu)). While we are not really sure what the quantum state *is*, we do know it is related to probability ([whatever that is](https://plato.stanford.edu/entries/probability-interpret/)) through the [Born rule](https://en.wikipedia.org/wiki/Born_rule), which we will use extensively in this project. More details below.
-
-
-
-We will now consider the case of *a single, non-relativistic particle in two dimensions*. If we work in "position space", the quantum state $|\Psi\rangle$ can then be expressed through a *complex-valued* function $\Psi(x,y,t)$, historically called the *the wave function*. The Schrödinger equation then becomes
-
-$$
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\hat{H}\)</span> is some Hamiltonian operator and <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span> is the quantum state (<a class="reference external" href="https://plato.stanford.edu/entries/qt-issues/#OntoIssu">whatever that is</a>). While we are not really sure what the quantum state <em>is</em>, we do know it is related to probability (<a class="reference external" href="https://plato.stanford.edu/entries/probability-interpret/">whatever that is</a>) through the <a class="reference external" href="https://en.wikipedia.org/wiki/Born_rule">Born rule</a>, which we will use extensively in this project. More details below.</p>
+<p>We will now consider the case of <em>a single, non-relativistic particle in two dimensions</em>. If we work in “position space”, the quantum state <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span> can then be expressed through a <em>complex-valued</em> function <span class="math notranslate nohighlight">\(\Psi(x,y,t)\)</span>, historically called the <em>the wave function</em>. The Schrödinger equation then becomes</p>
+<div class="math notranslate nohighlight">
+\[
 i \hbar \frac{\partial}{\partial t} \Psi(x,y,t) = -\frac{\hbar^2}{2m} \left( \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} \right) \Psi(x,y,t) + V(x,y,t) \Psi(x,y,t).
-$$
-
-Here the terms $-\frac{\hbar^2}{2m} \frac{\partial^2 \Psi}{\partial x^2}$ and $-\frac{\hbar^2}{2m} \frac{\partial^2 \Psi}{\partial y^2}$ are expressions of the kinetic energy, corresponding to $\frac{p^2}{2m}$ from classical physics, with $m$ being the particle mass. The external environment is encoded in *the potential* $V$. We will only consider the case of a *time-independent* potential, $V = V(x,y)$.
-
-When working in position space like this, the Born rule takes the form
-
-$$
+\]</div>
+<p>Here the terms <span class="math notranslate nohighlight">\(-\frac{\hbar^2}{2m} \frac{\partial^2 \Psi}{\partial x^2}\)</span> and <span class="math notranslate nohighlight">\(-\frac{\hbar^2}{2m} \frac{\partial^2 \Psi}{\partial y^2}\)</span> are expressions of the kinetic energy, corresponding to <span class="math notranslate nohighlight">\(\frac{p^2}{2m}\)</span> from classical physics, with <span class="math notranslate nohighlight">\(m\)</span> being the particle mass. The external environment is encoded in <em>the potential</em> <span class="math notranslate nohighlight">\(V\)</span>. We will only consider the case of a <em>time-independent</em> potential, <span class="math notranslate nohighlight">\(V = V(x,y)\)</span>.</p>
+<p>When working in position space like this, the Born rule takes the form</p>
+<div class="math notranslate nohighlight">
+\[
 p(x,y\,;t) = |\Psi(x,y,t)|^2 = \Psi^*(x,y,t) \, \Psi(x,y,t),
-$$
-
-where $p(x,y\,;t)$ denotes the probability density for detecting the particle at position $(x,y)$ if we perform a position measurement at time $t$. The star in $\Psi^*$ denotes complex conjugation.
-
-
-To keep things simple, we will in this project assume that all dimensionful variables have been scaled away, leaving us with a "bare" Schrödinger equation on the form
-
-$$
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(p(x,y\,;t)\)</span> denotes the probability density for detecting the particle at position <span class="math notranslate nohighlight">\((x,y)\)</span> if we perform a position measurement at time <span class="math notranslate nohighlight">\(t\)</span>. The star in <span class="math notranslate nohighlight">\(\Psi^*\)</span> denotes complex conjugation.</p>
+<p>To keep things simple, we will in this project assume that all dimensionful variables have been scaled away, leaving us with a “bare” Schrödinger equation on the form</p>
+<div class="math notranslate nohighlight" id="equation-schr-eq">
+<span class="eqno">(24)<a class="headerlink" href="#equation-schr-eq" title="Permalink to this equation">#</a></span>\[
 i \frac{\partial u}{\partial t} = -\frac{\partial^2 u}{\partial x^2} - \frac{\partial^2 u}{\partial y^2} + v(x,y) u.
-$$ (schr_eq)
-
-So in this equation *all the variables are dimensionless*, which means you do not have to worry about units for this project. Our goal is to solve equation {eq}`schr_eq` numerically to determine the evolution of the "wave function" $u(x,y,t)$ in the presence of some potential $v(x,y)$.
-
-In our new notation the Born rule takes the form
-
-$$
+\]</div>
+<p>So in this equation <em>all the variables are dimensionless</em>, which means you do not have to worry about units for this project. Our goal is to solve equation <a class="reference internal" href="#equation-schr-eq">(24)</a> numerically to determine the evolution of the “wave function” <span class="math notranslate nohighlight">\(u(x,y,t)\)</span> in the presence of some potential <span class="math notranslate nohighlight">\(v(x,y)\)</span>.</p>
+<p>In our new notation the Born rule takes the form</p>
+<div class="math notranslate nohighlight">
+\[
 p(x,y;t) = |u(x,y,t)|^2 = u^*(x,y,t) \, u(x,y,t).
-$$
-
-assuming the wave function $u(x,y,t)$ has been properly normalised.
-
-
-```{note}
-In this course we don't expect any background knowledge in quantum mechanics, so you are not expected to discuss a lot of quantum mechanics in your report. That is, you can simply view the Schrödinger equation as a particular type of differential equation given by equation {eq}`schr_eq`, where the solution is some complex-valued function $u(x,y,t)$, and where we have a rule for connecting this $u(x,y,t)$ to a probability distribution.
-```
-
-
-```{note}
-*For those with some quantum mechanics background:* A question that sometimes come up during this project is how the wave function $\Psi(x,y,t)$ actually is related to the state $|\Psi\rangle$, so here's a short answer. (Again, you are not expected to discuss any of this in your reports.) 
-
-Consider the one-dimensional case and for simplicity assume that we have discretised time and space (notation $x_i$ and $t_n$). To work in position space we can express $|\Psi\rangle$ in terms of a set of orthonormal basis states $|x_i\rangle$. (These are eigenstates of the position operator, $\hat{X} |x_i \rangle = x_i |x_i\rangle$). In doing this, the now-discretised wavefunction $\Psi(x_i,t_n) \equiv \Psi_i^n$ simply corresponds to the complex coefficients in this way of expressing $|\Psi\rangle$:
-
-$$
+\]</div>
+<p>assuming the wave function <span class="math notranslate nohighlight">\(u(x,y,t)\)</span> has been properly normalised.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this course we don’t expect any background knowledge in quantum mechanics, so you are not expected to discuss a lot of quantum mechanics in your report. That is, you can simply view the Schrödinger equation as a particular type of differential equation given by equation <a class="reference internal" href="#equation-schr-eq">(24)</a>, where the solution is some complex-valued function <span class="math notranslate nohighlight">\(u(x,y,t)\)</span>, and where we have a rule for connecting this <span class="math notranslate nohighlight">\(u(x,y,t)\)</span> to a probability distribution.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>For those with some quantum mechanics background:</em> A question that sometimes come up during this project is how the wave function <span class="math notranslate nohighlight">\(\Psi(x,y,t)\)</span> actually is related to the state <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span>, so here’s a short answer. (Again, you are not expected to discuss any of this in your reports.)</p>
+<p>Consider the one-dimensional case and for simplicity assume that we have discretised time and space (notation <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(t_n\)</span>). To work in position space we can express <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span> in terms of a set of orthonormal basis states <span class="math notranslate nohighlight">\(|x_i\rangle\)</span>. (These are eigenstates of the position operator, <span class="math notranslate nohighlight">\(\hat{X} |x_i \rangle = x_i |x_i\rangle\)</span>). In doing this, the now-discretised wavefunction <span class="math notranslate nohighlight">\(\Psi(x_i,t_n) \equiv \Psi_i^n\)</span> simply corresponds to the complex coefficients in this way of expressing <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
 |\Psi\rangle = \Psi_1^n |x_1 \rangle + \Psi_2^n |x_2 \rangle + \Psi_3^n |x_3 \rangle + \ldots,
-$$
-
-and correspondingly 
-
-$$
+\]</div>
+<p>and correspondingly</p>
+<div class="math notranslate nohighlight">
+\[
 \langle \Psi| =  \langle x_1 | \Psi^{n*}_1 + \langle x_2 | \Psi^{n*}_2 + \langle x_3 | \Psi^{n*}_3 \ldots
-$$
-
-Since the states $|x_i\rangle$ are orthonormal, i.e. $\langle x_i|x_j\rangle = \delta_{ij}$, we have that the wavefunction value for position $x_i$ and time $t_n$ can be viewed as the overlap between the current state $|\Psi\rangle$ and the basis state $|x_i\rangle$:
-
-$$
+\]</div>
+<p>Since the states <span class="math notranslate nohighlight">\(|x_i\rangle\)</span> are orthonormal, i.e. <span class="math notranslate nohighlight">\(\langle x_i|x_j\rangle = \delta_{ij}\)</span>, we have that the wavefunction value for position <span class="math notranslate nohighlight">\(x_i\)</span> and time <span class="math notranslate nohighlight">\(t_n\)</span> can be viewed as the overlap between the current state <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span> and the basis state <span class="math notranslate nohighlight">\(|x_i\rangle\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
 \langle x_i | \Psi \rangle = \Psi_i^n.
-$$
-
-Assuming that we make a position measurement at time $t_n$, the probability $P(x_i;t_n)$ (not probability density, since we now work with discretised space) that the outcome will be $x_i$ can be expressed as 
-
-$$
+\]</div>
+<p>Assuming that we make a position measurement at time <span class="math notranslate nohighlight">\(t_n\)</span>, the probability <span class="math notranslate nohighlight">\(P(x_i;t_n)\)</span> (not probability density, since we now work with discretised space) that the outcome will be <span class="math notranslate nohighlight">\(x_i\)</span> can be expressed as</p>
+<div class="math notranslate nohighlight">
+\[
 P(x_i;t_n) = | \langle x_i | \Psi \rangle |^2 = |\Psi_i^n|^2 = \Psi^{n*}_i \, \Psi^n_i.
-$$
-
-In this notation, the normalization condition for the total probability can be viewed as 
-
-$$
-1 &= \langle \Psi | \Psi \rangle\\ 
-  &= \big[ \langle x_1 | \Psi^{n*}_1 + \langle x_2 | \Psi^{n*}_2 + \ldots \big] \; \big[ \Psi^n_1 |x_1 \rangle + \Psi^n_2 |x_2 \rangle + \ldots \big]\\ 
-  &= \Psi^{n*}_1 \, \Psi^n_1 + \Psi^{n*}_2 \, \Psi^n_2 + \ldots \\
-  &= P(x_1;t) + P(x_2;t) + \ldots
-$$
-```
-
-
-
-## Notation
-
-Below we define the basic notation we will use for this project. 
-
-- $x \in [0,1]$, $y \in [0,1]$, $t \in [0,T]$.
-- We'll use an equal step size $h$ in both the $x$ and $y$ directions.
-- $x \rightarrow x_i = i h$, with $i = 0, 1, \ldots, M-1$. (Don't confuse this index $i$ with the imaginary unit $i$ appearing in the Schrödinger equation!)
-- $y \rightarrow y_j = j h$, with $j = 0, 1, \ldots, M-1$.
-- $t \rightarrow t_n = n \Delta t$, with $n = 0, 1, \ldots, N_t-1$.
-- $u(x,y,t) \rightarrow u(ih,jh,n \Delta t) \equiv u_{ij}^n$. Note that the superscript $n$ here is simply a time index --- we have not raised $u_{ij}$ to the $n$-th power!
-- The matrix $U^n$ is a matrix with elements $u_{ij}^n$.
-- $v(x,y) \rightarrow v(ih,jh) \equiv v_{ij}$.
-- The matrix $V$ is a matrix with elements $v_{ij}$.
-
-Note:
-
-- $M$ is the number of *points* along the $x$ axis, including the boundary points. Thus, the $x$ axis has been discretised using $M-1$ *steps*, and there are $M-2$ "internal points" $x_1, \ldots, x_{M-2}$, i.e. excluding the boundary points $x_0$ and $x_{M-1}$.
-- Similarly for the $y$ axis, again with $M$ being the number of *points*.
-- We will mix index notation with and without commas as needed for clarity. So keep in mind that e.g. $u_{ij}$ and $u_{i,j}$ mean the same thing.
-
-
-## Initial and boundary conditions
-
-Throughout this project we will assume Dirichlet boundary conditions in the $xy$ plane:
-
-- $u(x=0, y, t) = 0$
-- $u(x=1, y, t) = 0$
-- $u(x, y=0, t) = 0$
-- $u(x, y=1, t) = 0$
-
-This assumption simplifies the implemention of the Crank-Nicolson scheme quite a bit, so keep in mind that the code we write will have this assumption baked in from the beginning.
-
-For the initial wave function $u(x,y,t=0)$ we will typically use a quantum mechanical Gaussian wavepacket, to be specified in the problems below.
-
-
-## Problems
-
-### Problem 0
-
-Not really a problem but an advice: Before diving into this project, take a look at the [Armadillo documentation](http://arma.sourceforge.net/docs.html) to see how you can work with complex numbers. For instance, look up terms like `cx_double`, `cx_vec`, `cx_mat`, etc. 
-
-In practice, this simply means having your Armadillo objects filled with the standard `std::complex<double>` type in C++. You should read about that [here](https://en.cppreference.com/w/cpp/numeric/complex) and take a look at the examples. 
-
-PS: You might also find `sp_cx_mat` in Armadillo very useful at some point...
-
-
-### Problem 1
-
-Show analytically that by discretizing equation {eq}`schr_eq` according to the Crank-Nicolson approach, you end up with the expression
-
-$$
+\]</div>
+<p>In this notation, the normalization condition for the total probability can be viewed as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+1 &amp;= \langle \Psi | \Psi \rangle\\ 
+  &amp;= \big[ \langle x_1 | \Psi^{n*}_1 + \langle x_2 | \Psi^{n*}_2 + \ldots \big] \; \big[ \Psi^n_1 |x_1 \rangle + \Psi^n_2 |x_2 \rangle + \ldots \big]\\ 
+  &amp;= \Psi^{n*}_1 \, \Psi^n_1 + \Psi^{n*}_2 \, \Psi^n_2 + \ldots \\
+  &amp;= P(x_1;t) + P(x_2;t) + \ldots
+\end{split}\]</div>
+</div>
+</section>
+<section id="notation">
+<h2>Notation<a class="headerlink" href="#notation" title="Permalink to this headline">#</a></h2>
+<p>Below we define the basic notation we will use for this project.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x \in [0,1]\)</span>, <span class="math notranslate nohighlight">\(y \in [0,1]\)</span>, <span class="math notranslate nohighlight">\(t \in [0,T]\)</span>.</p></li>
+<li><p>We’ll use an equal step size <span class="math notranslate nohighlight">\(h\)</span> in both the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> directions.</p></li>
+<li><p><span class="math notranslate nohighlight">\(x \rightarrow x_i = i h\)</span>, with <span class="math notranslate nohighlight">\(i = 0, 1, \ldots, M-1\)</span>. (Don’t confuse this index <span class="math notranslate nohighlight">\(i\)</span> with the imaginary unit <span class="math notranslate nohighlight">\(i\)</span> appearing in the Schrödinger equation!)</p></li>
+<li><p><span class="math notranslate nohighlight">\(y \rightarrow y_j = j h\)</span>, with <span class="math notranslate nohighlight">\(j = 0, 1, \ldots, M-1\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(t \rightarrow t_n = n \Delta t\)</span>, with <span class="math notranslate nohighlight">\(n = 0, 1, \ldots, N_t-1\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(u(x,y,t) \rightarrow u(ih,jh,n \Delta t) \equiv u_{ij}^n\)</span>. Note that the superscript <span class="math notranslate nohighlight">\(n\)</span> here is simply a time index — we have not raised <span class="math notranslate nohighlight">\(u_{ij}\)</span> to the <span class="math notranslate nohighlight">\(n\)</span>-th power!</p></li>
+<li><p>The matrix <span class="math notranslate nohighlight">\(U^n\)</span> is a matrix with elements <span class="math notranslate nohighlight">\(u_{ij}^n\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(v(x,y) \rightarrow v(ih,jh) \equiv v_{ij}\)</span>.</p></li>
+<li><p>The matrix <span class="math notranslate nohighlight">\(V\)</span> is a matrix with elements <span class="math notranslate nohighlight">\(v_{ij}\)</span>.</p></li>
+</ul>
+<p>Note:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(M\)</span> is the number of <em>points</em> along the <span class="math notranslate nohighlight">\(x\)</span> axis, including the boundary points. Thus, the <span class="math notranslate nohighlight">\(x\)</span> axis has been discretised using <span class="math notranslate nohighlight">\(M-1\)</span> <em>steps</em>, and there are <span class="math notranslate nohighlight">\(M-2\)</span> “internal points” <span class="math notranslate nohighlight">\(x_1, \ldots, x_{M-2}\)</span>, i.e. excluding the boundary points <span class="math notranslate nohighlight">\(x_0\)</span> and <span class="math notranslate nohighlight">\(x_{M-1}\)</span>.</p></li>
+<li><p>Similarly for the <span class="math notranslate nohighlight">\(y\)</span> axis, again with <span class="math notranslate nohighlight">\(M\)</span> being the number of <em>points</em>.</p></li>
+<li><p>We will mix index notation with and without commas as needed for clarity. So keep in mind that e.g. <span class="math notranslate nohighlight">\(u_{ij}\)</span> and <span class="math notranslate nohighlight">\(u_{i,j}\)</span> mean the same thing.</p></li>
+</ul>
+</section>
+<section id="initial-and-boundary-conditions">
+<h2>Initial and boundary conditions<a class="headerlink" href="#initial-and-boundary-conditions" title="Permalink to this headline">#</a></h2>
+<p>Throughout this project we will assume Dirichlet boundary conditions in the <span class="math notranslate nohighlight">\(xy\)</span> plane:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(u(x=0, y, t) = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u(x=1, y, t) = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u(x, y=0, t) = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u(x, y=1, t) = 0\)</span></p></li>
+</ul>
+<p>This assumption simplifies the implemention of the Crank-Nicolson scheme quite a bit, so keep in mind that the code we write will have this assumption baked in from the beginning.</p>
+<p>For the initial wave function <span class="math notranslate nohighlight">\(u(x,y,t=0)\)</span> we will typically use a quantum mechanical Gaussian wavepacket, to be specified in the problems below.</p>
+</section>
+<section id="problems">
+<h2>Problems<a class="headerlink" href="#problems" title="Permalink to this headline">#</a></h2>
+<section id="problem-0">
+<h3>Problem 0<a class="headerlink" href="#problem-0" title="Permalink to this headline">#</a></h3>
+<p>Not really a problem but an advice: Before diving into this project, take a look at the <a class="reference external" href="http://arma.sourceforge.net/docs.html">Armadillo documentation</a> to see how you can work with complex numbers. For instance, look up terms like <code class="docutils literal notranslate"><span class="pre">cx_double</span></code>, <code class="docutils literal notranslate"><span class="pre">cx_vec</span></code>, <code class="docutils literal notranslate"><span class="pre">cx_mat</span></code>, etc.</p>
+<p>In practice, this simply means having your Armadillo objects filled with the standard <code class="docutils literal notranslate"><span class="pre">std::complex&lt;double&gt;</span></code> type in C++. You should read about that <a class="reference external" href="https://en.cppreference.com/w/cpp/numeric/complex">here</a> and take a look at the examples.</p>
+<p>PS: You might also find <code class="docutils literal notranslate"><span class="pre">sp_cx_mat</span></code> in Armadillo very useful at some point…</p>
+</section>
+<section id="problem-1">
+<h3>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this headline">#</a></h3>
+<p>Show analytically that by discretizing equation <a class="reference internal" href="#equation-schr-eq">(24)</a> according to the Crank-Nicolson approach, you end up with the expression</p>
+<div class="math notranslate nohighlight" id="equation-cn-eq1">
+<span class="eqno">(25)<a class="headerlink" href="#equation-cn-eq1" title="Permalink to this equation">#</a></span>\[\begin{split}
 u_{ij}^{n+1}  -  r \left[u_{i+1,j}^{n+1} - 2u_{ij}^{n+1} + u_{i-1,j}^{n+1}\right]  -  r \left[u_{i,j+1}^{n+1} - 2u_{ij}^{n+1} + u_{i,j-1}^{n+1}\right]  +  \frac{i \Delta t}{2} v_{ij} u_{ij}^{n+1} \\
 = u_{ij}^n  +  r \left[u_{i+1,j}^n - 2u_{ij}^n + u_{i-1,j}^n\right]  +  r \left[u_{i,j+1}^n - 2u_{ij}^n + u_{i,j-1}^n\right]  -  \frac{i \Delta t}{2} v_{ij} u_{ij}^n,
-$$ (CN_eq1)
-
-where $r \equiv \frac{i \Delta t}{2 h^2}$.
-
-
-### Problem 2
-
-One of the tricky things when implementing Crank-Nicolson with two spatial dimensions is getting the matrices and all the different indices right. When taking into account our choice of simple boundary conditions, equation {eq}`CN_eq1` can be expressed in matrix form as 
-
-$$
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(r \equiv \frac{i \Delta t}{2 h^2}\)</span>.</p>
+</section>
+<section id="problem-2">
+<h3>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this headline">#</a></h3>
+<p>One of the tricky things when implementing Crank-Nicolson with two spatial dimensions is getting the matrices and all the different indices right. When taking into account our choice of simple boundary conditions, equation <a class="reference internal" href="#equation-cn-eq1">(25)</a> can be expressed in matrix form as</p>
+<div class="math notranslate nohighlight" id="equation-cn-eq2">
+<span class="eqno">(26)<a class="headerlink" href="#equation-cn-eq2" title="Permalink to this equation">#</a></span>\[
 A \,\vec{u}^{n+1} = B \,\vec{u}^{n}.
-$$ (CN_eq2)
-
-Here the vector $\vec{u}^n$ (and similarly $\vec{u}^{n+1}$) is a column vector that contains the $u^n_{ij}$ values for *all the internal points* of the $xy$ grid at time step $n$. In row-form it would look like this:
-
-$$
+\]</div>
+<p>Here the vector <span class="math notranslate nohighlight">\(\vec{u}^n\)</span> (and similarly <span class="math notranslate nohighlight">\(\vec{u}^{n+1}\)</span>) is a column vector that contains the <span class="math notranslate nohighlight">\(u^n_{ij}\)</span> values for <em>all the internal points</em> of the <span class="math notranslate nohighlight">\(xy\)</span> grid at time step <span class="math notranslate nohighlight">\(n\)</span>. In row-form it would look like this:</p>
+<div class="math notranslate nohighlight">
+\[
 \vec{u}^n = \left[(u_{1,1}^n, u_{2,1}^n, \ldots, u_{M-2,1}^n), (u_{1,2}^n, u_{2,2}^n, \ldots u_{M-2,2}^n), \ldots, (u_{1,M-2}^n \ldots u_{M-2,M-2}^n)\right].
-$$
-
-The parentheses are just added to make it clear where there is a change in the second index $j$. Thus the $\vec{u}$ vectors have length $(M-2)^2$, and the matrices $A$ and $B$ are thus (potentially very large) matrices of size $(M-2)^2 \times (M-2)^2$. 
-
-Now we need some code to help us get this straight in our program:
-
-- Write a code snippet that translates a pair of indices $(i,j)$ into a corresponding single index $k$ that gives the position of $u^n_{ij}$ in the vector $\vec{u}^n$.
-
-- Next, we need code to construct our $A$ and $B$ matrices. The code must work for any value of $(M-2)$, but we can use $(M-2)=3$ as a first test case. So write a code snippet that takes as input a number $r$ and two vectors $\vec{a}$ and $\vec{b}$ and produce the following matrices when the vectors are of length 9:  
-`  `
-
-  $$
+\]</div>
+<p>The parentheses are just added to make it clear where there is a change in the second index <span class="math notranslate nohighlight">\(j\)</span>. Thus the <span class="math notranslate nohighlight">\(\vec{u}\)</span> vectors have length <span class="math notranslate nohighlight">\((M-2)^2\)</span>, and the matrices <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are thus (potentially very large) matrices of size <span class="math notranslate nohighlight">\((M-2)^2 \times (M-2)^2\)</span>.</p>
+<p>Now we need some code to help us get this straight in our program:</p>
+<ul>
+<li><p>Write a code snippet that translates a pair of indices <span class="math notranslate nohighlight">\((i,j)\)</span> into a corresponding single index <span class="math notranslate nohighlight">\(k\)</span> that gives the position of <span class="math notranslate nohighlight">\(u^n_{ij}\)</span> in the vector <span class="math notranslate nohighlight">\(\vec{u}^n\)</span>.</p></li>
+<li><p>Next, we need code to construct our <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> matrices. The code must work for any value of <span class="math notranslate nohighlight">\((M-2)\)</span>, but we can use <span class="math notranslate nohighlight">\((M-2)=3\)</span> as a first test case. So write a code snippet that takes as input a number <span class="math notranslate nohighlight">\(r\)</span> and two vectors <span class="math notranslate nohighlight">\(\vec{a}\)</span> and <span class="math notranslate nohighlight">\(\vec{b}\)</span> and produce the following matrices when the vectors are of length 9:<br />
+<code class="docutils literal notranslate">&#160; </code></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
   A = 
   \begin{bmatrix}
-  a_0 &  -r  &  0   &  -r   &   0   &  0    &  0   &  0    &  0    \\
-  -r  &  a_1 &  -r  &  0    &   -r  &  0    &  0   &  0    &  0    \\
-  0   &  -r  &  a_2 &  0    &   0   &  -r   &  0   &  0    &  0    \\
-  -r  &  0   &  0   &  a_3  &   -r  &  0    &  -r  &  0    &  0    \\
-  0   &  -r  &  0   &  -r   &   a_4 &  -r   &  0   &  -r   &  0    \\
-  0   &  0   &  -r  &  0    &   -r  &  a_5  &  0   &  0    &  -r   \\
-  0   &  0   &  0   &  -r   &   0   &  0    &  a_6 &  -r   &  0    \\
-  0   &  0   &  0   &  0    &   -r  &  0    &  -r  &  a_7  &  -r   \\
-  0   &  0   &  0   &  0    &   0   &  -r   &  0   &  -r   &  a_8  \\
+  a_0 &amp;  -r  &amp;  0   &amp;  -r   &amp;   0   &amp;  0    &amp;  0   &amp;  0    &amp;  0    \\
+  -r  &amp;  a_1 &amp;  -r  &amp;  0    &amp;   -r  &amp;  0    &amp;  0   &amp;  0    &amp;  0    \\
+  0   &amp;  -r  &amp;  a_2 &amp;  0    &amp;   0   &amp;  -r   &amp;  0   &amp;  0    &amp;  0    \\
+  -r  &amp;  0   &amp;  0   &amp;  a_3  &amp;   -r  &amp;  0    &amp;  -r  &amp;  0    &amp;  0    \\
+  0   &amp;  -r  &amp;  0   &amp;  -r   &amp;   a_4 &amp;  -r   &amp;  0   &amp;  -r   &amp;  0    \\
+  0   &amp;  0   &amp;  -r  &amp;  0    &amp;   -r  &amp;  a_5  &amp;  0   &amp;  0    &amp;  -r   \\
+  0   &amp;  0   &amp;  0   &amp;  -r   &amp;   0   &amp;  0    &amp;  a_6 &amp;  -r   &amp;  0    \\
+  0   &amp;  0   &amp;  0   &amp;  0    &amp;   -r  &amp;  0    &amp;  -r  &amp;  a_7  &amp;  -r   \\
+  0   &amp;  0   &amp;  0   &amp;  0    &amp;   0   &amp;  -r   &amp;  0   &amp;  -r   &amp;  a_8  \\
   \end{bmatrix}
-  $$
-
-  $$
+  \end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
   B = 
   \begin{bmatrix}
-  b_0 &  r   &  0   &  r    &   0   &  0    &  0   &  0    &  0    \\
-  r   &  b_1 &  r   &  0    &   r   &  0    &  0   &  0    &  0    \\
-  0   &  r   &  b_2 &  0    &   0   &  r    &  0   &  0    &  0    \\
-  r   &  0   &  0   &  b_3  &   r   &  0    &  r   &  0    &  0    \\
-  0   &  r   &  0   &  r    &   b_4 &  r    &  0   &  r    &  0    \\
-  0   &  0   &  r   &  0    &   r   &  b_5  &  0   &  0    &  r    \\
-  0   &  0   &  0   &  r    &   0   &  0    &  b_6 &  r    &  0    \\
-  0   &  0   &  0   &  0    &   r   &  0    &  r   &  b_7  &  r    \\
-  0   &  0   &  0   &  0    &   0   &  r    &  0   &  r    &  b_8  \\
+  b_0 &amp;  r   &amp;  0   &amp;  r    &amp;   0   &amp;  0    &amp;  0   &amp;  0    &amp;  0    \\
+  r   &amp;  b_1 &amp;  r   &amp;  0    &amp;   r   &amp;  0    &amp;  0   &amp;  0    &amp;  0    \\
+  0   &amp;  r   &amp;  b_2 &amp;  0    &amp;   0   &amp;  r    &amp;  0   &amp;  0    &amp;  0    \\
+  r   &amp;  0   &amp;  0   &amp;  b_3  &amp;   r   &amp;  0    &amp;  r   &amp;  0    &amp;  0    \\
+  0   &amp;  r   &amp;  0   &amp;  r    &amp;   b_4 &amp;  r    &amp;  0   &amp;  r    &amp;  0    \\
+  0   &amp;  0   &amp;  r   &amp;  0    &amp;   r   &amp;  b_5  &amp;  0   &amp;  0    &amp;  r    \\
+  0   &amp;  0   &amp;  0   &amp;  r    &amp;   0   &amp;  0    &amp;  b_6 &amp;  r    &amp;  0    \\
+  0   &amp;  0   &amp;  0   &amp;  0    &amp;   r   &amp;  0    &amp;  r   &amp;  b_7  &amp;  r    \\
+  0   &amp;  0   &amp;  0   &amp;  0    &amp;   0   &amp;  r    &amp;  0   &amp;  r    &amp;  b_8  \\
   \end{bmatrix}
-  $$
-
-- To get the matrix structures correct it may be useful to notice that the $A$ and $B$ matrices are based on submatrices of size $(M-2) \times (M-2)$, as illustrated here:  
-`  `
-
-  $$
+  \end{split}\]</div>
+</li>
+<li><p>To get the matrix structures correct it may be useful to notice that the <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> matrices are based on submatrices of size <span class="math notranslate nohighlight">\((M-2) \times (M-2)\)</span>, as illustrated here:<br />
+<code class="docutils literal notranslate">&#160; </code></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
   A,B = 
   \begin{bmatrix}
     \begin{pmatrix}
-      \bullet  &  \bullet  &  \phantom{\bullet} \\
-      \bullet  &  \bullet  &  \bullet \\
-      \phantom{\bullet}  &  \bullet  &  \bullet
+      \bullet  &amp;  \bullet  &amp;  \phantom{\bullet} \\
+      \bullet  &amp;  \bullet  &amp;  \bullet \\
+      \phantom{\bullet}  &amp;  \bullet  &amp;  \bullet
     \end{pmatrix}
     \begin{pmatrix}
-      \bullet  &  \phantom{\bullet}  &  \phantom{\bullet} \\
-      \phantom{\bullet}  &  \bullet  &  \phantom{\bullet} \\
-      \phantom{\bullet}  &  \phantom{\bullet}  &  \bullet
+      \bullet  &amp;  \phantom{\bullet}  &amp;  \phantom{\bullet} \\
+      \phantom{\bullet}  &amp;  \bullet  &amp;  \phantom{\bullet} \\
+      \phantom{\bullet}  &amp;  \phantom{\bullet}  &amp;  \bullet
     \end{pmatrix}
     \begin{pmatrix}
-      \phantom{\bullet}  &  \phantom{\bullet}  &  \phantom{\bullet} \\
-      \phantom{\bullet}  &  \phantom{\bullet}  &  \phantom{\bullet} \\
-      \phantom{\bullet}  &  \phantom{\bullet}  &  \phantom{\bullet}
+      \phantom{\bullet}  &amp;  \phantom{\bullet}  &amp;  \phantom{\bullet} \\
+      \phantom{\bullet}  &amp;  \phantom{\bullet}  &amp;  \phantom{\bullet} \\
+      \phantom{\bullet}  &amp;  \phantom{\bullet}  &amp;  \phantom{\bullet}
     \end{pmatrix}\\
     \begin{pmatrix}
-      \bullet  &  \phantom{\bullet}  &  \phantom{\bullet} \\
-      \phantom{\bullet}  &  \bullet  &  \phantom{\bullet} \\
-      \phantom{\bullet}  &  \phantom{\bullet}  &  \bullet
+      \bullet  &amp;  \phantom{\bullet}  &amp;  \phantom{\bullet} \\
+      \phantom{\bullet}  &amp;  \bullet  &amp;  \phantom{\bullet} \\
+      \phantom{\bullet}  &amp;  \phantom{\bullet}  &amp;  \bullet
     \end{pmatrix}
     \begin{pmatrix}
-      \bullet  &  \bullet  &  \phantom{\bullet} \\
-      \bullet  &  \bullet  &  \bullet \\
-      \phantom{\bullet}  &  \bullet  &  \bullet
+      \bullet  &amp;  \bullet  &amp;  \phantom{\bullet} \\
+      \bullet  &amp;  \bullet  &amp;  \bullet \\
+      \phantom{\bullet}  &amp;  \bullet  &amp;  \bullet
     \end{pmatrix}
     \begin{pmatrix}
-      \bullet  &  \phantom{\bullet}  &  \phantom{\bullet} \\
-      \phantom{\bullet}  &  \bullet  &  \phantom{\bullet} \\
-      \phantom{\bullet}  &  \phantom{\bullet}  &  \bullet
+      \bullet  &amp;  \phantom{\bullet}  &amp;  \phantom{\bullet} \\
+      \phantom{\bullet}  &amp;  \bullet  &amp;  \phantom{\bullet} \\
+      \phantom{\bullet}  &amp;  \phantom{\bullet}  &amp;  \bullet
     \end{pmatrix}\\
     \begin{pmatrix}
-      \phantom{\bullet}  &  \phantom{\bullet}  &  \phantom{\bullet} \\
-      \phantom{\bullet}  &  \phantom{\bullet}  &  \phantom{\bullet} \\
-      \phantom{\bullet}  &  \phantom{\bullet}  &  \phantom{\bullet}
+      \phantom{\bullet}  &amp;  \phantom{\bullet}  &amp;  \phantom{\bullet} \\
+      \phantom{\bullet}  &amp;  \phantom{\bullet}  &amp;  \phantom{\bullet} \\
+      \phantom{\bullet}  &amp;  \phantom{\bullet}  &amp;  \phantom{\bullet}
     \end{pmatrix}
     \begin{pmatrix}
-      \bullet  &  \phantom{\bullet}  &  \phantom{\bullet} \\
-      \phantom{\bullet}  &  \bullet  &  \phantom{\bullet} \\
-      \phantom{\bullet}  &  \phantom{\bullet}  &  \bullet
+      \bullet  &amp;  \phantom{\bullet}  &amp;  \phantom{\bullet} \\
+      \phantom{\bullet}  &amp;  \bullet  &amp;  \phantom{\bullet} \\
+      \phantom{\bullet}  &amp;  \phantom{\bullet}  &amp;  \bullet
     \end{pmatrix}
     \begin{pmatrix}
-      \bullet  &  \bullet  &  \phantom{\bullet} \\
-      \bullet  &  \bullet  &  \bullet \\
-      \phantom{\bullet}  &  \bullet  &  \bullet
+      \bullet  &amp;  \bullet  &amp;  \phantom{\bullet} \\
+      \bullet  &amp;  \bullet  &amp;  \bullet \\
+      \phantom{\bullet}  &amp;  \bullet  &amp;  \bullet
     \end{pmatrix}
   \end{bmatrix}
-  $$
-
-- In the *Code snippets* section at the bottom we provide a C++ function you can use if you want to print the structure of a sparse matrix to screen.
-
-- Make sure your code works for any value of $(M-2)$, even though we have so far only tested it for the simple case $(M-2)=3$. One way to test that can be to check that you get the following matrices when you try with $(M-2)=4$:  
-`  `
-
-  $$
+  \end{split}\]</div>
+</li>
+<li><p>In the <em>Code snippets</em> section at the bottom we provide a C++ function you can use if you want to print the structure of a sparse matrix to screen.</p></li>
+<li><p>Make sure your code works for any value of <span class="math notranslate nohighlight">\((M-2)\)</span>, even though we have so far only tested it for the simple case <span class="math notranslate nohighlight">\((M-2)=3\)</span>. One way to test that can be to check that you get the following matrices when you try with <span class="math notranslate nohighlight">\((M-2)=4\)</span>:<br />
+<code class="docutils literal notranslate">&#160; </code></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
   A = 
   \begin{bmatrix}
-  a_0 &  -r  &  0   &  0  &   -r  &  0   &  0   &  0  &   0   &  0   &  0   &  0     &  0     &  0     &  0     &  0     \\
-  -r  &  a_1 &  -r  &  0  &   0   &  -r  &  0   &  0  &   0   &  0   &  0   &  0     &  0     &  0     &  0     &  0     \\
-  0   &  -r  &  a_2 &  -r &   0   &  0   &  -r  &  0  &   0   &  0   &  0   &  0     &  0     &  0     &  0     &  0     \\
-  0   &  0   &  -r  & a_3 &   0   &  0   &  0   &  -r &   0   &  0   &  0   &  0     &  0     &  0     &  0     &  0     \\
-  -r  &  0   &  0   &  0  &   a_4 &  -r  &  0   &  0  &   -r  &  0   &  0   &  0     &  0     &  0     &  0     &  0     \\
-  0   &  -r  &  0   &  0  &   -r  &  a_5 &  -r  &  0  &   0   &  -r  &  0   &  0     &  0     &  0     &  0     &  0     \\
-  0   &  0   &  -r  &  0  &   0   &  -r  &  a_6 &  -r &   0   &  0   &  -r  &  0     &  0     &  0     &  0     &  0     \\
-  0   &  0   &  0   &  -r &   0   &  0   &  -r  & a_7 &   0   &  0   &  0   &  -r    &  0     &  0     &  0     &  0     \\
-  0   &  0   &  0   &  0  &   -r  &  0   &  0   &  0  &   a_8 &  -r  &  0   &  0     &  -r    &  0     &  0     &  0     \\
-  0   &  0   &  0   &  0  &   0   &  -r  &  0   &  0  &   -r  &  a_9 &  -r  &  0     &  0     &  -r    &  0     &  0     \\
-  0   &  0   &  0   &  0  &   0   &  0   &  -r  &  0  &   0   &  -r  &  a_{10} &  -r &  0     &  0     &  -r    &  0     \\
-  0   &  0   &  0   &  0  &   0   &  0   &  0   &  -r &   0   &  0   &  -r  & a_{11} &  0     &  0     &  0     &  -r    \\
-  0   &  0   &  0   &  0  &   0   &  0   &  0   &  0  &   -r  &  0   &  0   &  0     & a_{12} &  -r    &  0     &  0     \\
-  0   &  0   &  0   &  0  &   0   &  0   &  0   &  0  &   0   &  -r  &  0   &  0     & -r     & a_{13} &  -r    &  0     \\
-  0   &  0   &  0   &  0  &   0   &  0   &  0   &  0  &   0   &  0   &  -r  &  0     & 0      &  -r    & a_{14} &  -r    \\
-  0   &  0   &  0   &  0  &   0   &  0   &  0   &  0  &   0   &  0   &  0   &  -r    & 0      &  0     &  -r    & a_{15} \\
+  a_0 &amp;  -r  &amp;  0   &amp;  0  &amp;   -r  &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  0     &amp;  0     &amp;  0     &amp;  0     &amp;  0     \\
+  -r  &amp;  a_1 &amp;  -r  &amp;  0  &amp;   0   &amp;  -r  &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  0     &amp;  0     &amp;  0     &amp;  0     &amp;  0     \\
+  0   &amp;  -r  &amp;  a_2 &amp;  -r &amp;   0   &amp;  0   &amp;  -r  &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  0     &amp;  0     &amp;  0     &amp;  0     &amp;  0     \\
+  0   &amp;  0   &amp;  -r  &amp; a_3 &amp;   0   &amp;  0   &amp;  0   &amp;  -r &amp;   0   &amp;  0   &amp;  0   &amp;  0     &amp;  0     &amp;  0     &amp;  0     &amp;  0     \\
+  -r  &amp;  0   &amp;  0   &amp;  0  &amp;   a_4 &amp;  -r  &amp;  0   &amp;  0  &amp;   -r  &amp;  0   &amp;  0   &amp;  0     &amp;  0     &amp;  0     &amp;  0     &amp;  0     \\
+  0   &amp;  -r  &amp;  0   &amp;  0  &amp;   -r  &amp;  a_5 &amp;  -r  &amp;  0  &amp;   0   &amp;  -r  &amp;  0   &amp;  0     &amp;  0     &amp;  0     &amp;  0     &amp;  0     \\
+  0   &amp;  0   &amp;  -r  &amp;  0  &amp;   0   &amp;  -r  &amp;  a_6 &amp;  -r &amp;   0   &amp;  0   &amp;  -r  &amp;  0     &amp;  0     &amp;  0     &amp;  0     &amp;  0     \\
+  0   &amp;  0   &amp;  0   &amp;  -r &amp;   0   &amp;  0   &amp;  -r  &amp; a_7 &amp;   0   &amp;  0   &amp;  0   &amp;  -r    &amp;  0     &amp;  0     &amp;  0     &amp;  0     \\
+  0   &amp;  0   &amp;  0   &amp;  0  &amp;   -r  &amp;  0   &amp;  0   &amp;  0  &amp;   a_8 &amp;  -r  &amp;  0   &amp;  0     &amp;  -r    &amp;  0     &amp;  0     &amp;  0     \\
+  0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  -r  &amp;  0   &amp;  0  &amp;   -r  &amp;  a_9 &amp;  -r  &amp;  0     &amp;  0     &amp;  -r    &amp;  0     &amp;  0     \\
+  0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  -r  &amp;  0  &amp;   0   &amp;  -r  &amp;  a_{10} &amp;  -r &amp;  0     &amp;  0     &amp;  -r    &amp;  0     \\
+  0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  -r &amp;   0   &amp;  0   &amp;  -r  &amp; a_{11} &amp;  0     &amp;  0     &amp;  0     &amp;  -r    \\
+  0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  0  &amp;   -r  &amp;  0   &amp;  0   &amp;  0     &amp; a_{12} &amp;  -r    &amp;  0     &amp;  0     \\
+  0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  -r  &amp;  0   &amp;  0     &amp; -r     &amp; a_{13} &amp;  -r    &amp;  0     \\
+  0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  -r  &amp;  0     &amp; 0      &amp;  -r    &amp; a_{14} &amp;  -r    \\
+  0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  -r    &amp; 0      &amp;  0     &amp;  -r    &amp; a_{15} \\
   \end{bmatrix}
-  $$
-
-  $$
+  \end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
   B = 
   \begin{bmatrix}
-  b_0 &  r   &  0   &  0  &   r   &  0   &  0   &  0  &   0   &  0   &  0   &  0     &  0     &  0     &  0     &  0     \\
-  r   &  b_1 &  r   &  0  &   0   &  r   &  0   &  0  &   0   &  0   &  0   &  0     &  0     &  0     &  0     &  0     \\
-  0   &  r   &  b_2 &  r  &   0   &  0   &  r   &  0  &   0   &  0   &  0   &  0     &  0     &  0     &  0     &  0     \\
-  0   &  0   &  r   & b_3 &   0   &  0   &  0   &  r  &   0   &  0   &  0   &  0     &  0     &  0     &  0     &  0     \\
-  r   &  0   &  0   &  0  &   b_4 &  r   &  0   &  0  &   r   &  0   &  0   &  0     &  0     &  0     &  0     &  0     \\
-  0   &  r   &  0   &  0  &   r   &  b_5 &  r   &  0  &   0   &  r   &  0   &  0     &  0     &  0     &  0     &  0     \\
-  0   &  0   &  r   &  0  &   0   &  r   &  b_6 &  r  &   0   &  0   &  r   &  0     &  0     &  0     &  0     &  0     \\
-  0   &  0   &  0   &  r  &   0   &  0   &  r   & b_7 &   0   &  0   &  0   &  r     &  0     &  0     &  0     &  0     \\
-  0   &  0   &  0   &  0  &   r   &  0   &  0   &  0  &   b_8 &  r   &  0   &  0     &  r     &  0     &  0     &  0     \\
-  0   &  0   &  0   &  0  &   0   &  r   &  0   &  0  &   r   &  b_9 &  r   &  0     &  0     &  r     &  0     &  0     \\
-  0   &  0   &  0   &  0  &   0   &  0   &  r   &  0  &   0   &  r   &  b_{10} &  r  &  0     &  0     &  r     &  0     \\
-  0   &  0   &  0   &  0  &   0   &  0   &  0   &  r  &   0   &  0   &  r   & b_{11} &  0     &  0     &  0     &  r     \\
-  0   &  0   &  0   &  0  &   0   &  0   &  0   &  0  &   r   &  0   &  0   &  0     & b_{12} &  r     &  0     &  0     \\
-  0   &  0   &  0   &  0  &   0   &  0   &  0   &  0  &   0   &  r   &  0   &  0     & r      & b_{13} &  r     &  0     \\
-  0   &  0   &  0   &  0  &   0   &  0   &  0   &  0  &   0   &  0   &  r   &  0     & 0      &  r     & b_{14} &  r     \\
-  0   &  0   &  0   &  0  &   0   &  0   &  0   &  0  &   0   &  0   &  0   &  r     & 0      &  0     &  r     & b_{15} \\
+  b_0 &amp;  r   &amp;  0   &amp;  0  &amp;   r   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  0     &amp;  0     &amp;  0     &amp;  0     &amp;  0     \\
+  r   &amp;  b_1 &amp;  r   &amp;  0  &amp;   0   &amp;  r   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  0     &amp;  0     &amp;  0     &amp;  0     &amp;  0     \\
+  0   &amp;  r   &amp;  b_2 &amp;  r  &amp;   0   &amp;  0   &amp;  r   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  0     &amp;  0     &amp;  0     &amp;  0     &amp;  0     \\
+  0   &amp;  0   &amp;  r   &amp; b_3 &amp;   0   &amp;  0   &amp;  0   &amp;  r  &amp;   0   &amp;  0   &amp;  0   &amp;  0     &amp;  0     &amp;  0     &amp;  0     &amp;  0     \\
+  r   &amp;  0   &amp;  0   &amp;  0  &amp;   b_4 &amp;  r   &amp;  0   &amp;  0  &amp;   r   &amp;  0   &amp;  0   &amp;  0     &amp;  0     &amp;  0     &amp;  0     &amp;  0     \\
+  0   &amp;  r   &amp;  0   &amp;  0  &amp;   r   &amp;  b_5 &amp;  r   &amp;  0  &amp;   0   &amp;  r   &amp;  0   &amp;  0     &amp;  0     &amp;  0     &amp;  0     &amp;  0     \\
+  0   &amp;  0   &amp;  r   &amp;  0  &amp;   0   &amp;  r   &amp;  b_6 &amp;  r  &amp;   0   &amp;  0   &amp;  r   &amp;  0     &amp;  0     &amp;  0     &amp;  0     &amp;  0     \\
+  0   &amp;  0   &amp;  0   &amp;  r  &amp;   0   &amp;  0   &amp;  r   &amp; b_7 &amp;   0   &amp;  0   &amp;  0   &amp;  r     &amp;  0     &amp;  0     &amp;  0     &amp;  0     \\
+  0   &amp;  0   &amp;  0   &amp;  0  &amp;   r   &amp;  0   &amp;  0   &amp;  0  &amp;   b_8 &amp;  r   &amp;  0   &amp;  0     &amp;  r     &amp;  0     &amp;  0     &amp;  0     \\
+  0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  r   &amp;  0   &amp;  0  &amp;   r   &amp;  b_9 &amp;  r   &amp;  0     &amp;  0     &amp;  r     &amp;  0     &amp;  0     \\
+  0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  r   &amp;  0  &amp;   0   &amp;  r   &amp;  b_{10} &amp;  r  &amp;  0     &amp;  0     &amp;  r     &amp;  0     \\
+  0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  r  &amp;   0   &amp;  0   &amp;  r   &amp; b_{11} &amp;  0     &amp;  0     &amp;  0     &amp;  r     \\
+  0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  0  &amp;   r   &amp;  0   &amp;  0   &amp;  0     &amp; b_{12} &amp;  r     &amp;  0     &amp;  0     \\
+  0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  r   &amp;  0   &amp;  0     &amp; r      &amp; b_{13} &amp;  r     &amp;  0     \\
+  0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  r   &amp;  0     &amp; 0      &amp;  r     &amp; b_{14} &amp;  r     \\
+  0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  0  &amp;   0   &amp;  0   &amp;  0   &amp;  r     &amp; 0      &amp;  0     &amp;  r     &amp; b_{15} \\
   \end{bmatrix}
-  $$
-
-- Now you are ready to write a proper function for your program that, using inputs $M$, $h$, $\Delta t$ and the matrix $V$ as input, can fill two $(M-2)^2 \times (M-2)^2$ matrices $A$ and $B$ according to the above pattern, with
-
-  $$
-  a_k &= 1 + 4r + \frac{i \Delta t}{2} v_{ij},\\
-  b_k &= 1 - 4r - \frac{i \Delta t}{2} v_{ij}.
-  $$
-
-  (Here the $i$ in $i \Delta t$ is again the imaginary unit.)
-
-
-
-### Problem 3
-
-When we have the matrices $A$ and $B$, finding the next $\vec{u}^{n+1}$ from the current $\vec{u}^n$ in a time loop can be done in two steps:
-
-  1. Perform the matrix multiplication $B \, \vec{u}^n = \vec{b}$.
-
-  2. Solve the matrix equation $A \, \vec{u}^{n+1} = \vec{b}$ for the unknown $\vec{u}^{n+1}$.
-
-Given what you know about matrix $A$, discuss which approaches might be well-suited to solve $A \, \vec{u}^{n+1} = \vec{b}$. For your code you can either implement a solver yourself or use a built-in solver in Armadillo.
-
-
-```{note}
-If you want to implement your own solver to solve $A \, \vec{u}^{n+1} = \vec{b}$, keep in mind that in the lectures we have discussed several different types of methods for solving matrix equations, including some that are easy to implement but that we haven't used in any previous project...
-```
-
-
-### Problem 4
-
-Write a part of your program that can set up the initial state $u_{ij}^0$ based on the following expression for an unnormalised Gaussian wave packet
-
-$$
+  \end{split}\]</div>
+</li>
+<li><p>Now you are ready to write a proper function for your program that, using inputs <span class="math notranslate nohighlight">\(M\)</span>, <span class="math notranslate nohighlight">\(h\)</span>, <span class="math notranslate nohighlight">\(\Delta t\)</span> and the matrix <span class="math notranslate nohighlight">\(V\)</span> as input, can fill two <span class="math notranslate nohighlight">\((M-2)^2 \times (M-2)^2\)</span> matrices <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> according to the above pattern, with</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  a_k &amp;= 1 + 4r + \frac{i \Delta t}{2} v_{ij},\\
+  b_k &amp;= 1 - 4r - \frac{i \Delta t}{2} v_{ij}.
+  \end{split}\]</div>
+<p>(Here the <span class="math notranslate nohighlight">\(i\)</span> in <span class="math notranslate nohighlight">\(i \Delta t\)</span> is again the imaginary unit.)</p>
+</li>
+</ul>
+</section>
+<section id="problem-3">
+<h3>Problem 3<a class="headerlink" href="#problem-3" title="Permalink to this headline">#</a></h3>
+<p>When we have the matrices <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, finding the next <span class="math notranslate nohighlight">\(\vec{u}^{n+1}\)</span> from the current <span class="math notranslate nohighlight">\(\vec{u}^n\)</span> in a time loop can be done in two steps:</p>
+<ol class="simple">
+<li><p>Perform the matrix multiplication <span class="math notranslate nohighlight">\(B \, \vec{u}^n = \vec{b}\)</span>.</p></li>
+<li><p>Solve the matrix equation <span class="math notranslate nohighlight">\(A \, \vec{u}^{n+1} = \vec{b}\)</span> for the unknown <span class="math notranslate nohighlight">\(\vec{u}^{n+1}\)</span>.</p></li>
+</ol>
+<p>Given what you know about matrix <span class="math notranslate nohighlight">\(A\)</span>, discuss which approaches might be well-suited to solve <span class="math notranslate nohighlight">\(A \, \vec{u}^{n+1} = \vec{b}\)</span>. For your code you can either implement a solver yourself or use a built-in solver in Armadillo.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you want to implement your own solver to solve <span class="math notranslate nohighlight">\(A \, \vec{u}^{n+1} = \vec{b}\)</span>, keep in mind that in the lectures we have discussed several different types of methods for solving matrix equations, including some that are easy to implement but that we haven’t used in any previous project…</p>
+</div>
+</section>
+<section id="problem-4">
+<h3>Problem 4<a class="headerlink" href="#problem-4" title="Permalink to this headline">#</a></h3>
+<p>Write a part of your program that can set up the initial state <span class="math notranslate nohighlight">\(u_{ij}^0\)</span> based on the following expression for an unnormalised Gaussian wave packet</p>
+<div class="math notranslate nohighlight">
+\[
 u(x,y,t=0) = e^{-\frac{(x-x_c)^2}{2 \sigma_x^2} - \frac{(y-y_c)^2}{2 \sigma_y^2} + i p_x x + i p_y y}.
-$$
-  
-Here $x_c$ and $y_c$ are the coordinates of the centre of the initial wave packet, $\sigma_x$ and $\sigma_y$ are the initial widths of the wave packet in the $x$ and $y$ directions, and $p_x$ and $p_y$ are the wave packet momenta.
-
-Make sure that the initial state $u_{ij}^0$ satisfies the boundary conditions. 
-
-Also, add code that normalises your initial state such that 
-
-$$
+\]</div>
+<p>Here <span class="math notranslate nohighlight">\(x_c\)</span> and <span class="math notranslate nohighlight">\(y_c\)</span> are the coordinates of the centre of the initial wave packet, <span class="math notranslate nohighlight">\(\sigma_x\)</span> and <span class="math notranslate nohighlight">\(\sigma_y\)</span> are the initial widths of the wave packet in the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> directions, and <span class="math notranslate nohighlight">\(p_x\)</span> and <span class="math notranslate nohighlight">\(p_y\)</span> are the wave packet momenta.</p>
+<p>Make sure that the initial state <span class="math notranslate nohighlight">\(u_{ij}^0\)</span> satisfies the boundary conditions.</p>
+<p>Also, add code that normalises your initial state such that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \sum\limits_{i,j} u^{0*}_{ij} \, u^0_{ij} = 1,\\
-$$
-
-i.e. that the total probability in our 2D probability function $p^n_{ij} = u^{n*}_{ij} \, u^n_{ij}$ starts out normalized to 1.
-
-```{note}
-By requiring that $\sum\limits_{i,j} p^n_{ij} = 1$, rather than requiring $\sum\limits_{i,j} p^n_{ij} h^2 = 1$, we interpret $p^n_{ij}$ as a *probability*, not a probability *density*. That is, $p^n_{ij}$ is the probability that at time step $n$ is associated with a small grid cell of area $h^2$ centered on $(x, y) = (x_i, y_j)$.
-```
-
-
-### Problem 5
-
-Write a part of your program that initialises the potential $V$. To construct the barriers used for the double-slit (and other configurations) we will simply set the elements $v_{ij}$ of $V$ that correspond to points inside the barriers to some high constant value $v_{ij} = v_0$. As our starting point we will use the following double-slit setup:
-
-- Wall thickness in the $x$ direction: 0.02
-- Wall position (centre) in the $x$ direction: 0.5
-- Length of the wall piece separating the two slits (the $y$ distance between the inner edges of the two slits): 0.05
-- Slit aperture (opening in the $y$ direction): 0.05
-- Ensure that the slit setup is symmetric around $y = 0.5$. (So for the double-slit, the wall piece separating the two slits should be centered on $y = 0.5$.)
-
-
-In Problem 9 you will also use single-slit and triple-slit configurations.
-
-```{note}
-If you want to simulate new potential configurations without having to hard-code the potentials in your program or specify a very long list of command-line arguments, you can consider using an input text file to specify the potential configuration. See the [introduction to Armadillo](sec:intro_to_armadillo) page for an easy example of how to read a text data table with Armadillo, or take a look at the [read from file](sec:read_from_file) page for an example using only the standard C++ library.
-```
-
-### Problem 6
-
-Put everything together into a program that does (at least) the following:
-
-1. Set the simulation parameters. It may be useful to read some or all of these as command-line input, or from an input file. The main simulation parameters are $h$, $\Delta t$, $T$, $x_c$, $\sigma_x$, $p_x$, $y_c$, $\sigma_y$, $p_y$ and $v_0$. 
-
-2. Set up the potential matrix, $V$. 
-
-3. Set up the initial state matrix, $U^0$.
-
-4. Set up the matrices $A$ and $B$ required by the Crank-Nicolson approach.
-
-5. Run the loop over time steps and store each new state $U^n$. You can either write every new state directly to file during the loop, or store them in memory and write everything to file after the loop. (Armadillo's `cx_cube` might be useful.)
-
-
-
-### Problem 7
-
-```{note}
-Note that for this problem the output file can become large-ish (~200MB as binary file) if you save the full simulation, i.e. the full wave function at each time step.
-```
-
-In theory, the total probability ($= 1$) in the probability function $p^n_{ij} = u^{n*}_{ij}\,u^n_{ij}$ should be conserved over time. This is a nice consistency check to make sure your code works as it should.
-
-- First run your simulation with the settings $h = 0.005$, $\Delta t = 2.5\times10^{-5}$, $T = 0.008$, $x_c = 0.25$, $\sigma_x = 0.05$, $p_x = 200$, $y_c = 0.5$, $\sigma_y = 0.05$, $p_y = 0$ and $v_0 = 0$, i.e. without any double-slit barrier.
-
-- Make a plot of the deviation of the total probability from 1.0 as a function of time. (If the deviations are too small to be visible in your plot, consider plotting the data in a different way...)
-
-- Run the simulation again, but now with a double-slit barrier switched on. Use $v_0 = 1\times10^{10}$ and the double-slit configuration from Problem 5, and make the initial state broader in the $y$-direction by setting $\sigma_y = 0.10$.
-
-- Make a similar plot of the deviation of the total probability from 1.0 as a function of time.
-
-```{note}
-Keep in mind that how accurately you should expect the probability to be conserved will depend on what type of approach you have chosen for solving the matrix equation in Problem 3.
-```
-
-
-### Problem 8
-
-Run your simulation with the following settings: $h = 0.005$, $\Delta t = 2.5\times10^{-5}$, $T = 0.002$, $x_c = 0.25$, $\sigma_x = 0.05$, $p_x = 200$, $y_c = 0.5$, $\sigma_y = 0.20$, $p_y = 0$ and $v_0 = 1\times10^{10}$. Use the double-slit configuration from Problem 5.
-
-
-- Make three colourmap plots that illustrate the time evolution of the 2D probability function $p^n_{ij} = u^{n*}_{ij}\,u^n_{ij}$. Use the times $t = 0$, $t = 0.001$ and $t = 0.002$. (Feel free to make more plots if you want, but at least include these time steps.)
-
-- For the same time steps, also make colourmap plots that show $\text{Re}(u_{ij})$ and $\text{Im}(u_{ij})$.
-
-```{note}
-When making the colourmap plots, it may be a good idea adjust the colour scale to the maximum of $p^n_{ij}$ at each time step independently. Then you avoid the problem that the shape of the probability function becomes difficult to see for time steps where it is very broad and flat.
-
-You may also consider not using $p^n_{ij}$ as the $z$ axis (colour) value, but rather some tranformation of $p^n_{ij}$ like $\sqrt{p^n_{ij}}$, to more clearly see the structures in the low-probability regions. However, this comes with the cost that the plots become somewhat harder to interpret. But regardless of your choice, make sure to specify exactly what quantity the values on the colour scale represent.
-```
-
-
-### Problem 9
-
-- Assume that we measure the particle with a detector screen at $x = 0.8$ (spanning the entire $y$ axis) at time $t = 0.002$. Using your simulation results from Problem 8, make a plot that shows the detection probability along this screen at this time. 
-
-  Since we assume that we do indeed detect the particle *somewhere* along this line, you should normalise the one-dimensional probability function to sum to 1.0. Or in other words, you should plot $p(y\,|\,x=0.8\,;\,t=0.002)$, not $p(x,y\,;\,t=0.002)$ along $x=0.8$.
-
-- Adjust your code to also simulate single-slit and triple-slit experiments. Like for the double-slit case, use slits with aperture 0.05 and use walls of $y$-length 0.05 to separate each pair of slits (in the triple-slit case). For each case, make a plot of the same 1D probability function as above, i.e. $p(y\,|\,x=0.8\,;\,t=0.002)$.
-
-
-### Problem X
-
-If you find it useful, feel free to make some animations of your simulation and put links to these in your report! (However, don't overdo it --- your report will be more readable if the reader doesn't have to switch between the report and watching animations all the time.)
-
-
---------
-
-
-### Code snippets
-
-Here's a C++ function to print the structure of a `arma::sp_cx_mat` matrix to screen:
-
-```cpp
-#include <armadillo>
-#include <vector>
-#include <string>
-
-// A function that prints the structure of a sparse matrix to screen.
-void print_sp_matrix_structure(const arma::sp_cx_mat& A)
-{
-    using namespace std;
-    using namespace arma;
-
-    // Declare a C-style 2D array of strings.
-    string S[A.n_rows][A.n_cols];  
-
-    // Initialise all the strings to " ".
-    for (int i =0; i < A.n_rows; i++)
-    {
-        for (int j = 0; j < A.n_cols; j++)
-        {
-            S[i][j] = " ";
-        }
-    }
-
-    // Next, we want to set the string to a dot at each non-zero element.
-    // To do this we use the special loop iterator from the sp_cx_mat class
-    // to help us loop over only the non-zero matrix elements.
-    sp_cx_mat::const_iterator it     = A.begin();
-    sp_cx_mat::const_iterator it_end = A.end();
-
-    int nnz = 0;
-    for(it; it != it_end; ++it)
-    {
-        S[it.row()][it.col()] = "•";
-        nnz++;
-    }
-
-    // Finally, print the matrix to screen.
-    cout << endl;
-    for (int i =0; i < A.n_rows; i++)
-    {
-        cout << "| ";
-        for (int j = 0; j < A.n_cols; j++)
-        {
-            cout << S[i][j] << " ";
-        }
-        cout <<  "|\n";
-    }
-
-    cout << endl;
-    cout << "matrix size: " << A.n_rows << "x" << A.n_cols << endl;
-    cout << "non-zero elements: " << nnz << endl ;
-    cout << endl;
-}
-```
-
-`  `
-`  `
-
-Here's a Python example demonstrating how you can use matplotlib to animate 2D colourmap plots:
-
-```python
-import numpy as np
-import matplotlib
-import matplotlib.pyplot as plt
-from matplotlib.animation import FuncAnimation
-
-
-#
-# Let's generate a dummy time series for a function z(x,y,t)
-#
-
-# Set up a 2D xy grid
-h = 0.005
-x_points = np.arange(0, 1+h, h)
-y_points = np.arange(0, 1+h, h)
-x, y = np.meshgrid(x_points, y_points, sparse=True)
-
-# Array of time points
-dt = 0.005
-t_points = np.arange(0, 1+dt, dt)
-
-# A function for a Gaussian that is travelling 
-# in the x direction and broadening as time passes
-def z(x,y,t):
-    v = 0.5
-    x_c = 0.2
-    sigma_x = 0.025 + 0.15 * t
-    return 1. / (2 * np.pi * np.sqrt(sigma_x)) * np.exp(-0.5 * (x - x_c - v * t)**2 / sigma_x**2)
-
-# Fill z_data_list with f(x,y,t)
-z_data_list = []
-for t in t_points:
-    z_data = z(x, y, t)
-    z_data_list.append(z_data)
-
-
-#
-# Now the list z_data_list contains a series of "frames" of z(x,y,t), 
-# where each frame can be plotted as a 2D image using imshow. Let's
-# animate it!
-#
-
-# Some settings
-fontsize = 12
-t_min = t_points[0]
-x_min, x_max = x_points[0], x_points[-1]
-y_min, y_max = y_points[0], y_points[-1]
-
-# Create figure
-fig = plt.figure()
-ax = plt.gca()
-
-# Create a colour scale normalization according to the max z value in the first frame
-norm = matplotlib.cm.colors.Normalize(vmin=0.0, vmax=np.max(z_data_list[0]))
-
-# Plot the first frame
-img = ax.imshow(z_data_list[0], extent=[x_min,x_max,y_min,y_max], cmap=plt.get_cmap("viridis"), norm=norm)
-
-# Axis labels
-plt.xlabel("x", fontsize=fontsize)
-plt.ylabel("y", fontsize=fontsize)
-plt.xticks(fontsize=fontsize)
-plt.yticks(fontsize=fontsize)
-
-# Add a colourbar
-cbar = fig.colorbar(img, ax=ax)
-cbar.set_label("z(x,y,t)", fontsize=fontsize)
-cbar.ax.tick_params(labelsize=fontsize)
-
-# Add a text element showing the time
-time_txt = plt.text(0.95, 0.95, "t = {:.3e}".format(t_min), color="white", 
-                    horizontalalignment="right", verticalalignment="top", fontsize=fontsize)
-
-# Function that takes care of updating the z data and other things for each frame
-def animation(i):
-    # Normalize the colour scale to the current frame?
-    norm = matplotlib.cm.colors.Normalize(vmin=0.0, vmax=np.max(z_data_list[i]))
-    img.set_norm(norm)
-
-    # Update z data
-    img.set_data(z_data_list[i])
-
-    # Update the time label
-    current_time = t_min + i * dt
-    time_txt.set_text("t = {:.3e}".format(current_time))
-
-    return img
-
-# Use matplotlib.animation.FuncAnimation to put it all together
-anim = FuncAnimation(fig, animation, interval=1, frames=np.arange(0, len(z_data_list), 2), repeat=False, blit=0)
-
-# Run the animation!
-plt.show()
-
-# # Save the animation
-# anim.save('./animation.mp4', writer="ffmpeg", bitrate=10000, fps=15)  # The fps (frames per second) sets the animation speed
-```
-
--->
+\end{split}\]</div>
+<p>i.e. that the total probability in our 2D probability function <span class="math notranslate nohighlight">\(p^n_{ij} = u^{n*}_{ij} \, u^n_{ij}\)</span> starts out normalized to 1.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By requiring that <span class="math notranslate nohighlight">\(\sum\limits_{i,j} p^n_{ij} = 1\)</span>, rather than requiring <span class="math notranslate nohighlight">\(\sum\limits_{i,j} p^n_{ij} h^2 = 1\)</span>, we interpret <span class="math notranslate nohighlight">\(p^n_{ij}\)</span> as a <em>probability</em>, not a probability <em>density</em>. That is, <span class="math notranslate nohighlight">\(p^n_{ij}\)</span> is the probability that at time step <span class="math notranslate nohighlight">\(n\)</span> is associated with a small grid cell of area <span class="math notranslate nohighlight">\(h^2\)</span> centered on <span class="math notranslate nohighlight">\((x, y) = (x_i, y_j)\)</span>.</p>
+</div>
+</section>
+<section id="problem-5">
+<h3>Problem 5<a class="headerlink" href="#problem-5" title="Permalink to this headline">#</a></h3>
+<p>Write a part of your program that initialises the potential <span class="math notranslate nohighlight">\(V\)</span>. To construct the barriers used for the double-slit (and other configurations) we will simply set the elements <span class="math notranslate nohighlight">\(v_{ij}\)</span> of <span class="math notranslate nohighlight">\(V\)</span> that correspond to points inside the barriers to some high constant value <span class="math notranslate nohighlight">\(v_{ij} = v_0\)</span>. As our starting point we will use the following double-slit setup:</p>
+<ul class="simple">
+<li><p>Wall thickness in the <span class="math notranslate nohighlight">\(x\)</span> direction: 0.02</p></li>
+<li><p>Wall position (centre) in the <span class="math notranslate nohighlight">\(x\)</span> direction: 0.5</p></li>
+<li><p>Length of the wall piece separating the two slits (the <span class="math notranslate nohighlight">\(y\)</span> distance between the inner edges of the two slits): 0.05</p></li>
+<li><p>Slit aperture (opening in the <span class="math notranslate nohighlight">\(y\)</span> direction): 0.05</p></li>
+<li><p>Ensure that the slit setup is symmetric around <span class="math notranslate nohighlight">\(y = 0.5\)</span>. (So for the double-slit, the wall piece separating the two slits should be centered on <span class="math notranslate nohighlight">\(y = 0.5\)</span>.)</p></li>
+</ul>
+<p>In Problem 9 you will also use single-slit and triple-slit configurations.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you want to simulate new potential configurations without having to hard-code the potentials in your program or specify a very long list of command-line arguments, you can consider using an input text file to specify the potential configuration. See the <a class="reference internal" href="../introduction_to_cpp/intro_to_armadillo.html#sec-intro-to-armadillo"><span class="std std-ref">introduction to Armadillo</span></a> page for an easy example of how to read a text data table with Armadillo, or take a look at the <a class="reference internal" href="../introduction_to_cpp/read_from_file.html#sec-read-from-file"><span class="std std-ref">read from file</span></a> page for an example using only the standard C++ library.</p>
+</div>
+</section>
+<section id="problem-6">
+<h3>Problem 6<a class="headerlink" href="#problem-6" title="Permalink to this headline">#</a></h3>
+<p>Put everything together into a program that does (at least) the following:</p>
+<ol class="simple">
+<li><p>Set the simulation parameters. It may be useful to read some or all of these as command-line input, or from an input file. The main simulation parameters are <span class="math notranslate nohighlight">\(h\)</span>, <span class="math notranslate nohighlight">\(\Delta t\)</span>, <span class="math notranslate nohighlight">\(T\)</span>, <span class="math notranslate nohighlight">\(x_c\)</span>, <span class="math notranslate nohighlight">\(\sigma_x\)</span>, <span class="math notranslate nohighlight">\(p_x\)</span>, <span class="math notranslate nohighlight">\(y_c\)</span>, <span class="math notranslate nohighlight">\(\sigma_y\)</span>, <span class="math notranslate nohighlight">\(p_y\)</span> and <span class="math notranslate nohighlight">\(v_0\)</span>.</p></li>
+<li><p>Set up the potential matrix, <span class="math notranslate nohighlight">\(V\)</span>.</p></li>
+<li><p>Set up the initial state matrix, <span class="math notranslate nohighlight">\(U^0\)</span>.</p></li>
+<li><p>Set up the matrices <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> required by the Crank-Nicolson approach.</p></li>
+<li><p>Run the loop over time steps and store each new state <span class="math notranslate nohighlight">\(U^n\)</span>. You can either write every new state directly to file during the loop, or store them in memory and write everything to file after the loop. (Armadillo’s <code class="docutils literal notranslate"><span class="pre">cx_cube</span></code> might be useful.)</p></li>
+</ol>
+</section>
+<section id="problem-7">
+<h3>Problem 7<a class="headerlink" href="#problem-7" title="Permalink to this headline">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that for this problem the output file can become large-ish (~200MB as binary file) if you save the full simulation, i.e. the full wave function at each time step.</p>
+</div>
+<p>In theory, the total probability (<span class="math notranslate nohighlight">\(= 1\)</span>) in the probability function <span class="math notranslate nohighlight">\(p^n_{ij} = u^{n*}_{ij}\,u^n_{ij}\)</span> should be conserved over time. This is a nice consistency check to make sure your code works as it should.</p>
+<ul class="simple">
+<li><p>First run your simulation with the settings <span class="math notranslate nohighlight">\(h = 0.005\)</span>, <span class="math notranslate nohighlight">\(\Delta t = 2.5\times10^{-5}\)</span>, <span class="math notranslate nohighlight">\(T = 0.008\)</span>, <span class="math notranslate nohighlight">\(x_c = 0.25\)</span>, <span class="math notranslate nohighlight">\(\sigma_x = 0.05\)</span>, <span class="math notranslate nohighlight">\(p_x = 200\)</span>, <span class="math notranslate nohighlight">\(y_c = 0.5\)</span>, <span class="math notranslate nohighlight">\(\sigma_y = 0.05\)</span>, <span class="math notranslate nohighlight">\(p_y = 0\)</span> and <span class="math notranslate nohighlight">\(v_0 = 0\)</span>, i.e. without any double-slit barrier.</p></li>
+<li><p>Make a plot of the deviation of the total probability from 1.0 as a function of time. (If the deviations are too small to be visible in your plot, consider plotting the data in a different way…)</p></li>
+<li><p>Run the simulation again, but now with a double-slit barrier switched on. Use <span class="math notranslate nohighlight">\(v_0 = 1\times10^{10}\)</span> and the double-slit configuration from Problem 5, and make the initial state broader in the <span class="math notranslate nohighlight">\(y\)</span>-direction by setting <span class="math notranslate nohighlight">\(\sigma_y = 0.10\)</span>.</p></li>
+<li><p>Make a similar plot of the deviation of the total probability from 1.0 as a function of time.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Keep in mind that how accurately you should expect the probability to be conserved will depend on what type of approach you have chosen for solving the matrix equation in Problem 3.</p>
+</div>
+</section>
+<section id="problem-8">
+<h3>Problem 8<a class="headerlink" href="#problem-8" title="Permalink to this headline">#</a></h3>
+<p>Run your simulation with the following settings: <span class="math notranslate nohighlight">\(h = 0.005\)</span>, <span class="math notranslate nohighlight">\(\Delta t = 2.5\times10^{-5}\)</span>, <span class="math notranslate nohighlight">\(T = 0.002\)</span>, <span class="math notranslate nohighlight">\(x_c = 0.25\)</span>, <span class="math notranslate nohighlight">\(\sigma_x = 0.05\)</span>, <span class="math notranslate nohighlight">\(p_x = 200\)</span>, <span class="math notranslate nohighlight">\(y_c = 0.5\)</span>, <span class="math notranslate nohighlight">\(\sigma_y = 0.20\)</span>, <span class="math notranslate nohighlight">\(p_y = 0\)</span> and <span class="math notranslate nohighlight">\(v_0 = 1\times10^{10}\)</span>. Use the double-slit configuration from Problem 5.</p>
+<ul class="simple">
+<li><p>Make three colourmap plots that illustrate the time evolution of the 2D probability function <span class="math notranslate nohighlight">\(p^n_{ij} = u^{n*}_{ij}\,u^n_{ij}\)</span>. Use the times <span class="math notranslate nohighlight">\(t = 0\)</span>, <span class="math notranslate nohighlight">\(t = 0.001\)</span> and <span class="math notranslate nohighlight">\(t = 0.002\)</span>. (Feel free to make more plots if you want, but at least include these time steps.)</p></li>
+<li><p>For the same time steps, also make colourmap plots that show <span class="math notranslate nohighlight">\(\text{Re}(u_{ij})\)</span> and <span class="math notranslate nohighlight">\(\text{Im}(u_{ij})\)</span>.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When making the colourmap plots, it may be a good idea adjust the colour scale to the maximum of <span class="math notranslate nohighlight">\(p^n_{ij}\)</span> at each time step independently. Then you avoid the problem that the shape of the probability function becomes difficult to see for time steps where it is very broad and flat.</p>
+<p>You may also consider not using <span class="math notranslate nohighlight">\(p^n_{ij}\)</span> as the <span class="math notranslate nohighlight">\(z\)</span> axis (colour) value, but rather some tranformation of <span class="math notranslate nohighlight">\(p^n_{ij}\)</span> like <span class="math notranslate nohighlight">\(\sqrt{p^n_{ij}}\)</span>, to more clearly see the structures in the low-probability regions. However, this comes with the cost that the plots become somewhat harder to interpret. But regardless of your choice, make sure to specify exactly what quantity the values on the colour scale represent.</p>
+</div>
+</section>
+<section id="problem-9">
+<h3>Problem 9<a class="headerlink" href="#problem-9" title="Permalink to this headline">#</a></h3>
+<ul>
+<li><p>Assume that we measure the particle with a detector screen at <span class="math notranslate nohighlight">\(x = 0.8\)</span> (spanning the entire <span class="math notranslate nohighlight">\(y\)</span> axis) at time <span class="math notranslate nohighlight">\(t = 0.002\)</span>. Using your simulation results from Problem 8, make a plot that shows the detection probability along this screen at this time.</p>
+<p>Since we assume that we do indeed detect the particle <em>somewhere</em> along this line, you should normalise the one-dimensional probability function to sum to 1.0. Or in other words, you should plot <span class="math notranslate nohighlight">\(p(y\,|\,x=0.8\,;\,t=0.002)\)</span>, not <span class="math notranslate nohighlight">\(p(x,y\,;\,t=0.002)\)</span> along <span class="math notranslate nohighlight">\(x=0.8\)</span>.</p>
+</li>
+<li><p>Adjust your code to also simulate single-slit and triple-slit experiments. Like for the double-slit case, use slits with aperture 0.05 and use walls of <span class="math notranslate nohighlight">\(y\)</span>-length 0.05 to separate each pair of slits (in the triple-slit case). For each case, make a plot of the same 1D probability function as above, i.e. <span class="math notranslate nohighlight">\(p(y\,|\,x=0.8\,;\,t=0.002)\)</span>.</p></li>
+</ul>
+</section>
+<section id="problem-x">
+<h3>Problem X<a class="headerlink" href="#problem-x" title="Permalink to this headline">#</a></h3>
+<p>If you find it useful, feel free to make some animations of your simulation and put links to these in your report! (However, don’t overdo it — your report will be more readable if the reader doesn’t have to switch between the report and watching animations all the time.)</p>
+</section>
+<hr class="docutils" />
+<section id="code-snippets">
+<h3>Code snippets<a class="headerlink" href="#code-snippets" title="Permalink to this headline">#</a></h3>
+<p>Here’s a C++ function to print the structure of a <code class="docutils literal notranslate"><span class="pre">arma::sp_cx_mat</span></code> matrix to screen:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;armadillo&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+
+<span class="c1">// A function that prints the structure of a sparse matrix to screen.</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">print_sp_matrix_structure</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">sp_cx_mat</span><span class="o">&amp;</span><span class="w"> </span><span class="n">A</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">arma</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Declare a C-style 2D array of strings.</span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">S</span><span class="p">[</span><span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="p">][</span><span class="n">A</span><span class="p">.</span><span class="n">n_cols</span><span class="p">];</span><span class="w">  </span>
+
+<span class="w">    </span><span class="c1">// Initialise all the strings to &quot; &quot;.</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">n_cols</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Next, we want to set the string to a dot at each non-zero element.</span>
+<span class="w">    </span><span class="c1">// To do this we use the special loop iterator from the sp_cx_mat class</span>
+<span class="w">    </span><span class="c1">// to help us loop over only the non-zero matrix elements.</span>
+<span class="w">    </span><span class="n">sp_cx_mat</span><span class="o">::</span><span class="n">const_iterator</span><span class="w"> </span><span class="n">it</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">sp_cx_mat</span><span class="o">::</span><span class="n">const_iterator</span><span class="w"> </span><span class="n">it_end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">nnz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">it</span><span class="p">;</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">it_end</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">it</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">S</span><span class="p">[</span><span class="n">it</span><span class="p">.</span><span class="n">row</span><span class="p">()][</span><span class="n">it</span><span class="p">.</span><span class="n">col</span><span class="p">()]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;•&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">nnz</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Finally, print the matrix to screen.</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;| &quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">n_cols</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w">  </span><span class="s">&quot;|</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;matrix size: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">n_rows</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">n_cols</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;non-zero elements: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">nnz</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate">&#160; </code>
+<code class="docutils literal notranslate">&#160; </code></p>
+<p>Here’s a Python example demonstrating how you can use matplotlib to animate 2D colourmap plots:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.animation</span> <span class="kn">import</span> <span class="n">FuncAnimation</span>
+
+
+<span class="c1">#</span>
+<span class="c1"># Let&#39;s generate a dummy time series for a function z(x,y,t)</span>
+<span class="c1">#</span>
+
+<span class="c1"># Set up a 2D xy grid</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">0.005</span>
+<span class="n">x_points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="o">+</span><span class="n">h</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+<span class="n">y_points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="o">+</span><span class="n">h</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x_points</span><span class="p">,</span> <span class="n">y_points</span><span class="p">,</span> <span class="n">sparse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Array of time points</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">0.005</span>
+<span class="n">t_points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="o">+</span><span class="n">dt</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+
+<span class="c1"># A function for a Gaussian that is travelling </span>
+<span class="c1"># in the x direction and broadening as time passes</span>
+<span class="k">def</span> <span class="nf">z</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">t</span><span class="p">):</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="mf">0.5</span>
+    <span class="n">x_c</span> <span class="o">=</span> <span class="mf">0.2</span>
+    <span class="n">sigma_x</span> <span class="o">=</span> <span class="mf">0.025</span> <span class="o">+</span> <span class="mf">0.15</span> <span class="o">*</span> <span class="n">t</span>
+    <span class="k">return</span> <span class="mf">1.</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sigma_x</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x_c</span> <span class="o">-</span> <span class="n">v</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">sigma_x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Fill z_data_list with f(x,y,t)</span>
+<span class="n">z_data_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">t_points</span><span class="p">:</span>
+    <span class="n">z_data</span> <span class="o">=</span> <span class="n">z</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+    <span class="n">z_data_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">z_data</span><span class="p">)</span>
+
+
+<span class="c1">#</span>
+<span class="c1"># Now the list z_data_list contains a series of &quot;frames&quot; of z(x,y,t), </span>
+<span class="c1"># where each frame can be plotted as a 2D image using imshow. Let&#39;s</span>
+<span class="c1"># animate it!</span>
+<span class="c1">#</span>
+
+<span class="c1"># Some settings</span>
+<span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">t_min</span> <span class="o">=</span> <span class="n">t_points</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span> <span class="o">=</span> <span class="n">x_points</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x_points</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span> <span class="o">=</span> <span class="n">y_points</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y_points</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># Create figure</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+
+<span class="c1"># Create a colour scale normalization according to the max z value in the first frame</span>
+<span class="n">norm</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">z_data_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="c1"># Plot the first frame</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">z_data_list</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="n">x_min</span><span class="p">,</span><span class="n">x_max</span><span class="p">,</span><span class="n">y_min</span><span class="p">,</span><span class="n">y_max</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s2">&quot;viridis&quot;</span><span class="p">),</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">)</span>
+
+<span class="c1"># Axis labels</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+
+<span class="c1"># Add a colourbar</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s2">&quot;z(x,y,t)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+
+<span class="c1"># Add a text element showing the time</span>
+<span class="n">time_txt</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.95</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">,</span> <span class="s2">&quot;t = </span><span class="si">{:.3e}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">t_min</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> 
+                    <span class="n">horizontalalignment</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+
+<span class="c1"># Function that takes care of updating the z data and other things for each frame</span>
+<span class="k">def</span> <span class="nf">animation</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+    <span class="c1"># Normalize the colour scale to the current frame?</span>
+    <span class="n">norm</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">z_data_list</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    <span class="n">img</span><span class="o">.</span><span class="n">set_norm</span><span class="p">(</span><span class="n">norm</span><span class="p">)</span>
+
+    <span class="c1"># Update z data</span>
+    <span class="n">img</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">z_data_list</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+    <span class="c1"># Update the time label</span>
+    <span class="n">current_time</span> <span class="o">=</span> <span class="n">t_min</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">dt</span>
+    <span class="n">time_txt</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s2">&quot;t = </span><span class="si">{:.3e}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">current_time</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">img</span>
+
+<span class="c1"># Use matplotlib.animation.FuncAnimation to put it all together</span>
+<span class="n">anim</span> <span class="o">=</span> <span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">animation</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">z_data_list</span><span class="p">),</span> <span class="mi">2</span><span class="p">),</span> <span class="n">repeat</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">blit</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Run the animation!</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># # Save the animation</span>
+<span class="c1"># anim.save(&#39;./animation.mp4&#39;, writer=&quot;ffmpeg&quot;, bitrate=10000, fps=15)  # The fps (frames per second) sets the animation speed</span>
+</pre></div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
