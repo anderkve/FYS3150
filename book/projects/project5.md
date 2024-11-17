@@ -27,7 +27,7 @@ There will probably be small updates to the project description in the coming da
 
 ## Introduction
 
-The goal of this project is to simulate the two-dimensional time-dependent Schrödinger equation, and use it to study a double-slit setup (inside a box) and variations thereof. In short, you will write a simulation that can give results [`like this`](https://www.dropbox.com/s/76sdq2ecp0ekiin/animation.mp4?dl=0). (You will not be required to animate your results, but it's quite instructive and fun to do so.)
+The goal of this project is to solve the two-dimensional time-dependent Schrödinger equation, and use it to study a double-slit setup (inside a box) and variations thereof. In short, you will write a simulation that can give results [`like this`](https://www.dropbox.com/s/76sdq2ecp0ekiin/animation.mp4?dl=0). (You will not be required to animate your results, but it's quite instructive and fun to do so.)
 
 The key methodological aspects of the projects are:
 - Understanding partial differential equations (PDEs)
