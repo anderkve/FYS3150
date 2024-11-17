@@ -859,21 +859,21 @@ title="Print to PDF"
 <p>When computing the energy, we have said that the sum should avoid double-counting spin pairs. However, a <span class="math notranslate nohighlight">\(2 \times 2\)</span> lattice is a special case, since using periodic boundary conditions in this case necessarily leads to counting all spin pairs twice. So for this particular case it is OK to double-count. And we recommend doing it, since in Problem 4 we will use the analytical results from this problem to test our code, so it’s useful to have the periodic boundary conditions work the same way in the <span class="math notranslate nohighlight">\(2 \times 2\)</span> case as in the general <span class="math notranslate nohighlight">\(L \times L\)</span> case. (Otherwise we would have to add a special <code class="docutils literal notranslate"><span class="pre">if-else</span></code> block in the code to turn off the periodic boundaries for the case when L=2.)</p>
 </div>
 <ul>
-<li><p><strong>b)</strong> Find analytical expressions for</p>
+<li><p><strong>b)</strong> Using our chosen probability distribution <span class="math notranslate nohighlight">\(p(\mathbf{s})\)</span> and energy function <span class="math notranslate nohighlight">\(E(\mathbf{s})\)</span>, and focusing on our specific <span class="math notranslate nohighlight">\(2 \times 2\)</span> case, find analytical expressions for</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(Z\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\langle \epsilon \rangle\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\langle \epsilon^2 \rangle\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\langle |m| \rangle\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\langle m^2 \rangle\)</span></p></li>
-<li><p>the heat capacity, normalised to number of spins:</p></li>
+<li><p>the heat capacity (normalised to number of spins)</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[
   \frac{C_V(T)}{N} = \frac{1}{N} \frac{1}{k_B T^2} \textrm{Var}(E) = \frac{1}{N} \frac{1}{k_B T^2} \left[ \braket{E^2} - \braket{E}^2 \right] = N \frac{1}{k_B T^2} \left[ \braket{\epsilon^2} - \braket{\epsilon}^2 \right]
   \]</div>
 <ul class="simple">
-<li><p>the susceptibility, normalised to number of spins:</p></li>
+<li><p>the susceptibility (normalised to number of spins)</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[
@@ -1035,10 +1035,11 @@ how the numerical estimates of $\langle \epsilon \rangle$ and $\langle |m| \rang
 </section>
 <section id="problem-7">
 <h3>Problem 7<a class="headerlink" href="#problem-7" title="Permalink to this headline">#</a></h3>
-<p>Now parallelise your code using either OpenMP or MPI. Perform some timing tests to estimate the speed-up factor resulting from the parallelisation.</p>
+<p>Now parallelise your code and perform some timing tests to estimate the speed-up factor resulting from the parallelisation.</p>
+<p>We recommend you try to parallelise the code using either OpenMP (demonstrated in class and in code examples) or MPI (not demonstrated), in order to learn one of these approaches. However, it is also OK to just do the simple approach of designing your code such that you can run multiple instances of it at the same time using different input configurations, e.g. to parallelise the task of running for different temperature values.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>See our updated <a class="reference internal" href="../parallelization/introduction_to_openmp.html#sec-introduction-to-openmp"><span class="std std-ref">Introduction to OpenMP</span></a> page for instructions on how to build your code with OpenMP enabled.</p>
+<p>See our <a class="reference internal" href="../parallelization/introduction_to_openmp.html#sec-introduction-to-openmp"><span class="std std-ref">Introduction to OpenMP</span></a> page for instructions on how to build your code with OpenMP enabled.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1048,7 +1049,7 @@ how the numerical estimates of $\langle \epsilon \rangle$ and $\langle |m| \rang
 <li><p><em>At the level of MCMC “walkers”:</em> You can use multiple threads to perform multiple independent MCMC runs in parallel and combine their results.</p></li>
 <li><p><em>At the level of spin flipping:</em> You could parallelise the part of the code where you generate new states by attempting to flip N spins.</p></li>
 </ol>
-<p>We recommend you do either approach 1 or 2. (You only need to do one approach.) Approach 1 is probably the easiest. Approach 2 is the standard approach to parallelising a single MCMC run (i.e. when there isn’t any scan over some external parameter, like <span class="math notranslate nohighlight">\(T\)</span> in our case.) Approach 3 would by far be the most complicated and it is probably also the least efficient.</p>
+<p>We recommend you do either approach 1 or 2. (You only need to do one approach.) Approach 1 is probably the easiest. Approach 2 is the standard approach to parallelising a single MCMC run (i.e. when there isn’t any scan over some external parameter, like <span class="math notranslate nohighlight">\(T\)</span> in our case.) Approach 3 would by far be the most complicated and will also be the least efficient.</p>
 </div>
 </section>
 <section id="problem-8">
