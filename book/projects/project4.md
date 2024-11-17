@@ -123,25 +123,25 @@ When computing the energy, we have said that the sum should avoid double-countin
 ```
 
 
-- **b)** Find analytical expressions for 
+- **b)** Using our chosen probability distribution $p(\mathbf{s})$ and energy function $E(\mathbf{s})$, and focusing on our specific $2 \times 2$ case, find analytical expressions for 
   - $Z$
   - $\langle \epsilon \rangle$
   - $\langle \epsilon^2 \rangle$
   - $\langle |m| \rangle$
   - $\langle m^2 \rangle$
-  - the heat capacity, normalised to number of spins:  
+  - the heat capacity (normalised to number of spins)
 
   $$
   \frac{C_V(T)}{N} = \frac{1}{N} \frac{1}{k_B T^2} \textrm{Var}(E) = \frac{1}{N} \frac{1}{k_B T^2} \left[ \braket{E^2} - \braket{E}^2 \right] = N \frac{1}{k_B T^2} \left[ \braket{\epsilon^2} - \braket{\epsilon}^2 \right]
   $$
 
-  - the susceptibility, normalised to number of spins:  
+  - the susceptibility (normalised to number of spins)
 
   $$
   \frac{\chi(T)}{N} = \frac{1}{N} \frac{1}{k_B T} \textrm{Var}(M) = \frac{1}{N} \frac{1}{k_B T} \left[ \braket{M^2} - \braket{|M|}^2 \right] = N \frac{1}{k_B T} \left[ \braket{m^2} - \braket{|m|}^2 \right]
   $$
 
-We will use these analytical results to test our code.
+We will use these analytical results to test our code. 
 
 
 ```{note}
@@ -320,10 +320,12 @@ For $L=20$, approximate the probability function $p_{\epsilon}(\epsilon;T)$ for 
 
 ### Problem 7
 
-Now parallelise your code using either OpenMP or MPI. Perform some timing tests to estimate the speed-up factor resulting from the parallelisation.
+Now parallelise your code and perform some timing tests to estimate the speed-up factor resulting from the parallelisation. 
+
+We recommend you try to parallelise the code using either OpenMP (demonstrated in class and in code examples) or MPI (not demonstrated), in order to learn one of these approaches. However, it is also OK to just do the simple approach of designing your code such that you can run multiple instances of it at the same time using different input configurations, e.g. to parallelise the task of running for different temperature values. 
 
 ```{note}
-See our updated [Introduction to OpenMP](sec:introduction_to_openmp) page for instructions on how to build your code with OpenMP enabled.
+See our [Introduction to OpenMP](sec:introduction_to_openmp) page for instructions on how to build your code with OpenMP enabled.
 ```
 
 ```{note}
@@ -333,7 +335,7 @@ There are basically three different approaches you can take here, corresponding 
 2. *At the level of MCMC "walkers":* You can use multiple threads to perform multiple independent MCMC runs in parallel and combine their results.
 3. *At the level of spin flipping:* You could parallelise the part of the code where you generate new states by attempting to flip N spins.
 
-We recommend you do either approach 1 or 2. (You only need to do one approach.) Approach 1 is probably the easiest. Approach 2 is the standard approach to parallelising a single MCMC run (i.e. when there isn't any scan over some external parameter, like $T$ in our case.) Approach 3 would by far be the most complicated and it is probably also the least efficient. 
+We recommend you do either approach 1 or 2. (You only need to do one approach.) Approach 1 is probably the easiest. Approach 2 is the standard approach to parallelising a single MCMC run (i.e. when there isn't any scan over some external parameter, like $T$ in our case.) Approach 3 would by far be the most complicated and will also be the least efficient.
 ```
 
 ### Problem 8
