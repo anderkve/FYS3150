@@ -206,9 +206,18 @@
   - Importance sampling
   - Inverse transform sampling
 
+### Lecture 25, November 14:
+- Wrap up discussion of inverse transform sampling
+- Monte Carlo integration
 
 
-
-
+### Lecture 26, November 15:
+- Numerical integration in low dimensions
+  - Example of recursive integration algorithm
+- Intro to Project 5
+- Partial differential equations (PDEs)
+  - Introduction
+  - Classification of PDEs 
+  - Discretised partial derivatives
 
 
