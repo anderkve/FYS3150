@@ -115,7 +115,7 @@ $$
 P(x_i;t_n) = | \langle x_i | \Psi \rangle |^2 = |\Psi_i^n|^2 = \Psi^{n*}_i \, \Psi^n_i.
 $$
 
-In this notation, the normalization condition for the total probability can be viewed as 
+In this notation, the normalisation condition for the total probability can be viewed as 
 
 $$
 1 &= \langle \Psi | \Psi \rangle\\ 
@@ -175,7 +175,7 @@ PS: You might also find `sp_cx_mat` in Armadillo very useful at some point...
 
 ### Problem 1
 
-Show analytically that by discretizing equation {eq}`schr_eq` according to the Crank-Nicolson approach, you end up with the expression
+Show analytically that by discretising equation {eq}`schr_eq` according to the Crank-Nicolson approach, you end up with the expression
 
 $$
 u_{ij}^{n+1}  -  r \left[u_{i+1,j}^{n+1} - 2u_{ij}^{n+1} + u_{i-1,j}^{n+1}\right]  -  r \left[u_{i,j+1}^{n+1} - 2u_{ij}^{n+1} + u_{i,j-1}^{n+1}\right]  +  \frac{i \Delta t}{2} v_{ij} u_{ij}^{n+1} \\
@@ -386,7 +386,7 @@ $$
 \sum\limits_{i,j} u^{0*}_{ij} \, u^0_{ij} = 1,\\
 $$
 
-i.e. that the total probability in our 2D probability function $p^n_{ij} = u^{n*}_{ij} \, u^n_{ij}$ starts out normalized to 1.
+i.e. that the total probability in our 2D probability function $p^n_{ij} = u^{n*}_{ij} \, u^n_{ij}$ starts out normalised to 1.
 
 ```{note}
 By requiring that $\sum\limits_{i,j} p^n_{ij} = 1$, rather than requiring $\sum\limits_{i,j} p^n_{ij} h^2 = 1$, we interpret $p^n_{ij}$ as a *probability*, not a probability *density*. That is, $p^n_{ij}$ is the probability that at time step $n$ is associated with a small grid cell of area $h^2$ centered on $(x, y) = (x_i, y_j)$.
@@ -432,7 +432,7 @@ Put everything together into a program that does (at least) the following:
 Note that for this problem the output file can become large-ish (~200MB as binary file) if you save the full simulation, i.e. the full wave function at each time step.
 ```
 
-In theory, the total probability ($= 1$) in the probability function $p^n_{ij} = u^{n*}_{ij}\,u^n_{ij}$ should be conserved over time. This is a nice consistency check to make sure your code works as it should.
+In theory, the total probability ($= 1$) in the probability function $p^n_{ij} = u^{n*}_{ij}\,u^n_{ij}$ should be conserved over time. This can be used as a consistency check for your code.
 
 - First run your simulation with the settings $h = 0.005$, $\Delta t = 2.5\times10^{-5}$, $T = 0.008$, $x_c = 0.25$, $\sigma_x = 0.05$, $p_x = 200$, $y_c = 0.5$, $\sigma_y = 0.05$, $p_y = 0$ and $v_0 = 0$, i.e. without any double-slit barrier.
 
@@ -596,7 +596,7 @@ y_min, y_max = y_points[0], y_points[-1]
 fig = plt.figure()
 ax = plt.gca()
 
-# Create a colour scale normalization according to the max z value in the first frame
+# Create a colour scale normalisation according to the max z value in the first frame
 norm = matplotlib.cm.colors.Normalize(vmin=0.0, vmax=np.max(z_data_list[0]))
 
 # Plot the first frame
