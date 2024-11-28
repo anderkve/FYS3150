@@ -878,7 +878,7 @@ p(x,y;t) = |u(x,y,t)|^2 = u^*(x,y,t) \, u(x,y,t).
 \[
 P(x_i;t_n) = | \langle x_i | \Psi \rangle |^2 = |\Psi_i^n|^2 = \Psi^{n*}_i \, \Psi^n_i.
 \]</div>
-<p>In this notation, the normalization condition for the total probability can be viewed as</p>
+<p>In this notation, the normalisation condition for the total probability can be viewed as</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 1 &amp;= \langle \Psi | \Psi \rangle\\ 
@@ -931,7 +931,7 @@ P(x_i;t_n) = | \langle x_i | \Psi \rangle |^2 = |\Psi_i^n|^2 = \Psi^{n*}_i \, \P
 </section>
 <section id="problem-1">
 <h3>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this headline">#</a></h3>
-<p>Show analytically that by discretizing equation <a class="reference internal" href="#equation-schr-eq">(24)</a> according to the Crank-Nicolson approach, you end up with the expression</p>
+<p>Show analytically that by discretising equation <a class="reference internal" href="#equation-schr-eq">(24)</a> according to the Crank-Nicolson approach, you end up with the expression</p>
 <div class="math notranslate nohighlight" id="equation-cn-eq1">
 <span class="eqno">(25)<a class="headerlink" href="#equation-cn-eq1" title="Permalink to this equation">#</a></span>\[\begin{split}
 u_{ij}^{n+1}  -  r \left[u_{i+1,j}^{n+1} - 2u_{ij}^{n+1} + u_{i-1,j}^{n+1}\right]  -  r \left[u_{i,j+1}^{n+1} - 2u_{ij}^{n+1} + u_{i,j-1}^{n+1}\right]  +  \frac{i \Delta t}{2} v_{ij} u_{ij}^{n+1} \\
@@ -1127,7 +1127,7 @@ u(x,y,t=0) = e^{-\frac{(x-x_c)^2}{2 \sigma_x^2} - \frac{(y-y_c)^2}{2 \sigma_y^2}
 \[\begin{split}
 \sum\limits_{i,j} u^{0*}_{ij} \, u^0_{ij} = 1,\\
 \end{split}\]</div>
-<p>i.e. that the total probability in our 2D probability function <span class="math notranslate nohighlight">\(p^n_{ij} = u^{n*}_{ij} \, u^n_{ij}\)</span> starts out normalized to 1.</p>
+<p>i.e. that the total probability in our 2D probability function <span class="math notranslate nohighlight">\(p^n_{ij} = u^{n*}_{ij} \, u^n_{ij}\)</span> starts out normalised to 1.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>By requiring that <span class="math notranslate nohighlight">\(\sum\limits_{i,j} p^n_{ij} = 1\)</span>, rather than requiring <span class="math notranslate nohighlight">\(\sum\limits_{i,j} p^n_{ij} h^2 = 1\)</span>, we interpret <span class="math notranslate nohighlight">\(p^n_{ij}\)</span> as a <em>probability</em>, not a probability <em>density</em>. That is, <span class="math notranslate nohighlight">\(p^n_{ij}\)</span> is the probability that at time step <span class="math notranslate nohighlight">\(n\)</span> is associated with a small grid cell of area <span class="math notranslate nohighlight">\(h^2\)</span> centered on <span class="math notranslate nohighlight">\((x, y) = (x_i, y_j)\)</span>.</p>
@@ -1166,7 +1166,7 @@ u(x,y,t=0) = e^{-\frac{(x-x_c)^2}{2 \sigma_x^2} - \frac{(y-y_c)^2}{2 \sigma_y^2}
 <p class="admonition-title">Note</p>
 <p>Note that for this problem the output file can become large-ish (~200MB as binary file) if you save the full simulation, i.e. the full wave function at each time step.</p>
 </div>
-<p>In theory, the total probability (<span class="math notranslate nohighlight">\(= 1\)</span>) in the probability function <span class="math notranslate nohighlight">\(p^n_{ij} = u^{n*}_{ij}\,u^n_{ij}\)</span> should be conserved over time. This is a nice consistency check to make sure your code works as it should.</p>
+<p>In theory, the total probability (<span class="math notranslate nohighlight">\(= 1\)</span>) in the probability function <span class="math notranslate nohighlight">\(p^n_{ij} = u^{n*}_{ij}\,u^n_{ij}\)</span> should be conserved over time. This can be used as a consistency check for your code.</p>
 <ul class="simple">
 <li><p>First run your simulation with the settings <span class="math notranslate nohighlight">\(h = 0.005\)</span>, <span class="math notranslate nohighlight">\(\Delta t = 2.5\times10^{-5}\)</span>, <span class="math notranslate nohighlight">\(T = 0.008\)</span>, <span class="math notranslate nohighlight">\(x_c = 0.25\)</span>, <span class="math notranslate nohighlight">\(\sigma_x = 0.05\)</span>, <span class="math notranslate nohighlight">\(p_x = 200\)</span>, <span class="math notranslate nohighlight">\(y_c = 0.5\)</span>, <span class="math notranslate nohighlight">\(\sigma_y = 0.05\)</span>, <span class="math notranslate nohighlight">\(p_y = 0\)</span> and <span class="math notranslate nohighlight">\(v_0 = 0\)</span>, i.e. without any double-slit barrier.</p></li>
 <li><p>Make a plot of the deviation of the total probability from 1.0 as a function of time. (If the deviations are too small to be visible in your plot, consider plotting the data in a different way…)</p></li>
@@ -1316,7 +1316,7 @@ u(x,y,t=0) = e^{-\frac{(x-x_c)^2}{2 \sigma_x^2} - \frac{(y-y_c)^2}{2 \sigma_y^2}
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
 
-<span class="c1"># Create a colour scale normalization according to the max z value in the first frame</span>
+<span class="c1"># Create a colour scale normalisation according to the max z value in the first frame</span>
 <span class="n">norm</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">z_data_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
 
 <span class="c1"># Plot the first frame</span>
