@@ -380,6 +380,10 @@ Here $x_c$ and $y_c$ are the coordinates of the centre of the initial wave packe
 
 Make sure that the initial state $u_{ij}^0$ satisfies the boundary conditions. 
 
+```{note}
+Technically, you should here also make sure to set the initial state to zero at all points inside the walls of your potential, not only on the boundary. Though, with the choice of simulation parameters we will use, where our initial state will be a wave packet concentrated "far away" from the slit walls, skipping this should not make much difference.
+```
+
 Also, add code that normalises your initial state such that 
 
 $$

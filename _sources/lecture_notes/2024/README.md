@@ -221,3 +221,18 @@
   - Discretised partial derivatives
 
 
+### Lecture 27, November 21:
+- Continue discussion on PDEs
+  - The forward difference scheme
+  - The backward difference scheme
+  - The Crank-Nicolson scheme
+
+
+### Lecture 28, November 22:
+- Various C++ topics
+  - Typedefs
+  - Pointers
+- Guest lecture by Nils Enric Canut Taugbøl on code optimisation
+
+
+

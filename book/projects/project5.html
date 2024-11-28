@@ -1122,6 +1122,10 @@ u(x,y,t=0) = e^{-\frac{(x-x_c)^2}{2 \sigma_x^2} - \frac{(y-y_c)^2}{2 \sigma_y^2}
 \]</div>
 <p>Here <span class="math notranslate nohighlight">\(x_c\)</span> and <span class="math notranslate nohighlight">\(y_c\)</span> are the coordinates of the centre of the initial wave packet, <span class="math notranslate nohighlight">\(\sigma_x\)</span> and <span class="math notranslate nohighlight">\(\sigma_y\)</span> are the initial widths of the wave packet in the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> directions, and <span class="math notranslate nohighlight">\(p_x\)</span> and <span class="math notranslate nohighlight">\(p_y\)</span> are the wave packet momenta.</p>
 <p>Make sure that the initial state <span class="math notranslate nohighlight">\(u_{ij}^0\)</span> satisfies the boundary conditions.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Technically, you should here also make sure to set the initial state to zero at all points inside the walls of your potential, not only on the boundary. Though, with the choice of simulation parameters we will use, where our initial state will be a wave packet concentrated “far away” from the slit walls, skipping this should not make much difference.</p>
+</div>
 <p>Also, add code that normalises your initial state such that</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
