@@ -12,7 +12,7 @@ There will probably be small updates to the project description in the coming da
 
 ## Practicalities
 
-- **Deadline**: Wednesday, December 11, 23:59.
+- **Deadline**: Thursday, December 12, 23:59.
 - **Format:**
   - A scientific report, typeset in LaTeX, delivered as a pdf file on Canvas.
   - Use the report template we have provided [here](./../writing_reports/project_templates.md).
