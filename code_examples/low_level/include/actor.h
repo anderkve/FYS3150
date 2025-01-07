@@ -16,7 +16,6 @@ public:
     arma::vec2 pos, vel;        // vec2 since we are working in 2D
     int mass;
     float dt = 1e-4;
-    bool to_be_deleted = false;
 };
 
 class Particle : public Actor
@@ -31,6 +30,7 @@ class Hole : public Actor
 {
     Hole(const arma::vec2& pos, int mass, float radius);
     Hole(const arma::vec2& pos, const arma::vec2& vel, int mass, float radius);
+    bool update() override;
     uint getType() override { return Actor::Hole_n; }
 public:
     float radius;

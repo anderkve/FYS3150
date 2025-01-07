@@ -21,6 +21,12 @@ Hole::Hole(const arma::vec2& pos, const arma::vec2& vel, const int mass, const f
     this->vel = vel;
 }
 
+bool Hole::update() {
+    // nothing to update here yet, they stay put
+    return true;
+}
+
+
 // Particle //
 
 Particle::Particle(const arma::vec2& pos, const arma::vec2& vel, int mass) {
@@ -48,9 +54,11 @@ bool Particle::update() {
     // if the particle is in a hole -> delete and generate new particle with new conditions
     for (const Hole* hole : Box::holes) {
         if (norm(hole->pos - pos) < hole->radius) {
-            to_be_deleted = true;
+            return false;
         }
     }
+
+    return true;
 }
 
 arma::vec2 Particle::acceleration(const arma::vec2& positionOverride) {
