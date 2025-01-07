@@ -14,7 +14,8 @@ public:
     // static data, for global access
     static inline std::vector<Actor*> actorPool;
     static inline std::vector<Hole*> holes;
-    static inline arma::vec2 boxSize = {1920, 1080};
+    static inline arma::vec2 upperBounds = {1920, 1080};
+    static inline arma::vec2 lowerBounds = {0, 0};
 };
 
 #endif //BOX_H

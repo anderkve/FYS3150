@@ -35,9 +35,22 @@ bool Particle::update() {
     vel = vel + dt/2. * (acceleration() + acceleration(pos + dt * vel));
     pos = temp_pos;
 
-    // check if it is either outside the box or in a hole
-    // if outside the box make reappear on other end
-    // if in a hole -> regenerate at the start with new conditions
+    // if the particle is outside of the box wrap it back in on the opposite side
+    for (int i = 0; i < pos.n_elem; i++) {
+        if (pos(i) < Box::lowerBounds(i)) {
+            pos(i) = Box::upperBounds(i) - fmod(Box::lowerBounds(i) - pos(i), Box::upperBounds(i) - Box::lowerBounds(i));
+        }
+        else if (pos(i) >= Box::upperBounds(i)) {
+            pos(i) = Box::lowerBounds(i) + fmod(pos(i) - Box::lowerBounds(i), Box::upperBounds(i) - Box::lowerBounds(i));
+        }
+    }
+
+    // if the particle is in a hole -> delete and generate new particle with new conditions
+    for (const Hole* hole : Box::holes) {
+        if (norm(hole->pos - pos) < hole->radius) {
+            to_be_deleted = true;
+        }
+    }
 }
 
 arma::vec2 Particle::acceleration(const arma::vec2& positionOverride) {
@@ -46,10 +59,10 @@ arma::vec2 Particle::acceleration(const arma::vec2& positionOverride) {
     arma::vec2 acceleration = {0., 0.};
 
     // find the force from the holes onto the particle
-    for (const Hole* actor : Box::holes) {
-        arma::vec2 direction = actor->pos - position;
+    for (const Hole* hole : Box::holes) {
+        arma::vec2 direction = hole->pos - position;
         double dist = norm(direction);
-        arma::vec2 total_force = G * actor->mass * mass / std::pow(dist, 2) * normalise(direction);
+        arma::vec2 total_force = G * hole->mass * mass / std::pow(dist, 2) * normalise(direction);
         acceleration += total_force / (float) mass;
     }
 
