@@ -10,29 +10,30 @@ class Actor
 public:
     enum {Hole_n = 0, Particle_n};
     Actor() = default;          // makes sure initialisation is consistent since the classes will have different constructors
-    ~Actor() = default;
     virtual bool update() = 0;
     virtual uint getType() = 0;
     arma::vec2 pos, vel;        // vec2 since we are working in 2D
-    int mass;
-    float dt = 1e-4;
+    double mass;
+    std::unique_ptr<sf::CircleShape> shape;           // we will be drawing
 };
 
 class Particle : public Actor
 {
+public:
     Particle(const arma::vec2& pos, const arma::vec2& vel, int mass);
     bool update() override;
     uint getType() override { return Actor::Particle_n; }
+private:
     arma::vec2 acceleration(const arma::vec2& positionOverride = arma::vec2());
 };
 
 class Hole : public Actor
 {
+public:
     Hole(const arma::vec2& pos, int mass, float radius);
     Hole(const arma::vec2& pos, const arma::vec2& vel, int mass, float radius);
     bool update() override;
     uint getType() override { return Actor::Hole_n; }
-public:
     float radius;
 };
 

@@ -8,9 +8,14 @@
 #include <cmath>
 #include <chrono>
 #include <iostream>
+#include <iomanip>
 #include <fstream>
 #include <armadillo>
 #include "constants.h"
+#include <SFML/Graphics.hpp>
+#include <SFML/Window.hpp>
+#include <SFML/System.hpp>
+#include <memory>
 
 typedef unsigned char uchar;
 typedef unsigned int uint;
@@ -30,5 +35,6 @@ struct Timer
 };
 
 #include "actor.h"
+#include "box.h"
 
 #endif //PRECOMP_H
