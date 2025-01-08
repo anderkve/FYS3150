@@ -9,8 +9,8 @@ std::random_device rd;
 std::mt19937 gen(rd());
 
 std::uniform_real_distribution massDistribution(MIN_MASS, MAX_MASS);
-std::uniform_real_distribution posXDistribution(0.f, (float) SCRNWIDTH);
-std::uniform_real_distribution posYDistribution(0.f, (float) SCRNHEIGHT);
+std::uniform_real_distribution posXDistribution(0.3f * (float) SCRNWIDTH, (float) SCRNWIDTH);
+std::uniform_real_distribution posYDistribution(0.3f * (float) SCRNHEIGHT, (float) SCRNHEIGHT);
 std::uniform_real_distribution radiusDistribution(MIN_RADIUS, MAX_RADIUS);
 std::uniform_real_distribution velocityDistribution(-MAX_START_VEL, MAX_START_VEL);
 
