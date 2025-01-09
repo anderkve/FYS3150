@@ -9,10 +9,12 @@ std::random_device rd;
 std::mt19937 gen(rd());
 
 std::uniform_real_distribution massDistribution(MIN_MASS, MAX_MASS);
-std::uniform_real_distribution posXDistribution(0.3f * (float) SCRNWIDTH, (float) SCRNWIDTH);
-std::uniform_real_distribution posYDistribution(0.3f * (float) SCRNHEIGHT, (float) SCRNHEIGHT);
+// std::uniform_real_distribution startParticleXDistribution(0.f, (float) SCRNWIDTH);
+std::uniform_real_distribution startParticleYDistribution(0.f, (float) SCRNHEIGHT);
+std::uniform_real_distribution posXDistribution(0.f, (float) SCRNWIDTH);
+std::uniform_real_distribution posYDistribution(0.f, (float) SCRNHEIGHT);
 std::uniform_real_distribution radiusDistribution(MIN_RADIUS, MAX_RADIUS);
-std::uniform_real_distribution velocityDistribution(-MAX_START_VEL, MAX_START_VEL);
+std::uniform_real_distribution velocityDistribution(MIN_START_VEL, MAX_START_VEL);
 
 void Box::Init() {
     // working with smart pointers
@@ -28,9 +30,10 @@ void Box::Init() {
 
     // generate the particles
     for (int i = 0; i < PARTICLE_WAVE; i++) {
-        auto particle = std::make_shared<Particle>(arma::vec2{0.5, 0.5},
-                                                    arma::vec2{velocityDistribution(gen), velocityDistribution(gen)},
-                                                     1);
+        arma::vec2 start_pos = arma::vec2{0.0, startParticleYDistribution(gen)};
+        arma::vec2 start_vel = {velocityDistribution(gen), velocityDistribution(gen)};
+
+        auto particle = std::make_shared<Particle>(start_pos, start_vel, 1);
 
         actorPool.push_back(std::vector< std::shared_ptr<Actor> >::value_type(particle));
         particlesOnScreen++;
@@ -71,7 +74,7 @@ void Box::update() {
 
     // introduce remaining new particles based on PARTICLE_WAVE but cannot have more than N_PARTICLES on the screen
     for (int i = 0; i < std::min(PARTICLE_WAVE, N_PARTICLES - particlesOnScreen); i++) {
-        arma::vec2 start_pos = arma::vec2{0.5, 0.5};
+        arma::vec2 start_pos = arma::vec2{0.0, startParticleYDistribution(gen)};
         arma::vec2 start_vel = {velocityDistribution(gen), velocityDistribution(gen)};
 
         auto particle = std::make_shared<Particle>(start_pos, start_vel, 1);
