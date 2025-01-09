@@ -33,7 +33,7 @@ void Box::Init() {
         arma::vec2 start_pos = arma::vec2{0.0, startParticleYDistribution(gen)};
         arma::vec2 start_vel = {velocityDistribution(gen), velocityDistribution(gen)};
 
-        auto particle = std::make_shared<Particle>(start_pos, start_vel, 1);
+        auto particle = std::make_shared<Particle>(start_pos, start_vel, part_mass);
 
         actorPool.push_back(std::vector< std::shared_ptr<Actor> >::value_type(particle));
         particlesOnScreen++;
@@ -77,7 +77,7 @@ void Box::update() {
         arma::vec2 start_pos = arma::vec2{0.0, startParticleYDistribution(gen)};
         arma::vec2 start_vel = {velocityDistribution(gen), velocityDistribution(gen)};
 
-        auto particle = std::make_shared<Particle>(start_pos, start_vel, 1);
+        auto particle = std::make_shared<Particle>(start_pos, start_vel, part_mass);
 
         actorPool.push_back(std::vector< std::shared_ptr<Actor> >::value_type(particle));
         particlesOnScreen++;

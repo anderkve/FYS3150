@@ -7,7 +7,7 @@
 
 // Hole //
 
-Hole::Hole(const arma::vec2& pos, const int mass, const float radius) {
+Hole::Hole(const arma::vec2& pos, const double mass, const float radius) {
     this->pos = pos;
     this->mass = mass;
     this->radius = radius;
@@ -23,7 +23,7 @@ Hole::Hole(const arma::vec2& pos, const int mass, const float radius) {
     shape->setOutlineThickness(1.);
 }
 
-Hole::Hole(const arma::vec2& pos, const arma::vec2& vel, const int mass, const float radius) {
+Hole::Hole(const arma::vec2& pos, const arma::vec2& vel, const double mass, const float radius) {
     this->pos = pos;
     this->mass = mass;
     this->radius = radius;
@@ -46,15 +46,16 @@ bool Hole::update() {
 
 // Particle //
 
-Particle::Particle(const arma::vec2& pos, const arma::vec2& vel, int mass) {
+Particle::Particle(const arma::vec2& pos, const arma::vec2& vel, double mass) {
     this->pos = pos;
     this->vel = vel;
     this->mass = mass;
+    new_position = pos;
 
-    float radius = 0.1 * MIN_RADIUS;
+    float radius = part_radius;
     // preparing the sprite for drawing
     shape = std::make_unique<sf::CircleShape>(radius);
-    // shape->setOrigin({radius, radius});
+    shape->setOrigin({radius, radius});
     // SFML works with their own types which are floats while armadillo works with doubles
     shape->setPosition(sf::Vector2f{(float)(pos(0)), (float)(pos(1))});
     shape->setFillColor(sf::Color::Yellow);
@@ -62,19 +63,20 @@ Particle::Particle(const arma::vec2& pos, const arma::vec2& vel, int mass) {
 
 bool Particle::update() {
     // update position using Heun's method
+    pos = new_position; // we store the current position so that all particles are equally affected by gravity, i.e. at the same time
     const arma::vec2 temp_pos = pos + dt/2. * ( vel + vel + dt*acceleration() );
     vel = vel + dt/2. * (acceleration() + acceleration(pos + dt * vel));
-    pos = temp_pos;
+    new_position = temp_pos;
 
     // if the particle is outside of the box wrap it back in on the opposite side
     // TODO: add WRAP_PARTICLES as a possible definition for cmake in the README
 #if WRAP_PARTICLES == 1
-    for (int i = 0; i < pos.n_elem; i++) {
-        if (pos[i] < Box::lowerBounds[i]) {
-            pos(i) = Box::upperBounds[i] - fmod(Box::lowerBounds[i] - pos[i], Box::upperBounds[i] - Box::lowerBounds[i]);
+    for (int i = 0; i < new_position.n_elem; i++) {
+        if (new_position[i] < Box::lowerBounds[i]) {
+            new_position(i) = Box::upperBounds[i] - fmod(Box::lowerBounds[i] - new_position[i], Box::upperBounds[i] - Box::lowerBounds[i]);
         }
-        else if (pos[i] >= Box::upperBounds[i]) {
-            pos[i] = Box::lowerBounds[i] + fmod(pos[i] - Box::lowerBounds[i], Box::upperBounds[i] - Box::lowerBounds[i]);
+        else if (new_position[i] >= Box::upperBounds[i]) {
+            new_position[i] = Box::lowerBounds[i] + fmod(new_position[i] - Box::lowerBounds[i], Box::upperBounds[i] - Box::lowerBounds[i]);
         }
     }
 #else
@@ -85,14 +87,16 @@ bool Particle::update() {
 
     // if the particle is in a hole -> delete and generate new particle with new conditions
     for (const auto& hole : Box::holes) {
-        double dist = arma::norm(hole->pos - pos);
+        double dist = arma::norm(hole->pos - new_position);
         if (dist <= hole->radius) {
             return false;
         }
     }
 
-    shape->setPosition(sf::Vector2f{(float) pos(0), (float) pos(1)});
+    // we update to the new position on the screen
+    shape->setPosition(sf::Vector2f{(float) new_position(0), (float) new_position(1)});
 
+    // pos now holds the old position which will be used by the other actors to update their position
     return true;
 }
 

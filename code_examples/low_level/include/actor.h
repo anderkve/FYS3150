@@ -20,18 +20,19 @@ public:
 class Particle : public Actor
 {
 public:
-    Particle(const arma::vec2& pos, const arma::vec2& vel, int mass);
+    Particle(const arma::vec2& pos, const arma::vec2& vel, double mass);
     bool update() override;
     uint getType() override { return Actor::Particle_n; }
 private:
     arma::vec2 acceleration(const arma::vec2& positionOverride = arma::vec2());
+    arma::vec2 new_position;
 };
 
 class Hole : public Actor
 {
 public:
-    Hole(const arma::vec2& pos, int mass, float radius);
-    Hole(const arma::vec2& pos, const arma::vec2& vel, int mass, float radius);
+    Hole(const arma::vec2& pos, double mass, float radius);
+    Hole(const arma::vec2& pos, const arma::vec2& vel, double mass, float radius);
     bool update() override;
     uint getType() override { return Actor::Hole_n; }
     float radius;
