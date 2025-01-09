@@ -11,8 +11,8 @@ std::mt19937 gen(rd());
 std::uniform_real_distribution massDistribution(MIN_MASS, MAX_MASS);
 // std::uniform_real_distribution startParticleXDistribution(0.f, (float) SCRNWIDTH);
 std::uniform_real_distribution startParticleYDistribution(0.f, (float) SCRNHEIGHT);
-std::uniform_real_distribution posXDistribution(0.f, (float) SCRNWIDTH);
-std::uniform_real_distribution posYDistribution(0.f, (float) SCRNHEIGHT);
+std::uniform_real_distribution posXDistribution(0.2f * (float) SCRNWIDTH, 0.8f * (float) SCRNWIDTH);
+std::uniform_real_distribution posYDistribution(0.2f * (float) SCRNHEIGHT, 0.8f * (float) SCRNHEIGHT);
 std::uniform_real_distribution radiusDistribution(MIN_RADIUS, MAX_RADIUS);
 std::uniform_real_distribution velocityDistribution(MIN_START_VEL, MAX_START_VEL);
 
