@@ -8,6 +8,14 @@ project(boxed_particles)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+option(WRAP_PARTICLES "Enable wrapping of particles around the map edges" OFF)
+
+if(WRAP_PARTICLES)
+    add_compile_definitions(WRAP_PARTICLES=1)
+else()
+    add_compile_definitions(WRAP_PARTICLES=0)
+endif()
+
 find_package(Armadillo REQUIRED)
 # for GUI
 find_package(SFML 3 REQUIRED COMPONENTS Graphics System Window)

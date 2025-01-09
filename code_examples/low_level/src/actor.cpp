@@ -67,6 +67,8 @@ bool Particle::update() {
     pos = temp_pos;
 
     // if the particle is outside of the box wrap it back in on the opposite side
+    // TODO: add WRAP_PARTICLES as a possible definition for cmake in the README
+#if WRAP_PARTICLES == 1
     for (int i = 0; i < pos.n_elem; i++) {
         if (pos[i] < Box::lowerBounds[i]) {
             pos(i) = Box::upperBounds[i] - fmod(Box::lowerBounds[i] - pos[i], Box::upperBounds[i] - Box::lowerBounds[i]);
@@ -75,6 +77,11 @@ bool Particle::update() {
             pos[i] = Box::lowerBounds[i] + fmod(pos[i] - Box::lowerBounds[i], Box::upperBounds[i] - Box::lowerBounds[i]);
         }
     }
+#else
+    if (any(pos < Box::lowerBounds) || any(pos >= Box::upperBounds)) {
+        return false;
+    }
+#endif
 
     // if the particle is in a hole -> delete and generate new particle with new conditions
     for (const auto& hole : Box::holes) {
@@ -95,10 +102,10 @@ arma::vec2 Particle::acceleration(const arma::vec2& positionOverride) {
     arma::vec2 acceleration = {0., 0.};
 
     // find the force from the holes onto the particle
-    for (const auto& hole : Box::holes) {
-        arma::vec2 direction = hole->pos - position;
+    for (const auto& actor : Box::actorPool) {
+        arma::vec2 direction = actor->pos - position;
         double dist = norm(direction);
-        arma::vec2 total_force = G * hole->mass * mass / std::pow(dist, 2) * normalise(direction);
+        arma::vec2 total_force = G * actor->mass * mass / std::pow(dist, 2) * normalise(direction);
         acceleration += total_force /  mass;
     }
 
