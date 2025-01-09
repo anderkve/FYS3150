@@ -21,28 +21,7 @@ void Box::Init() {
     // working with smart pointers
     // generate the holes
     for (int i = 0; i < N_HOLES; i++) {
-        arma::vec2 start_pos = arma::vec2{posXDistribution(gen), posYDistribution(gen)};
-        float radius = radiusDistribution(gen);
-        double mass = massDistribution(gen);
-
-        bool okay = false;
-
-        // cannot generate a hole above another one
-        while (!okay && (int) holes.size() >  0) {
-            for (const auto & i : holes) {
-                if (norm(start_pos - i->pos) <= i->radius + radius) {
-                    okay = false;
-                    start_pos = arma::vec2{posXDistribution(gen), posYDistribution(gen)};
-                    radius = radiusDistribution(gen);
-                    break;
-                }
-                okay = true;
-            }
-        }
-
-        auto hole = std::make_shared<Hole>(start_pos,
-                                             mass,
-                                             radius);
+        std::shared_ptr<Hole> hole = generateHole();
 
         holes.push_back(std::vector< std::shared_ptr<Hole> >::value_type(hole));
         actorPool.push_back(std::vector< std::shared_ptr<Actor> >::value_type(hole));
@@ -50,10 +29,7 @@ void Box::Init() {
 
     // generate the particles
     for (int i = 0; i < PARTICLE_WAVE; i++) {
-        arma::vec2 start_pos = startSide(particleStartSide(gen));
-        arma::vec2 start_vel = {velocityDistribution(gen), velocityDistribution(gen)};
-
-        auto particle = std::make_shared<Particle>(start_pos, start_vel, part_mass);
+        std::shared_ptr<Particle> particle = generateParticle();
 
         actorPool.push_back(std::vector< std::shared_ptr<Actor> >::value_type(particle));
         particlesOnScreen++;
@@ -94,10 +70,7 @@ void Box::update() {
 
     // introduce remaining new particles based on PARTICLE_WAVE but cannot have more than N_PARTICLES on the screen
     for (int i = 0; i < std::min(PARTICLE_WAVE, N_PARTICLES - particlesOnScreen); i++) {
-        arma::vec2 start_pos = startSide(particleStartSide(gen));
-        arma::vec2 start_vel = {velocityDistribution(gen), velocityDistribution(gen)};
-
-        auto particle = std::make_shared<Particle>(start_pos, start_vel, part_mass);
+        std::shared_ptr<Particle> particle = generateParticle();
 
         actorPool.push_back(std::vector< std::shared_ptr<Actor> >::value_type(particle));
         particlesOnScreen++;
@@ -138,3 +111,49 @@ arma::vec2 Box::startSide(int start) {
     return arma::vec2 {0.0, 0.0};
 }
 
+std::shared_ptr<Hole> Box::generateHole() {
+    arma::vec2 start_pos = arma::vec2{posXDistribution(gen), posYDistribution(gen)};
+    float radius = radiusDistribution(gen);
+    double mass = massDistribution(gen);
+
+    bool okay = false;
+
+    // cannot generate a hole above another one
+    while (!okay && (int) actorPool.size() >  0) {
+        for (const auto & i : actorPool) {
+            if (norm(start_pos - i->pos) <= i->radius + radius) {
+                okay = false;
+                start_pos = arma::vec2{posXDistribution(gen), posYDistribution(gen)};
+                radius = radiusDistribution(gen);
+                break;
+            }
+            okay = true;
+        }
+    }
+
+    return std::make_shared<Hole>(start_pos, mass, radius);
+}
+
+std::shared_ptr<Particle> Box::generateParticle() {
+    arma::vec2 start_pos = startSide(particleStartSide(gen));
+    arma::vec2 start_vel = {velocityDistribution(gen), velocityDistribution(gen)};
+
+    auto particle = std::make_shared<Particle>(start_pos, start_vel, part_mass);
+
+
+    bool okay = false;
+
+    // cannot generate a hole above another one
+    while (!okay && (int) actorPool.size() >  0) {
+        for (const auto & i : actorPool) {
+            if (norm(start_pos - i->pos) <= i->radius + part_radius) {
+                okay = false;
+                start_pos = startSide(particleStartSide(gen));
+                break;
+            }
+            okay = true;
+        }
+    }
+
+    return std::make_shared<Particle>(start_pos, start_vel, part_mass);
+}

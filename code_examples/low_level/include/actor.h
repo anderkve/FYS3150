@@ -14,6 +14,7 @@ public:
     virtual uint getType() = 0;
     arma::vec2 pos, vel;        // vec2 since we are working in 2D
     double mass;
+    float radius;
     std::unique_ptr<sf::CircleShape> shape;           // we will be drawing
 };
 
@@ -35,7 +36,6 @@ public:
     Hole(const arma::vec2& pos, const arma::vec2& vel, double mass, float radius);
     bool update() override;
     uint getType() override { return Actor::Hole_n; }
-    float radius;
 };
 
 #endif //ACTOR_H

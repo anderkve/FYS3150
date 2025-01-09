@@ -13,6 +13,8 @@ public:
     void Init();
     void update();
     arma::vec2 startSide(int start);
+    std::shared_ptr<Hole> generateHole();
+    std::shared_ptr<Particle> generateParticle();
 
     // static data, for global access
     static inline std::vector<std::shared_ptr<Actor>> actorPool;
