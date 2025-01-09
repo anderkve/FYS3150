@@ -9,7 +9,8 @@ std::random_device rd;
 std::mt19937 gen(rd());
 
 std::uniform_real_distribution massDistribution(MIN_MASS, MAX_MASS);
-// std::uniform_real_distribution startParticleXDistribution(0.f, (float) SCRNWIDTH);
+std::uniform_int_distribution particleStartSide(0, 3);
+std::uniform_real_distribution startParticleXDistribution(0.f, (float) SCRNWIDTH);
 std::uniform_real_distribution startParticleYDistribution(0.f, (float) SCRNHEIGHT);
 std::uniform_real_distribution posXDistribution(0.2f * (float) SCRNWIDTH, 0.8f * (float) SCRNWIDTH);
 std::uniform_real_distribution posYDistribution(0.2f * (float) SCRNHEIGHT, 0.8f * (float) SCRNHEIGHT);
@@ -30,7 +31,7 @@ void Box::Init() {
 
     // generate the particles
     for (int i = 0; i < PARTICLE_WAVE; i++) {
-        arma::vec2 start_pos = arma::vec2{0.0, startParticleYDistribution(gen)};
+        arma::vec2 start_pos = startSide(particleStartSide(gen));
         arma::vec2 start_vel = {velocityDistribution(gen), velocityDistribution(gen)};
 
         auto particle = std::make_shared<Particle>(start_pos, start_vel, part_mass);
@@ -74,7 +75,7 @@ void Box::update() {
 
     // introduce remaining new particles based on PARTICLE_WAVE but cannot have more than N_PARTICLES on the screen
     for (int i = 0; i < std::min(PARTICLE_WAVE, N_PARTICLES - particlesOnScreen); i++) {
-        arma::vec2 start_pos = arma::vec2{0.0, startParticleYDistribution(gen)};
+        arma::vec2 start_pos = startSide(particleStartSide(gen));
         arma::vec2 start_vel = {velocityDistribution(gen), velocityDistribution(gen)};
 
         auto particle = std::make_shared<Particle>(start_pos, start_vel, part_mass);
@@ -96,3 +97,25 @@ void Box::update() {
     printf( "frame time: %5.2fms\n", frameTimeAvg );
 
 }
+
+arma::vec2 Box::startSide(int start) {
+    if (start == 0) {
+        // start left side
+        return arma::vec2 {0.0, startParticleYDistribution(gen)};
+    }
+    if (start == 1) {
+        // start top
+        return arma::vec2 {startParticleXDistribution(gen), 0.0};
+    }
+    if (start == 2) {
+        // start right side
+        return arma::vec2 {(double) SCRNWIDTH-1., startParticleYDistribution(gen)};
+    }
+    if (start == 3) {
+        // bottom start
+        return arma::vec2 {startParticleXDistribution(gen), (double) SCRNHEIGHT - 1.};
+    }
+
+    return arma::vec2 {0.0, 0.0};
+}
+

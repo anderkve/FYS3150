@@ -12,6 +12,7 @@ class Box
 public:
     void Init();
     void update();
+    arma::vec2 startSide(int start);
 
     // static data, for global access
     static inline std::vector<std::shared_ptr<Actor>> actorPool;
