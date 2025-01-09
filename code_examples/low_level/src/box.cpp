@@ -21,9 +21,28 @@ void Box::Init() {
     // working with smart pointers
     // generate the holes
     for (int i = 0; i < N_HOLES; i++) {
-        auto hole = std::make_shared<Hole>(arma::vec2{posXDistribution(gen), posYDistribution(gen)},
-                                             massDistribution(gen),
-                                             radiusDistribution(gen));
+        arma::vec2 start_pos = arma::vec2{posXDistribution(gen), posYDistribution(gen)};
+        float radius = radiusDistribution(gen);
+        double mass = massDistribution(gen);
+
+        bool okay = false;
+
+        // cannot generate a hole above another one
+        while (!okay && (int) holes.size() >  0) {
+            for (const auto & i : holes) {
+                if (norm(start_pos - i->pos) <= i->radius + radius) {
+                    okay = false;
+                    start_pos = arma::vec2{posXDistribution(gen), posYDistribution(gen)};
+                    radius = radiusDistribution(gen);
+                    break;
+                }
+                okay = true;
+            }
+        }
+
+        auto hole = std::make_shared<Hole>(start_pos,
+                                             mass,
+                                             radius);
 
         holes.push_back(std::vector< std::shared_ptr<Hole> >::value_type(hole));
         actorPool.push_back(std::vector< std::shared_ptr<Actor> >::value_type(hole));
