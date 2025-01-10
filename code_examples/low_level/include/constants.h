@@ -12,7 +12,7 @@ inline constexpr int SCRNWIDTH = 1000;
 inline constexpr int SCRNHEIGHT = 750;
 inline constexpr int N_PARTICLES = 100;
 inline constexpr int PARTICLE_WAVE = 100;
-inline constexpr int N_HOLES = 4;
+inline constexpr int N_HOLES = 10;
 
 inline constexpr float MIN_START_VEL = -10. * PIXELSPAU; // pixels per frame
 inline constexpr float MAX_START_VEL = 10. * PIXELSPAU;
