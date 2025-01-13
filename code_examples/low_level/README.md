@@ -1,7 +1,7 @@
 # Welcome!
 
 This is a README for a now work in progress.
-I will be adding some low level optimisation examples along with some tips, tricks and useful links (not the video game character).
+I ([@NilsECT](https://github.com/NilsECT)) will be adding some low level optimisation examples along with some tips, tricks and useful links (not the video game character).
 
 ##### A note on the language used:
 The text may appear less serious than the information presented.
