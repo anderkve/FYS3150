@@ -1,105 +1,170 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Introduction to Armadillo &#8212; FYS3150/FYS4150 course material</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/introduction_to_cpp/intro_to_armadillo';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Pointers" href="pointers.html" />
     <link rel="prev" title="Read from file" href="read_from_file.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-    <div class="container-fluid" id="banner"></div>
-
     
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">FYS3150/FYS4150 course material</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">FYS3150/FYS4150 course material</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -108,672 +173,326 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Getting ready
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting ready</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../getting_ready/windows_users.html">
-   Windows users
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../getting_ready/mac_users.html">
-   Mac users
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../getting_ready/linux_users.html">
-   Linux users
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_ready/windows_users.html">Windows users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_ready/mac_users.html">Mac users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_ready/linux_users.html">Linux users</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Using the terminal
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Using the terminal</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_the_terminal/basics.html">
-   Basics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_the_terminal/keyboard_shortcuts.html">
-   Keyboard shortcuts
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../using_the_terminal/basics.html">Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using_the_terminal/keyboard_shortcuts.html">Keyboard shortcuts</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Using Git and GitHub
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Using Git and GitHub</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/introduction_to_git.html">
-   Introduction to Git
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/setting_up_a_UiO_GitHub_repo.html">
-   Setting up a UiO GitHub repository
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/add_a_README_and_gitignore.html">
-   Add a README and gitignore
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/using_git.html">
-   Using Git
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/prevent_tracking_of_very_large_files.html">
-   Prevent the tracking of very large files
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/dealing_with_merge_conflicts.html">
-   Dealing with merge conflicts
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/recover_an_old_version_of_a_file.html">
-   Recover an old version of a file
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/other_ways_to_fix_mistakes.html">
-   Other ways to fix mistakes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/online_resources.html">
-   Online git resources
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../using_git/introduction_to_git.html">Introduction to Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using_git/setting_up_a_UiO_GitHub_repo.html">Setting up a UiO GitHub repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using_git/add_a_README_and_gitignore.html">Add a README and gitignore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using_git/using_git.html">Using Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using_git/prevent_tracking_of_very_large_files.html">Prevent the tracking of very large files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using_git/dealing_with_merge_conflicts.html">Dealing with merge conflicts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using_git/recover_an_old_version_of_a_file.html">Recover an old version of a file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using_git/other_ways_to_fix_mistakes.html">Other ways to fix mistakes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using_git/online_resources.html">Online git resources</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Introduction to C++
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to C++</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   Intro
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="hello_world.html">
-   Hello World
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="compiling_and_linking_take_1.html">
-   Compiling and linking, take 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="variables.html">
-   Variables
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="functions_take_1.html">
-   Functions, take 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="source_files_and_header_files.html">
-   Source files and header files
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="code_structure.html">
-   Code structure
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="compiling_and_linking_take_2.html">
-   Compiling and linking, take 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="if_else.html">
-   If else
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="loops.html">
-   Loops
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="containers.html">
-   Containers
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="read_command_line_input.html">
-   Read command line input
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="write_to_file.html">
-   Write to file
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="read_from_file.html">
-   Read from file
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Introduction to Armadillo
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="pointers.html">
-   Pointers
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="classes.html">
-   Classes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="online_resources.html">
-   Online C++ resources
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hello_world.html">Hello World</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_and_linking_take_1.html">Compiling and linking, take 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variables.html">Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions_take_1.html">Functions, take 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source_files_and_header_files.html">Source files and header files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code_structure.html">Code structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiling_and_linking_take_2.html">Compiling and linking, take 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="if_else.html">If else</a></li>
+<li class="toctree-l1"><a class="reference internal" href="loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="containers.html">Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="read_command_line_input.html">Read command line input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="write_to_file.html">Write to file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="read_from_file.html">Read from file</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction to Armadillo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pointers.html">Pointers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="online_resources.html">Online C++ resources</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Optimization
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Optimization</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../optimization/memory_is_the_bottleneck.html">
-   Memory traffic is the bottleneck
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../optimization/memory_is_the_bottleneck.html">Memory traffic is the bottleneck</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Parallelization
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parallelization</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../parallelization/introduction_to_openmp.html">
-   Introduction to OpenMP
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../parallelization/using_openmp.html">
-   Using OpenMP
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../parallelization/introduction_to_openmp.html">Introduction to OpenMP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parallelization/using_openmp.html">Using OpenMP</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Using Make
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Using Make</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_make/intro.html">
-   Intro
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../using_make/intro.html">Intro</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Writing reports
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Writing reports</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../writing_reports/introduction_to_latex.html">
-   Introduction to LaTeX
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../writing_reports/project_templates.html">
-   Project templates
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../writing_reports/checklist.html">
-   Checklist for reports
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../writing_reports/introduction_to_latex.html">Introduction to LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../writing_reports/project_templates.html">Project templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../writing_reports/checklist.html">Checklist for reports</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Projects
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Projects</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../projects/project1.html">
-   Project 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../projects/project2.html">
-   Project 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../projects/project3.html">
-   Project 3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../projects/project4.html">
-   Project 4
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../projects/project5.html">
-   Project 5
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/project1.html">Project 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/project2.html">Project 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/project3.html">Project 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/project4.html">Project 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/project5.html">Project 5</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/anderkve/FYS3150" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Fbook/introduction_to_cpp/intro_to_armadillo.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
 
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
 
 
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/book/introduction_to_cpp/intro_to_armadillo.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
   </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/anderkve/FYS3150"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
 
-      </li>
-      
-      <li>
-        <a href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Fbook/introduction_to_cpp/intro_to_armadillo.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/book/introduction_to_cpp/intro_to_armadillo.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </button>
-
-      </li>
+</div></div>
       
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
+    </div>
   
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
-    </div>
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#building-code-with-armadillo">
-   Building code with Armadillo
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#compiling-code-with-armadillo">
-     Compiling code with Armadillo
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#linking-code-with-armadillo">
-     Linking code with Armadillo
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#vectors">
-   Vectors
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#declaring-and-filling-vectors">
-     Declaring and filling vectors
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#accessing-and-assigning-elements-in-a-vector">
-     Accessing and assigning elements in a vector
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#matrices">
-   Matrices
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#declaring-and-filling-matrices">
-     Declaring and filling matrices
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#accessing-elements-in-a-matrix">
-     Accessing elements in a matrix
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#extracting-a-column-of-a-matrix">
-     Extracting a column of a matrix
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#read-matrix-columns-in-a-given-order">
-     Read matrix columns in a given order
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#saving-and-loading-vectors-and-matrices">
-   Saving and loading vectors and matrices
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reading-a-data-table-in-text-format">
-     Reading a data table in text format
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-python-module">
-     The Python module
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Introduction to Armadillo</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#building-code-with-armadillo">
-   Building code with Armadillo
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#compiling-code-with-armadillo">
-     Compiling code with Armadillo
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#linking-code-with-armadillo">
-     Linking code with Armadillo
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#vectors">
-   Vectors
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#declaring-and-filling-vectors">
-     Declaring and filling vectors
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#accessing-and-assigning-elements-in-a-vector">
-     Accessing and assigning elements in a vector
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#matrices">
-   Matrices
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#declaring-and-filling-matrices">
-     Declaring and filling matrices
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#accessing-elements-in-a-matrix">
-     Accessing elements in a matrix
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#extracting-a-column-of-a-matrix">
-     Extracting a column of a matrix
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#read-matrix-columns-in-a-given-order">
-     Read matrix columns in a given order
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#saving-and-loading-vectors-and-matrices">
-   Saving and loading vectors and matrices
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reading-a-data-table-in-text-format">
-     Reading a data table in text format
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-python-module">
-     The Python module
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction to Armadillo</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-code-with-armadillo">Building code with Armadillo</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compiling-code-with-armadillo">Compiling code with Armadillo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linking-code-with-armadillo">Linking code with Armadillo</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vectors">Vectors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#declaring-and-filling-vectors">Declaring and filling vectors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-and-assigning-elements-in-a-vector">Accessing and assigning elements in a vector</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrices">Matrices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#declaring-and-filling-matrices">Declaring and filling matrices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-elements-in-a-matrix">Accessing elements in a matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-a-column-of-a-matrix">Extracting a column of a matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-matrix-columns-in-a-given-order">Read matrix columns in a given order</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-and-loading-vectors-and-matrices">Saving and loading vectors and matrices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-a-data-table-in-text-format">Reading a data table in text format</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-python-module">The Python module</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-armadillo">
-<span id="sec-intro-to-armadillo"></span><h1>Introduction to Armadillo<a class="headerlink" href="#introduction-to-armadillo" title="Permalink to this headline">#</a></h1>
+<span id="sec-intro-to-armadillo"></span><h1>Introduction to Armadillo<a class="headerlink" href="#introduction-to-armadillo" title="Link to this heading">#</a></h1>
 <p>Armadillo is an efficient linear algebra library for C++, that balances speed and ease of use. We recommend using this library for numerical linear algebra computations in this course.</p>
 <p>We’ll cover some of the very basics of Armadillo here to get you started with the library. A complete overview of the available classes and functions, along with usage examples, can be found in the Armadillo <a class="reference external" href="http://arma.sourceforge.net/docs.html">code documentation</a>.</p>
 <section id="building-code-with-armadillo">
-<h2>Building code with Armadillo<a class="headerlink" href="#building-code-with-armadillo" title="Permalink to this headline">#</a></h2>
+<h2>Building code with Armadillo<a class="headerlink" href="#building-code-with-armadillo" title="Link to this heading">#</a></h2>
 <p>We must make sure to include the header file for Armadillo, which amounts to adding <code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&lt;armadillo&gt;</span></code> at the top of a header or source file.</p>
 <section id="compiling-code-with-armadillo">
-<h3>Compiling code with Armadillo<a class="headerlink" href="#compiling-code-with-armadillo" title="Permalink to this headline">#</a></h3>
+<h3>Compiling code with Armadillo<a class="headerlink" href="#compiling-code-with-armadillo" title="Link to this heading">#</a></h3>
 <p>For macOS users specifically, you must specificy a version of C++ that is C++11 or later. This is done by adding the compiler flag <code class="docutils literal notranslate"><span class="pre">-std=c++11</span></code> during compilation.</p>
 <p>For Linux users, nothing special is typically required.</p>
 </section>
 <section id="linking-code-with-armadillo">
-<h3>Linking code with Armadillo<a class="headerlink" href="#linking-code-with-armadillo" title="Permalink to this headline">#</a></h3>
+<h3>Linking code with Armadillo<a class="headerlink" href="#linking-code-with-armadillo" title="Link to this heading">#</a></h3>
 <p>To link to Armadillo, we must add the compiler flag <code class="docutils literal notranslate"><span class="pre">-larmadillo</span></code> during linking.</p>
 </section>
 </section>
 <section id="vectors">
-<h2>Vectors<a class="headerlink" href="#vectors" title="Permalink to this headline">#</a></h2>
+<h2>Vectors<a class="headerlink" href="#vectors" title="Link to this heading">#</a></h2>
 <p>Armadillo provides a useful vector class <code class="docutils literal notranslate"><span class="pre">arma::vec</span></code> that can be used to replace arrays in numerical computations. Assume <code class="docutils literal notranslate"><span class="pre">n</span></code> is a positive integer.</p>
 <section id="declaring-and-filling-vectors">
-<h3>Declaring and filling vectors<a class="headerlink" href="#declaring-and-filling-vectors" title="Permalink to this headline">#</a></h3>
+<h3>Declaring and filling vectors<a class="headerlink" href="#declaring-and-filling-vectors" title="Link to this heading">#</a></h3>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="p">(</span><span class="n">n</span><span class="p">);</span><span class="w"> </span><span class="c1">//Initialize vector but don&#39;t fill it.</span>
 <span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="p">(</span><span class="n">n</span><span class="p">).</span><span class="n">fill</span><span class="p">(</span><span class="mf">2.</span><span class="p">);</span><span class="w"> </span><span class="c1">//Declare and fill a vector with 2&#39;s.</span>
 <span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="p">(</span><span class="n">n</span><span class="p">).</span><span class="n">randu</span><span class="p">();</span><span class="w"> </span><span class="c1">//Declare and fill a vector with random values from a uniform distribution.</span>
@@ -782,22 +501,22 @@ title="Print to PDF"
 </div>
 </section>
 <section id="accessing-and-assigning-elements-in-a-vector">
-<h3>Accessing and assigning elements in a vector<a class="headerlink" href="#accessing-and-assigning-elements-in-a-vector" title="Permalink to this headline">#</a></h3>
+<h3>Accessing and assigning elements in a vector<a class="headerlink" href="#accessing-and-assigning-elements-in-a-vector" title="Link to this heading">#</a></h3>
 <p>We can access an element <code class="docutils literal notranslate"><span class="pre">i</span></code> from a vector <code class="docutils literal notranslate"><span class="pre">x</span></code> by</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">x_i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w"> </span><span class="c1">//Extract element i of x and assign it to x_i.</span>
 </pre></div>
 </div>
 <p>We can assign a new value to element <code class="docutils literal notranslate"><span class="pre">i</span></code> in the vector <code class="docutils literal notranslate"><span class="pre">x</span></code> using</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">some_new_value</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">some_new_value</span><span class="p">;</span>
 </pre></div>
 </div>
 </section>
 </section>
 <section id="matrices">
-<h2>Matrices<a class="headerlink" href="#matrices" title="Permalink to this headline">#</a></h2>
+<h2>Matrices<a class="headerlink" href="#matrices" title="Link to this heading">#</a></h2>
 <p>Assume that <code class="docutils literal notranslate"><span class="pre">n</span></code> and <code class="docutils literal notranslate"><span class="pre">m</span></code> are positive integers.</p>
 <section id="declaring-and-filling-matrices">
-<h3>Declaring and filling matrices<a class="headerlink" href="#declaring-and-filling-matrices" title="Permalink to this headline">#</a></h3>
+<h3>Declaring and filling matrices<a class="headerlink" href="#declaring-and-filling-matrices" title="Link to this heading">#</a></h3>
 <p>Creating matrices with Armadillo is easy. Here’s a couple examples:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">);</span><span class="w"> </span><span class="c1">//Initialize matrix but don&#39;t fill.</span>
 <span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">).</span><span class="n">fill</span><span class="p">(</span><span class="mf">0.</span><span class="p">);</span><span class="w"> </span><span class="c1">//Declare and fill a matrix with zeros.</span>
@@ -807,26 +526,26 @@ title="Print to PDF"
 </div>
 </section>
 <section id="accessing-elements-in-a-matrix">
-<h3>Accessing elements in a matrix<a class="headerlink" href="#accessing-elements-in-a-matrix" title="Permalink to this headline">#</a></h3>
+<h3>Accessing elements in a matrix<a class="headerlink" href="#accessing-elements-in-a-matrix" title="Link to this heading">#</a></h3>
 <p>Access of elements in an Armadillo matrix is done as follows:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">A_ij</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">);</span><span class="w"> </span><span class="c1">//Assign element (i,j) of the matrix A to A_ij.</span>
 </pre></div>
 </div>
 </section>
 <section id="extracting-a-column-of-a-matrix">
-<h3>Extracting a column of a matrix<a class="headerlink" href="#extracting-a-column-of-a-matrix" title="Permalink to this headline">#</a></h3>
+<h3>Extracting a column of a matrix<a class="headerlink" href="#extracting-a-column-of-a-matrix" title="Link to this heading">#</a></h3>
 <p>Armadillo provides a simple way to extract entire columns of a matrix:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="w"> </span><span class="n">col_vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">col</span><span class="p">(</span><span class="n">j</span><span class="p">);</span><span class="w"> </span><span class="c1">//Extract column j of A and assign it to col_vec.</span>
 </pre></div>
 </div>
 </section>
 <section id="read-matrix-columns-in-a-given-order">
-<h3>Read matrix columns in a given order<a class="headerlink" href="#read-matrix-columns-in-a-given-order" title="Permalink to this headline">#</a></h3>
+<h3>Read matrix columns in a given order<a class="headerlink" href="#read-matrix-columns-in-a-given-order" title="Link to this heading">#</a></h3>
 <p>A particular task that may be useful in this course is to read the columns of a matrix in a specific order.
 Below is an example that uses <code class="docutils literal notranslate"><span class="pre">arma::sort_index</span></code> to find the index ordering that sorts a given vector (from low to high values),
 and then sorts both the vector and the columns of a matrix according to this ordering.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="p">(</span><span class="s">&quot;0.0 0.1 0.2 ; 1.0 1.1 1.2 ; 2.0 2.1 2.2&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="p">(</span><span class="s">&quot;20. 10. 30.&quot;</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="p">(</span><span class="s">&quot;0.0 0.1 0.2 ; 1.0 1.1 1.2 ; 2.0 2.1 2.2&quot;</span><span class="p">);</span>
+<span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="p">(</span><span class="s">&quot;20. 10. 30.&quot;</span><span class="p">);</span>
 
 <span class="n">arma</span><span class="o">::</span><span class="n">uvec</span><span class="w"> </span><span class="n">x_sort_indices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">sort_index</span><span class="p">(</span><span class="n">x</span><span class="p">);</span><span class="w"> </span><span class="c1">// Get index ordering that sorts x.</span>
 <span class="w">  </span>
@@ -837,11 +556,11 @@ and then sorts both the vector and the columns of a matrix according to this ord
 </section>
 </section>
 <section id="saving-and-loading-vectors-and-matrices">
-<h2>Saving and loading vectors and matrices<a class="headerlink" href="#saving-and-loading-vectors-and-matrices" title="Permalink to this headline">#</a></h2>
+<h2>Saving and loading vectors and matrices<a class="headerlink" href="#saving-and-loading-vectors-and-matrices" title="Link to this heading">#</a></h2>
 <p>Armadillo provides built-in functionality for saving and loading <code class="docutils literal notranslate"><span class="pre">arma::vec</span></code> and <code class="docutils literal notranslate"><span class="pre">arma::mat</span></code> objects to binary files.
 Not only does this simplify storage of results with a predictable format, but it turns out that they provide a Python module <code class="docutils literal notranslate"><span class="pre">pyarma</span></code> that can me used to load in these objects directly into a Python program!</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">A</span></code> is an <code class="docutils literal notranslate"><span class="pre">arma::mat</span></code> object, you can save it using</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">.</span><span class="n">save</span><span class="p">(</span><span class="n">filename</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">.</span><span class="n">save</span><span class="p">(</span><span class="n">filename</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>The default storage format is binary. Your filename should end with <code class="docutils literal notranslate"><span class="pre">.bin</span></code>. Loading the object is as simple as</p>
@@ -850,7 +569,7 @@ Not only does this simplify storage of results with a predictable format, but it
 </pre></div>
 </div>
 <section id="reading-a-data-table-in-text-format">
-<h3>Reading a data table in text format<a class="headerlink" href="#reading-a-data-table-in-text-format" title="Permalink to this headline">#</a></h3>
+<h3>Reading a data table in text format<a class="headerlink" href="#reading-a-data-table-in-text-format" title="Link to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">load</span></code> functionality in Armadillo can also be used to load data from files not generated by Armadillo, as long as the data file has some standard format (see the Armadillo documentation for details). For instance, assume we have a text file <code class="docutils literal notranslate"><span class="pre">mynumbers.dat</span></code> looking like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">0.0000e+00</span>  <span class="mf">0.0000e+00</span>  <span class="mf">0.0000e+00</span>
 <span class="mf">0.0000e+00</span>  <span class="mf">1.9635e-01</span>  <span class="mf">3.8553e-02</span>
@@ -875,19 +594,19 @@ Not only does this simplify storage of results with a predictable format, but it
 </pre></div>
 </div>
 <p>To read these numbers into an Armadillo matrix, we simply do this:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="w"> </span><span class="n">A</span><span class="p">;</span><span class="w"></span>
-<span class="n">A</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">&quot;mynumbers.dat&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">raw_ascii</span><span class="p">)</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="w"> </span><span class="n">A</span><span class="p">;</span>
+<span class="n">A</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">&quot;mynumbers.dat&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">raw_ascii</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="the-python-module">
-<h3>The Python module<a class="headerlink" href="#the-python-module" title="Permalink to this headline">#</a></h3>
+<h3>The Python module<a class="headerlink" href="#the-python-module" title="Link to this heading">#</a></h3>
 <p>You can install the Armadillo Python module <code class="docutils literal notranslate"><span class="pre">pyarma</span></code> using</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install pyarma
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pyarma
 </pre></div>
 </div>
 <p>The recommended way to import the library in Python is</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyarma</span> <span class="k">as</span> <span class="nn">pa</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyarma</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pa</span>
 </pre></div>
 </div>
 <p>From there, you can easily load the <code class="docutils literal notranslate"><span class="pre">arma::mat</span></code> (or <code class="docutils literal notranslate"><span class="pre">arma::vec</span></code>) object you saved in C++ using</p>
@@ -911,7 +630,7 @@ Not only does this simplify storage of results with a predictable format, but it
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./book/introduction_to_cpp"
         },
         predefinedOutput: true
@@ -919,50 +638,124 @@ Not only does this simplify storage of results with a predictable format, but it
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="read_from_file.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Read from file</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="read_from_file.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Read from file</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="pointers.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="pointers.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Pointers</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-code-with-armadillo">Building code with Armadillo</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compiling-code-with-armadillo">Compiling code with Armadillo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linking-code-with-armadillo">Linking code with Armadillo</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vectors">Vectors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#declaring-and-filling-vectors">Declaring and filling vectors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-and-assigning-elements-in-a-vector">Accessing and assigning elements in a vector</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrices">Matrices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#declaring-and-filling-matrices">Declaring and filling matrices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-elements-in-a-matrix">Accessing elements in a matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-a-column-of-a-matrix">Extracting a column of a matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-matrix-columns-in-a-given-order">Read matrix columns in a given order</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-and-loading-vectors-and-matrices">Saving and loading vectors and matrices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-a-data-table-in-text-format">Reading a data table in text format</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-python-module">The Python module</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By the FYS3150 teaching team<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By the FYS3150 teaching team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

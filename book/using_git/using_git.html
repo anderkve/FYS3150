@@ -1,105 +1,170 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Using Git &#8212; FYS3150/FYS4150 course material</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/using_git/using_git';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Prevent the tracking of very large files" href="prevent_tracking_of_very_large_files.html" />
     <link rel="prev" title="Add a README and gitignore" href="add_a_README_and_gitignore.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-    <div class="container-fluid" id="banner"></div>
-
     
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">FYS3150/FYS4150 course material</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">FYS3150/FYS4150 course material</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -108,594 +173,299 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Getting ready
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting ready</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../getting_ready/windows_users.html">
-   Windows users
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../getting_ready/mac_users.html">
-   Mac users
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../getting_ready/linux_users.html">
-   Linux users
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_ready/windows_users.html">Windows users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_ready/mac_users.html">Mac users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_ready/linux_users.html">Linux users</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Using the terminal
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Using the terminal</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_the_terminal/basics.html">
-   Basics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_the_terminal/keyboard_shortcuts.html">
-   Keyboard shortcuts
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../using_the_terminal/basics.html">Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using_the_terminal/keyboard_shortcuts.html">Keyboard shortcuts</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Using Git and GitHub
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Using Git and GitHub</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="introduction_to_git.html">
-   Introduction to Git
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="setting_up_a_UiO_GitHub_repo.html">
-   Setting up a UiO GitHub repository
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="add_a_README_and_gitignore.html">
-   Add a README and gitignore
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Using Git
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="prevent_tracking_of_very_large_files.html">
-   Prevent the tracking of very large files
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="dealing_with_merge_conflicts.html">
-   Dealing with merge conflicts
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="recover_an_old_version_of_a_file.html">
-   Recover an old version of a file
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="other_ways_to_fix_mistakes.html">
-   Other ways to fix mistakes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="online_resources.html">
-   Online git resources
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="introduction_to_git.html">Introduction to Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setting_up_a_UiO_GitHub_repo.html">Setting up a UiO GitHub repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="add_a_README_and_gitignore.html">Add a README and gitignore</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Using Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prevent_tracking_of_very_large_files.html">Prevent the tracking of very large files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dealing_with_merge_conflicts.html">Dealing with merge conflicts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recover_an_old_version_of_a_file.html">Recover an old version of a file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other_ways_to_fix_mistakes.html">Other ways to fix mistakes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="online_resources.html">Online git resources</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Introduction to C++
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to C++</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/intro.html">
-   Intro
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/hello_world.html">
-   Hello World
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/compiling_and_linking_take_1.html">
-   Compiling and linking, take 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/variables.html">
-   Variables
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/functions_take_1.html">
-   Functions, take 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/source_files_and_header_files.html">
-   Source files and header files
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/code_structure.html">
-   Code structure
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/compiling_and_linking_take_2.html">
-   Compiling and linking, take 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/if_else.html">
-   If else
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/loops.html">
-   Loops
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/containers.html">
-   Containers
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/read_command_line_input.html">
-   Read command line input
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/write_to_file.html">
-   Write to file
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/read_from_file.html">
-   Read from file
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/intro_to_armadillo.html">
-   Introduction to Armadillo
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/pointers.html">
-   Pointers
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/classes.html">
-   Classes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/online_resources.html">
-   Online C++ resources
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/intro.html">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/hello_world.html">Hello World</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/compiling_and_linking_take_1.html">Compiling and linking, take 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/variables.html">Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/functions_take_1.html">Functions, take 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/source_files_and_header_files.html">Source files and header files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/code_structure.html">Code structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/compiling_and_linking_take_2.html">Compiling and linking, take 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/if_else.html">If else</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/containers.html">Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/read_command_line_input.html">Read command line input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/write_to_file.html">Write to file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/read_from_file.html">Read from file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/intro_to_armadillo.html">Introduction to Armadillo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/pointers.html">Pointers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/classes.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/online_resources.html">Online C++ resources</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Optimization
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Optimization</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../optimization/memory_is_the_bottleneck.html">
-   Memory traffic is the bottleneck
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../optimization/memory_is_the_bottleneck.html">Memory traffic is the bottleneck</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Parallelization
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parallelization</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../parallelization/introduction_to_openmp.html">
-   Introduction to OpenMP
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../parallelization/using_openmp.html">
-   Using OpenMP
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../parallelization/introduction_to_openmp.html">Introduction to OpenMP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parallelization/using_openmp.html">Using OpenMP</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Using Make
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Using Make</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_make/intro.html">
-   Intro
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../using_make/intro.html">Intro</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Writing reports
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Writing reports</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../writing_reports/introduction_to_latex.html">
-   Introduction to LaTeX
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../writing_reports/project_templates.html">
-   Project templates
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../writing_reports/checklist.html">
-   Checklist for reports
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../writing_reports/introduction_to_latex.html">Introduction to LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../writing_reports/project_templates.html">Project templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../writing_reports/checklist.html">Checklist for reports</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Projects
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Projects</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../projects/project1.html">
-   Project 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../projects/project2.html">
-   Project 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../projects/project3.html">
-   Project 3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../projects/project4.html">
-   Project 4
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../projects/project5.html">
-   Project 5
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/project1.html">Project 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/project2.html">Project 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/project3.html">Project 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/project4.html">Project 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/project5.html">Project 5</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/anderkve/FYS3150" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Fbook/using_git/using_git.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
 
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
 
 
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/book/using_git/using_git.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
   </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/anderkve/FYS3150"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
 
-      </li>
-      
-      <li>
-        <a href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Fbook/using_git/using_git.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/book/using_git/using_git.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </button>
-
-      </li>
+</div></div>
       
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
+    </div>
   
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
-    </div>
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#synopsis">
-   Synopsis
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cloning-a-new-project">
-   Cloning a new project
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#making-changes">
-   Making changes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#git-tracks-content-not-files">
-   Git tracks content, not files
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#viewing-project-history">
-   Viewing project history
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#managing-branches">
-   Managing branches
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#collaborating-using-github">
-   Collaborating using GitHub
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pull-any-changes-from-the-remote">
-     Pull any changes from the remote
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#push-your-changes-to-the-remote">
-     Push your changes to the remote
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Using Git</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#synopsis">
-   Synopsis
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cloning-a-new-project">
-   Cloning a new project
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#making-changes">
-   Making changes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#git-tracks-content-not-files">
-   Git tracks content, not files
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#viewing-project-history">
-   Viewing project history
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#managing-branches">
-   Managing branches
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#collaborating-using-github">
-   Collaborating using GitHub
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pull-any-changes-from-the-remote">
-     Pull any changes from the remote
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#push-your-changes-to-the-remote">
-     Push your changes to the remote
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Using Git</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#synopsis">Synopsis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning-a-new-project">Cloning a new project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-changes">Making changes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-tracks-content-not-files">Git tracks content, not files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-project-history">Viewing project history</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-branches">Managing branches</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collaborating-using-github">Collaborating using GitHub</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-any-changes-from-the-remote">Pull any changes from the remote</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#push-your-changes-to-the-remote">Push your changes to the remote</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="using-git">
-<h1>Using Git<a class="headerlink" href="#using-git" title="Permalink to this headline">#</a></h1>
+<h1>Using Git<a class="headerlink" href="#using-git" title="Link to this heading">#</a></h1>
 <section id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">#</a></h2>
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Link to this heading">#</a></h2>
 <p>This tutorial explains how to import a new project into Git, make changes to it, and share changes with other developers. It’s a slightly modified and extended version of the manual entry called <em>gittutorial</em>, which you can look up in your terminal by running</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>man gittutorial
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>man<span class="w"> </span>gittutorial
 </pre></div>
 </div>
 <div class="admonition note">
@@ -704,17 +474,17 @@ title="Print to PDF"
 </div>
 </section>
 <section id="cloning-a-new-project">
-<h2>Cloning a new project<a class="headerlink" href="#cloning-a-new-project" title="Permalink to this headline">#</a></h2>
+<h2>Cloning a new project<a class="headerlink" href="#cloning-a-new-project" title="Link to this heading">#</a></h2>
 <p>We recommend you create a repository online on <a class="reference external" href="https://github.com/">GitHub</a> and clone the repository on your computer using the HTTPS link. It’s simply done by running</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone https_link
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https_link
 </pre></div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">https_link</span></code> is the URL for your repo on GitHub.</p>
 </section>
 <section id="making-changes">
-<h2>Making changes<a class="headerlink" href="#making-changes" title="Permalink to this headline">#</a></h2>
+<h2>Making changes<a class="headerlink" href="#making-changes" title="Link to this heading">#</a></h2>
 <p>Modify some files, then add their updated contents to the index:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git add file1 file2 file3
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>file1<span class="w"> </span>file2<span class="w"> </span>file3
 </pre></div>
 </div>
 <p>You also use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> to add <em>new</em> files that aren’t yet registered as part of your repository. (More info about <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> below.)</p>
@@ -726,21 +496,21 @@ title="Print to PDF"
 </div>
 <p>You are now ready to commit. You can see what is about to be committed
 using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> with the <code class="docutils literal notranslate"><span class="pre">--cached</span></code> option:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git diff --cached
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>diff<span class="w"> </span>--cached
 </pre></div>
 </div>
 <p>(Without the <code class="docutils literal notranslate"><span class="pre">--cached</span></code> flag, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> will show you any changes that you’ve made
 but not yet added to the index.) You can also get a brief summary of
 the situation with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git status
-On branch main
-Changes to be committed:
-Your branch is up to date with <span class="s1">&#39;origin/main&#39;</span>.
-  <span class="o">(</span>use <span class="s2">&quot;git restore --staged &lt;file&gt;...&quot;</span> to unstage<span class="o">)</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
+On<span class="w"> </span>branch<span class="w"> </span>main
+Changes<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>committed:
+Your<span class="w"> </span>branch<span class="w"> </span>is<span class="w"> </span>up<span class="w"> </span>to<span class="w"> </span>date<span class="w"> </span>with<span class="w"> </span><span class="s1">&#39;origin/main&#39;</span>.
+<span class="w">  </span><span class="o">(</span>use<span class="w"> </span><span class="s2">&quot;git restore --staged &lt;file&gt;...&quot;</span><span class="w"> </span>to<span class="w"> </span>unstage<span class="o">)</span>
 
-        modified:   file1
-        modified:   file2
-        modified:   file3
+<span class="w">        </span>modified:<span class="w">   </span>file1
+<span class="w">        </span>modified:<span class="w">   </span>file2
+<span class="w">        </span>modified:<span class="w">   </span>file3
 </pre></div>
 </div>
 <div class="admonition note">
@@ -750,13 +520,13 @@ Your branch is up to date with <span class="s1">&#39;origin/main&#39;</span>.
 <p>If you need to make any further adjustments, do so now, and then add
 any newly modified content to the index. Finally, commit your changes
 with:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git commit
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit
 </pre></div>
 </div>
 <p>This will again prompt you for a message describing the change, and
 then record a new version of the project.</p>
 <p>Alternatively, instead of running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> beforehand, you can use</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git commit -a
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-a
 </pre></div>
 </div>
 <p>which will automatically notice any modified (but not new) files, add
@@ -769,7 +539,7 @@ message is treated as the commit title, and that title is used
 throughout Git.</p>
 </section>
 <section id="git-tracks-content-not-files">
-<h2>Git tracks content, not files<a class="headerlink" href="#git-tracks-content-not-files" title="Permalink to this headline">#</a></h2>
+<h2>Git tracks content, not files<a class="headerlink" href="#git-tracks-content-not-files" title="Link to this heading">#</a></h2>
 <p>Many revision control systems provide an <strong>add</strong> command that tells the
 system to start tracking changes to a new file. Git’s <strong>add</strong> command does
 something simpler and more powerful: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> is used both for new and
@@ -778,40 +548,40 @@ given files and stages that content in the index, ready for inclusion
 in the next commit.</p>
 </section>
 <section id="viewing-project-history">
-<h2>Viewing project history<a class="headerlink" href="#viewing-project-history" title="Permalink to this headline">#</a></h2>
+<h2>Viewing project history<a class="headerlink" href="#viewing-project-history" title="Link to this heading">#</a></h2>
 <p>At any point you can view the history of your changes using</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git log
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>log
 </pre></div>
 </div>
 <p>If you also want to see complete diffs at each step, use</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git log -p
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>log<span class="w"> </span>-p
 </pre></div>
 </div>
 <p>Often the overview of the change is useful to get a feel of each step</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git log --stat --summary
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>log<span class="w"> </span>--stat<span class="w"> </span>--summary
 </pre></div>
 </div>
 </section>
 <section id="managing-branches">
-<h2>Managing branches<a class="headerlink" href="#managing-branches" title="Permalink to this headline">#</a></h2>
+<h2>Managing branches<a class="headerlink" href="#managing-branches" title="Link to this heading">#</a></h2>
 <p>A single Git repository can maintain multiple branches of development.
 To create a new branch named <code class="docutils literal notranslate"><span class="pre">experimental</span></code>, use</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git branch experimental
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>branch<span class="w"> </span>experimental
 </pre></div>
 </div>
 <p>If you now run</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git branch
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>branch
 </pre></div>
 </div>
 <p>you’ll get a list of all existing branches:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>  experimental
-* main
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="w">  </span>experimental
+*<span class="w"> </span>main
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">experimental</span></code> branch is the one you just created, and the <code class="docutils literal notranslate"><span class="pre">main</span></code>
 branch is a default branch that was created for you automatically. The
 asterisk marks the branch you are currently on; type</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git switch experimental
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>switch<span class="w"> </span>experimental
 </pre></div>
 </div>
 <p>to switch to the experimental branch.</p>
@@ -821,22 +591,22 @@ asterisk marks the branch you are currently on; type</p>
 </div>
 <p>Now edit a file, commit the
 change, and switch back to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>edit file<span class="o">)</span>
-git commit -a
-git switch main
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>edit<span class="w"> </span>file<span class="o">)</span>
+git<span class="w"> </span>commit<span class="w"> </span>-a
+git<span class="w"> </span>switch<span class="w"> </span>main
 </pre></div>
 </div>
 <p>Check that the change you made is no longer visible, since it was made
 on the experimental branch and you’re back on the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p>
 <p>You can make a different change on the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>edit file<span class="o">)</span>
-git commit -a
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>edit<span class="w"> </span>file<span class="o">)</span>
+git<span class="w"> </span>commit<span class="w"> </span>-a
 </pre></div>
 </div>
 <p>at this point the two branches have diverged, with different changes
 made in each. To merge the changes made in experimental into <code class="docutils literal notranslate"><span class="pre">main</span></code>,
 run</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git merge experimental
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>merge<span class="w"> </span>experimental
 </pre></div>
 </div>
 <div class="admonition note">
@@ -845,11 +615,11 @@ run</p>
 </div>
 <p>If the changes don’t conflict, you’re done. If there are conflicts,
 markers will be left in the problematic files showing the conflict;</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git diff
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>diff
 </pre></div>
 </div>
 <p>will show this. (Also, running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> at this point will give you a summary of which files have conflicts and what you need to do.) Once you’ve edited the files to resolve the conflicts,</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git commit -a
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-a
 </pre></div>
 </div>
 <p>will commit the result of the merge. Finally,</p>
@@ -858,42 +628,42 @@ markers will be left in the problematic files showing the conflict;</p>
 </div>
 <p>will show a nice graphical representation of the resulting history.</p>
 <p>At this point you could delete the experimental branch with</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git branch -d experimental
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>experimental
 </pre></div>
 </div>
 <p>This command ensures that the changes in the experimental branch are
 already in the current branch.</p>
 <p>If you develop on a branch <code class="docutils literal notranslate"><span class="pre">crazy-idea</span></code>, then regret it, you can always
 delete the branch with</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git branch -D crazy-idea
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>branch<span class="w"> </span>-D<span class="w"> </span>crazy-idea
 </pre></div>
 </div>
 <p>Branches are cheap and easy, so this is a good way to try something out.</p>
 </section>
 <section id="collaborating-using-github">
-<h2>Collaborating using GitHub<a class="headerlink" href="#collaborating-using-github" title="Permalink to this headline">#</a></h2>
+<h2>Collaborating using GitHub<a class="headerlink" href="#collaborating-using-github" title="Link to this heading">#</a></h2>
 <p>So far we’ve only discussed Git locally on your computer, but not how we collaborate with other developers. This is where GitHub comes into the picture.</p>
 <p>It’s customary to work on different branches to protect the content of the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch. Just like in the example above where we worked on a branch called <code class="docutils literal notranslate"><span class="pre">experimental</span></code>, you can create your own branch when you work on a project with other people.</p>
 <section id="pull-any-changes-from-the-remote">
-<h3>Pull any changes from the remote<a class="headerlink" href="#pull-any-changes-from-the-remote" title="Permalink to this headline">#</a></h3>
+<h3>Pull any changes from the remote<a class="headerlink" href="#pull-any-changes-from-the-remote" title="Link to this heading">#</a></h3>
 <p>The <strong>remote</strong> repo is the term used for the cloud-based (GitHub) version of your local Git repo. To <strong>pull</strong> down any changes done by the other developers on a branch, run</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git pull origin branchname
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>branchname
 </pre></div>
 </div>
 <p>In particular, to pull from the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, run</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git pull origin main
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
 </pre></div>
 </div>
 <p>The name <code class="docutils literal notranslate"><span class="pre">origin</span></code> is just the standard name assigned to the remote repo, i.e. the repo living on GitHub. So this command is effectively saying <em>pull down any changes from the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch on the GitHub repo, and merge these into the current branch of my local repo.</em></p>
 </section>
 <section id="push-your-changes-to-the-remote">
-<h3>Push your changes to the remote<a class="headerlink" href="#push-your-changes-to-the-remote" title="Permalink to this headline">#</a></h3>
+<h3>Push your changes to the remote<a class="headerlink" href="#push-your-changes-to-the-remote" title="Link to this heading">#</a></h3>
 <p>When you’ve performed local changes to a branch, you can push them to the remote using</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git push origin branchname
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>branchname
 </pre></div>
 </div>
 <p>again, for the main branch, this is done by</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git push origin main
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
 </pre></div>
 </div>
 <div class="admonition note">
@@ -916,7 +686,7 @@ delete the branch with</p>
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./book/using_git"
         },
         predefinedOutput: true
@@ -924,50 +694,113 @@ delete the branch with</p>
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="add_a_README_and_gitignore.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Add a README and gitignore</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="add_a_README_and_gitignore.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Add a README and gitignore</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="prevent_tracking_of_very_large_files.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="prevent_tracking_of_very_large_files.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Prevent the tracking of very large files</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#synopsis">Synopsis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning-a-new-project">Cloning a new project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-changes">Making changes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-tracks-content-not-files">Git tracks content, not files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-project-history">Viewing project history</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-branches">Managing branches</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collaborating-using-github">Collaborating using GitHub</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-any-changes-from-the-remote">Pull any changes from the remote</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#push-your-changes-to-the-remote">Push your changes to the remote</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By the FYS3150 teaching team<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By the FYS3150 teaching team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

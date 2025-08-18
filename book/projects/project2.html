@@ -1,107 +1,170 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Project 2 &#8212; FYS3150/FYS4150 course material</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/projects/project2';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Project 3" href="project3.html" />
     <link rel="prev" title="Project 1" href="project1.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-    <div class="container-fluid" id="banner"></div>
-
     
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">FYS3150/FYS4150 course material</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">FYS3150/FYS4150 course material</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -110,954 +173,276 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Getting ready
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting ready</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../getting_ready/windows_users.html">
-   Windows users
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../getting_ready/mac_users.html">
-   Mac users
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../getting_ready/linux_users.html">
-   Linux users
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_ready/windows_users.html">Windows users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_ready/mac_users.html">Mac users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_ready/linux_users.html">Linux users</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Using the terminal
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Using the terminal</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_the_terminal/basics.html">
-   Basics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_the_terminal/keyboard_shortcuts.html">
-   Keyboard shortcuts
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../using_the_terminal/basics.html">Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using_the_terminal/keyboard_shortcuts.html">Keyboard shortcuts</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Using Git and GitHub
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Using Git and GitHub</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/introduction_to_git.html">
-   Introduction to Git
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/setting_up_a_UiO_GitHub_repo.html">
-   Setting up a UiO GitHub repository
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/add_a_README_and_gitignore.html">
-   Add a README and gitignore
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/using_git.html">
-   Using Git
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/prevent_tracking_of_very_large_files.html">
-   Prevent the tracking of very large files
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/dealing_with_merge_conflicts.html">
-   Dealing with merge conflicts
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/recover_an_old_version_of_a_file.html">
-   Recover an old version of a file
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/other_ways_to_fix_mistakes.html">
-   Other ways to fix mistakes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_git/online_resources.html">
-   Online git resources
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../using_git/introduction_to_git.html">Introduction to Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using_git/setting_up_a_UiO_GitHub_repo.html">Setting up a UiO GitHub repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using_git/add_a_README_and_gitignore.html">Add a README and gitignore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using_git/using_git.html">Using Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using_git/prevent_tracking_of_very_large_files.html">Prevent the tracking of very large files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using_git/dealing_with_merge_conflicts.html">Dealing with merge conflicts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using_git/recover_an_old_version_of_a_file.html">Recover an old version of a file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using_git/other_ways_to_fix_mistakes.html">Other ways to fix mistakes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using_git/online_resources.html">Online git resources</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Introduction to C++
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to C++</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/intro.html">
-   Intro
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/hello_world.html">
-   Hello World
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/compiling_and_linking_take_1.html">
-   Compiling and linking, take 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/variables.html">
-   Variables
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/functions_take_1.html">
-   Functions, take 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/source_files_and_header_files.html">
-   Source files and header files
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/code_structure.html">
-   Code structure
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/compiling_and_linking_take_2.html">
-   Compiling and linking, take 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/if_else.html">
-   If else
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/loops.html">
-   Loops
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/containers.html">
-   Containers
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/read_command_line_input.html">
-   Read command line input
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/write_to_file.html">
-   Write to file
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/read_from_file.html">
-   Read from file
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/intro_to_armadillo.html">
-   Introduction to Armadillo
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/pointers.html">
-   Pointers
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/classes.html">
-   Classes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction_to_cpp/online_resources.html">
-   Online C++ resources
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/intro.html">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/hello_world.html">Hello World</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/compiling_and_linking_take_1.html">Compiling and linking, take 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/variables.html">Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/functions_take_1.html">Functions, take 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/source_files_and_header_files.html">Source files and header files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/code_structure.html">Code structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/compiling_and_linking_take_2.html">Compiling and linking, take 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/if_else.html">If else</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/containers.html">Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/read_command_line_input.html">Read command line input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/write_to_file.html">Write to file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/read_from_file.html">Read from file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/intro_to_armadillo.html">Introduction to Armadillo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/pointers.html">Pointers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/classes.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/online_resources.html">Online C++ resources</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Optimization
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Optimization</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../optimization/memory_is_the_bottleneck.html">
-   Memory traffic is the bottleneck
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../optimization/memory_is_the_bottleneck.html">Memory traffic is the bottleneck</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Parallelization
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parallelization</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../parallelization/introduction_to_openmp.html">
-   Introduction to OpenMP
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../parallelization/using_openmp.html">
-   Using OpenMP
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../parallelization/introduction_to_openmp.html">Introduction to OpenMP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parallelization/using_openmp.html">Using OpenMP</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Using Make
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Using Make</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../using_make/intro.html">
-   Intro
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../using_make/intro.html">Intro</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Writing reports
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Writing reports</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../writing_reports/introduction_to_latex.html">
-   Introduction to LaTeX
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../writing_reports/project_templates.html">
-   Project templates
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../writing_reports/checklist.html">
-   Checklist for reports
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../writing_reports/introduction_to_latex.html">Introduction to LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../writing_reports/project_templates.html">Project templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../writing_reports/checklist.html">Checklist for reports</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Projects
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Projects</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="project1.html">
-   Project 1
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Project 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="project3.html">
-   Project 3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="project4.html">
-   Project 4
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="project5.html">
-   Project 5
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="project1.html">Project 1</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Project 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project3.html">Project 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project4.html">Project 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project5.html">Project 5</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/anderkve/FYS3150" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Fbook/projects/project2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
 
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
 
 
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/book/projects/project2.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
   </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/anderkve/FYS3150"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
 
-      </li>
-      
-      <li>
-        <a href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Fbook/projects/project2.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/book/projects/project2.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
+</div></div>
       
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
+    </div>
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
+</div>
+              
+              
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Project 2</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#practicalities">
-   Practicalities
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   Introduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#problems">
-   Problems
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-1">
-     Problem 1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-2">
-     Problem 2
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-3">
-     Problem 3
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-4">
-     Problem 4
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-5">
-     Problem 5
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-6">
-     Problem 6
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#code-snippets">
-   Code snippets
-  </a>
- </li>
-</ul>
-
-    </nav>
-</div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Project 2</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#practicalities">
-   Practicalities
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   Introduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#problems">
-   Problems
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-1">
-     Problem 1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-2">
-     Problem 2
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-3">
-     Problem 3
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-4">
-     Problem 4
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-5">
-     Problem 5
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-6">
-     Problem 6
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#code-snippets">
-   Code snippets
-  </a>
- </li>
-</ul>
-
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            <main id="main-content" role="main">
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="project-2">
-<h1>Project 2<a class="headerlink" href="#project-2" title="Permalink to this headline">#</a></h1>
-<!--  Not published yet. -->
-<section id="practicalities">
-<h2>Practicalities<a class="headerlink" href="#practicalities" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p><strong>Deadline:</strong> Wednesday, September 25, 23:59.</p></li>
-<li><p><strong>Format:</strong></p>
-<ul>
-<li><p>A pdf document, typeset in LaTeX, with answers to all the problems below. You deliver the pdf on Canvas.</p></li>
-<li><p>Use the template we have provided <a class="reference internal" href="../writing_reports/project_templates.html"><span class="doc std std-doc">here</span></a>.</p></li>
-<li><p>Code (with comments, of course) on a UiO GitHub repo (<a class="reference external" href="https://github.uio.no/">github.uio.no</a>), with the URL to you repo written in the pdf document.</p></li>
-<li><p>You <em>must</em> deliver via your group on Canvas (even if you are working alone).</p></li>
-</ul>
-</li>
-<li><p><strong>Not a complete report:</strong> For project 2, we do not require you to write a proper scientific report — only a document with an answer for each problem. But the quality of the presentation still matters, of course. So pay attention to figures, figure captions, grammar, etc.</p></li>
-<li><p><strong>Collaboration:</strong> We <em>strongly</em> encourage you to collaborate with others, in groups up to three students. The group hands in a single pdf. (So make sure you all join the same group on Canvas.) Remember to list everyone’s name in the pdf.</p></li>
-<li><p><strong>Reproducibility:</strong> Your code should be available on a GitHub repo. You can refer to relevant parts of your code in your answers. Make sure to include a README file in the repo that briefly explains how the code is organized, and how it should be compiled and run in order to reproduce your results.</p></li>
-<li><p><strong>Figures:</strong> Figures included in your LaTeX document should be made as vector graphics (e.g. <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> files), rather than raster graphics (e.g. <code class="docutils literal notranslate"><span class="pre">.png</span></code> files). If you are making plots with <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> in Python, this is as simple as calling <code class="docutils literal notranslate"><span class="pre">plt.savefig(&quot;figure.pdf&quot;)</span></code> rather than <code class="docutils literal notranslate"><span class="pre">plt.savefig(&quot;figure.png&quot;)</span></code>.</p></li>
-<li><p><strong>We recommend using Armadillo:</strong> For this project we recommend using Armadillo to work with matrices and vectors.</p></li>
-</ul>
-</section>
-<section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
-<p>The main topics of this project are</p>
-<ul class="simple">
-<li><p>scaling of equations</p></li>
-<li><p>eigenvalue problems</p></li>
-<li><p>code testing (<em>unit testing</em>).</p></li>
-</ul>
-<p>Our example of an eigenvalue problem is a special case of a one-dimensional buckling beam. Consider the following situation:</p>
-<ul class="simple">
-<li><p>A horizontal beam.</p></li>
-<li><p><span class="math notranslate nohighlight">\(L\)</span> is the horizontal length between the two beam endpoints. (So before any buckling, <span class="math notranslate nohighlight">\(L\)</span> is also the length of the beam.)</p></li>
-<li><p>We let <span class="math notranslate nohighlight">\(u(x)\)</span> be the vertical displacement of the beam at horizontal position <span class="math notranslate nohighlight">\(x\)</span>, with <span class="math notranslate nohighlight">\(x \in [0,L]\)</span>.</p></li>
-<li><p>A force <span class="math notranslate nohighlight">\(F\)</span> is applied at the endpoint (<span class="math notranslate nohighlight">\(x=L\)</span>), <em>directed into the beam</em>, i.e. towards <span class="math notranslate nohighlight">\(x=0\)</span>.</p></li>
-<li><p>The beam is fastened with <em>pin endpoints</em>, meaning that <span class="math notranslate nohighlight">\(u(0)=0\)</span> and <span class="math notranslate nohighlight">\(u(L)=0\)</span>, but the endpoints are allowed to rotate (<span class="math notranslate nohighlight">\(u'(x) \neq 0\)</span>).</p></li>
-<li><p>We are <em>not</em> studying a time-dependent system here – we are simply interested in the different static shapes the beam can take due to the applied force.</p></li>
-</ul>
-<p>We can then describe this situation with the second-order differential equation</p>
-<div class="math notranslate nohighlight" id="equation-bb-eq-1">
-<span class="eqno">(4)<a class="headerlink" href="#equation-bb-eq-1" title="Permalink to this equation">#</a></span>\[ 
-\gamma \frac{d^2 u(x)}{dx^2} = - F u(x),
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(\gamma\)</span> is some constant defined by material properties like rigidity. However, the equation we will actually be working with is the scaled equation</p>
-<div class="math notranslate nohighlight" id="equation-bb-eq-2">
-<span class="eqno">(5)<a class="headerlink" href="#equation-bb-eq-2" title="Permalink to this equation">#</a></span>\[ 
-\frac{d^2 u(\hat{x})}{d\hat{x}^2} = - \lambda u(\hat{x}),
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(\hat{x} \equiv x/L\)</span> is a dimensionless (unitless) varible, <span class="math notranslate nohighlight">\(\hat{x} \in [0,1]\)</span>, and <span class="math notranslate nohighlight">\(\lambda = \frac{F L^2}{\gamma}\)</span>. (See problem 1.)</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Here we have been a bit sloppy with our notation. Technically, due to our change of variable, the functions <span class="math notranslate nohighlight">\(u(x)\)</span> and <span class="math notranslate nohighlight">\(u(\hat{x})\)</span> are two <em>different</em> functions, so we should have used e.g. notation like <span class="math notranslate nohighlight">\(u_x(x)\)</span> for the original function and <span class="math notranslate nohighlight">\(u_{\hat{x}}(\hat{x})\)</span> for the function after the variable change. The key thing is that the functions are related as <span class="math notranslate nohighlight">\(u_{\hat{x}}(\hat{x}(x)) = u_x(x)\)</span>.</p>
-</div>
-<hr class="docutils" />
-<p><strong>Discretization:</strong> We discretize this by dividing our <span class="math notranslate nohighlight">\(\hat{x}\)</span> range into <span class="math notranslate nohighlight">\(n\)</span> parts, i.e. we will have <span class="math notranslate nohighlight">\(n+1\)</span> points <span class="math notranslate nohighlight">\(\hat{x}_0\)</span>, <span class="math notranslate nohighlight">\(\hat{x}_1\)</span>, <span class="math notranslate nohighlight">\(\ldots\)</span>, <span class="math notranslate nohighlight">\(\hat{x}_{n-1}\)</span>, <span class="math notranslate nohighlight">\(\hat{x}_{n}\)</span>. Thus we have a stepsize</p>
-<div class="math notranslate nohighlight">
-\[
-h = \frac{\hat{x}_{\text{max}} - \hat{x}_{\text{min}}}{n} = \frac{1 - 0}{n} = \frac{1}{n}
-\]</div>
-<p>and our <span class="math notranslate nohighlight">\(\hat{x}_i\)</span> points are given by</p>
-<div class="math notranslate nohighlight">
-\[
-\hat{x}_i = \hat{x}_0 + ih, \quad i=0,1,\ldots,n.
-\]</div>
-<p>From this dicretization we get the following set of equations for <span class="math notranslate nohighlight">\(v_i\)</span> (our approximations to the exact <span class="math notranslate nohighlight">\(u_i\)</span>):</p>
-<div class="math notranslate nohighlight">
-\[
-\frac{-v_{i+1} + 2v_i -v_{i-1}}{h^2} = \lambda v_i.
-\]</div>
-<p>By inserting the boundary conditions <span class="math notranslate nohighlight">\(v_0=0\)</span> and <span class="math notranslate nohighlight">\(v_n=0\)</span> we can write this as the linear algebra eigenvalue problem</p>
-<div class="math notranslate nohighlight" id="equation-bb-eq-3">
-<span class="eqno">(6)<a class="headerlink" href="#equation-bb-eq-3" title="Permalink to this equation">#</a></span>\[
-\mathbf{A} \vec{v} = \lambda \vec{v}
-\]</div>
-<p>where</p>
-<ul class="simple">
-<li><p>the elements of the vector <span class="math notranslate nohighlight">\(\vec{v}\)</span> are <span class="math notranslate nohighlight">\(\vec{v} = [v_1, \ldots, v_{n-1}]\)</span>; and</p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is tridiag(<span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(d\)</span>, <span class="math notranslate nohighlight">\(a\)</span>), with</p>
-<ul>
-<li><p><span class="math notranslate nohighlight">\(a = -1/h^2\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(d = 2/h^2\)</span></p></li>
-</ul>
-</li>
-<li><p><em>Note:</em> In contrast to project 1, we here keep the factor <span class="math notranslate nohighlight">\(1/h^2\)</span> as part of the definition of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>.</p></li>
-</ul>
-<p>To solve this matrix equation means finding the pairs of eigenvalues and eigenvectors, (<span class="math notranslate nohighlight">\(\lambda^{(j)}, \vec{v}^{(j)}\)</span>), that satify Eq. <a class="reference internal" href="#equation-bb-eq-3">(6)</a>. These eigenvectors are then our discretized approximations to the true <em>eigenfunctions</em> <span class="math notranslate nohighlight">\(u^{(j)}(\hat{x})\)</span> that are the solutions of the differential equation in Eq. <a class="reference internal" href="#equation-bb-eq-2">(5)</a>.</p>
-<hr class="docutils" />
-<p><strong>Notation:</strong> We will use <span class="math notranslate nohighlight">\(N\)</span> to denote the size of the matrix, so that <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is an <span class="math notranslate nohighlight">\(N \times N\)</span> matrix, and <span class="math notranslate nohighlight">\(\vec{v}\)</span> a column vector of length <span class="math notranslate nohighlight">\(N\)</span>. Make sure not to confuse <span class="math notranslate nohighlight">\(N\)</span> with the number of <em>steps</em> in our discretization of <span class="math notranslate nohighlight">\(\hat{x}\)</span> (<span class="math notranslate nohighlight">\(n\)</span> steps), or the number of <span class="math notranslate nohighlight">\(\hat{x}_i\)</span> points (<span class="math notranslate nohighlight">\(n+1\)</span> points). They are related as <span class="math notranslate nohighlight">\(N = n-1\)</span>.</p>
-<hr class="docutils" />
-<p><strong>Analytical solutions:</strong> For a given matrix size <span class="math notranslate nohighlight">\(N \times N\)</span>, the eigenvalue problem in Eq. <a class="reference internal" href="#equation-bb-eq-3">(6)</a> with the tridiagonal matrix <span class="math notranslate nohighlight">\(\mathbf{A} = \text{tridiag}(a,d,a)\)</span> has the following set of analytical eigenvalues and eigenvectors:</p>
-<div class="math notranslate nohighlight">
-\[
-\lambda^{(j)} = d + 2 a \cos\left(\frac{j \pi}{N+1}\right), \quad j = 1,\ldots,N
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-\vec{v}^{(j)} = \left[\sin\left(\frac{j \pi}{N+1}\right), \sin\left(\frac{2 j \pi}{N+1}\right), \ldots, \sin\left(\frac{N j \pi}{N+1}\right)\right]^T,\quad j = 1,\ldots,N
-\]</div>
-<hr class="docutils" />
-<p><strong>Scaling of eigenvectors:</strong> Remember that if <span class="math notranslate nohighlight">\(\vec{v}\)</span> is an eigenvector of <span class="math notranslate nohighlight">\(\mathbf{A} \vec{v} = \lambda \vec{v}\)</span>, then a scaled vector <span class="math notranslate nohighlight">\(c \vec{v}\)</span>, where <span class="math notranslate nohighlight">\(c\)</span> is some constant, is an equally good eigenvector. (Remember that c can be negative.) When presenting your results, and when comparing to results from Armadillo, it will be useful to scale each eigenvector to have unit norm (i.e. vector length 1). You can do this easily using the Armadillo function <code class="docutils literal notranslate"><span class="pre">arma::normalise</span></code> described <a class="reference external" href="http://arma.sourceforge.net/docs.html#normalise">here</a>.</p>
-</section>
-<section id="problems">
-<h2>Problems<a class="headerlink" href="#problems" title="Permalink to this headline">#</a></h2>
-<section id="problem-1">
-<h3>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this headline">#</a></h3>
-<p>With the definition <span class="math notranslate nohighlight">\(\hat{x} \equiv x/L\)</span>, show that Eq. <a class="reference internal" href="#equation-bb-eq-1">(4)</a> can be written as Eq. <a class="reference internal" href="#equation-bb-eq-2">(5)</a>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>See the note after Eq. <a class="reference internal" href="#equation-bb-eq-2">(5)</a> about some sloppy notation. Note that it’s perfectly fine to use the simple notation <span class="math notranslate nohighlight">\(u(\hat{x})\)</span> throughout this project, but keep in mind that <span class="math notranslate nohighlight">\(u(\hat{x})\)</span> and <span class="math notranslate nohighlight">\(u(x)\)</span> are <em>different</em> functions.</p>
-</div>
-</section>
-<section id="problem-2">
-<h3>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this headline">#</a></h3>
-<p>Before we get started with implementing the Jacobi rotation algorithm, let’s make sure that we can set up the tridiagonal matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> correctly. So, write a short program that:</p>
-<ul class="simple">
-<li><p>sets up the tridiagonal <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> for <span class="math notranslate nohighlight">\(N=6\)</span>;</p></li>
-<li><p>solves <span class="math notranslate nohighlight">\(\mathbf{A} \vec{v} = \lambda \vec{v}\)</span> using Armadillo’s <code class="docutils literal notranslate"><span class="pre">arma::eig_sym</span></code>, described <a class="reference external" href="http://arma.sourceforge.net/docs.html#eig_sym">here</a>;</p></li>
-<li><p>checks that the eigenvalues and eigenvectors from Armadillo agrees with the analytical result for <span class="math notranslate nohighlight">\(N=6\)</span>. (Remember scaling of eigenvectors, as discussed above.)</p></li>
-</ul>
-</section>
-<section id="problem-3">
-<h3>Problem 3<a class="headerlink" href="#problem-3" title="Permalink to this headline">#</a></h3>
-<p>An important part of the Jacobi algorithm is to have a function that can identify the largest (in absolute value) off-diagonal element of a matrix. Here we specialize to the case of a <em>symmetric</em> matrix.</p>
-<p><strong>a)</strong> Write a C++ function that can identify the largest off-diagonal element of a matrix. A suggestion is to write a function that</p>
-<ul class="simple">
-<li><p>has return type <code class="docutils literal notranslate"><span class="pre">double</span></code></p></li>
-<li><p>takes an Armadillo matrix as input</p></li>
-<li><p>takes <em>references</em> to two integers as input</p></li>
-<li><p>identifies the largest off-diagonal element (in absolute value) in the matrix, under the assumption of a symmetric matrix</p></li>
-<li><p>writes the matrix indices for this element to the two integer references</p></li>
-<li><p>returns the value of this matrix element</p></li>
-</ul>
-<p>A simple function signature could then be</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">max_offdiag_symmetric</span><span class="p">(</span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">l</span><span class="p">),</span><span class="w"></span>
-</pre></div>
-</div>
-<p>Or, to avoid copying the (potentially large) matrix A every time we run the function, we could simply pass in a reference to A. Since the function <code class="docutils literal notranslate"><span class="pre">max_offdiag_symmetric</span></code> won’t be modifying the matrix in any way, we should make this explicit by using a <code class="docutils literal notranslate"><span class="pre">const</span></code> reference, like this:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">max_offdiag_symmetric</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="o">&amp;</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">l</span><span class="p">)</span><span class="w"></span>
-</pre></div>
-</div>
-<p><strong>b)</strong> Write a small test code that tests the above function using the matrix</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-A = 
-\begin{bmatrix}
-1 &amp; 0 &amp; 0 &amp; 0.5\\
-0 &amp; 1 &amp; -0.7 &amp; 0\\
-0 &amp; -0.7 &amp; 1 &amp; 0\\
-0.5 &amp; 0 &amp; 0 &amp; 1
-\end{bmatrix}
-\end{split}\]</div>
-</section>
-<section id="problem-4">
-<h3>Problem 4<a class="headerlink" href="#problem-4" title="Permalink to this headline">#</a></h3>
-<p><strong>a)</strong> Write a code implementation of Jacobi’s rotation algorithm for solving Eq. <a class="reference internal" href="#equation-bb-eq-3">(6)</a>. See the code snippets at the end of this page for a suggested code structure.</p>
-<p><strong>b)</strong> Let <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> be of size <span class="math notranslate nohighlight">\(6 \times 6\)</span>. Test your code by checking that the eigenvalues and eigenvectors you get agree with the analytical results for <span class="math notranslate nohighlight">\(N=6\)</span>.</p>
-</section>
-<section id="problem-5">
-<h3>Problem 5<a class="headerlink" href="#problem-5" title="Permalink to this headline">#</a></h3>
-<p>Now let’s look at how many similarity transformations we need before we reach a result where all non-diagonal matrix elements are close to zero.</p>
-<p><strong>a)</strong> By running your program with different choices of <span class="math notranslate nohighlight">\(N\)</span>, try to estimate how the number of required transformations scale with the matrix size <span class="math notranslate nohighlight">\(N\)</span> when you use your code to solve Eq. <a class="reference internal" href="#equation-bb-eq-3">(6)</a>. Present your scaling data either in a table or a plot (or both).</p>
-<p><strong>b)</strong> What scaling behaviour would you expect to see if <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> was a dense matrix?</p>
-<p><strong>First hint:</strong> Think about the result you got in problem a). Why is it that the algorithm is so slow, even when starting with a matrix with so many zero elements?</p>
-<p><strong>Second hint:</strong> While you’re not required to do so, there’s of course nothing stopping you from just testing the case in b) with your Jacobi code! Here’s a quick way to generate a N*N dense and symmetric matrix with random entries in Armadillo:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Generate random N*N matrix</span>
-<span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">).</span><span class="n">randn</span><span class="p">();</span><span class="w">  </span>
-
-<span class="c1">// Symmetrize the matrix by reflecting the upper triangle to lower triangle</span>
-<span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">symmatu</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="w">  </span>
-</pre></div>
-</div>
-</section>
-<section id="problem-6">
-<h3>Problem 6<a class="headerlink" href="#problem-6" title="Permalink to this headline">#</a></h3>
-<p><strong>a)</strong> For a discretization of <span class="math notranslate nohighlight">\(\hat{x}\)</span> with <span class="math notranslate nohighlight">\(n=10\)</span> steps, solve Eq. <a class="reference internal" href="#equation-bb-eq-3">(6)</a> using your Jacobi code and make a plot of the three eigenvectors corresponding to the three lowest eigenvalues. The plot should show vector elements <span class="math notranslate nohighlight">\(v_i\)</span> against the corresponding positions <span class="math notranslate nohighlight">\(\hat{x}_i\)</span>.</p>
-<p>Since we are effectively showing the solutions to a differential equation, your plot should also include the boundary points <span class="math notranslate nohighlight">\((\hat{x}_0, v_0)\)</span> and <span class="math notranslate nohighlight">\((\hat{x}_n, v_n)\)</span>.</p>
-<p>Plot the corresponding analytical eigenvectors (extended with the boundary points) in the same plot.</p>
-<p><strong>b)</strong> Make the same plot for discretization of <span class="math notranslate nohighlight">\(\hat{x}\)</span> with <span class="math notranslate nohighlight">\(n=100\)</span> steps.</p>
-<!-- 
-### Problem X
-Jacobi's rotation algorithm is based on an important property of orthogonal transformations that we will show here. Assume that 
-
-- $\vec{v}_i$ is a set of *orthonormal* basis vectors, i.e. that $\vec{v}_i^T \cdot \vec{v}_j = \delta_{ij}$.
-- $\mathbf{U}$ is an *orthogonal* transformation matrix, i.e. that $\mathbf{U}^T = \mathbf{U}^{-1}$.
-
-Show that transformations with $\mathbf{U}$ preserves orthonormality, i.e. show that the set of vectors $\vec{w}_i = \mathbf{U} \vec{v}_i$ is also an orthonormal set.
- -->
-</section>
-</section>
-<hr class="docutils" />
-<section id="code-snippets">
-<h2>Code snippets<a class="headerlink" href="#code-snippets" title="Permalink to this headline">#</a></h2>
-<p><strong>A suggested code structure:</strong> There are many ways of designing the code for this project. The three function declarations (and descriptions) below give a hint of one possible approach:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Determine the the max off-diagonal element of a symmetric matrix A</span>
-<span class="c1">// - Saves the matrix element indicies to k and l </span>
-<span class="c1">// - Returns absolute value of A(k,l) as the function return value</span>
-<span class="kt">double</span><span class="w"> </span><span class="nf">max_offdiag_symmetric</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="o">&amp;</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">l</span><span class="p">);</span><span class="w"></span>
-
-<span class="c1">// Performs a single Jacobi rotation, to &quot;rotate away&quot;</span>
-<span class="c1">// the off-diagonal element at A(k,l).</span>
-<span class="c1">// - Assumes symmetric matrix, so we only consider k &lt; l</span>
-<span class="c1">// - Modifies the input matrices A and R</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">jacobi_rotate</span><span class="p">(</span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="o">&amp;</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="o">&amp;</span><span class="w"> </span><span class="n">R</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">l</span><span class="p">);</span><span class="w"></span>
-
-<span class="c1">// Jacobi method eigensolver:</span>
-<span class="c1">// - Runs jacobo_rotate until max off-diagonal element &lt; eps</span>
-<span class="c1">// - Writes the eigenvalues as entries in the vector &quot;eigenvalues&quot;</span>
-<span class="c1">// - Writes the eigenvectors as columns in the matrix &quot;eigenvectors&quot;</span>
-<span class="c1">//   (The returned eigenvalues and eigenvectors are sorted using arma::sort_index)</span>
-<span class="c1">// - Stops if it the number of iterations reaches &quot;maxiter&quot;</span>
-<span class="c1">// - Writes the number of iterations to the integer &quot;iterations&quot;</span>
-<span class="c1">// - Sets the bool reference &quot;converged&quot; to true if convergence was reached before hitting maxiter</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">jacobi_eigensolver</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="o">&amp;</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">eps</span><span class="p">,</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="o">&amp;</span><span class="w"> </span><span class="n">eigenvalues</span><span class="p">,</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="o">&amp;</span><span class="w"> </span><span class="n">eigenvectors</span><span class="p">,</span><span class="w"> </span>
-<span class="w">                        </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">maxiter</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">iterations</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="o">&amp;</span><span class="w"> </span><span class="n">converged</span><span class="p">);</span><span class="w"></span>
-</pre></div>
-</div>
-<p>When such helper functions are in place and working, writing a main program for some specific task is typically not too much work. (Famous last words.)</p>
-<hr class="docutils" />
-<p><strong>Finding the max off-diagonal element:</strong> Here is one possible sketch for the function <code class="docutils literal notranslate"><span class="pre">max_offdiag_symmetric</span></code> discussed above:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// A function that finds the max off-diag element of a symmetric matrix A.</span>
-<span class="c1">// - The matrix indices of the max element are returned by writing to the  </span>
-<span class="c1">//   int references k and l (row and column, respectively)</span>
-<span class="c1">// - The value of the max element A(k,l) is returned as the function</span>
-<span class="c1">//   return value</span>
-<span class="kt">double</span><span class="w"> </span><span class="nf">max_offdiag_symmetric</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="o">&amp;</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">l</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// Get size of the matrix A. Use e.g. A.n_rows, see the Armadillo documentation</span>
-
-<span class="w">  </span><span class="c1">// Possible consistency checks:</span>
-<span class="w">  </span><span class="c1">// Check that A is square and larger than 1x1. Here you can for instance use A.is_square(), </span>
-<span class="w">  </span><span class="c1">// see the Armadillo documentation.</span>
-<span class="w">  </span><span class="c1">// </span>
-<span class="w">  </span><span class="c1">// The standard function &#39;assert&#39; from &lt;assert.h&gt; can be useful for quick checks like this </span>
-<span class="w">  </span><span class="c1">// during the code development phase. Use it like this: assert(some condition),</span>
-<span class="w">  </span><span class="c1">// e.g assert(a==b). If the condition evaluates to false, the program is killed with </span>
-<span class="w">  </span><span class="c1">// an assertion error. More info: https://www.cplusplus.com/reference/cassert/assert/</span>
-
-<span class="w">  </span><span class="c1">// Initialize references k and l to the first off-diagonal element of A</span>
-
-<span class="w">  </span><span class="c1">// Initialize a double variable &#39;maxval&#39; to A(k,l). We&#39;ll use this variable </span>
-<span class="w">  </span><span class="c1">// to keep track of the largest off-diag element.</span>
-
-<span class="w">  </span><span class="c1">// Loop through all elements in the upper triangle of A (not including the diagonal)</span>
-<span class="w">  </span><span class="c1">// When encountering a matrix element with larger absolute value than the current value of maxval,</span>
-<span class="w">  </span><span class="c1">// update k, l and max accordingly.</span>
-
-<span class="w">  </span><span class="c1">// Return maxval </span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-</div>
-<p>Note that this function has some inefficiencies: In an optimized program, you don’t want this
-function to always check that A is square and larger than 1x1 – perhaps you don’t want this
-function to check this at all, but rather just trust the input is is given from your main code.
-But during development, it is often useful to first write code that is fairly self-contained and “safe”
-(makes it easier to debug), and then optimize it afterwards.</p>
-<hr class="docutils" />
-<p><strong>Helper functions for creating tridiagonal matrices:</strong>  A standard task that you will often need is to
-create a tridiagonal matrix. Why not write a small helper function for doing precisely that? Here’s an
-outline of such a function:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Create a tridiagonal matrix tridiag(a,d,e) of size n*n, </span>
-<span class="c1">// from scalar input a, d, and e. That is, create a matrix where</span>
-<span class="c1">// - all n-1 elements on the subdiagonal have value a</span>
-<span class="c1">// - all n elements on the diagonal have value d</span>
-<span class="c1">// - all n-1 elements on the superdiagonal have value e</span>
-<span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="w"> </span><span class="nf">create_tridiagonal</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// Start from identity matrix</span>
-<span class="w">  </span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">fill</span><span class="o">::</span><span class="n">eye</span><span class="p">);</span><span class="w"></span>
-
-<span class="w">  </span><span class="c1">// Fill the first row (row index 0), e.g.</span>
-<span class="w">  </span><span class="n">A</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="n">A</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">;</span><span class="w"></span>
-
-<span class="w">  </span><span class="c1">// Loop that fills rows 2 to n-1 (row indices 1 to n-2)</span>
-
-<span class="w">  </span><span class="c1">// Fill last row (row index n-1)</span>
-<span class="w">  </span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">A</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-</div>
-<p>Again, there are ways to make this more efficient, e.g. by writing the diagonal elements
-directly when we create the matrix, e.g.</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Start from identity matrix</span>
-<span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">fill</span><span class="o">::</span><span class="n">eye</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">d</span><span class="p">;</span><span class="w"></span>
-</pre></div>
-</div>
-<p>But this function will anyway not be the computational bottleneck of your code, so you might as well
-keep the code more explicit if you find that easier to read/understand.</p>
-<p>Once you have a function <code class="docutils literal notranslate"><span class="pre">create_tridiagonal</span></code>, you could easily add a function specialized to the symmetric case,
-that simply uses the more general function:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Create a symmetric tridiagonal matrix tridiag(a,d,a) of size n*n</span>
-<span class="c1">// from scalar input a and d.</span>
-<span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="w"> </span><span class="nf">create_symmetric_tridiagonal</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">d</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// Call create_tridiagonal and return the result</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">create_tridiagonal</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-</div>
-<p>The above functions assume that all elements on a given sub-, super- or main diagonal are identical. In a more general case
-you would need to pass in three vectors with the relevant matrix elements. Then you could have a set of three helper functions as sketched here:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Create tridiagonal matrix from vectors.</span>
-<span class="c1">// - lower diagonal: vector a, lenght n-1</span>
-<span class="c1">// - main diagonal:  vector d, lenght n</span>
-<span class="c1">// - upper diagonal: vector e, lenght n-1</span>
-<span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="w"> </span><span class="nf">create_tridiagonal</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="o">&amp;</span><span class="w"> </span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="o">&amp;</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// Start from identity matrix</span>
-<span class="w">  </span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="o">::</span><span class="n">eye</span><span class="p">);</span><span class="w"></span>
-
-<span class="w">  </span><span class="c1">// Fill first row (row index 0)</span>
-
-<span class="w">  </span><span class="c1">// Loop that fills rows 2 to n-1 (row indices 1 to n-2)</span>
-<span class="w">  </span>
-<span class="w">  </span><span class="c1">// Fill last row (row index n-1)</span>
-
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">A</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-
-<span class="c1">// Create a tridiagonal matrix tridiag(a,d,e) of size n*n</span>
-<span class="c1">// from scalar input a, d and e</span>
-<span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="w"> </span><span class="nf">create_tridiagonal</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="w"> </span><span class="n">a_vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="p">(</span><span class="n">n</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">fill</span><span class="o">::</span><span class="n">ones</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="w"> </span><span class="n">d_vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">fill</span><span class="o">::</span><span class="n">ones</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">d</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="w"> </span><span class="n">e_vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">vec</span><span class="p">(</span><span class="n">n</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="n">arma</span><span class="o">::</span><span class="n">fill</span><span class="o">::</span><span class="n">ones</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">e</span><span class="p">;</span><span class="w"></span>
-
-<span class="w">  </span><span class="c1">// Call the vector version of this function and return the result</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">create_tridiagonal</span><span class="p">(</span><span class="n">a_vec</span><span class="p">,</span><span class="w"> </span><span class="n">d_vec</span><span class="p">,</span><span class="w"> </span><span class="n">e_vec</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-
-<span class="c1">// Create a symmetric tridiagonal matrix tridiag(a,d,a) of size n*n</span>
-<span class="c1">// from scalar input a and d.</span>
-<span class="n">arma</span><span class="o">::</span><span class="n">mat</span><span class="w"> </span><span class="nf">create_symmetric_tridiagonal</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">d</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// Call create_tridiagonal and return the result</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">create_tridiagonal</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</pre></div>
-</div>
-<p>Note:</p>
-<ul class="simple">
-<li><p>Having one function call another like this can help us avoid duplicating
-what would have been almost identical code in multiple functions.</p></li>
-<li><p>In C++ you can have multiple functions with the same function name (here <code class="docutils literal notranslate"><span class="pre">create_tridiagonal</span></code>)
-as long as the set of input arguments are different. This is known as <strong>function overloading</strong>.</p></li>
-</ul>
-<hr class="docutils" />
-<!-- 
-**Watch this space for more code examples...**
- -->
-</section>
+<h1>Project 2<a class="headerlink" href="#project-2" title="Link to this heading">#</a></h1>
+<p>Not published yet.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1072,7 +457,7 @@ as long as the set of input arguments are different. This is known as <strong>fu
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./book/projects"
         },
         predefinedOutput: true
@@ -1080,50 +465,88 @@ as long as the set of input arguments are different. This is known as <strong>fu
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="project1.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Project 1</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="project1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Project 1</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="project3.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="project3.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Project 3</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By the FYS3150 teaching team<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By the FYS3150 teaching team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
