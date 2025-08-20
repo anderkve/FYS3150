@@ -1,4 +1,4 @@
-# Compiling and linking, take 1
+# Compiling and linking
 
 Say we have saved our [](sec:hello_world) program to a file `main.cpp`. Before we can run it, we need to **build** it --- that is, convert our human-readable C++ code into executable machine code. The build process consists of two steps:
 
