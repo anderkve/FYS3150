@@ -61,5 +61,5 @@ We have referred to "machine code" a few times. Do you want to see what it actua
 g++ -S main.cpp
 ```
 
-This produces a file `main.s` with the code in *assembly language*, a very low-level type of language that deals directly with instructions for the CPU. Open it in your text editor and have a look --- but don't worry, we will never need to work with this language in this course! But it's nice to have seen it once.
+This produces a file `main.s` with the code in *assembly language*, a very low-level type of language that deals directly with instructions for the CPU. Open `main.s` in your text editor and have a look --- but don't worry, we will never need to work with assembly language in this course! But it's nice to have seen it once.
 
