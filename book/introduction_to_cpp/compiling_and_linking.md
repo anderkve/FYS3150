@@ -1,6 +1,6 @@
 # Compiling and linking
 
-Say we have saved our [](sec:hello_world) program to a file `main.cpp`. Before we can run it, we need to **build** it --- that is, convert our human-readable C++ code into executable machine code. The build process consists of two steps:
+Say we have saved our [](sec:hello_world) program to a file `main.cpp`. Before we can run it, we need to **build** it --- that is, convert our human-readable C++ code into executable machine code, and combine this with other machine code that our code relies on. The build process consists of two steps:
 
 1. **Compilation**: Translating each **source file** (`.cpp` file) into a corresponding **object file** (`.o` file) with machine code.
 2. **Linking**: Combine multiple object files into a single **executable**, i.e. a program we can run.
@@ -50,3 +50,16 @@ The compiler will then (1) compile `main.cpp` into `main.o`, (2) link `main.o` t
 > Knowing the difference between the compilation phase and the link phase can make it easier to hunt for bugs. Compiler errors are usually syntactic in nature --- a missing semicolon, an extra parenthesis. Linking errors usually have to do with missing or multiple definitions. If you get an error that a function or variable is defined multiple times from the linker, that's a good indication that the error is that two of your source code files have the same function or variable. 
 
 We will see this more clearly when we start creating larger projects with many files.
+
+
+
+## A peak under the hood
+
+We have referred to "machine code" a few times. Do you want to see what it actually looks like, before it's translated to binary form? You can do this with the compiler option `-S`, like this:
+
+```sh
+g++ -S main.cpp
+```
+
+This produces a file `main.s` with the code in *assembly language*, a very low-level type of language that deals directly with instructions for the CPU. Open it in your text editor and have a look --- but don't worry, we will never need to work with this language in this course! But it's nice to have seen it once.
+
