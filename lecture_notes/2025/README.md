@@ -22,7 +22,7 @@
 - Topics for Project 1:
   - Discretisation
   - Numerical differentiation
-  - Started discussion of boundary value problems (BVPs)
+  - Start discussion of boundary value problems (BVPs)
 - Code topics:
   - C++: write output to file
   - Unix terminal: redirect terminal output to file
