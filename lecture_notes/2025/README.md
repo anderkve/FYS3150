@@ -35,7 +35,7 @@
 - Topics for Project 1:
   - Discretisation
   - Numerical differentiation
-  - Finished discussion of boundary value problems (BVPs)
+  - Finish discussion of boundary value problems (BVPs)
     - Expressing a BVP as a matrix equation
     - Overview of Gaussian elimination
     - Gaussian elimintation for tridiagonal matrix → Thomas algorithm
