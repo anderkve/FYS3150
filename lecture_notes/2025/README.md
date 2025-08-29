@@ -43,6 +43,13 @@
 
 ### Lecture 5, September 4
 
+- Binary representation 
+  - Integers
+  - Floating-point numbers
+- Numerical errors
+  - Truncation errors
+  - Roundoff errors
+    - Loss of numerical precision ("catastrophic cancellation")
 
 
 ### Lecture 6, September 5
