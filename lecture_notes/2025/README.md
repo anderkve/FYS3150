@@ -23,25 +23,22 @@
   - Discretisation
   - Numerical differentiation
   - Start discussion of boundary value problems (BVPs)
-- Code topics:
-  - C++: write output to file
-  - Unix terminal: redirect terminal output to file
-  - C++: containers (`std::vector` and `std::map`)
-  - C++: integer vs floating-point division
+    - Expressing a BVP as a matrix equation
 
 
 ### Lecture 4, August 29
 
-- Topics for Project 1:
-  - Discretisation
-  - Numerical differentiation
+- Cont. topics for Project 1:
   - Finish discussion of boundary value problems (BVPs)
-    - Expressing a BVP as a matrix equation
     - Overview of Gaussian elimination
     - Gaussian elimintation for tridiagonal matrix → Thomas algorithm
   - Counting floating-point operations (FLOPs)
-- Code topics:
+- Code topics (if time):
+  - C++: write output to file
+  - Unix terminal: redirect terminal output to file
+  - C++: containers (`std::vector` and `std::map`)
   - C++: pass-by-reference vs pass-by-value
+  - C++: integer vs floating-point division
 
 
 ### Lecture 5, September 4
