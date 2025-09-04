@@ -59,12 +59,20 @@
   - Floating-point numbers
 - LU decomposition
   - What it is
-  - What it's good for:
+  - What is it good for:
     - Solving matrix equations  
 
 
 ### Lecture 7, September 11
 
+- Continue discussion of LU decomposition
+  - What is it good for:
+    - Finding the determinant
+    - Finding the inverse
+  - How: An algorithm for determining the L and U matrices
+  - PLU decomposition
+- Overview of topics for Project 2
+- Scaling equations
 
 
 ### Lecture 8, September 12
