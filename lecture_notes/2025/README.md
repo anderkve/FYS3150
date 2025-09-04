@@ -32,28 +32,35 @@
   - Finish discussion of boundary value problems (BVPs)
     - Overview of Gaussian elimination
     - Gaussian elimintation for tridiagonal matrix → Thomas algorithm
-  - Counting floating-point operations (FLOPs)
 - Code topics (if time):
   - C++: write output to file
   - Unix terminal: redirect terminal output to file
   - C++: containers (`std::vector` and `std::map`)
-  - C++: pass-by-reference vs pass-by-value
-  - C++: integer vs floating-point division
 
 
 ### Lecture 5, September 4
 
-- Binary representation 
-  - Integers
-  - Floating-point numbers
+- Counting floating-point operations (FLOPs)
 - Numerical errors
   - Truncation errors
   - Roundoff errors
     - Loss of numerical precision ("catastrophic cancellation")
+    - Example error analysis
+    - Code example: `error_analysis`
+- Code topics (if time):
+  - C++: pass-by-reference vs pass-by-value
+  - C++: integer vs floating-point division
 
 
 ### Lecture 6, September 5
 
+- Binary representation (background for roundoff error discussion)
+  - Integers
+  - Floating-point numbers
+- LU decomposition
+  - What it is
+  - What it's good for:
+    - Solving matrix equations  
 
 
 ### Lecture 7, September 11
