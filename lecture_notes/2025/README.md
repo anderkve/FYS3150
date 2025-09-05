@@ -46,14 +46,15 @@
   - Roundoff errors
     - Loss of numerical precision ("catastrophic cancellation")
     - Example error analysis
-    - Code example: `error_analysis`
-- Code topics (if time):
-  - C++: pass-by-reference vs pass-by-value
+- Code topics:
   - C++: integer vs floating-point division
 
 
 ### Lecture 6, September 5
 
+- Continue discussion of numerical errors
+  - Finish the example error analysis
+  - Code example: `error_analysis`
 - Binary representation (background for roundoff error discussion)
   - Integers
   - Floating-point numbers
@@ -61,6 +62,9 @@
   - What it is
   - What is it good for:
     - Solving matrix equations  
+- Code topics (if time):
+  - C++: pass-by-reference vs pass-by-value
+
 
 
 ### Lecture 7, September 11
