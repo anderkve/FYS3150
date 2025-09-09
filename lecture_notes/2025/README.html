@@ -506,15 +506,11 @@ document.write(`
 <ul>
 <li><p>Discretisation</p></li>
 <li><p>Numerical differentiation</p></li>
-<li><p>Started discussion of boundary value problems (BVPs)</p></li>
+<li><p>Start discussion of boundary value problems (BVPs)</p>
+<ul>
+<li><p>Expressing a BVP as a matrix equation</p></li>
 </ul>
 </li>
-<li><p>Code topics:</p>
-<ul>
-<li><p>C++: write output to file</p></li>
-<li><p>Unix terminal: redirect terminal output to file</p></li>
-<li><p>C++: containers (<code class="docutils literal notranslate"><span class="pre">std::vector</span></code> and <code class="docutils literal notranslate"><span class="pre">std::map</span></code>)</p></li>
-<li><p>C++: integer vs floating-point division</p></li>
 </ul>
 </li>
 </ul>
@@ -522,35 +518,97 @@ document.write(`
 <section id="lecture-4-august-29">
 <h2>Lecture 4, August 29<a class="headerlink" href="#lecture-4-august-29" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Topics for Project 1:</p>
+<li><p>Cont. topics for Project 1:</p>
 <ul>
-<li><p>Discretisation</p></li>
-<li><p>Numerical differentiation</p></li>
-<li><p>Finished discussion of boundary value problems (BVPs)</p>
+<li><p>Finish discussion of boundary value problems (BVPs)</p>
 <ul>
-<li><p>Expressing a BVP as a matrix equation</p></li>
 <li><p>Overview of Gaussian elimination</p></li>
 <li><p>Gaussian elimintation for tridiagonal matrix → Thomas algorithm</p></li>
 </ul>
 </li>
-<li><p>Counting floating-point operations (FLOPs)</p></li>
 </ul>
 </li>
-<li><p>Code topics:</p>
+<li><p>Code topics (if time):</p>
 <ul>
-<li><p>C++: pass-by-reference vs pass-by-value</p></li>
+<li><p>C++: write output to file</p></li>
+<li><p>Unix terminal: redirect terminal output to file</p></li>
+<li><p>C++: containers (<code class="docutils literal notranslate"><span class="pre">std::vector</span></code> and <code class="docutils literal notranslate"><span class="pre">std::map</span></code>)</p></li>
 </ul>
 </li>
 </ul>
 </section>
 <section id="lecture-5-september-4">
 <h2>Lecture 5, September 4<a class="headerlink" href="#lecture-5-september-4" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Counting floating-point operations (FLOPs)</p></li>
+<li><p>Numerical errors</p>
+<ul>
+<li><p>Truncation errors</p></li>
+<li><p>Roundoff errors</p>
+<ul>
+<li><p>Loss of numerical precision (“catastrophic cancellation”)</p></li>
+<li><p>Example error analysis</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Code topics:</p>
+<ul>
+<li><p>C++: integer vs floating-point division</p></li>
+</ul>
+</li>
+</ul>
 </section>
 <section id="lecture-6-september-5">
 <h2>Lecture 6, September 5<a class="headerlink" href="#lecture-6-september-5" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Continue discussion of numerical errors</p>
+<ul>
+<li><p>Finish the example error analysis</p></li>
+<li><p>Code example: <code class="docutils literal notranslate"><span class="pre">error_analysis</span></code></p></li>
+</ul>
+</li>
+<li><p>Binary representation (background for roundoff error discussion)</p>
+<ul>
+<li><p>Integers</p></li>
+<li><p>Floating-point numbers</p></li>
+</ul>
+</li>
+<li><p>LU decomposition</p>
+<ul>
+<li><p>What it is</p></li>
+<li><p>What is it good for:</p>
+<ul>
+<li><p>Solving matrix equations</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Code topics (if time):</p>
+<ul>
+<li><p>C++: pass-by-reference vs pass-by-value</p></li>
+</ul>
+</li>
+</ul>
 </section>
 <section id="lecture-7-september-11">
 <h2>Lecture 7, September 11<a class="headerlink" href="#lecture-7-september-11" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Continue discussion of LU decomposition</p>
+<ul>
+<li><p>What is it good for:</p>
+<ul>
+<li><p>Finding the determinant</p></li>
+<li><p>Finding the inverse</p></li>
+</ul>
+</li>
+<li><p>How: An algorithm for determining the L and U matrices</p></li>
+<li><p>PLU decomposition</p></li>
+</ul>
+</li>
+<li><p>Overview of topics for Project 2</p></li>
+<li><p>Scaling equations</p></li>
+</ul>
 </section>
 <section id="lecture-8-september-12">
 <h2>Lecture 8, September 12<a class="headerlink" href="#lecture-8-september-12" title="Link to this heading">#</a></h2>

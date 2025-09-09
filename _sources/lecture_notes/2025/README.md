@@ -22,38 +22,61 @@
 - Topics for Project 1:
   - Discretisation
   - Numerical differentiation
-  - Started discussion of boundary value problems (BVPs)
-- Code topics:
-  - C++: write output to file
-  - Unix terminal: redirect terminal output to file
-  - C++: containers (`std::vector` and `std::map`)
-  - C++: integer vs floating-point division
+  - Start discussion of boundary value problems (BVPs)
+    - Expressing a BVP as a matrix equation
 
 
 ### Lecture 4, August 29
 
-- Topics for Project 1:
-  - Discretisation
-  - Numerical differentiation
-  - Finished discussion of boundary value problems (BVPs)
-    - Expressing a BVP as a matrix equation
+- Cont. topics for Project 1:
+  - Finish discussion of boundary value problems (BVPs)
     - Overview of Gaussian elimination
     - Gaussian elimintation for tridiagonal matrix → Thomas algorithm
-  - Counting floating-point operations (FLOPs)
-- Code topics:
-  - C++: pass-by-reference vs pass-by-value
+- Code topics (if time):
+  - C++: write output to file
+  - Unix terminal: redirect terminal output to file
+  - C++: containers (`std::vector` and `std::map`)
 
 
 ### Lecture 5, September 4
 
+- Counting floating-point operations (FLOPs)
+- Numerical errors
+  - Truncation errors
+  - Roundoff errors
+    - Loss of numerical precision ("catastrophic cancellation")
+    - Example error analysis
+- Code topics:
+  - C++: integer vs floating-point division
 
 
 ### Lecture 6, September 5
+
+- Continue discussion of numerical errors
+  - Finish the example error analysis
+  - Code example: `error_analysis`
+- Binary representation (background for roundoff error discussion)
+  - Integers
+  - Floating-point numbers
+- LU decomposition
+  - What it is
+  - What is it good for:
+    - Solving matrix equations  
+- Code topics (if time):
+  - C++: pass-by-reference vs pass-by-value
 
 
 
 ### Lecture 7, September 11
 
+- Continue discussion of LU decomposition
+  - What is it good for:
+    - Finding the determinant
+    - Finding the inverse
+  - How: An algorithm for determining the L and U matrices
+  - PLU decomposition
+- Overview of topics for Project 2
+- Scaling equations
 
 
 ### Lecture 8, September 12

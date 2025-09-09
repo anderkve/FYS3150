@@ -135,19 +135,19 @@ out the boundary points for this problem.
 (If you *do* include the boundary points, make sure to comment on how you treat the "0/0" cases for the relative error.)
 
 
-**a)** Make a plot that shows the (logarithm of) the *absolute* error,
+**a)** Make a plot that shows the (logarithm of) the absolute error,
 
 $$
-\log_{10}(\Delta_i) = \log_{10}(|u_i - v_i|)
+\log_{10}(|\Delta_i|) = \log_{10}(|u_i - v_i|)
 $$  
 
-as a function of $x_i$. Show $\log_{10}(\Delta_i)$ for different choices of $n_{\text{steps}}$ as different graphs in the same plot.
+as a function of $x_i$. Show $\log_{10}(|\Delta_i|)$ for different choices of $n_{\text{steps}}$ as different graphs in the same plot.
 
 
-**b)** Similarly, make a plot of the *relative* error
+**b)** Similarly, make a plot with the *relative* error
 
 $$
-\log_{10}(\epsilon_i) = \log_{10}\left(\left| \frac{u_i - v_i}{u_i} \right| \right)
+\log_{10}(|\epsilon_i|) = \log_{10} \left( | \frac{u_i - v_i}{u_i} | \right)
 $$
 
 as function of $x_i$. Again, one graph per choice of $n_{\text{steps}}$.

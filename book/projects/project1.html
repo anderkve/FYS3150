@@ -585,16 +585,16 @@ where <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is the tr
 (<span class="math notranslate nohighlight">\(u(0) = 0\)</span> and <span class="math notranslate nohighlight">\(u(1) = 0\)</span>), you should have exactly zero error at these points. You can therefore leave
 out the boundary points for this problem.</p>
 <p>(If you <em>do</em> include the boundary points, make sure to comment on how you treat the “0/0” cases for the relative error.)</p>
-<p><strong>a)</strong> Make a plot that shows the (logarithm of) the <em>absolute</em> error,</p>
+<p><strong>a)</strong> Make a plot that shows the (logarithm of) the absolute error,</p>
 <div class="math notranslate nohighlight">
 \[
-\log_{10}(\Delta_i) = \log_{10}(|u_i - v_i|)
+\log_{10}(|\Delta_i|) = \log_{10}(|u_i - v_i|)
 \]</div>
-<p>as a function of <span class="math notranslate nohighlight">\(x_i\)</span>. Show <span class="math notranslate nohighlight">\(\log_{10}(\Delta_i)\)</span> for different choices of <span class="math notranslate nohighlight">\(n_{\text{steps}}\)</span> as different graphs in the same plot.</p>
-<p><strong>b)</strong> Similarly, make a plot of the <em>relative</em> error</p>
+<p>as a function of <span class="math notranslate nohighlight">\(x_i\)</span>. Show <span class="math notranslate nohighlight">\(\log_{10}(|\Delta_i|)\)</span> for different choices of <span class="math notranslate nohighlight">\(n_{\text{steps}}\)</span> as different graphs in the same plot.</p>
+<p><strong>b)</strong> Similarly, make a plot with the <em>relative</em> error</p>
 <div class="math notranslate nohighlight">
 \[
-\log_{10}(\epsilon_i) = \log_{10}\left(\left| \frac{u_i - v_i}{u_i} \right| \right)
+\log_{10}(|\epsilon_i|) = \log_{10} \left( | \frac{u_i - v_i}{u_i} | \right)
 \]</div>
 <p>as function of <span class="math notranslate nohighlight">\(x_i\)</span>. Again, one graph per choice of <span class="math notranslate nohighlight">\(n_{\text{steps}}\)</span>.</p>
 <p><strong>c</strong>) Now make a table that shows the <em>maximum</em> relative error <span class="math notranslate nohighlight">\(\max(\epsilon_i)\)</span> for each choice of <span class="math notranslate nohighlight">\(n_{\text{steps}}\)</span>, up to <span class="math notranslate nohighlight">\(n_{\text{steps}} = 10^7\)</span>. Comment on your results, and feel free to also make a plot to visualise the result.</p>
