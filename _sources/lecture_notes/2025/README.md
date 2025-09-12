@@ -58,37 +58,48 @@
 - Binary representation (background for roundoff error discussion)
   - Integers
   - Floating-point numbers
-- LU decomposition
-  - What it is
-  - What is it good for:
-    - Solving matrix equations  
-- Code topics (if time):
+- Code topics:
   - C++: pass-by-reference vs pass-by-value
-
 
 
 ### Lecture 7, September 11
 
-- Continue discussion of LU decomposition
-  - What is it good for:
-    - Finding the determinant
-    - Finding the inverse
-  - How: An algorithm for determining the L and U matrices
-  - PLU decomposition
 - Overview of topics for Project 2
 - Scaling equations
+- Project 2 physics case: The buckling beam
+  - Two-point boundary value problem, connection to eigenvalue problem
+- Start discussion of eigenvalue problems
 
 
 ### Lecture 8, September 12
 
+- Cont. discussion of eigenvalue problems
+  - Similarity transformations
+  - Jacobi's rotation method
+    - Main idea
+    - Example with $2 \times 2$ matrix
+    - Algorithm for $N \times N$ case
+- Code topics:
+  - Debugging tips & tricks
+- LU decomposition
+  - What it is
+  - What is it good for:
+    - Solving matrix equations  
+    - Finding the determinant
+    - Finding the inverse
+  - How: An algorithm for determining the L and U matrices
+  - PLU decomposition
 
 
-### Lecture 9, September 18
+### Lecture 9, September 18 (video lecture)
+
+- Finsh discussion of LU decomposition
+- Iterative methods for solving matrix equations
 
 
+### Lecture 10, September 19 (video lecture)
 
-### Lecture 10, September 19
-
+- Any remaining topics from the previous lecture
 
 
 ### Lecture 11, September 25

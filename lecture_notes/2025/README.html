@@ -57,6 +57,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture_notes/2025/README';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -445,8 +447,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-6-september-5">Lecture 6, September 5</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-7-september-11">Lecture 7, September 11</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-8-september-12">Lecture 8, September 12</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-9-september-18">Lecture 9, September 18</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-10-september-19">Lecture 10, September 19</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-9-september-18-video-lecture">Lecture 9, September 18 (video lecture)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-10-september-19-video-lecture">Lecture 10, September 19 (video lecture)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-11-september-25">Lecture 11, September 25</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-12-september-26">Lecture 12, September 26</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-13-october-2">Lecture 13, October 2</a></li>
@@ -574,17 +576,7 @@ document.write(`
 <li><p>Floating-point numbers</p></li>
 </ul>
 </li>
-<li><p>LU decomposition</p>
-<ul>
-<li><p>What it is</p></li>
-<li><p>What is it good for:</p>
-<ul>
-<li><p>Solving matrix equations</p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Code topics (if time):</p>
+<li><p>Code topics:</p>
 <ul>
 <li><p>C++: pass-by-reference vs pass-by-value</p></li>
 </ul>
@@ -594,10 +586,42 @@ document.write(`
 <section id="lecture-7-september-11">
 <h2>Lecture 7, September 11<a class="headerlink" href="#lecture-7-september-11" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Continue discussion of LU decomposition</p>
+<li><p>Overview of topics for Project 2</p></li>
+<li><p>Scaling equations</p></li>
+<li><p>Project 2 physics case: The buckling beam</p>
 <ul>
+<li><p>Two-point boundary value problem, connection to eigenvalue problem</p></li>
+</ul>
+</li>
+<li><p>Start discussion of eigenvalue problems</p></li>
+</ul>
+</section>
+<section id="lecture-8-september-12">
+<h2>Lecture 8, September 12<a class="headerlink" href="#lecture-8-september-12" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Cont. discussion of eigenvalue problems</p>
+<ul>
+<li><p>Similarity transformations</p></li>
+<li><p>Jacobi’s rotation method</p>
+<ul>
+<li><p>Main idea</p></li>
+<li><p>Example with <span class="math notranslate nohighlight">\(2 \times 2\)</span> matrix</p></li>
+<li><p>Algorithm for <span class="math notranslate nohighlight">\(N \times N\)</span> case</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Code topics:</p>
+<ul>
+<li><p>Debugging tips &amp; tricks</p></li>
+</ul>
+</li>
+<li><p>LU decomposition</p>
+<ul>
+<li><p>What it is</p></li>
 <li><p>What is it good for:</p>
 <ul>
+<li><p>Solving matrix equations</p></li>
 <li><p>Finding the determinant</p></li>
 <li><p>Finding the inverse</p></li>
 </ul>
@@ -606,18 +630,20 @@ document.write(`
 <li><p>PLU decomposition</p></li>
 </ul>
 </li>
-<li><p>Overview of topics for Project 2</p></li>
-<li><p>Scaling equations</p></li>
 </ul>
 </section>
-<section id="lecture-8-september-12">
-<h2>Lecture 8, September 12<a class="headerlink" href="#lecture-8-september-12" title="Link to this heading">#</a></h2>
+<section id="lecture-9-september-18-video-lecture">
+<h2>Lecture 9, September 18 (video lecture)<a class="headerlink" href="#lecture-9-september-18-video-lecture" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Finsh discussion of LU decomposition</p></li>
+<li><p>Iterative methods for solving matrix equations</p></li>
+</ul>
 </section>
-<section id="lecture-9-september-18">
-<h2>Lecture 9, September 18<a class="headerlink" href="#lecture-9-september-18" title="Link to this heading">#</a></h2>
-</section>
-<section id="lecture-10-september-19">
-<h2>Lecture 10, September 19<a class="headerlink" href="#lecture-10-september-19" title="Link to this heading">#</a></h2>
+<section id="lecture-10-september-19-video-lecture">
+<h2>Lecture 10, September 19 (video lecture)<a class="headerlink" href="#lecture-10-september-19-video-lecture" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Any remaining topics from the previous lecture</p></li>
+</ul>
 </section>
 <section id="lecture-11-september-25">
 <h2>Lecture 11, September 25<a class="headerlink" href="#lecture-11-september-25" title="Link to this heading">#</a></h2>
@@ -729,8 +755,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-6-september-5">Lecture 6, September 5</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-7-september-11">Lecture 7, September 11</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-8-september-12">Lecture 8, September 12</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-9-september-18">Lecture 9, September 18</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-10-september-19">Lecture 10, September 19</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-9-september-18-video-lecture">Lecture 9, September 18 (video lecture)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-10-september-19-video-lecture">Lecture 10, September 19 (video lecture)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-11-september-25">Lecture 11, September 25</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-12-september-26">Lecture 12, September 26</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-13-october-2">Lecture 13, October 2</a></li>

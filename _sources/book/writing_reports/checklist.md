@@ -22,6 +22,9 @@ Writing a good scientific report is difficult and requires attention to a lot of
 
 - **Avoid empty lines after equations:** Avoid empty lines after equations in your .tex file, unless you actually want to start a new paragraph in your text. (LaTeX will indent the text following an empty line.) If you just want some "air" surrounding the equations in your .tex file, use empty comment lines.
 
+- **Equations are part of sentences:** Grammatically, equations should be regarded as part of the sentence they appear in. This means that equations typically should be followed by a comma or a period, depending on whether you are continuing the sentence after the equation or starting a new one. (For examples, see the project report template.)
+
+
 - **Quotation marks:** To get correct quotation marks, you should use LaTeX code like this
 
   ```
