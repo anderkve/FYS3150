@@ -107,7 +107,6 @@
 - Overview of topics for Project 3
 - Code topics:
   - Classes in C++
-  - Code design for simulations
 - Project 3 physics case: Penning traps
 
 
