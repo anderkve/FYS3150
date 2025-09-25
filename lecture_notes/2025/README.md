@@ -106,13 +106,14 @@
 - Iterative methods for solving matrix equations
 - Overview of topics for Project 3
 - Code topics:
-  - Classes in C++
-- Project 3 physics case: Penning traps
+  - Begin discussing classes in C++
 
 
 ### Lecture 12, September 26
-- Cont. discussion of the physics case for Project 3: Penning traps
-- Initial value problems:
+- Code topics:
+  - Cont. discussion of classes in C++
+- Project 3 physics case: Penning traps
+- Start discussing initial value problems
   - Introduction
   - Classification
   - From a second-order equation to coupled first-order equations
