@@ -94,20 +94,32 @@
 ### Lecture 9, September 18 (video lecture)
 
 - Finsh discussion of LU decomposition
-- Iterative methods for solving matrix equations
 
 
 ### Lecture 10, September 19 (video lecture)
 
-- Any remaining topics from the previous lecture
+- (Skipped)
 
 
 ### Lecture 11, September 25
 
+- Iterative methods for solving matrix equations
+- Overview of topics for Project 3
+- Code topics:
+  - Classes in C++
+  - Code design for simulations
+- Project 3 physics case: Penning traps
 
 
 ### Lecture 12, September 26
-
+- Cont. discussion of the physics case for Project 3: Penning traps
+- Initial value problems:
+  - Introduction
+  - Classification
+  - From a second-order equation to coupled first-order equations
+  - Local vs global errors
+  - Forward Euler
+  - Forward Euler and Euler-Cromer for coupled equations
 
 
 ### Lecture 13, October 2
