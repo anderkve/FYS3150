@@ -1,12 +1,10 @@
-# FYS3150 Computational Physics in a Container: User Guide (Apptainer Edition)
+# Apptainer
 
-Welcome to the FYS3150 Computational Physics Apptainer environment! This guide will help you set up and run the Apptainer image for the course on your machine, whether you're using Linux, Windows, or macOS (Intel or ARM architecture).
+Within the context of this course, there are a number of dependencies required to develop code for the projects (such as `g++` for compilation, `git` for version control, `Armadillo`, `OpenMP`, etc.). The instructors have put together an image (essentially the blueprint for a container) which wraps all of these together, using the application [Apptainer](https://apptainer.org/docs/user/latest/introduction.html).
+
+This guide will help you set up and run this Apptainer image for the course on your machine, whether you're using Linux, Windows, or macOS (Intel or ARM architecture).
 
 ## Getting Started
-
-### Step 0: Understanding containers and how they differ from virtual machines (VMs)
-
-Many resources exist online, but Red Hat offers a [concise introduction](https://www.redhat.com/en/topics/containers/containers-vs-vms) to containers in general, while Apptainer provides a summary of its [particular implementation](https://apptainer.org/docs/user/latest/introduction.html).
 
 ### Step 1: Apptainer Installation
 
@@ -14,13 +12,13 @@ Apptainer is primarily designed to run natively on Linux systems, because it lev
 
 #### Installation on Windows
 
-On Windows, the Linux environment is handled by WSL. Therefore, once it is installed (see [here](https://anderkve.github.io/FYS3150/book/getting_ready/windows_users.html)), you can follow the instructions for installation on Linux below.
+On Windows, the Linux environment is handled by WSL. Therefore, once it is installed (see [Windows users](sec:windows_users)), you can follow the instructions for installation on Linux below.
 
 #### Installation on Mac
 
 On Mac, the recommended path to setting up a Linux environment is through [Lima](https://lima-vm.io/docs/), which is a lightweight virtual machine manager designed to run Linux environments efficiently on macOS.
 
-The first step to working with Lima is to install it with Homebrew (see [here](https://anderkve.github.io/FYS3150/book/getting_ready/mac_users.html#installation-of-basic-software) if you haven't yet installed the Homebrew package manager on your machine):
+The first step to working with Lima is to install it with Homebrew (see [installation of basic software](sec:installation_of_basic_software) if you haven't yet installed the Homebrew package manager on your machine):
 
 ```bash
 brew install lima
@@ -81,7 +79,7 @@ Once the image (file ending in `.sif`) is downloaded, you should move it to a lo
 ```
 mv /path/to/downloads/folder/<name_of_image.sif> ~
 ```
-**N.B.** - You can also put it directly in the folder where you're writing your code (the one under version control), but in this case it's advisable to add the image to the `.gitignore` list (see the description in the [course material](https://anderkve.github.io/FYS3150/book/using_git/add_a_README_and_gitignore.html#gitignore) if you haven't set one up) so that it's not mistakenly added to your repository. Since the image is a few hundred MB in size, UiO GitHub will reject it being pushed to the server (similar to other large files that can be generated in the projects of the course).
+**N.B.** - You can also put it directly in the folder where you're writing your code (the one under version control), but in this case it's advisable to add the image to the `.gitignore` list (see the description in the section on [gitignore](sec:gitignore) if you haven't set one up) so that it's not mistakenly added to your repository. Since the image is a few hundred MB in size, UiO GitHub will reject it being pushed to the server (similar to other large files that can be generated in the projects of the course).
 
 ### Step 3: Running the Image
 

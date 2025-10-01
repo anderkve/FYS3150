@@ -69,6 +69,11 @@ parts:
     chapters:
       - file: book/using_make/intro
 
+  - caption: Containerization
+    chapters:
+      - file: book/containerization/intro_to_containers
+      - file: book/containerization/apptainer
+
   - caption: Writing reports
     chapters:
       - file: book/writing_reports/introduction_to_latex

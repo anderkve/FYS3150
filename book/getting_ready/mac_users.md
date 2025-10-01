@@ -38,7 +38,7 @@ bash
 ```
 
 
-
+(sec:installation_of_basic_software)=
 ## Installation of basic software
 
 Installation of software for C++ can be a little bit of a hassle on macOS. Here we'll try to walk you through the process, step-by-step.
