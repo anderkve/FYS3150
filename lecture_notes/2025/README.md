@@ -117,21 +117,30 @@
   - Introduction
   - Classification
   - From a second-order equation to coupled first-order equations
-  - Local vs global errors
-  - Forward Euler
-  - Forward Euler and Euler-Cromer for coupled equations
 
 
 ### Lecture 13, October 2
 
+- Continue discussion of initial value problems
+  - Local vs global errors
+  - Forward Euler
+  - Predictor-Corrector
+  - Runge-Kutta
+    - RK4 for sets of coupled equations
 
 
 ### Lecture 14, October 3
 
+- Grading system for projects 3--5
+- Writing tips for how to write a good scientific report
 
 
 ### Lecture 15, October 9
-
+- Continue discussion of initial value problems
+  - Leapfrog
+  - Verlet
+- Classification of methods for solving IVPs
+- Matrix method for stability analysis
 
 
 ### Lecture 16, October 10
