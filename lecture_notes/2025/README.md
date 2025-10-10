@@ -136,31 +136,35 @@
 
 
 ### Lecture 15, October 9
+- (Cancelled)
+
+### Lecture 16, October 10
 - Continue discussion of initial value problems
   - Leapfrog
   - Verlet
 - Classification of methods for solving IVPs
-- Matrix method for stability analysis
-
-
-### Lecture 16, October 10
-
+- *If time:* Matrix method for stability analysis
 
 
 ### Lecture 17, October 16
-
+- Start on topics for Project 4
+- Background: probability theory, meaning of probability
+- Probability theory basics (notation, definitions, ...)
+- Prob. distribution functions in many variables
 
 
 ### Lecture 18, October 17
-
+- Expectation values
+- Project 4 physics case: the 2D Ising model
 
 
 ### Lecture 19, October 23
-
+- Introduction to Monte Carlo methods
+- Markov chains
 
 
 ### Lecture 20, October 24
-
+- Markov chain Monte Carlo (MCMC)
 
 
 ### Lecture 21, October 30
