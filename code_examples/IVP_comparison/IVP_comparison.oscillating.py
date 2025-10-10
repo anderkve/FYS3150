@@ -133,7 +133,8 @@ dt = 0.20
 
 t_0 = 0.0
 
-t_max = 15.0
+# t_max = 15.0
+t_max = 100.0
 
 
 # Create figre for plotting
