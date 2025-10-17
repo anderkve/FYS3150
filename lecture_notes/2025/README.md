@@ -155,10 +155,12 @@
 - Probability theory basics (notation, definitions, ...)
 - Prob. distribution functions in many variables
 - Expectation values
-- *If time*: Project 4 physics case: the 2D Ising model
+- *If time*: Introduction to Monte Carlo methods 
 
 
 ### Lecture 19, October 23
+- Introduction to Monte Carlo methods 
+- Project 4 physics case: the 2D Ising model
 - Introduction to Monte Carlo methods
 - Markov chains
 
