@@ -143,19 +143,19 @@
   - Leapfrog
   - Verlet
 - Classification of methods for solving IVPs
-- *If time:* Matrix method for stability analysis
 
 
 ### Lecture 17, October 16
-- Start on topics for Project 4
+- Continue discussion of classification of IVP methods
+- Overview of topics for Project 4
 - Background: probability theory, meaning of probability
-- Probability theory basics (notation, definitions, ...)
-- Prob. distribution functions in many variables
 
 
 ### Lecture 18, October 17
+- Probability theory basics (notation, definitions, ...)
+- Prob. distribution functions in many variables
 - Expectation values
-- Project 4 physics case: the 2D Ising model
+- *If time*: Project 4 physics case: the 2D Ising model
 
 
 ### Lecture 19, October 23
