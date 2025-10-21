@@ -5,6 +5,7 @@ Make sure to add (and keep up to date) a file `README.md` at the base directory 
 
 You can format the file nicely using Markdown syntax, but it is also OK to just write plain text.
 
+(sec:gitignore)=
 ## gitignore
 As with README, GitHub will also suggest adding a `.gitignore` file to your repository. A gitignore file is a file that contains a list of all the files that Git should *not* track changes for.
 

@@ -231,6 +231,11 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../using_make/intro.html">Intro</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Containerization</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../containerization/intro_to_containers.html">Introduction to containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../containerization/apptainer.html">Apptainer</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Writing reports</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../writing_reports/introduction_to_latex.html">Introduction to LaTeX</a></li>
@@ -653,6 +658,34 @@ A_+ = \frac{v_0 + \omega_- x_0}{\omega_- - \omega_+}, \qquad A_- = - \frac{v_0 +
 \[
 \phi_+ = 0, \qquad \phi_- = 0.
 \]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>October 21</strong>: As some have noted, there is unfortunately a mistake in the above expressions. For the initial values you are given later, the above expressions will give a negative <span class="math notranslate nohighlight">\(A_+\)</span>, which contradicts what we said above. Taking <span class="math notranslate nohighlight">\(\phi_+ = \pi\)</span> instead of <span class="math notranslate nohighlight">\(\phi_+ = 0\)</span> would have ensured a positive <span class="math notranslate nohighlight">\(A_+\)</span> for the given set of initial conditions.</p>
+<p><strong>We apologise for this mistake</strong>. And since we discovered it so late, we will make sure that when we grade the reports, <strong>no one will be penalized for a sign mistake/confusion on this problem</strong>.</p>
+<p>A more careful solution of the equations give expressions for <span class="math notranslate nohighlight">\(A_+\)</span>, <span class="math notranslate nohighlight">\(A_-\)</span>, <span class="math notranslate nohighlight">\(\phi_+\)</span> and <span class="math notranslate nohighlight">\(\phi_-\)</span> that ensure <span class="math notranslate nohighlight">\(A_+, A_- &gt; 0\)</span> for any choice of initial conditions for the movement in the <span class="math notranslate nohighlight">\((x,y)\)</span> plane. We do not expect you to change anything in your reports at this late stage, but for those who are interested, here are the correct expressions:</p>
+<p>Assume we start with the initial conditions <span class="math notranslate nohighlight">\(x(0) = x_0\)</span>, <span class="math notranslate nohighlight">\(\dot{x}(0) = v_{x,0}\)</span>, <span class="math notranslate nohighlight">\(y(0) = y_0\)</span>, <span class="math notranslate nohighlight">\(\dot{y}(0) = v_{y,0}\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(A_+\)</span>, <span class="math notranslate nohighlight">\(A_-\)</span>, <span class="math notranslate nohighlight">\(\phi_+\)</span> and <span class="math notranslate nohighlight">\(\phi_-\)</span> are then</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A_+ = \frac{\sqrt{ (v_{y,0} + x_0 \omega_-)^2 + (v_{x,0} - y_0 \omega_-)^2 }}{\omega_+ - \omega_-} \\
+\\
+A_- = \frac{\sqrt{ (v_{y,0} + x_0 \omega_+)^2 + (v_{x,0} - y_0 \omega_+)^2 }}{\omega_+ - \omega_-} \\
+\\
+\phi_+ =
+\begin{cases}
+\arctan\left( \frac{v_{x,0} - y_0 \omega_-}{x_0 \omega_- + v_{y,0}} \right), &amp; \text{if}\;\; x_0 \omega_- + v_{y,0} &lt; 0, \\
+\arctan\left( \frac{v_{x,0} - y_0 \omega_-}{x_0 \omega_- + v_{y,0}} \right) + \pi, &amp; \text{if}\;\; x_0 \omega_- + v_{y,0} \ge 0. \\
+\end{cases}
+\\ 
+\\
+\phi_- =
+\begin{cases}
+\arctan\left( \frac{v_{x,0} - y_0 \omega_+}{x_0 \omega_+ + v_{y,0}} \right) + \pi, &amp; \text{if}\;\; x_0 \omega_+ + v_{y,0} &lt; 0, \\
+\arctan\left( \frac{v_{x,0} - y_0 \omega_+}{x_0 \omega_+ + v_{y,0}} \right), &amp; \text{if}\;\; x_0 \omega_+ + v_{y,0} \ge 0. \\
+\end{cases}
+\end{split}\]</div>
+<p>Here <span class="math notranslate nohighlight">\(A_+\)</span> and <span class="math notranslate nohighlight">\(A_-\)</span> are always non-negative.</p>
+</div>
 </section>
 <hr class="docutils" />
 <section id="with-multiple-particles">

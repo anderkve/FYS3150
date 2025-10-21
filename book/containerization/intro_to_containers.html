@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Input and output &#8212; FYS3150/FYS4150 course material</title>
+    <title>Introduction to containers &#8212; FYS3150/FYS4150 course material</title>
   
   
   
@@ -57,9 +57,11 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/introduction_to_cpp/input_and_output';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/containerization/intro_to_containers';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Apptainer" href="apptainer.html" />
+    <link rel="prev" title="Intro" href="../using_make/intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -121,8 +123,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -198,23 +198,23 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to C++</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hello_world.html">Hello World</a></li>
-<li class="toctree-l1"><a class="reference internal" href="compiling_and_linking.html">Compiling and linking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="variables.html">Variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="functions.html">Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="source_files_and_header_files.html">Source files and header files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code_structure.html">Code structure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="if_else.html">If else</a></li>
-<li class="toctree-l1"><a class="reference internal" href="loops.html">Loops</a></li>
-<li class="toctree-l1"><a class="reference internal" href="containers.html">Containers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="read_command_line_input.html">Read command line input</a></li>
-<li class="toctree-l1"><a class="reference internal" href="write_to_file.html">Write to file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="read_from_file.html">Read from file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="intro_to_armadillo.html">Introduction to Armadillo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pointers.html">Pointers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="classes.html">Classes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="online_resources.html">Online C++ resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/intro.html">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/hello_world.html">Hello World</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/compiling_and_linking.html">Compiling and linking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/variables.html">Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/source_files_and_header_files.html">Source files and header files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/code_structure.html">Code structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/if_else.html">If else</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/containers.html">Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/read_command_line_input.html">Read command line input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/write_to_file.html">Write to file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/read_from_file.html">Read from file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/intro_to_armadillo.html">Introduction to Armadillo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/pointers.html">Pointers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/classes.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/online_resources.html">Online C++ resources</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Optimization</span></p>
 <ul class="nav bd-sidenav">
@@ -230,9 +230,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../using_make/intro.html">Intro</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Containerization</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../containerization/intro_to_containers.html">Introduction to containers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../containerization/apptainer.html">Apptainer</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction to containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apptainer.html">Apptainer</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Writing reports</span></p>
 <ul class="nav bd-sidenav">
@@ -318,7 +318,7 @@
       
       
       
-      <li><a href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Fbook/introduction_to_cpp/input_and_output.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Fbook/containerization/intro_to_containers.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -348,7 +348,7 @@
       
       
       
-      <li><a href="../../_sources/book/introduction_to_cpp/input_and_output.md" target="_blank"
+      <li><a href="../../_sources/book/containerization/intro_to_containers.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -419,7 +419,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -430,11 +432,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Input and output</h1>
+    <h1>Introduction to containers</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-distinction-between-containers-and-virtual-machines-vms">Understanding the distinction between containers and virtual machines (VMs)</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -444,9 +454,16 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="input-and-output">
-<h1>Input and output<a class="headerlink" href="#input-and-output" title="Link to this heading">#</a></h1>
-<p>Add page on program input (from command-line or file) and output (to screen or file).</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-containers">
+<h1>Introduction to containers<a class="headerlink" href="#introduction-to-containers" title="Link to this heading">#</a></h1>
+<p>In the world of software development (as well as in this course), one of the persistent challenges is ensuring that code compiles and runs consistently across different platforms and environments. Variations in operating systems, configurations, libraries, and dependencies can lead to platform-specific issues that disrupt the portability and reliability of code execution.</p>
+<p>Containerization addresses these challenges by packaging applications and their dependencies into standardized units called containers. Managed by container platforms like Docker and Apptainer, containers encapsulate everything needed to run the software, including code, runtime, libraries, and system tools. This ensures that applications can execute consistently, regardless of where they are deployed, making them independent of the underlying host environment’s specifics.</p>
+<p>Such agility and flexibility in application management drastically reduce the “it works on my machine” problem, streamline development workflows, facilitate seamless scaling, and enhance collaboration across diverse computing environments. Containerization has become a cornerstone technology in modern computational systems, providing a robust solution to cross-platform compatibility and efficiency. As such, it is a worthwhile skill to develop even outside of this course.</p>
+<section id="understanding-the-distinction-between-containers-and-virtual-machines-vms">
+<h2>Understanding the distinction between containers and virtual machines (VMs)<a class="headerlink" href="#understanding-the-distinction-between-containers-and-virtual-machines-vms" title="Link to this heading">#</a></h2>
+<p>You may already be somewhat familiar with the concept of virtual machines, which are emulations of physical computers that allow multiple operating systems to run on a single host machine through the use of virtualization technology. Virtual machines encapsulate an entire system, including the hardware layer, allowing robust isolation and resource allocation. However, this level of abstraction often comes with overhead in terms of system resources, which can impact efficiency.</p>
+<p>In contrast, containerization provides a lightweight alternative by sharing the host operating system’s kernel rather than emulating hardware. Containers package applications and their dependencies in isolated environments without the additional resource demands associated with full hardware virtualization. For further reading material, many resources exist online - although Red Hat offers a <a class="reference external" href="https://www.redhat.com/en/topics/containers/containers-vs-vms">concise introduction</a>.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -462,7 +479,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./book/introduction_to_cpp"
+            path: "./book/containerization"
         },
         predefinedOutput: true
     }
@@ -479,12 +496,45 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../using_make/intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Intro</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="apptainer.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Apptainer</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-distinction-between-containers-and-virtual-machines-vms">Understanding the distinction between containers and virtual machines (VMs)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

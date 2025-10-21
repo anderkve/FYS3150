@@ -94,52 +94,79 @@
 ### Lecture 9, September 18 (video lecture)
 
 - Finsh discussion of LU decomposition
-- Iterative methods for solving matrix equations
 
 
 ### Lecture 10, September 19 (video lecture)
 
-- Any remaining topics from the previous lecture
+- (Skipped)
 
 
 ### Lecture 11, September 25
 
+- Iterative methods for solving matrix equations
+- Overview of topics for Project 3
+- Code topics:
+  - Begin discussing classes in C++
 
 
 ### Lecture 12, September 26
-
+- Code topics:
+  - Cont. discussion of classes in C++
+- Project 3 physics case: Penning traps
+- Start discussing initial value problems
+  - Introduction
+  - Classification
+  - From a second-order equation to coupled first-order equations
 
 
 ### Lecture 13, October 2
 
+- Continue discussion of initial value problems
+  - Local vs global errors
+  - Forward Euler
+  - Predictor-Corrector
+  - Runge-Kutta
+    - RK4 for sets of coupled equations
 
 
 ### Lecture 14, October 3
 
+- Grading system for projects 3--5
+- Writing tips for how to write a good scientific report
 
 
 ### Lecture 15, October 9
-
-
+- (Cancelled)
 
 ### Lecture 16, October 10
-
+- Continue discussion of initial value problems
+  - Leapfrog
+  - Verlet
+- Classification of methods for solving IVPs
 
 
 ### Lecture 17, October 16
-
+- Continue discussion of classification of IVP methods
+- Overview of topics for Project 4
+- Background: probability theory, meaning of probability
 
 
 ### Lecture 18, October 17
-
+- Probability theory basics (notation, definitions, ...)
+- Prob. distribution functions in many variables
+- Expectation values
+- Introduction to Monte Carlo methods 
 
 
 ### Lecture 19, October 23
-
+- Continue the introduction to Monte Carlo methods 
+- Project 4 physics case: the 2D Ising model
+- Introduction to Monte Carlo methods
+- Markov chains
 
 
 ### Lecture 20, October 24
-
+- Markov chain Monte Carlo (MCMC)
 
 
 ### Lecture 21, October 30

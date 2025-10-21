@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Project templates &#8212; FYS3150/FYS4150 course material</title>
+    <title>Apptainer &#8212; FYS3150/FYS4150 course material</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/writing_reports/project_templates';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/containerization/apptainer';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Checklist for reports" href="checklist.html" />
-    <link rel="prev" title="Introduction to LaTeX" href="introduction_to_latex.html" />
+    <link rel="next" title="Introduction to LaTeX" href="../writing_reports/introduction_to_latex.html" />
+    <link rel="prev" title="Introduction to containers" href="intro_to_containers.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -230,15 +230,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../using_make/intro.html">Intro</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Containerization</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../containerization/intro_to_containers.html">Introduction to containers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../containerization/apptainer.html">Apptainer</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro_to_containers.html">Introduction to containers</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Apptainer</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Writing reports</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="introduction_to_latex.html">Introduction to LaTeX</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Project templates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="checklist.html">Checklist for reports</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../writing_reports/introduction_to_latex.html">Introduction to LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../writing_reports/project_templates.html">Project templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../writing_reports/checklist.html">Checklist for reports</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Projects</span></p>
 <ul class="nav bd-sidenav">
@@ -318,7 +318,7 @@
       
       
       
-      <li><a href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Fbook/writing_reports/project_templates.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Fbook/containerization/apptainer.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -348,7 +348,7 @@
       
       
       
-      <li><a href="../../_sources/book/writing_reports/project_templates.md" target="_blank"
+      <li><a href="../../_sources/book/containerization/apptainer.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -432,7 +432,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Project templates</h1>
+    <h1>Apptainer</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -442,11 +442,26 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#template-for-projects-1-and-2-problem-sets">Template for projects 1 and 2: problem sets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#template-for-projects-3-4-and-5-scientific-reports">Template for projects 3, 4 and 5: scientific reports</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-report">Example report</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting Started</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-apptainer-installation">Step 1: Apptainer Installation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-on-windows">Installation on Windows</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-on-mac">Installation on Mac</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-on-linux">Installation on Linux</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-obtaining-the-apptainer-image">Step 2: Obtaining the Apptainer Image</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#image-format-sif">Image Format (.sif)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#download-image-from-course-github-page">Download Image from Course GitHub Page</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-running-the-image">Step 3: Running the Image</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-files-outside-the-container">Accessing Files Outside the Container</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-with-bind-mount">Example with Bind Mount</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#support">Support</a></li>
 </ul>
             </nav>
         </div>
@@ -458,35 +473,110 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="project-templates">
-<h1>Project templates<a class="headerlink" href="#project-templates" title="Link to this heading">#</a></h1>
-<section id="template-for-projects-1-and-2-problem-sets">
-<h2>Template for projects 1 and 2: problem sets<a class="headerlink" href="#template-for-projects-1-and-2-problem-sets" title="Link to this heading">#</a></h2>
-<p>We have prepared a template for you to use in the two first projects. Below you find both the <code class="docutils literal notranslate"><span class="pre">.tex</span></code> file and the corresponding generated <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> file.</p>
-<ul class="simple">
-<li><p>The <a class="reference external" href="https://github.com/anderkve/FYS3150/blob/master/book/writing_reports/tex_mal/oppgave_mal.tex">tex file</a></p></li>
-<li><p>The <a class="reference external" href="https://github.com/anderkve/FYS3150/blob/master/book/writing_reports/tex_mal/oppgave_mal.pdf">pdf file</a></p></li>
-</ul>
-<p>The above <code class="docutils literal notranslate"><span class="pre">.tex</span></code> example tries to include a figure file <code class="docutils literal notranslate"><span class="pre">rel_err.pdf</span></code> from a subdirectory <code class="docutils literal notranslate"><span class="pre">imgs</span></code>. If you want to compile this example yourself, you can get the figure file <a class="reference external" href="https://github.com/anderkve/FYS3150/blob/master/book/writing_reports/tex_mal/imgs/rel_err.pdf">here</a>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="apptainer">
+<h1>Apptainer<a class="headerlink" href="#apptainer" title="Link to this heading">#</a></h1>
+<p>Within the context of this course, there are a number of dependencies required to develop code for the projects (such as <code class="docutils literal notranslate"><span class="pre">g++</span></code> for compilation, <code class="docutils literal notranslate"><span class="pre">git</span></code> for version control, <code class="docutils literal notranslate"><span class="pre">Armadillo</span></code>, <code class="docutils literal notranslate"><span class="pre">OpenMP</span></code>, etc.). The instructors have put together an image (essentially the blueprint for a container) which wraps all of these together, using the application <a class="reference external" href="https://apptainer.org/docs/user/latest/introduction.html">Apptainer</a>.</p>
+<p>This guide will help you set up and run this Apptainer image for the course on your machine, whether you’re using Linux, Windows, or macOS (Intel or ARM architecture).</p>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h2>
+<section id="step-1-apptainer-installation">
+<h3>Step 1: Apptainer Installation<a class="headerlink" href="#step-1-apptainer-installation" title="Link to this heading">#</a></h3>
+<p>Apptainer is primarily designed to run natively on Linux systems, because it leverages key Linux kernel features such as namespaces and control groups to provide containerization. Therefore, non-Linux systems (i.e. Windows and macOS) require an additional layer to create a virtualized or emulated Linux environment.</p>
+<section id="installation-on-windows">
+<h4>Installation on Windows<a class="headerlink" href="#installation-on-windows" title="Link to this heading">#</a></h4>
+<p>On Windows, the Linux environment is handled by WSL. Therefore, once it is installed (see <a class="reference internal" href="../getting_ready/windows_users.html#sec-windows-users"><span class="std std-ref">Windows users</span></a>), you can follow the instructions for installation on Linux below.</p>
 </section>
-<section id="template-for-projects-3-4-and-5-scientific-reports">
-<h2>Template for projects 3, 4 and 5: scientific reports<a class="headerlink" href="#template-for-projects-3-4-and-5-scientific-reports" title="Link to this heading">#</a></h2>
-<p>Below is the template you should use when writing the scientific reports for projects 3, 4 and 5. We recommend taking the time to read through all the text in the template, as it contains a lot of useful information on how to structure a scientific report, as well as some LaTeX tips and tricks.</p>
-<ul class="simple">
-<li><p>The <a class="reference external" href="https://github.com/anderkve/FYS3150/blob/master/book/writing_reports/tex_mal/report_example.tex">tex file</a></p></li>
-<li><p>The <a class="reference external" href="https://github.com/anderkve/FYS3150/blob/master/book/writing_reports/tex_mal/report_example.pdf">pdf file</a></p></li>
-<li><p>The <a class="reference external" href="https://github.com/anderkve/FYS3150/blob/master/book/writing_reports/tex_mal/ref.bib">BibTex references file</a></p></li>
-</ul>
-<p>To easily view the template “in action”, you can access it as a read-only Overleaf project <a class="reference external" href="https://www.overleaf.com/read/ykjsqvchkhyz">here</a>.</p>
-<p>If you want to compile the template report yourself, you’ll need a figure file <code class="docutils literal notranslate"><span class="pre">rel_err.pdf</span></code> in a subdirectory <code class="docutils literal notranslate"><span class="pre">imgs</span></code>. (Just like for the template for projects 1 and 2.) You can get the figure file <a class="reference external" href="https://github.com/anderkve/FYS3150/blob/master/book/writing_reports/tex_mal/imgs/rel_err.pdf">here</a>.</p>
-<p>To build the template along with the reference list, you need to run <code class="docutils literal notranslate"><span class="pre">pdflatex</span></code> and <code class="docutils literal notranslate"><span class="pre">bibtex</span></code> a few times over. Here’s a single-line command that should do the trick:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pdflatex<span class="w"> </span>report_example.tex<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>bibtex<span class="w"> </span>report_example.aux<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>pdflatex<span class="w"> </span>report_example.tex<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>pdflatex<span class="w"> </span>report_example.tex
+<section id="installation-on-mac">
+<h4>Installation on Mac<a class="headerlink" href="#installation-on-mac" title="Link to this heading">#</a></h4>
+<p>On Mac, the recommended path to setting up a Linux environment is through <a class="reference external" href="https://lima-vm.io/docs/">Lima</a>, which is a lightweight virtual machine manager designed to run Linux environments efficiently on macOS.</p>
+<p>The first step to working with Lima is to install it with Homebrew (see <a class="reference internal" href="../getting_ready/mac_users.html#sec-installation-of-basic-software"><span class="std std-ref">installation of basic software</span></a> if you haven’t yet installed the Homebrew package manager on your machine):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew<span class="w"> </span>install<span class="w"> </span>lima
 </pre></div>
 </div>
-<section id="example-report">
-<h3>Example report<a class="headerlink" href="#example-report" title="Link to this heading">#</a></h3>
-<p>An example of a very good student report from a few years back can be found <a class="reference external" href="https://github.com/anderkve/FYS3150/blob/master/book/writing_reports/example_report.pdf">here</a>.</p>
+<p>Next, run the following command to initialize a new Linux VM specifically configured to work with Apptainer:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>limactl<span class="w"> </span>start<span class="w"> </span>template://apptainer
+</pre></div>
+</div>
+<p>Out-of-the-box, this preset template for configuring Lima to work with Apptainer sets the file system in the Linux environment to read-only. In order to allow your Mac home directory to be writable from within the Linux environment, open the Lima configuration file located at <code class="docutils literal notranslate"><span class="pre">~/.lima/apptainer/lima.yaml</span></code> and add/edit the following lines under <code class="docutils literal notranslate"><span class="pre">mounts:</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mounts:
+-<span class="w"> </span>location:<span class="w"> </span><span class="s2">&quot;~&quot;</span>
+<span class="w">  </span>writable:<span class="w"> </span><span class="nb">true</span>
+</pre></div>
+</div>
+<p>In order for the changes to take effect, the VM needs to be stopped and then restarted:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>limactl<span class="w"> </span>stop<span class="w"> </span>apptainer
+limactl<span class="w"> </span>start<span class="w"> </span>apptainer
+</pre></div>
+</div>
+<p>Finally, for accessing a shell environment in the VM to begin using Apptainer:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>limactl<span class="w"> </span>shell<span class="w"> </span>apptainer
+</pre></div>
+</div>
+<p>From inside this apptainer VM, it will now be possible to run the image (following step 3 below, once the image is obtained from step 2).</p>
+<p>In order to exit the VM shell, simply type <code class="docutils literal notranslate"><span class="pre">exit</span></code>.</p>
 </section>
+<section id="installation-on-linux">
+<h4>Installation on Linux<a class="headerlink" href="#installation-on-linux" title="Link to this heading">#</a></h4>
+<p>There are several different ways to install Apptainer on Linux, which are all described in the Apptainer documentation <a class="reference external" href="https://apptainer.org/docs/admin/main/installation.html#installation-on-linux">here</a>.</p>
+<p>In particular, it can be installed from <a class="reference external" href="https://apptainer.org/docs/admin/main/installation.html#install-from-pre-built-packages">pre-built packages</a> (e.g. for <a class="reference external" href="https://apptainer.org/docs/admin/main/installation.html#install-ubuntu-packages">Ubuntu</a>, the default distribution in WSL).</p>
+<p>It can also be built and installed from source, by following the instructions in <a class="reference external" href="https://github.com/apptainer/apptainer/blob/main/INSTALL.md">INSTALL.md</a> on GitHub.</p>
+</section>
+</section>
+<section id="step-2-obtaining-the-apptainer-image">
+<h3>Step 2: Obtaining the Apptainer Image<a class="headerlink" href="#step-2-obtaining-the-apptainer-image" title="Link to this heading">#</a></h3>
+<section id="image-format-sif">
+<h4>Image Format (.sif)<a class="headerlink" href="#image-format-sif" title="Link to this heading">#</a></h4>
+<p>Unlike Docker images which are published on Docker Hub, Apptainer uses the Singularity Image Format (SIF) for container images. These <code class="docutils literal notranslate"><span class="pre">.sif</span></code> files are fully encapsulated, single-file containers. This design is tailored for High Performance Computing (HPC) environments where simplicity and portability are crucial.</p>
+<p>Each <code class="docutils literal notranslate"><span class="pre">.sif</span></code> file contains the entire container image, including its filesystem, metadata, and definition (like recipes or dependencies). The whole image is self-contained, allowing easy transfer and access across different systems without relying on runtime daemons (like Docker’s <code class="docutils literal notranslate"><span class="pre">dockerd</span></code>) or complex architectures.</p>
+</section>
+<section id="download-image-from-course-github-page">
+<h4>Download Image from Course GitHub Page<a class="headerlink" href="#download-image-from-course-github-page" title="Link to this heading">#</a></h4>
+<p>Navigate to the <a class="reference external" href="https://github.com/anderkve/FYS3150/releases">releases page</a> for the FYS3150 repository in GitHub. There, you will see a list of the apptainer image versions, each with their own “assets”. Click on the <code class="docutils literal notranslate"><span class="pre">.sif</span></code> file corresponding to the architecture of your machine in the name (either <code class="docutils literal notranslate"><span class="pre">x86</span></code> or <code class="docutils literal notranslate"><span class="pre">arm</span></code>) to download it.</p>
+<p>Once the image (file ending in <code class="docutils literal notranslate"><span class="pre">.sif</span></code>) is downloaded, you should move it to a location where it’s convenient to access it such as your home folder:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">downloads</span><span class="o">/</span><span class="n">folder</span><span class="o">/&lt;</span><span class="n">name_of_image</span><span class="o">.</span><span class="n">sif</span><span class="o">&gt;</span> <span class="o">~</span>
+</pre></div>
+</div>
+<p><strong>N.B.</strong> - You can also put it directly in the folder where you’re writing your code (the one under version control), but in this case it’s advisable to add the image to the <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> list (see the description in the section on <a class="reference internal" href="../using_git/add_a_README_and_gitignore.html#sec-gitignore"><span class="std std-ref">gitignore</span></a> if you haven’t set one up) so that it’s not mistakenly added to your repository. Since the image is a few hundred MB in size, UiO GitHub will reject it being pushed to the server (similar to other large files that can be generated in the projects of the course).</p>
+</section>
+</section>
+<section id="step-3-running-the-image">
+<h3>Step 3: Running the Image<a class="headerlink" href="#step-3-running-the-image" title="Link to this heading">#</a></h3>
+<p>To run an interactive session within the Apptainer container:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apptainer<span class="w"> </span>shell<span class="w"> </span>&lt;name_of_image.sif&gt;
+</pre></div>
+</div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">&lt;name_of_image.sif&gt;</span></code> is replaced by the name of the image that you downloaded in the previous step.</p>
+<p>Upon running the container, your terminal should display a customized environment prompt within the container.</p>
+<p>In order to exit the container, simply type <code class="docutils literal notranslate"><span class="pre">exit</span></code>.</p>
+</section>
+</section>
+<section id="accessing-files-outside-the-container">
+<h2>Accessing Files Outside the Container<a class="headerlink" href="#accessing-files-outside-the-container" title="Link to this heading">#</a></h2>
+<p>By default, the container should provide you with an environment fully equipped to develop and run the code required for this course. However, the contents of the container are designed to be transient and will therefore be deleted once the container is removed.</p>
+<p>In order to access or share files within your container, it is possible to “mount” directories from your file system, binding them to a directory from within the container.</p>
+<p>By default, Apptainer already binds your home directory with the same path so that it’s already available within the container.</p>
+<blockquote>
+<div><p><strong>N.B.</strong> - this will be your Linux home directory (the one set up for you by WSL on Windows or by Lima on Mac)</p>
+</div></blockquote>
+<p>Below are are the commands to mount additional directories when opening the container (e.g. your Mac home directory if you’re on a Mac - this is less applicable to Windows users since the recommendation there that you’re already working from your Linux home directory through WSL):</p>
+<section id="example-with-bind-mount">
+<h3>Example with Bind Mount<a class="headerlink" href="#example-with-bind-mount" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apptainer<span class="w"> </span>shell<span class="w"> </span>--bind<span class="w"> </span>/path/on/host:/path/in/container<span class="w"> </span>fys3150_comp_phys_env_x86.sif
+</pre></div>
+</div>
+<p>or for ARM architecture</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apptainer<span class="w"> </span>shell<span class="w"> </span>--bind<span class="w"> </span>/path/on/host:/path/in/container<span class="w"> </span>fys3150_comp_phys_env_arm.sif
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Replace</strong> <code class="docutils literal notranslate"><span class="pre">/path/on/host</span></code> with the absolute path on your machine.</p></li>
+<li><p><strong>Replace</strong> <code class="docutils literal notranslate"><span class="pre">/path/in/container</span></code> with where you want it mounted within the container.</p></li>
+</ul>
+</section>
+</section>
+<section id="support">
+<h2>Support<a class="headerlink" href="#support" title="Link to this heading">#</a></h2>
+<p>The aim with these containers is to alleviate the various technical issues that are often encountered in this course by providing an environment that is more consistent across different platforms. That said, while the containerized workflow outlined above should remove most of the usual platform-specific technical issues, it should also (for the time being) be considered in the experimental phase of development. Therefore, any feedback on issues (or even just your experience) related to the containerized workflow are very much welcome via the <a class="reference external" href="https://github.uio.no/anderkve/FYS3150-forum/issues">course discussion forum</a> or by direct email to the course instructors.</p>
 </section>
 </section>
 
@@ -503,7 +593,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./book/writing_reports"
+            path: "./book/containerization"
         },
         predefinedOutput: true
     }
@@ -521,20 +611,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="introduction_to_latex.html"
+       href="intro_to_containers.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Introduction to LaTeX</p>
+        <p class="prev-next-title">Introduction to containers</p>
       </div>
     </a>
     <a class="right-next"
-       href="checklist.html"
+       href="../writing_reports/introduction_to_latex.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Checklist for reports</p>
+        <p class="prev-next-title">Introduction to LaTeX</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -554,11 +644,26 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#template-for-projects-1-and-2-problem-sets">Template for projects 1 and 2: problem sets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#template-for-projects-3-4-and-5-scientific-reports">Template for projects 3, 4 and 5: scientific reports</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-report">Example report</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting Started</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-apptainer-installation">Step 1: Apptainer Installation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-on-windows">Installation on Windows</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-on-mac">Installation on Mac</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-on-linux">Installation on Linux</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-obtaining-the-apptainer-image">Step 2: Obtaining the Apptainer Image</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#image-format-sif">Image Format (.sif)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#download-image-from-course-github-page">Download Image from Course GitHub Page</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-running-the-image">Step 3: Running the Image</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-files-outside-the-container">Accessing Files Outside the Container</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-with-bind-mount">Example with Bind Mount</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#support">Support</a></li>
 </ul>
   </nav></div>
 
