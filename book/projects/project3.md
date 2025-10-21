@@ -204,6 +204,40 @@ $$
 \phi_+ = 0, \qquad \phi_- = 0.
 $$
 
+```{note} 
+**October 21**: As some have noted, there is unfortunately a mistake in the above expressions. For the initial values you are given later, the above expressions will give a negative $A_+$, which contradicts what we said above. Taking $\phi_+ = \pi$ instead of $\phi_+ = 0$ would have ensured a positive $A_+$ for the given set of initial conditions.
+
+**We apologise for this mistake**. And since we discovered it so late, we will make sure that when we grade the reports, **no one will be penalized for a sign mistake/confusion on this problem**. 
+
+A more careful solution of the equations give expressions for $A_+$, $A_-$, $\phi_+$ and $\phi_-$ that ensure $A_+, A_- > 0$ for any choice of initial conditions for the movement in the $(x,y)$ plane. We do not expect you to change anything in your reports at this late stage, but for those who are interested, here are the correct expressions:
+
+Assume we start with the initial conditions $x(0) = x_0$, $\dot{x}(0) = v_{x,0}$, $y(0) = y_0$, $\dot{y}(0) = v_{y,0}$. 
+
+$A_+$, $A_-$, $\phi_+$ and $\phi_-$ are then
+
+$$
+A_+ = \frac{\sqrt{ (v_{y,0} + x_0 \omega_-)^2 + (v_{x,0} - y_0 \omega_-)^2 }}{\omega_+ - \omega_-} \\
+\\
+A_- = \frac{\sqrt{ (v_{y,0} + x_0 \omega_+)^2 + (v_{x,0} - y_0 \omega_+)^2 }}{\omega_+ - \omega_-} \\
+\\
+\phi_+ =
+\begin{cases}
+\arctan\left( \frac{v_{x,0} - y_0 \omega_-}{x_0 \omega_- + v_{y,0}} \right), & \text{if}\;\; x_0 \omega_- + v_{y,0} < 0, \\
+\arctan\left( \frac{v_{x,0} - y_0 \omega_-}{x_0 \omega_- + v_{y,0}} \right) + \pi, & \text{if}\;\; x_0 \omega_- + v_{y,0} \ge 0. \\
+\end{cases}
+\\ 
+\\
+\phi_- =
+\begin{cases}
+\arctan\left( \frac{v_{x,0} - y_0 \omega_+}{x_0 \omega_+ + v_{y,0}} \right) + \pi, & \text{if}\;\; x_0 \omega_+ + v_{y,0} < 0, \\
+\arctan\left( \frac{v_{x,0} - y_0 \omega_+}{x_0 \omega_+ + v_{y,0}} \right), & \text{if}\;\; x_0 \omega_+ + v_{y,0} \ge 0. \\
+\end{cases}
+$$
+
+Here $A_+$ and $A_-$ are always non-negative. 
+```
+
+
 
 ----
 
