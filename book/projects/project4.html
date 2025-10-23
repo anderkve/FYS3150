@@ -57,6 +57,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/projects/project4';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -419,7 +421,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -435,6 +439,29 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practicalities">Practicalities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions-notation-and-units">Definitions, notation and units</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problems">Problems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-1">Problem 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-2">Problem 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-3">Problem 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-4">Problem 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-5">Problem 5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-6">Problem 6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-7">Problem 7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-8">Problem 8</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-9">Problem 9</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-snippets">Code snippets</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -446,7 +473,396 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="project-4">
 <h1>Project 4<a class="headerlink" href="#project-4" title="Link to this heading">#</a></h1>
-<p>Not published yet.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>While working on the project, check this page regularly in case of small updates (typo fixes, added hints, etc.)</p>
+</div>
+<section id="practicalities">
+<h2>Practicalities<a class="headerlink" href="#practicalities" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Deadline</strong>: Wednesday, November 19, 23:59.</p></li>
+<li><p><strong>Format:</strong></p>
+<ul>
+<li><p>A scientific report, typeset in LaTeX, delivered as a pdf file on Canvas.</p></li>
+<li><p>Use the report template we have provided <a class="reference internal" href="../writing_reports/project_templates.html"><span class="std std-doc">here</span></a>.</p></li>
+<li><p>Code (with comments, of course) on a UiO GitHub repo (<a class="reference external" href="https://github.uio.no/">github.uio.no</a>), with the URL to you repo written in the pdf document.</p></li>
+<li><p>You <em>must</em> deliver via your group on Canvas (even if you are working alone).</p></li>
+</ul>
+</li>
+<li><p><strong>Collaboration:</strong> We <em>strongly</em> encourage you to collaborate with others, in groups of up to three students. The group hands in a single pdf. Remember to list everyone’s name in the pdf.</p></li>
+<li><p><strong>Reproducibility:</strong> Your code should be available on a GitHub repo. You can refer to relevant parts of your code in your answers. Make sure to include a README file in the repo that briefly explains how the code is organised, and how it should be compiled and run in order for others to reproduce your results.</p></li>
+<li><p><strong>Figures:</strong> Figures included in your LaTeX document should be made as vector graphics (e.g. <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> files), rather than raster graphics (e.g. <code class="docutils literal notranslate"><span class="pre">.png</span></code> files). If you are making plots with <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> in Python, this is as simple as calling <code class="docutils literal notranslate"><span class="pre">plt.savefig(&quot;figure.pdf&quot;)</span></code> rather than <code class="docutils literal notranslate"><span class="pre">plt.savefig(&quot;figure.png&quot;)</span></code>.</p></li>
+</ul>
+</section>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>The topic of this project is the <strong>Ising model</strong> in two dimensions. We will use this simple model to explore temperature-dependent behaviour in ferromagnets. A particular goal is to numerically estimate the <strong>critical temperature</strong> at which our 2D system undergoes a <strong>phase transition</strong>, from a magnetised phase to a phase with no net magnetisation.</p>
+<p>A basic introduction to the Ising model will be given in the lectures. For a more detailed introduction, see Chapter 13 (in particular 13.3 and 13.4) in Morten Hjorth-Jensen’s lecture notes.</p>
+<p>On the methodological side, our focus in this project is</p>
+<ul class="simple">
+<li><p>the Markov Chain Monte Carlo method for sampling from probability distributions of many variables, and how the resulting samples can be used to approximate probability distributions and expectation values for derived quantities; and</p></li>
+<li><p>using parallelisation to speed up our code.</p></li>
+</ul>
+</section>
+<section id="definitions-notation-and-units">
+<h2>Definitions, notation and units<a class="headerlink" href="#definitions-notation-and-units" title="Link to this heading">#</a></h2>
+<p>We will study 2D square lattices of spins <span class="math notranslate nohighlight">\(s_i\)</span>. Below we summarise our notation and the main definitions we will need:</p>
+<ul>
+<li><p>Each individual spin <span class="math notranslate nohighlight">\(s_i\)</span> has only two possible states: <span class="math notranslate nohighlight">\(s_i = -1\)</span> and <span class="math notranslate nohighlight">\(s_i = +1\)</span>.</p></li>
+<li><p>A lattice of length <span class="math notranslate nohighlight">\(L\)</span> contains <span class="math notranslate nohighlight">\(N\)</span> spins in total, i.e. <span class="math notranslate nohighlight">\(N = L^2\)</span>.</p></li>
+<li><p>A <strong>spin configuration</strong> (or <strong>microstate</strong>) refers to the spin state of the <em>entire system</em>. Here we denote this using vector notation</p>
+<div class="math notranslate nohighlight">
+\[
+  \mathbf{s} = (s_1, s_2, \ldots, s_N),
+  \]</div>
+<p>but in your code you probably want to use an <span class="math notranslate nohighlight">\(L \times L\)</span> matrix to represent the spin configuration.</p>
+</li>
+<li><p>The total energy of the system is given by</p>
+<div class="math notranslate nohighlight">
+\[
+  E(\mathbf{s}) = -J \sum\limits_{\langle kl \rangle}^{N} s_k s_l
+  \]</div>
+<p>Here <span class="math notranslate nohighlight">\(\langle kl \rangle\)</span> means that the sum goes over all <em>neighbouring pairs</em> of spins, without double-counting, and <span class="math notranslate nohighlight">\(J\)</span> is the <strong>coupling constant</strong>. We see that in this model (with no external magnetic field) the total system energy is fully determined by the interaction between neighbouring spin pairs, and <span class="math notranslate nohighlight">\(J\)</span> is simply a constant that sets the energy associated with each such interaction.</p>
+</li>
+<li><p>We will use <em>periodic boundary conditions</em> for our lattice. Thus, all spins will have exactly <em>four neighbours</em> (left, right, up, down).</p></li>
+<li><p>The total magnetisation of the system is simply given by the sum over all the spins in the system:</p>
+<div class="math notranslate nohighlight">
+\[
+  M(\mathbf{s}) = \sum\limits_{i}^{N} s_i
+  \]</div>
+</li>
+<li><p>To ease the comparison of results for different lattice sizes, we will mostly use the <em>energy per spin</em><br />
+(<span class="math notranslate nohighlight">\(\epsilon\)</span>) and <em>magnetisation per spin</em> (<span class="math notranslate nohighlight">\(m\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \epsilon(\mathbf{s}) &amp;= \frac{E(\mathbf{s})}{N}\\[1ex]
+  m(\mathbf{s}) &amp;= \frac{M(\mathbf{s})}{N}
+  \end{split}\]</div>
+</li>
+<li><p>Given a system temperature <span class="math notranslate nohighlight">\(T\)</span>, the probability for the system state <span class="math notranslate nohighlight">\(\mathbf{s}\)</span> is given by the <em>Boltzmann distribution</em>:</p>
+<div class="math notranslate nohighlight">
+\[
+  p(\mathbf{s} ; T) = \frac{1}{Z} e^{-\beta E(\mathbf{s})}
+  \]</div>
+<p>Here the normalisation constant <span class="math notranslate nohighlight">\(Z\)</span> is the so-called <strong>partition function</strong> (see below), and <span class="math notranslate nohighlight">\(\beta\)</span> is the “inverse temperature”:</p>
+<div class="math notranslate nohighlight">
+\[
+  \beta = \frac{1}{k_B T}
+  \]</div>
+<p>with <span class="math notranslate nohighlight">\(k_B\)</span> being the Boltzmann constant.</p>
+</li>
+<li><p>The partition function <span class="math notranslate nohighlight">\(Z\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[
+  Z = \sum\limits_{\textrm{all possible}\;\mathbf{s}} e^{-\beta E(\mathbf{s})}
+  \]</div>
+</li>
+<li><p><strong>Units</strong>: We are working with unitless spins, which means that the coupling constant <span class="math notranslate nohighlight">\(J\)</span> has units of energy. Thus we can take <span class="math notranslate nohighlight">\(J\)</span> as the base unit for energy, and use it together with the Boltzmann constant <span class="math notranslate nohighlight">\(k_B\)</span> to formulate all other units that we’ll need. So our units are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  [E] &amp;= J\\[1ex]
+  [T] &amp;= J/k_B\\[1ex]
+  \ldots &amp;
+  \end{split}\]</div>
+<p>(You can figure out the rest.)</p>
+</li>
+</ul>
+</section>
+<section id="problems">
+<h2>Problems<a class="headerlink" href="#problems" title="Link to this heading">#</a></h2>
+<section id="problem-1">
+<h3>Problem 1<a class="headerlink" href="#problem-1" title="Link to this heading">#</a></h3>
+<p>Assume a <span class="math notranslate nohighlight">\(2 \times 2\)</span> lattice with periodic boundary conditions.</p>
+<ul class="simple">
+<li><p><strong>a)</strong> Summarise all possible states of the system by setting up a table with four coloumns showing the following quantities</p>
+<ul>
+<li><p>number of spins in state +1</p></li>
+<li><p>total energy</p></li>
+<li><p>total magnetisation</p></li>
+<li><p>degeneracy</p></li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When computing the energy, we have said that the sum should avoid double-counting spin pairs. However, a <span class="math notranslate nohighlight">\(2 \times 2\)</span> lattice is a special case, since using periodic boundary conditions in this case necessarily leads to counting all spin pairs twice. So for this particular case it is OK to double-count. And we recommend doing it, since in Problem 4 we will use the analytical results from this problem to test our code, so it’s useful to have the periodic boundary conditions work the same way in the <span class="math notranslate nohighlight">\(2 \times 2\)</span> case as in the general <span class="math notranslate nohighlight">\(L \times L\)</span> case. (Otherwise we would have to add a special <code class="docutils literal notranslate"><span class="pre">if-else</span></code> block in the code to turn off the periodic boundaries for the case when L=2.)</p>
+</div>
+<ul>
+<li><p><strong>b)</strong> Using our chosen probability distribution <span class="math notranslate nohighlight">\(p(\mathbf{s})\)</span> and energy function <span class="math notranslate nohighlight">\(E(\mathbf{s})\)</span>, and focusing on our specific <span class="math notranslate nohighlight">\(2 \times 2\)</span> case, find analytical expressions for</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Z\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\langle \epsilon \rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\langle \epsilon^2 \rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\langle |m| \rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\langle m^2 \rangle\)</span></p></li>
+<li><p>the heat capacity (normalised to number of spins)</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+  \frac{C_V(T)}{N} = \frac{1}{N} \frac{1}{k_B T^2} \textrm{Var}(E) = \frac{1}{N} \frac{1}{k_B T^2} \left[ \braket{E^2} - \braket{E}^2 \right] = N \frac{1}{k_B T^2} \left[ \braket{\epsilon^2} - \braket{\epsilon}^2 \right]
+  \]</div>
+<ul class="simple">
+<li><p>the susceptibility (normalised to number of spins)</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+  \frac{\chi(T)}{N} = \frac{1}{N} \frac{1}{k_B T} \textrm{Var}(M) = \frac{1}{N} \frac{1}{k_B T} \left[ \braket{M^2} - \braket{|M|}^2 \right] = N \frac{1}{k_B T} \left[ \braket{m^2} - \braket{|m|}^2 \right]
+  \]</div>
+</li>
+</ul>
+<p>We will use these analytical results to test our code.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Above we have replaced <span class="math notranslate nohighlight">\(\textrm{Var}(M) = \braket{M^2} - \braket{M}^2\)</span> with <span class="math notranslate nohighlight">\(\braket{M^2} - \braket{|M|}^2\)</span>. The replacement <span class="math notranslate nohighlight">\(M \rightarrow |M|\)</span> is a trick often used in Monte Carlo studies of this 2D Ising model, and we will also use this in the numerical tasks below. So to aid our later comparison between analytical and numerical results, we make the replacement <span class="math notranslate nohighlight">\(M \rightarrow |M|\)</span> also in the analytical expression above.</p>
+<p><em>More details:</em> The <span class="math notranslate nohighlight">\(M \rightarrow |M|\)</span> replacement makes it easier to compare and combine results from different runs (e.g. repeated runs at the same or similar temperatures), because we don’t have to worry about whether the system randomly ended up in a state with mostly <span class="math notranslate nohighlight">\(-1\)</span> spins or a state with mostly <span class="math notranslate nohighlight">\(+1\)</span> spins. We simply focus on the question “<em>How strong</em> magnetisation do we expect to observe at temperature <span class="math notranslate nohighlight">\(T\)</span>?”, rather than the question “<em>What</em> magnetisation do we expect to observe at temperature <span class="math notranslate nohighlight">\(T\)</span>?”.</p>
+<p>But it’s worth keeping in mind that, with no external magnetic field to pick out a preferred direction, the expectation value <span class="math notranslate nohighlight">\(\braket{M}\)</span> really is 0 for all temperatures – that is, even at very low temperatures, where there should be overwhelmingly high probability to observe the system in an ordered state, i.e. a state with <span class="math notranslate nohighlight">\(|M| &gt; 0\)</span>.</p>
+<p>The reason for the expected value <span class="math notranslate nohighlight">\(\braket{M} = 0\)</span> even at low temperatures is that for each state with some positive magnetisation <span class="math notranslate nohighlight">\(M\)</span>, there exists a “mirror state” with <em>all spins flipped</em>, which means the magnetisation is <span class="math notranslate nohighlight">\(-|M|\)</span>, and this state has the same probability under the Boltzmann distribution as the original state. So the expected value <span class="math notranslate nohighlight">\(\braket{M} = 0\)</span> is analogous to how the expected value for the amount of money earned on fair bets with 50/50 coin flips is zero, even though zero is an impossible outcome for individual trails – every trail gives either a win or a loss.</p>
+</div>
+<!--
+```{note}
+There's been some confusion regarding the expressions for heat capacity $C_V$ and susceptibility $\chi$ and how they relate to energy per spin ($\epsilon$) and magnetisation per spin ($m$), respectively. I think the confusion comes down to some unfortunate notation from my side. So let me explain, using $C_V$ as example.
+
+The heat capacity $C_V$ in itself is given by
+
+$$
+C_V = \frac{1}{k_B T^2} \textrm{Var}(E)
+$$
+
+However, I have provided an expression for the heat capacity *normalised to the number of spins* $N$. (So a quantity analogous to *the specific heat capacity* when we normalise against units of mass.)  Unfortunately I wrote this expression also using the symbol $C_V$. That is, I wrote:
+
+$$
+C_V = \frac{1}{N} \frac{1}{k_B T^2} \textrm{Var}(E)
+$$
+
+where I have included the extra factor $1/N$. However, what I *should* have done was to make this explicit in my notation, either by writing $C_V/N$ directly, or introduce some new notation, e.g. a lower-case $c_V$:
+
+$$
+c_V = \frac{C_V}{N} = \frac{1}{N} \frac{1}{k_B T^2} \textrm{Var}(E)
+$$
+
+From this expression we can easily express this quantity in terms of the variance of the energy per spin ($\epsilon$), if we want to. All we need is to remember the general relation that if $y=kx$ where $k$ is some constant, then
+
+$$
+\textrm{Var}(y) = \textrm{Var}(kx) = k^2\textrm{Var}(x)
+$$
+
+So in terms of energy, we have our familiar expression:
+
+$$
+\frac{C_V}{N} &= \frac{1}{N} \frac{1}{k_B T^2} \textrm{Var}(E) \\
+              &= \frac{1}{N} \frac{1}{k_B T^2} \left[ \langle E^2 \rangle  -  \langle E \rangle^2 \right]
+$$
+
+And in terms of energy per spin, since $E = N \epsilon$, we get
+
+$$
+\frac{C_V}{N} &= \frac{1}{N} \frac{1}{k_B T^2} \textrm{Var}(E) \\ 
+&=  \frac{1}{N} \frac{1}{k_B T^2} \textrm{Var}(N \epsilon) \\ 
+&=  \frac{1}{N} \frac{1}{k_B T^2} N^2 \textrm{Var}(\epsilon)  \\ 
+&= N \frac{1}{k_B T^2} \left[ \langle \epsilon^2 \rangle  -  \langle \epsilon \rangle^2 \right]
+$$
+
+
+By the same logic we can write the magnetic susceptibility per spin as either
+
+$$
+\frac{\chi}{N} = \frac{1}{N} \frac{1}{k_B T} \left[ \langle M^2 \rangle  -  \langle |M| \rangle^2 \right]
+$$
+
+or 
+
+$$
+\frac{\chi}{N} = N \frac{1}{k_B T} \left[ \langle m^2 \rangle  -  \langle |m| \rangle^2 \right]
+$$
+
+I hope this helps clarify the issue, and apologies for the confusion. 
+
+Whether you use the original notation ($C_V$ and $\chi$) or some new notation (e.g. $C_V/N$ and $\chi/N$) for these quantities in your report is up to you -- just make sure your math agrees with the expressions above.
+
+```
+-->
+</section>
+<section id="problem-2">
+<h3>Problem 2<a class="headerlink" href="#problem-2" title="Link to this heading">#</a></h3>
+<p>In our Monte Carlo code we will repeatedly need the Boltzmann factor <span class="math notranslate nohighlight">\(e^{-\beta \Delta E}\)</span>, where</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta E = E_{\textrm{after}} - E_{\textrm{before}}
+\]</div>
+<p>is the energy shift due to <em>flipping a single spin</em>.</p>
+<p><strong>a)</strong> Consider a 2D lattice of arbitrary size (<span class="math notranslate nohighlight">\(L&gt;2\)</span>). Show that there are only five possible values <span class="math notranslate nohighlight">\(\Delta E\)</span> can take.</p>
+<p><strong>b)</strong> How can you use this result to avoid repeatedly calling the exponential function <code class="docutils literal notranslate"><span class="pre">exp(...)</span></code> in your code?</p>
+</section>
+<section id="problem-3">
+<h3>Problem 3<a class="headerlink" href="#problem-3" title="Link to this heading">#</a></h3>
+<p>There are many ways to implement periodic boundary conditions. The simplest is a set of if-tests. That works, and may be a useful starting point, but if-tests inside loops can in some cases slow down your code. (It can hinder compiler optimisations.) Can you come up with a more efficient way of implementing periodic boundary conditions in your code?</p>
+</section>
+<section id="problem-4">
+<h3>Problem 4<a class="headerlink" href="#problem-4" title="Link to this heading">#</a></h3>
+<p>Time to actually write some code!</p>
+<p><strong>a)</strong> Implement a code for the Ising model which uses the Markov Chain Monte Carlo approach to sample spin configurations <span class="math notranslate nohighlight">\(\mathbf{s}\)</span> and computes</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\langle \epsilon \rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\langle |m| \rangle\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(C_V / N\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\chi / N\)</span></p></li>
+</ul>
+<p><strong>b)</strong> Validation: For a temperature of <span class="math notranslate nohighlight">\(T = 1.0\,J/k_B\)</span>, compare your results to the analytical results from Problem 1. (Feel free to compare for other temperature values as well, or simply make plots of these quantities versus temperature.)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See the note in Problem 1 about periodic boundary conditions for the special case of a <span class="math notranslate nohighlight">\(2 \times 2\)</span> lattice. Short summary: it is OK to double-count spin pairs for this special case, so we can use the exact same code for all lattice sizes, including <span class="math notranslate nohighlight">\(2 \times 2\)</span>.</p>
+</div>
+<p><strong>c)</strong> How many <strong>Monte Carlo cycles</strong> do you need to get good agreement with the analytical result? (Here <em>one Monte Carlo cycle</em> corresponds to <em><span class="math notranslate nohighlight">\(N\)</span> attempted spin flips</em>.)</p>
+</section>
+<section id="problem-5">
+<h3>Problem 5<a class="headerlink" href="#problem-5" title="Link to this heading">#</a></h3>
+<p>Now we will use a lattice with size <span class="math notranslate nohighlight">\(L=20\)</span> and study the <strong>burn-in time</strong> (or <strong>equilibration time</strong>), measured in number of Monte Carlo cycles.</p>
+<p><strong>a)</strong> Make a plot that shows two types of graphs as a function of the number of Monte Carlo cycles done:</p>
+<ol class="arabic simple">
+<li><p>The current state energy <span class="math notranslate nohighlight">\(\epsilon\)</span> at the given Monte Carlo cycle.</p></li>
+<li><p>The average state energy <span class="math notranslate nohighlight">\(\langle \epsilon \rangle\)</span> computed using all samples up to (and including) the current Monte Carlo cycle.</p></li>
+</ol>
+<p>The plot should contain four versions of each of these graphs, based on the following configurations:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(T = 1.0\,J/k_B\)</span>, starting from <em>unordered</em> (random) initial state</p></li>
+<li><p><span class="math notranslate nohighlight">\(T = 1.0\,J/k_B\)</span>, starting from <em>ordered</em> initial state (all spins pointing the same way)</p></li>
+<li><p><span class="math notranslate nohighlight">\(T = 2.4\,J/k_B\)</span>, starting from <em>unordered</em> (random) initial state</p></li>
+<li><p><span class="math notranslate nohighlight">\(T = 2.4\,J/k_B\)</span>, starting from <em>ordered</em> initial state (all spins pointing the same way)</p></li>
+</ul>
+<p>Since the plot will contain eight graphs in total, some care is needed to make the plot readable:</p>
+<ul>
+<li><p>Here is a Python (<code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code>) code snippet with some example tricks for how make these graphs look reasonable together:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_MC_cycles</span><span class="p">,</span> <span class="n">eps_T10_u</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#377eb8&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_MC_cycles</span><span class="p">,</span> <span class="n">eps_T10_o</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#4daf4a&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_MC_cycles</span><span class="p">,</span> <span class="n">eps_T24_u</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#e41a1c&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_MC_cycles</span><span class="p">,</span> <span class="n">eps_T24_o</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#984ea3&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_MC_cycles</span><span class="p">,</span> <span class="n">mean_eps_T10_u</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#377eb8&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$T=1.0$ $J/k_</span><span class="si">{B}</span><span class="s1">$, unordered&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_MC_cycles</span><span class="p">,</span> <span class="n">mean_eps_T10_o</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#4daf4a&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$T=1.0$ $J/k_</span><span class="si">{B}</span><span class="s1">$, ordered&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_MC_cycles</span><span class="p">,</span> <span class="n">mean_eps_T24_u</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#e41a1c&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$T=2.4$ $J/k_</span><span class="si">{B}</span><span class="s1">$, unordered&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_MC_cycles</span><span class="p">,</span> <span class="n">mean_eps_T24_o</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#984ea3&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$T=2.4$ $J/k_</span><span class="si">{B}</span><span class="s1">$, ordered&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>The hex codes for the colours are taken from <a class="reference external" href="https://colorbrewer2.org">colorbrewer2.org</a>.</p></li>
+<li><p>It’s up to you to decide how many MC cycles to include in your plot, but the figure will probably be most informative if plot your results using a logarithmic x axis.</p></li>
+</ul>
+<!-- 
+for temperatures $T = 1.0\,J/k_B$ and $T = 2.4\,J/k_B$, and starting from *ordered* (all spins pointing the same way) and *unordered* (random) initial states. 
+
+plots that show the state energy $\epsilon$ and magnetisation $|m|$ versus the number of Monte Carlo cycles 
+
+how the numerical estimates of $\langle \epsilon \rangle$ and $\langle |m| \rangle$ evolve with the number of Monte Carlo cycles. You should produce graphs for temperatures $T = 1.0\,J/k_B$ and $T = 2.4\,J/k_B$, and starting from *ordered* (all spins pointing the same way) and *unordered* (random) initial states.  -->
+<p><strong>b)</strong> Based on these plots, how long would you say the burn-in time is?</p>
+<!-- 
+**c)** What is the argument for not using the samples generated during the burn-in time? 
+ -->
+</section>
+<section id="problem-6">
+<h3>Problem 6<a class="headerlink" href="#problem-6" title="Link to this heading">#</a></h3>
+<p>Now let’s move beyond mere expectation values and see how we can use our MCMC to estimate the full probability distribution for <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
+<p>For <span class="math notranslate nohighlight">\(L=20\)</span>, approximate the probability function <span class="math notranslate nohighlight">\(p_{\epsilon}(\epsilon;T)\)</span> for <span class="math notranslate nohighlight">\(T = 1.0\,J/k_B\)</span> and <span class="math notranslate nohighlight">\(T = 2.4\,J/k_B\)</span> by creating normalised histograms of generated <span class="math notranslate nohighlight">\(\epsilon\)</span> samples. (Keep an eye on bin widths and remember that <span class="math notranslate nohighlight">\(\epsilon\)</span> is not a continuous variable.) Comment on your results, in particular on the variance of the two distributions.</p>
+</section>
+<section id="problem-7">
+<h3>Problem 7<a class="headerlink" href="#problem-7" title="Link to this heading">#</a></h3>
+<p>Now parallelise your code and perform some timing tests to estimate the speed-up factor resulting from the parallelisation.</p>
+<p>We recommend you try to parallelise the code using either OpenMP (demonstrated in class and in code examples) or MPI (not demonstrated), in order to learn one of these approaches. However, it is also OK to just do the simple approach of designing your code such that you can run multiple instances of it at the same time using different input configurations, e.g. to parallelise the task of running for different temperature values.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See our <a class="reference internal" href="../parallelization/introduction_to_openmp.html#sec-introduction-to-openmp"><span class="std std-ref">Introduction to OpenMP</span></a> page for instructions on how to build your code with OpenMP enabled.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There are basically three different approaches you can take here, corresponding to three different levels at which you can parallelise your code:</p>
+<ol class="arabic simple">
+<li><p><em>At the temperature level:</em> You can parallelise the outer loop over temperature values (see Problem 8, which is where parallelisation becomes important)</p></li>
+<li><p><em>At the level of MCMC “walkers”:</em> You can use multiple threads to perform multiple independent MCMC runs in parallel and combine their results.</p></li>
+<li><p><em>At the level of spin flipping:</em> You could parallelise the part of the code where you generate new states by attempting to flip N spins.</p></li>
+</ol>
+<p>We recommend you do either approach 1 or 2. (You only need to do one approach.) Approach 1 is probably the easiest. Approach 2 is the standard approach to parallelising a single MCMC run (i.e. when there isn’t any scan over some external parameter, like <span class="math notranslate nohighlight">\(T\)</span> in our case.) Approach 3 would by far be the most complicated and will also be the least efficient.</p>
+</div>
+</section>
+<section id="problem-8">
+<h3>Problem 8<a class="headerlink" href="#problem-8" title="Link to this heading">#</a></h3>
+<p>Now we will start investigating phase transitions.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For a brief introduction to the phase transition of the 2D Ising model, see Chapters 13.4 and 13.4.1 of Morten Hjorth-Jensen’s lecture notes. See also the brief theoretical summary for Problem 9.</p>
+</div>
+<ul class="simple">
+<li><p><strong>a)</strong> For lattices of size <span class="math notranslate nohighlight">\(L = 40,60,80,100\)</span> (and higher if you want), make plots of <span class="math notranslate nohighlight">\(\langle \epsilon \rangle\)</span>, <span class="math notranslate nohighlight">\(\langle |m| \rangle\)</span>, <span class="math notranslate nohighlight">\(C_V/N\)</span> and <span class="math notranslate nohighlight">\(\chi/N\)</span> as function of temperature <span class="math notranslate nohighlight">\(T\)</span>. (Plot the results for the different <span class="math notranslate nohighlight">\(L\)</span> values in the same figure.) Focus on temperatures in a range around <span class="math notranslate nohighlight">\(T \in [2.1, 2.4]\,J/k_B\)</span>. Make sure to use sufficiently small temperature steps, at least in the region where the graphs change most rapidly.</p></li>
+<li><p><strong>b)</strong> Do you see an indication of a phase transition?</p></li>
+<li><p><strong>c)</strong> What is the critical temperature <span class="math notranslate nohighlight">\(T_c(L)\)</span> for the different lattice sizes <span class="math notranslate nohighlight">\(L\)</span>? Use the <span class="math notranslate nohighlight">\(\chi/N\)</span> or <span class="math notranslate nohighlight">\(C_V/N\)</span> results to determine <span class="math notranslate nohighlight">\(T_c(L)\)</span>.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some suggestions in case you are short on time because the code is slower than expected:</p>
+<ul class="simple">
+<li><p>Make sure you’re not running way more temperature points than necessary. A useful strategy: First run a scan with large T steps, to roughly identify the subregion of <span class="math notranslate nohighlight">\(T\)</span> values where the graphs change most quickly. (E.g. only 10 points on the suggested <span class="math notranslate nohighlight">\(T\)</span> range can be sufficient here.) Then run a second scan that zooms in on the much smaller <span class="math notranslate nohighlight">\(T\)</span> range needed to identify <span class="math notranslate nohighlight">\(T_c\)</span>. Again, you can probably get good results with as few as 10 <span class="math notranslate nohighlight">\(T\)</span> points – though more points always make for better results.</p></li>
+<li><p>If you’re having trouble with OpenMP/MPI parallelisation, remember that to just make sure you get the numerical results you need, you can always do “dummy parallelisation” by just running multiple instances of your program. (Use separete terminal windows, or run your program in the background with the <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> command, e.g. <code class="docutils literal notranslate"><span class="pre">./main.exe</span> <span class="pre">&lt;command</span> <span class="pre">line</span> <span class="pre">options&gt;</span> <span class="pre">&amp;</span></code>. You can view your background jobs with <code class="docutils literal notranslate"><span class="pre">jobs</span></code> and bring them to the foreground with <code class="docutils literal notranslate"><span class="pre">fg</span> <span class="pre">&lt;job</span> <span class="pre">number&gt;</span></code>.) This “manual” way of splitting up tasks works well assuming that your program can take options like <code class="docutils literal notranslate"><span class="pre">L</span></code>, <code class="docutils literal notranslate"><span class="pre">Tmin</span></code>, <code class="docutils literal notranslate"><span class="pre">Tmax</span></code>, <code class="docutils literal notranslate"><span class="pre">deltaT</span></code> (or <code class="docutils literal notranslate"><span class="pre">n_Tsteps</span></code>) as command-line arguments.</p></li>
+<li><p>Perhaps you can afford to reduce the number of Monte Carlo cycles a bit and still get decent results? E.g. halving the number of cycles should halve the program runtime.</p></li>
+<li><p>Keep in mind that you don’t need to finish all the runs for Problem 8 to get started on Problem 9. To get a first result for Problem 9 you basically only need to identify <span class="math notranslate nohighlight">\(T_c\)</span> for two of the <span class="math notranslate nohighlight">\(L\)</span> values in Problem 8. So you can do Problem 9 in parallel with the runs for Problem 8, and then just update your plots/numbers as new runs in Problem 8 finishes.</p></li>
+</ul>
+</div>
+</section>
+<section id="problem-9">
+<h3>Problem 9<a class="headerlink" href="#problem-9" title="Link to this heading">#</a></h3>
+<p>The critical temperature for an <em>infinite</em> (<span class="math notranslate nohighlight">\(L=\infty\)</span>) 2D Ising model was found analytically by Lars Onsager in 1944. The result is</p>
+<div class="math notranslate nohighlight">
+\[
+T_c(L=\infty) = \frac{2}{\ln(1 + \sqrt{2})}\,J/k_B \approx 2.269\,J/k_B
+\]</div>
+<p>Our task now is to try to numerically estimate <span class="math notranslate nohighlight">\(T_c(L=\infty)\)</span> using our numerical results for <span class="math notranslate nohighlight">\(T_c(L)\)</span> of <em>finite</em> systems.</p>
+<p>Using your set of <span class="math notranslate nohighlight">\(L\)</span> and <span class="math notranslate nohighlight">\(T_c(L)\)</span> values from Problem 8 as data points, and the scaling relation</p>
+<div class="math notranslate nohighlight" id="equation-scaling-relation">
+<span class="eqno">(22)<a class="headerlink" href="#equation-scaling-relation" title="Link to this equation">#</a></span>\[
+T_c(L) - T_c(L=\infty) = a L^{-1}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(a\)</span> is a constant, extract an estimate for <span class="math notranslate nohighlight">\(T_c(L=\infty)\)</span> and compare it to Onsager’s analytical result.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hint: If you are unsure about how to approach this, try to first plot your data points in such a way that they, according to the relation above, should fall on a straight line.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hint 2: If you find that doing a linear fit (a.k.a. linear least squares, a.k.a. linear regression, …) could be useful, we don’t expect you to discuss that method in detail in your report. Feel free to simply apply one of the many tools available, e.g. <code class="docutils literal notranslate"><span class="pre">scipy.stats.linregress</span></code>.</p>
+</div>
+<p><strong>Theoretical background:</strong> <em>What follows here is a very brief summary. For more information see Chapters 13.4 and 13.4.1 of Morten Hjorth-Jensen’s lecture notes, and references therein.</em></p>
+<p>One of the many fascinating aspects of so-called critical phenomena is that vastly different physical systems can exhibit the same behaviour close to their critical point (here: critical temperature). This behaviour is described by power laws, with exponents called <em>critical exponents</em>. For the <em>infinite</em> 2D Ising model, the mean magnetisation, heat capacity and susceptibility behave as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\langle |m| \rangle &amp;\propto |T - T_c(L=\infty)|^{\beta}\\[1ex]
+\frac{C_V}{N} &amp;\propto |T - T_c(L=\infty)|^{-\alpha}\\[1ex]
+\frac{\chi}{N} &amp;\propto |T - T_c(L=\infty)|^{-\gamma}
+\end{split}\]</div>
+<p>for temperatures <span class="math notranslate nohighlight">\(T\)</span> close to <span class="math notranslate nohighlight">\(T_c\)</span>, with critical exponents <span class="math notranslate nohighlight">\(\beta=1/8\)</span>, <span class="math notranslate nohighlight">\(\alpha=0\)</span> and <span class="math notranslate nohighlight">\(\gamma=7/4\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A critical exponent of 0 is just the power-law way of expressing <em>logarithmic</em> behaviour.</p>
+</div>
+<p>Both <span class="math notranslate nohighlight">\(C_V/N\)</span> and <span class="math notranslate nohighlight">\(\chi/N\)</span> diverge near <span class="math notranslate nohighlight">\(T_c\)</span>. Similarly, the <em>correlation length</em> (here: the typical lenght scale of regions with aligned spins) <span class="math notranslate nohighlight">\(\xi\)</span> also diverges near the critical point,</p>
+<div class="math notranslate nohighlight" id="equation-corr-length">
+<span class="eqno">(23)<a class="headerlink" href="#equation-corr-length" title="Link to this equation">#</a></span>\[
+\xi \propto |T - T_c(L=\infty)|^{-\nu}
+\]</div>
+<p>with critical exponent <span class="math notranslate nohighlight">\(\nu = 1\)</span>. However, since we are studying a <em>finite</em> system, the largest correlation length is <span class="math notranslate nohighlight">\(\xi = L\)</span>, which we associate with the critical temperature of the finite system, <span class="math notranslate nohighlight">\(T = T_c(L)\)</span>. Inserting this into equation <a class="reference internal" href="#equation-corr-length">(23)</a> gives rise to equation <a class="reference internal" href="#equation-scaling-relation">(22)</a> above.</p>
+<p>Using this relation we see that, when <span class="math notranslate nohighlight">\(T\)</span> is close to <span class="math notranslate nohighlight">\(T_c(L)\)</span>, we expect the mean magnetisation, heat capacity and susceptibility to depend on the system size <span class="math notranslate nohighlight">\(L\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\langle |m| \rangle &amp;\propto L^{-\beta/\nu}\\[1ex]
+\frac{C_V}{N} &amp;\propto L^{\alpha/\nu}\\[1ex]
+\frac{\chi}{N} &amp;\propto L^{\gamma/\nu}.
+\end{split}\]</div>
+<p><strong>Good luck!</strong></p>
+</section>
+<hr class="docutils" />
+<section id="code-snippets">
+<h3>Code snippets<a class="headerlink" href="#code-snippets" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>See the code snippets in <a class="reference external" href="https://github.com/anderkve/FYS3150/tree/master/code_examples/omp_parallelization"><code class="docutils literal notranslate"><span class="pre">code_examples/omp_parallelization</span></code></a> for some simple examples on parallelisation using OpenMP.</p></li>
+<li><p>For some illustrations on how you can use the C++ <code class="docutils literal notranslate"><span class="pre">&lt;random&gt;</span></code> library for random number generation, see code examples in <a class="reference external" href="https://github.com/anderkve/FYS3150/tree/master/code_examples/random_number_generation"><code class="docutils literal notranslate"><span class="pre">code_examples/random_number_generation</span></code></a>. These examples use a Mersenne Twister generator. Some of the examples demonstrate how one can do seeding when working with multiple OpenMP threads.</p></li>
+</ul>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -503,6 +919,36 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practicalities">Practicalities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions-notation-and-units">Definitions, notation and units</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problems">Problems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-1">Problem 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-2">Problem 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-3">Problem 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-4">Problem 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-5">Problem 5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-6">Problem 6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-7">Problem 7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-8">Problem 8</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-9">Problem 9</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-snippets">Code snippets</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
