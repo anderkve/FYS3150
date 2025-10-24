@@ -3,7 +3,8 @@
 //
 
 #include "precomp.h"
-// #include "box.h"
+#include "../../include/aos/actor.h"
+#include "box.h"
 
 // Hole //
 
@@ -38,7 +39,7 @@ Hole::Hole(const arma::vec2& pos, const arma::vec2& vel, const double mass, cons
     shape->setOutlineThickness(1.);
 }
 
-bool Hole::update() {
+bool Hole::update(double dt) {
     // nothing to update here yet, they stay put
     return true;
 }
@@ -61,7 +62,7 @@ Particle::Particle(const arma::vec2& pos, const arma::vec2& vel, double mass) {
     shape->setFillColor(sf::Color::Yellow);
 }
 
-bool Particle::update() {
+bool Particle::update(double dt) {
     // update position using Heun's method
     pos = new_position; // we store the current position so that all particles are equally affected by gravity, i.e. at the same time
     const arma::vec2 temp_pos = pos + dt/2. * ( vel + vel + dt*acceleration() );
@@ -105,7 +106,7 @@ arma::vec2 Particle::acceleration(const arma::vec2& positionOverride) {
 
     arma::vec2 acceleration = {0., 0.};
 
-    // find the force from the holes onto the particle
+    // find the force from the holes and other particles onto the particle
     for (const auto& actor : Box::actorPool) {
         arma::vec2 direction = actor->pos - position;
         double dist = norm(direction);

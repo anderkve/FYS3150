@@ -2,7 +2,7 @@
 // Created by Nils Enric Canut Taugbøl on 07/01/2025.
 //
 
-#include "precomp.h"
+#include "../../include/aos/box.h"
 
 // for the generation of particles and holes
 std::random_device rd;
@@ -45,12 +45,12 @@ void Box::Init() {
     window.display();
 }
 
-void Box::update() {
+void Box::update(double dt) {
     Timer t;
 
     // update all actors
     for (int i = 0; i < (int) actorPool.size(); i++) {
-        if (!actorPool[i]->update()) {
+        if (!actorPool[i]->update(dt)) {
             // actor got deleted; replace by last actor in list
             // shared_ptr automatically manages the deletion
             std::shared_ptr<Actor> lastActor = actorPool.back();
@@ -76,6 +76,15 @@ void Box::update() {
         particlesOnScreen++;
     }
 
+    // report frame time
+    frameTimeAvg = 0.95f * frameTimeAvg + 0.05f * t.elapsed() * 1000;
+    printf( "update time: %5.2fms\n", frameTimeAvg );
+
+}
+
+void Box::render() {
+    window.clear();
+
     // draw all
     for (const auto & i : actorPool) {
         window.draw(*i->shape);
@@ -83,11 +92,7 @@ void Box::update() {
 
     // evt. handle input -> need to implement member function
 
-
-    // report frame time
-    frameTimeAvg = 0.95f * frameTimeAvg + 0.05f * t.elapsed() * 1000;
-    printf( "frame time: %5.2fms\n", frameTimeAvg );
-
+    window.display();
 }
 
 arma::vec2 Box::startSide(int start) {

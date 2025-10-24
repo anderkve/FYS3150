@@ -34,7 +34,4 @@ struct Timer
     std::chrono::high_resolution_clock::time_point start;
 };
 
-#include "actor.h"
-#include "box.h"
-
 #endif //PRECOMP_H

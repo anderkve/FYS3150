@@ -7,7 +7,8 @@
 
 inline constexpr double PIXELSPAU = 250.;    // pixels = 1 AU
 inline constexpr double G = 39.4784176044 * PIXELSPAU * PIXELSPAU * PIXELSPAU;
-inline constexpr double dt = 1e-6; // of a year
+inline constexpr double sim_dt = 1.0/120.0;     // physics tick
+inline constexpr double dt = 1e-6;        // integration step size
 inline constexpr int SCRNWIDTH = 1000;
 inline constexpr int SCRNHEIGHT = 750;
 inline constexpr int N_PARTICLES = 100;
