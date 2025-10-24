@@ -159,13 +159,13 @@
 
 
 ### Lecture 19, October 23
-- Continue the introduction to Monte Carlo methods 
 - Project 4 physics case: the 2D Ising model
-- Introduction to Monte Carlo methods
+- Continue the introduction to Monte Carlo methods 
 - Markov chains
 
 
 ### Lecture 20, October 24
+- Continue discussion of Markov chains
 - Markov chain Monte Carlo (MCMC)
 
 
