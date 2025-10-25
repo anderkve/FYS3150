@@ -110,6 +110,9 @@ def p(x):
 
 # ---- Settings for example 6 ----
 
+# NOTE: Change the line "accept_ratio = p(x_proposal) / p(x_current)" 
+# towards the end of the script to "accept_ratio = 1.0"
+
 # n_samples = 200 
 # plot_update_steps = 2
 # x_init = 20

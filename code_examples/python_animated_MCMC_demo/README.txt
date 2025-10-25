@@ -58,8 +58,7 @@ Example 5
 
 Example 6
 ---------
-- Change the line "accept_ratio = p(x_proposal) / p(x_current)" towards the end
-  of the script to "accept_ratio = 1.0"
+- Change the line "accept_ratio = p(x_proposal) / p(x_current)" towards the end of the script to "accept_ratio = 1.0"
 - Run the example
 - This demonstrates how the acceptance rule (which was chosen to ensure the requirement 
   of "detailed balance") is necessary for the chain to actually draw samples from the
