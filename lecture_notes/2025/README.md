@@ -170,15 +170,22 @@
 
 
 ### Lecture 21, October 30
+- Wrap up discussion of MCMC
+  - MCMC code examples
+- Parallel computing
 
 
-
-### Lecture 22, November 31
-
+### Lecture 22, October 31
+- Wrap up discussion of parallel computing
+- Random number generation
+- If time: start on sampling from low-dimensional pdfs
 
 
 ### Lecture 23, November 6
-
+- Sampling from low-dimensional pdfs
+  - Rejection sampling
+  - Importance sampling
+  - Inverse transform sampling
 
 
 ### Lecture 24, November 7
