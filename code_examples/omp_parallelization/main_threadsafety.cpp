@@ -25,26 +25,26 @@ int main(int argc, const char* argv[])
   // A non-parallelized dummy code that we'll use as starting point
   // for the parallelized examples below
 
-  int x = 0;
+  // int x = 0;
 
-  int thread_num = omp_get_thread_num();  // This will just return 0, since we're not in a parallel block
+  // int thread_num = omp_get_thread_num();  // This will just return 0, since we're not in a parallel block
   
-  for (int i = 0; i < 5; i++)
-  {
+  // for (int i = 0; i < 5; i++)
+  // {
 
-    // Waste some time, to emulate some computation
-    double d = 0;
-    for (int j = 0; j < 1000; j++) 
-    { 
-      d += 1.0;
-    } 
+  //   // Waste some time, to emulate some computation
+  //   double d = 0;
+  //   for (int j = 0; j < 1000; j++) 
+  //   { 
+  //     d += 1.0;
+  //   } 
 
-    // Print current state
-    cout << "thread: " << thread_num << "    x memory address: " << &x << "    x value: " << x << endl;
+  //   // Print current state
+  //   cout << "thread: " << thread_num << "    x memory address: " << &x << "    x value: " << x << endl;
 
-    // Move it
-    x += 1;
-  }
+  //   // Move it
+  //   x += 1;
+  // }
 
 
   // ==================================
@@ -101,32 +101,32 @@ int main(int argc, const char* argv[])
   // (Notice how the printout shows that each thread has a unique memory 
   //  address for its varible x.)
 
-  // #pragma omp parallel
-  // {
-  //   int x = 0;
+  #pragma omp parallel
+  {
+    int x = 0;
   
-  //   int thread_num = omp_get_thread_num();
+    int thread_num = omp_get_thread_num();
 
-  //   for (int i = 0; i < 5; i++)
-  //   {
+    for (int i = 0; i < 5; i++)
+    {
 
-  //     // Waste some time, to emulate some computation each thread must do
-  //     double d = 0;
-  //     for (int j = 0; j < 1000; j++) 
-  //     { 
-  //       d += 1.0;
-  //     } 
+      // Waste some time, to emulate some computation each thread must do
+      double d = 0;
+      for (int j = 0; j < 1000; j++) 
+      { 
+        d += 1.0;
+      } 
 
-  //     // Print current state
-  //     #pragma omp critical
-  //     {
-  //       cout << "thread: " << thread_num << "    x memory address: " << &x << "    x value: " << x << endl;
-  //     }
+      // Print current state
+      #pragma omp critical
+      {
+        cout << "thread: " << thread_num << "    x memory address: " << &x << "    x value: " << x << endl;
+      }
 
-  //     // Move it
-  //     x += 1;
-  //   }
-  // }
+      // Move it
+      x += 1;
+    }
+  }
 
 
   // And all was well

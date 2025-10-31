@@ -7,20 +7,20 @@ import numpy as np
 
 # ---- Settings for example 1 ----
 
-n_samples = 100
-plot_update_steps = 1
-x_init = 12
+# n_samples = 100
+# plot_update_steps = 1
+# x_init = 12
 
-# Define true distribution
+# # Define true distribution
 
-mean1 = 15.0
-sigma1 = 3.0
-norm1 = norm(loc=mean1, scale=sigma1)
+# mean1 = 15.0
+# sigma1 = 3.0
+# norm1 = norm(loc=mean1, scale=sigma1)
 
-true_mean = mean1
+# true_mean = mean1
 
-def p(x):
-  return norm1.pdf(x)
+# def p(x):
+#   return norm1.pdf(x)
 
 
 # ---- Settings for example 2 ----
@@ -113,26 +113,26 @@ def p(x):
 # NOTE: Change the line "accept_ratio = p(x_proposal) / p(x_current)" 
 # towards the end of the script to "accept_ratio = 1.0"
 
-# n_samples = 200 
-# plot_update_steps = 2
-# x_init = 20
+n_samples = 200 
+plot_update_steps = 2
+x_init = 20
 
-# # Define true distribution
+# Define true distribution
 
-# mean1 = 15.0
-# sigma1 = 3.0
-# norm1 = norm(loc=mean1, scale=sigma1)
-# weight1 = 0.8
+mean1 = 15.0
+sigma1 = 3.0
+norm1 = norm(loc=mean1, scale=sigma1)
+weight1 = 0.8
 
-# mean2 = 8.0
-# sigma2 = 1.0
-# norm2 = norm(loc=mean2, scale=sigma2)
-# weight2 = 1.0 - weight1
+mean2 = 8.0
+sigma2 = 1.0
+norm2 = norm(loc=mean2, scale=sigma2)
+weight2 = 1.0 - weight1
 
-# true_mean = weight1 * mean1 + weight2 * mean2
+true_mean = weight1 * mean1 + weight2 * mean2
 
-# def p(x):
-#   return weight1 * norm1.pdf(x) + weight2 * norm2.pdf(x)
+def p(x):
+  return weight1 * norm1.pdf(x) + weight2 * norm2.pdf(x)
 
 # --------------------------- ----
 
@@ -175,8 +175,8 @@ for i in range(1,n_samples+1):
   x_proposal = generate_proposal(x_current)
 
   # Accept new x or keep current?
-  accept_ratio = p(x_proposal) / p(x_current)  # Proposal prob not included as it is symmetric and cancels in ratio
-  # accept_ratio = 1.0  # To demonstrate why the acceptance rule is important...
+  # accept_ratio = p(x_proposal) / p(x_current)  # Proposal prob not included as it is symmetric and cancels in ratio
+  accept_ratio = 1.0  # To demonstrate why the acceptance rule is important...
 
   r = uniform.rvs() # sample number from uniform distribution between 0 and 1
   if r < accept_ratio:
