@@ -178,7 +178,6 @@
 ### Lecture 22, October 31
 - Wrap up discussion of parallel computing
 - Random number generation
-- If time: start on sampling from low-dimensional pdfs
 
 
 ### Lecture 23, November 6
