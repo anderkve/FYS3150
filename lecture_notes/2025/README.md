@@ -177,6 +177,8 @@
 
 ### Lecture 22, October 31
 - Wrap up discussion of parallel computing
+  - Speedup, Amdahl's law
+  - Code examples: https://github.com/anderkve/FYS3150/tree/master/code_examples/omp_parallelization
 - Random number generation
 
 
