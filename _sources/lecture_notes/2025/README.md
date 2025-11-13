@@ -159,30 +159,41 @@
 
 
 ### Lecture 19, October 23
-- Continue the introduction to Monte Carlo methods 
 - Project 4 physics case: the 2D Ising model
-- Introduction to Monte Carlo methods
+- Continue the introduction to Monte Carlo methods 
 - Markov chains
 
 
 ### Lecture 20, October 24
+- Continue discussion of Markov chains
 - Markov chain Monte Carlo (MCMC)
 
 
 ### Lecture 21, October 30
+- Wrap up discussion of MCMC
+  - MCMC code examples
+- Parallel computing
 
 
-
-### Lecture 22, November 31
-
+### Lecture 22, October 31
+- Wrap up discussion of parallel computing
+  - Speedup, Amdahl's law
+  - Code examples: https://github.com/anderkve/FYS3150/tree/master/code_examples/omp_parallelization
+- Random number generation
 
 
 ### Lecture 23, November 6
-
-
+- Sampling from low-dimensional pdfs
+  - Rejection sampling
+  - Importance sampling
+  - Inverse transform sampling
+- Start discussing Monte Carlo integration
 
 ### Lecture 24, November 7
-
+- Monte Carlo integration
+- Numerical integration in low dimensions
+  - Example of recursive integration algorithm
+- *If time*: Intro to Project 5
 
 
 ### Lecture 25, November 13
