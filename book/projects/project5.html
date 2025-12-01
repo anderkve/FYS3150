@@ -860,6 +860,10 @@ u(x,y,t=0) = e^{-\frac{(x-x_c)^2}{2 \sigma_x^2} - \frac{(y-y_c)^2}{2 \sigma_y^2}
 <p class="admonition-title">Note</p>
 <p>Note that for this problem the output file can become large-ish (~200MB as binary file) if you save the full simulation, i.e. the full wave function at each time step.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you need to store your Armadillo matrices/cubes in binary file but cannot use pyarma to read Armadillo binary files from Python, take a look at the code example we have added at <a class="reference external" href="https://github.com/anderkve/FYS3150/tree/master/code_examples/write_numpy_binary_files">github.com/anderkve/FYS3150/tree/master/code_examples/write_numpy_binary_files</a>. This example demonstrates how you can save Armadillo data directly to the numpy binary file format, which you can read from Python just using numpy.</p>
+</div>
 <p>In theory, the total probability (<span class="math notranslate nohighlight">\(= 1\)</span>) in the probability function <span class="math notranslate nohighlight">\(p^n_{ij} = u^{n*}_{ij}\,u^n_{ij}\)</span> should be conserved over time. This can be used as a consistency check for your code.</p>
 <ul class="simple">
 <li><p>First run your simulation with the settings <span class="math notranslate nohighlight">\(h = 0.005\)</span>, <span class="math notranslate nohighlight">\(\Delta t = 2.5\times10^{-5}\)</span>, <span class="math notranslate nohighlight">\(T = 0.008\)</span>, <span class="math notranslate nohighlight">\(x_c = 0.25\)</span>, <span class="math notranslate nohighlight">\(\sigma_x = 0.05\)</span>, <span class="math notranslate nohighlight">\(p_x = 200\)</span>, <span class="math notranslate nohighlight">\(y_c = 0.5\)</span>, <span class="math notranslate nohighlight">\(\sigma_y = 0.05\)</span>, <span class="math notranslate nohighlight">\(p_y = 0\)</span> and <span class="math notranslate nohighlight">\(v_0 = 0\)</span>, i.e. without any double-slit barrier.</p></li>
@@ -901,6 +905,7 @@ u(x,y,t=0) = e^{-\frac{(x-x_c)^2}{2 \sigma_x^2} - \frac{(y-y_c)^2}{2 \sigma_y^2}
 <hr class="docutils" />
 <section id="code-snippets">
 <h3>Code snippets<a class="headerlink" href="#code-snippets" title="Link to this heading">#</a></h3>
+<p>If you need to store your Armadillo matrices/cubes in binary file but cannot use pyarma to read Armadillo binary files from Python, take a look at the code example we have added at <a class="reference external" href="https://github.com/anderkve/FYS3150/tree/master/code_examples/write_numpy_binary_files">github.com/anderkve/FYS3150/tree/master/code_examples/write_numpy_binary_files</a>. This example demonstrates how you can save Armadillo data directly to the numpy binary file format, which you can read from Python just using numpy.</p>
 <p>Here’s a C++ function to print the structure of a <code class="docutils literal notranslate"><span class="pre">arma::sp_cx_mat</span></code> matrix to screen:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;armadillo&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>

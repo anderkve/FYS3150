@@ -193,22 +193,28 @@
 - Monte Carlo integration
 - Numerical integration in low dimensions
   - Example of recursive integration algorithm
-- *If time*: Intro to Project 5
+
 
 
 ### Lecture 25, November 13
-
+- Intro to Project 5
+- Partial differential equations
 
 
 ### Lecture 26, November 14
-
+- Continue discussion of partial differential equations
+  - Forward Time Central Space
+  - Backward Time Central Space
+  - Crank-Nicolson
 
 
 ### Lecture 27, November 20
-
+- Stability analysis (matrix method)
+- Various C++ topics
 
 
 ### Lecture 28, November 21
-
+- Low-level optimisation
+- Course summary
 
 

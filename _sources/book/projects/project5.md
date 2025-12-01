@@ -430,6 +430,10 @@ Put everything together into a program that does (at least) the following:
 Note that for this problem the output file can become large-ish (~200MB as binary file) if you save the full simulation, i.e. the full wave function at each time step.
 ```
 
+```{note}
+If you need to store your Armadillo matrices/cubes in binary file but cannot use pyarma to read Armadillo binary files from Python, take a look at the code example we have added at [github.com/anderkve/FYS3150/tree/master/code_examples/write_numpy_binary_files](https://github.com/anderkve/FYS3150/tree/master/code_examples/write_numpy_binary_files). This example demonstrates how you can save Armadillo data directly to the numpy binary file format, which you can read from Python just using numpy.
+```
+
 In theory, the total probability ($= 1$) in the probability function $p^n_{ij} = u^{n*}_{ij}\,u^n_{ij}$ should be conserved over time. This can be used as a consistency check for your code.
 
 - First run your simulation with the settings $h = 0.005$, $\Delta t = 2.5\times10^{-5}$, $T = 0.008$, $x_c = 0.25$, $\sigma_x = 0.05$, $p_x = 200$, $y_c = 0.5$, $\sigma_y = 0.05$, $p_y = 0$ and $v_0 = 0$, i.e. without any double-slit barrier.
@@ -479,6 +483,10 @@ If you find it useful, feel free to make some animations of your simulation and 
 
 
 ### Code snippets
+
+
+If you need to store your Armadillo matrices/cubes in binary file but cannot use pyarma to read Armadillo binary files from Python, take a look at the code example we have added at [github.com/anderkve/FYS3150/tree/master/code_examples/write_numpy_binary_files](https://github.com/anderkve/FYS3150/tree/master/code_examples/write_numpy_binary_files). This example demonstrates how you can save Armadillo data directly to the numpy binary file format, which you can read from Python just using numpy.
+
 
 Here's a C++ function to print the structure of a `arma::sp_cx_mat` matrix to screen:
 

@@ -162,12 +162,12 @@ Which is nice, but what if an execution takes a long time? Then the next cycle h
 The problem shown above has been mitigated through two different mechanisms, one that is simply expanding the hardware by adding more execution units and one that makes the hardware more intelligent by allowing out-of-order execution.
 Out-of-order execution is a _hardware mechanism_ that reorders the instructions by executing the instructions that are ready immediately, it optimises the execution unit use and is the basis of Instruction Level Parallelism:
 
-|       | $t_1$ | $t_2$ | $t_3$                           | $t_4$                               | $t_5$   | $t_6$   | $t_7$ | $t_8$                         | $t_9$   | $t_{10}$ |
-|-------|-------|-------|---------------------------------|-------------------------------------|---------|---------|-------|-------------------------------|---------|----------|
-| $c_1$ | Fetch | Read  | Execute                         | Write                               |         |         |       |                               |         |          |
-| $c_2$ |       | Fetch | Read                            | Execute                             | Execute | Execute | Write |                               |         |          |
-| $c_3$ |       |       | Fetch (needs result from $c_2$) |                                     |         |         |       | Read (needs Write from $c_2$) | Execute | Write    |
-| $c_4$ |       |       |                                 | Fetch (independent of above cycles) | Read    |         |       | Execute                       | Write   |          |
+|       | $t_1$ | $t_2$ | $t_3$                           | $t_4$                               | $t_5$   | $t_6$   | $t_7$    | $t_8$                         | $t_9$   | $t_{10}$ |
+|-------|-------|-------|---------------------------------|-------------------------------------|---------|---------|----------|-------------------------------|---------|----------|
+| $c_1$ | Fetch | Read  | Execute                         | Write                               |         |         |          |                               |         |          |
+| $c_2$ |       | Fetch | Read                            | Execute                             | Execute | Execute | Write    |                               |         |          |
+| $c_3$ |       |       | Fetch (needs result from $c_2$) |                                     |         |         |          | Read (needs Write from $c_2$) | Execute | Write    |
+| $c_4$ |       |       |                                 | Fetch (independent of above cycles) | Read    |         | Execute  | Write                         |         |          |
 
 
 Note that out-of-order execution entirely hardware based, which is absolutely insane, it's truly a marvel of modern times.
