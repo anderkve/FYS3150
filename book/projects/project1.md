@@ -1,5 +1,9 @@
 # Project 1
 
+Not published yet.
+
+<!-- 
+
 ## Practicalities
 
 - **Deadline:** Wednesday, September 10, at 23:59
@@ -178,19 +182,6 @@ Make a table or plot to present your timing results, and comment briefly on the 
 
 
 
-<!-- 
-
-### Problem 11
-
-Now say we wanted to solve our matrix equation using the general
-LU decomposition approach to solving matrix equations.
-(Feel free to try this, either by writing your own code or using a library, e.g. armadillo.)
-
-What do you expect would happen if you attempted to run code for the case $n = 10^5$ on your laptop?
-
--->
-
-
 ----
 
 
@@ -253,3 +244,5 @@ int main ()
 }
 ```
 
+
+ -->

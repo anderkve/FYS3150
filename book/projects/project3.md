@@ -1,6 +1,10 @@
 # Project 3
 
 
+Not published yet.
+
+<!-- 
+
 ## Practicalities
 
 - **Deadline**: Wednesday, October 22, 23:59.
@@ -138,9 +142,6 @@ $$
 $$ (f_eq)
 
 
-<!--
-*Hint: if $F(f,g) = 0$ and  $G(f,g) = 0$, then $F(f,g) + c G(f,g) = 0$ for arbitrary functions $F$, $G$, $f$ and $g$ and an arbitrary complex number $c$.*
--->
 
 
 #### Problem 3
@@ -410,32 +411,10 @@ It's now time to test and explore your simulation:
 
   - Similarly, for the case of two particles, make plots of the trajectories in the ($x,v_x)$ and $(z,v_z)$ planes (i.e. *phase space* plots) for the cases *with* and *without* interactions. How do the trajectories change when you include interactions? Are the results reasonable from a physical point of view?
 
-<!-- 
-  - Make a 3D plot of the trajectory of two particles in the $(x,y,z)$ space *with* and *without* interactions.
-
-  ```{note}
-  An example of 3D plotting with matplotlib can be found [here](https://matplotlib.org/stable/gallery/mplot3d/lines3d.html#sphx-glr-gallery-mplot3d-lines3d-py).
-  ```
- -->
 
   - Now consider the case of a single particle, which means we can easily compare to the analytical solution. Use the initial values for Particle 1 given above, and let the total simulation time be $50 \textrm{µs}$. Run the simulation four times, using $n_1 = 4000$, $n_2 = 8000$, $n_3 = 16000$ and $n_4 = 32000$ timesteps. (Corresponding stepsizes: $h_k = 50 / n_k \,\mathrm{µs}$).
   For each of the four simulations, make a graph showing the size of the relative error in $\mathbf{r}_i$, defined as $\frac{|\mathbf{r}_{i, \text{exact}} - \mathbf{r}_i|}{|\mathbf{r}_{i, \text{exact}}|}$, at each time step $t_i$. Here $\mathbf{r}_{i, \text{exact}}$ is the analytical solution and $\mathbf{r}_{i}$ our numerical approximation. Present the four graphs in a single plot. Do the same using the forward Euler method. Comment on these two plots. In particular, do they match your expectation, based on what you know about the RK4 and forward Euler methods?
 
-<!--   - Using the simulation results for the four different stepsize values $h_k$, estimate the error convergence rate $r_{\text{err}}$ for forward Euler and RK4 with the expression
-
-  $$
-  r_{\text{err}} = \frac{1}{3}\sum_{k=2}^4\frac{\log (\Delta_{\text{max},k}/\Delta_{\text{max},k-1})}{\log (h_{k}/h_{k-1}) }.
-  $$
-
-  where
-
-  $$
-  \Delta_{\text{max},k} = \max_i |\mathbf{r}_{i, \text{exact}} - \mathbf{r}_{i}|
-  $$
-
-
-  is the maximum error (taken over all timesteps $i$) of the simulation with stepsize $h_k$. Here $\mathbf{r}_{i, \text{exact}}$ is the analytical solution and $\mathbf{r}_{i}$ our numerical approximation.
- -->
 
 ```{note}
 When trying to interpret the plots from the simulations above, you may find it useful to also look at other plots, e.g. plots of the $(t,x)$ and $(t,y)$ planes, or plots of the Coulomb force between the two particles as function of time, or something else. (But we do not expect you to include these plots in the report.)
@@ -503,12 +482,6 @@ We want to use our simulation to search for resonance frequencies of the system.
   - How do the resonances change when the amplitude for the time-varying potential is increased?
 
 
-<!--
-  - Based on the research literature on Penning traps, we expect that some of resonance frequencies of our system can
-    be expressed as simple combinations of $\omega_z$, $\omega_+$ and $\omega_-$. Does this seem to be the case for the resonances you've uncovered? **Note:** While the electric potential is now time-dependent, $\omega_z$ is still defined the same way as before, i.e. in terms of the *constant* $V_0$.
--->
-
-
 
 - Now we want to check if the Coulomb interactions have some impact on the structure of these resonances. To do this you should "zoom in" on one of the resonances you've uncovered by performing fine-grained frequency scans around that resonance. 
 
@@ -571,3 +544,46 @@ Here is a suggested starting point for member functions of the `PenningTrap` cla
 
 Note that for Problem 9 you probably want to modify the declarations of some of these functions, as well as add some new ones.
 
+
+ -->
+
+
+
+
+<!--
+
+OLD STUFF
+
+
+*Hint: if $F(f,g) = 0$ and  $G(f,g) = 0$, then $F(f,g) + c G(f,g) = 0$ for arbitrary functions $F$, $G$, $f$ and $g$ and an arbitrary complex number $c$.*
+
+
+  - Based on the research literature on Penning traps, we expect that some of resonance frequencies of our system can
+    be expressed as simple combinations of $\omega_z$, $\omega_+$ and $\omega_-$. Does this seem to be the case for the resonances you've uncovered? **Note:** While the electric potential is now time-dependent, $\omega_z$ is still defined the same way as before, i.e. in terms of the *constant* $V_0$.
+
+
+
+  - Make a 3D plot of the trajectory of two particles in the $(x,y,z)$ space *with* and *without* interactions.
+
+  ```{note}
+  An example of 3D plotting with matplotlib can be found [here](https://matplotlib.org/stable/gallery/mplot3d/lines3d.html#sphx-glr-gallery-mplot3d-lines3d-py).
+  ```
+
+
+  - Using the simulation results for the four different stepsize values $h_k$, estimate the error convergence rate $r_{\text{err}}$ for forward Euler and RK4 with the expression
+
+  $$
+  r_{\text{err}} = \frac{1}{3}\sum_{k=2}^4\frac{\log (\Delta_{\text{max},k}/\Delta_{\text{max},k-1})}{\log (h_{k}/h_{k-1}) }.
+  $$
+
+  where
+
+  $$
+  \Delta_{\text{max},k} = \max_i |\mathbf{r}_{i, \text{exact}} - \mathbf{r}_{i}|
+  $$
+
+
+  is the maximum error (taken over all timesteps $i$) of the simulation with stepsize $h_k$. Here $\mathbf{r}_{i, \text{exact}}$ is the analytical solution and $\mathbf{r}_{i}$ our numerical approximation.
+
+
+-->
