@@ -1,8 +1,5 @@
 # Project 4
 
-Not published yet.
-
-<!-- 
 
 ```{note}
 While working on the project, check this page regularly in case of small updates (typo fixes, added hints, etc.)
@@ -158,6 +155,70 @@ The reason for the expected value $\braket{M} = 0$ even at low temperatures is t
 ```
 
 
+<!--
+```{note}
+There's been some confusion regarding the expressions for heat capacity $C_V$ and susceptibility $\chi$ and how they relate to energy per spin ($\epsilon$) and magnetisation per spin ($m$), respectively. I think the confusion comes down to some unfortunate notation from my side. So let me explain, using $C_V$ as example.
+
+The heat capacity $C_V$ in itself is given by
+
+$$
+C_V = \frac{1}{k_B T^2} \textrm{Var}(E)
+$$
+
+However, I have provided an expression for the heat capacity *normalised to the number of spins* $N$. (So a quantity analogous to *the specific heat capacity* when we normalise against units of mass.)  Unfortunately I wrote this expression also using the symbol $C_V$. That is, I wrote:
+
+$$
+C_V = \frac{1}{N} \frac{1}{k_B T^2} \textrm{Var}(E)
+$$
+
+where I have included the extra factor $1/N$. However, what I *should* have done was to make this explicit in my notation, either by writing $C_V/N$ directly, or introduce some new notation, e.g. a lower-case $c_V$:
+
+$$
+c_V = \frac{C_V}{N} = \frac{1}{N} \frac{1}{k_B T^2} \textrm{Var}(E)
+$$
+
+From this expression we can easily express this quantity in terms of the variance of the energy per spin ($\epsilon$), if we want to. All we need is to remember the general relation that if $y=kx$ where $k$ is some constant, then
+
+$$
+\textrm{Var}(y) = \textrm{Var}(kx) = k^2\textrm{Var}(x)
+$$
+
+So in terms of energy, we have our familiar expression:
+
+$$
+\frac{C_V}{N} &= \frac{1}{N} \frac{1}{k_B T^2} \textrm{Var}(E) \\
+              &= \frac{1}{N} \frac{1}{k_B T^2} \left[ \langle E^2 \rangle  -  \langle E \rangle^2 \right]
+$$
+
+And in terms of energy per spin, since $E = N \epsilon$, we get
+
+$$
+\frac{C_V}{N} &= \frac{1}{N} \frac{1}{k_B T^2} \textrm{Var}(E) \\ 
+&=  \frac{1}{N} \frac{1}{k_B T^2} \textrm{Var}(N \epsilon) \\ 
+&=  \frac{1}{N} \frac{1}{k_B T^2} N^2 \textrm{Var}(\epsilon)  \\ 
+&= N \frac{1}{k_B T^2} \left[ \langle \epsilon^2 \rangle  -  \langle \epsilon \rangle^2 \right]
+$$
+
+
+By the same logic we can write the magnetic susceptibility per spin as either
+
+$$
+\frac{\chi}{N} = \frac{1}{N} \frac{1}{k_B T} \left[ \langle M^2 \rangle  -  \langle |M| \rangle^2 \right]
+$$
+
+or 
+
+$$
+\frac{\chi}{N} = N \frac{1}{k_B T} \left[ \langle m^2 \rangle  -  \langle |m| \rangle^2 \right]
+$$
+
+I hope this helps clarify the issue, and apologies for the confusion. 
+
+Whether you use the original notation ($C_V$ and $\chi$) or some new notation (e.g. $C_V/N$ and $\chi/N$) for these quantities in your report is up to you -- just make sure your math agrees with the expressions above.
+
+```
+-->
+
 
 ### Problem 2
 
@@ -236,8 +297,18 @@ Now we will use a lattice with size $L=20$ and study the **burn-in time** (or **
   - It's up to you to decide how many MC cycles to include in your plot, but the figure will probably be most informative if plot your results using a logarithmic x axis.
 
 
+<!-- 
+for temperatures $T = 1.0\,J/k_B$ and $T = 2.4\,J/k_B$, and starting from *ordered* (all spins pointing the same way) and *unordered* (random) initial states. 
+
+plots that show the state energy $\epsilon$ and magnetisation $|m|$ versus the number of Monte Carlo cycles 
+
+how the numerical estimates of $\langle \epsilon \rangle$ and $\langle |m| \rangle$ evolve with the number of Monte Carlo cycles. You should produce graphs for temperatures $T = 1.0\,J/k_B$ and $T = 2.4\,J/k_B$, and starting from *ordered* (all spins pointing the same way) and *unordered* (random) initial states.  -->
+
 **b)** Based on these plots, how long would you say the burn-in time is?
 
+<!-- 
+**c)** What is the argument for not using the samples generated during the burn-in time? 
+ -->
 
 
 ### Problem 6
@@ -364,92 +435,4 @@ $$
 
 - For some illustrations on how you can use the C++ `<random>` library for random number generation, see code examples in [`code_examples/random_number_generation`](https://github.com/anderkve/FYS3150/tree/master/code_examples/random_number_generation). These examples use a Mersenne Twister generator. Some of the examples demonstrate how one can do seeding when working with multiple OpenMP threads.
 
-
- -->
-
-
-
-
-
-
-<!--
-
-OLD STUFF
-
-
-```{note}
-There's been some confusion regarding the expressions for heat capacity $C_V$ and susceptibility $\chi$ and how they relate to energy per spin ($\epsilon$) and magnetisation per spin ($m$), respectively. I think the confusion comes down to some unfortunate notation from my side. So let me explain, using $C_V$ as example.
-
-The heat capacity $C_V$ in itself is given by
-
-$$
-C_V = \frac{1}{k_B T^2} \textrm{Var}(E)
-$$
-
-However, I have provided an expression for the heat capacity *normalised to the number of spins* $N$. (So a quantity analogous to *the specific heat capacity* when we normalise against units of mass.)  Unfortunately I wrote this expression also using the symbol $C_V$. That is, I wrote:
-
-$$
-C_V = \frac{1}{N} \frac{1}{k_B T^2} \textrm{Var}(E)
-$$
-
-where I have included the extra factor $1/N$. However, what I *should* have done was to make this explicit in my notation, either by writing $C_V/N$ directly, or introduce some new notation, e.g. a lower-case $c_V$:
-
-$$
-c_V = \frac{C_V}{N} = \frac{1}{N} \frac{1}{k_B T^2} \textrm{Var}(E)
-$$
-
-From this expression we can easily express this quantity in terms of the variance of the energy per spin ($\epsilon$), if we want to. All we need is to remember the general relation that if $y=kx$ where $k$ is some constant, then
-
-$$
-\textrm{Var}(y) = \textrm{Var}(kx) = k^2\textrm{Var}(x)
-$$
-
-So in terms of energy, we have our familiar expression:
-
-$$
-\frac{C_V}{N} &= \frac{1}{N} \frac{1}{k_B T^2} \textrm{Var}(E) \\
-              &= \frac{1}{N} \frac{1}{k_B T^2} \left[ \langle E^2 \rangle  -  \langle E \rangle^2 \right]
-$$
-
-And in terms of energy per spin, since $E = N \epsilon$, we get
-
-$$
-\frac{C_V}{N} &= \frac{1}{N} \frac{1}{k_B T^2} \textrm{Var}(E) \\ 
-&=  \frac{1}{N} \frac{1}{k_B T^2} \textrm{Var}(N \epsilon) \\ 
-&=  \frac{1}{N} \frac{1}{k_B T^2} N^2 \textrm{Var}(\epsilon)  \\ 
-&= N \frac{1}{k_B T^2} \left[ \langle \epsilon^2 \rangle  -  \langle \epsilon \rangle^2 \right]
-$$
-
-
-By the same logic we can write the magnetic susceptibility per spin as either
-
-$$
-\frac{\chi}{N} = \frac{1}{N} \frac{1}{k_B T} \left[ \langle M^2 \rangle  -  \langle |M| \rangle^2 \right]
-$$
-
-or 
-
-$$
-\frac{\chi}{N} = N \frac{1}{k_B T} \left[ \langle m^2 \rangle  -  \langle |m| \rangle^2 \right]
-$$
-
-I hope this helps clarify the issue, and apologies for the confusion. 
-
-Whether you use the original notation ($C_V$ and $\chi$) or some new notation (e.g. $C_V/N$ and $\chi/N$) for these quantities in your report is up to you -- just make sure your math agrees with the expressions above.
-
-```
-
-
-for temperatures $T = 1.0\,J/k_B$ and $T = 2.4\,J/k_B$, and starting from *ordered* (all spins pointing the same way) and *unordered* (random) initial states. 
-
-plots that show the state energy $\epsilon$ and magnetisation $|m|$ versus the number of Monte Carlo cycles 
-
-how the numerical estimates of $\langle \epsilon \rangle$ and $\langle |m| \rangle$ evolve with the number of Monte Carlo cycles. You should produce graphs for temperatures $T = 1.0\,J/k_B$ and $T = 2.4\,J/k_B$, and starting from *ordered* (all spins pointing the same way) and *unordered* (random) initial states.
-
-
-
-**c)** What is the argument for not using the samples generated during the burn-in time? 
-
-
--->
 

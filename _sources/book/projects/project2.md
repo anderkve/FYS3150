@@ -1,9 +1,9 @@
 # Project 2
 
-Not published yet.
+<!--  Not published yet. -->
 
  
-<!-- 
+
 ## Practicalities
 
 - **Deadline:** Wednesday, September 24, 23:59.
@@ -207,6 +207,15 @@ Plot the corresponding analytical eigenvectors (extended with the boundary point
 
 
 
+<!-- 
+### Problem X
+Jacobi's rotation algorithm is based on an important property of orthogonal transformations that we will show here. Assume that 
+
+- $\vec{v}_i$ is a set of *orthonormal* basis vectors, i.e. that $\vec{v}_i^T \cdot \vec{v}_j = \delta_{ij}$.
+- $\mathbf{U}$ is an *orthogonal* transformation matrix, i.e. that $\mathbf{U}^T = \mathbf{U}^{-1}$.
+
+Show that transformations with $\mathbf{U}$ preserves orthonormality, i.e. show that the set of vectors $\vec{w}_i = \mathbf{U} \vec{v}_i$ is also an orthonormal set.
+ -->
 
 
 
@@ -394,21 +403,7 @@ Note:
 
 ----
 
- -->
-
-
-
 
 <!-- 
-
-OLD STUFF
-
-### Problem X
-Jacobi's rotation algorithm is based on an important property of orthogonal transformations that we will show here. Assume that 
-
-- $\vec{v}_i$ is a set of *orthonormal* basis vectors, i.e. that $\vec{v}_i^T \cdot \vec{v}_j = \delta_{ij}$.
-- $\mathbf{U}$ is an *orthogonal* transformation matrix, i.e. that $\mathbf{U}^T = \mathbf{U}^{-1}$.
-
-Show that transformations with $\mathbf{U}$ preserves orthonormality, i.e. show that the set of vectors $\vec{w}_i = \mathbf{U} \vec{v}_i$ is also an orthonormal set.
+**Watch this space for more code examples...**
  -->
-
