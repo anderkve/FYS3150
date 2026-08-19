@@ -8,7 +8,7 @@ We recommend that you use Ubuntu as your chosen Linux distribution, unless you a
 If you're using Ubuntu, just copy and run the following command in your terminal. This should install the software packages you'll need for coding during the course.
 
 ```sh
-sudo apt install make git python3-pip gcc g++ cmake libopenblas-dev liblapack-dev libarpack2-dev libsuperlu-dev libarmadillo-dev libomp-dev
+sudo apt install make git python3-pip gcc g++ cmake libopenblas-dev liblapack-dev libarpack2-dev libsuperlu-dev libarmadillo-dev libeigen3-dev libomp-dev
 ```
 
 <!--
