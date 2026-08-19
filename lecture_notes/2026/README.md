@@ -1,6 +1,6 @@
 ## Lecture notes
 
-You can find the latest version of the lecture notes in the file `lecture_notes.pdf` above. Keep in mind that the notes are continually updated, so if you read ahead of the lectures some things may change later.
+You can find the latest version of the lecture notes in the file [`lecture_notes.pdf`](https://raw.githubusercontent.com/anderkve/FYS3150/master/lecture_notes/2026/lecture_notes.pdf) above. Keep in mind that the notes are continually updated, so if you read ahead of the lectures some things may change later.
 
 
 ## Overview of lecture topics
