@@ -1,5 +1,9 @@
-## Overview of lecture topics
+## Lecture notes
 
+You can find the latest version of the lecture notes in the file `lecture_notes.pdf` above. Keep in mind that the notes are continually updated, so if you read ahead of the lectures some things may change later.
+
+
+## Overview of lecture topics
 
 ### Lecture 1, August 20
 
