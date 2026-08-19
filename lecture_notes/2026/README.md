@@ -19,3 +19,12 @@ You can find the latest version of the lecture notes in the file `lecture_notes.
   - Source files and header files
   - Compilation and linking with multiple files
   - C++ variable types and scopes
+
+
+### Lecture 3, August 27
+
+- Topics for Project 1:
+  - Discretisation
+  - Numerical differentiation
+  - Start discussion of boundary value problems (BVPs)
+    - Expressing a BVP as a matrix equation
