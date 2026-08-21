@@ -443,7 +443,8 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-output-vs-binary-output">Text output vs binary output</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimal-example">Minimal example</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-with-nicely-formatted-numbers">Example with nicely formatted numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-with-nicely-formatted-numbers-before-c-20">Example with nicely formatted numbers – before C++20</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-with-nicely-formatted-numbers-after-c-20">Example with nicely formatted numbers – after C++20</a></li>
 </ul>
             </nav>
         </div>
@@ -481,31 +482,27 @@ document.write(`
 <span class="w">  </span><span class="c1">// Create and open the output file. Or, technically, create </span>
 <span class="w">  </span><span class="c1">// an &quot;output file stream&quot; (type std::ofstream) and connect </span>
 <span class="w">  </span><span class="c1">// it to our filename.</span>
-<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">ofstream</span><span class="w"> </span><span class="n">ofile</span><span class="p">;</span>
-<span class="w">  </span><span class="n">ofile</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">);</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">ofstream</span><span class="w"> </span><span class="n">ofile</span><span class="p">(</span><span class="n">filename</span><span class="p">);</span>
 
 <span class="w">  </span><span class="c1">// Send some text to this output file</span>
 <span class="w">  </span><span class="n">ofile</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Some output text&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="w">  </span>
-<span class="w">  </span><span class="c1">// Close the output file</span>
-<span class="w">  </span><span class="n">ofile</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
-
 <span class="w">  </span><span class="c1">// All is well. Exit program with return code 0.</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>If you run the above program it should produce a file <code class="docutils literal notranslate"><span class="pre">output.txt</span></code> containing the single line “Some output text”. Note that the line</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ofile</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">ofstream</span><span class="w"> </span><span class="nf">ofile</span><span class="p">(</span><span class="n">filename</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>opens the file for <em>overwriting</em> any existing file content. If you rather want to <em>append</em> to an existing file, you can use the “append mode” as follows:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ofile</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">ofstream</span><span class="o">::</span><span class="n">app</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">ofstream</span><span class="w"> </span><span class="nf">ofile</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">ios</span><span class="o">::</span><span class="n">app</span><span class="p">);</span>
 </pre></div>
 </div>
 </section>
-<section id="example-with-nicely-formatted-numbers">
-<h2>Example with nicely formatted numbers<a class="headerlink" href="#example-with-nicely-formatted-numbers" title="Link to this heading">#</a></h2>
+<section id="example-with-nicely-formatted-numbers-before-c-20">
+<h2>Example with nicely formatted numbers – before C++20<a class="headerlink" href="#example-with-nicely-formatted-numbers-before-c-20" title="Link to this heading">#</a></h2>
 <p>Below is a slightly more elaborate example. It computes y = x^2 for 101 points from x=0.0 to x=1.0 (i.e. with a stepsize of 0.01),
 and writes the x and y values to a file <code class="docutils literal notranslate"><span class="pre">x_y.txt</span></code> in a nicely formatted way. For this formatting, we use functionality from <code class="docutils literal notranslate"><span class="pre">&lt;iomanip&gt;</span></code>.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
@@ -520,8 +517,7 @@ and writes the x and y values to a file <code class="docutils literal notranslat
 
 <span class="w">  </span><span class="c1">// Create and open the output file. Or, technically, create </span>
 <span class="w">  </span><span class="c1">// an &quot;output file stream&quot; (type std::ofstream) and connect it to our filename.</span>
-<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">ofstream</span><span class="w"> </span><span class="n">ofile</span><span class="p">;</span>
-<span class="w">  </span><span class="n">ofile</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">);</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">ofstream</span><span class="w"> </span><span class="n">ofile</span><span class="p">(</span><span class="n">filename</span><span class="p">);</span>
 
 <span class="w">  </span><span class="c1">// Set some parameters for our computation</span>
 <span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">x_min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
@@ -540,18 +536,15 @@ and writes the x and y values to a file <code class="docutils literal notranslat
 <span class="w">  </span><span class="c1">// Loop over steps</span>
 <span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n_steps</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
 <span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Update x and y values</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x_min</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="o">*</span><span class="n">h</span><span class="p">;</span>
+<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">;</span>
+
 <span class="w">    </span><span class="c1">// Write a line with the current x and y values (nicely formatted) to file</span>
 <span class="w">    </span><span class="n">ofile</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">setw</span><span class="p">(</span><span class="n">width</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">setprecision</span><span class="p">(</span><span class="n">prec</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">scientific</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x</span>
 <span class="w">          </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">setw</span><span class="p">(</span><span class="n">width</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">setprecision</span><span class="p">(</span><span class="n">prec</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">scientific</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">y</span>
 <span class="w">          </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="w">    </span><span class="c1">// Update x and y values</span>
-<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">h</span><span class="p">;</span>
-<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">;</span>
 <span class="w">  </span><span class="p">}</span><span class="w">  </span>
-
-<span class="w">  </span><span class="c1">// Close the output file</span>
-<span class="w">  </span><span class="n">ofile</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
 
 <span class="w">  </span><span class="c1">// All is well. Exit program with return code 0.</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
@@ -577,6 +570,103 @@ and writes the x and y values to a file <code class="docutils literal notranslat
 </div>
 <p>We see that each number is written in scientific notation (<code class="docutils literal notranslate"><span class="pre">std::scientific</span></code>), has four decimals (<code class="docutils literal notranslate"><span class="pre">std::setprecision(...)</span></code>),
 and takes up a width of 12 characters (<code class="docutils literal notranslate"><span class="pre">std::setw(...)</span></code>) in the file; 2 blank spaces plus 10 characters for the actual number. By using two blank spaces between numbers we ensure that the formatting will still look nice even if some numbers get a minus sign in front.</p>
+</section>
+<section id="example-with-nicely-formatted-numbers-after-c-20">
+<h2>Example with nicely formatted numbers – after C++20<a class="headerlink" href="#example-with-nicely-formatted-numbers-after-c-20" title="Link to this heading">#</a></h2>
+<p>With C++20 we got the <code class="docutils literal notranslate"><span class="pre">&lt;format&gt;</span></code> library as part of the standard library. This allows us to do formatting in a way which will look simpler and more familiar if you come from e.g. Python. Here is the same example as above, but now using <code class="docutils literal notranslate"><span class="pre">&lt;format&gt;</span></code>:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fstream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;format&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="c1">// Set a filename</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">filename</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;x_y.txt&quot;</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Create and open the output file. Or, technically, create </span>
+<span class="w">  </span><span class="c1">// an &quot;output file stream&quot; (type std::ofstream) and connect it to our filename.</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">ofstream</span><span class="w"> </span><span class="n">ofile</span><span class="p">(</span><span class="n">filename</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Set some parameters for our computation</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">x_min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">x_max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">n_steps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">x_max</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x_min</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">n_steps</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Set the first x and y values</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x_min</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Loop over steps</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n_steps</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Update x and y values</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x_min</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="o">*</span><span class="n">h</span><span class="p">;</span>
+<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Write a line with the current x and y values (nicely formatted) to file</span>
+<span class="w">    </span><span class="n">ofile</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;{:12.4e}{:12.4e}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span><span class="w">  </span>
+
+<span class="w">  </span><span class="c1">// All is well. Exit program with return code 0.</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Depending on your compiler version, you may need to add the <code class="docutils literal notranslate"><span class="pre">-std=c++20</span></code> flag to build this program, e.g.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>g++<span class="w"> </span>-std<span class="o">=</span>c++20<span class="w"> </span>main.cpp<span class="w"> </span>-o<span class="w"> </span>main
+</pre></div>
+</div>
+<p>Running the program should produce the a file identical to the one from the first example.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>head<span class="w"> </span>-10<span class="w"> </span>x_y.txt
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="m">0</span>.0000e+00<span class="w">  </span><span class="m">0</span>.0000e+00
+<span class="w">  </span><span class="m">1</span>.0000e-02<span class="w">  </span><span class="m">1</span>.0000e-04
+<span class="w">  </span><span class="m">2</span>.0000e-02<span class="w">  </span><span class="m">4</span>.0000e-04
+<span class="w">  </span><span class="m">3</span>.0000e-02<span class="w">  </span><span class="m">9</span>.0000e-04
+<span class="w">  </span><span class="m">4</span>.0000e-02<span class="w">  </span><span class="m">1</span>.6000e-03
+<span class="w">  </span><span class="m">5</span>.0000e-02<span class="w">  </span><span class="m">2</span>.5000e-03
+<span class="w">  </span><span class="m">6</span>.0000e-02<span class="w">  </span><span class="m">3</span>.6000e-03
+<span class="w">  </span><span class="m">7</span>.0000e-02<span class="w">  </span><span class="m">4</span>.9000e-03
+<span class="w">  </span><span class="m">8</span>.0000e-02<span class="w">  </span><span class="m">6</span>.4000e-03
+<span class="w">  </span><span class="m">9</span>.0000e-02<span class="w">  </span><span class="m">8</span>.1000e-03
+</pre></div>
+</div>
+<p>Finally, here’s an example program demonstrating different uses of <code class="docutils literal notranslate"><span class="pre">std::format</span></code> to format numbers, here printed to screen:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;format&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">12345.6789</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;default:            {}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w">         </span><span class="n">x</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;fixed:              {:f}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w">       </span><span class="n">x</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;fixed, 2 dec:       {:.2f}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w">     </span><span class="n">x</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;scientific:         {:e}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w">       </span><span class="n">x</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;scientific, 4 dec:  {:.4e}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w">     </span><span class="n">x</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;width 20:           {:20.8e}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w">   </span><span class="n">x</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;left-aligned:       {:&lt;20.8e}|</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;right-aligned:      {:&gt;20.8e}|</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Running this program should give the following screen output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">default</span><span class="p">:</span>            <span class="mf">12345.6789</span>
+<span class="n">fixed</span><span class="p">:</span>              <span class="mf">12345.678900</span>
+<span class="n">fixed</span><span class="p">,</span> <span class="mi">2</span> <span class="n">dec</span><span class="p">:</span>       <span class="mf">12345.68</span>
+<span class="n">scientific</span><span class="p">:</span>         <span class="mf">1.234568e+04</span>
+<span class="n">scientific</span><span class="p">,</span> <span class="mi">4</span> <span class="n">dec</span><span class="p">:</span>  <span class="mf">1.2346e+04</span>
+<span class="n">width</span> <span class="mi">20</span><span class="p">:</span>                 <span class="mf">1.23456789e+04</span>
+<span class="n">left</span><span class="o">-</span><span class="n">aligned</span><span class="p">:</span>       <span class="mf">1.23456789e+04</span>      <span class="o">|</span>
+<span class="n">right</span><span class="o">-</span><span class="n">aligned</span><span class="p">:</span>            <span class="mf">1.23456789e+04</span><span class="o">|</span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -646,7 +736,8 @@ and takes up a width of 12 characters (<code class="docutils literal notranslate
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-output-vs-binary-output">Text output vs binary output</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimal-example">Minimal example</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-with-nicely-formatted-numbers">Example with nicely formatted numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-with-nicely-formatted-numbers-before-c-20">Example with nicely formatted numbers – before C++20</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-with-nicely-formatted-numbers-after-c-20">Example with nicely formatted numbers – after C++20</a></li>
 </ul>
   </nav></div>
 
