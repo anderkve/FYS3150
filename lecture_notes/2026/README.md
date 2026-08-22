@@ -7,7 +7,8 @@ You can find the latest version of the lecture notes in the file [`lecture_notes
 
 ### Lecture 1, August 20
 
-- Introduction to the course 
+- Introduction to the course
+- First chat about C++
 
 
 ### Lecture 2, August 21
