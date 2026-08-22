@@ -52,8 +52,8 @@ int main(int argc, char* argv[])
   // Save the command-line arguments as different variables
   // 
 
-  int some_integer = atoi(argv[1]);    // atoi converts argv[2] to an integer
-  double some_double = atof(argv[2]);  // atof converts argv[3] to a floating-point number
+  int some_integer = atoi(argv[1]);    // atoi converts argv[1] to an integer
+  double some_double = atof(argv[2]);  // atof converts argv[2] to a floating-point number
   std::string some_string = argv[3];   // no type conversion needed
 
 
