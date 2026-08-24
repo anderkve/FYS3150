@@ -1,12 +1,9 @@
 # Project 1
 
-Not published yet.
-
-<!-- 
 
 ## Practicalities
 
-- **Deadline:** Wednesday, September 10, at 23:59
+- **Deadline:** Wednesday, September 9, at 23:59
 
 - **Format:**
   - A pdf document, typeset in LaTeX, with answers to all the problems below. You deliver the pdf on Canvas.
@@ -14,13 +11,15 @@ Not published yet.
   - Code (with comments, of course) on a UiO GitHub repo ([github.uio.no](https://github.uio.no/)), with the URL to you repo written in the pdf document.
   - You *must* deliver via your group on Canvas (even if you are working alone).
 
-- **Not a complete report:** For project 1, we do not require you to write a proper scientific report --- only a document with an answer for each problem. But the quality of the presentation still matters, of course. So pay attention to figures, figure captions, grammar, etc.
+- **Assign yourself to a Project 1 group on Canvas:** For each project we will create 100 open groups on Canvas, so you can assign yourself to one of the groups. You must do this even if you are working alone. If you are working together with someone, then all of you should assign yourself to the same group. It does not matter what group number you pick, but please keep using the same group number for the rest of the projects too, if you can.
 
-- **Collaboration:** We strongly encourage you to collaborate with others, in groups up to three students. The group hands in a single pdf and a single UiO GitHub repo. (So make sure you all join the same group on Canvas.) Remember to list everyone's name in the pdf.
+- **Not a complete report:** For project 1, we do not require you to write a proper scientific report --- only a document with an answer for each problem. But the quality of the presentation still matters, of course. So please pay attention to figures, figure captions, grammar, etc.
+
+- **Collaboration:** We strongly encourage you to collaborate with others, in groups up to three students. The group hands in a single pdf and a single UiO GitHub repo. (So make sure you all join the same group on Canvas before handing in.) Remember to list everyone's name in the pdf.
 
 - **Reproducibility:** Your code should be available on a GitHub repo. You can refer to relevant parts of your code in your answers. Make sure to include a README file in the repo that briefly explains how the code is organized, and how it should be compiled and run in order to reproduce your results.
 
-- **Figures:** Figures included in your LaTeX document should be made as vector graphics (e.g. `.pdf` files), rather than raster graphics (e.g. `.png` files). If you are making plots with `matplotlib.pyplot` in Python, this is as simple as calling `plt.savefig("figure.pdf")` rather than `plt.savefig("figure.png")`. If you have to use a `.png` format make sure to use a high resolution, e.g. `plt.savefig("figure.png", dpi=300)`.
+- **Figures:** Figures included in your LaTeX document should preferrably be made as vector graphics (e.g. `.pdf` files), or alternatively, as high-resolution raster graphics (e.g. `.png` files). If you are making plots with `matplotlib.pyplot` in Python, this is as simple as calling `plt.savefig("figure.pdf")` or `plt.savefig("figure.png")`. If you use a `.png` format make sure to use a high resolution, e.g. `plt.savefig("figure.png", dpi=300)`.
 
 
 ## Preliminaries
@@ -159,7 +158,7 @@ as function of $x_i$. Again, one graph per choice of $n_{\text{steps}}$.
 **c**) Now make a table that shows the *maximum* relative error $\max(\epsilon_i)$ for each choice of $n_{\text{steps}}$, up to $n_{\text{steps}} = 10^7$. Comment on your results, and feel free to also make a plot to visualise the result.
 
 ```{note}
-If you perform your error computations based on the data files your C++ code produces (rather than performing the error computations directly in the C++ code), make sure you write your data to file using a sufficiently high number of digits. (It can be instructive to check what happens if you don't do this...)
+If you perform your error computations based on the data files your C++ code produces (rather than performing the error computations directly in the C++ code), make sure you write your data to file using a sufficiently high number of digits. It can be instructive to check what happens if you don't do this...
 ```
 
 
@@ -243,6 +242,3 @@ int main ()
   // ...
 }
 ```
-
-
- -->
