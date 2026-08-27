@@ -29,3 +29,19 @@ You can find the latest version of the lecture notes in the file [`lecture_notes
   - Numerical differentiation
   - Start discussion of boundary value problems (BVPs)
     - Expressing a BVP as a matrix equation
+- Code topics (if time):
+  - Write C++ output to file
+  - Unix terminal: redirect terminal output to file
+  - C++: containers (`std::vector` and `std::map`)
+  - C++: integer vs floating-point division
+
+
+### Lecture 4, August 28
+
+- Cont. topics for Project 1
+  - Finish discussion of boundary value problems
+    - Overview of Gaussian elimination
+    - Gaussian elimination for tridiagonal matrix -> Thomas algorithm
+- Counting floating-point operations (FLOPs)
+- Remaining code topics from yesterday
+
