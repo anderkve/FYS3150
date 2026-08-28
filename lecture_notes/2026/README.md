@@ -51,4 +51,6 @@ You can find the latest version of the lecture notes in the file [`lecture_notes
   - Roundoff errors
     - Loss of numerical precision ("catastrophic cancellation")
     - Example error analysis
-
+- Code topics:
+  - Wrap up discussion of `std::vector` and `std::map`
+  - C++: integer vs floating-point division
