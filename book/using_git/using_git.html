@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -212,6 +212,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/write_to_file.html">Write to file</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/read_from_file.html">Read from file</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/intro_to_armadillo.html">Introduction to Armadillo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/intro_to_eigen.html">Introduction to Eigen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/pointers.html">Pointers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/classes.html">Classes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction_to_cpp/online_resources.html">Online C++ resources</a></li>
@@ -237,7 +238,6 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Writing reports</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../writing_reports/introduction_to_latex.html">Introduction to LaTeX</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../writing_reports/project_templates.html">Project templates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../writing_reports/checklist.html">Checklist for reports</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Projects</span></p>
@@ -467,7 +467,7 @@ document.write(`
 <h1>Using Git<a class="headerlink" href="#using-git" title="Link to this heading">#</a></h1>
 <section id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Link to this heading">#</a></h2>
-<p>This tutorial explains how to import a new project into Git, make changes to it, and share changes with other developers. It’s a slightly modified and extended version of the manual entry called <em>gittutorial</em>, which you can look up in your terminal by running</p>
+<p>This tutorial covers the basics of day-to-day git usage, focusing on setting up your local <strong>cloned</strong> repository, and making changes to it, and sharing it with other collaborators. It is adapted from and extended of the manual entry called <em>gittutorial</em>, which you can look up for future reference in your terminal by running</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>man<span class="w"> </span>gittutorial
 </pre></div>
 </div>
@@ -478,19 +478,24 @@ document.write(`
 </section>
 <section id="cloning-a-new-project">
 <h2>Cloning a new project<a class="headerlink" href="#cloning-a-new-project" title="Link to this heading">#</a></h2>
+<p>The first concept to get to grips with is that of the <strong>clone</strong>. Once a repository has been created on GitHub, we make a clone of it on our local computer. This clone is a separate version of the repository that only exists locally, but through commands we will detail later we can synchronize with the <strong>remote</strong> (i.e. the online repository on GitHub) either by sharing changes we have made locally, or downloading changes others have made remotely.</p>
 <p>We recommend you create a repository online on <a class="reference external" href="https://github.com/">GitHub</a> and clone the repository on your computer using the HTTPS link. It’s simply done by running</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https_link
 </pre></div>
 </div>
-<p>where <code class="docutils literal notranslate"><span class="pre">https_link</span></code> is the URL for your repo on GitHub.</p>
+<p>where <code class="docutils literal notranslate"><span class="pre">https_link</span></code> is the URL for your repo on GitHub. This is found by going to the frontpage of your GitHub repo, and clicking the green <code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span> <span class="pre">Code</span></code> button.</p>
 </section>
 <section id="making-changes">
 <h2>Making changes<a class="headerlink" href="#making-changes" title="Link to this heading">#</a></h2>
-<p>Modify some files, then add their updated contents to the index:</p>
+<p>Once your local repository is set up, we can start making changes and write new files etc. Making the changes appear in the online repository requires three fundamental steps: <strong>staging</strong> the changes, <strong>commiting</strong> the staged changes, and <strong>pushing</strong> the changes from local -&gt; remote. Here we will go through staging and committing.</p>
+<p>To stage changes for commit, we simply run the the following command, where file1 etc. can be a new file not in the repository or an existing one that you have modified.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>file1<span class="w"> </span>file2<span class="w"> </span>file3
 </pre></div>
 </div>
-<p>You also use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> to add <em>new</em> files that aren’t yet registered as part of your repository. (More info about <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> below.)</p>
+<p>Staging amounts to selecting what files you want to update the history of your repository with, and does not change anything by itself. To unstage a staged file, we can run</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>restore<span class="w"> </span>--staged<span class="w"> </span>file1
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It’s not recommended to add <em>all</em> the files you have in your project directory. When working on a code project, you should typically just add the actual code files, i.e. the <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> and <code class="docutils literal notranslate"><span class="pre">.hpp</span></code> files for a C++ project, plus README files or other documentation you write. Adding auto-generated files to Git, like the <code class="docutils literal notranslate"><span class="pre">.o</span></code> files and executables you generate in compilation and linking, will just cause confusion and frustration.</p>
@@ -534,12 +539,15 @@ then record a new version of the project.</p>
 </div>
 <p>which will automatically notice any modified (but not new) files, add
 them to the index, and commit, all in one step.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>A note on commit messages: Though not required, it’s a good idea to
 begin the commit message with a single short (less than 50 character)
 line summarizing the change, followed by a blank line and then a more
 thorough description. The text up to the first blank line in a commit
 message is treated as the commit title, and that title is used
 throughout Git.</p>
+</div>
 </section>
 <section id="git-tracks-content-not-files">
 <h2>Git tracks content, not files<a class="headerlink" href="#git-tracks-content-not-files" title="Link to this heading">#</a></h2>
@@ -547,7 +555,7 @@ throughout Git.</p>
 system to start tracking changes to a new file. Git’s <strong>add</strong> command does
 something simpler and more powerful: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> is used both for new and
 newly modified files, and in both cases it takes a snapshot of the
-given files and stages that content in the index, ready for inclusion
+given files and stages that content, ready for inclusion
 in the next commit.</p>
 </section>
 <section id="viewing-project-history">

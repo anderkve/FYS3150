@@ -1,0 +1,1070 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Welcome! &#8212; FYS3150/FYS4150 course material</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'code_examples/low_level/README';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">FYS3150/FYS4150 course material</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting ready</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../book/getting_ready/windows_users.html">Windows users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/getting_ready/mac_users.html">Mac users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/getting_ready/linux_users.html">Linux users</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Using the terminal</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../book/using_the_terminal/basics.html">Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/using_the_terminal/keyboard_shortcuts.html">Keyboard shortcuts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Using Git and GitHub</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../book/using_git/introduction_to_git.html">Introduction to Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/using_git/setting_up_a_UiO_GitHub_repo.html">Setting up a UiO GitHub repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/using_git/add_a_README_and_gitignore.html">Add a README and gitignore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/using_git/using_git.html">Using Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/using_git/prevent_tracking_of_very_large_files.html">Prevent the tracking of very large files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/using_git/dealing_with_merge_conflicts.html">Dealing with merge conflicts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/using_git/recover_an_old_version_of_a_file.html">Recover an old version of a file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/using_git/other_ways_to_fix_mistakes.html">Other ways to fix mistakes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/using_git/online_resources.html">Online git resources</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to C++</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../book/introduction_to_cpp/intro.html">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/introduction_to_cpp/hello_world.html">Hello World</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/introduction_to_cpp/compiling_and_linking.html">Compiling and linking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/introduction_to_cpp/variables.html">Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/introduction_to_cpp/functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/introduction_to_cpp/source_files_and_header_files.html">Source files and header files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/introduction_to_cpp/code_structure.html">Code structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/introduction_to_cpp/if_else.html">If else</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/introduction_to_cpp/loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/introduction_to_cpp/containers.html">Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/introduction_to_cpp/read_command_line_input.html">Read command line input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/introduction_to_cpp/write_to_file.html">Write to file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/introduction_to_cpp/read_from_file.html">Read from file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/introduction_to_cpp/intro_to_armadillo.html">Introduction to Armadillo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/introduction_to_cpp/pointers.html">Pointers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/introduction_to_cpp/classes.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/introduction_to_cpp/online_resources.html">Online C++ resources</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Optimization</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../book/optimization/memory_is_the_bottleneck.html">Memory traffic is the bottleneck</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parallelization</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../book/parallelization/introduction_to_openmp.html">Introduction to OpenMP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/parallelization/using_openmp.html">Using OpenMP</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Using Make</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../book/using_make/intro.html">Intro</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Containerization</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../book/containerization/intro_to_containers.html">Introduction to containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/containerization/apptainer.html">Apptainer</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Writing reports</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../book/writing_reports/introduction_to_latex.html">Introduction to LaTeX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/writing_reports/checklist.html">Checklist for reports</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Projects</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../book/projects/project1.html">Project 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/projects/project2.html">Project 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/projects/project3.html">Project 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/projects/project4.html">Project 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../book/projects/project5.html">Project 5</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/anderkve/FYS3150" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/anderkve/FYS3150/issues/new?title=Issue%20on%20page%20%2Fcode_examples/low_level/README.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/code_examples/low_level/README.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Welcome!</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-on-the-language-used">A note on the language used:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-will-come">What will come</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-project">The project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compile-and-run">Compile and run</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aos-vs-soa">AoS vs SoA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ecs">ECS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-cost-of-an-arithmetic-operation">The cost of an arithmetic operation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-cpu">The CPU</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ilp-example-implementation">ILP example implementation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#superscalar-example-implementation">Superscalar example implementation</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="welcome">
+<h1>Welcome!<a class="headerlink" href="#welcome" title="Link to this heading">#</a></h1>
+<p>This is a README for a now work in progress.
+I (<a class="reference external" href="https://github.com/NilsECT">&#64;NilsECT</a>) will be adding some low level optimisation examples along with some tips, tricks and useful links, not the video game character though he would be useful in a pinch.</p>
+<section id="a-note-on-the-language-used">
+<h2>A note on the language used:<a class="headerlink" href="#a-note-on-the-language-used" title="Link to this heading">#</a></h2>
+<p>The text may appear less serious than the information presented.
+Many of the things presented in this subdirectory is useful in a general sense and in some cases critical for adequate performance.
+In most cases, for me at least, low-level optimisation takes the form of a mini-game driven by the question “<em>Can I make it go faster?</em>” or “<em>I want more things happening! (?)</em>” where it becomes a fun pastime rather than work.
+As such, I have chosen to apply a language that shows just that:</p>
+<blockquote>
+<div><p>Low-level optimisation is fun.</p>
+</div></blockquote>
+</section>
+<section id="what-will-come">
+<h2>What will come<a class="headerlink" href="#what-will-come" title="Link to this heading">#</a></h2>
+<p>This directory will contain an initial program which will model some simple space physics and an optimised version of the.</p>
+<p>Based on the initial program, I will push examples of</p>
+<ol class="arabic simple contains-task-list">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Array of structures (AoS) vs Structure of Arrays (SoA)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> … vs Entity Component System (ECS)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> The cost of an arithmetic operation</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> The order of arithmetic operations - Instruction Level Parallelism</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Superscalar CPU, i.e. built-in parallelisation between float and integer operations</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Fixed point arithmetics</p></li>
+</ol>
+</section>
+<section id="the-project">
+<h2>The project<a class="headerlink" href="#the-project" title="Link to this heading">#</a></h2>
+<p>I believe the best way to learn how to optimise (or simply program) at low-level is to have a project.
+Therefore, I have set out to write a complete program which <strong>you</strong> can play around with and in which <strong>I</strong> can show you how to apply different optimisation techniques.
+When I write “complete program” I mean complete with regard to the checklist above; you are free to take the code and expand or reduce it in whichever way you fancy, and please feel free to do so!</p>
+<p>For the project I will simulate a 2D box with holes in which a number of small particles will be injected.
+The holes will have varying sizes and mass while the particles will have a fixed size and mass.
+As an initial case the holes will not be moving while the particles will be affected by force of gravity.
+If I have the time I will expand the rules of movement for each class and maybe add some more classes.
+If I find more time and some courage I will add a user interface (UI) and textures to make it look nice.</p>
+<p>The simulation will be displayed on a screen using the SFML package for simple graphics rendering.
+To measure the performance I will measure the time it takes to update each physics-step and gather it in a moving average for a relatively stable point of comparison.
+The goal is then to either increase the number of particles on screen without increasing the update rate or to reduce the update rate while using the same number of particles.
+Here, one physics-step is calculating one timestep (<span class="math notranslate nohighlight">\(dt\)</span>) ahead; there may be a maximum number of physics updates between each frame update (the rendering step).
+This way we can keep improving the update rate without having it affect our visual experience: if these steps were not separate, the particles would move faster and faster for each improvement to the code.</p>
+<p>First the full program will be written without optimisation completely object oriented, i.e. using array of structures (AoS).
+As a First I will transform the code to be a structure of arrays (SoA) where necessary.
+Based on the SoA code, I will implement optimisations through <code class="docutils literal notranslate"><span class="pre">inline</span></code> functions via their respective header files.
+Each implemented optimisation can will be found in the subsections for the different optimisation techniques (see <strong>What will come</strong>), where they will be presented along with the necessary background information to understand <em>why</em> and/or <em>how</em> it works.</p>
+</section>
+<section id="compile-and-run">
+<h2>Compile and run<a class="headerlink" href="#compile-and-run" title="Link to this heading">#</a></h2>
+<p>I use CMake to simplify the process of compiling and linking, so download it if you don’t already have it.
+The instructions on how each version of the code is to be compiled can be found in the <a class="reference external" href="https://github.com/anderkve/FYS3150/blob/master/code_examples/low_level/CMakeLists.txt"><code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code></a> file.
+To run the compile and link the code you can follow these steps:</p>
+<ol class="arabic simple">
+<li><p>git clone the repository and move to this directory.</p></li>
+<li><p>create a build directory <code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">-S</span> <span class="pre">.</span> <span class="pre">-B</span> <span class="pre">build</span></code>, where <code class="docutils literal notranslate"><span class="pre">-S</span> <span class="pre">.</span></code> tells CMake where the source code is and <code class="docutils literal notranslate"><span class="pre">-B</span> <span class="pre">build</span></code> tells Cmake where to build.</p></li>
+<li><p>compile and link all executables with <code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">--build</span> <span class="pre">build</span> <span class="pre">--config</span> <span class="pre">Release</span></code></p></li>
+<li><p>run executables as usual: <code class="docutils literal notranslate"><span class="pre">./build/Release/boxed_particles_aos</span></code></p></li>
+</ol>
+<p>You can options such as particle wrapping (particles exiting on the left side reenter on the right side) with <code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">-S</span> <span class="pre">.</span> <span class="pre">-B</span> <span class="pre">build</span> <span class="pre">-DWRAP_PARTICLES=ON</span></code>.
+For the <code class="docutils literal notranslate"><span class="pre">SOAOPT</span></code> (SoA code that has optimisation examples) you can alternate through the different examples with</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>-S<span class="w"> </span>.<span class="w"> </span>-B<span class="w"> </span>build<span class="w"> </span>-DILP<span class="o">=</span>NONE
+<span class="c1"># or</span>
+cmake<span class="w"> </span>-S<span class="w"> </span>.<span class="w"> </span>-B<span class="w"> </span>build<span class="w"> </span>-DILP<span class="o">=</span>BRAID2
+</pre></div>
+</div>
+<p>and you can combine different options</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>-S<span class="w"> </span>.<span class="w"> </span>-B<span class="w"> </span>build<span class="w"> </span>-DWRAP_PARTICLES<span class="o">=</span>ON<span class="w"> </span>-DCOST_FUNC<span class="o">=</span>simplified<span class="w"> </span>-DILP<span class="o">=</span>BRAID2
+cmake<span class="w"> </span>--build<span class="w"> </span>build<span class="w"> </span>--target<span class="w"> </span>boxed_particles_soaOpt
+</pre></div>
+</div>
+</section>
+<section id="aos-vs-soa">
+<h2>AoS vs SoA<a class="headerlink" href="#aos-vs-soa" title="Link to this heading">#</a></h2>
+<p>This is placeholder text, I will go into detail later but for now:</p>
+<p>I wrote the AoS (fully object oriented) code late winter 2025.
+The code was written with many suboptimal implementations and steps, some of these were on purpose yet most -probably- are simply sourced in some wisdom of not writing optimal code on the first try.
+I left the code aside to complete my thesis and go on vacation, through which I completely forgot how I wrote the code.
+Now, starting in late October 2025, I have picked the code up again as if I found it on the internet and had never anything to do with it before now: I did this in part because that is most likely your situation now, and because I struggled a little with picking it up again.</p>
+<p>The first step was to transform the code from AoS to SoA.
+It took me <span class="math notranslate nohighlight">\(1.5\)</span> hours to get reacquainted with the code (it’s a pretty small repository to be fair) and 5 hours to transform the code into SoA and adapt the CMakeLists.txt file and repository structure such that I can choose which version to run when I compile.
+When I run the AoS code on an Apple M3 Pro ARM-CPU for <span class="math notranslate nohighlight">\(100\)</span> particles I get a <span class="math notranslate nohighlight">\(\sim 5.90\)</span> ms physics-update time.
+The SoA code gives me a <span class="math notranslate nohighlight">\(\sim 4.00\)</span> ms physics-update time.
+We find the improvement through $<span class="math notranslate nohighlight">\(\frac{baseline}{new time} = \frac{5.90}{4.00} \approx 1.475,\)</span><span class="math notranslate nohighlight">\( so we have a \)</span>1.475$x improvement by switching the code structure from AoS to SoA.</p>
+</section>
+<section id="ecs">
+<h2>ECS<a class="headerlink" href="#ecs" title="Link to this heading">#</a></h2>
+<p>This is placeholder text, I will go into detail later but for now:</p>
+<p>ECS is quite a different way to write your code, but it ends up being fully SoA and incredibly general.
+There are some hiccups to keep it general in face of new entities (say ships or dark matter) which make for some double calculations in loops.
+For instance I chose to update the position of all entities with velocities with respect to all entities which have mass and position.
+That allows for a general updating of gravitational forces at the cost of looping extra over all entities (suboptimal looping).
+The strength is now that the changes I need to apply to the rest of my code when adding new entities (things that interact with the environment or other forces) are minimal, almost none: which is very nice if I want to make this simulation grow in complexity.</p>
+<p>It took me 6 hours to write the ECS code, the main difficulty was to get used to the new coding paradigm (again).
+Running the ECS code on an Apple M3 Pro ARM-CPU for <span class="math notranslate nohighlight">\(100\)</span> particles I get a <span class="math notranslate nohighlight">\(\sim 8.00\)</span> ms physics-update time.
+In this case, compared to AoS code we have no improvement other than the code is more easily maintainable… but does it scale better than OOP ?</p>
+</section>
+<section id="the-cost-of-an-arithmetic-operation">
+<h2>The cost of an arithmetic operation<a class="headerlink" href="#the-cost-of-an-arithmetic-operation" title="Link to this heading">#</a></h2>
+<p>This is placeholder text, I will go into detail later but for now:</p>
+<p>In <a class="reference external" href="https://github.com/anderkve/FYS3150/blob/master/code_examples/low_level/include/optimisation_soa/policies.h"><code class="docutils literal notranslate"><span class="pre">include/optimisation_soa/policies.h</span></code></a> you can find two <code class="docutils literal notranslate"><span class="pre">inline</span></code> functions which are named <code class="docutils literal notranslate"><span class="pre">policies::baseline</span></code> and <code class="docutils literal notranslate"><span class="pre">policies::simplified</span></code>.
+The first of those is the code you can find in the SoA directories, i.e. before we try to optimise.
+The latter, <code class="docutils literal notranslate"><span class="pre">policies::simplified</span></code>, contains the same logic but where I’ve reduced the number of arithmetic operations, namely:</p>
+<ol class="arabic simple">
+<li><p>there is one square root instead of two,</p></li>
+<li><p>mass is absent as we return an acceleration,</p></li>
+<li><p>there is now 1 division instead of two,</p></li>
+<li><p>and we precompute the reciprocal.</p></li>
+</ol>
+<p>To efficiently change between the two policies you can compile with a cmake flag <code class="docutils literal notranslate"><span class="pre">-DCOST_FUNC=policy::simplified</span></code>, where what comes after the equal sign is the function you want to use.
+You are free to define a function for each change, and I invite you to do so!</p>
+<p>In my case, when running on an Apple M3 Pro ARM-CPU I get an improvement of <span class="math notranslate nohighlight">\(1.6\)</span>x.
+With the improvement of converting the code to SoA from the OOP AoS which was <span class="math notranslate nohighlight">\(\sim1.5\)</span>x, we get a total improvement of approximately <span class="math notranslate nohighlight">\(1.6 \times 1.5 =2.2\)</span>x.</p>
+<p>To add some flesh to this example you can also explore the <a class="reference external" href="https://github.com/anderkve/FYS3150/blob/master/code_examples/low_level/examples.cpp"><code class="docutils literal notranslate"><span class="pre">examples.cpp</span></code></a> file.
+In it you will find an example to measure the cost of a square root operation in terms of nanoseconds.
+This example is minimal, but the improvement is non-negligible: I get a 1.1x improvement from removing a <code class="docutils literal notranslate"><span class="pre">std::sqrt()</span></code>.</p>
+</section>
+<section id="the-cpu">
+<h2>The CPU<a class="headerlink" href="#the-cpu" title="Link to this heading">#</a></h2>
+<p>This is placeholder text, I will go into detail later but for now:</p>
+<p>Here we enter a domain that is, in my opinion significantly cooler than what we have above (ECS is pretty cool though tbh): here we take advantage of how modern CPUs are designed!
+The Central Processing Unit performs a lot of things, and to perform these things it uses a set of instructions.
+CPUs operate with four main stages for each instruction:</p>
+<ol class="arabic simple">
+<li><p>Fetch instruction (from memory)</p></li>
+<li><p>Read (decode)</p></li>
+<li><p>Execute (I include sending to an execution unit and actually executing the code into one)</p></li>
+<li><p>Writeback (store the result)</p></li>
+</ol>
+<p>You can consider the routine above like a kitchen at a restaurant where the incoming orders are your calculations, s.a. <code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">1.1</span> <span class="pre">-</span> <span class="pre">z;</span></code>.
+It is stored somewhere waiting for its turn, (1) the chef takes your little order on a paper, (2) the chef fetches <code class="docutils literal notranslate"><span class="pre">z</span></code> and makes <code class="docutils literal notranslate"><span class="pre">1.1</span></code>, (3) they make your dish by performing the operation, and finally (4) they send the answer out to you.</p>
+<p>In olden times there was only one unit, so only one cycle <span class="math notranslate nohighlight">\(c_i\)</span> of Fetch-Read-Execute-Writeback could be performed at a time <span class="math notranslate nohighlight">\(t_i\)</span>:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_1\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_2\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_3\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_4\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_5\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_6\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_7\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_8\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(c_1\)</span></p></td>
+<td><p>Fetch</p></td>
+<td><p>Read</p></td>
+<td><p>Execute</p></td>
+<td><p>Write</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(c_2\)</span></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>Fetch</p></td>
+<td><p>Read</p></td>
+<td><p>Execute</p></td>
+<td><p>Write</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>This evolved into having multiple units such that the cycles can overlap though only one stage can be performed at the same time.
+This allows us to move faster through the cycles by performing each stage one after the other for consecutive cycles, this is called a pipeline:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_1\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_2\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_3\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_4\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_5\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_6\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_7\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(c_1\)</span></p></td>
+<td><p>Fetch</p></td>
+<td><p>Read</p></td>
+<td><p>Execute</p></td>
+<td><p>Write</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(c_2\)</span></p></td>
+<td><p></p></td>
+<td><p>Fetch</p></td>
+<td><p>Read</p></td>
+<td><p>Execute</p></td>
+<td><p>Write</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(c_3\)</span></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>Fetch</p></td>
+<td><p>Read</p></td>
+<td><p>Execute</p></td>
+<td><p>Write</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(c_4\)</span></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>Fetch</p></td>
+<td><p>Read</p></td>
+<td><p>Execute</p></td>
+<td><p>Write</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Which is nice, but what if an execution takes a long time? Then the next cycle has to wait:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_1\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_2\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_3\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_4\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_5\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_6\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_7\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_8\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_9\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(c_1\)</span></p></td>
+<td><p>Fetch</p></td>
+<td><p>Read</p></td>
+<td><p>Execute</p></td>
+<td><p>Write</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(c_2\)</span></p></td>
+<td><p></p></td>
+<td><p>Fetch</p></td>
+<td><p>Read</p></td>
+<td><p>Execute</p></td>
+<td><p>Execute</p></td>
+<td><p>Execute</p></td>
+<td><p>Execute</p></td>
+<td><p>Write</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(c_3\)</span></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>Fetch</p></td>
+<td><p>Read</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>Execute</p></td>
+<td><p>Write</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The problem shown above has been mitigated through two different mechanisms, one that is simply expanding the hardware by adding more execution units and one that makes the hardware more intelligent by allowing out-of-order execution.
+Out-of-order execution is a <em>hardware mechanism</em> that reorders the instructions by executing the instructions that are ready immediately, it optimises the execution unit use and is the basis of Instruction Level Parallelism:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_1\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_2\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_3\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_4\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_5\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_6\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_7\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_8\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_9\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_{10}\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(c_1\)</span></p></td>
+<td><p>Fetch</p></td>
+<td><p>Read</p></td>
+<td><p>Execute</p></td>
+<td><p>Write</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(c_2\)</span></p></td>
+<td><p></p></td>
+<td><p>Fetch</p></td>
+<td><p>Read</p></td>
+<td><p>Execute</p></td>
+<td><p>Execute</p></td>
+<td><p>Execute</p></td>
+<td><p>Write</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(c_3\)</span></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>Fetch (needs result from <span class="math notranslate nohighlight">\(c_2\)</span>)</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>Read (needs Write from <span class="math notranslate nohighlight">\(c_2\)</span>)</p></td>
+<td><p>Execute</p></td>
+<td><p>Write</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(c_4\)</span></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>Fetch (independent of above cycles)</p></td>
+<td><p>Read</p></td>
+<td><p></p></td>
+<td><p>Execute</p></td>
+<td><p>Write</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Note that out-of-order execution entirely hardware based, which is absolutely insane, it’s truly a marvel of modern times.</p>
+<p>Expanding the hardware by adding multiple execution units expands the amount of available pipelines thus allowing parallel executions, this is what makes a CPU superscalar.
+In the first stage of superscalar CPUs consisted of separating integer (ALU), float (FLU) and address (AGU) operations.
+Each of these units can operate completely in parallel:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_1\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_2\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_3\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_4\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_5\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_6\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t_7\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(c_1\)</span></p></td>
+<td><p>Integer</p></td>
+<td><p>Fetch</p></td>
+<td><p>Read</p></td>
+<td><p>Execute</p></td>
+<td><p>Write</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(c_1\)</span></p></td>
+<td><p>Float</p></td>
+<td><p>Fetch</p></td>
+<td><p>Read</p></td>
+<td><p>Execute</p></td>
+<td><p>Write</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(c_1\)</span></p></td>
+<td><p>Address</p></td>
+<td><p>Fetch</p></td>
+<td><p>Read</p></td>
+<td><p>Execute</p></td>
+<td><p>Write</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(c_2\)</span></p></td>
+<td><p>Integer</p></td>
+<td><p></p></td>
+<td><p>Fetch</p></td>
+<td><p>Read</p></td>
+<td><p>Execute</p></td>
+<td><p>Write</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(c_2\)</span></p></td>
+<td><p>Float</p></td>
+<td><p></p></td>
+<td><p>Fetch</p></td>
+<td><p>Read</p></td>
+<td><p>Execute</p></td>
+<td><p>Write</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(c_2\)</span></p></td>
+<td><p>Address</p></td>
+<td><p></p></td>
+<td><p>Fetch</p></td>
+<td><p>Read</p></td>
+<td><p>Execute</p></td>
+<td><p>Write</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(c_3\)</span></p></td>
+<td><p>Integer</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>Fetch</p></td>
+<td><p>Read</p></td>
+<td><p>Execute</p></td>
+<td><p>Write</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(c_3\)</span></p></td>
+<td><p>Float</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>Fetch</p></td>
+<td><p>Read</p></td>
+<td><p>Execute</p></td>
+<td><p>Write</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(c_3\)</span></p></td>
+<td><p>Address</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>Fetch</p></td>
+<td><p>Read</p></td>
+<td><p>Execute</p></td>
+<td><p>Write</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>So say you have some float operations to perform, and you have a bit of free time, then you can add some integer operations at the same time pretty much for free!
+Some modern computers have also expanded to have multiple of each execution units.</p>
+<section id="ilp-example-implementation">
+<h3>ILP example implementation<a class="headerlink" href="#ilp-example-implementation" title="Link to this heading">#</a></h3>
+<p>This is placeholder text, I will go into detail later but for now:</p>
+<p>I have implemented an ILP example in <a class="reference external" href="https://github.com/anderkve/FYS3150/blob/master/code_examples/low_level/include/optimisation_soa/policies.h"><code class="docutils literal notranslate"><span class="pre">include/optimisation_soa/policies.h</span></code></a> with leading name <code class="docutils literal notranslate"><span class="pre">braid2</span></code> followed by the arithmetic policy to use.
+In essence, we want to execute multiple independent instructions (such as arithmetic operations) at the same time.
+We achieve this by separating independent computations such that while the CPU is working on executing the first instruction it can start on the second as it is independent on the fist:
+$<span class="math notranslate nohighlight">\(a = b + c\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(d = e + f\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(g = a + d.\)</span><span class="math notranslate nohighlight">\(
+In the above case \)</span>a<span class="math notranslate nohighlight">\( and \)</span>d<span class="math notranslate nohighlight">\( can be computed independently of each other and so the CPU can compute them 'in parallel'.
+It's not REALLY in parallel, but the total time from start to finish may be diminished.
+There are some quirks that may come in the way of having improvements from ILP.
+Take my implementation for instance: I get a \)</span>&lt;1$x improvement from taking two items at a time rather than one.
+This can be due to myriad things, though I suspect it is because I fetch the same data multiple places unnecessarily (see where I access arrays).
+The time it takes to fetch the data is comparable to the computation speed-‘gain’ AND I suspect I should braid over more than two items at a time.</p>
+<p>To check I implemented a <code class="docutils literal notranslate"><span class="pre">braid2</span></code> and <code class="docutils literal notranslate"><span class="pre">braid4</span></code> in <a class="reference external" href="https://github.com/anderkve/FYS3150/blob/master/code_examples/low_level/examples.cpp"><code class="docutils literal notranslate"><span class="pre">examples.cpp</span></code></a> to check.
+For <code class="docutils literal notranslate"><span class="pre">braid4</span></code> I also cache the array fetching since I am quite aware of it slowing down my code alongside my speed-up, hence they go hand-in-hand.
+I only get an improvement from the baseline with the <code class="docutils literal notranslate"><span class="pre">braid4</span></code> case, and indeed: an improvement comparable to removing a square root!
+Lesson: first remove the square root, then maybe restructure your loop if you need to.</p>
+</section>
+<section id="superscalar-example-implementation">
+<h3>Superscalar example implementation<a class="headerlink" href="#superscalar-example-implementation" title="Link to this heading">#</a></h3>
+<p>This is placeholder text, I will go into detail later but for now:</p>
+<p>I’ve written a short example to showcase the power of superscalar CPUs in <a class="reference external" href="https://github.com/anderkve/FYS3150/blob/master/code_examples/low_level/examples.cpp"><code class="docutils literal notranslate"><span class="pre">examples.cpp</span></code></a>.
+We perform some integer operations with variables <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, <code class="docutils literal notranslate"><span class="pre">c</span></code>, and <code class="docutils literal notranslate"><span class="pre">d</span></code> and take the time it takes to perform these operations <span class="math notranslate nohighlight">\(N=10^8\)</span> times.
+We do a similar set of operations for floats <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">z</span></code>, and <code class="docutils literal notranslate"><span class="pre">w</span></code>.
+When performing the integer and float operations in separate loops on an Apple M3 Pro ARM-CPU, I get <span class="math notranslate nohighlight">\(t_{int} = 0.326\)</span> ns for the integer operations and <span class="math notranslate nohighlight">\(t_{float} = 0.547\)</span> ns for the float operations.
+When performing the same operations but setting the float and integer operations in the same loop, I get <span class="math notranslate nohighlight">\(t_{super} = 0.550\)</span> ns.
+We have <span class="math notranslate nohighlight">\(t_{super} \approx t_{float}\)</span>, which means the integer operations did indeed come for ‘free’!</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./code_examples/low_level"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-on-the-language-used">A note on the language used:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-will-come">What will come</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-project">The project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compile-and-run">Compile and run</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aos-vs-soa">AoS vs SoA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ecs">ECS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-cost-of-an-arithmetic-operation">The cost of an arithmetic operation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-cpu">The CPU</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ilp-example-implementation">ILP example implementation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#superscalar-example-implementation">Superscalar example implementation</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By the FYS3150 teaching team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

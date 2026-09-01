@@ -3,7 +3,7 @@
 
 ## Synopsis
 
-This tutorial explains how to import a new project into Git, make changes to it, and share changes with other developers. It's a slightly modified and extended version of the manual entry called *gittutorial*, which you can look up in your terminal by running
+This tutorial covers the basics of day-to-day git usage, focusing on setting up your local **cloned** repository, and making changes to it, and sharing it with other collaborators. It is adapted from and extended of the manual entry called *gittutorial*, which you can look up for future reference in your terminal by running
 
 ```sh
 man gittutorial
@@ -17,24 +17,32 @@ As explained below, a Git repository is organised into *branches*. For repositor
 
 ## Cloning a new project
 
+The first concept to get to grips with is that of the **clone**. Once a repository has been created on GitHub, we make a clone of it on our local computer. This clone is a separate version of the repository that only exists locally, but through commands we will detail later we can synchronize with the **remote** (i.e. the online repository on GitHub) either by sharing changes we have made locally, or downloading changes others have made remotely.
+
 We recommend you create a repository online on [GitHub](https://github.com/) and clone the repository on your computer using the HTTPS link. It's simply done by running
 
 ```sh
 git clone https_link
 ```
 
-where `https_link` is the URL for your repo on GitHub.
+where `https_link` is the URL for your repo on GitHub. This is found by going to the frontpage of your GitHub repo, and clicking the green `<> Code` button.
 
 
 ## Making changes
 
-Modify some files, then add their updated contents to the index:
+Once your local repository is set up, we can start making changes and write new files etc. Making the changes appear in the online repository requires three fundamental steps: **staging** the changes, **commiting** the staged changes, and **pushing** the changes from local -> remote. Here we will go through staging and committing.
+
+To stage changes for commit, we simply run the the following command, where file1 etc. can be a new file not in the repository or an existing one that you have modified.
 
 ```sh
 git add file1 file2 file3
 ```
 
-You also use `git add` to add *new* files that aren't yet registered as part of your repository. (More info about `git add` below.)
+Staging amounts to selecting what files you want to update the history of your repository with, and does not change anything by itself. To unstage a staged file, we can run
+
+```sh
+git restore --staged file1
+```
 
 ```{note}
 It's not recommended to add *all* the files you have in your project directory. When working on a code project, you should typically just add the actual code files, i.e. the `.cpp` and `.hpp` files for a C++ project, plus README files or other documentation you write. Adding auto-generated files to Git, like the `.o` files and executables you generate in compilation and linking, will just cause confusion and frustration.
@@ -94,12 +102,14 @@ git commit -a
 which will automatically notice any modified (but not new) files, add
 them to the index, and commit, all in one step.
 
+```{note}
 A note on commit messages: Though not required, it's a good idea to
 begin the commit message with a single short (less than 50 character)
 line summarizing the change, followed by a blank line and then a more
 thorough description. The text up to the first blank line in a commit
 message is treated as the commit title, and that title is used
 throughout Git.
+```
 
 
 ## Git tracks content, not files
@@ -108,7 +118,7 @@ Many revision control systems provide an **add** command that tells the
 system to start tracking changes to a new file. Git's **add** command does
 something simpler and more powerful: `git add` is used both for new and
 newly modified files, and in both cases it takes a snapshot of the
-given files and stages that content in the index, ready for inclusion
+given files and stages that content, ready for inclusion
 in the next commit.
 
 
@@ -258,6 +268,7 @@ The **remote** repo is the term used for the cloud-based (GitHub) version of you
 ```sh
 git pull origin branchname
 ```
+
 In particular, to pull from the `main` branch, run
 
 ```sh
