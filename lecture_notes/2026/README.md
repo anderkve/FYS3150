@@ -44,12 +44,24 @@ You can find the latest version of the lecture notes in the file [`lecture_notes
 
 ### Lecture 5, September 3
 
+- Code topics:
+  - Wrap up discussion of `std::vector` and `std::map`. Also mention `std::array`.
+  - C++: integer vs floating-point division
 - Counting floating-point operations (FLOPs)
 - Numerical errors
   - Truncation errors
   - Roundoff errors
     - Loss of numerical precision ("catastrophic cancellation")
     - Example error analysis
+
+
+### Lecture 6, September 4
+
+- Continue discussion of numerical errors
+  - Finish the example error analysis
+  - Code example: `error_analysis`
+- Binary representation (background for roundoff error discussion)
+  - Integers
+  - Floating-point numbers
 - Code topics:
-  - Wrap up discussion of `std::vector` and `std::map`. Also mention `std::array`.
-  - C++: integer vs floating-point division
+  - C++: pass-by-reference vs pass-by-value
