@@ -3,7 +3,7 @@
 
 ## Practicalities
 
-- **Deadline:** Wednesday, September 9, at 23:59
+- **Deadline:** Thursday, September 10, at 23:59
 
 - **Format:**
   - A pdf document, typeset in LaTeX, with answers to all the problems below. You deliver the pdf on Canvas.
