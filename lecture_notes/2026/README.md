@@ -40,7 +40,6 @@ You can find the latest version of the lecture notes in the file [`lecture_notes
   - Write C++ output to file
   - Unix terminal: redirect terminal output to file
   - C++: containers (`std::vector` and `std::map`)
-  - C++: integer vs floating-point division
 
 
 ### Lecture 5, September 3
@@ -52,5 +51,5 @@ You can find the latest version of the lecture notes in the file [`lecture_notes
     - Loss of numerical precision ("catastrophic cancellation")
     - Example error analysis
 - Code topics:
-  - Wrap up discussion of `std::vector` and `std::map`
+  - Wrap up discussion of `std::vector` and `std::map`. Also mention `std::array`.
   - C++: integer vs floating-point division
