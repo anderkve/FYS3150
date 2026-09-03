@@ -9,11 +9,9 @@ We'll cover some of the very basics of Armadillo here to get you started with th
 
 We must make sure to include the header file for Armadillo, which amounts to adding `#include <armadillo>` at the top of a header or source file.
 
-### Compiling code with Armadillo
-For macOS users specifically, you must specificy a version of C++ that is C++11 or later. This is done by adding the compiler flag `-std=c++11` during compilation.
-
-For Linux users, nothing special is typically required.
-
+```{note}
+In case you are having trouble compiling a file using armadillo, you can make sure you are using a compatible C++ standard version, which would be C++14 or later. This can be done by supplying the compiler flag `--std=c++11` during compilation.
+```
 
 ### Linking code with Armadillo
 
