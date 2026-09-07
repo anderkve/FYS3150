@@ -65,3 +65,20 @@ You can find the latest version of the lecture notes in the file [`lecture_notes
   - Floating-point numbers
 - Code topics:
   - C++: pass-by-reference vs pass-by-value
+
+
+### Lecture 7, September 11
+
+- Wrap up discussion of binary representation (background for roundoff error discussion)
+- Overview of topics for Project 2
+- Scaling equations
+- Project 2 physics case: The buckling beam
+  - Two-point boundary value problem, connection to eigenvalue problem
+- Start discussion of eigenvalue problems
+- Code topics (if time):
+  - C++: pass-by-reference vs pass-by-value
+
+
+
+
+
