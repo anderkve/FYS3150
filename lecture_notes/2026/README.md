@@ -67,7 +67,7 @@ You can find the latest version of the lecture notes in the file [`lecture_notes
   - C++: pass-by-reference vs pass-by-value
 
 
-### Lecture 7, September 11
+### Lecture 7, September 10
 
 - Wrap up discussion of binary representation (background for roundoff error discussion)
 - Overview of topics for Project 2
