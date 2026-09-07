@@ -10,7 +10,7 @@ We'll cover some of the very basics of Armadillo here to get you started with th
 We must make sure to include the header file for Armadillo, which amounts to adding `#include <armadillo>` at the top of a header or source file.
 
 ```{note}
-In case you are having trouble compiling a file using armadillo, you can make sure you are using a compatible C++ standard version, which would be C++14 or later. This can be done by supplying the compiler flag `--std=c++11` during compilation.
+In case you are having trouble compiling a file using armadillo, you can make sure you are using a compatible C++ standard version, which would be C++14 or later. This can be done by supplying the compiler flag `--std=c++14` during compilation.
 ```
 
 ### Linking code with Armadillo
