@@ -13,14 +13,14 @@
 
 - Next, follow our guide for [Linux users](linux_users.md) to install the Linux libraries and tools you'll need.
 
-
+<!-- 
 ```{note}
 
 If you have installed WSL but run into trouble when trying to start the actual Linux terminal (shell), try this:
 
 In your Windows PowerShell, run the command `wsl --set-default-version 1` and then restart the Linux terminal. This has worked for a few students. We'll update this guide if we figure out more about what the underlying issue is.
 ```
-
+ -->
 
 ## How to access your Linux files from Windows applications
 
