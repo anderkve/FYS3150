@@ -442,7 +442,6 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-code-with-armadillo">Building code with Armadillo</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compiling-code-with-armadillo">Compiling code with Armadillo</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linking-code-with-armadillo">Linking code with Armadillo</a></li>
 </ul>
 </li>
@@ -481,11 +480,10 @@ document.write(`
 <section id="building-code-with-armadillo">
 <h2>Building code with Armadillo<a class="headerlink" href="#building-code-with-armadillo" title="Link to this heading">#</a></h2>
 <p>We must make sure to include the header file for Armadillo, which amounts to adding <code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&lt;armadillo&gt;</span></code> at the top of a header or source file.</p>
-<section id="compiling-code-with-armadillo">
-<h3>Compiling code with Armadillo<a class="headerlink" href="#compiling-code-with-armadillo" title="Link to this heading">#</a></h3>
-<p>For macOS users specifically, you must specificy a version of C++ that is C++11 or later. This is done by adding the compiler flag <code class="docutils literal notranslate"><span class="pre">-std=c++11</span></code> during compilation.</p>
-<p>For Linux users, nothing special is typically required.</p>
-</section>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In case you are having trouble compiling a file using armadillo, you can make sure you are using a compatible C++ standard version, which would be C++14 or later. This can be done by supplying the compiler flag <code class="docutils literal notranslate"><span class="pre">--std=c++14</span></code> during compilation.</p>
+</div>
 <section id="linking-code-with-armadillo">
 <h3>Linking code with Armadillo<a class="headerlink" href="#linking-code-with-armadillo" title="Link to this heading">#</a></h3>
 <p>To link to Armadillo, we must add the compiler flag <code class="docutils literal notranslate"><span class="pre">-larmadillo</span></code> during linking.</p>
@@ -686,7 +684,6 @@ Not only does this simplify storage of results with a predictable format, but it
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-code-with-armadillo">Building code with Armadillo</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compiling-code-with-armadillo">Compiling code with Armadillo</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linking-code-with-armadillo">Linking code with Armadillo</a></li>
 </ul>
 </li>
