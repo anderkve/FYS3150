@@ -1,3 +1,16 @@
+::::{tab-set}
+:sync-group: linalg
+
+:::{tab-item} Armadillo
+:sync: armadillo
+Showing code examples using **Armadillo**.
+:::
+:::{tab-item} Eigen
+:sync: eigen
+Showing code examples using **Eigen**.
+:::
+::::
+
 # Project 2
 
 <!-- 
@@ -146,15 +159,46 @@ An important part of the Jacobi algorithm is to have a function that can identif
 
 A simple function signature could then be 
 
-```c
-double max_offdiag_symmetric(arma::mat A, int& k, int &l),
+::::{tab-set}
+:sync-group: linalg
+
+:::{tab-item} Armadillo
+:sync: armadillo
+
+```cpp
+double max_offdiag_symmetric(arma::mat A, int& k, int& l);
 ```
+:::
+:::{tab-item} Eigen
+:sync: eigen
+
+```cpp
+double max_offdiag_symmetric(Eigen::MatrixXd A, int& k, int& l);
+```
+:::
+::::
 
 Or, to avoid copying the (potentially large) matrix A every time we run the function, we could simply pass in a reference to A. Since the function `max_offdiag_symmetric` won't be modifying the matrix in any way, we should make this explicit by using a `const` reference, like this:
 
-```c
-double max_offdiag_symmetric(const arma::mat& A, int& k, int &l)
+::::{tab-set}
+:sync-group: linalg
+
+:::{tab-item} Armadillo
+:sync: armadillo
+
+```cpp
+double max_offdiag_symmetric(const arma::mat& A, int& k, int& l);
 ```
+:::
+:::{tab-item} Eigen
+:sync: eigen
+
+```cpp
+double max_offdiag_symmetric(const Eigen::MatrixXd& A, int& k, int& l);
+```
+:::
+::::
+
 
 **b)** Write a small test code that tests the above function using the matrix
 
@@ -186,6 +230,13 @@ Now let's look at how many similarity transformations we need before we reach a 
 **First hint:** Think about the result you got in problem a). Why is it that the algorithm is so slow, even when starting with a matrix with so many zero elements? 
 
 **Second hint:** While you're not required to do so, there's of course nothing stopping you from just testing the case in b) with your Jacobi code! Here's a quick way to generate a N*N dense and symmetric matrix with random entries in Armadillo:
+
+::::{tab-set}
+:sync-group: linalg
+
+:::{tab-item} Armadillo
+:sync: armadillo
+
 ```cpp
 // Generate random N*N matrix
 arma::mat A = arma::mat(N, N).randn();  
@@ -193,6 +244,20 @@ arma::mat A = arma::mat(N, N).randn();
 // Symmetrize the matrix by reflecting the upper triangle to lower triangle
 A = arma::symmatu(A);  
 ```
+
+:::
+:::{tab-item} Eigen
+:sync: eigen
+
+```cpp
+// Generate random N*N matrix
+Eigen::MatrixXd A = Eigen::MatrixXd::Random(N, N);  
+
+// Symmetrize the matrix by reflecting the upper triangle to lower triangle
+A = (A + A.transpose()) / 2.0;
+```
+:::
+::::
 
 
 ### Problem 6
@@ -217,6 +282,12 @@ Plot the corresponding analytical eigenvectors (extended with the boundary point
 
 **A suggested code structure:** There are many ways of designing the code for this project. The three function declarations (and descriptions) below give a hint of one possible approach:
 
+::::{tab-set}
+:sync-group: linalg
+
+:::{tab-item} Armadillo
+:sync: armadillo
+
 ```cpp
 // Determine the the max off-diagonal element of a symmetric matrix A
 // - Saves the matrix element indicies to k and l 
@@ -230,7 +301,7 @@ double max_offdiag_symmetric(const arma::mat& A, int& k, int& l);
 void jacobi_rotate(arma::mat& A, arma::mat& R, int k, int l);
 
 // Jacobi method eigensolver:
-// - Runs jacobo_rotate until max off-diagonal element < eps
+// - Runs jacobi_rotate until max off-diagonal element < eps
 // - Writes the eigenvalues as entries in the vector "eigenvalues"
 // - Writes the eigenvectors as columns in the matrix "eigenvectors"
 //   (The returned eigenvalues and eigenvectors are sorted using arma::sort_index)
@@ -241,12 +312,49 @@ void jacobi_eigensolver(const arma::mat& A, double eps, arma::vec& eigenvalues, 
                         const int maxiter, int& iterations, bool& converged);
 ```
 
+:::
+:::{tab-item} Eigen
+:sync: eigen
+
+```cpp
+// Determine the the max off-diagonal element of a symmetric matrix A
+// - Saves the matrix element indicies to k and l 
+// - Returns absolute value of A(k,l) as the function return value
+double max_offdiag_symmetric(const Eigen::MatrixXd& A, int& k, int& l);
+
+// Performs a single Jacobi rotation, to "rotate away"
+// the off-diagonal element at A(k,l).
+// - Assumes symmetric matrix, so we only consider k < l
+// - Modifies the input matrices A and R
+void jacobi_rotate(Eigen::MatrixXd& A, Eigen::MatrixXd& R, int k, int l);
+
+// Jacobi method eigensolver:
+// - Runs jacobi_rotate until max off-diagonal element < eps
+// - Writes the eigenvalues as entries in the vector "eigenvalues"
+// - Writes the eigenvectors as columns in the matrix "eigenvectors"
+//   (The returned eigenvalues and eigenvectors are unsorted)
+// - Stops if it the number of iterations reaches "maxiter"
+// - Writes the number of iterations to the integer "iterations"
+// - Sets the bool reference "converged" to true if convergence was reached before hitting maxiter
+void jacobi_eigensolver(const Eigen::MatrixXd& A, double eps, Eigen::VectorXd& eigenvalues, Eigen::MatrixXd& eigenvectors, 
+                        const int maxiter, int& iterations, bool& converged);
+```
+
+:::
+::::
+
 When such helper functions are in place and working, writing a main program for some specific task is typically not too much work. (Famous last words.) 
 
 ----
 
 
 **Finding the max off-diagonal element:** Here is one possible sketch for the function `max_offdiag_symmetric` discussed above:
+
+::::{tab-set}
+:sync-group: linalg
+
+:::{tab-item} Armadillo
+:sync: armadillo
 
 ```cpp
 // A function that finds the max off-diag element of a symmetric matrix A.
@@ -280,6 +388,44 @@ double max_offdiag_symmetric(const arma::mat& A, int& k, int& l)
 }
 ```
 
+:::
+:::{tab-item} Eigen
+:sync: eigen
+
+```cpp
+// A function that finds the max off-diag element of a symmetric matrix A.
+// - The matrix indices of the max element are returned by writing to the  
+//   int references k and l (row and column, respectively)
+// - The value of the max element A(k,l) is returned as the function
+//   return value
+double max_offdiag_symmetric(const Eigen::MatrixXd& A, int& k, int& l)
+{
+  // Get size of the matrix A. Use e.g. A.rows(), see the Eigen documentation
+
+  // Possible consistency checks:
+  // Check that A is square and larger than 1x1, e.g. A.rows() == A.cols() and A.rows() > 1.
+  // 
+  // The standard function 'assert' from <assert.h> can be useful for quick checks like this 
+  // during the code development phase. Use it like this: assert(some condition),
+  // e.g assert(a==b). If the condition evaluates to false, the program is killed with 
+  // an assertion error. More info: https://www.cplusplus.com/reference/cassert/assert/
+
+  // Initialize references k and l to the first off-diagonal element of A
+
+  // Initialize a double variable 'maxval' to A(k,l). We'll use this variable 
+  // to keep track of the largest off-diag element.
+
+  // Loop through all elements in the upper triangle of A (not including the diagonal)
+  // When encountering a matrix element with larger absolute value than the current value of maxval,
+  // update k, l and max accordingly.
+
+  // Return maxval 
+}
+```
+
+:::
+::::
+
 Note that this function has some inefficiencies: In an optimized program, you don't want this
 function to always check that A is square and larger than 1x1 -- perhaps you don't want this 
 function to check this at all, but rather just trust the input is is given from your main code.
@@ -291,6 +437,12 @@ But during development, it is often useful to first write code that is fairly se
 **Helper functions for creating tridiagonal matrices:**  A standard task that you will often need is to 
 create a tridiagonal matrix. Why not write a small helper function for doing precisely that? Here's an 
 outline of such a function:
+
+::::{tab-set}
+:sync-group: linalg
+
+:::{tab-item} Armadillo
+:sync: armadillo
 
 ```cpp
 // Create a tridiagonal matrix tridiag(a,d,e) of size n*n, 
@@ -315,19 +467,74 @@ arma::mat create_tridiagonal(int n, double a, double d, double e)
 }
 ```
 
+:::
+:::{tab-item} Eigen
+:sync: eigen
+
+```cpp
+// Create a tridiagonal matrix tridiag(a,d,e) of size n*n, 
+// from scalar input a, d, and e. That is, create a matrix where
+// - all n-1 elements on the subdiagonal have value a
+// - all n elements on the diagonal have value d
+// - all n-1 elements on the superdiagonal have value e
+Eigen::MatrixXd create_tridiagonal(int n, double a, double d, double e)
+{
+  // Start from identity matrix
+  Eigen::MatrixXd A = Eigen::MatrixXd::Identity(n, n);
+
+  // Fill the first row (row index 0), e.g.
+  A(0,0) = d;
+  A(0,1) = e;
+
+  // Loop that fills rows 2 to n-1 (row indices 1 to n-2)
+
+  // Fill last row (row index n-1)
+  
+  return A;
+}
+```
+
+:::
+::::
+
+
 Again, there are ways to make this more efficient, e.g. by writing the diagonal elements
 directly when we create the matrix, e.g. 
+
+::::{tab-set}
+:sync-group: linalg
+
+:::{tab-item} Armadillo
+:sync: armadillo
 
 ```cpp
 // Start from identity matrix
 arma::mat A = arma::mat(n, n, arma::fill::eye) * d;
 ```
 
+:::
+:::{tab-item} Eigen
+:sync: eigen
+
+```cpp
+// Start from identity matrix
+Eigen::MatrixXd A = Eigen::MatrixXd::Identity(n, n) * d;
+```
+
+:::
+::::
+
 But this function will anyway not be the computational bottleneck of your code, so you might as well 
 keep the code more explicit if you find that easier to read/understand.
 
 Once you have a function `create_tridiagonal`, you could easily add a function specialized to the symmetric case, 
 that simply uses the more general function:
+
+::::{tab-set}
+:sync-group: linalg
+    
+:::{tab-item} Armadillo
+:sync: armadillo
 
 ```cpp
 // Create a symmetric tridiagonal matrix tridiag(a,d,a) of size n*n
@@ -338,9 +545,32 @@ arma::mat create_symmetric_tridiagonal(int n, double a, double d)
   return create_tridiagonal(n, a, d, a);
 }
 ```
+:::
+
+:::{tab-item} Eigen
+:sync: eigen
+
+```cpp
+// Create a symmetric tridiagonal matrix tridiag(a,d,a) of size n*n
+// from scalar input a and d.
+Eigen::MatrixXd create_symmetric_tridiagonal(int n, double a, double d)
+{
+  // Call create_tridiagonal and return the result
+  return create_tridiagonal(n, a, d, a);
+}
+```
+:::
+::::
+
 
 The above functions assume that all elements on a given sub-, super- or main diagonal are identical. In a more general case
 you would need to pass in three vectors with the relevant matrix elements. Then you could have a set of three helper functions as sketched here:
+
+::::{tab-set}
+:sync-group: linalg
+
+:::{tab-item} Armadillo
+:sync: armadillo
 
 ```cpp
 // Create tridiagonal matrix from vectors.
@@ -383,6 +613,56 @@ arma::mat create_symmetric_tridiagonal(int n, double a, double d)
   return create_tridiagonal(n, a, d, a);
 }
 ```
+:::
+
+:::{tab-item} Eigen
+:sync: eigen
+
+```cpp
+// Create tridiagonal matrix from vectors.
+// - lower diagonal: vector a, length n-1
+// - main diagonal:  vector d, length n
+// - upper diagonal: vector e, length n-1
+Eigen::MatrixXd create_tridiagonal(const Eigen::VectorXd& a, const Eigen::VectorXd& d, const Eigen::VectorXd& e)
+{
+  int n = d.size();
+
+  // Start from identity matrix
+  Eigen::MatrixXd A = Eigen::MatrixXd::Identity(n, n);
+
+  // Fill first row (row index 0)
+
+  // Loop that fills rows 2 to n-1 (row indices 1 to n-2)
+  
+  // Fill last row (row index n-1)
+
+  return A;
+}
+
+
+// Create a tridiagonal matrix tridiag(a,d,e) of size n*n
+// from scalar input a, d and e
+Eigen::MatrixXd create_tridiagonal(int n, double a, double d, double e)
+{
+  Eigen::VectorXd a_vec = Eigen::VectorXd::Constant(n-1, a);
+  Eigen::VectorXd d_vec = Eigen::VectorXd::Constant(n, d);
+  Eigen::VectorXd e_vec = Eigen::VectorXd::Constant(n-1, e);
+
+  // Call the vector version of this function and return the result
+  return create_tridiagonal(a_vec, d_vec, e_vec);
+}
+
+
+// Create a symmetric tridiagonal matrix tridiag(a,d,a) of size n*n
+// from scalar input a and d.
+Eigen::MatrixXd create_symmetric_tridiagonal(int n, double a, double d)
+{
+  // Call create_tridiagonal and return the result
+  return create_tridiagonal(n, a, d, a);
+}
+```
+:::
+::::
 
 Note:
 

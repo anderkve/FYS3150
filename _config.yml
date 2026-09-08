@@ -19,6 +19,10 @@ execute:
 #     - dollarmath
 #     - amsmath
 
+parse:
+  myst_enable_extensions:
+    - colon_fence
+
 # Define the name of the latex output file for PDF builds
 latex:
   latex_documents:
