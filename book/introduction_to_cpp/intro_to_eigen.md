@@ -231,6 +231,6 @@ with open("matrix.bin", "rb") as file: # "rb" gives you 'read' and 'binary'
 ## What is next?
 
 Now we have gone through the basics of Eigen, and can declare, fill, write and load vectors and matrices using it.
-However, this is only the tip of the iceberg, as there is a rich plethora of functions, objects and neat things you can do in Eigen.
-Now you can acquaint yourselves with [the documentation](https://libeigen.gitlab.io/documentation/), and learn about things like `.dot()`, `.cross()`, `.transpose()`, `.norm()`, `.mean()`, `Eigen::VectorXd::LinSpaced` and much more.
+However, this is only the tip of the iceberg, as there is a plethora of functions, objects and neat things you can use in Eigen.
+A next step is to acquaint yourself with [the documentation](https://libeigen.gitlab.io/documentation/), and learn about things like `.dot()`, `.cross()`, `.transpose()`, `.norm()`, `.mean()`, `Eigen::VectorXd::LinSpaced` and much more.
 
