@@ -45,6 +45,7 @@ parts:
       - file: book/introduction_to_cpp/write_to_file
       - file: book/introduction_to_cpp/read_from_file
       - file: book/introduction_to_cpp/intro_to_armadillo
+      - file: book/introduction_to_cpp/intro_to_eigen
       - file: book/introduction_to_cpp/pointers
       #- file: book/introduction_to_cpp/references
       #- file: book/introduction_to_cpp/functions_take_2

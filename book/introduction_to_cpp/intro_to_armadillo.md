@@ -24,10 +24,10 @@ Armadillo provides a useful vector class `arma::vec` that can be used to replace
 ### Declaring and filling vectors
 
 ```c++
-arma::vec x = arma::vec(n); //Initialize vector but don't fill it.
-arma::vec y = arma::vec(n).fill(2.); //Declare and fill a vector with 2's.
-arma::vec z = arma::vec(n).randu(); //Declare and fill a vector with random values from a uniform distribution.
-arma::vec u = arma::vec("0.0 0.1 0.2"); //Declare and fill a vector with the values 0.1, 0.2 and 0.3.
+arma::vec x(n); // Initialize vector but don't fill it
+arma::vec y(n).fill(2.); // Declare and fill a vector with 2's
+arma::vec z(n).randu(); // Declare and fill a vector with random values from a uniform distribution
+arma::vec u("0.0 0.1 0.2"); // Declare and fill a vector with the values 0.1, 0.2 and 0.3
 ```
 
 ### Accessing and assigning elements in a vector
@@ -35,7 +35,7 @@ arma::vec u = arma::vec("0.0 0.1 0.2"); //Declare and fill a vector with the val
 We can access an element `i` from a vector `x` by
 
 ```c++
-double x_i = x(i); //Extract element i of x and assign it to x_i.
+double x_i = x(i); // Extract element i of x and assign it to x_i.
 ```
 
 We can assign a new value to element `i` in the vector `x` using
@@ -53,10 +53,10 @@ Assume that `n` and `m` are positive integers.
 Creating matrices with Armadillo is easy. Here's a couple examples:
 
 ```c++
-arma::mat A = arma::mat(n, m); //Initialize matrix but don't fill.
-arma::mat B = arma::mat(n, m).fill(0.); //Declare and fill a matrix with zeros.
-arma::mat C = arma::mat(n, m).randn(); //Declare and fill a matrix with random values from the normal distribution.
-arma::mat D = arma::mat("0.0 0.1 0.2 ; 1.0 1.1 1.2 ; 2.0 2.1 2.2"); //Declare and fill a 3x3 matrix with the listed values. (Note the semicolons.)
+arma::mat A(n, m); // Initialize matrix but don't fill
+arma::mat B(n, m).fill(0.); // Declare and fill a matrix with zeros
+arma::mat C(n, m).randn(); // Declare and fill a matrix with random values from the normal distribution
+arma::mat D("0.0 0.1 0.2 ; 1.0 1.1 1.2 ; 2.0 2.1 2.2"); // Declare and fill a 3x3 matrix with the listed values (note the semicolons)
 ```
 
 ### Accessing elements in a matrix
@@ -64,7 +64,7 @@ arma::mat D = arma::mat("0.0 0.1 0.2 ; 1.0 1.1 1.2 ; 2.0 2.1 2.2"); //Declare an
 Access of elements in an Armadillo matrix is done as follows:
 
 ```c++
-double A_ij = A(i,j); //Assign element (i,j) of the matrix A to A_ij.
+double A_ij = A(i,j); // Assign element (i,j) of the matrix A to A_ij
 ```
 
 ### Extracting a column of a matrix
@@ -72,7 +72,7 @@ double A_ij = A(i,j); //Assign element (i,j) of the matrix A to A_ij.
 Armadillo provides a simple way to extract entire columns of a matrix:
 
 ```c++
-arma::vec col_vec = A.col(j); //Extract column j of A and assign it to col_vec.
+arma::vec col_vec = A.col(j); // Extract column j of A and assign it to col_vec
 ```
 
 
@@ -83,13 +83,13 @@ Below is an example that uses `arma::sort_index` to find the index ordering that
 and then sorts both the vector and the columns of a matrix according to this ordering.
 
 ```c++
-arma::mat A = arma::mat("0.0 0.1 0.2 ; 1.0 1.1 1.2 ; 2.0 2.1 2.2");
-arma::vec x = arma::vec("20. 10. 30.");
+arma::mat A("0.0 0.1 0.2 ; 1.0 1.1 1.2 ; 2.0 2.1 2.2");
+arma::vec x("20. 10. 30.");
 
-arma::uvec x_sort_indices = arma::sort_index(x); // Get index ordering that sorts x.
+arma::uvec x_sort_indices = arma::sort_index(x); // Get index ordering that sorts x
   
-x = x(x_sort_indices); // Sort x according to ordering in x_sort_indices.
-A = A.cols(x_sort_indices); // Sort columns of A according to ordering in x_sort_indices.
+x = x(x_sort_indices); // Sort x according to ordering in x_sort_indices
+A = A.cols(x_sort_indices); // Sort columns of A according to ordering in x_sort_indices
 ```
 
 
@@ -107,8 +107,8 @@ A.save(filename);
 The default storage format is binary. Your filename should end with `.bin`. Loading the object is as simple as
 
 ```c++
-B = arma::mat() //Initialize an arma::mat variable
-B.load(filename) //Load content of arma::mat A stored earlier into arma::mat B.
+B = arma::mat() // Initialize an arma::mat variable
+B.load(filename) // Load content of arma::mat A stored earlier into arma::mat B
 ```
 
 ### Reading a data table in text format
@@ -145,24 +145,3 @@ arma::mat A;
 A.load("mynumbers.dat", arma::raw_ascii)
 ```
 
-
-### The Python module
-
-You can install the Armadillo Python module `pyarma` using
-
-```sh
-pip install pyarma
-```
-
-The recommended way to import the library in Python is
-
-```python
-import pyarma as pa
-```
-
-From there, you can easily load the `arma::mat` (or `arma::vec`) object you saved in C++ using
-
-```python
-A = pa.mat() #Create pa.mat object (just as arma::mat in C++)
-A.load(filename) #Load the content of the matrix you saved into your Python program.
-```
