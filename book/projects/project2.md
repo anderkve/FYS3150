@@ -1,12 +1,12 @@
 # Project 2
 
-Not published yet.
-
- 
 <!-- 
+Not published yet.
+ --> 
+
 ## Practicalities
 
-- **Deadline:** Wednesday, September 24, 23:59.
+- **Deadline:** Wednesday, September 23, 23:59.
 
 - **Format:** 
   - A pdf document, typeset in LaTeX, with answers to all the problems below. You deliver the pdf on Canvas.
@@ -22,7 +22,7 @@ Not published yet.
 
 - **Figures:** Figures included in your LaTeX document should be made as vector graphics (e.g. `.pdf` files), rather than raster graphics (e.g. `.png` files). If you are making plots with `matplotlib.pyplot` in Python, this is as simple as calling `plt.savefig("figure.pdf")` rather than `plt.savefig("figure.png")`.
 
-- **We recommend using Armadillo:** For this project we recommend using Armadillo to work with matrices and vectors.
+- **We recommend using Armadillo or Eigen:** For this project we recommend using Armadillo or Eigen to work with matrices and vectors. The problems and examples below are written assuming you use Armadillo, but you can do everything using Eigen instead, if you prefer. 
 
 
 ## Introduction
@@ -394,7 +394,6 @@ Note:
 
 ----
 
- -->
 
 
 
