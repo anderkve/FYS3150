@@ -35,7 +35,7 @@ Not published yet.
 
 - **Figures:** Figures included in your LaTeX document should be made as vector graphics (e.g. `.pdf` files), rather than raster graphics (e.g. `.png` files). If you are making plots with `matplotlib.pyplot` in Python, this is as simple as calling `plt.savefig("figure.pdf")` rather than `plt.savefig("figure.png")`.
 
-- **We recommend using Armadillo or Eigen:** For this project we recommend using Armadillo or Eigen to work with matrices and vectors. The problems and examples below are written assuming you use Armadillo, but you can do everything using Eigen instead, if you prefer. 
+- **We recommend using Armadillo or Eigen:** For this project we recommend using Armadillo or Eigen to work with matrices and vectors. 
 
 
 ## Introduction
@@ -123,7 +123,7 @@ $$
 $$
 
 ----
-**Scaling of eigenvectors:** Remember that if $\vec{v}$ is an eigenvector of $\mathbf{A} \vec{v} = \lambda \vec{v}$, then a scaled vector $c \vec{v}$, where $c$ is some constant, is an equally good eigenvector. (Remember that c can be negative.) When presenting your results, and when comparing to results from Armadillo, it will be useful to scale each eigenvector to have unit norm (i.e. vector length 1). You can do this easily using the Armadillo function `arma::normalise` described [here](http://arma.sourceforge.net/docs.html#normalise).
+**Scaling of eigenvectors:** Remember that if $\vec{v}$ is an eigenvector of $\mathbf{A} \vec{v} = \lambda \vec{v}$, then a scaled vector $c \vec{v}$, where $c$ is some constant, is an equally good eigenvector. (Remember that $c$ can be negative.) When presenting your results, and when comparing to results from Armadillo/Eigen, it will be useful to scale each eigenvector to have unit norm (i.e. vector length 1). You can do this easily using the Armadillo function `arma::normalise` described [here](http://arma.sourceforge.net/docs.html#normalise), or the Eigen function `x.normalized()` if `x` is an `Eigen::VectorXd`.
 
 
 ## Problems
@@ -136,13 +136,12 @@ See the note after Eq. {eq}`bb_eq_2` about some sloppy notation. Note that it's 
 ``` 
 
 
-
 ### Problem 2
 Before we get started with implementing the Jacobi rotation algorithm, let's make sure that we can set up the tridiagonal matrix $\mathbf{A}$ correctly. So, write a short program that:
 
 - sets up the tridiagonal $\mathbf{A}$ for $N=6$;
-- solves $\mathbf{A} \vec{v} = \lambda \vec{v}$ using Armadillo's `arma::eig_sym`, described [here](http://arma.sourceforge.net/docs.html#eig_sym);
-- checks that the eigenvalues and eigenvectors from Armadillo agrees with the analytical result for $N=6$. (Remember scaling of eigenvectors, as discussed above.)
+- solves $\mathbf{A} \vec{v} = \lambda \vec{v}$ using Armadillo's `arma::eig_sym`, described [here](http://arma.sourceforge.net/docs.html#eig_sym), or Eigen's `Eigen::SelfAdjointEigenSolver<Eigen::MatrixXd>` described [here](https://libeigen.gitlab.io/eigen/docs-5.0/classEigen_1_1SelfAdjointEigenSolver.html);
+- checks that the eigenvalues and eigenvectors from Armadillo/Eigen agree with the analytical result for $N=6$. (Remember scaling of eigenvectors, as discussed above.)
 
 
 ### Problem 3
@@ -151,7 +150,7 @@ An important part of the Jacobi algorithm is to have a function that can identif
 **a)** Write a C++ function that can identify the largest off-diagonal element of a matrix. A suggestion is to write a function that 
 
 - has return type `double`
-- takes an Armadillo matrix as input
+- takes a matrix as input
 - takes *references* to two integers as input
 - identifies the largest off-diagonal element (in absolute value) in the matrix, under the assumption of a symmetric matrix
 - writes the matrix indices for this element to the two integer references
@@ -229,7 +228,7 @@ Now let's look at how many similarity transformations we need before we reach a 
 
 **First hint:** Think about the result you got in problem a). Why is it that the algorithm is so slow, even when starting with a matrix with so many zero elements? 
 
-**Second hint:** While you're not required to do so, there's of course nothing stopping you from just testing the case in b) with your Jacobi code! Here's a quick way to generate a N*N dense and symmetric matrix with random entries in Armadillo:
+**Second hint:** While you're not required to do so, there's of course nothing stopping you from just testing the case in b) with your Jacobi code! Here's a quick way to generate a N*N dense and symmetric matrix with random entries in Armadillo/Eigen:
 
 ::::{tab-set}
 :sync-group: linalg
@@ -332,12 +331,27 @@ void jacobi_rotate(Eigen::MatrixXd& A, Eigen::MatrixXd& R, int k, int l);
 // - Runs jacobi_rotate until max off-diagonal element < eps
 // - Writes the eigenvalues as entries in the vector "eigenvalues"
 // - Writes the eigenvectors as columns in the matrix "eigenvectors"
-//   (The returned eigenvalues and eigenvectors are unsorted)
+//   (The returned eigenvalues and eigenvectors are sorted using the snippet below)
 // - Stops if it the number of iterations reaches "maxiter"
 // - Writes the number of iterations to the integer "iterations"
 // - Sets the bool reference "converged" to true if convergence was reached before hitting maxiter
 void jacobi_eigensolver(const Eigen::MatrixXd& A, double eps, Eigen::VectorXd& eigenvalues, Eigen::MatrixXd& eigenvectors, 
                         const int maxiter, int& iterations, bool& converged);
+
+// Helper snippet to sort eigenvalues and eigenvectors at the end of jacobi_eigensolver:
+#include <numeric>   // for std::iota
+#include <algorithm> // for std::sort
+#include <vector>    // for std::vector
+
+// 1. Get index ordering that sorts eigenvalues
+std::vector<int> idx(eigenvalues.size());
+std::iota(idx.begin(), idx.end(), 0);
+std::sort(idx.begin(), idx.end(), [&](int i, int j) { return eigenvalues(i) < eigenvalues(j); });
+
+// 2. Sort eigenvalues and columns of eigenvectors
+// .eval() is needed so we don't overwrite values before they have been copied!
+eigenvalues = eigenvalues(idx).eval();
+eigenvectors = eigenvectors(Eigen::all, idx).eval();
 ```
 
 :::
