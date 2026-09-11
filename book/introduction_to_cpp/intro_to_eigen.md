@@ -72,7 +72,7 @@ Creating matrices with Eigen is easy. Here's a couple examples:
 
 ```c++
 Eigen::MatrixXd A(n, m); // Initialize matrix but don't fill
-A.fill(0.0; // Fill the matrix with zeros)
+A.fill(0.0); // Fill the matrix with zeros
 Eigen::MatrixXd B = Eigen::MatrixXd::Constant(n, m, 0.0); // Alternatively, you can use the Constant function
 Eigen::MatrixXd C = Eigen::MatrixXd::Random(n, m); // Declare and fill a matrix with random values from the uniform distribution on [-1, 1]
 Eigen::MatrixXd D{{0.0, 0.1, 0.2},
