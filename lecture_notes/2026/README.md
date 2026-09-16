@@ -79,6 +79,40 @@ You can find the latest version of the lecture notes in the file [`lecture_notes
   - C++: pass-by-reference vs pass-by-value
 
 
+### Lecture 8, September 11
+
+- Cont. discussion of eigenvalue problems
+  - Similarity transformations
+  - Jacobi's rotation method
+    - Main idea
+    - Example with $2 \times 2$ matrix
+    - Algorithm for $N \times N$ case
+
+
+### Lecture 9, September 17
+
+- LU decomposition
+  - What it is
+  - What is it good for:
+    - Solving matrix equations  
+    - Finding the determinant
+    - Finding the inverse
+  - How: An algorithm for determining the L and U matrices
+  - PLU decomposition
+- Code topics:
+  - Debugging tips & tricks
+
+
+### Lecture 10, September 18
+
+- Iterative methods for solving matrix equations
+- Overview of topics for Project 3
+- Code topics:
+  - Begin discussing classes in C++
+- If time:
+  - Project 3 physics case: Penning traps
+
+
 
 
 
