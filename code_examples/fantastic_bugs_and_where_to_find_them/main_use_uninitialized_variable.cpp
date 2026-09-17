@@ -3,20 +3,23 @@ using namespace std;
 
 int main()
 {
-  int a1, a2, a3, a4;
+  int x1, x2;
+  double x3, x4;
 
-  a1 = 1;
-  a2 = 2;
+  x1 = 1;
+  x2 = 2;
+
   // Forgot to initialize a3
-  a4 = 4;
+  x4 = 10.;
 
 
-  int b = 0;
+  double b = 0.;
 
-  b += a1;
-  b += a2;
-  b += a3;  // Here we're using the uninitialized a3
-  b += a4;
+  b += x1;
+  b += x2;
+
+  b = b / x3;   // Here we're using the uninitialized x3
+  b = b * x4;
 
   cout << "b: " << b << endl;
   
