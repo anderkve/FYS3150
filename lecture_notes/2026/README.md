@@ -105,12 +105,17 @@ You can find the latest version of the lecture notes in the file [`lecture_notes
 
 ### Lecture 10, September 18
 
+- Wrap up discussion of debugging tips & tricks
 - Iterative methods for solving matrix equations
+
+
+### Lecture 11, September 24
+
+- Wrap up discussion of iterative methods for solving matrix equations
 - Overview of topics for Project 3
 - Code topics:
   - Begin discussing classes in C++
-- If time:
-  - Project 3 physics case: Penning traps
+ 
 
 
 
