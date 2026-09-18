@@ -9,7 +9,7 @@ int main()
   x1 = 1;
   x2 = 2;
 
-  // Forgot to initialize a3
+  // Forgot to initialize x3
   x4 = 10.;
 
 
