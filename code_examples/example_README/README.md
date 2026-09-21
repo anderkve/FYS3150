@@ -8,7 +8,7 @@ The project is developed by:
 - [Name 3]
 
 In this project we [short description of the problem you solve and the method/methods used for solving it, and if relevant that you compared methods (1-3 sentences)]. 
-The calculations and logic are implemented in C++, while Python is used for visualizing the results. 
+The computations are implemented in C++, while Python scripts are used for visualizing the results. 
 
 
 ## Repository structure
@@ -42,7 +42,7 @@ The repository is organised using the src/include convention, and the file tree 
 ## Requirements 
 The C++ code requires a compiler supporting C++20. 
 
-The python scripts require Python 3 and the packages NumPy and Matplotlib.
+The Python scripts require Python 3 and the packages NumPy and Matplotlib.
 
 
 ## Building and running the code 
@@ -63,7 +63,9 @@ The generated data is stored in the `data/` directory.
 ## Plotting
 Generate the plots with: 
 
-`python3 python/plot_results.py`
+```
+python3 python/plot_results.py
+```
 
 The corresponding files are automatically stored in the `figures/` directory. 
 
