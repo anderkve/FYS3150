@@ -1,109 +1,89 @@
 # Dealing with merge conflicts
 
-In most cases, Git **auto-merges** when local branches are merged with `git merge`.
-The same applies when you pull from the `remote` to your local branch.
+When you merge one branch into another, Git combines the changes from both branches automatically. The same happens when you run `git pull`, which merges the remote branch into your local one. But if the two branches have changed the *same lines* of the same file, Git cannot know which version you want. It stops and reports a **merge conflict**, and you have to finish the merge by hand. This is normal, and the fix is simple: edit the file, then `git add` and `git commit`.
 
+If you follow the [workflow for collaborating](sec:git_collab_workflow) on the previous page, conflicts show up in step 3, when you merge `main` into your own branch. Below we recreate that situation with a small example.
 
-A problem occurs when two people work in the same file and make a commit.
-For instance, say you and your partner work in the `main` branch on the same file
-and commit your changes separately. Git simply doesn't know how to deal with this
-automatically and will throw an error. This error is a **merge conflict**.
-This is the intended behaviour of Git. In these cases, we will need to resolve
-the merging process manually, which we'll look at below through a hands-on example.
 
 ## Hands-on example
 
-We'll edit the exact same file from the `main` branch, commit and push it to the remote.
-We'll do this from two distinct locations. The result is that only one of the commits will
-be accepted, while the other will result in a merge conflict.
-
-
-First, run the following command in your shell
+Start on `main` and create a file with two lines:
 
 ```sh
-echo "This is a line. \nThe original version" > tmp.txt
+git switch main
+printf "This is a line.\nThe original version\n" > tmp.txt
+git add tmp.txt
+git commit -m "Add tmp.txt to learn about merge conflicts"
 ```
 
-Then add, commit and push it to the remote:
+Create a new branch and change the second line there:
 
 ```sh
-git add tmp.txt && git commit -m "created tmp.txt to learn about merge conflicts" && git push
+git branch conflict-demo
+git switch conflict-demo
+printf "This is a line.\nThis is version A\n" > tmp.txt
+git add tmp.txt
+git commit -m "Create version A"
 ```
 
-Next up, run
+Now play the role of your partner: switch back to `main` and change the same line differently:
 
 ```sh
-cp -r . $(pwd)_copy
+git switch main
+printf "This is a line.\nThis is version B\n" > tmp.txt
+git add tmp.txt
+git commit -m "Create version B"
 ```
 
-this will copy all the files in your directory and create a new directory named "repo_name_copy". The directory will be located in the same directory as your original repo directory.
-
-Okay. Now in the original directory of your repo, run
+Finally, go back to your branch and merge `main` into it, as in step 3 of the workflow:
 
 ```sh
-echo "This is a line. \nThis is version A" > tmp.txt
+git switch conflict-demo
+git merge main
 ```
 
-which will overwrite `tmp.txt` with the new message. Then commit, add and push it to the remote, i.e
+Git fails to merge automatically:
 
-```sh
-git commit -am "created version A of the file" && git push
 ```
-
-Now enter the copied version of the directory. Run
-
-
-```sh
-echo "This is a line. \nThis is version B" > tmp.txt
-```
-and
-
-```sh
-git commit -am "created version B of the file" && git push
-```
-
-Your push will be rejected because your local commit history isn't up-to-date with the remote's. Therefore you will need to pull. Thus run
-
-```sh
-git pull
-```
-
-Git will now fail to auto-merge! The last few lines of the output should look something like this:
-
-```sh
 Auto-merging tmp.txt
 CONFLICT (content): Merge conflict in tmp.txt
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-So the punch-line is this: we have to edit the file manually, add and commit it. If you open the file, it will look roughly like this:
+
+## Resolving the conflict
+
+Open `tmp.txt` in an editor. It now looks like this:
 
 ```
 This is a line.
 <<<<<<< HEAD
-This is version B
-=======
 This is version A
->>>>>>> 89c96948fb637b83c1165743fd4e28b87f99e754
+=======
+This is version B
+>>>>>>> main
 ```
-A couple of notes on the output:
-- Git has marked the part of the file where the two commits have different content. We are asked to choose between one of them, or create something entirely new there altogether.
-- The part between `<<<<<<< HEAD` and `=======` is from your local commit that was rejected when you tried to push.
-- The part between `=======` and `>>>>>>> 89c96948fb637b83c1165743fd4e28b87f99e754` is from the commit you made earlier which is now in the remote repo.
-- The long string of numbers and letters is called the **commit hash** and is simply a unique string that identifies the commit.
 
+Git has marked the region where the two branches disagree. The part between `<<<<<<< HEAD` and `=======` is the version on your current branch. The part between `=======` and `>>>>>>> main` is the version on the branch you are merging in. (After a `git pull`, the last marker shows a commit hash instead of a branch name.)
 
-The solution here is simple -- we must simply choose version A or version B manually. This means we just delete the content we don't want, and then add and commit the final version of the file. Now we should be able to push it. For this example we'll choose to keep the following content:
+To resolve the conflict, edit the file so that it contains what you want: version A, version B, or a combination of the two. Remove the marker lines. For instance:
 
 ```
 This is a line.
 This is version B
 ```
 
-Now just run
+Then stage the file and commit to complete the merge:
 
 ```sh
-git commit -am "Resolved the conflict, chose version B" && git push
+git add tmp.txt
+git commit -m "Merge main into conflict-demo, keep version B"
 ```
 
-And that's sums up the process of resolving merge conflicts.
+That is all. Your branch now contains the changes from both branches, and you can carry on with step 4 of the workflow. If several files have conflicts, repeat the edit and `git add` for each of them before you commit.
+
+```{note}
+During a conflict, `git status` lists the files that still need attention. If you want to give up on the merge and return to the state before you ran `git merge`, run `git merge --abort`.
+```
+
+To clean up after the example, switch to `main`, delete the branch with `git branch -D conflict-demo`, and remove the file with `git rm tmp.txt` followed by a commit.

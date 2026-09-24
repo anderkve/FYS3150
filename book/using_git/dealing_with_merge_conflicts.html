@@ -444,6 +444,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hands-on-example">Hands-on example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resolving-the-conflict">Resolving the conflict</a></li>
 </ul>
             </nav>
         </div>
@@ -457,84 +458,72 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="dealing-with-merge-conflicts">
 <h1>Dealing with merge conflicts<a class="headerlink" href="#dealing-with-merge-conflicts" title="Link to this heading">#</a></h1>
-<p>In most cases, Git <strong>auto-merges</strong> when local branches are merged with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span></code>.
-The same applies when you pull from the <code class="docutils literal notranslate"><span class="pre">remote</span></code> to your local branch.</p>
-<p>A problem occurs when two people work in the same file and make a commit.
-For instance, say you and your partner work in the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch on the same file
-and commit your changes separately. Git simply doesn’t know how to deal with this
-automatically and will throw an error. This error is a <strong>merge conflict</strong>.
-This is the intended behaviour of Git. In these cases, we will need to resolve
-the merging process manually, which we’ll look at below through a hands-on example.</p>
+<p>When you merge one branch into another, Git combines the changes from both branches automatically. The same happens when you run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>, which merges the remote branch into your local one. But if the two branches have changed the <em>same lines</em> of the same file, Git cannot know which version you want. It stops and reports a <strong>merge conflict</strong>, and you have to finish the merge by hand. This is normal, and the fix is simple: edit the file, then <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>.</p>
+<p>If you follow the <a class="reference internal" href="using_git.html#sec-git-collab-workflow"><span class="std std-ref">workflow for collaborating</span></a> on the previous page, conflicts show up in step 3, when you merge <code class="docutils literal notranslate"><span class="pre">main</span></code> into your own branch. Below we recreate that situation with a small example.</p>
 <section id="hands-on-example">
 <h2>Hands-on example<a class="headerlink" href="#hands-on-example" title="Link to this heading">#</a></h2>
-<p>We’ll edit the exact same file from the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, commit and push it to the remote.
-We’ll do this from two distinct locations. The result is that only one of the commits will
-be accepted, while the other will result in a merge conflict.</p>
-<p>First, run the following command in your shell</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This is a line. \nThe original version&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>tmp.txt
+<p>Start on <code class="docutils literal notranslate"><span class="pre">main</span></code> and create a file with two lines:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>switch<span class="w"> </span>main
+<span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;This is a line.\nThe original version\n&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>tmp.txt
+git<span class="w"> </span>add<span class="w"> </span>tmp.txt
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add tmp.txt to learn about merge conflicts&quot;</span>
 </pre></div>
 </div>
-<p>Then add, commit and push it to the remote:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>tmp.txt<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;created tmp.txt to learn about merge conflicts&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>push
+<p>Create a new branch and change the second line there:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>branch<span class="w"> </span>conflict-demo
+git<span class="w"> </span>switch<span class="w"> </span>conflict-demo
+<span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;This is a line.\nThis is version A\n&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>tmp.txt
+git<span class="w"> </span>add<span class="w"> </span>tmp.txt
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Create version A&quot;</span>
 </pre></div>
 </div>
-<p>Next up, run</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>-r<span class="w"> </span>.<span class="w"> </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>_copy
+<p>Now play the role of your partner: switch back to <code class="docutils literal notranslate"><span class="pre">main</span></code> and change the same line differently:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>switch<span class="w"> </span>main
+<span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;This is a line.\nThis is version B\n&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>tmp.txt
+git<span class="w"> </span>add<span class="w"> </span>tmp.txt
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Create version B&quot;</span>
 </pre></div>
 </div>
-<p>this will copy all the files in your directory and create a new directory named “repo_name_copy”. The directory will be located in the same directory as your original repo directory.</p>
-<p>Okay. Now in the original directory of your repo, run</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This is a line. \nThis is version A&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>tmp.txt
+<p>Finally, go back to your branch and merge <code class="docutils literal notranslate"><span class="pre">main</span></code> into it, as in step 3 of the workflow:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>switch<span class="w"> </span>conflict-demo
+git<span class="w"> </span>merge<span class="w"> </span>main
 </pre></div>
 </div>
-<p>which will overwrite <code class="docutils literal notranslate"><span class="pre">tmp.txt</span></code> with the new message. Then commit, add and push it to the remote, i.e</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s2">&quot;created version A of the file&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>push
+<p>Git fails to merge automatically:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Auto</span><span class="o">-</span><span class="n">merging</span> <span class="n">tmp</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">CONFLICT</span> <span class="p">(</span><span class="n">content</span><span class="p">):</span> <span class="n">Merge</span> <span class="n">conflict</span> <span class="ow">in</span> <span class="n">tmp</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">Automatic</span> <span class="n">merge</span> <span class="n">failed</span><span class="p">;</span> <span class="n">fix</span> <span class="n">conflicts</span> <span class="ow">and</span> <span class="n">then</span> <span class="n">commit</span> <span class="n">the</span> <span class="n">result</span><span class="o">.</span>
 </pre></div>
 </div>
-<p>Now enter the copied version of the directory. Run</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This is a line. \nThis is version B&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>tmp.txt
-</pre></div>
-</div>
-<p>and</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s2">&quot;created version B of the file&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>push
-</pre></div>
-</div>
-<p>Your push will be rejected because your local commit history isn’t up-to-date with the remote’s. Therefore you will need to pull. Thus run</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>pull
-</pre></div>
-</div>
-<p>Git will now fail to auto-merge! The last few lines of the output should look something like this:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>Auto-merging<span class="w"> </span>tmp.txt
-CONFLICT<span class="w"> </span><span class="o">(</span>content<span class="o">)</span>:<span class="w"> </span>Merge<span class="w"> </span>conflict<span class="w"> </span><span class="k">in</span><span class="w"> </span>tmp.txt
-Automatic<span class="w"> </span>merge<span class="w"> </span>failed<span class="p">;</span><span class="w"> </span>fix<span class="w"> </span>conflicts<span class="w"> </span>and<span class="w"> </span><span class="k">then</span><span class="w"> </span>commit<span class="w"> </span>the<span class="w"> </span>result.
-</pre></div>
-</div>
-<p>So the punch-line is this: we have to edit the file manually, add and commit it. If you open the file, it will look roughly like this:</p>
+</section>
+<section id="resolving-the-conflict">
+<h2>Resolving the conflict<a class="headerlink" href="#resolving-the-conflict" title="Link to this heading">#</a></h2>
+<p>Open <code class="docutils literal notranslate"><span class="pre">tmp.txt</span></code> in an editor. It now looks like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">line</span><span class="o">.</span>
 <span class="o">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> <span class="n">HEAD</span>
-<span class="n">This</span> <span class="ow">is</span> <span class="n">version</span> <span class="n">B</span>
-<span class="o">=======</span>
 <span class="n">This</span> <span class="ow">is</span> <span class="n">version</span> <span class="n">A</span>
-<span class="o">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> <span class="mi">89</span><span class="n">c96948fb637b83c1165743fd4e28b87f99e754</span>
+<span class="o">=======</span>
+<span class="n">This</span> <span class="ow">is</span> <span class="n">version</span> <span class="n">B</span>
+<span class="o">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> <span class="n">main</span>
 </pre></div>
 </div>
-<p>A couple of notes on the output:</p>
-<ul class="simple">
-<li><p>Git has marked the part of the file where the two commits have different content. We are asked to choose between one of them, or create something entirely new there altogether.</p></li>
-<li><p>The part between <code class="docutils literal notranslate"><span class="pre">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> <span class="pre">HEAD</span></code> and <code class="docutils literal notranslate"><span class="pre">=======</span></code> is from your local commit that was rejected when you tried to push.</p></li>
-<li><p>The part between <code class="docutils literal notranslate"><span class="pre">=======</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> <span class="pre">89c96948fb637b83c1165743fd4e28b87f99e754</span></code> is from the commit you made earlier which is now in the remote repo.</p></li>
-<li><p>The long string of numbers and letters is called the <strong>commit hash</strong> and is simply a unique string that identifies the commit.</p></li>
-</ul>
-<p>The solution here is simple – we must simply choose version A or version B manually. This means we just delete the content we don’t want, and then add and commit the final version of the file. Now we should be able to push it. For this example we’ll choose to keep the following content:</p>
+<p>Git has marked the region where the two branches disagree. The part between <code class="docutils literal notranslate"><span class="pre">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> <span class="pre">HEAD</span></code> and <code class="docutils literal notranslate"><span class="pre">=======</span></code> is the version on your current branch. The part between <code class="docutils literal notranslate"><span class="pre">=======</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> <span class="pre">main</span></code> is the version on the branch you are merging in. (After a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>, the last marker shows a commit hash instead of a branch name.)</p>
+<p>To resolve the conflict, edit the file so that it contains what you want: version A, version B, or a combination of the two. Remove the marker lines. For instance:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">line</span><span class="o">.</span>
 <span class="n">This</span> <span class="ow">is</span> <span class="n">version</span> <span class="n">B</span>
 </pre></div>
 </div>
-<p>Now just run</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s2">&quot;Resolved the conflict, chose version B&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>push
+<p>Then stage the file and commit to complete the merge:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>tmp.txt
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Merge main into conflict-demo, keep version B&quot;</span>
 </pre></div>
 </div>
-<p>And that’s sums up the process of resolving merge conflicts.</p>
+<p>That is all. Your branch now contains the changes from both branches, and you can carry on with step 4 of the workflow. If several files have conflicts, repeat the edit and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> for each of them before you commit.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>During a conflict, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> lists the files that still need attention. If you want to give up on the merge and return to the state before you ran <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span></code>, run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">--abort</span></code>.</p>
+</div>
+<p>To clean up after the example, switch to <code class="docutils literal notranslate"><span class="pre">main</span></code>, delete the branch with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-D</span> <span class="pre">conflict-demo</span></code>, and remove the file with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span> <span class="pre">tmp.txt</span></code> followed by a commit.</p>
 </section>
 </section>
 
@@ -603,6 +592,7 @@ Automatic<span class="w"> </span>merge<span class="w"> </span>failed<span class=
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hands-on-example">Hands-on example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resolving-the-conflict">Resolving the conflict</a></li>
 </ul>
   </nav></div>
 
