@@ -688,6 +688,29 @@ A_- = \frac{\sqrt{ (v_{y,0} + x_0 \omega_+)^2 + (v_{x,0} - y_0 \omega_+)^2 }}{\o
 \end{split}\]</div>
 <p>Here <span class="math notranslate nohighlight">\(A_+\)</span> and <span class="math notranslate nohighlight">\(A_-\)</span> are always non-negative.</p>
 </div>
+<hr class="docutils" />
+<p>For the movement in the <span class="math notranslate nohighlight">\(xy\)</span>-plane, the specific solution for <span class="math notranslate nohighlight">\(f(t)\)</span> is given by eq. <a class="reference internal" href="#equation-f-general-sol">(17)</a> with</p>
+<div class="math notranslate nohighlight">
+\[
+A_+ = \frac{v_0 + \omega_- x_0}{\omega_+ - \omega_-}, \qquad A_- = \frac{v_0 + \omega_+ x_0}{\omega_+ - \omega_-},
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\phi_+ = \pi, \qquad \phi_- = 0.
+\]</div>
+<p>Note that <span class="math notranslate nohighlight">\(\phi_+ = \pi\)</span> is what makes <span class="math notranslate nohighlight">\(A_+\)</span> positive for the initial conditions we will use later (with <span class="math notranslate nohighlight">\(x_0, v_0 &gt; 0\)</span>), so that the expressions are consistent with the assumption <span class="math notranslate nohighlight">\(A_\pm &gt; 0\)</span> in Problem 3. You can check this solution by inserting <span class="math notranslate nohighlight">\(t = 0\)</span> in <span class="math notranslate nohighlight">\(f(t)\)</span> and <span class="math notranslate nohighlight">\(\dot{f}(t)\)</span> and verifying that <span class="math notranslate nohighlight">\(f(0) = x_0\)</span> and <span class="math notranslate nohighlight">\(\dot{f}(0) = i v_0\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For general initial conditions <span class="math notranslate nohighlight">\(x(0) = x_0\)</span>, <span class="math notranslate nohighlight">\(y(0) = y_0\)</span>, <span class="math notranslate nohighlight">\(\dot{x}(0) = v_{x,0}\)</span>, <span class="math notranslate nohighlight">\(\dot{y}(0) = v_{y,0}\)</span>, the same procedure gives the complex amplitudes</p>
+<div class="math notranslate nohighlight">
+\[
+A_+ e^{-i\phi_+} = \frac{i\dot{f}(0) - \omega_- f(0)}{\omega_+ - \omega_-}, \qquad
+A_- e^{-i\phi_-} = \frac{\omega_+ f(0) - i\dot{f}(0)}{\omega_+ - \omega_-},
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(f(0) = x_0 + i y_0\)</span> and <span class="math notranslate nohighlight">\(\dot{f}(0) = v_{x,0} + i v_{y,0}\)</span>. The amplitudes <span class="math notranslate nohighlight">\(A_\pm\)</span> and phases <span class="math notranslate nohighlight">\(\phi_\pm\)</span> are the moduli and (negative) arguments of these two complex numbers.</p>
+</div>
+<p>This form has no case distinctions and no undefined denominators, and it reduces to the specific solution above when <span class="math notranslate nohighlight">\(y_0 = v_{x,0} = 0\)</span>.</p>
+<hr class="docutils" />
 </section>
 <hr class="docutils" />
 <section id="with-multiple-particles">

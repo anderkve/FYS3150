@@ -243,6 +243,38 @@ Here $A_+$ and $A_-$ are always non-negative.
 
 ----
 
+For the movement in the $xy$-plane, the specific solution for $f(t)$ is given by eq. {eq}`f_general_sol` with 
+
+$$
+A_+ = \frac{v_0 + \omega_- x_0}{\omega_+ - \omega_-}, \qquad A_- = \frac{v_0 + \omega_+ x_0}{\omega_+ - \omega_-},
+$$
+
+$$
+\phi_+ = \pi, \qquad \phi_- = 0.
+$$
+
+Note that $\phi_+ = \pi$ is what makes $A_+$ positive for the initial conditions we will use later (with $x_0, v_0 > 0$), so that the expressions are consistent with the assumption $A_\pm > 0$ in Problem 3. You can check this solution by inserting $t = 0$ in $f(t)$ and $\dot{f}(t)$ and verifying that $f(0) = x_0$ and $\dot{f}(0) = i v_0$.
+
+
+```{note}
+For general initial conditions $x(0) = x_0$, $y(0) = y_0$, $\dot{x}(0) = v_{x,0}$, $\dot{y}(0) = v_{y,0}$, the same procedure gives the complex amplitudes
+
+$$
+A_+ e^{-i\phi_+} = \frac{i\dot{f}(0) - \omega_- f(0)}{\omega_+ - \omega_-}, \qquad
+A_- e^{-i\phi_-} = \frac{\omega_+ f(0) - i\dot{f}(0)}{\omega_+ - \omega_-},
+$$
+
+with $f(0) = x_0 + i y_0$ and $\dot{f}(0) = v_{x,0} + i v_{y,0}$. The amplitudes $A_\pm$ and phases $\phi_\pm$ are the moduli and (negative) arguments of these two complex numbers.
+```
+
+This form has no case distinctions and no undefined denominators, and it reduces to the specific solution above when $y_0 = v_{x,0} = 0$.
+
+
+---
+
+
+----
+
 #### With multiple particles
 
 We remind you that so far we have only been looking at the special case of a single particle. In a trap with more particles, the equations of motion for each particle are coupled to those of the other particles. Specifically, consider the case where we fill our Penning trap with a set of $n$ particles with charges $\{q_1, ..., q_n\}$ and masses $\{m_1, ..., m_n\}$. Each particle will then experience both the force from the external electric and magnetic fields and the Coulomb force from all the other particles. In this case our set of equations of motion would become
