@@ -649,47 +649,9 @@ z(0) = z_0, \qquad \dot{z}(0) = 0.
 <p>From eq. <a class="reference internal" href="#equation-z-eq">(15)</a> and the initial values for <span class="math notranslate nohighlight">\(z(0)\)</span> and <span class="math notranslate nohighlight">\(\dot{z}(0)\)</span> we get that the specific solution for <span class="math notranslate nohighlight">\(z(t)\)</span> in this case is</p>
 <div class="math notranslate nohighlight">
 \[
-z(t) = z_0 \cos(w_z t).
+z(t) = z_0 \cos(\omega_z t).
 \]</div>
-<p>For the movement in the <span class="math notranslate nohighlight">\(xy\)</span>-plane, the specific solution for <span class="math notranslate nohighlight">\(f(t)\)</span> is given by eq. <a class="reference internal" href="#equation-f-general-sol">(17)</a> with</p>
-<div class="math notranslate nohighlight">
-\[
-A_+ = \frac{v_0 + \omega_- x_0}{\omega_- - \omega_+}, \qquad A_- = - \frac{v_0 + \omega_+ x_0}{\omega_- - \omega_+},
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-\phi_+ = 0, \qquad \phi_- = 0.
-\]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><strong>October 21</strong>: As some have noted, there is unfortunately a mistake in the above expressions. For the initial values you are given later, the above expressions will give a negative <span class="math notranslate nohighlight">\(A_+\)</span>, which contradicts what we said above. Taking <span class="math notranslate nohighlight">\(\phi_+ = \pi\)</span> instead of <span class="math notranslate nohighlight">\(\phi_+ = 0\)</span> would have ensured a positive <span class="math notranslate nohighlight">\(A_+\)</span> for the given set of initial conditions.</p>
-<p><strong>We apologise for this mistake</strong>. And since we discovered it so late, we will make sure that when we grade the reports, <strong>no one will be penalized for a sign mistake/confusion on this problem</strong>.</p>
-<p>A more careful solution of the equations give expressions for <span class="math notranslate nohighlight">\(A_+\)</span>, <span class="math notranslate nohighlight">\(A_-\)</span>, <span class="math notranslate nohighlight">\(\phi_+\)</span> and <span class="math notranslate nohighlight">\(\phi_-\)</span> that ensure <span class="math notranslate nohighlight">\(A_+, A_- &gt; 0\)</span> for any choice of initial conditions for the movement in the <span class="math notranslate nohighlight">\((x,y)\)</span> plane. We do not expect you to change anything in your reports at this late stage, but for those who are interested, here are the correct expressions:</p>
-<p>Assume we start with the initial conditions <span class="math notranslate nohighlight">\(x(0) = x_0\)</span>, <span class="math notranslate nohighlight">\(\dot{x}(0) = v_{x,0}\)</span>, <span class="math notranslate nohighlight">\(y(0) = y_0\)</span>, <span class="math notranslate nohighlight">\(\dot{y}(0) = v_{y,0}\)</span>.</p>
-<p><span class="math notranslate nohighlight">\(A_+\)</span>, <span class="math notranslate nohighlight">\(A_-\)</span>, <span class="math notranslate nohighlight">\(\phi_+\)</span> and <span class="math notranslate nohighlight">\(\phi_-\)</span> are then</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-A_+ = \frac{\sqrt{ (v_{y,0} + x_0 \omega_-)^2 + (v_{x,0} - y_0 \omega_-)^2 }}{\omega_+ - \omega_-} \\
-\\
-A_- = \frac{\sqrt{ (v_{y,0} + x_0 \omega_+)^2 + (v_{x,0} - y_0 \omega_+)^2 }}{\omega_+ - \omega_-} \\
-\\
-\phi_+ =
-\begin{cases}
-\arctan\left( \frac{v_{x,0} - y_0 \omega_-}{x_0 \omega_- + v_{y,0}} \right), &amp; \text{if}\;\; x_0 \omega_- + v_{y,0} &lt; 0, \\
-\arctan\left( \frac{v_{x,0} - y_0 \omega_-}{x_0 \omega_- + v_{y,0}} \right) + \pi, &amp; \text{if}\;\; x_0 \omega_- + v_{y,0} \ge 0. \\
-\end{cases}
-\\ 
-\\
-\phi_- =
-\begin{cases}
-\arctan\left( \frac{v_{x,0} - y_0 \omega_+}{x_0 \omega_+ + v_{y,0}} \right) + \pi, &amp; \text{if}\;\; x_0 \omega_+ + v_{y,0} &lt; 0, \\
-\arctan\left( \frac{v_{x,0} - y_0 \omega_+}{x_0 \omega_+ + v_{y,0}} \right), &amp; \text{if}\;\; x_0 \omega_+ + v_{y,0} \ge 0. \\
-\end{cases}
-\end{split}\]</div>
-<p>Here <span class="math notranslate nohighlight">\(A_+\)</span> and <span class="math notranslate nohighlight">\(A_-\)</span> are always non-negative.</p>
-</div>
-<hr class="docutils" />
-<p>For the movement in the <span class="math notranslate nohighlight">\(xy\)</span>-plane, the specific solution for <span class="math notranslate nohighlight">\(f(t)\)</span> is given by eq. <a class="reference internal" href="#equation-f-general-sol">(17)</a> with</p>
+<p>Then let’s consider the movement in the <span class="math notranslate nohighlight">\(xy\)</span>-plane. If we further assume <span class="math notranslate nohighlight">\(x_0, v_0 &gt; 0\)</span>, as we will use later, the specific solution for <span class="math notranslate nohighlight">\(f(t)\)</span> is given by eq. <a class="reference internal" href="#equation-f-general-sol">(17)</a> with</p>
 <div class="math notranslate nohighlight">
 \[
 A_+ = \frac{v_0 + \omega_- x_0}{\omega_+ - \omega_-}, \qquad A_- = \frac{v_0 + \omega_+ x_0}{\omega_+ - \omega_-},
@@ -698,19 +660,17 @@ A_+ = \frac{v_0 + \omega_- x_0}{\omega_+ - \omega_-}, \qquad A_- = \frac{v_0 + \
 \[
 \phi_+ = \pi, \qquad \phi_- = 0.
 \]</div>
-<p>Note that <span class="math notranslate nohighlight">\(\phi_+ = \pi\)</span> is what makes <span class="math notranslate nohighlight">\(A_+\)</span> positive for the initial conditions we will use later (with <span class="math notranslate nohighlight">\(x_0, v_0 &gt; 0\)</span>), so that the expressions are consistent with the assumption <span class="math notranslate nohighlight">\(A_\pm &gt; 0\)</span> in Problem 3. You can check this solution by inserting <span class="math notranslate nohighlight">\(t = 0\)</span> in <span class="math notranslate nohighlight">\(f(t)\)</span> and <span class="math notranslate nohighlight">\(\dot{f}(t)\)</span> and verifying that <span class="math notranslate nohighlight">\(f(0) = x_0\)</span> and <span class="math notranslate nohighlight">\(\dot{f}(0) = i v_0\)</span>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For general initial conditions <span class="math notranslate nohighlight">\(x(0) = x_0\)</span>, <span class="math notranslate nohighlight">\(y(0) = y_0\)</span>, <span class="math notranslate nohighlight">\(\dot{x}(0) = v_{x,0}\)</span>, <span class="math notranslate nohighlight">\(\dot{y}(0) = v_{y,0}\)</span>, the same procedure gives the complex amplitudes</p>
+<p>For general initial conditions <span class="math notranslate nohighlight">\(x(0) = x_0\)</span>, <span class="math notranslate nohighlight">\(y(0) = y_0\)</span>, <span class="math notranslate nohighlight">\(\dot{x}(0) = v_{x,0}\)</span>, <span class="math notranslate nohighlight">\(\dot{y}(0) = v_{y,0}\)</span>,
+the amplitudes <span class="math notranslate nohighlight">\(A_\pm\)</span> and phases <span class="math notranslate nohighlight">\(\phi_\pm\)</span> are the moduli and (negative) arguments of these two complex numbers</p>
 <div class="math notranslate nohighlight">
 \[
 A_+ e^{-i\phi_+} = \frac{i\dot{f}(0) - \omega_- f(0)}{\omega_+ - \omega_-}, \qquad
 A_- e^{-i\phi_-} = \frac{\omega_+ f(0) - i\dot{f}(0)}{\omega_+ - \omega_-},
 \]</div>
-<p>with <span class="math notranslate nohighlight">\(f(0) = x_0 + i y_0\)</span> and <span class="math notranslate nohighlight">\(\dot{f}(0) = v_{x,0} + i v_{y,0}\)</span>. The amplitudes <span class="math notranslate nohighlight">\(A_\pm\)</span> and phases <span class="math notranslate nohighlight">\(\phi_\pm\)</span> are the moduli and (negative) arguments of these two complex numbers.</p>
+<p>with <span class="math notranslate nohighlight">\(f(0) = x_0 + i y_0\)</span> and <span class="math notranslate nohighlight">\(\dot{f}(0) = v_{x,0} + i v_{y,0}\)</span>.</p>
 </div>
-<p>This form has no case distinctions and no undefined denominators, and it reduces to the specific solution above when <span class="math notranslate nohighlight">\(y_0 = v_{x,0} = 0\)</span>.</p>
-<hr class="docutils" />
 </section>
 <hr class="docutils" />
 <section id="with-multiple-particles">
