@@ -1,13 +1,10 @@
 # Project 3
 
 
-Not published yet.
-
-<!-- 
 
 ## Practicalities
 
-- **Deadline**: Wednesday, October 22, 23:59.
+- **Deadline**: Wednesday, October 21, 23:59.
 - **Format:**
   - A scientific report, typeset in LaTeX, delivered as a pdf file on Canvas.
   - Use the report template we have provided [here](./../writing_reports/project_templates.md).
@@ -545,7 +542,6 @@ Here is a suggested starting point for member functions of the `PenningTrap` cla
 Note that for Problem 9 you probably want to modify the declarations of some of these functions, as well as add some new ones.
 
 
- -->
 
 
 
