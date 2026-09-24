@@ -1,3 +1,16 @@
+::::{tab-set}
+:sync-group: linalg
+
+:::{tab-item} Armadillo
+:sync: armadillo
+Showing code examples using **Armadillo**.
+:::
+:::{tab-item} Eigen
+:sync: eigen
+Showing code examples using **Eigen**.
+:::
+::::
+
 # Project 3
 
 
@@ -23,6 +36,7 @@ September 24: This project description has some leftover typos etc. from an earl
 
 - **Figures:** Figures included in your LaTeX document should be made as vector graphics (e.g. `.pdf` files), rather than raster graphics (e.g. `.png` files). If you are making plots with `matplotlib.pyplot` in Python, this is as simple as calling `plt.savefig("figure.pdf")` rather than `plt.savefig("figure.png")`.
 
+- **We recommend using Armadillo or Eigen:** For this project we recommend using Armadillo or Eigen to work with vectors (and matrices).
 
 ## Introduction
 
@@ -336,7 +350,7 @@ You are of course free to extend the class with more attributes (member variable
 
 Some advice:
   - The constructor should assign values to the member variables.
-  - For the position and velocity, use `arma::vec` objects.
+  - For the position and velocity, use `arma::vec` or `Eigen::Vector3d` objects.
   - Make all member variables public. This is just to ease the interplay between the `Particle` class and the `PenningTrap` class. (Alternatively, a nice approach in this case would be to make `PenningTrap` a [friend class](https://en.wikipedia.org/wiki/Friend_class) of `Particle`.)
 
 
@@ -464,15 +478,42 @@ For this task you should implement (at least) the following extensions to your c
 - An option to switch the Coulomb interactions on/off.
 
 - Code for filling the `PenningTrap` with particles with randomly generated initial positions and velocities. 
-  Initial positions and velocities for each particle can be sampled from normal distributions, suitably scaled relative to the length scale of our Penning trap. Here's a snippet illustrating this for a single particle, using the `vec::randn()` function of Armadillo to sample a position and velocity (`my_trap` is an instance of `PenningTrap`):
+  Initial positions and velocities for each particle can be sampled from normal distributions, suitably scaled relative to the length scale of our Penning trap. Here's a snippet illustrating this for a single particle (`my_trap` is an instance of `PenningTrap`):
+
+::::{tab-set}
+:sync-group: linalg
+
+:::{tab-item} Armadillo
+:sync: armadillo
 
   ```cpp
     vec r = vec(3).randn() * 0.1 * my_trap.d;  // random initial position
     vec v = vec(3).randn() * 0.1 * my_trap.d;  // random initial velocity
   ```
-  
+
   *Note:* To set the seed for Armadillo's random number generator, you can use `arma_rng::set_seed(value)` or `arma_rng::set_seed_random()`.
 
+:::
+:::{tab-item} Eigen
+:sync: eigen
+
+```cpp
+#include <random>
+
+// This is the random number generator using the MT19937 algorithm
+std::mt19937 generator;
+
+// This is the object that produces normally disitributed numbers of mean 0 and standard deviation
+// 0.1 * my_trap.d from the random numbers of the MT19937 generator
+std::normal_distribution<double> dist(0.0, 0.1 * my_trap.d);
+
+Eigen::Vector3d r(dist(generator), dist(generator), dist(generator)); // random initial position
+Eigen::Vector3d v(dist(generator), dist(generator), dist(generator)); // random initial velocity
+```
+
+*Note:* To set the seed for the Standard Library's random number generator, you can use `generator.seed(value)`.
+:::
+::::
 
 We want to use our simulation to search for resonance frequencies of the system. Starting from a system filled with *100 randomly initialized Ca$^+$ particles*, do the following:
 
@@ -511,6 +552,12 @@ Some of you may experience runtimes that are so long that you are unable to perf
 
 Here is a suggested starting point for member functions of the `PenningTrap` class:
 
+::::{tab-set}
+:sync-group: linalg
+
+:::{tab-item} Armadillo
+:sync: armadillo
+
 ```cpp
   // Constructor
   PenningTrap(double B0_in, double V0_in, double d_in);
@@ -542,6 +589,45 @@ Here is a suggested starting point for member functions of the `PenningTrap` cla
   // Evolve the system one time step (dt) using Forward Euler
   void evolve_forward_Euler(double dt);
 ```
+
+:::
+:::{tab-item} Eigen
+:sync: eigen
+
+```cpp
+  // Constructor
+  PenningTrap(double B0_in, double V0_in, double d_in);
+
+  // Add a particle to the trap
+  void add_particle(Particle p_in);
+
+  // External electric field at point r=(x,y,z)
+  Eigen::Vector3d external_E_field(Eigen::Vector3d r);  
+
+  // External magnetic field at point r=(x,y,z)
+  Eigen::Vector3d external_B_field(Eigen::Vector3d r);  
+
+  // Force on particle_i from particle_j
+  Eigen::Vector3d force_particle(int i, int j);
+
+  // The total force on particle_i from the external fields
+  Eigen::Vector3d total_force_external(int i);
+
+  // The total force on particle_i from the other particles
+  Eigen::Vector3d total_force_particles(int i);
+
+  // The total force on particle_i from both external fields and other particles
+  Eigen::Vector3d total_force(int i);
+
+  // Evolve the system one time step (dt) using Runge-Kutta 4th order
+  void evolve_RK4(double dt);
+
+  // Evolve the system one time step (dt) using Forward Euler
+  void evolve_forward_Euler(double dt);
+```
+
+:::
+::::
 
 Note that for Problem 9 you probably want to modify the declarations of some of these functions, as well as add some new ones.
 
