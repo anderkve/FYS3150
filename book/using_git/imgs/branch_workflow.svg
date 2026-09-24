@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="385" viewBox="0 0 940 385" font-family="Helvetica, Arial, sans-serif" font-size="15">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#555"/>
+    </marker>
+  </defs>
+  <rect width="940" height="385" fill="white"/>
+
+  <!-- lane labels -->
+  <text x="14" y="80" fill="#1f77b4" font-weight="bold">alice-integrator</text>
+  <text x="14" y="190" fill="#333" font-weight="bold">main</text>
+  <text x="14" y="300" fill="#e6820e" font-weight="bold">bob-plotting</text>
+
+  <!-- main lane -->
+  <line x1="130" y1="185" x2="920" y2="185" stroke="#333" stroke-width="3"/>
+
+  <!-- Bob: branch off, two commits, merge into main -->
+  <line x1="130" y1="185" x2="270" y2="295" stroke="#e6820e" stroke-width="3"/>
+  <line x1="270" y1="295" x2="410" y2="295" stroke="#e6820e" stroke-width="3"/>
+  <line x1="410" y1="295" x2="539.0" y2="193.6" stroke="#e6820e" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- Alice: branch off, two commits, merge main in, merge into main -->
+  <line x1="130" y1="185" x2="270" y2="75" stroke="#1f77b4" stroke-width="3"/>
+  <line x1="270" y1="75" x2="690" y2="75" stroke="#1f77b4" stroke-width="3"/>
+  <line x1="550" y1="185" x2="679.0" y2="83.6" stroke="#333" stroke-width="3" stroke-dasharray="7,5" marker-end="url(#arrow)"/>
+  <line x1="690" y1="75" x2="819.0" y2="176.4" stroke="#1f77b4" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- commit nodes -->
+  <circle cx="130" cy="185" r="9" fill="#333"/>
+  <circle cx="550" cy="185" r="9" fill="#333"/>
+  <circle cx="830" cy="185" r="9" fill="#333"/>
+  <circle cx="270" cy="295" r="9" fill="#e6820e"/>
+  <circle cx="410" cy="295" r="9" fill="#e6820e"/>
+  <circle cx="270" cy="75" r="9" fill="#1f77b4"/>
+  <circle cx="410" cy="75" r="9" fill="#1f77b4"/>
+  <circle cx="690" cy="75" r="9" fill="#1f77b4"/>
+
+  <!-- step labels, each centred on its marker -->
+  <text x="130" y="247" text-anchor="middle" fill="#333">1. Both branch</text>
+  <text x="130" y="265" text-anchor="middle" fill="#333">off from main</text>
+  <text x="340" y="47" text-anchor="middle" fill="#1f77b4">2. Alice commits</text>
+  <text x="340" y="337" text-anchor="middle" fill="#e6820e">2. Bob commits</text>
+  <text x="550" y="247" text-anchor="middle" fill="#333">4. Bob merges his</text>
+  <text x="550" y="265" text-anchor="middle" fill="#333">branch into main</text>
+  <text x="550" y="283" text-anchor="middle" fill="#333">and pushes</text>
+  <text x="690" y="29" text-anchor="middle" fill="#1f77b4">3. Alice merges main into her</text>
+  <text x="690" y="47" text-anchor="middle" fill="#1f77b4">branch, resolves conflicts</text>
+  <text x="830" y="247" text-anchor="middle" fill="#333">4. Alice merges her</text>
+  <text x="830" y="265" text-anchor="middle" fill="#333">branch into main</text>
+  <text x="830" y="283" text-anchor="middle" fill="#333">and pushes</text>
+
+  <!-- time arrow -->
+  <line x1="130" y1="370" x2="920" y2="370" stroke="#888" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="525" y="365" text-anchor="middle" fill="#888" font-size="13">time</text>
+</svg>

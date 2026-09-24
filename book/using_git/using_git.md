@@ -1,298 +1,197 @@
 # Using Git
 
-
-## Synopsis
-
-This tutorial covers the basics of day-to-day git usage, focusing on setting up your local **cloned** repository, and making changes to it, and sharing it with other collaborators. It is adapted from and extended of the manual entry called *gittutorial*, which you can look up for future reference in your terminal by running
+This page covers day-to-day Git usage: making changes in your local clone of a repository, keeping track of the history, working with branches, and sharing your changes through GitHub. It is adapted from the Git manual entry *gittutorial*, which you can read in your terminal with
 
 ```sh
 man gittutorial
 ```
 
-
 ```{note}
-As explained below, a Git repository is organised into *branches*. For repositories created before October 1, 2020, the main branch was by default called `master`. Therefore, if you work on older projects, you might see the main branch called `master` instead of `main`.
+A Git repository is organised into *branches*, and the main branch is by default called `main`. Older repositories (created before October 2020) often call it `master` instead.
 ```
 
 
-## Cloning a new project
+## The basic workflow
 
-The first concept to get to grips with is that of the **clone**. Once a repository has been created on GitHub, we make a clone of it on our local computer. This clone is a separate version of the repository that only exists locally, but through commands we will detail later we can synchronize with the **remote** (i.e. the online repository on GitHub) either by sharing changes we have made locally, or downloading changes others have made remotely.
+Nearly all your Git work will follow the same cycle:
 
-We recommend you create a repository online on [GitHub](https://github.com/) and clone the repository on your computer using the HTTPS link. It's simply done by running
+1. **Pull** the latest changes from GitHub: `git pull`
+2. Edit your files.
+3. **Stage** the changes you want to keep: `git add file1 file2`
+4. **Commit** the staged changes: `git commit -m "Short description of the change"`
+5. **Push** your commits to GitHub: `git push`
+
+This is fine when you work alone. When you share a repository with others, do your work on a separate branch instead of directly on `main`, as described in [A workflow for collaborating](sec:git_collab_workflow) below.
+
+If you are ever unsure of the state of your repository, run `git status`. Its output tells you which branch you are on, what has changed, and usually what to do next. Make this a habit, and also make it your first step whenever something goes wrong.
+
+
+## Cloning a repository
+
+A **clone** is a local copy of a repository that lives on GitHub (the **remote**). You make changes in the clone, and synchronise with the remote by pushing your changes up and pulling other people's changes down. To clone a repo, copy the HTTPS link from the green **Code** button on the repo's GitHub page and run
 
 ```sh
 git clone https_link
 ```
 
-where `https_link` is the URL for your repo on GitHub. This is found by going to the frontpage of your GitHub repo, and clicking the green `<> Code` button.
+See [Setting up a UiO GitHub repository](setting_up_a_UiO_GitHub_repo.md) for the details.
 
 
 ## Making changes
 
-Once your local repository is set up, we can start making changes and write new files etc. Making the changes appear in the online repository requires three fundamental steps: **staging** the changes, **commiting** the staged changes, and **pushing** the changes from local -> remote. Here we will go through staging and committing.
+### Staging
 
-To stage changes for commit, we simply run the the following command, where file1 etc. can be a new file not in the repository or an existing one that you have modified.
+Git does not automatically record the changes you make. You first select which changes to include in the next commit, called **staging**. The same command works for new files and for modified files:
 
 ```sh
 git add file1 file2 file3
 ```
 
-Staging amounts to selecting what files you want to update the history of your repository with, and does not change anything by itself. To unstage a staged file, we can run
+Staging does not change anything by itself. To unstage a file, run
 
 ```sh
 git restore --staged file1
 ```
 
 ```{note}
-It's not recommended to add *all* the files you have in your project directory. When working on a code project, you should typically just add the actual code files, i.e. the `.cpp` and `.hpp` files for a C++ project, plus README files or other documentation you write. Adding auto-generated files to Git, like the `.o` files and executables you generate in compilation and linking, will just cause confusion and frustration.
+Do not add *all* the files in your project directory. Only track the files you actually work on: source code (`.cpp`, `.hpp`, `.py`), scripts, LaTeX sources and documentation. Compiled files, executables, data files and other auto-generated files should be left out, see [Add a README and a gitignore](add_a_README_and_gitignore.md).
 
-In short, you should not use your Git repo as if it is a complete copy of the project folder on your computer. Use it only to track the files you actually work directly on.
-
-To see which files Git current is tracking, run the command `git ls-files`
+To list the files Git is currently tracking, run `git ls-files`.
 ```
 
-You are now ready to commit. You can see what is about to be committed
-using `git diff` with the `--cached` option:
+### Checking what has changed
+
+`git status` gives a summary of the situation:
 
 ```sh
-git diff --cached
-```
-
-
-(Without the `--cached` flag, `git diff` will show you any changes that you've made
-but not yet added to the index.) You can also get a brief summary of
-the situation with `git status`:
-
-```sh
-git status
+$ git status
 On branch main
-Changes to be committed:
 Your branch is up to date with 'origin/main'.
-  (use "git restore --staged <file>..." to unstage)
 
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
         modified:   file1
         modified:   file2
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
         modified:   file3
 ```
 
-```{note}
-We recommend making it a habbit to run `git status` whenever you are unsure about the current status of your repository, and as a first step whenever you encounter a problem. The output of `git status` will often tell you exactly what you need to do.
-```
-
-
-If you need to make any further adjustments, do so now, and then add
-any newly modified content to the index. Finally, commit your changes
-with:
+To see the actual changes, use `git diff`. Without options it shows changes that are not yet staged. With `--cached` it shows what is staged and about to be committed:
 
 ```sh
-git commit
+git diff
+git diff --cached
 ```
 
+### Committing
 
-This will again prompt you for a message describing the change, and
-then record a new version of the project.
-
-Alternatively, instead of running `git add` beforehand, you can use
+A **commit** records a new version of the project, containing all the staged changes:
 
 ```sh
-git commit -a
+git commit -m "Short description of the change"
 ```
 
-which will automatically notice any modified (but not new) files, add
-them to the index, and commit, all in one step.
+If you leave out `-m`, Git opens a text editor where you write the message. A good commit message starts with a single short line (less than 50 characters) summarising the change. If you want to add more detail, leave a blank line and then write a longer description.
 
-```{note}
-A note on commit messages: Though not required, it's a good idea to
-begin the commit message with a single short (less than 50 character)
-line summarizing the change, followed by a blank line and then a more
-thorough description. The text up to the first blank line in a commit
-message is treated as the commit title, and that title is used
-throughout Git.
-```
+Remember that only staged changes go into the commit. Run `git status` before committing to check that you have added everything you intended.
 
 
-## Git tracks content, not files
+## Viewing the history
 
-Many revision control systems provide an **add** command that tells the
-system to start tracking changes to a new file. Git's **add** command does
-something simpler and more powerful: `git add` is used both for new and
-newly modified files, and in both cases it takes a snapshot of the
-given files and stages that content, ready for inclusion
-in the next commit.
-
-
-## Viewing project history
-
-At any point you can view the history of your changes using
+To see the history of commits, run
 
 ```sh
 git log
 ```
 
-If you also want to see complete diffs at each step, use
+Some useful variants:
 
 ```sh
-git log -p
-```
-
-Often the overview of the change is useful to get a feel of each step
-
-```sh
-git log --stat --summary
-```
-
-## Managing branches
-
-
-A single Git repository can maintain multiple branches of development.
-To create a new branch named `experimental`, use
-
-```sh
-git branch experimental
-```
-
-If you now run
-
-```sh
-git branch
-```
-
-you'll get a list of all existing branches:
-
-```sh
-  experimental
-* main
+git log --oneline            # one line per commit
+git log --stat               # which files changed in each commit
+git log -p                   # the full diff of each commit
+git log --oneline --graph    # the history as a graph, useful with branches
 ```
 
 
-The `experimental` branch is the one you just created, and the `main`
-branch is a default branch that was created for you automatically. The
-asterisk marks the branch you are currently on; type
+## Branches
+
+A repository can have several **branches** of development. A branch lets you work on something without touching `main`, and is how collaborators avoid getting in each other's way. The basic commands are
 
 ```sh
-git switch experimental
+git branch                    # list all branches, with * marking the one you are on
+git branch experimental       # create a new branch called experimental
+git switch experimental       # switch to the branch experimental
+git merge experimental        # merge experimental into the branch you are currently on
+git branch -d experimental    # delete the branch (only allowed once it has been merged)
 ```
-
-
-to switch to the experimental branch.
 
 ```{note}
-`git switch` requires Git version 2.23 or later. You can use `git checkout` as a replacement if you use an older version of Git.  
+`git switch` requires Git version 2.23 or later. With older versions, use `git checkout` instead.
 ```
 
-Now edit a file, commit the
-change, and switch back to the `main` branch:
+Commits made on `experimental` are not visible on `main` until you merge. Note that `git merge some_branch` merges *from* `some_branch` *into* the branch you are currently on, so run `git branch` first if you are unsure where you are, and make sure you have no uncommitted changes. If the two branches have changed the same lines, Git reports a *merge conflict* and leaves both versions in the affected files for you to sort out, see [Dealing with merge conflicts](dealing_with_merge_conflicts.md).
+
+
+## Syncing with GitHub
+
+Everything above happens locally on your computer. To share your work, you synchronise with the **remote** repository on GitHub, which Git by default calls `origin`:
 
 ```sh
-(edit file)
-git commit -a
+git pull origin branchname    # download new commits on branchname from GitHub and merge them into your local branch
+git push origin branchname    # upload your local commits on branchname to GitHub
+```
+
+While on a branch that already exists on GitHub, such as `main`, plain `git pull` and `git push` do the same thing.
+
+
+(sec:git_collab_workflow)=
+## A workflow for collaborating
+
+Here is a simple workflow that works well when two or more people share a repository. The rule is: *never work directly on `main`.* Each new task gets its own branch, and `main` is only updated by merging finished branches into it.
+
+Say Alice and Bob share a repo. Alice is going to implement an integration routine, and Bob a plotting script. Each of them does the following:
+
+1. Start from an up-to-date `main` and create a new branch for the task.
+2. Work on the branch: edit, `git add`, `git commit`, as many times as needed.
+3. When the task is done, pull the latest `main` and merge it *into the branch*. If the other person has changed the same lines, the merge conflict shows up here, on your own branch, where you can sort it out without disturbing `main`.
+4. Merge the branch into `main` and push.
+
+![branch_workflow](imgs/branch_workflow.svg)
+
+The figure shows the resulting commit history, with the numbers referring to the steps above. Bob finishes first. When he pulls `main` in step 3, nothing has changed there, so his merge is trivial. Alice finishes later, so when she pulls `main` she gets Bob's work and has to merge it into her branch before she can merge her branch into `main`.
+
+Here are Alice's commands:
+
+```sh
+# 1. Create a new branch from an up-to-date main
 git switch main
-```
+git pull
+git branch alice-integrator
+git switch alice-integrator
 
-Check that the change you made is no longer visible, since it was made
-on the experimental branch and you're back on the `main` branch.
+# 2. Work on the branch, repeating as many times as needed
+git add integrator.cpp
+git commit -m "Add trapezoidal integration"
 
-You can make a different change on the `main` branch:
+# 3. Get the latest main and merge it into the branch
+git switch main
+git pull
+git switch alice-integrator
+git merge main
+# (resolve any merge conflicts, then git add and git commit)
 
-```sh
-(edit file)
-git commit -a
-```
+# 4. Merge the branch into main and push
+git switch main
+git merge alice-integrator
+git push
 
-at this point the two branches have diverged, with different changes
-made in each. To merge the changes made in experimental into `main`,
-run
-
-```sh
-git merge experimental
+# Optional: delete the branch now that it is merged
+git branch -d alice-integrator
 ```
 
 ```{note}
-Keep in mind that `git merge some_branch_name` merges changes *from* `some_branch_name` *into* the branch you are currently in. So if you are unsure, run `git branch` first to check that you are in the correct branch. Also it is recommended to not have any uncommited changes in the current branch when you do the merge.
-```
-
-If the changes don't conflict, you're done. If there are conflicts,
-markers will be left in the problematic files showing the conflict;
-
-```sh
-git diff
-```
-
-will show this. (Also, running `git status` at this point will give you a summary of which files have conflicts and what you need to do.) Once you've edited the files to resolve the conflicts,
-
-```sh
-git commit -a
-```
-
-will commit the result of the merge. Finally,
-
-```sh
-gitk
-```
-
-
-will show a nice graphical representation of the resulting history.
-
-At this point you could delete the experimental branch with
-
-```sh
-git branch -d experimental
-```
-
-
-This command ensures that the changes in the experimental branch are
-already in the current branch.
-
-If you develop on a branch `crazy-idea`, then regret it, you can always
-delete the branch with
-
-```sh
-git branch -D crazy-idea
-```
-
-Branches are cheap and easy, so this is a good way to try something out.
-
-
-## Collaborating using GitHub
-
-So far we've only discussed Git locally on your computer, but not how we collaborate with other developers. This is where GitHub comes into the picture.
-
-It's customary to work on different branches to protect the content of the `main` branch. Just like in the example above where we worked on a branch called `experimental`, you can create your own branch when you work on a project with other people.
-
-
-### Pull any changes from the remote
-
-The **remote** repo is the term used for the cloud-based (GitHub) version of your local Git repo. To **pull** down any changes done by the other developers on a branch, run
-
-```sh
-git pull origin branchname
-```
-
-In particular, to pull from the `main` branch, run
-
-```sh
-git pull origin main
-```
-
-The name `origin` is just the standard name assigned to the remote repo, i.e. the repo living on GitHub. So this command is effectively saying *pull down any changes from the `main` branch on the GitHub repo, and merge these into the current branch of my local repo.*
-
-
-### Push your changes to the remote
-
-When you've performed local changes to a branch, you can push them to the remote using
-
-```sh
-git push origin branchname
-```
-
-again, for the main branch, this is done by
-
-```sh
-git push origin main
-```
-
-
-```{note}
-It's a good idea to always pull from `origin` before you try to merge branches locally, commit or push to `origin`. Always sync up with the remote version of the repo first!
+Because `main` was merged into the branch in step 3, the merge in step 4 cannot produce a conflict. If `git push` in step 4 is rejected because someone pushed to `main` in the meantime, just repeat step 3 and try again.
 ```
