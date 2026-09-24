@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Add a README and gitignore &#8212; FYS3150/FYS4150 course material</title>
+    <title>Add a README and a gitignore &#8212; FYS3150/FYS4150 course material</title>
   
   
   
@@ -188,7 +188,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction_to_git.html">Introduction to Git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="setting_up_a_UiO_GitHub_repo.html">Setting up a UiO GitHub repository</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Add a README and gitignore</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Add a README and a gitignore</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using_git.html">Using Git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="prevent_tracking_of_very_large_files.html">Prevent the tracking of very large files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dealing_with_merge_conflicts.html">Dealing with merge conflicts</a></li>
@@ -433,7 +433,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Add a README and gitignore</h1>
+    <h1>Add a README and a gitignore</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -445,8 +445,8 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readme">README</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gitignore">gitignore</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-ignore-certain-files">Why ignore certain files?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-make-a-gitignore-file">How to make a gitignore-file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-ignore-files">Why ignore files?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-write-a-gitignore-file">How to write a gitignore file</a></li>
 </ul>
 </li>
 </ul>
@@ -460,36 +460,60 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="add-a-readme-and-gitignore">
-<h1>Add a README and gitignore<a class="headerlink" href="#add-a-readme-and-gitignore" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="add-a-readme-and-a-gitignore">
+<h1>Add a README and a gitignore<a class="headerlink" href="#add-a-readme-and-a-gitignore" title="Link to this heading">#</a></h1>
 <section id="readme">
 <h2>README<a class="headerlink" href="#readme" title="Link to this heading">#</a></h2>
-<p>Make sure to add (and keep up to date) a file <code class="docutils literal notranslate"><span class="pre">README.md</span></code> at the base directory of your Git repo. GitHub will suggest adding such a file when you register a new repo. The README file should contain a short explanation of how your repository is organized, and what commands others have to run in order to build and use the various codes.</p>
-<p>You can format the file nicely using Markdown syntax, but it is also OK to just write plain text.</p>
+<p>Every repository should have a file <code class="docutils literal notranslate"><span class="pre">README.md</span></code> in its base directory. GitHub offers to create one when you register a new repo. Keep it short and up to date. It should explain how the repository is organised, and which commands to run to build and use your code.</p>
 </section>
 <section id="gitignore">
 <span id="sec-gitignore"></span><h2>gitignore<a class="headerlink" href="#gitignore" title="Link to this heading">#</a></h2>
-<p>As with README, GitHub will also suggest adding a <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file to your repository. A gitignore file is a file that contains a list of all the files that Git should <em>not</em> track changes for.</p>
-<section id="why-ignore-certain-files">
-<h3>Why ignore certain files?<a class="headerlink" href="#why-ignore-certain-files" title="Link to this heading">#</a></h3>
-<p>Some files you do not want Git to track. This can for instance be because they are large data files, auxiliary files that are not useful for anything else than the program that generated them, or configuration files containing sensitive information. Here are some examples particularly relevant for our course:</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file lists the files Git should <em>not</em> track. GitHub also offers to create one from a template when you register a new repo.</p>
+<section id="why-ignore-files">
+<h3>Why ignore files?<a class="headerlink" href="#why-ignore-files" title="Link to this heading">#</a></h3>
+<p>Git should only track the files you actually work on: source code, scripts and documentation. Typical files you do <em>not</em> want to track:</p>
 <ul class="simple">
-<li><p>Git has a file size limit of 100MB, and GitHub will give you a warning if you push a file larger than 50MB. Tracking changes in very large files reduces performance and can make Git noticably slow.</p></li>
-<li><p>When running Python codes, you will often get a folder called <code class="docutils literal notranslate"><span class="pre">__pycache__</span></code>. This folder is generated and used by the Python interpreter at runtime – it’s not directly useful for you or others browsing your code, so there’s no need to have Git track it.</p></li>
-<li><p>Any <em>compiled</em> C++ files, either executables or object files (e.g. files like <code class="docutils literal notranslate"><span class="pre">main.o</span></code>), do not need to be tracked by Git.</p></li>
-<li><p>When using LaTeX you will typically end up with a lot of auto-generated files with strange file extensions in your folder. (These are generated when you compile the pdf document.) All these files are perfectly happy being left alone – there’s no need to track them with Git.</p></li>
+<li><p><strong>Compiled C++ files</strong>, i.e. executables and object files like <code class="docutils literal notranslate"><span class="pre">main.o</span></code>. Anyone can regenerate these from the source code.</p></li>
+<li><p><strong>Python cache folders</strong> (<code class="docutils literal notranslate"><span class="pre">__pycache__</span></code>), created by the Python interpreter when you run your code.</p></li>
+<li><p><strong>LaTeX auxiliary files</strong> (<code class="docutils literal notranslate"><span class="pre">.aux</span></code>, <code class="docutils literal notranslate"><span class="pre">.log</span></code>, <code class="docutils literal notranslate"><span class="pre">.fls</span></code>, …), generated when you compile your report.</p></li>
+<li><p><strong>Large data files.</strong> Git becomes slow with large files, and GitHub rejects files larger than 100 MB. See also <a class="reference internal" href="prevent_tracking_of_very_large_files.html"><span class="std std-doc">Prevent the tracking of very large files</span></a>.</p></li>
+<li><p><strong>Files with sensitive information</strong>, e.g. configuration files containing passwords or tokens.</p></li>
 </ul>
-<p>When typing <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> in the terminal, you will get a list of all the tracked files that <em>have</em> changed, and then a list of all new files that Git is <em>not</em> currently tracking and that are <em>not</em> listed in your gitignore file. Having a gitignore file helps making sure that these lists are so cluttered that you miss adding files that you do want Git to track:</p>
+<p>There is also a practical reason: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> lists every untracked file that is not covered by your gitignore. Without a gitignore, this list quickly becomes so cluttered that you overlook the files you <em>do</em> want to add:</p>
 <p><img alt="annoying" src="../../_images/files_to_ignore.png" /></p>
 </section>
-<section id="how-to-make-a-gitignore-file">
-<h3>How to make a gitignore-file<a class="headerlink" href="#how-to-make-a-gitignore-file" title="Link to this heading">#</a></h3>
-<p>A gitignore file is simply a file called <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>, located in the root directory of your repository. Notice that there is no file extension. The <code class="docutils literal notranslate"><span class="pre">.</span></code> at the beginning of the file name means that it’s a <em>hidden</em> file. To list all files in a directory, including hidden file, use the command <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-a</span></code>.</p>
-<p>The gitignore file is a text file, where each line is a file name pattern that can match file names in your repository. A pattern can either just be a specific file name, or a pattern that uses the wildcard <code class="docutils literal notranslate"><span class="pre">*</span></code> to match multiple files. For example, <code class="docutils literal notranslate"><span class="pre">*.o</span></code> will match all files with extension <code class="docutils literal notranslate"><span class="pre">.o</span></code>. An example of a gitignore file for the repo in the image above could look like this:</p>
-<p><img alt="gitignore" src="../../_images/example_gitignore.png" /></p>
-<p>It can be a hassle to write a gitignore file from scratch, so there are tools online to help you. As mentioned above, GitHub lets you make one from a template when you set up a new repository. If you want more controll over what is placed in the gitignore file, gitignore generators like <a class="reference external" href="https://www.toptal.com/developers/gitignore/">this one</a> lets you specify which tools you are using, and gives you a suggested <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file based on that. For instance, if you use Linux, code in C++ and Python, and use the editor VSCode, it could look like this:</p>
-<p><img alt="gitignore-generators" src="../../_images/gitignore_io.png" /></p>
-<p>Hitting ‘Create’ will generate text output that you copy/paste into your <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>. You can then add more lines for your specific needs.</p>
+<section id="how-to-write-a-gitignore-file">
+<h3>How to write a gitignore file<a class="headerlink" href="#how-to-write-a-gitignore-file" title="Link to this heading">#</a></h3>
+<p>The file must be named <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> (no file extension) and placed in the root directory of your repository. The leading <code class="docutils literal notranslate"><span class="pre">.</span></code> makes it a hidden file, so you need <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-a</span></code> to see it.</p>
+<p>Each line in the file is a pattern. A pattern is either a specific file name, or uses the wildcard <code class="docutils literal notranslate"><span class="pre">*</span></code> to match several files. A gitignore file for the example above could look like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Python cache files</span>
+<span class="n">__pycache__</span><span class="o">/</span>
+
+<span class="c1"># Compiled C++ files</span>
+<span class="o">*.</span><span class="n">o</span>
+<span class="o">*.</span><span class="n">exe</span>
+
+<span class="c1"># Data files</span>
+<span class="o">*.</span><span class="n">dat</span>
+
+<span class="c1"># LaTeX auxiliary files</span>
+<span class="o">*.</span><span class="n">aux</span>
+<span class="o">*.</span><span class="n">fls</span>
+<span class="o">*.</span><span class="n">log</span>
+<span class="o">*.</span><span class="n">out</span>
+<span class="o">*.</span><span class="n">synctex</span><span class="o">.</span><span class="n">gz</span>
+<span class="o">*.</span><span class="n">fdb_latexmk</span>
+
+<span class="c1"># Files with sensitive information</span>
+<span class="n">secrets</span><span class="o">.</span><span class="n">config</span>
+</pre></div>
+</div>
+<p>Add and commit the <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file itself, so that everyone working on the repo shares the same rules.</p>
+<p>Rather than writing the file from scratch, you can use a gitignore generator like <a class="reference external" href="https://www.toptal.com/developers/gitignore/">gitignore.io</a>. You tell it which tools you use, e.g. Linux, C++, Python and VSCode, and it generates a <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> that you copy into your repo and extend with your own patterns.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A gitignore file only affects files that Git is not already tracking. If you have already committed a file that you want to ignore, first remove it from Git with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span> <span class="pre">--cached</span> <span class="pre">filename</span></code>, then commit.</p>
+</div>
 </section>
 </section>
 </section>
@@ -560,8 +584,8 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readme">README</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gitignore">gitignore</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-ignore-certain-files">Why ignore certain files?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-make-a-gitignore-file">How to make a gitignore-file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-ignore-files">Why ignore files?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-write-a-gitignore-file">How to write a gitignore file</a></li>
 </ul>
 </li>
 </ul>

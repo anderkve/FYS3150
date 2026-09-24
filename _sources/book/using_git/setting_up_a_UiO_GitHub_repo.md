@@ -4,7 +4,6 @@ In this course we will use GitHub via UiO's GitHub Enterprise service, at [githu
 
 - Log in to [github.uio.no](https://github.uio.no) using your UiO username and password.
 
-` `
 
 - Next you need to create a new repository ("repo"):
 
@@ -22,7 +21,6 @@ In this course we will use GitHub via UiO's GitHub Enterprise service, at [githu
 
   - More detailed documentation about creating repositories can be found [here](https://docs.github.com/en/enterprise-server@3.9/repositories/creating-and-managing-repositories/creating-a-new-repository).
 
-` `
 
 - The last step is to *clone* the new repository to your computer:
 
