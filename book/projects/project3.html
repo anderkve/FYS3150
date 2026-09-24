@@ -484,7 +484,19 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="project-3">
+  <div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" data-sync-group="linalg" data-sync-id="armadillo" for="sd-tab-item-0">
+Armadillo</label><div class="sd-tab-content docutils">
+<p>Showing code examples using <strong>Armadillo</strong>.</p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" data-sync-group="linalg" data-sync-id="eigen" for="sd-tab-item-1">
+Eigen</label><div class="sd-tab-content docutils">
+<p>Showing code examples using <strong>Eigen</strong>.</p>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="project-3">
 <h1>Project 3<a class="headerlink" href="#project-3" title="Link to this heading">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -506,6 +518,7 @@ document.write(`
 <li><p><strong>Collaboration:</strong> We <em>strongly</em> encourage you to collaborate with others, in groups of up to three students. The group hands in a single pdf. Remember to list everyone’s name in the pdf.</p></li>
 <li><p><strong>Reproducibility:</strong> Your code should be available on a GitHub repo. You can refer to relevant parts of your code in your answers. Make sure to include a README file in the repo that briefly explains how the code is organized, and how it should be compiled and run in order for others to reproduce your results.</p></li>
 <li><p><strong>Figures:</strong> Figures included in your LaTeX document should be made as vector graphics (e.g. <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> files), rather than raster graphics (e.g. <code class="docutils literal notranslate"><span class="pre">.png</span></code> files). If you are making plots with <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> in Python, this is as simple as calling <code class="docutils literal notranslate"><span class="pre">plt.savefig(&quot;figure.pdf&quot;)</span></code> rather than <code class="docutils literal notranslate"><span class="pre">plt.savefig(&quot;figure.png&quot;)</span></code>.</p></li>
+<li><p><strong>We recommend using Armadillo or Eigen:</strong> For this project we recommend using Armadillo or Eigen to work with vectors (and matrices).</p></li>
 </ul>
 </section>
 <section id="introduction">
@@ -757,7 +770,7 @@ free to design in the way you think is best.</p>
 <p>Some advice:</p>
 <ul class="simple">
 <li><p>The constructor should assign values to the member variables.</p></li>
-<li><p>For the position and velocity, use <code class="docutils literal notranslate"><span class="pre">arma::vec</span></code> objects.</p></li>
+<li><p>For the position and velocity, use <code class="docutils literal notranslate"><span class="pre">arma::vec</span></code> or <code class="docutils literal notranslate"><span class="pre">Eigen::Vector3d</span></code> objects.</p></li>
 <li><p>Make all member variables public. This is just to ease the interplay between the <code class="docutils literal notranslate"><span class="pre">Particle</span></code> class and the <code class="docutils literal notranslate"><span class="pre">PenningTrap</span></code> class. (Alternatively, a nice approach in this case would be to make <code class="docutils literal notranslate"><span class="pre">PenningTrap</span></code> a <a class="reference external" href="https://en.wikipedia.org/wiki/Friend_class">friend class</a> of <code class="docutils literal notranslate"><span class="pre">Particle</span></code>.)</p></li>
 </ul>
 </section>
@@ -863,7 +876,7 @@ V_0 \rightarrow V_0 \left(1 + f \cos(\omega_V t)\right),
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(f\)</span> is a constant amplitude and <span class="math notranslate nohighlight">\(\omega_V\)</span> is the angular frequency of the time-dependent potential term.</p>
 <p>For this task you should implement (at least) the following extensions to your code:</p>
-<ul>
+<ul class="simple">
 <li><p>A check that sets the external E- and B-fields to zero in the region outside the trap.
 We’ll use the characteristic distance <span class="math notranslate nohighlight">\(d\)</span> as a simple measure for the trap size, so what we need is
 a check that sets the external fields <span class="math notranslate nohighlight">\(\mathbf{E}(\mathbf{r})\)</span> and <span class="math notranslate nohighlight">\(\mathbf{B}(\mathbf{r})\)</span> to zero
@@ -874,14 +887,37 @@ when <span class="math notranslate nohighlight">\(|\mathbf{r}| &gt; d\)</span>.<
 are still inside the trap region, i.e. the number of particles with <span class="math notranslate nohighlight">\(|\mathbf{r}| &lt; d\)</span>.</p></li>
 <li><p>An option to switch the Coulomb interactions on/off.</p></li>
 <li><p>Code for filling the <code class="docutils literal notranslate"><span class="pre">PenningTrap</span></code> with particles with randomly generated initial positions and velocities.
-Initial positions and velocities for each particle can be sampled from normal distributions, suitably scaled relative to the length scale of our Penning trap. Here’s a snippet illustrating this for a single particle, using the <code class="docutils literal notranslate"><span class="pre">vec::randn()</span></code> function of Armadillo to sample a position and velocity (<code class="docutils literal notranslate"><span class="pre">my_trap</span></code> is an instance of <code class="docutils literal notranslate"><span class="pre">PenningTrap</span></code>):</p>
+Initial positions and velocities for each particle can be sampled from normal distributions, suitably scaled relative to the length scale of our Penning trap. Here’s a snippet illustrating this for a single particle (<code class="docutils literal notranslate"><span class="pre">my_trap</span></code> is an instance of <code class="docutils literal notranslate"><span class="pre">PenningTrap</span></code>):</p></li>
+</ul>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" data-sync-group="linalg" data-sync-id="armadillo" for="sd-tab-item-2">
+Armadillo</label><div class="sd-tab-content docutils">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="n">vec</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec</span><span class="p">(</span><span class="mi">3</span><span class="p">).</span><span class="n">randn</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">my_trap</span><span class="p">.</span><span class="n">d</span><span class="p">;</span><span class="w">  </span><span class="c1">// random initial position</span>
 <span class="w">  </span><span class="n">vec</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec</span><span class="p">(</span><span class="mi">3</span><span class="p">).</span><span class="n">randn</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">my_trap</span><span class="p">.</span><span class="n">d</span><span class="p">;</span><span class="w">  </span><span class="c1">// random initial velocity</span>
 </pre></div>
 </div>
 <p><em>Note:</em> To set the seed for Armadillo’s random number generator, you can use <code class="docutils literal notranslate"><span class="pre">arma_rng::set_seed(value)</span></code> or <code class="docutils literal notranslate"><span class="pre">arma_rng::set_seed_random()</span></code>.</p>
-</li>
-</ul>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" data-sync-group="linalg" data-sync-id="eigen" for="sd-tab-item-3">
+Eigen</label><div class="sd-tab-content docutils">
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;random&gt;</span>
+
+<span class="c1">// This is the random number generator using the MT19937 algorithm</span>
+<span class="n">std</span><span class="o">::</span><span class="n">mt19937</span><span class="w"> </span><span class="n">generator</span><span class="p">;</span>
+
+<span class="c1">// This is the object that produces normally disitributed numbers of mean 0 and standard deviation</span>
+<span class="c1">// 0.1 * my_trap.d from the random numbers of the MT19937 generator</span>
+<span class="n">std</span><span class="o">::</span><span class="n">normal_distribution</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">dist</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">my_trap</span><span class="p">.</span><span class="n">d</span><span class="p">);</span>
+
+<span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="w"> </span><span class="nf">r</span><span class="p">(</span><span class="n">dist</span><span class="p">(</span><span class="n">generator</span><span class="p">),</span><span class="w"> </span><span class="n">dist</span><span class="p">(</span><span class="n">generator</span><span class="p">),</span><span class="w"> </span><span class="n">dist</span><span class="p">(</span><span class="n">generator</span><span class="p">));</span><span class="w"> </span><span class="c1">// random initial position</span>
+<span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="w"> </span><span class="nf">v</span><span class="p">(</span><span class="n">dist</span><span class="p">(</span><span class="n">generator</span><span class="p">),</span><span class="w"> </span><span class="n">dist</span><span class="p">(</span><span class="n">generator</span><span class="p">),</span><span class="w"> </span><span class="n">dist</span><span class="p">(</span><span class="n">generator</span><span class="p">));</span><span class="w"> </span><span class="c1">// random initial velocity</span>
+</pre></div>
+</div>
+<p><em>Note:</em> To set the seed for the Standard Library’s random number generator, you can use <code class="docutils literal notranslate"><span class="pre">generator.seed(value)</span></code>.</p>
+</div>
+</div>
 <p>We want to use our simulation to search for resonance frequencies of the system. Starting from a system filled with <em>100 randomly initialized Ca<span class="math notranslate nohighlight">\(^+\)</span> particles</em>, do the following:</p>
 <ul class="simple">
 <li><p>For each of the amplitudes <span class="math notranslate nohighlight">\(f = 0.1, 0.4, 0.7\)</span>, produce a graph that shows <em>the fraction of particles that are still trapped after <span class="math notranslate nohighlight">\(500\, \textrm{µs}\)</span></em> as a function of the applied angular frequency <span class="math notranslate nohighlight">\(\omega_V\)</span>. Plot the three graphs in the same figure. You should explore frequencies in the range <span class="math notranslate nohighlight">\(\omega_V \in (0.2, 2.5)\, \textrm{MHz}\)</span>. For this broad exploration of frequencies you can <em>switch off</em> the Coulomb interactions between the particles in the trap, as your code should then run much faster. Make sure you use sufficiently small steps along the <span class="math notranslate nohighlight">\(\omega_V\)</span> axis – steps of <span class="math notranslate nohighlight">\(0.02\, \textrm{MHz}\)</span> can be a starting point. Comment on your results. Some suggested things to discusss:</p>
@@ -913,6 +949,10 @@ Initial positions and velocities for each particle can be sampled from normal di
 <section id="code-snippets">
 <h3>Code snippets<a class="headerlink" href="#code-snippets" title="Link to this heading">#</a></h3>
 <p>Here is a suggested starting point for member functions of the <code class="docutils literal notranslate"><span class="pre">PenningTrap</span></code> class:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" data-sync-group="linalg" data-sync-id="armadillo" for="sd-tab-item-4">
+Armadillo</label><div class="sd-tab-content docutils">
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="c1">// Constructor</span>
 <span class="w">  </span><span class="n">PenningTrap</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">B0_in</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">V0_in</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">d_in</span><span class="p">);</span>
 
@@ -943,6 +983,43 @@ Initial positions and velocities for each particle can be sampled from normal di
 <span class="w">  </span><span class="c1">// Evolve the system one time step (dt) using Forward Euler</span>
 <span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">evolve_forward_Euler</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">dt</span><span class="p">);</span>
 </pre></div>
+</div>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" data-sync-group="linalg" data-sync-id="eigen" for="sd-tab-item-5">
+Eigen</label><div class="sd-tab-content docutils">
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="c1">// Constructor</span>
+<span class="w">  </span><span class="n">PenningTrap</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">B0_in</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">V0_in</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">d_in</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Add a particle to the trap</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">add_particle</span><span class="p">(</span><span class="n">Particle</span><span class="w"> </span><span class="n">p_in</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// External electric field at point r=(x,y,z)</span>
+<span class="w">  </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="w"> </span><span class="nf">external_E_field</span><span class="p">(</span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="w"> </span><span class="n">r</span><span class="p">);</span><span class="w">  </span>
+
+<span class="w">  </span><span class="c1">// External magnetic field at point r=(x,y,z)</span>
+<span class="w">  </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="w"> </span><span class="nf">external_B_field</span><span class="p">(</span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="w"> </span><span class="n">r</span><span class="p">);</span><span class="w">  </span>
+
+<span class="w">  </span><span class="c1">// Force on particle_i from particle_j</span>
+<span class="w">  </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="w"> </span><span class="nf">force_particle</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// The total force on particle_i from the external fields</span>
+<span class="w">  </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="w"> </span><span class="nf">total_force_external</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// The total force on particle_i from the other particles</span>
+<span class="w">  </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="w"> </span><span class="nf">total_force_particles</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// The total force on particle_i from both external fields and other particles</span>
+<span class="w">  </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="w"> </span><span class="nf">total_force</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Evolve the system one time step (dt) using Runge-Kutta 4th order</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">evolve_RK4</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">dt</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Evolve the system one time step (dt) using Forward Euler</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">evolve_forward_Euler</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">dt</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
 </div>
 <p>Note that for Problem 9 you probably want to modify the declarations of some of these functions, as well as add some new ones.</p>
 <!--
