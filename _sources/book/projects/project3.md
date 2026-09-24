@@ -1,6 +1,10 @@
 # Project 3
 
 
+```{note}
+September 24: This project description has some leftover typos etc. from an earlier version. I will fix this today/tomorrow, so make sure to check the latest version.
+```
+
 
 ## Practicalities
 
