@@ -14,18 +14,18 @@ void write_beyond_limit()
 int main()
 {
 
-  // Writing beyond the limit of our array.
+  // // Writing beyond the limit of our array.
 
-  cout << "DEBUG: " << __FILE__ << ":" << __LINE__ << endl;
+  // cout << "DEBUG: " << __FILE__ << ":" << __LINE__ << endl;
 
-  int x[2];
-  x[2] = 10;
+  // int x[2];
+  // x[2] = 10;
 
-  cout << "DEBUG: " << __FILE__ << ":" << __LINE__ << endl;
+  // cout << "DEBUG: " << __FILE__ << ":" << __LINE__ << endl;
 
 
 
-  // Same error again, but now inside a function
+  // // Same error again, but now inside a function
 
   // cout << "DEBUG: " << __FILE__ << ":" << __LINE__ << endl;
 
@@ -34,12 +34,11 @@ int main()
   // cout << "DEBUG: " << __FILE__ << ":" << __LINE__ << endl;
 
 
-
   // Stack overlow :)
   // Trying to store a large variable on the stack
   // rather than on the heap.
 
-  // int v[10000000];
+  int v[10000000];
 
 
 
