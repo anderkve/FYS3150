@@ -1,38 +1,62 @@
-# Add a README and gitignore
+# Add a README and a gitignore
 
 ## README
-Make sure to add (and keep up to date) a file `README.md` at the base directory of your Git repo. GitHub will suggest adding such a file when you register a new repo. The README file should contain a short explanation of how your repository is organized, and what commands others have to run in order to build and use the various codes.
+
+Every repository should have a file `README.md` in its base directory. GitHub offers to create one when you register a new repo. Keep it short and up to date. It should explain how the repository is organised, and which commands to run to build and use your code.
 
 
 (sec:gitignore)=
 ## gitignore
-As with README, GitHub will also suggest adding a `.gitignore` file to your repository. A gitignore file is a file that contains a list of all the files that Git should *not* track changes for.
 
-### Why ignore certain files?
-Some files you do not want Git to track. This can for instance be because they are large data files, auxiliary files that are not useful for anything else than the program that generated them, or configuration files containing sensitive information. Here are some examples particularly relevant for our course:
+A `.gitignore` file lists the files Git should *not* track. GitHub also offers to create one from a template when you register a new repo.
 
-  - Git has a file size limit of 100MB, and GitHub will give you a warning if you push a file larger than 50MB. Tracking changes in very large files reduces performance and can make Git noticably slow. 
+### Why ignore files?
 
-  - When running Python codes, you will often get a folder called `__pycache__`. This folder is generated and used by the Python interpreter at runtime -- it's not directly useful for you or others browsing your code, so there's no need to have Git track it.
+Git should only track the files you actually work on: source code, scripts and documentation. Typical files you do *not* want to track:
 
-  - Any *compiled* C++ files, either executables or object files (e.g. files like `main.o`), do not need to be tracked by Git. 
+- **Compiled C++ files**, i.e. executables and object files like `main.o`. Anyone can regenerate these from the source code.
+- **Python cache folders** (`__pycache__`), created by the Python interpreter when you run your code.
+- **LaTeX auxiliary files** (`.aux`, `.log`, `.fls`, ...), generated when you compile your report.
+- **Large data files.** Git becomes slow with large files, and GitHub rejects files larger than 100 MB. See also [Prevent the tracking of very large files](prevent_tracking_of_very_large_files.md).
+- **Files with sensitive information**, e.g. configuration files containing passwords or tokens.
 
-  - When using LaTeX you will typically end up with a lot of auto-generated files with strange file extensions in your folder. (These are generated when you compile the pdf document.) All these files are perfectly happy being left alone -- there's no need to track them with Git.
-
-When typing `git status` in the terminal, you will get a list of all the tracked files that *have* changed, and then a list of all new files that Git is *not* currently tracking and that are *not* listed in your gitignore file. Having a gitignore file helps making sure that these lists are so cluttered that you miss adding files that you do want Git to track:
+There is also a practical reason: `git status` lists every untracked file that is not covered by your gitignore. Without a gitignore, this list quickly becomes so cluttered that you overlook the files you *do* want to add:
 
 ![annoying](imgs/files_to_ignore.png)
 
+### How to write a gitignore file
 
-### How to make a gitignore-file
-A gitignore file is simply a file called `.gitignore`, located in the root directory of your repository. Notice that there is no file extension. The `.` at the beginning of the file name means that it's a *hidden* file. To list all files in a directory, including hidden file, use the command `ls -a`.
+The file must be named `.gitignore` (no file extension) and placed in the root directory of your repository. The leading `.` makes it a hidden file, so you need `ls -a` to see it.
 
-The gitignore file is a text file, where each line is a file name pattern that can match file names in your repository. A pattern can either just be a specific file name, or a pattern that uses the wildcard `*` to match multiple files. For example, `*.o` will match all files with extension `.o`. An example of a gitignore file for the repo in the image above could look like this:
+Each line in the file is a pattern. A pattern is either a specific file name, or uses the wildcard `*` to match several files. A gitignore file for the example above could look like this:
 
-![gitignore](imgs/example_gitignore.png)
+```
+# Python cache files
+__pycache__/
 
-It can be a hassle to write a gitignore file from scratch, so there are tools online to help you. As mentioned above, GitHub lets you make one from a template when you set up a new repository. If you want more controll over what is placed in the gitignore file, gitignore generators like [this one](https://www.toptal.com/developers/gitignore/) lets you specify which tools you are using, and gives you a suggested `.gitignore` file based on that. For instance, if you use Linux, code in C++ and Python, and use the editor VSCode, it could look like this:
+# Compiled C++ files
+*.o
+*.exe
 
-![gitignore-generators](imgs/gitignore_io.png)
+# Data files
+*.dat
 
-Hitting 'Create' will generate text output that you copy/paste into your `.gitignore`. You can then add more lines for your specific needs.
+# LaTeX auxiliary files
+*.aux
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.fdb_latexmk
+
+# Files with sensitive information
+secrets.config
+```
+
+Add and commit the `.gitignore` file itself, so that everyone working on the repo shares the same rules.
+
+Rather than writing the file from scratch, you can use a gitignore generator like [gitignore.io](https://www.toptal.com/developers/gitignore/). You tell it which tools you use, e.g. Linux, C++, Python and VSCode, and it generates a `.gitignore` that you copy into your repo and extend with your own patterns.
+
+```{note}
+A gitignore file only affects files that Git is not already tracking. If you have already committed a file that you want to ignore, first remove it from Git with `git rm --cached filename`, then commit.
+```
