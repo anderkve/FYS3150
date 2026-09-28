@@ -117,7 +117,31 @@ You can find the latest version of the lecture notes in the file [`lecture_notes
   - Begin discussing classes in C++
  
 
+### Lecture 12, September 25
 
+- Finish discussion of classes in C++
+- Project 3 physics case: Penning traps
+- Start discussing initial value problems
+  - Introduction
+  - Classification
+  - From a second-order equation to coupled first-order equations
+  - Local vs global errors
+If time: begin discussing methods (Forward Euler, Predictor-Corrector, ...)
+
+
+### Lecture 13, October 1
+
+- Continue discussion of initial value problems
+  - Forward Euler
+  - Predictor-Corrector
+  - Runge-Kutta, 4th order
+    - RK4 for sets of coupled equations
+
+
+### Lecture 14, October 2
+
+- Grading system for projects 3 and 4
+- Tips for how to write a good scientific report
 
 
 
