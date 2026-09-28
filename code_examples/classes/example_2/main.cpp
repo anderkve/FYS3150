@@ -14,7 +14,6 @@ class LotteryBall
   // Private stuff 
   // (No one is allowed to change the color or number of a LotteryBall -- that's cheating!)
   private:
-
     std::string color_;  // The underscore is just a one possible naming convention for private variables
     int number_;
 
@@ -128,7 +127,7 @@ class LotteryMachine
       // Check that the machine isn't empty
       error_if_empty();
 
-      // Get a random index between 0 and ball_collection_.size()
+      // Get a random index between 0 and ball_collection_.size() - 1
       int ball_index = rand() % ball_collection_.size();
 
       // Copy the ball
