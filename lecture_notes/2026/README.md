@@ -140,8 +140,33 @@ If time: begin discussing methods (Forward Euler, Predictor-Corrector, ...)
 
 ### Lecture 14, October 2
 
+- Quick comment on code design for simulations
 - Grading system for projects 3 and 4
-- Tips for how to write a good scientific report
+- How to write a scientific reports (mostly formal aspects)
+- If time: continue discussion of initial value problems
+  - Leapfrog
+  - Verlet
+
+
+### Lecture 15, October 8
+
+- If time: continue discussion of initial value problems
+  - Leapfrog
+  - Verlet
+- Classification of methods for solving IVPs
+- How to write a *good* scientific report
+
+
+### Lecture 16, October 9
+
+- Overview of topics for Project 4
+- Background: probability theory + some philosophy
+- Probability theory basics (notation, definitions, ...)
+- Probability distribution functions in many variables
+- Expectation values
+- Introduction to Monte Carlo methods
+
+
 
 
 
