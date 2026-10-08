@@ -151,7 +151,8 @@ If time: begin discussing methods (Forward Euler, Predictor-Corrector, ...)
   - Leapfrog
   - Verlet
 - Classification of methods for solving IVPs
-- How to write a *good* scientific report
+- Guest lecture by Andri Spilker on how to write a *good* scientific report
+  - Slides can be downloaded [here](https://www.dropbox.com/scl/fi/e6fusi4sd3dg3krti5hrf/guest_lecture_Andri_Spilker_2026.pdf?rlkey=mi79b8wwx55yduzygpf3c5tnr&dl=1)
 
 
 ### Lecture 16, October 9
