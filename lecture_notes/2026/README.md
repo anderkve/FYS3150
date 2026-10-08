@@ -143,14 +143,11 @@ If time: begin discussing methods (Forward Euler, Predictor-Corrector, ...)
 - Quick comment on code design for simulations
 - Grading system for projects 3 and 4
 - How to write a scientific reports (mostly formal aspects)
-- If time: continue discussion of initial value problems
-  - Leapfrog
-  - Verlet
 
 
 ### Lecture 15, October 8
 
-- If time: continue discussion of initial value problems
+- Continue discussion of initial value problems
   - Leapfrog
   - Verlet
 - Classification of methods for solving IVPs
