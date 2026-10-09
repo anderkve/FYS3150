@@ -150,19 +150,38 @@ If time: begin discussing methods (Forward Euler, Predictor-Corrector, ...)
 - Continue discussion of initial value problems
   - Leapfrog
   - Verlet
-- Classification of methods for solving IVPs
 - Guest lecture by Andri Spilker on how to write a *good* scientific report
   - Slides can be downloaded [here](https://www.dropbox.com/scl/fi/e6fusi4sd3dg3krti5hrf/guest_lecture_Andri_Spilker_2026.pdf?rlkey=mi79b8wwx55yduzygpf3c5tnr&dl=1)
 
 
 ### Lecture 16, October 9
 
+- Wrap up discussion of Leapfrog and Verlet
 - Overview of topics for Project 4
 - Background: probability theory + some philosophy
+
+
+### Lecture 17, October 15
+
 - Probability theory basics (notation, definitions, ...)
 - Probability distribution functions in many variables
 - Expectation values
 - Introduction to Monte Carlo methods
+
+
+### Lecture 18, October 16
+
+- Project 4 physics case: the 2D Ising model
+- Continue the introduction to Monte Carlo methods 
+- Markov chains
+
+
+<!--
+Postponed topics:
+- Classification of methods for solving IVPs:
+  - consistency (modified diff. eq., explicit vs implicit, stability, ...)
+-->
+
 
 
 
