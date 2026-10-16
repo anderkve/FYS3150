@@ -167,16 +167,16 @@ If time: begin discussing methods (Forward Euler, Predictor-Corrector, ...)
 - Probability distribution functions in many variables
 - Expectation values
 - Introduction to Monte Carlo methods
-- Sampling from low-dimensional pdfs
+
 
 
 ### Lecture 18, October 16
 
-- Wrap up discussion of sampling from low-dimensional pdfs
+- Sampling from low-dimensional pdfs
 - Project 4 physics case: the 2D Ising model
 - Markov chains
-- Markov chain Monte Carlo (MCMC)
-- If time: Parallel computing
+- If time: Markov chain Monte Carlo (MCMC)
+
 
 
 <!--
