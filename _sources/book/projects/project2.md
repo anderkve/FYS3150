@@ -24,7 +24,7 @@ Not published yet.
 - **Format:** 
   - A pdf document, typeset in LaTeX, with answers to all the problems below. You deliver the pdf on Canvas.
   - Use the template we have provided [here](./../writing_reports/project_templates.md).
-  - Code (with comments, of course) on a UiO GitHub repo ([github.uio.no](https://github.uio.no/)), with the URL to you repo written in the pdf document. 
+  - Code (with comments, of course) on a UiO GitHub repo ([github.uio.no](https://github.uio.no/)), with the URL to your repo written in the pdf document. 
   - You *must* deliver via your group on Canvas (even if you are working alone).
 
 - **Not a complete report:** For project 2, we do not require you to write a proper scientific report --- only a document with an answer for each problem. But the quality of the presentation still matters, of course. So pay attention to figures, figure captions, grammar, etc.

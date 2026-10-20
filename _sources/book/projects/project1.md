@@ -8,7 +8,7 @@
 - **Format:**
   - A pdf document, typeset in LaTeX, with answers to all the problems below. You deliver the pdf on Canvas.
   - Use the template we have provided [here](./../writing_reports/project_templates.md).
-  - Code (with comments, of course) on a UiO GitHub repo ([github.uio.no](https://github.uio.no/)), with the URL to you repo written in the pdf document.
+  - Code (with comments, of course) on a UiO GitHub repo ([github.uio.no](https://github.uio.no/)), with the URL to your repo written in the pdf document.
   - You *must* deliver via your group on Canvas (even if you are working alone).
 
 - **Assign yourself to a Project 1 group on Canvas:** For each project we will create 100 open groups on Canvas, so you can assign yourself to one of the groups. You must do this even if you are working alone. If you are working together with someone, then all of you should assign yourself to the same group. It does not matter what group number you pick, but please keep using the same group number for the rest of the projects too, if you can.
