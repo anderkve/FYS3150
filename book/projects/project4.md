@@ -1,8 +1,5 @@
 # Project 4
 
-Not published yet.
-
-<!-- 
 
 ```{note}
 While working on the project, check this page regularly in case of small updates (typo fixes, added hints, etc.)
@@ -10,7 +7,7 @@ While working on the project, check this page regularly in case of small updates
 
 ## Practicalities
 
-- **Deadline**: Wednesday, November 19, 23:59.
+- **Deadline**: Wednesday, November 18, 23:59.
 - **Format:**
   - A scientific report, typeset in LaTeX, delivered as a pdf file on Canvas.
   - Use the report template we have provided [here](./../writing_reports/project_templates.md).
@@ -365,8 +362,7 @@ $$
 - For some illustrations on how you can use the C++ `<random>` library for random number generation, see code examples in [`code_examples/random_number_generation`](https://github.com/anderkve/FYS3150/tree/master/code_examples/random_number_generation). These examples use a Mersenne Twister generator. Some of the examples demonstrate how one can do seeding when working with multiple OpenMP threads.
 
 
- -->
-
+ 
 
 
 
