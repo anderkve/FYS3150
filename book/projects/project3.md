@@ -25,7 +25,7 @@ September 24: This project description has some leftover typos etc. from an earl
 - **Format:**
   - A scientific report, typeset in LaTeX, delivered as a pdf file on Canvas.
   - Use the report template we have provided [here](./../writing_reports/project_templates.md).
-  - Code (with comments, of course) on a UiO GitHub repo ([github.uio.no](https://github.uio.no/)), with the URL to you repo written in the pdf document. 
+  - Code (with comments, of course) on a UiO GitHub repo ([github.uio.no](https://github.uio.no/)), with the URL to your repo written in the pdf document. 
   - You *must* deliver via your group on Canvas (even if you are working alone).
 
 - **A scientific report:** In contrast to projects 1 and 2, we now require you to write a proper scientific report. The details of this is discussed during the lectures, and we provide you with a `.tex` file template -- see [this page](../writing_reports/project_templates.md).

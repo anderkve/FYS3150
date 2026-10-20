@@ -11,7 +11,7 @@ While working on the project, check this page regularly in case of small updates
 - **Format:**
   - A scientific report, typeset in LaTeX, delivered as a pdf file on Canvas.
   - Use the report template we have provided [here](./../writing_reports/project_templates.md).
-  - Code (with comments, of course) on a UiO GitHub repo ([github.uio.no](https://github.uio.no/)), with the URL to you repo written in the pdf document. 
+  - Code (with comments, of course) on a UiO GitHub repo ([github.uio.no](https://github.uio.no/)), with the URL to your repo written in the pdf document. 
   - You *must* deliver via your group on Canvas (even if you are working alone).
 
 - **Collaboration:** We *strongly* encourage you to collaborate with others, in groups of up to three students. The group hands in a single pdf. Remember to list everyone's name in the pdf.
@@ -53,21 +53,20 @@ We will study 2D square lattices of spins $s_i$. Below we summarise our notation
 - The total energy of the system is given by 
 
   $$
-  E(\mathbf{s}) = -J \sum\limits_{\langle kl \rangle}^{N} s_k s_l
+  E(\mathbf{s}) = -J \sum\limits_{\langle kl \rangle} s_k s_l
   $$
 
-  Here $\langle kl \rangle$ means that the sum goes over all *neighbouring pairs* of spins, without double-counting, and $J$ is the **coupling constant**. We see that in this model (with no external magnetic field) the total system energy is fully determined by the interaction between neighbouring spin pairs, and $J$ is simply a constant that sets the energy associated with each such interaction.
+  Here $\langle kl \rangle$ means that the sum goes over all *neighbouring pairs* of spins, without double-counting, and $J$ is the **coupling constant**. We will use $J > 0$, which means that a pair of aligned neighbouring spins ($s_k s_l = +1$) lowers the total energy, while a pair of anti-aligned neighbouring spins ($s_k s_l = -1$) raises it. (This is what makes this a model of a *ferromagnet*.) We see that in this model (with no external magnetic field) the total system energy is fully determined by the interaction between neighbouring spin pairs, and $J$ is simply a constant that sets the energy associated with each such interaction.
 
 - We will use *periodic boundary conditions* for our lattice. Thus, all spins will have exactly *four neighbours* (left, right, up, down).
 
 - The total magnetisation of the system is simply given by the sum over all the spins in the system:
 
   $$
-  M(\mathbf{s}) = \sum\limits_{i}^{N} s_i
+  M(\mathbf{s}) = \sum\limits_{i=1}^{N} s_i
   $$
 
-- To ease the comparison of results for different lattice sizes, we will mostly use the *energy per spin*  
-  ($\epsilon$) and *magnetisation per spin* ($m$):
+- To ease the comparison of results for different lattice sizes, we will mostly use the *energy per spin* ($\epsilon$) and *magnetisation per spin* ($m$):
 
   $$
   \epsilon(\mathbf{s}) &= \frac{E(\mathbf{s})}{N}\\[1ex]
@@ -112,7 +111,7 @@ We will study 2D square lattices of spins $s_i$. Below we summarise our notation
 
 Assume a $2 \times 2$ lattice with periodic boundary conditions.
 
-- **a)** Summarise all possible states of the system by setting up a table with four coloumns showing the following quantities
+- **a)** Summarise all possible states of the system by setting up a table with four columns showing the following quantities
   - number of spins in state +1
   - total energy
   - total magnetisation
@@ -151,7 +150,7 @@ Above we have replaced $\textrm{Var}(M) = \braket{M^2} - \braket{M}^2$ with $\br
 
 But it's worth keeping in mind that, with no external magnetic field to pick out a preferred direction, the expectation value $\braket{M}$ really is 0 for all temperatures -- that is, even at very low temperatures, where there should be overwhelmingly high probability to observe the system in an ordered state, i.e. a state with $|M| > 0$.
 
-The reason for the expected value $\braket{M} = 0$ even at low temperatures is that for each state with some positive magnetisation $M$, there exists a "mirror state" with *all spins flipped*, which means the magnetisation is $-|M|$, and this state has the same probability under the Boltzmann distribution as the original state. So the expected value $\braket{M} = 0$ is analogous to how the expected value for the amount of money earned on fair bets with 50/50 coin flips is zero, even though zero is an impossible outcome for individual trails -- every trail gives either a win or a loss.
+The reason for the expected value $\braket{M} = 0$ even at low temperatures is that for each state with some positive magnetisation $M$, there exists a "mirror state" with *all spins flipped*, which means the magnetisation is $-M$, and this state has the same probability under the Boltzmann distribution as the original state. So the expected value $\braket{M} = 0$ is analogous to how the expected value for the amount of money earned on fair bets with 50/50 coin flips is zero, even though zero is an impossible outcome for individual trials -- every trial gives either a win or a loss.
 ```
 
 
@@ -187,7 +186,7 @@ Time to actually write some code!
   - $C_V / N$
   - $\chi / N$
 
-**b)** Validation: For a temperature of $T = 1.0\,J/k_B$, compare your results to the analytical results from Problem 1. (Feel free to compare for other temperature values as well, or simply make plots of these quantities versus temperature.)
+**b)** Validation: For a $2 \times 2$ lattice and a temperature of $T = 1.0\,J/k_B$, compare your results to the analytical results from Problem 1. (Feel free to compare for other temperature values as well, or simply make plots of these quantities versus temperature.)
 
 ```{note}
 See the note in Problem 1 about periodic boundary conditions for the special case of a $2 \times 2$ lattice. Short summary: it is OK to double-count spin pairs for this special case, so we can use the exact same code for all lattice sizes, including $2 \times 2$.
@@ -216,7 +215,7 @@ Now we will use a lattice with size $L=20$ and study the **burn-in time** (or **
 
   Since the plot will contain eight graphs in total, some care is needed to make the plot readable: 
 
-  - Here is a Python (`matplotlib.pyplot`) code snippet with some example tricks for how make these graphs look reasonable together:
+  - Here is a Python (`matplotlib.pyplot`) code snippet with some example tricks for how to make these graphs look reasonable together:
 
     ```python
     plt.plot(n_MC_cycles, eps_T10_u, '-', color='#377eb8', alpha=0.4, linewidth=1.0)
@@ -230,10 +229,10 @@ Now we will use a lattice with size $L=20$ and study the **burn-in time** (or **
     ```
   - The hex codes for the colours are taken from [colorbrewer2.org](https://colorbrewer2.org).
   
-  - It's up to you to decide how many MC cycles to include in your plot, but the figure will probably be most informative if plot your results using a logarithmic x axis.
+  - It's up to you to decide how many MC cycles to include in your plot, but the figure will probably be most informative if you plot your results using a logarithmic x axis.
 
 
-**b)** Based on these plots, how long would you say the burn-in time is?
+**b)** Based on these graphs, how long would you say the burn-in time is?
 
 
 
@@ -269,10 +268,10 @@ We recommend you do either approach 1 or 2. (You only need to do one approach.) 
 Now we will start investigating phase transitions. 
 
 ```{note}
-For a brief introduction to the phase transition of the 2D Ising model, see Chapters 13.4 and 13.4.1 of Morten Hjorth-Jensen's lecture notes. See also the brief theoretical summary for Problem 9.
+For a brief introduction to the phase transition of the 2D Ising model, see Sections 13.4 and 13.4.1 of Morten Hjorth-Jensen's lecture notes. See also the brief theoretical summary for Problem 9.
 ```
 
-- **a)** For lattices of size $L = 40,60,80,100$ (and higher if you want), make plots of $\langle \epsilon \rangle$, $\langle |m| \rangle$, $C_V/N$ and $\chi/N$ as function of temperature $T$. (Plot the results for the different $L$ values in the same figure.) Focus on temperatures in a range around $T \in [2.1, 2.4]\,J/k_B$. Make sure to use sufficiently small temperature steps, at least in the region where the graphs change most rapidly.
+- **a)** For lattices of size $L = 40,60,80,100$ (and higher if you want), make plots of $\langle \epsilon \rangle$, $\langle |m| \rangle$, $C_V/N$ and $\chi/N$ as a function of temperature $T$. (Plot the results for the different $L$ values in the same figure.) Focus on temperatures in a range around $T \in [2.1, 2.4]\,J/k_B$. Make sure to use sufficiently small temperature steps, at least in the region where the graphs change most rapidly.
 
 - **b)** Do you see an indication of a phase transition?
 
@@ -283,11 +282,11 @@ Some suggestions in case you are short on time because the code is slower than e
 
 - Make sure you're not running way more temperature points than necessary. A useful strategy: First run a scan with large T steps, to roughly identify the subregion of $T$ values where the graphs change most quickly. (E.g. only 10 points on the suggested $T$ range can be sufficient here.) Then run a second scan that zooms in on the much smaller $T$ range needed to identify $T_c$. Again, you can probably get good results with as few as 10 $T$ points -- though more points always make for better results. 
 
-- If you're having trouble with OpenMP/MPI parallelisation, remember that to just make sure you get the numerical results you need, you can always do "dummy parallelisation" by just running multiple instances of your program. (Use separete terminal windows, or run your program in the background with the `&` command, e.g. `./main.exe <command line options> &`. You can view your background jobs with `jobs` and bring them to the foreground with `fg <job number>`.) This "manual" way of splitting up tasks works well assuming that your program can take options like `L`, `Tmin`, `Tmax`, `deltaT` (or `n_Tsteps`) as command-line arguments.
+- If you're having trouble with OpenMP/MPI parallelisation, remember that to just make sure you get the numerical results you need, you can always do "dummy parallelisation" by just running multiple instances of your program. (Use separate terminal windows, or run your program in the background by adding `&` at the end of the command, e.g. `./main.exe <command line options> &`. You can view your background jobs with `jobs` and bring them to the foreground with `fg <job number>`.) This "manual" way of splitting up tasks works well assuming that your program can take options like `L`, `Tmin`, `Tmax`, `deltaT` (or `n_Tsteps`) as command-line arguments.
 
 - Perhaps you can afford to reduce the number of Monte Carlo cycles a bit and still get decent results? E.g. halving the number of cycles should halve the program runtime.
 
-- Keep in mind that you don't need to finish all the runs for Problem 8 to get started on Problem 9. To get a first result for Problem 9 you basically only need to identify $T_c$ for two of the $L$ values in Problem 8. So you can do Problem 9 in parallel with the runs for Problem 8, and then just update your plots/numbers as new runs in Problem 8 finishes. 
+- Keep in mind that you don't need to finish all the runs for Problem 8 to get started on Problem 9. To get a first result for Problem 9 you basically only need to identify $T_c$ for two of the $L$ values in Problem 8. So you can do Problem 9 in parallel with the runs for Problem 8, and then just update your plots/numbers as new runs in Problem 8 finish. 
 ```
 
 
@@ -319,23 +318,23 @@ Hint 2: If you find that doing a linear fit (a.k.a. linear least squares, a.k.a.
 ```
 
 
-**Theoretical background:** *What follows here is a very brief summary. For more information see Chapters 13.4 and 13.4.1 of Morten Hjorth-Jensen's lecture notes, and references therein.* 
+**Theoretical background:** *What follows here is a very brief summary. For more information see Sections 13.4 and 13.4.1 of Morten Hjorth-Jensen's lecture notes, and references therein.* 
 
 One of the many fascinating aspects of so-called critical phenomena is that vastly different physical systems can exhibit the same behaviour close to their critical point (here: critical temperature). This behaviour is described by power laws, with exponents called *critical exponents*. For the *infinite* 2D Ising model, the mean magnetisation, heat capacity and susceptibility behave as 
 
 $$
-\langle |m| \rangle &\propto |T - T_c(L=\infty)|^{\beta}\\[1ex]
+\langle |m| \rangle &\propto (T_c(L=\infty) - T)^{\beta} \quad \textrm{for}\; T < T_c(L=\infty)\\[1ex]
 \frac{C_V}{N} &\propto |T - T_c(L=\infty)|^{-\alpha}\\[1ex]
 \frac{\chi}{N} &\propto |T - T_c(L=\infty)|^{-\gamma}
 $$
 
-for temperatures $T$ close to $T_c$, with critical exponents $\beta=1/8$, $\alpha=0$ and $\gamma=7/4$. 
+for temperatures $T$ close to $T_c$, with critical exponents $\beta=1/8$, $\alpha=0$ and $\gamma=7/4$. (For $T > T_c(L=\infty)$ the infinite system has $\langle |m| \rangle = 0$.) Note that, following standard notation, the symbol $\beta$ here denotes a critical exponent and *not* the inverse temperature $1/(k_B T)$ used earlier. 
 
 ```{note}
 A critical exponent of 0 is just the power-law way of expressing *logarithmic* behaviour.
 ```
 
-Both $C_V/N$ and $\chi/N$ diverge near $T_c$. Similarly, the *correlation length* (here: the typical lenght scale of regions with aligned spins) $\xi$ also diverges near the critical point,
+Both $C_V/N$ and $\chi/N$ diverge near $T_c$. Similarly, the *correlation length* (here: the typical length scale of regions with aligned spins) $\xi$ also diverges near the critical point,
 
 $$
 \xi \propto |T - T_c(L=\infty)|^{-\nu}
