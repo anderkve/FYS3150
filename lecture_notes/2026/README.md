@@ -169,7 +169,6 @@ If time: begin discussing methods (Forward Euler, Predictor-Corrector, ...)
 - Introduction to Monte Carlo methods
 
 
-
 ### Lecture 18, October 16
 
 - Sampling from low-dimensional pdfs
@@ -177,6 +176,18 @@ If time: begin discussing methods (Forward Euler, Predictor-Corrector, ...)
 - Markov chains
 - If time: Markov chain Monte Carlo (MCMC)
 
+
+### Lecture 19, October 22
+
+- Continue discussion of Project 4 physics case: the 2D Ising model
+- Markov chains
+- If time: Start discussing Markov chain Monte Carlo (MCMC)
+
+
+### Lecture 19, October 23
+
+- Markov chain Monte Carlo (MCMC)
+- If time: Parallel computing
 
 
 <!--
