@@ -181,11 +181,11 @@ If time: begin discussing methods (Forward Euler, Predictor-Corrector, ...)
 
 - Continue discussion of Project 4 physics case: the 2D Ising model
 - Markov chains
-- If time: Start discussing Markov chain Monte Carlo (MCMC)
 
 
 ### Lecture 19, October 23
 
+- Continue discussion of Markov chains
 - Markov chain Monte Carlo (MCMC)
 - If time: Parallel computing
 
