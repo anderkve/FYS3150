@@ -7,20 +7,9 @@ import numpy as np
 # *if* the chain is not cyclic.
 
 
-# Example 1: The limiting matrix A^infty should
-# have the stationary distribution 
-# A = np.array([
-#   [0.50, 0.25, 0.00, 0.00, 0.00, 0.25],
-#   [0.25, 0.50, 0.25, 0.00, 0.00, 0.00],
-#   [0.00, 0.25, 0.50, 0.25, 0.00, 0.00],
-#   [0.00, 0.00, 0.25, 0.50, 0.25, 0.00],
-#   [0.00, 0.00, 0.00, 0.25, 0.50, 0.25],
-#   [0.25, 0.00, 0.00, 0.00, 0.25, 0.50],
-# ])
 
-# Example 2: This chain has a deterministic switching between even and odd numbers, 
-# (it's periodic in a sense) so we don't simply get the stationary on each row of 
-# the limiting matrix A^infty
+# Example 1: This chain has a deterministic switching between even and odd numbers, 
+# (it's periodic in a sense) so we don't get a limiting dist.
 A = np.array([
   [0.00, 0.50, 0.00, 0.00, 0.00, 0.50],
   [0.50, 0.00, 0.50, 0.00, 0.00, 0.00],
@@ -29,6 +18,17 @@ A = np.array([
   [0.00, 0.00, 0.00, 0.50, 0.00, 0.50],
   [0.50, 0.00, 0.00, 0.00, 0.50, 0.00],
 ])
+
+# Example 2: "Fix" the chain by introducing a prob. of staying
+# at the current state
+# A = np.array([
+#   [0.50, 0.25, 0.00, 0.00, 0.00, 0.25],
+#   [0.25, 0.50, 0.25, 0.00, 0.00, 0.00],
+#   [0.00, 0.25, 0.50, 0.25, 0.00, 0.00],
+#   [0.00, 0.00, 0.25, 0.50, 0.25, 0.00],
+#   [0.00, 0.00, 0.00, 0.25, 0.50, 0.25],
+#   [0.25, 0.00, 0.00, 0.00, 0.25, 0.50],
+# ])
 
 
 print()
