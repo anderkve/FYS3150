@@ -226,12 +226,78 @@ TBA
 
 
 
-
 <!--
 Postponed topics:
 - Classification of methods for solving IVPs:
   - consistency (modified diff. eq., explicit vs implicit, stability, ...)
 -->
+
+
+<!--
+From 2025
+---------
+
+### Lecture 19, October 23
+- Project 4 physics case: the 2D Ising model
+- Continue the introduction to Monte Carlo methods 
+- Markov chains
+
+
+### Lecture 20, October 24
+- Continue discussion of Markov chains
+- Markov chain Monte Carlo (MCMC)
+
+
+### Lecture 21, October 30
+- Wrap up discussion of MCMC
+  - MCMC code examples
+- Parallel computing
+
+
+### Lecture 22, October 31
+- Wrap up discussion of parallel computing
+  - Speedup, Amdahl's law
+  - Code examples: https://github.com/anderkve/FYS3150/tree/master/code_examples/omp_parallelization
+- Random number generation
+
+
+### Lecture 23, November 6
+- Sampling from low-dimensional pdfs
+  - Rejection sampling
+  - Importance sampling
+  - Inverse transform sampling
+- Start discussing Monte Carlo integration
+
+
+### Lecture 24, November 7
+- Monte Carlo integration
+- Numerical integration in low dimensions
+  - Example of recursive integration algorithm
+
+
+### Lecture 25, November 13
+- Intro to Project 5
+- Partial differential equations
+
+
+### Lecture 26, November 14
+- Continue discussion of partial differential equations
+  - Forward Time Central Space
+  - Backward Time Central Space
+  - Crank-Nicolson
+
+
+### Lecture 27, November 20
+- Stability analysis (matrix method)
+- Various C++ topics
+
+
+### Lecture 28, November 21
+- Low-level optimisation
+- Course summary
+
+-->
+
 
 
 
