@@ -173,8 +173,6 @@ If time: begin discussing methods (Forward Euler, Predictor-Corrector, ...)
 
 - Sampling from low-dimensional pdfs
 - Project 4 physics case: the 2D Ising model
-- Markov chains
-- If time: Markov chain Monte Carlo (MCMC)
 
 
 ### Lecture 19, October 22
@@ -183,11 +181,50 @@ If time: begin discussing methods (Forward Euler, Predictor-Corrector, ...)
 - Markov chains
 
 
-### Lecture 19, October 23
+### Lecture 20, October 23
 
 - Continue discussion of Markov chains
 - Markov chain Monte Carlo (MCMC)
-- If time: Parallel computing
+
+
+### Lecture 21, October 29
+
+- Wrap up discussion of Markov chain Monte Carlo
+- Parallel computing
+- If time: Random number generation
+
+
+### Lecture 22, October 30
+
+- Random number generation
+- Monte Carlo integration
+- If time: numerical integration in low dimensions
+
+
+### Lecture 23, November 5
+TBA
+
+
+### Lecture 24, November 6
+TBA
+
+
+### Lecture 25, November 12
+TBA
+
+
+### Lecture 26, November 13
+TBA
+
+
+### Lecture 27, November 19
+TBA
+
+
+### Lecture 28, November 20
+- Summary lecture
+
+
 
 
 <!--
