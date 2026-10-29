@@ -197,7 +197,7 @@ If time: begin discussing methods (Forward Euler, Predictor-Corrector, ...)
 ### Lecture 22, October 30
 
 - Random number generation
-- Monte Carlo integration
+- Numerical integration in high dimensions (Monte Carlo integration)
 - If time: numerical integration in low dimensions
 
 
