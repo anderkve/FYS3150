@@ -191,13 +191,12 @@ If time: begin discussing methods (Forward Euler, Predictor-Corrector, ...)
 
 - Wrap up discussion of Markov chain Monte Carlo
 - Parallel computing
-- If time: Random number generation
 
 
 ### Lecture 22, October 30
 
 - Random number generation
-- Monte Carlo integration
+- Numerical integration in high dimensions (Monte Carlo integration)
 - If time: numerical integration in low dimensions
 
 
