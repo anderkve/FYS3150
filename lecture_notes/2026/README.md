@@ -191,7 +191,6 @@ If time: begin discussing methods (Forward Euler, Predictor-Corrector, ...)
 
 - Wrap up discussion of Markov chain Monte Carlo
 - Parallel computing
-- If time: Random number generation
 
 
 ### Lecture 22, October 30
