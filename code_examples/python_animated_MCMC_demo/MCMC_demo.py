@@ -7,20 +7,20 @@ import numpy as np
 
 # ---- Settings for example 1 ----
 
-# n_samples = 100
-# plot_update_steps = 1
-# x_init = 12
+n_samples = 10000
+plot_update_steps = 200
+x_init = 12
 
-# # Define true distribution
+# Define true distribution
 
-# mean1 = 15.0
-# sigma1 = 3.0
-# norm1 = norm(loc=mean1, scale=sigma1)
+mean1 = 15.0
+sigma1 = 3.0
+norm1 = norm(loc=mean1, scale=sigma1)
 
-# true_mean = mean1
+true_mean = mean1
 
-# def p(x):
-#   return norm1.pdf(x)
+def p(x):
+  return norm1.pdf(x)
 
 
 # ---- Settings for example 2 ----
@@ -43,20 +43,20 @@ import numpy as np
 
 # ---- Settings for example 3 ----
 
-n_samples = 2000
-plot_update_steps = 20
-x_init = 35
+# n_samples = 2000
+# plot_update_steps = 20
+# x_init = 35
 
-# Define true distribution
+# # Define true distribution
 
-mean1 = 15.0
-sigma1 = 3.0
-norm1 = norm(loc=mean1, scale=sigma1)
+# mean1 = 15.0
+# sigma1 = 3.0
+# norm1 = norm(loc=mean1, scale=sigma1)
 
-true_mean = mean1
+# true_mean = mean1
 
-def p(x):
-  return norm1.pdf(x)
+# def p(x):
+#   return norm1.pdf(x)
 
 
 # ---- Settings for example 4 ----
@@ -88,7 +88,7 @@ def p(x):
 
 # n_samples = 20000 
 # plot_update_steps = 200
-# x_init = 20
+# x_init = 7
 
 # # Define true distribution
 
@@ -117,22 +117,23 @@ def p(x):
 # plot_update_steps = 2
 # x_init = 20
 
-# Define true distribution
+# # Define true distribution
 
-mean1 = 15.0
-sigma1 = 3.0
-norm1 = norm(loc=mean1, scale=sigma1)
-weight1 = 0.8
+# mean1 = 15.0
+# sigma1 = 3.0
+# norm1 = norm(loc=mean1, scale=sigma1)
+# weight1 = 0.8
 
-mean2 = 8.0
-sigma2 = 1.0
-norm2 = norm(loc=mean2, scale=sigma2)
-weight2 = 1.0 - weight1
+# mean2 = 8.0
+# sigma2 = 1.0
+# norm2 = norm(loc=mean2, scale=sigma2)
+# weight2 = 1.0 - weight1
 
-true_mean = weight1 * mean1 + weight2 * mean2
+# true_mean = weight1 * mean1 + weight2 * mean2
 
-def p(x):
-  return weight1 * norm1.pdf(x) + weight2 * norm2.pdf(x)
+# def p(x):
+#   return weight1 * norm1.pdf(x) + weight2 * norm2.pdf(x)
+
 
 # --------------------------- ----
 
