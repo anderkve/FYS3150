@@ -195,17 +195,19 @@ If time: begin discussing methods (Forward Euler, Predictor-Corrector, ...)
 
 ### Lecture 22, October 30
 
+- Continue discussion of parallel computing (with code examples)
 - Random number generation
-- Numerical integration in high dimensions (Monte Carlo integration)
-- If time: numerical integration in low dimensions
 
 
 ### Lecture 23, November 5
-TBA
+- Continue discussion of random number generation
+- Numerical integration in high dimensions (Monte Carlo integration)
+- If time: Numerical integration in low dimensions
 
 
 ### Lecture 24, November 6
-TBA
+- Continue discussion of numerical integration
+  - Example of recursive integration algorithm
 
 
 ### Lecture 25, November 12
