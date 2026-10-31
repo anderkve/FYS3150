@@ -150,7 +150,7 @@ Similar to `main_omp_outer_loop.cpp`, but now storing the results
 from all threads in memory during the run (in a shared armadillo 
 matrix) and only writing a single output file at the end.
 
-- Build like this (now also with the `-laramdillo` flag):
+- Build like this:
   ```sh
   g++ -O3 main_omp_outer_loop_inmem.cpp -fopenmp -o main_omp_outer_loop_inmem
   ```
