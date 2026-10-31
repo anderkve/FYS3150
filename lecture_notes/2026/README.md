@@ -200,13 +200,17 @@ If time: begin discussing methods (Forward Euler, Predictor-Corrector, ...)
 
 
 ### Lecture 23, November 5
+
+**NOTE:** No in-person lecture – replaced by pre-recorded video lecture
+
 - Continue discussion of random number generation
 - Numerical integration in high dimensions (Monte Carlo integration)
-- If time: Numerical integration in low dimensions
-
 
 ### Lecture 24, November 6
-- Continue discussion of numerical integration
+
+**NOTE:** No in-person lecture – replaced by pre-recorded video lecture
+
+- Numerical integration in low dimensions
   - Example of recursive integration algorithm
 
 
