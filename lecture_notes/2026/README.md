@@ -215,7 +215,11 @@ If time: begin discussing methods (Forward Euler, Predictor-Corrector, ...)
 
 
 ### Lecture 25, November 12
-TBA
+- Partial differential equations
+- Introduction
+  - Classification of second-order, linear PDEs
+- Discretised partial derivatives
+- Numerical methods (schemes) for PDEs
 
 
 ### Lecture 26, November 13
