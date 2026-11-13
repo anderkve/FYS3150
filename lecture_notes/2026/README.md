@@ -227,7 +227,7 @@ If time: begin discussing methods (Forward Euler, Predictor-Corrector, ...)
   - FTCS
   - BTCS
   - Crank-Nicolson
-- Consistency and stability
+- If time: Consistency and stability
 
 
 
