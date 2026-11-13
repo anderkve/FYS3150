@@ -223,7 +223,12 @@ If time: begin discussing methods (Forward Euler, Predictor-Corrector, ...)
 
 
 ### Lecture 26, November 13
-TBA
+- Continue discussion of numerical methods for PDEs
+  - FTCS
+  - BTCS
+  - Crank-Nicolson
+- Consistency and stability
+
 
 
 ### Lecture 27, November 19
