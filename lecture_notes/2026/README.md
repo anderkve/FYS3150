@@ -227,12 +227,11 @@ If time: begin discussing methods (Forward Euler, Predictor-Corrector, ...)
   - FTCS
   - BTCS
   - Crank-Nicolson
-- If time: Consistency and stability
-
 
 
 ### Lecture 27, November 19
-TBA
+- Consistency and stability of numerical schemes
+- If time: various C++ topics
 
 
 ### Lecture 28, November 20
